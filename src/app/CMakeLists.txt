@@ -142,7 +142,7 @@ SET(QGIS_APP_SRCS
   ogr/qgsnewogrconnection.cpp
   ogr/qgsvectorlayersaveasdialog.cpp
 
-  gps/qgsgpsinformationwidget.cpp
+  #gps/qgsgpsinformationwidget.cpp
   gps/qgsgpsmarker.cpp
 
   openstreetmap/qgsosmdownloaddialog.cpp
@@ -281,7 +281,7 @@ SET (QGIS_APP_MOC_HDRS
   ogr/qgsnewogrconnection.h
   ogr/qgsvectorlayersaveasdialog.h
 
-  gps/qgsgpsinformationwidget.h
+  #gps/qgsgpsinformationwidget.h
 
   openstreetmap/qgsosmdownloaddialog.h
   openstreetmap/qgsosmimportdialog.h
@@ -295,72 +295,72 @@ SET (QGIS_APP_MOC_HDRS
   qgsnewspatialitelayerdialog.h
   )
 
-IF(WITH_INTERNAL_QWTPOLAR)
-  IF(QWT_VERSION_STR VERSION_LESS "6.0.0")
-    SET(QGIS_APP_SRCS
-      ${QGIS_APP_SRCS}
-      gps/qwtpolar-0.1/qwt_polar_canvas.cpp
-      gps/qwtpolar-0.1/qwt_polar_curve.cpp
-      gps/qwtpolar-0.1/qwt_polar_fitter.cpp
-      gps/qwtpolar-0.1/qwt_polar_grid.cpp
-      gps/qwtpolar-0.1/qwt_polar_itemdict.cpp
-      gps/qwtpolar-0.1/qwt_polar_item.cpp
-      gps/qwtpolar-0.1/qwt_polar_layout.cpp
-      gps/qwtpolar-0.1/qwt_polar_magnifier.cpp
-      gps/qwtpolar-0.1/qwt_polar_marker.cpp
-      gps/qwtpolar-0.1/qwt_polar_panner.cpp
-      gps/qwtpolar-0.1/qwt_polar_plot.cpp
-      gps/qwtpolar-0.1/qwt_polar_point.cpp
-      gps/qwtpolar-0.1/qwt_polar_spectrogram.cpp
-    )
-
-    SET (QGIS_APP_MOC_HDRS
-      ${QGIS_APP_MOC_HDRS}
-      gps/qwtpolar-0.1/qwt_polar_canvas.h
-      gps/qwtpolar-0.1/qwt_polar_magnifier.h
-      gps/qwtpolar-0.1/qwt_polar_panner.h
-      gps/qwtpolar-0.1/qwt_polar_plot.h
-    )
-
-    SET(QWTPOLAR_INCLUDE_DIR gps/qwtpolar-0.1)
-  ELSE(QWT_VERSION_STR VERSION_LESS "6.0.0")
-    IF(NOT QWT_VERSION_STR VERSION_LESS "6.1.0")
-      MESSAGE(FATAL_ERROR "Internal QwtPolar does not support Qwt 6.1 and above")
-    ENDIF(NOT QWT_VERSION_STR VERSION_LESS "6.1.0")
-
-    SET(QGIS_APP_SRCS
-      ${QGIS_APP_SRCS}
-      gps/qwtpolar-1.0/qwt_polar_canvas.cpp
-      gps/qwtpolar-1.0/qwt_polar_curve.cpp
-      gps/qwtpolar-1.0/qwt_polar_fitter.cpp
-      gps/qwtpolar-1.0/qwt_polar_grid.cpp
-      gps/qwtpolar-1.0/qwt_polar_item.cpp
-      gps/qwtpolar-1.0/qwt_polar_itemdict.cpp
-      gps/qwtpolar-1.0/qwt_polar_layout.cpp
-      gps/qwtpolar-1.0/qwt_polar_magnifier.cpp
-      gps/qwtpolar-1.0/qwt_polar_marker.cpp
-      gps/qwtpolar-1.0/qwt_polar_panner.cpp
-      gps/qwtpolar-1.0/qwt_polar_picker.cpp
-      gps/qwtpolar-1.0/qwt_polar_plot.cpp
-      gps/qwtpolar-1.0/qwt_polar_renderer.cpp
-      gps/qwtpolar-1.0/qwt_polar_spectrogram.cpp
-    )
-
-    SET (QGIS_APP_MOC_HDRS
-      ${QGIS_APP_MOC_HDRS}
-      gps/qwtpolar-1.0/qwt_polar_canvas.h
-      gps/qwtpolar-1.0/qwt_polar_magnifier.h
-      gps/qwtpolar-1.0/qwt_polar_panner.h
-      gps/qwtpolar-1.0/qwt_polar_picker.h
-      gps/qwtpolar-1.0/qwt_polar_plot.h
-      gps/qwtpolar-1.0/qwt_polar_renderer.h
-    )
-
-    SET(QWTPOLAR_INCLUDE_DIR gps/qwtpolar-1.0)
-  ENDIF(QWT_VERSION_STR VERSION_LESS "6.0.0")
-
-  SET(QWTPOLAR_LIBRARY "")
-ENDIF(WITH_INTERNAL_QWTPOLAR)
+#IF(WITH_INTERNAL_QWTPOLAR)
+#  IF(QWT_VERSION_STR VERSION_LESS "6.0.0")
+#    SET(QGIS_APP_SRCS
+#      ${QGIS_APP_SRCS}
+#      gps/qwtpolar-0.1/qwt_polar_canvas.cpp
+#      gps/qwtpolar-0.1/qwt_polar_curve.cpp
+#      gps/qwtpolar-0.1/qwt_polar_fitter.cpp
+#      gps/qwtpolar-0.1/qwt_polar_grid.cpp
+#      gps/qwtpolar-0.1/qwt_polar_itemdict.cpp
+#      gps/qwtpolar-0.1/qwt_polar_item.cpp
+#      gps/qwtpolar-0.1/qwt_polar_layout.cpp
+#      gps/qwtpolar-0.1/qwt_polar_magnifier.cpp
+#      gps/qwtpolar-0.1/qwt_polar_marker.cpp
+#      gps/qwtpolar-0.1/qwt_polar_panner.cpp
+#      gps/qwtpolar-0.1/qwt_polar_plot.cpp
+#      gps/qwtpolar-0.1/qwt_polar_point.cpp
+#      gps/qwtpolar-0.1/qwt_polar_spectrogram.cpp
+#    )
+#
+#    SET (QGIS_APP_MOC_HDRS
+#      ${QGIS_APP_MOC_HDRS}
+#      gps/qwtpolar-0.1/qwt_polar_canvas.h
+#      gps/qwtpolar-0.1/qwt_polar_magnifier.h
+#      gps/qwtpolar-0.1/qwt_polar_panner.h
+#      gps/qwtpolar-0.1/qwt_polar_plot.h
+#    )
+#
+#    SET(QWTPOLAR_INCLUDE_DIR gps/qwtpolar-0.1)
+#  ELSE(QWT_VERSION_STR VERSION_LESS "6.0.0")
+#    IF(NOT QWT_VERSION_STR VERSION_LESS "6.1.0")
+#      MESSAGE(FATAL_ERROR "Internal QwtPolar does not support Qwt 6.1 and above")
+#    ENDIF(NOT QWT_VERSION_STR VERSION_LESS "6.1.0")
+#
+#    SET(QGIS_APP_SRCS
+#      ${QGIS_APP_SRCS}
+#      gps/qwtpolar-1.0/qwt_polar_canvas.cpp
+#      gps/qwtpolar-1.0/qwt_polar_curve.cpp
+#      gps/qwtpolar-1.0/qwt_polar_fitter.cpp
+#      gps/qwtpolar-1.0/qwt_polar_grid.cpp
+#      gps/qwtpolar-1.0/qwt_polar_item.cpp
+#      gps/qwtpolar-1.0/qwt_polar_itemdict.cpp
+#      gps/qwtpolar-1.0/qwt_polar_layout.cpp
+#      gps/qwtpolar-1.0/qwt_polar_magnifier.cpp
+#      gps/qwtpolar-1.0/qwt_polar_marker.cpp
+#      gps/qwtpolar-1.0/qwt_polar_panner.cpp
+#      gps/qwtpolar-1.0/qwt_polar_picker.cpp
+#      gps/qwtpolar-1.0/qwt_polar_plot.cpp
+#      gps/qwtpolar-1.0/qwt_polar_renderer.cpp
+#      gps/qwtpolar-1.0/qwt_polar_spectrogram.cpp
+#    )
+#
+#    SET (QGIS_APP_MOC_HDRS
+#      ${QGIS_APP_MOC_HDRS}
+#      gps/qwtpolar-1.0/qwt_polar_canvas.h
+#      gps/qwtpolar-1.0/qwt_polar_magnifier.h
+#      gps/qwtpolar-1.0/qwt_polar_panner.h
+#      gps/qwtpolar-1.0/qwt_polar_picker.h
+#      gps/qwtpolar-1.0/qwt_polar_plot.h
+#      gps/qwtpolar-1.0/qwt_polar_renderer.h
+#    )
+#
+#    SET(QWTPOLAR_INCLUDE_DIR gps/qwtpolar-1.0)
+#  ENDIF(QWT_VERSION_STR VERSION_LESS "6.0.0")
+#
+#  SET(QWTPOLAR_LIBRARY "")
+#ENDIF(WITH_INTERNAL_QWTPOLAR)
 
 
 IF (POSTGRES_FOUND)
@@ -477,7 +477,7 @@ ENDIF (WIN32)
 ADD_LIBRARY(qgis_app SHARED ${QGIS_APP_SRCS} ${QGIS_APP_MOC_SRCS} ${QGIS_APP_HDRS} ${QGIS_APP_MOC_HDRS} ${IMAGE_RCC_SRCS})
 
 TARGET_LINK_LIBRARIES(qgis_app
-  ${QWT_LIBRARY}
+  #${QWT_LIBRARY}
   ${QT_QTSQL_LIBRARY}
   ${QT_QTUITOOLS_LIBRARY}
   ${QT_QTWEBKIT_LIBRARY}

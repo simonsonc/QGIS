@@ -69,7 +69,7 @@ QgsOgrFeatureIterator::QgsOgrFeatureIterator( QgsOgrFeatureSource* source, bool 
   {
     OGRGeometryH filter = 0;
     QString wktExtent = QString( "POLYGON((%1))" ).arg( mRequest.filterRect().asPolygon() );
-    QByteArray ba = wktExtent.toAscii();
+    QByteArray ba = wktExtent.toLatin1();
     const char *wktText = ba;
 
     OGR_G_CreateFromWkt(( char ** )&wktText, NULL, &filter );

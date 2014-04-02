@@ -154,14 +154,14 @@ string      "'"{str_char}*"'"
 
 ","   { return COMMA; }
 
-{num_float}  { exp_lval.numberFloat  = cLocale.toDouble( QString::fromAscii(yytext) ); return NUMBER_FLOAT; }
+{num_float}  { exp_lval.numberFloat  = cLocale.toDouble( QString::fromLatin1(yytext) ); return NUMBER_FLOAT; }
 {num_int}  {
 	bool ok;
-	exp_lval.numberInt = cLocale.toInt( QString::fromAscii(yytext), &ok, 10 );
+    exp_lval.numberInt = cLocale.toInt( QString::fromLatin1(yytext), &ok );
 	if( ok )
 		return NUMBER_INT;
 
-	exp_lval.numberFloat  = cLocale.toDouble( QString::fromAscii(yytext), &ok );
+    exp_lval.numberFloat  = cLocale.toDouble( QString::fromLatin1(yytext), &ok );
 	if( ok )
 		return NUMBER_FLOAT;
 

@@ -662,7 +662,7 @@ QByteArray KeyboardTranslator::Entry::escapedText( bool expandWildCards, Qt::Key
 
     if ( replacement == 'x' )
     {
-      result.replace( i, 1, QString( "\\x%1" ).arg(( int ) ch, 0, 16 ).toAscii() );
+      result.replace( i, 1, QString( "\\x%1" ).arg(( int ) ch, 0, 16 ).toLatin1() );
     }
     else if ( replacement != 0 )
     {

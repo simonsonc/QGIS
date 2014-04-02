@@ -32,7 +32,7 @@
 #include <QScrollArea>
 #include <QPushButton>
 #include <QBuffer>
-#include <QHttp>
+//#include <QHttp>
 #include <QResizeEvent>
 
 /**
@@ -91,7 +91,7 @@ class eVisImageDisplayWidget : public QWidget
     QBuffer* mHttpBuffer;
 
     /** \brief Pointer to the http connection if needed */
-    QHttp* mHttpConnection;
+    //QHttp* mHttpConnection;
 
     /** \brief This is a point to the actual image being displayed */
     QPixmap* mImage;

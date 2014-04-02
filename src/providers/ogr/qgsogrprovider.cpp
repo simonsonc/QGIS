@@ -1957,7 +1957,7 @@ QGISEXTERN bool createEmptyDataSource( const QString &uri,
 
   OGRSFDriverH driver;
   QgsApplication::registerOgrDrivers();
-  driver = OGRGetDriverByName( format.toAscii() );
+  driver = OGRGetDriverByName( format.toLatin1() );
   if ( !driver )
   {
     return false;

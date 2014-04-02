@@ -121,8 +121,10 @@ void QwtPolarRenderer::renderDocument( QwtPolarPlot *plot,
         printer.setPaperSize( sizeMM, QPrinter::Millimeter );
         printer.setDocName( title );
         printer.setOutputFileName( fileName );
+        #if 0
         printer.setOutputFormat( ( format == "pdf" )
             ? QPrinter::PdfFormat : QPrinter::PostScriptFormat );
+            #endif
         printer.setResolution( resolution );
 
         QPainter painter( &printer );

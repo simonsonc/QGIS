@@ -85,7 +85,6 @@ SET(QGIS_CORE_SRCS
   qgssimplifymethod.cpp
   qgsgml.cpp
   qgsgmlschema.cpp
-  qgshttptransaction.cpp
   qgslabel.cpp
   qgslabelattributes.cpp
   qgslabelsearchtree.cpp
@@ -320,7 +319,6 @@ SET(QGIS_CORE_MOC_HDRS
   qgsdataprovider.h
   qgsgml.h
   qgsgmlschema.h
-  qgshttptransaction.h
   qgsmaplayer.h
   qgsmaplayerregistry.h
   qgsmaprenderer.h
@@ -424,7 +422,6 @@ SET(QGIS_CORE_HDRS
   qgsgml.h
   qgsgmlschema.h
   qgsgeometrycache.h
-  qgshttptransaction.h
   qgslabel.h
   qgslabelattributes.h
   qgslogger.h
@@ -676,6 +673,8 @@ TARGET_LINK_LIBRARIES(qgis_core
   ${QT_QTNETWORK_LIBRARY}
   ${QT_QTSVG_LIBRARY}
   ${QT_QTWEBKIT_LIBRARY}
+  Qt5::Concurrent
+  Qt5::PrintSupport
 
   ${PROJ_LIBRARY}
   ${GEOS_LIBRARY}

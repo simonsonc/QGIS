@@ -165,7 +165,7 @@ void QgsAbout::init()
     txtDonors->clear();
     txtDonors->document()->setDefaultStyleSheet( myStyle );
     txtDonors->setHtml( donorsHTML );
-    QgsDebugMsg( QString( "donorsHTML:%1" ).arg( donorsHTML.toAscii().constData() ) );
+    QgsDebugMsg( QString( "donorsHTML:%1" ).arg( donorsHTML.toLatin1().constData() ) );
   }
 
   // read the TRANSLATORS file and populate the text widget
@@ -187,7 +187,7 @@ void QgsAbout::init()
       translatorHTML += translatorStream.readLine();
     }
     txtTranslators->setHtml( translatorHTML );
-    QgsDebugMsg( QString( "translatorHTML:%1" ).arg( translatorHTML.toAscii().constData() ) );
+    QgsDebugMsg( QString( "translatorHTML:%1" ).arg( translatorHTML.toLatin1().constData() ) );
   }
   setWhatsNew();
   setLicence();

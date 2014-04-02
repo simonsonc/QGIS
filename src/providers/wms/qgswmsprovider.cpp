@@ -48,8 +48,10 @@
 #include <QNetworkProxy>
 #include <QNetworkDiskCache>
 
+#if 0
 #include <QtXmlPatterns/QXmlSchema>
 #include <QtXmlPatterns/QXmlSchemaValidator>
+#endif
 
 #include <QUrl>
 #include <QIcon>
@@ -422,8 +424,11 @@ bool QgsWmsProvider::setImageCrs( QString const & crs )
 
 void QgsWmsProvider::setQueryItem( QUrl &url, QString item, QString value )
 {
+  (void)url;
+#if 0
   url.removeQueryItem( item );
   url.addQueryItem( item, value );
+  #endif
 }
 
 QImage *QgsWmsProvider::draw( QgsRectangle  const &viewExtent, int pixelWidth, int pixelHeight )
@@ -741,8 +746,10 @@ QImage *QgsWmsProvider::draw( QgsRectangle  const &viewExtent, int pixelWidth, i
             setQueryItem( url, it.key(), it.value() );
           }
 
+#if 0
           url.removeQueryItem( "TILEROW" );
           url.removeQueryItem( "TILECOL" );
+          #endif
 
           int i = 0;
           for ( int row = row0; row <= row1; row++ )
@@ -2943,6 +2950,7 @@ QImage QgsWmsProvider::getLegendGraphic( double scale, bool forceRefresh )
 
   QUrl url( lurl );
 
+#if 0
   if ( !url.hasQueryItem( "SERVICE" ) )
     setQueryItem( url, "SERVICE", "WMS" );
   if ( !url.hasQueryItem( "VERSION" ) )
@@ -2957,6 +2965,7 @@ QImage QgsWmsProvider::getLegendGraphic( double scale, bool forceRefresh )
     setQueryItem( url, "LAYER", mSettings.mActiveSubLayers[0] );
   if ( !url.hasQueryItem( "STYLE" ) )
     setQueryItem( url, "STYLE", mSettings.mActiveSubStyles[0] );
+    #endif
 
   // add config parameter related to resolution
   QSettings s;

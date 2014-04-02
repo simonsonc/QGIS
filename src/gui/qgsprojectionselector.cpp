@@ -46,16 +46,16 @@ QgsProjectionSelector::QgsProjectionSelector( QWidget* parent, const char *name,
   // Get the full path name to the sqlite3 spatial reference database.
   mSrsDatabaseFileName = QgsApplication::srsDbFilePath();
 
-  lstCoordinateSystems->header()->setResizeMode( AUTHID_COLUMN, QHeaderView::Stretch );
+  lstCoordinateSystems->header()->setSectionResizeMode( AUTHID_COLUMN, QHeaderView::Stretch );
   lstCoordinateSystems->header()->resizeSection( QGIS_CRS_ID_COLUMN, 0 );
-  lstCoordinateSystems->header()->setResizeMode( QGIS_CRS_ID_COLUMN, QHeaderView::Fixed );
+  lstCoordinateSystems->header()->setSectionResizeMode( QGIS_CRS_ID_COLUMN, QHeaderView::Fixed );
 
   // Hide (internal) ID column
   lstCoordinateSystems->setColumnHidden( QGIS_CRS_ID_COLUMN, true );
 
-  lstRecent->header()->setResizeMode( AUTHID_COLUMN, QHeaderView::Stretch );
+  lstRecent->header()->setSectionResizeMode( AUTHID_COLUMN, QHeaderView::Stretch );
   lstRecent->header()->resizeSection( QGIS_CRS_ID_COLUMN, 0 );
-  lstRecent->header()->setResizeMode( QGIS_CRS_ID_COLUMN, QHeaderView::Fixed );
+  lstRecent->header()->setSectionResizeMode( QGIS_CRS_ID_COLUMN, QHeaderView::Fixed );
 
   // Hide (internal) ID column
   lstRecent->setColumnHidden( QGIS_CRS_ID_COLUMN, true );

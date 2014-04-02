@@ -89,7 +89,7 @@ void TestOpenStreetMap::download()
   QVERIFY( spy.count() != 0 );
 
   if ( download.hasError() )
-    qDebug( "ERROR: %s", download.errorString().toAscii().data() );
+    qDebug( "ERROR: %s", download.errorString().toLatin1().data() );
 }
 
 
@@ -101,7 +101,7 @@ void TestOpenStreetMap::importAndQueries()
   QgsOSMXmlImport import( xmlFilename, dbFilename );
   bool res = import.import();
   if ( import.hasError() )
-    qDebug( "XML ERR: %s", import.errorString().toAscii().data() );
+    qDebug( "XML ERR: %s", import.errorString().toLatin1().data() );
   QCOMPARE( res, true );
   QCOMPARE( import.hasError(), false );
 
@@ -110,7 +110,7 @@ void TestOpenStreetMap::importAndQueries()
   QgsOSMDatabase db( dbFilename );
   bool dbopenRes = db.open();
   if ( !db.errorString().isEmpty() )
-    qDebug( "DB ERR: %s", db.errorString().toAscii().data() );
+    qDebug( "DB ERR: %s", db.errorString().toLatin1().data() );
   QCOMPARE( dbopenRes, true );
 
   // query node
@@ -173,14 +173,14 @@ void TestOpenStreetMap::importAndQueries()
   bool exportRes1 = db.exportSpatiaLite( QgsOSMDatabase::Point, "sl_points", QStringList( "addr:postcode" ) );
   //bool exportRes = db.exportSpatiaLite( QStringList("amenity") << "name" << "highway" );
   if ( !db.errorString().isEmpty() )
-    qDebug( "EXPORT-1 ERR: %s", db.errorString().toAscii().data() );
+    qDebug( "EXPORT-1 ERR: %s", db.errorString().toLatin1().data() );
   QCOMPARE( exportRes1, true );
 
 
   bool exportRes2 = db.exportSpatiaLite( QgsOSMDatabase::Polyline, "sl_lines", QStringList( "building" ) );
   //bool exportRes2 = db.exportSpatiaLite( QStringList("amenity") << "name" << "highway" );
   if ( !db.errorString().isEmpty() )
-    qDebug( "EXPORT-2 ERR: %s", db.errorString().toAscii().data() );
+    qDebug( "EXPORT-2 ERR: %s", db.errorString().toLatin1().data() );
   QCOMPARE( exportRes2, true );
 
 
@@ -190,4 +190,4 @@ void TestOpenStreetMap::importAndQueries()
 
 QTEST_MAIN( TestOpenStreetMap )
 
-#include "moc_testopenstreetmap.cxx"
+#include "moc_testopenstreetmap.cpp"

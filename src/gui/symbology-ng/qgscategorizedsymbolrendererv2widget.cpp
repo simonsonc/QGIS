@@ -200,7 +200,7 @@ QModelIndex QgsCategorizedSymbolRendererV2Model::index( int row, int column, con
 {
   if ( hasIndex( row, column, parent ) )
   {
-    return createIndex( row, column, 0 );
+    return createIndex( row, column, (quintptr)0 );
   }
   return QModelIndex();
 }
@@ -275,7 +275,7 @@ bool QgsCategorizedSymbolRendererV2Model::dropMimeData( const QMimeData *data, Q
     // removed under 'to' so the target shifted down
     if ( rows[i] < to ) to--;
   }
-  emit dataChanged( createIndex( 0, 0, 0 ), createIndex( mRenderer->categories().size(), 0 ) );
+  emit dataChanged( createIndex( 0, 0, (quintptr)0 ), createIndex( mRenderer->categories().size(), 0 ) );
   emit rowsMoved();
   return false;
 }
@@ -312,7 +312,7 @@ void QgsCategorizedSymbolRendererV2Model::sort( int column, Qt::SortOrder order 
   {
     mRenderer->sortByLabel( order );
   }
-  emit dataChanged( createIndex( 0, 0, 0 ), createIndex( mRenderer->categories().size(), 0 ) );
+  emit dataChanged( createIndex( 0, 0, (quintptr)0 ), createIndex( mRenderer->categories().size(), 0 ) );
   QgsDebugMsg( "Done" );
 }
 

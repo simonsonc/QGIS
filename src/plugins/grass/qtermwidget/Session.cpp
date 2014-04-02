@@ -447,7 +447,7 @@ void Session::activityStateSet( int state )
 {
   if ( state == NOTIFYBELL )
   {
-    QString s; s.sprintf( "Bell in session '%s'", _nameTitle.toAscii().data() );
+    QString s; s.sprintf( "Bell in session '%s'", _nameTitle.toLatin1().data() );
 
     emit bellRequest( s );
   }
@@ -591,21 +591,21 @@ void Session::done( int exitStatus )
     QString message;
 
     if ( _shellProcess->normalExit() )
-      message.sprintf( "Session '%s' exited with status %d.", _nameTitle.toAscii().data(), exitStatus );
+      message.sprintf( "Session '%s' exited with status %d.", _nameTitle.toLatin1().data(), exitStatus );
     else if ( _shellProcess->signalled() )
     {
       if ( _shellProcess->coreDumped() )
       {
 
-        message.sprintf( "Session '%s' exited with signal %d and dumped core.", _nameTitle.toAscii().data(), _shellProcess->exitSignal() );
+        message.sprintf( "Session '%s' exited with signal %d and dumped core.", _nameTitle.toLatin1().data(), _shellProcess->exitSignal() );
       }
       else
       {
-        message.sprintf( "Session '%s' exited with signal %d.", _nameTitle.toAscii().data(), _shellProcess->exitSignal() );
+        message.sprintf( "Session '%s' exited with signal %d.", _nameTitle.toLatin1().data(), _shellProcess->exitSignal() );
       }
     }
     else
-      message.sprintf( "Session '%s' exited unexpectedly.", _nameTitle.toAscii().data() );
+      message.sprintf( "Session '%s' exited unexpectedly.", _nameTitle.toLatin1().data() );
 
     //FIXME: See comments in Session::monitorTimerDone()
 //    KNotification::event("Finished", message , QPixmap(),

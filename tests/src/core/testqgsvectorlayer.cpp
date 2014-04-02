@@ -704,4 +704,4 @@ class TestQgsVectorLayer: public QObject
 };
 
 QTEST_MAIN( TestQgsVectorLayer )
-#include "moc_testqgsvectorlayer.cxx"
+#include "moc_testqgsvectorlayer.cpp"

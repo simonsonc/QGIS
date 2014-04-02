@@ -3,6 +3,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QUrlQuery>
 
 #include "qgsnetworkaccessmanager.h"
 #include "qgsrectangle.h"
@@ -62,7 +63,9 @@ bool QgsOSMDownload::start()
   QgsNetworkAccessManager* nwam = QgsNetworkAccessManager::instance();
 
   QUrl url( mServiceUrl );
-  url.addQueryItem( "data", mQuery );
+  QUrlQuery query;
+  query.addQueryItem( "data", mQuery );
+  url.setQuery( query );
 
   QNetworkRequest request( url );
   request.setRawHeader( "User-Agent", "QGIS" );

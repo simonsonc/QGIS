@@ -7,7 +7,7 @@ raster/qgsmultibandcolorrendererwidget.cpp
 raster/qgspalettedrendererwidget.cpp
 raster/qgssinglebandgrayrendererwidget.cpp
 raster/qgssinglebandpseudocolorrendererwidget.cpp
-raster/qgsrasterhistogramwidget.cpp
+#raster/qgsrasterhistogramwidget.cpp
 
 symbology-ng/qgsbrushstylecombobox.cpp
 symbology-ng/qgscolorrampcombobox.cpp
@@ -154,7 +154,7 @@ raster/qgspalettedrendererwidget.h
 raster/qgsmultibandcolorrendererwidget.h
 raster/qgssinglebandgrayrendererwidget.h
 raster/qgssinglebandpseudocolorrendererwidget.h
-raster/qgsrasterhistogramwidget.h
+#raster/qgsrasterhistogramwidget.h
 
 symbology-ng/qgsdashspacedialog.h
 symbology-ng/qgssymbollayerv2widget.h

@@ -876,11 +876,11 @@ void QgsComposerView::mouseMoveEvent( QMouseEvent* e )
   updateRulers();
   if ( mHorizontalRuler )
   {
-    mHorizontalRuler->updateMarker( e->posF() );
+    mHorizontalRuler->updateMarker( e->localPos() );
   }
   if ( mVerticalRuler )
   {
-    mVerticalRuler->updateMarker( e->posF() );
+    mVerticalRuler->updateMarker( e->localPos() );
   }
 
   if ( mToolPanning || mMousePanning || mKeyPanning )

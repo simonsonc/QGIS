@@ -784,7 +784,7 @@ void GlobePlugin::setupProxy()
     {
       QString auth = settings.value( "/proxyUser" ).toString() + ":" + settings.value( "/proxyPassword" ).toString();
 #ifdef WIN32
-      putenv( QString( "OSGEARTH_CURL_PROXYAUTH=%1" ).arg( auth ).toAscii() );
+      putenv( QString( "OSGEARTH_CURL_PROXYAUTH=%1" ).arg( auth ).toLatin1() );
 #else
       setenv( "OSGEARTH_CURL_PROXYAUTH", auth.toStdString().c_str(), 0 );
 #endif

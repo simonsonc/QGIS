@@ -21,7 +21,7 @@
 
 #include <QStringList>
 #include <QRegExp>
-#include <QUrl>
+#include <QUrlQuery>
 
 QgsDataSourceURI::QgsDataSourceURI()
     : mSSLmode( SSLprefer )
@@ -604,7 +604,7 @@ QString QgsDataSourceURI::uri() const
 
 QByteArray QgsDataSourceURI::encodedUri() const
 {
-  QUrl url;
+  QUrlQuery url;
   foreach ( QString key, mParams.uniqueKeys() )
   {
     foreach ( QString value, mParams.values( key ) )
@@ -612,14 +612,14 @@ QByteArray QgsDataSourceURI::encodedUri() const
       url.addQueryItem( key, value );
     }
   }
-  return url.encodedQuery();
+  return url.query().toLocal8Bit();
 }
 
 void QgsDataSourceURI::setEncodedUri( const QByteArray & uri )
 {
   mParams.clear();
-  QUrl url;
-  url.setEncodedQuery( uri );
+  QUrlQuery url;
+  url.setQuery( uri );
   QPair<QString, QString> item;
   foreach ( item, url.queryItems() )
   {
@@ -629,7 +629,7 @@ void QgsDataSourceURI::setEncodedUri( const QByteArray & uri )
 
 void QgsDataSourceURI::setEncodedUri( const QString & uri )
 {
-  setEncodedUri( uri.toAscii() );
+  setEncodedUri( uri.toLatin1() );
 }
 
 QString QgsDataSourceURI::quotedTablename() const

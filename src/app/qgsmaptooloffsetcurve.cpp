@@ -191,7 +191,7 @@ void QgsMapToolOffsetCurve::canvasMoveEvent( QMouseEvent * e )
   if ( mDistanceItem )
   {
     mDistanceItem->show();
-    mDistanceItem->setPos( e->posF() + QPointF( 10, 10 ) );
+    mDistanceItem->setPos( e->localPos() + QPointF( 10, 10 ) );
   }
 
   mGeometryModified = true;

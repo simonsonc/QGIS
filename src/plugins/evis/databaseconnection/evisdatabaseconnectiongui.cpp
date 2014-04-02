@@ -114,11 +114,13 @@ void eVisDatabaseConnectionGui::drawNewVectorLayer( QString layerName, QString x
     //the last file in the list is always the newest
     mTempOutputFileList->last( )->open( );
     QUrl url = QUrl::fromLocalFile( mTempOutputFileList->last()->fileName() );
+    #if 0
     url.addQueryItem( "delimiter", "\t" );
     url.addQueryItem( "delimiterType", "regexp" );
     url.addQueryItem( "xField", xCoordinate );
     url.addQueryItem( "yField", yCoordinate );
     emit drawVectorLayer( QString::fromAscii( url.toEncoded() ), layerName, "delimitedtext" );
+    #endif
     mTempOutputFileList->last( )->close( );
   }
 }

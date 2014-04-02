@@ -104,8 +104,10 @@ QgsWFSProvider::QgsWFSProvider( const QString& uri )
   {
     QString bkUri = dataSourceUri();
     QUrl typeDetectionUri( uri );
+    #if 0
     typeDetectionUri.removeQueryItem( "BBOX" );
     typeDetectionUri.addQueryItem( "MAXFEATURES", "1" );
+    #endif
     setDataSourceUri( typeDetectionUri.toString() );
     reloadData();
     setDataSourceUri( bkUri );
@@ -751,9 +753,11 @@ int QgsWFSProvider::describeFeatureTypeGET( const QString& uri, QString& geometr
   mNetworkRequestFinished = false;
 
   QUrl describeFeatureUrl( uri );
+  #if 0
   describeFeatureUrl.removeQueryItem( "SRSNAME" );
   describeFeatureUrl.removeQueryItem( "REQUEST" );
   describeFeatureUrl.addQueryItem( "REQUEST", "DescribeFeatureType" );
+  #endif
   QNetworkRequest request( describeFeatureUrl.toString() );
   QNetworkReply* reply = QgsNetworkAccessManager::instance()->get( request );
 
@@ -872,7 +876,7 @@ int QgsWFSProvider::readAttributesFromSchema( QDomDocument& schemaDoc, QString& 
 
     //find <complexType name=complexTypeType
     QDomNodeList complexTypeNodeList = schemaElement.elementsByTagNameNS( "http://www.w3.org/2001/XMLSchema", "complexType" );
-    for ( uint i = 0; i < complexTypeNodeList.length(); ++i )
+    for ( uint i = 0; i < (uint)complexTypeNodeList.length(); ++i )
     {
       if ( complexTypeNodeList.at( i ).toElement().attribute( "name" ) == complexTypeType )
       {
@@ -896,7 +900,7 @@ int QgsWFSProvider::readAttributesFromSchema( QDomDocument& schemaDoc, QString& 
 
   bool foundGeometryAttribute = false;
 
-  for ( uint i = 0; i < attributeNodeList.length(); ++i )
+  for ( uint i = 0; i < (uint)attributeNodeList.length(); ++i )
   {
     QDomElement attributeElement = attributeNodeList.at( i ).toElement();
     //attribute name
@@ -1338,6 +1342,7 @@ bool QgsWFSProvider::sendTransactionDocument( const QDomDocument& doc, QDomDocum
   mNetworkRequestFinished = false;
 
   QUrl typeDetectionUri( dataSourceUri() );
+  #if 0
   typeDetectionUri.removeQueryItem( "REQUEST" );
   typeDetectionUri.removeQueryItem( "TYPENAME" );
   typeDetectionUri.removeQueryItem( "BBOX" );
@@ -1346,6 +1351,7 @@ bool QgsWFSProvider::sendTransactionDocument( const QDomDocument& doc, QDomDocum
   typeDetectionUri.removeQueryItem( "PROPERTYNAME" );
   typeDetectionUri.removeQueryItem( "MAXFEATURES" );
   typeDetectionUri.removeQueryItem( "OUTPUTFORMAT" );
+  #endif
   QString serverUrl = typeDetectionUri.toString();
 
   QNetworkRequest request( serverUrl );

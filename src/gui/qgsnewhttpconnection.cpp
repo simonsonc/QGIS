@@ -185,13 +185,18 @@ void QgsNewHttpConnection::accept()
   }
 
   QUrl url( txtUrl->text().trimmed() );
+  #if 0
   const QList< QPair<QByteArray, QByteArray> > &items = url.encodedQueryItems();
+  #endif
   QHash< QString, QPair<QByteArray, QByteArray> > params;
+  #if 0
   for ( QList< QPair<QByteArray, QByteArray> >::const_iterator it = items.constBegin(); it != items.constEnd(); ++it )
   {
     params.insert( QString( it->first ).toUpper(), *it );
   }
+  #endif
 
+#if 0
   if ( params["SERVICE"].second.toUpper() == "WMS" ||
        params["SERVICE"].second.toUpper() == "WFS" ||
        params["SERVICE"].second.toUpper() == "WCS" )
@@ -205,6 +210,7 @@ void QgsNewHttpConnection::accept()
   {
     url.setEncodedPath( "/" );
   }
+  #endif
 
   settings.setValue( key + "/url", url.toString() );
   if ( mBaseKey == "/Qgis/connections-wms/" || mBaseKey == "/Qgis/connections-wcs/" )

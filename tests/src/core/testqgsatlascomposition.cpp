@@ -398,4 +398,4 @@ void TestQgsAtlasComposition::test_signals()
 }
 
 QTEST_MAIN( TestQgsAtlasComposition )
-#include "moc_testqgsatlascomposition.cxx"
+#include "moc_testqgsatlascomposition.cpp"

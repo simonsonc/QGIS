@@ -248,6 +248,7 @@ QString QgsPostgresProvider::storageType() const
 }
 
 
+#if 0
 static bool operator<( const QVariant &a, const QVariant &b )
 {
   if ( a.isNull() || b.isNull() )
@@ -324,6 +325,7 @@ static bool operator<( const QVariant &a, const QVariant &b )
 
   return a.canConvert( QVariant::String ) && b.canConvert( QVariant::String ) && a.toString() < b.toString();
 }
+#endif
 
 
 QgsFeatureIterator QgsPostgresProvider::getFeatures( const QgsFeatureRequest& request )

@@ -117,7 +117,7 @@ void QgsShortcutsManager::registerAllChildrenActions( QObject* object )
     if ( child->inherits( "QAction" ) )
     {
       QAction* a = qobject_cast<QAction*>( child );
-      registerAction( a, a->shortcut() );
+      registerAction( a, a->shortcut().toString() );
     }
   }
 }

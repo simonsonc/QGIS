@@ -125,7 +125,7 @@ class QgsPoint
         sipRes = Py_BuildValue("d",sipCpp->y());
     } else {
         QString msg = QString("Bad index: %1").arg(a0);
-        PyErr_SetString(PyExc_IndexError, msg.toAscii().constData());
+        PyErr_SetString(PyExc_IndexError, msg.toLatin1().constData());
     }
 %End
 

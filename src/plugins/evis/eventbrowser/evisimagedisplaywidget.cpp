@@ -91,9 +91,9 @@ eVisImageDisplayWidget::eVisImageDisplayWidget( QWidget* parent, Qt::WindowFlags
 
   //setup http connection
   mHttpBuffer = new QBuffer( );
-  mHttpConnection = new QHttp( );
+  //mHttpConnection = new QHttp( );
   mHttpBuffer->open( QBuffer::ReadWrite );
-  connect( mHttpConnection, SIGNAL( requestFinished( int, bool ) ), this, SLOT( displayUrlImage( int, bool ) ) );
+  //connect( mHttpConnection, SIGNAL( requestFinished( int, bool ) ), this, SLOT( displayUrlImage( int, bool ) ) );
 
   //initialize remaining variables
   mScaleByHeight = false;
@@ -108,7 +108,7 @@ eVisImageDisplayWidget::~eVisImageDisplayWidget()
   delete mImageLabel;
   delete mImage;
   delete mHttpBuffer;
-  delete mHttpConnection;
+  //delete mHttpConnection;
   delete pbtnZoomIn;
   delete pbtnZoomOut;
   delete pbtnZoomFull;
@@ -186,8 +186,8 @@ void eVisImageDisplayWidget::displayImage( )
 void eVisImageDisplayWidget::displayUrlImage( QString url )
 {
   QUrl myUrl( url );
-  mHttpConnection->setHost( myUrl.host( ) );
-  mCurrentHttpImageRequestId = mHttpConnection->get( myUrl.path( ).replace( "\\", "/" ), mHttpBuffer );
+  //mHttpConnection->setHost( myUrl.host( ) );
+  //mCurrentHttpImageRequestId = mHttpConnection->get( myUrl.path( ).replace( "\\", "/" ), mHttpBuffer );
 }
 
 /**

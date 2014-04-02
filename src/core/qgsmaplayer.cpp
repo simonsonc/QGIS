@@ -190,7 +190,7 @@ bool QgsMapLayer::readLayerXML( const QDomElement& layerElement )
   }
   else if ( provider == "delimitedtext" )
   {
-    QUrl urlSource = QUrl::fromEncoded( mDataSource.toAscii() );
+    QUrl urlSource = QUrl::fromEncoded( mDataSource.toLatin1() );
 
     if ( !mDataSource.startsWith( "file:" ) )
     {
@@ -200,8 +200,8 @@ bool QgsMapLayer::readLayerXML( const QDomElement& layerElement )
     }
 
     QUrl urlDest = QUrl::fromLocalFile( QgsProject::instance()->readPath( urlSource.toLocalFile() ) );
-    urlDest.setQueryItems( urlSource.queryItems() );
-    mDataSource = QString::fromAscii( urlDest.toEncoded() );
+    urlDest.setQuery( urlSource.query() );
+    mDataSource = QString::fromLatin1( urlDest.toEncoded() );
   }
   else if ( provider == "wms" )
   {
@@ -457,10 +457,10 @@ bool QgsMapLayer::writeLayerXML( QDomElement& layerElement, QDomDocument& docume
   }
   else if ( vlayer && vlayer->providerType() == "delimitedtext" )
   {
-    QUrl urlSource = QUrl::fromEncoded( src.toAscii() );
+    QUrl urlSource = QUrl::fromEncoded( src.toLatin1() );
     QUrl urlDest = QUrl::fromLocalFile( QgsProject::instance()->writePath( urlSource.toLocalFile() ) );
-    urlDest.setQueryItems( urlSource.queryItems() );
-    src = QString::fromAscii( urlDest.toEncoded() );
+    urlDest.setQuery( urlSource.query() );
+    src = QString::fromLatin1( urlDest.toEncoded() );
   }
   else
   {
@@ -1025,7 +1025,7 @@ QString QgsMapLayer::saveNamedStyle( const QString &theURI, bool &theResultFlag 
   }
   else if ( vlayer && vlayer->providerType() == "delimitedtext" )
   {
-    filename = QUrl::fromEncoded( theURI.toAscii() ).toLocalFile();
+    filename = QUrl::fromEncoded( theURI.toLatin1() ).toLocalFile();
   }
   else
   {
@@ -1203,7 +1203,7 @@ QString QgsMapLayer::saveSldStyle( const QString &theURI, bool &theResultFlag )
   }
   else if ( vlayer->providerType() == "delimitedtext" )
   {
-    filename = QUrl::fromEncoded( theURI.toAscii() ).toLocalFile();
+    filename = QUrl::fromEncoded( theURI.toLatin1() ).toLocalFile();
   }
   else
   {

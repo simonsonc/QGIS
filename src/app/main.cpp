@@ -29,7 +29,9 @@
 #include <QString>
 #include <QStringList>
 #include <QStyle>
+#if 0
 #include <QPlastiqueStyle>
+#endif
 #include <QTranslator>
 #include <QImageReader>
 #include <QMessageBox>
@@ -410,7 +412,7 @@ int main( int argc, char *argv[] )
 
   // Set up the custom qWarning/qDebug custom handler
 #ifndef ANDROID
-  qInstallMsgHandler( myMessageOutput );
+  //qInstallMsgHandler( myMessageOutput );
 #endif
 
 #if (defined(linux) && !defined(ANDROID)) || defined(__FreeBSD__)
@@ -747,6 +749,7 @@ int main( int argc, char *argv[] )
   QgsFontUtils::loadStandardTestFonts( QStringList() << "Roman" << "Bold" );
 #endif
 
+#if 0
   // Set the application style.  If it's not set QT will use the platform style except on Windows
   // as it looks really ugly so we use QPlastiqueStyle.
   QString style = mySettings.value( "/qgis/style" ).toString();
@@ -755,6 +758,7 @@ int main( int argc, char *argv[] )
 #ifdef Q_WS_WIN
   else
     QApplication::setStyle( new QPlastiqueStyle );
+#endif
 #endif
 
   /* Translation file for QGIS.

@@ -873,5 +873,5 @@ class TestQgsExpression: public QObject
 
 QTEST_MAIN( TestQgsExpression )
 
-#include "moc_testqgsexpression.cxx"
+#include "moc_testqgsexpression.cpp"
 

@@ -383,7 +383,7 @@ bool QgsCoordinateReferenceSystem::loadFromDb( QString db, QString expression, Q
     {
       OSRDestroySpatialReference( mCRS );
       mCRS = OSRNewSpatialReference( NULL );
-      mIsValidFlag = OSRSetFromUserInput( mCRS, mAuthId.toLower().toAscii() ) == OGRERR_NONE;
+      mIsValidFlag = OSRSetFromUserInput( mCRS, mAuthId.toLower().toLatin1() ) == OGRERR_NONE;
       setMapUnits();
     }
 
@@ -1758,9 +1758,9 @@ int QgsCoordinateReferenceSystem::syncDb()
       continue;
 
     sql = QString( "SELECT parameters,noupdate FROM tbl_srs WHERE auth_name='EPSG' AND auth_id='%1'" ).arg( it.key() );
-    if ( sqlite3_prepare( database, sql.toAscii(), sql.size(), &select, &tail ) != SQLITE_OK )
+    if ( sqlite3_prepare( database, sql.toLatin1(), sql.size(), &select, &tail ) != SQLITE_OK )
     {
-      qCritical( "Could not prepare: %s [%s]\n", sql.toAscii().constData(), sqlite3_errmsg( database ) );
+      qCritical( "Could not prepare: %s [%s]\n", sql.toLatin1().constData(), sqlite3_errmsg( database ) );
       continue;
     }
 
@@ -1867,7 +1867,7 @@ int QgsCoordinateReferenceSystem::syncDb()
 
 #if !defined(PJ_VERSION) || PJ_VERSION!=470
   sql = QString( "select auth_name,auth_id,parameters from tbl_srs WHERE auth_name<>'EPSG' AND NOT deprecated AND NOT noupdate" );
-  if ( sqlite3_prepare( database, sql.toAscii(), sql.size(), &select, &tail ) == SQLITE_OK )
+  if ( sqlite3_prepare( database, sql.toLatin1(), sql.size(), &select, &tail ) == SQLITE_OK )
   {
     while ( sqlite3_step( select ) == SQLITE_ROW )
     {
@@ -1876,11 +1876,11 @@ int QgsCoordinateReferenceSystem::syncDb()
       const char *params    = ( const char * ) sqlite3_column_text( select, 2 );
 
       QString input = QString( "+init=%1:%2" ).arg( QString( auth_name ).toLower() ).arg( auth_id );
-      projPJ pj = pj_init_plus( input.toAscii() );
+      projPJ pj = pj_init_plus( input.toLatin1() );
       if ( !pj )
       {
         input = QString( "+init=%1:%2" ).arg( QString( auth_name ).toUpper() ).arg( auth_id );
-        pj = pj_init_plus( input.toAscii() );
+        pj = pj_init_plus( input.toLatin1() );
       }
 
       if ( pj )
@@ -2119,7 +2119,7 @@ bool QgsCoordinateReferenceSystem::syncDatumTransform( const QString& dbPath )
     sqlite3_stmt *stmt;
     QString cOpCode;
     QString sql = QString( "SELECT coord_op_code FROM tbl_datum_transform WHERE coord_op_code=%1" ).arg( v[ idxid ] );
-    int prepareRes = sqlite3_prepare( db, sql.toAscii(), sql.size(), &stmt, NULL );
+    int prepareRes = sqlite3_prepare( db, sql.toLatin1(), sql.size(), &stmt, NULL );
     if ( prepareRes != SQLITE_OK )
       continue;
 

@@ -22,7 +22,7 @@ class QgsPalGeometry : public PalGeometry
         , mWordSpacing( wordSpacing )
         , mCurvedLabeling( curvedLabeling )
     {
-      mStrId = FID_TO_STRING( mId ).toAscii();
+      mStrId = FID_TO_STRING( mId ).toLatin1();
       mDefinedFont = QFont();
     }
 

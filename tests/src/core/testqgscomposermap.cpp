@@ -273,4 +273,4 @@ void TestQgsComposerMap::worldFileGeneration()
 }
 
 QTEST_MAIN( TestQgsComposerMap )
-#include "moc_testqgscomposermap.cxx"
+#include "moc_testqgscomposermap.cpp"

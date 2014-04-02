@@ -24,6 +24,7 @@
 #include "qgscoordinatereferencesystem.h"
 
 #include <QUrl>
+#include <QUrlQuery>
 #include <QRegExp>
 
 
@@ -38,9 +39,10 @@ QgsMemoryProvider::QgsMemoryProvider( QString uri )
   // (ie, just 'point', 'line', 'polygon')
   QUrl url = QUrl::fromEncoded( uri.toUtf8() );
   QString geometry;
-  if ( url.hasQueryItem( "geometry" ) )
+  QUrlQuery query( url.query() );
+  if ( query.hasQueryItem( "geometry" ) )
   {
-    geometry = url.queryItemValue( "geometry" );
+    geometry = query.queryItemValue( "geometry" );
   }
   else
   {
@@ -63,9 +65,9 @@ QgsMemoryProvider::QgsMemoryProvider( QString uri )
   else
     mWkbType = QGis::WKBUnknown;
 
-  if ( url.hasQueryItem( "crs" ) )
+  if ( query.hasQueryItem( "crs" ) )
   {
-    QString crsDef = url.queryItemValue( "crs" );
+    QString crsDef = query.queryItemValue( "crs" );
     mCrs.createFromString( crsDef );
   }
 
@@ -100,7 +102,7 @@ QgsMemoryProvider::QgsMemoryProvider( QString uri )
   << QgsVectorDataProvider::NativeType( tr( "Text, unlimited length (text)" ), "text", QVariant::String, -1, -1, -1, -1 )
   ;
 
-  if ( url.hasQueryItem( "field" ) )
+  if ( query.hasQueryItem( "field" ) )
   {
     QList<QgsField> attributes;
     QRegExp reFieldDef( "\\:"
@@ -109,7 +111,7 @@ QgsMemoryProvider::QgsMemoryProvider( QString uri )
                         "(?:\\,(\\d+))?"                // precision
                         "\\))?"
                         "$", Qt::CaseInsensitive );
-    QStringList fields = url.allQueryItemValues( "field" );
+    QStringList fields = query.allQueryItemValues( "field" );
     for ( int i = 0; i < fields.size(); i++ )
     {
       QString name = fields.at( i );
@@ -158,7 +160,7 @@ QgsMemoryProvider::QgsMemoryProvider( QString uri )
     addAttributes( attributes );
   }
 
-  if ( url.hasQueryItem( "index" ) && url.queryItemValue( "index" ) == "yes" )
+  if ( query.hasQueryItem( "index" ) && query.queryItemValue( "index" ) == "yes" )
   {
     createSpatialIndex();
   }
@@ -203,7 +205,8 @@ QString QgsMemoryProvider::dataSourceUri() const
       geometry = "";
       break;
   }
-  uri.addQueryItem( "geometry", geometry );
+  QUrlQuery query;
+  query.addQueryItem( "geometry", geometry );
 
   if ( mCrs.isValid() )
   {
@@ -225,11 +228,11 @@ QString QgsMemoryProvider::dataSourceUri() const
         crsDef = QString( "wkt:%1" ).arg( mCrs.toWkt() );
       }
     }
-    uri.addQueryItem( "crs", crsDef );
+    query.addQueryItem( "crs", crsDef );
   }
   if ( mSpatialIndex )
   {
-    uri.addQueryItem( "index", "yes" );
+    query.addQueryItem( "index", "yes" );
   }
 
   QgsAttributeList attrs = const_cast<QgsMemoryProvider *>( this )->attributeIndexes();
@@ -238,7 +241,7 @@ QString QgsMemoryProvider::dataSourceUri() const
     QgsField field = mFields[attrs[i]];
     QString fieldDef = field.name();
     fieldDef.append( QString( ":%2(%3,%4)" ).arg( field.typeName() ).arg( field.length() ).arg( field.precision() ) );
-    uri.addQueryItem( "field", fieldDef );
+    query.addQueryItem( "field", fieldDef );
   }
 
   return QString( uri.toEncoded() );

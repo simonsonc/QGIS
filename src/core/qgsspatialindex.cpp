@@ -241,7 +241,9 @@ QList<QgsFeatureId> QgsSpatialIndex::nearestNeighbor( QgsPoint point, int neighb
   return list;
 }
 
+#if 0
 int QgsSpatialIndex::refs() const
 {
   return d->ref;
 }
+#endif

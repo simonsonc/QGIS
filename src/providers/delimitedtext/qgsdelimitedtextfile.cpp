@@ -27,6 +27,7 @@
 #include <QStringList>
 #include <QRegExp>
 #include <QUrl>
+#include <QUrlQuery>
 
 static QString DefaultFieldName( "field_%1" );
 static QRegExp InvalidFieldRegexp( "^\\d*(\\.\\d*)?$" );
@@ -106,7 +107,7 @@ bool QgsDelimitedTextFile::open()
       mStream = new QTextStream( mFile );
       if ( ! mEncoding.isEmpty() )
       {
-        QTextCodec *codec =  QTextCodec::codecForName( mEncoding.toAscii() );
+        QTextCodec *codec =  QTextCodec::codecForName( mEncoding.toLatin1() );
         mStream->setCodec( codec );
       }
       if ( mUseWatcher )
@@ -137,7 +138,7 @@ void QgsDelimitedTextFile::resetDefinition()
 // Extract the provider definition from the url
 bool QgsDelimitedTextFile::setFromUrl( QString url )
 {
-  QUrl qurl = QUrl::fromEncoded( url.toAscii() );
+  QUrl qurl = QUrl::fromEncoded( url.toLatin1() );
   return setFromUrl( qurl );
 }
 
@@ -150,16 +151,18 @@ bool QgsDelimitedTextFile::setFromUrl( const QUrl &url )
   // Extract the file name
   setFileName( url.toLocalFile() );
 
+  const QUrlQuery query( url.query() );
+
   // Extract the encoding
-  if ( url.hasQueryItem( "encoding" ) )
+  if ( query.hasQueryItem( "encoding" ) )
   {
-    mEncoding = url.queryItemValue( "encoding" );
+    mEncoding = query.queryItemValue( "encoding" );
   }
 
   //
-  if ( url.hasQueryItem( "useWatcher" ) )
+  if ( query.hasQueryItem( "useWatcher" ) )
   {
-    mUseWatcher = ! url.queryItemValue( "useWatcher" ).toUpper().startsWith( 'N' );;
+    mUseWatcher = ! query.queryItemValue( "useWatcher" ).toUpper().startsWith( 'N' );;
   }
 
   // The default type is csv, to be consistent with the
@@ -174,12 +177,12 @@ bool QgsDelimitedTextFile::setFromUrl( const QUrl &url )
 
   // Prefer simple "type" for delimiter type, but include delimiterType
   // as optional name  for backwards compatibility
-  if ( url.hasQueryItem( "type" ) || url.hasQueryItem( "delimiterType" ) )
+  if ( query.hasQueryItem( "type" ) || query.hasQueryItem( "delimiterType" ) )
   {
-    if ( url.hasQueryItem( "type" ) )
-      type = url.queryItemValue( "type" );
-    else if ( url.hasQueryItem( "delimiterType" ) )
-      type = url.queryItemValue( "delimiterType" );
+    if ( query.hasQueryItem( "type" ) )
+      type = query.queryItemValue( "type" );
+    else if ( query.hasQueryItem( "delimiterType" ) )
+      type = query.queryItemValue( "delimiterType" );
 
     // Support for previous version of Qgs - plain chars had
     // quote characters ' or "
@@ -195,37 +198,37 @@ bool QgsDelimitedTextFile::setFromUrl( const QUrl &url )
       escape = "";
     }
   }
-  if ( url.hasQueryItem( "delimiter" ) )
+  if ( query.hasQueryItem( "delimiter" ) )
   {
-    delimiter = url.queryItemValue( "delimiter" );
+    delimiter = query.queryItemValue( "delimiter" );
   }
-  if ( url.hasQueryItem( "quote" ) )
+  if ( query.hasQueryItem( "quote" ) )
   {
-    quote = url.queryItemValue( "quote" );
+    quote = query.queryItemValue( "quote" );
   }
-  if ( url.hasQueryItem( "escape" ) )
+  if ( query.hasQueryItem( "escape" ) )
   {
-    escape = url.queryItemValue( "escape" );
+    escape = query.queryItemValue( "escape" );
   }
-  if ( url.hasQueryItem( "skipLines" ) )
+  if ( query.hasQueryItem( "skipLines" ) )
   {
-    mSkipLines = url.queryItemValue( "skipLines" ).toInt();
+    mSkipLines = query.queryItemValue( "skipLines" ).toInt();
   }
-  if ( url.hasQueryItem( "useHeader" ) )
+  if ( query.hasQueryItem( "useHeader" ) )
   {
-    mUseHeader = ! url.queryItemValue( "useHeader" ).toUpper().startsWith( 'N' );
+    mUseHeader = ! query.queryItemValue( "useHeader" ).toUpper().startsWith( 'N' );
   }
-  if ( url.hasQueryItem( "skipEmptyFields" ) )
+  if ( query.hasQueryItem( "skipEmptyFields" ) )
   {
-    mDiscardEmptyFields = ! url.queryItemValue( "skipEmptyFields" ).toUpper().startsWith( 'N' );
+    mDiscardEmptyFields = ! query.queryItemValue( "skipEmptyFields" ).toUpper().startsWith( 'N' );
   }
-  if ( url.hasQueryItem( "trimFields" ) )
+  if ( query.hasQueryItem( "trimFields" ) )
   {
-    mTrimFields = ! url.queryItemValue( "trimFields" ).toUpper().startsWith( 'N' );;
+    mTrimFields = ! query.queryItemValue( "trimFields" ).toUpper().startsWith( 'N' );;
   }
-  if ( url.hasQueryItem( "maxFields" ) )
+  if ( query.hasQueryItem( "maxFields" ) )
   {
-    mMaxFields = url.queryItemValue( "maxFields" ).toInt();
+    mMaxFields = query.queryItemValue( "maxFields" ).toInt();
   }
 
   QgsDebugMsg( "Delimited text file is: " + mFileName );
@@ -263,46 +266,47 @@ bool QgsDelimitedTextFile::setFromUrl( const QUrl &url )
 QUrl QgsDelimitedTextFile::url()
 {
   QUrl url = QUrl::fromLocalFile( mFileName );
+  QUrlQuery query;
   if ( mEncoding != "UTF-8" )
   {
-    url.addQueryItem( "encoding", mEncoding );
+    query.addQueryItem( "encoding", mEncoding );
   }
 
   if ( !mUseWatcher )
   {
-    url.addQueryItem( "useWatcher", "no" );
+    query.addQueryItem( "useWatcher", "no" );
   }
 
-  url.addQueryItem( "type", type() );
+  query.addQueryItem( "type", type() );
   if ( mType == DelimTypeRegexp )
   {
-    url.addQueryItem( "delimiter", mDelimRegexp.pattern() );
+    query.addQueryItem( "delimiter", mDelimRegexp.pattern() );
   }
   if ( mType == DelimTypeCSV )
   {
-    if ( mDelimChars != "," ) url.addQueryItem( "delimiter", encodeChars( mDelimChars ) );
-    if ( mQuoteChar != "\"" ) url.addQueryItem( "quote", encodeChars( mQuoteChar ) );
-    if ( mEscapeChar != "\"" ) url.addQueryItem( "escape", encodeChars( mEscapeChar ) );
+    if ( mDelimChars != "," ) query.addQueryItem( "delimiter", encodeChars( mDelimChars ) );
+    if ( mQuoteChar != "\"" ) query.addQueryItem( "quote", encodeChars( mQuoteChar ) );
+    if ( mEscapeChar != "\"" ) query.addQueryItem( "escape", encodeChars( mEscapeChar ) );
   }
   if ( mSkipLines > 0 )
   {
-    url.addQueryItem( "skipLines", QString::number( mSkipLines ) );
+    query.addQueryItem( "skipLines", QString::number( mSkipLines ) );
   }
   if ( ! mUseHeader )
   {
-    url.addQueryItem( "useHeader", "No" );
+    query.addQueryItem( "useHeader", "No" );
   }
   if ( mTrimFields )
   {
-    url.addQueryItem( "trimFields", "Yes" );
+    query.addQueryItem( "trimFields", "Yes" );
   }
   if ( mDiscardEmptyFields && mType != DelimTypeWhitespace )
   {
-    url.addQueryItem( "skipEmptyFields", "Yes" );
+    query.addQueryItem( "skipEmptyFields", "Yes" );
   }
   if ( mMaxFields > 0 )
   {
-    url.addQueryItem( "maxFields", QString::number( mMaxFields ) );
+    query.addQueryItem( "maxFields", QString::number( mMaxFields ) );
   }
   return url;
 }

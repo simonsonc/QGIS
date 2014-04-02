@@ -24,7 +24,7 @@ file(MAKE_DIRECTORY ${QGIS_OUTPUT_DIRECTORY}/i18n)
 
 FILE (GLOB TS_FILES *.ts)
 
-ADD_TRANSLATION_FILES (QM_FILES ${TS_FILES})
+qt5_add_translation (QM_FILES ${TS_FILES})
 
 # creating a custom target is needed to make the files build
 # "ALL" means that it will be run by default

@@ -99,7 +99,7 @@ void QgsMapToolAnnotation::canvasPressEvent( QMouseEvent * e )
   QgsAnnotationItem* sItem = selectedItem();
   if ( sItem )
   {
-    mCurrentMoveAction = sItem->moveActionForPosition( e->posF() );
+    mCurrentMoveAction = sItem->moveActionForPosition( e->localPos() );
     if ( mCurrentMoveAction != QgsAnnotationItem::NoAction )
     {
       return;
@@ -110,7 +110,7 @@ void QgsMapToolAnnotation::canvasPressEvent( QMouseEvent * e )
   {
     //select a new item if there is one at this position
     mCanvas->scene()->clearSelection();
-    QgsAnnotationItem* existingItem = itemAtPos( e->posF() );
+    QgsAnnotationItem* existingItem = itemAtPos( e->localPos() );
     if ( existingItem )
     {
       existingItem->setSelected( true );
@@ -163,11 +163,11 @@ void QgsMapToolAnnotation::canvasMoveEvent( QMouseEvent * e )
     {
       if ( sItem->mapPositionFixed() )
       {
-        sItem->setOffsetFromReferencePoint( sItem->offsetFromReferencePoint() + ( e->posF() - mLastMousePosition ) );
+        sItem->setOffsetFromReferencePoint( sItem->offsetFromReferencePoint() + ( e->localPos() - mLastMousePosition ) );
       }
       else
       {
-        QPointF newCanvasPos = sItem->pos() + ( e->posF() - mLastMousePosition );
+        QPointF newCanvasPos = sItem->pos() + ( e->localPos() - mLastMousePosition );
         sItem->setMapPosition( toMapCoordinates( newCanvasPos.toPoint() ) );
       }
       sItem->update();
@@ -185,25 +185,25 @@ void QgsMapToolAnnotation::canvasMoveEvent( QMouseEvent * e )
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameRightDown ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameRightUp )
       {
-        xmax += e->posF().x() - mLastMousePosition.x();
+        xmax += e->localPos().x() - mLastMousePosition.x();
       }
       if ( mCurrentMoveAction == QgsAnnotationItem::ResizeFrameLeft ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameLeftDown ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameLeftUp )
       {
-        xmin += e->posF().x() - mLastMousePosition.x();
+        xmin += e->localPos().x() - mLastMousePosition.x();
       }
       if ( mCurrentMoveAction == QgsAnnotationItem::ResizeFrameUp ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameLeftUp ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameRightUp )
       {
-        ymin += e->posF().y() - mLastMousePosition.y();
+        ymin += e->localPos().y() - mLastMousePosition.y();
       }
       if ( mCurrentMoveAction == QgsAnnotationItem::ResizeFrameDown ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameLeftDown ||
            mCurrentMoveAction == QgsAnnotationItem::ResizeFrameRightDown )
       {
-        ymax += e->posF().y() - mLastMousePosition.y();
+        ymax += e->localPos().y() - mLastMousePosition.y();
       }
 
       //switch min / max if necessary
@@ -224,18 +224,18 @@ void QgsMapToolAnnotation::canvasMoveEvent( QMouseEvent * e )
   }
   else if ( sItem )
   {
-    QgsAnnotationItem::MouseMoveAction moveAction = sItem->moveActionForPosition( e->posF() );
+    QgsAnnotationItem::MouseMoveAction moveAction = sItem->moveActionForPosition( e->localPos() );
     if ( mCanvas )
     {
       mCanvas->setCursor( QCursor( sItem->cursorShapeForAction( moveAction ) ) );
     }
   }
-  mLastMousePosition = e->posF();
+  mLastMousePosition = e->localPos();
 }
 
 void QgsMapToolAnnotation::canvasDoubleClickEvent( QMouseEvent * e )
 {
-  QgsAnnotationItem* item = itemAtPos( e->posF() );
+  QgsAnnotationItem* item = itemAtPos( e->localPos() );
   if ( !item )
   {
     return;

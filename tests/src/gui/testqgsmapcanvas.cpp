@@ -71,7 +71,7 @@ void TestQgsMapCanvas::testMapRendererInteraction()
   QCOMPARE( crs1.isValid(), true );
   QSignalSpy spy4( mCanvas, SIGNAL( destinationCrsChanged() ) );
   mr->setDestinationCrs( crs1 );
-  qDebug( " crs %s vs %s", mCanvas->mapSettings().destinationCrs().authid().toAscii().data(), crs1.authid().toAscii().data() );
+  qDebug( " crs %s vs %s", mCanvas->mapSettings().destinationCrs().authid().toLatin1().data(), crs1.authid().toLatin1().data() );
   QCOMPARE( mCanvas->mapSettings().destinationCrs(), crs1 );
   QCOMPARE( mr->destinationCrs(), crs1 );
   QCOMPARE( spy4.count(), 1 );
@@ -89,4 +89,4 @@ void TestQgsMapCanvas::testMapRendererInteraction()
 
 
 QTEST_MAIN( TestQgsMapCanvas )
-#include "moc_testqgsmapcanvas.cxx"
+#include "moc_testqgsmapcanvas.cpp"

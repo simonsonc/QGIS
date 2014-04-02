@@ -719,7 +719,7 @@ QWidget* QgsAttributeEditor::createAttributeEditor( QWidget* parent, QWidget* ed
         }
 
         synchronized =  connect( relay, rSig, myWidget, wSlot );
-        synchronized &= connect( myWidget, wSig, relay, rSlot );
+        synchronized &= (bool)connect( myWidget, wSig, relay, rSlot );
 
         // store list of proxies in relay
         relay->appendProxy( myWidget );

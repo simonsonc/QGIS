@@ -209,9 +209,9 @@ void QgsUndoWidget::setupUi( QDockWidget *UndoWidget )
 
 void QgsUndoWidget::retranslateUi( QDockWidget *UndoWidget )
 {
-  UndoWidget->setWindowTitle( QApplication::translate( "UndoWidget", "Undo/Redo", 0, QApplication::UnicodeUTF8 ) );
-  undoButton->setText( QApplication::translate( "UndoWidget", "Undo", 0, QApplication::UnicodeUTF8 ) );
-  redoButton->setText( QApplication::translate( "UndoWidget", "Redo", 0, QApplication::UnicodeUTF8 ) );
+  UndoWidget->setWindowTitle( QApplication::translate( "UndoWidget", "Undo/Redo", 0 ) );
+  undoButton->setText( QApplication::translate( "UndoWidget", "Undo", 0 ) );
+  redoButton->setText( QApplication::translate( "UndoWidget", "Redo", 0 ) );
   Q_UNUSED( UndoWidget );
 }
 

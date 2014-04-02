@@ -84,7 +84,7 @@ bool QgsImageWarper::createDestinationDataset(
     return false;
   }
   char **papszOptions = NULL;
-  papszOptions = CSLSetNameValue( papszOptions, "COMPRESS", compression.toAscii() );
+  papszOptions = CSLSetNameValue( papszOptions, "COMPRESS", compression.toLatin1() );
   hDstDS = GDALCreate( driver,
                        TO8F( outputName ), resX, resY,
                        GDALGetRasterCount( hSrcDS ),

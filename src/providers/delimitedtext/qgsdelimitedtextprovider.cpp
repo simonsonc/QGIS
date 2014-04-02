@@ -27,6 +27,7 @@
 #include <QSettings>
 #include <QRegExp>
 #include <QUrl>
+#include <QUrlQuery>
 
 #include "qgsapplication.h"
 #include "qgsdataprovider.h"
@@ -86,15 +87,16 @@ QgsDelimitedTextProvider::QgsDelimitedTextProvider( QString uri )
 {
   QgsDebugMsg( "Delimited text file uri is " + uri );
 
-  QUrl url = QUrl::fromEncoded( uri.toAscii() );
+  QUrl url = QUrl::fromEncoded( uri.toLatin1() );
   mFile = new QgsDelimitedTextFile();
   mFile->setFromUrl( url );
 
   QString subset;
 
-  if ( url.hasQueryItem( "geomType" ) )
+  QUrlQuery query( url.query() );
+  if ( query.hasQueryItem( "geomType" ) )
   {
-    QString gtype = url.queryItemValue( "geomType" ).toLower();
+    QString gtype = query.queryItemValue( "geomType" ).toLower();
     if ( gtype == "point" ) mGeometryType = QGis::Point;
     else if ( gtype == "line" ) mGeometryType = QGis::Line;
     else if ( gtype == "polygon" ) mGeometryType = QGis::Polygon;
@@ -103,24 +105,24 @@ QgsDelimitedTextProvider::QgsDelimitedTextProvider( QString uri )
 
   if ( mGeometryType != QGis::NoGeometry )
   {
-    if ( url.hasQueryItem( "wktField" ) )
+    if ( query.hasQueryItem( "wktField" ) )
     {
-      mWktFieldName = url.queryItemValue( "wktField" );
+      mWktFieldName = query.queryItemValue( "wktField" );
       mGeomRep = GeomAsWkt;
       QgsDebugMsg( "wktField is: " + mWktFieldName );
     }
-    else if ( url.hasQueryItem( "xField" ) && url.hasQueryItem( "yField" ) )
+    else if ( query.hasQueryItem( "xField" ) && query.hasQueryItem( "yField" ) )
     {
       mGeomRep = GeomAsXy;
       mGeometryType = QGis::Point;
-      mXFieldName = url.queryItemValue( "xField" );
-      mYFieldName = url.queryItemValue( "yField" );
+      mXFieldName = query.queryItemValue( "xField" );
+      mYFieldName = query.queryItemValue( "yField" );
       QgsDebugMsg( "xField is: " + mXFieldName );
       QgsDebugMsg( "yField is: " + mYFieldName );
 
-      if ( url.hasQueryItem( "xyDms" ) )
+      if ( query.hasQueryItem( "xyDms" ) )
       {
-        mXyDms = ! url.queryItemValue( "xyDms" ).toLower().startsWith( "n" );
+        mXyDms = ! query.queryItemValue( "xyDms" ).toLower().startsWith( "n" );
       }
     }
     else
@@ -129,29 +131,29 @@ QgsDelimitedTextProvider::QgsDelimitedTextProvider( QString uri )
     }
   }
 
-  if ( url.hasQueryItem( "decimalPoint" ) )
-    mDecimalPoint = url.queryItemValue( "decimalPoint" );
+  if ( query.hasQueryItem( "decimalPoint" ) )
+    mDecimalPoint = query.queryItemValue( "decimalPoint" );
 
-  if ( url.hasQueryItem( "crs" ) )
-    mCrs.createFromString( url.queryItemValue( "crs" ) );
+  if ( query.hasQueryItem( "crs" ) )
+    mCrs.createFromString( query.queryItemValue( "crs" ) );
 
-  if ( url.hasQueryItem( "subsetIndex" ) )
+  if ( query.hasQueryItem( "subsetIndex" ) )
   {
-    mBuildSubsetIndex = ! url.queryItemValue( "subsetIndex" ).toLower().startsWith( "n" );
+    mBuildSubsetIndex = ! query.queryItemValue( "subsetIndex" ).toLower().startsWith( "n" );
   }
 
-  if ( url.hasQueryItem( "spatialIndex" ) )
+  if ( query.hasQueryItem( "spatialIndex" ) )
   {
-    mBuildSpatialIndex = ! url.queryItemValue( "spatialIndex" ).toLower().startsWith( "n" );
+    mBuildSpatialIndex = ! query.queryItemValue( "spatialIndex" ).toLower().startsWith( "n" );
   }
 
-  if ( url.hasQueryItem( "subset" ) )
+  if ( query.hasQueryItem( "subset" ) )
   {
-    subset = url.queryItemValue( "subset" );
+    subset = query.queryItemValue( "subset" );
     QgsDebugMsg( "subset is: " + subset );
   }
 
-  if ( url.hasQueryItem( "quiet" ) ) mShowInvalidLines = false;
+  if ( query.hasQueryItem( "quiet" ) ) mShowInvalidLines = false;
 
   // Do an initial scan of the file to determine field names, types,
   // geometry type (for Wkt), extents, etc.  Parameter value subset.isEmpty()
@@ -1045,10 +1047,11 @@ bool QgsDelimitedTextProvider::setSubsetString( QString subset, bool updateFeatu
 
 void QgsDelimitedTextProvider::setUriParameter( QString parameter, QString value )
 {
-  QUrl url = QUrl::fromEncoded( dataSourceUri().toAscii() );
-  if ( url.hasQueryItem( parameter ) ) url.removeAllQueryItems( parameter );
-  if ( ! value.isEmpty() ) url.addQueryItem( parameter, value );
-  setDataSourceUri( QString::fromAscii( url.toEncoded() ) );
+  QUrl url = QUrl::fromEncoded( dataSourceUri().toLatin1() );
+  QUrlQuery query( url.query() );
+  if ( query.hasQueryItem( parameter ) ) query.removeAllQueryItems( parameter );
+  if ( ! value.isEmpty() ) query.addQueryItem( parameter, value );
+  setDataSourceUri( QString::fromLatin1( url.toEncoded() ) );
 }
 
 void QgsDelimitedTextProvider::onFileUpdated()

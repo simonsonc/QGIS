@@ -17,6 +17,8 @@
 
 #include <Qt>
 #include <QPair>
+#include <QString>
+#include <QWidget>
 
 class QStringList;
 

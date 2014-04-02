@@ -139,7 +139,7 @@ void QgsMessageLogViewer::logMessage( QString message, QString tag, QgsMessageLo
   {
     w = new QTableWidget( 0, 3, this );
     w->verticalHeader()->setDefaultSectionSize( 16 );
-    w->verticalHeader()->setResizeMode( QHeaderView::ResizeToContents );
+    w->verticalHeader()->setSectionResizeMode( QHeaderView::ResizeToContents );
     w->verticalHeader()->setVisible( false );
     w->setGridStyle( Qt::DotLine );
     w->setEditTriggers( QAbstractItemView::NoEditTriggers );

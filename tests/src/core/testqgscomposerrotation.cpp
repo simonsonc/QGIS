@@ -274,4 +274,4 @@ void TestQgsComposerRotation::oldPictureRotationApi()
 #endif
 
 QTEST_MAIN( TestQgsComposerRotation )
-#include "moc_testqgscomposerrotation.cxx"
+#include "moc_testqgscomposerrotation.cpp"

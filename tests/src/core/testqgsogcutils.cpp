@@ -203,11 +203,11 @@ void TestQgsOgcUtils::testExpressionFromOgcFilter()
   QgsExpression* expr = QgsOgcUtils::expressionFromOgcFilter( rootElem );
   QVERIFY( expr );
 
-  qDebug( "OGC XML  : %s", xmlText.toAscii().data() );
-  qDebug( "EXPR-DUMP: %s", expr->expression().toAscii().data() );
+  qDebug( "OGC XML  : %s", xmlText.toLatin1().data() );
+  qDebug( "EXPR-DUMP: %s", expr->expression().toLatin1().data() );
 
   if ( expr->hasParserError() )
-    qDebug( "ERROR: %s ", expr->parserErrorString().toAscii().data() );
+    qDebug( "ERROR: %s ", expr->parserErrorString().toLatin1().data() );
   QVERIFY( !expr->hasParserError() );
 
   QCOMPARE( dumpText, expr->expression() );
@@ -228,14 +228,14 @@ void TestQgsOgcUtils::testExpressionToOgcFilter()
   QDomElement filterElem = QgsOgcUtils::expressionToOgcFilter( exp, doc, &errorMsg );
 
   if ( !errorMsg.isEmpty() )
-    qDebug( "ERROR: %s", errorMsg.toAscii().data() );
+    qDebug( "ERROR: %s", errorMsg.toLatin1().data() );
 
   QVERIFY( !filterElem.isNull() );
 
   doc.appendChild( filterElem );
 
-  qDebug( "EXPR: %s", exp.expression().toAscii().data() );
-  qDebug( "OGC : %s", doc.toString( -1 ).toAscii().data() );
+  qDebug( "EXPR: %s", exp.expression().toLatin1().data() );
+  qDebug( "OGC : %s", doc.toString( -1 ).toLatin1().data() );
 
   QCOMPARE( xmlText, doc.toString( -1 ) );
 }
@@ -347,4 +347,4 @@ void TestQgsOgcUtils::testExpressionToOgcFilter_data()
 
 
 QTEST_MAIN( TestQgsOgcUtils )
-#include "moc_testqgsogcutils.cxx"
+#include "moc_testqgsogcutils.cpp"

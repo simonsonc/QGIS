@@ -215,4 +215,4 @@ void TestStyleV2::testSaveLoad()
 
 
 QTEST_MAIN( TestStyleV2 )
-#include "moc_testqgsstylev2.cxx"
+#include "moc_testqgsstylev2.cpp"

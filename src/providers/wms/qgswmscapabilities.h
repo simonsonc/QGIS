@@ -441,12 +441,12 @@ struct QgsWmsAuthorization
   {
     if ( !mUserName.isNull() || !mPassword.isNull() )
     {
-      request.setRawHeader( "Authorization", "Basic " + QString( "%1:%2" ).arg( mUserName ).arg( mPassword ).toAscii().toBase64() );
+      request.setRawHeader( "Authorization", "Basic " + QString( "%1:%2" ).arg( mUserName ).arg( mPassword ).toLatin1().toBase64() );
     }
 
     if ( !mReferer.isNull() )
     {
-      request.setRawHeader( "Referer", QString( "%1" ).arg( mReferer ).toAscii() );
+      request.setRawHeader( "Referer", QString( "%1" ).arg( mReferer ).toLatin1() );
     }
   }
 

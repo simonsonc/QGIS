@@ -30,6 +30,7 @@
 #include <QTextStream>
 #include <QTextCodec>
 #include <QUrl>
+#include <QUrlQuery>
 
 const int MAX_SAMPLE_LENGTH = 200;
 
@@ -150,14 +151,15 @@ void QgsDelimitedTextSourceSelect::on_buttonBox_accepted()
   //Build the delimited text URI from the user provided information
 
   QUrl url = mFile->url();
+  QUrlQuery query;
 
   if ( cbxPointIsComma->isChecked() )
   {
-    url.addQueryItem( "decimalPoint", "," );
+    query.addQueryItem( "decimalPoint", "," );
   }
   if ( cbxXyDms->isChecked() )
   {
-    url.addQueryItem( "xyDms", "yes" );
+    query.addQueryItem( "xyDms", "yes" );
   }
 
   if ( geomTypeXY->isChecked() )
@@ -165,9 +167,9 @@ void QgsDelimitedTextSourceSelect::on_buttonBox_accepted()
     if ( !cmbXField->currentText().isEmpty() && !cmbYField->currentText().isEmpty() )
     {
       QString field = cmbXField->currentText();
-      url.addQueryItem( "xField", field );
+      query.addQueryItem( "xField", field );
       field = cmbYField->currentText();
-      url.addQueryItem( "yField", field );
+      query.addQueryItem( "yField", field );
     }
   }
   else if ( geomTypeWKT->isChecked() )
@@ -175,21 +177,21 @@ void QgsDelimitedTextSourceSelect::on_buttonBox_accepted()
     if ( ! cmbWktField->currentText().isEmpty() )
     {
       QString field = cmbWktField->currentText();
-      url.addQueryItem( "wktField", field );
+      query.addQueryItem( "wktField", field );
     }
     if ( cmbGeometryType->currentIndex() > 0 )
     {
-      url.addQueryItem( "geomType", cmbGeometryType->currentText() );
+      query.addQueryItem( "geomType", cmbGeometryType->currentText() );
     }
   }
   else
   {
-    url.addQueryItem( "geomType", "none" );
+    query.addQueryItem( "geomType", "none" );
   }
 
-  if ( ! geomTypeNone->isChecked() ) url.addQueryItem( "spatialIndex", cbxSpatialIndex->isChecked() ? "yes" : "no" );
-  url.addQueryItem( "subsetIndex", cbxSubsetIndex->isChecked() ? "yes" : "no" );
-  url.addQueryItem( "watchFile", cbxWatchFile->isChecked() ? "yes" : "no" );
+  if ( ! geomTypeNone->isChecked() ) query.addQueryItem( "spatialIndex", cbxSpatialIndex->isChecked() ? "yes" : "no" );
+  query.addQueryItem( "subsetIndex", cbxSubsetIndex->isChecked() ? "yes" : "no" );
+  query.addQueryItem( "watchFile", cbxWatchFile->isChecked() ? "yes" : "no" );
 
   // store the settings
   saveSettings();
@@ -197,7 +199,7 @@ void QgsDelimitedTextSourceSelect::on_buttonBox_accepted()
 
 
   // add the layer to the map
-  emit addVectorLayer( QString::fromAscii( url.toEncoded() ), txtLayerName->text(), "delimitedtext" );
+  emit addVectorLayer( QString::fromLatin1( url.toEncoded() ), txtLayerName->text(), "delimitedtext" );
 
   accept();
 }

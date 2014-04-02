@@ -395,7 +395,7 @@ void *QgsProviderRegistry::function( QString const & providerKey,
 
   if ( myLib.load() )
   {
-    return myLib.resolve( functionName.toAscii().data() );
+    return (void*)( myLib.resolve( functionName.toLatin1().data() ) );
   }
   else
   {

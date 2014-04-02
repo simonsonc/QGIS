@@ -114,7 +114,7 @@ QgsHandleBadLayers::QgsHandleBadLayers( const QList<QDomNode> &layers, const QDo
       }
       else if ( provider == "delimitedtext" )
       {
-        filename = QUrl::fromEncoded( datasource.toAscii() ).toLocalFile();
+        filename = QUrl::fromEncoded( datasource.toLatin1() ).toLocalFile();
       }
       else if ( provider == "postgres" || provider == "sqlanywhere" )
       {
@@ -308,10 +308,10 @@ void QgsHandleBadLayers::apply()
       }
       else if ( provider == "delimitedtext" )
       {
-        QUrl uriSource = QUrl::fromEncoded( datasource.toAscii() );
+        QUrl uriSource = QUrl::fromEncoded( datasource.toLatin1() );
         QUrl uriDest = QUrl::fromLocalFile( filename );
-        uriDest.setQueryItems( uriSource.queryItems() );
-        datasource = QString::fromAscii( uriDest.toEncoded() );
+        //uriDest.setQueryItems( uriSource.queryItems() );
+        datasource = QString::fromLatin1( uriDest.toEncoded() );
       }
     }
     else

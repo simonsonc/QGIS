@@ -371,5 +371,5 @@ void TestQgsGeometry::dumpPolyline( QgsPolyline &thePolyline )
 }
 
 QTEST_MAIN( TestQgsGeometry )
-#include "moc_testqgsgeometry.cxx"
+#include "moc_testqgsgeometry.cpp"
 
