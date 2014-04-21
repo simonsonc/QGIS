@@ -594,6 +594,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
 #ifndef QT_NO_OPENSSL
     void namSslErrors( QNetworkReply *reply, const QList<QSslError> &errors );
 #endif
+    void namRequestTimedOut( QNetworkReply *reply );
 
     //! update default action of toolbutton
     void toolButtonActionTriggered( QAction * );
@@ -1021,7 +1022,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     void destinationCrsChanged();
     //    void debugHook();
     //! Add a Layer Definition file
-    void addLayerDefinition ();
+    void addLayerDefinition();
     //! Add a vector layer to the map
     void addVectorLayer();
     //! Exit Qgis
@@ -1553,3 +1554,4 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
 #endif
 
 #endif
+

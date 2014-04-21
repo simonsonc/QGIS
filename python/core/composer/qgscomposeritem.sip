@@ -237,6 +237,23 @@ class QgsComposerItem : QObject, QGraphicsRectItem
      */
     virtual void setFrameOutlineWidth( double outlineWidth );
 
+    /** Returns the join style used for drawing the item's frame
+     * @returns Join style for outline frame
+     * @note introduced in 2.3
+     * @see hasFrame
+     * @see setFrameJoinStyle
+     */
+    Qt::PenJoinStyle frameJoinStyle() const;
+
+    /** Sets join style used when drawing the item's frame
+     * @param style Join style for outline frame
+     * @returns nothing
+     * @note introduced in 2.3
+     * @see setFrameEnabled
+     * @see frameJoinStyle
+     */
+    void setFrameJoinStyle( Qt::PenJoinStyle style );
+
     /** Returns the estimated amount the item's frame bleeds outside the item's
      *  actual rectangle. For instance, if the item has a 2mm frame outline, then
      *  1mm of this frame is drawn outside the item's rect. In this case the
@@ -383,6 +400,19 @@ class QgsComposerItem : QObject, QGraphicsRectItem
       @note this method was added in version 2.0
       @note there is not setter since one can't manually set the id*/
     QString uuid() const;
+
+    /**Get the number of layers that this item requires for exporting as layers
+     * @returns 0 if this item is to be placed on the same layer as the previous item,
+     * 1 if it should be placed on its own layer, and >1 if it requires multiple export layers
+     * @note this method was added in version 2.4
+    */
+    int numberExportLayers() const;
+
+    /**Sets the current layer to draw for exporting
+     * @param layerIdx can be set to -1 to draw all item layers, and must be less than numberExportLayers()
+     * @note this method was added in version 2.4
+    */
+    void setCurrentExportLayer( int layerIdx = -1 );
 
   public slots:
     /**Sets the item rotation

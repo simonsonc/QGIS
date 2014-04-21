@@ -650,10 +650,11 @@ void QgsMapToolIdentify::handleMenuHover()
         QList<IdentifyResult>::const_iterator idListIt = idList.constBegin();
         for ( ; idListIt != idList.constEnd(); ++idListIt )
         {
-          QgsHighlight* hl = new QgsHighlight( mCanvas, idListIt->mFeature.geometry(), vl );
+          QgsHighlight *hl = new QgsHighlight( mCanvas, idListIt->mFeature.geometry(), vl );
           hl->setColor( QColor( 255, 0, 0 ) );
           hl->setWidth( 2 );
           mRubberBands.append( hl );
+          connect( vl, SIGNAL( destroyed() ), this, SLOT( layerDestroyed() ) );
         }
       }
     }
@@ -664,8 +665,22 @@ void QgsMapToolIdentify::deleteRubberBands()
 {
   QList<QgsHighlight*>::const_iterator it = mRubberBands.constBegin();
   for ( ; it != mRubberBands.constEnd(); ++it )
-  {
     delete *it;
+}
+
+void QgsMapToolIdentify::layerDestroyed()
+{
+  QList<QgsHighlight*>::iterator it = mRubberBands.begin();
+  while ( it != mRubberBands.end() )
+  {
+    if (( *it )->layer() == sender() )
+    {
+      delete *it;
+      it = mRubberBands.erase( it );
+    }
+    else
+    {
+      ++it;
+    }
   }
-  mRubberBands.clear();
 }

@@ -81,6 +81,7 @@ void QgsComposerShape::createDefaultShapeStyleSymbol()
   properties.insert( "style_border", "solid" );
   properties.insert( "color_border", "black" );
   properties.insert( "width_border", "0.3" );
+  properties.insert( "joinstyle", "miter" );
   mShapeStyleSymbol = QgsFillSymbolV2::createSimple( properties );
 
   mMaxSymbolBleed = QgsSymbolLayerV2Utils::estimateMaxSymbolBleed( mShapeStyleSymbol );
@@ -347,4 +348,12 @@ void QgsComposerShape::updateBoundingRect()
     prepareGeometryChange();
     mCurrentRectangle = rectangle;
   }
+}
+
+void QgsComposerShape::setSceneRect( const QRectF& rectangle )
+{
+  // Reimplemented from QgsComposerItem as we need to call updateBoundingRect after the shape's size changes
+  QgsComposerItem::setSceneRect( rectangle );
+  updateBoundingRect();
+  update();
 }

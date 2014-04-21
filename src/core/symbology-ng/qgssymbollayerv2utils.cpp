@@ -349,7 +349,7 @@ QgsSymbolV2::OutputUnit QgsSymbolLayerV2Utils::decodeOutputUnit( QString str )
     return QgsSymbolV2::MapUnit;
   }
 
-  // milimeters are default
+  // millimeters are default
   return QgsSymbolV2::MM;
 }
 
@@ -2778,7 +2778,7 @@ void QgsSymbolLayerV2Utils::blurImageInPlace( QImage& image, const QRect& rect, 
   }
 }
 
-void QgsSymbolLayerV2Utils::premultiplyColor(QColor &rgb, int alpha)
+void QgsSymbolLayerV2Utils::premultiplyColor( QColor &rgb, int alpha )
 {
   int r = 0, g = 0, b = 0;
   double alphaFactor = 1.0;

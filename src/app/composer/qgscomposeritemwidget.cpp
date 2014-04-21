@@ -47,6 +47,7 @@ QgsComposerItemWidget::QgsComposerItemWidget( QWidget* parent, QgsComposerItem* 
 
   setValuesForGuiElements();
   connect( mItem, SIGNAL( sizeChanged() ), this, SLOT( setValuesForGuiPositionElements() ) );
+  connect( mItem, SIGNAL( itemChanged() ), this, SLOT( setValuesForGuiNonPositionElements() ) );
 
   connect( mTransparencySlider, SIGNAL( valueChanged( int ) ), mTransparencySpnBx, SLOT( setValue( int ) ) );
   connect( mTransparencySpnBx, SIGNAL( valueChanged( int ) ), mTransparencySlider, SLOT( setValue( int ) ) );
@@ -200,6 +201,19 @@ void QgsComposerItemWidget::on_mOutlineWidthSpinBox_valueChanged( double d )
   mItem->endCommand();
 }
 
+void QgsComposerItemWidget::on_mFrameJoinStyleCombo_currentIndexChanged( int index )
+{
+  Q_UNUSED( index );
+  if ( !mItem )
+  {
+    return;
+  }
+
+  mItem->beginCommand( tr( "Item frame join style" ) );
+  mItem->setFrameJoinStyle( mFrameJoinStyleCombo->penJoinStyle() );
+  mItem->endCommand();
+}
+
 void QgsComposerItemWidget::on_mFrameGroupBox_toggled( bool state )
 {
   if ( !mItem )
@@ -322,14 +336,12 @@ void QgsComposerItemWidget::setValuesForGuiPositionElements()
   mHeightLineEdit->blockSignals( false );
 }
 
-void QgsComposerItemWidget::setValuesForGuiElements()
+void QgsComposerItemWidget::setValuesForGuiNonPositionElements()
 {
   if ( !mItem )
   {
     return;
   }
-
-  setValuesForGuiPositionElements();
 
   mOutlineWidthSpinBox->blockSignals( true );
   mFrameGroupBox->blockSignals( true );
@@ -339,16 +351,14 @@ void QgsComposerItemWidget::setValuesForGuiElements()
   mTransparencySlider->blockSignals( true );
   mTransparencySpnBx->blockSignals( true );
   mFrameColorButton->blockSignals( true );
+  mFrameJoinStyleCombo->blockSignals( true );
   mBackgroundColorButton->blockSignals( true );
   mItemRotationSpinBox->blockSignals( true );
 
   mBackgroundColorButton->setColor( mItem->brush().color() );
-  mBackgroundColorButton->setColorDialogTitle( tr( "Select background color" ) );
-  mBackgroundColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
   mFrameColorButton->setColor( mItem->pen().color() );
-  mFrameColorButton->setColorDialogTitle( tr( "Select frame color" ) );
-  mFrameColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
   mOutlineWidthSpinBox->setValue( mItem->pen().widthF() );
+  mFrameJoinStyleCombo->setPenJoinStyle( mItem->frameJoinStyle() );
   mItemIdLineEdit->setText( mItem->id() );
   mFrameGroupBox->setChecked( mItem->hasFrame() );
   mBackgroundGroupBox->setChecked( mItem->hasBackground() );
@@ -359,6 +369,7 @@ void QgsComposerItemWidget::setValuesForGuiElements()
 
   mBackgroundColorButton->blockSignals( false );
   mFrameColorButton->blockSignals( false );
+  mFrameJoinStyleCombo->blockSignals( false );
   mOutlineWidthSpinBox->blockSignals( false );
   mFrameGroupBox->blockSignals( false );
   mBackgroundGroupBox->blockSignals( false );
@@ -369,12 +380,30 @@ void QgsComposerItemWidget::setValuesForGuiElements()
   mItemRotationSpinBox->blockSignals( false );
 }
 
+void QgsComposerItemWidget::setValuesForGuiElements()
+{
+  if ( !mItem )
+  {
+    return;
+  }
+
+  mBackgroundColorButton->setColorDialogTitle( tr( "Select background color" ) );
+  mBackgroundColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  mFrameColorButton->setColorDialogTitle( tr( "Select frame color" ) );
+  mFrameColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+
+  setValuesForGuiPositionElements();
+  setValuesForGuiNonPositionElements();
+}
+
 void QgsComposerItemWidget::on_mBlendModeCombo_currentIndexChanged( int index )
 {
   Q_UNUSED( index );
   if ( mItem )
   {
+    mItem->beginCommand( tr( "Item blend mode changed" ) );
     mItem->setBlendMode( mBlendModeCombo->blendMode() );
+    mItem->endCommand();
   }
 }
 
@@ -382,7 +411,9 @@ void QgsComposerItemWidget::on_mTransparencySlider_valueChanged( int value )
 {
   if ( mItem )
   {
+    mItem->beginCommand( tr( "Item transparency changed" ), QgsComposerMergeCommand::ItemTransparency );
     mItem->setTransparency( value );
+    mItem->endCommand();
   }
 }
 

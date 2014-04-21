@@ -45,7 +45,7 @@ from processing.outputs.OutputVector import OutputVector
 from processing.outputs.OutputRaster import OutputRaster
 from processing.outputs.OutputTable import OutputTable
 from processing.outputs.OutputHTML import OutputHTML
-from processing.gdal.GdalUtils import GdalUtils
+from processing.algs.gdal.GdalUtils import GdalUtils
 from processing.tools import dataobjects, vector
 from processing.tools.system import *
 
@@ -108,12 +108,13 @@ class GeoAlgorithm:
     def getDefaultIcon():
         return QtGui.QIcon(os.path.dirname(__file__) + '/../images/alg.png')
 
-    def helpFile(self):
-        """Returns the path to the help file with the description of
-        this algorithm.
+    def help(self):
+        """Returns the help with the description of this algorithm.
+        It returns a tuple boolean, string. IF the boolean value is true, it means that
+        the string contains the actual description. If false, it is an url or path to a file
+        where the description is stored
 
-        It should be an HTML file. Returns None if there is no help
-        file available.
+        Returns None if there is no help file available.
         """
         return None
 

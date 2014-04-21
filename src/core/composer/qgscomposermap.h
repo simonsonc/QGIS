@@ -439,6 +439,19 @@ class CORE_EXPORT QgsComposerMap : public QgsComposerItem
     /** Sets the margin size (percentage) used when the map is in atlas mode */
     void setAtlasMargin( double margin ) { mAtlasMargin = margin; }
 
+    /** Sets whether updates to the composer map are enabled. */
+    void setUpdatesEnabled( bool enabled ) { mUpdatesEnabled = enabled; }
+
+    /** Returns whether updates to the composer map are enabled. */
+    bool updatesEnabled() const { return mUpdatesEnabled; }
+
+    /**Get the number of layers that this item requires for exporting as layers
+     * @returns 0 if this item is to be placed on the same layer as the previous item,
+     * 1 if it should be placed on its own layer, and >1 if it requires multiple export layers
+     * @note this method was added in version 2.4
+    */
+    int numberExportLayers() const;
+
   signals:
     void extentChanged();
 
@@ -517,6 +530,9 @@ class CORE_EXPORT QgsComposerMap : public QgsComposerItem
     bool mOverviewInverted;
     /** Centering mode for overview */
     bool mOverviewCentered;
+
+    /** Whether updates to the map are enabled */
+    bool mUpdatesEnabled;
 
     /**Establishes signal/slot connection for update in case of layer change*/
     void connectUpdateSlot();
@@ -597,7 +613,7 @@ class CORE_EXPORT QgsComposerMap : public QgsComposerItem
     double mAtlasMargin;
 
     /**Returns a list of the layers to render for this map item*/
-    QStringList layersToRender();
+    QStringList layersToRender() const;
 
     /**Draws the map grid*/
     void drawGrid( QPainter* p );
@@ -656,6 +672,19 @@ class CORE_EXPORT QgsComposerMap : public QgsComposerItem
     void createDefaultGridLineSymbol();
     void initGridAnnotationFormatFromProject();
 
+    enum PartType
+    {
+      Background,
+      Layer,
+      Grid,
+      OverviewMapExtent,
+      Frame,
+      SelectionBoxes
+    };
+
+    /**Test if a part of the copmosermap needs to be drawn, considering mCurrentExportLayer*/
+    bool shouldDrawPart( PartType part ) const;
 };
 
 #endif
+
