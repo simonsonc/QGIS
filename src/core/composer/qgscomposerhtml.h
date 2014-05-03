@@ -20,6 +20,7 @@
 #include <QUrl>
 
 class QWebPage;
+class QImage;
 
 class CORE_EXPORT QgsComposerHtml: public QgsComposerMultiFrame
 {
@@ -40,6 +41,32 @@ class CORE_EXPORT QgsComposerHtml: public QgsComposerMultiFrame
 
     void addFrame( QgsComposerFrame* frame, bool recalcFrameSizes = true );
 
+    //overriden to break frames without dividing lines of text
+    double findNearbyPageBreak( double yPos );
+
+    /**Returns whether html item is using smart breaks. Smart breaks prevent
+     * the html frame contents from breaking mid-way though a line of text.
+     * @returns true if html item is using smart breaks
+     * @see setUseSmartBreaks
+     */
+    bool useSmartBreaks() const { return mUseSmartBreaks; }
+
+    /**Sets whether the html item should use smart breaks. Smart breaks prevent
+     * the html frame contents from breaking mid-way though a line of text.
+     * @param useSmartBreaks set to true to prevent content from breaking
+     * mid-way through a line of text
+     * @see useSmartBreaks
+     */
+    void setUseSmartBreaks( bool useSmartBreaks );
+
+  public slots:
+
+    /**Reloads the html source from the url and redraws the item.
+     * @see setUrl
+     * @see url
+     */
+    void loadHtml();
+
   private slots:
     void frameLoaded( bool ok );
 
@@ -49,8 +76,13 @@ class CORE_EXPORT QgsComposerHtml: public QgsComposerMultiFrame
     bool mLoaded;
     QSizeF mSize; //total size in mm
     double mHtmlUnitsToMM;
+    QImage* mRenderedPage;
+    bool mUseSmartBreaks;
 
     double htmlUnitsToMM(); //calculate scale factor
+
+    //renders a snapshot of the page to a cached image
+    void renderCachedImage();
 };
 
 #endif // QGSCOMPOSERHTML_H

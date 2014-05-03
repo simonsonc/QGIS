@@ -42,6 +42,7 @@ class QgsAnnotationItem;
 class QgsClipboard;
 class QgsComposer;
 class QgsComposerView;
+class QgsComposerManager;
 class QgsContrastEnhancement;
 class QgsGeometry;
 class QgsFeature;
@@ -210,6 +211,14 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
      * After adding the toolbar to the ui (by delegating to the QMainWindow
      * parent class, it will also add it to the View menu list of toolbars.*/
     QToolBar *addToolBar( QString name );
+
+    /** Add a toolbar to the main window. Overloaded from QMainWindow.
+     * After adding the toolbar to the ui (by delegating to the QMainWindow
+     * parent class, it will also add it to the View menu list of toolbars.
+     * @note added in 2.3
+     */
+    void addToolBar( QToolBar* toolBar, Qt::ToolBarArea area = Qt::TopToolBarArea );
+
 
     /** Add window to Window menu. The action title is the window title
      * and the action should raise, unminimize and activate the window. */
@@ -625,6 +634,8 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     /** Refreshes the state of the layer actions toolbar action
       * @note added in 2.1 */
     void refreshActionFeatureAction();
+
+    QMenu *panelMenu() { return mPanelMenu; }
 
   protected:
 
@@ -1173,6 +1184,9 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     //! catch MapCanvas keyPress event so we can check if selected feature collection must be deleted
     void mapCanvas_keyPressed( QKeyEvent *e );
 
+    //! Deletes the active QgsComposerManager instance
+    void deleteComposerManager();
+
   signals:
     /** emitted when a key is pressed and we want non widget sublasses to be able
       to pick up on this (e.g. maplayer) */
@@ -1208,6 +1222,10 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     /**This signal is emitted before a new composer instance is going to be removed
       @note added in version 1.4*/
     void composerWillBeRemoved( QgsComposerView* v );
+
+    /**This signal is emitted when a composer instance has been removed
+       @note added in version 2.3*/
+    void composerRemoved( QgsComposerView* v );
 
     /**This signal is emitted when QGIS' initialization is complete
      @note added in version 1.6*/
@@ -1509,6 +1527,8 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     QgsSnappingDialog* mSnappingDialog;
 
     QgsPluginManager* mPluginManager;
+
+    QgsComposerManager* mComposerManager;
 
     //! Persistent tile scale slider
     QgsTileScaleWidget * mpTileScaleWidget;

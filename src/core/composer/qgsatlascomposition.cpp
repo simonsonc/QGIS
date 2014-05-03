@@ -50,11 +50,11 @@ QgsAtlasComposition::~QgsAtlasComposition()
 {
 }
 
-void QgsAtlasComposition::setEnabled( bool e )
+void QgsAtlasComposition::setEnabled( bool enabled )
 {
-  mEnabled = e;
+  mEnabled = enabled;
   mComposition->setAtlasMode( QgsComposition::AtlasOff );
-  emit toggled( e );
+  emit toggled( enabled );
 }
 
 void QgsAtlasComposition::setCoverageLayer( QgsVectorLayer* layer )
@@ -411,13 +411,9 @@ void QgsAtlasComposition::prepareForFeature( int featureI )
   // generate filename for current feature
   evalFeatureFilename();
 
-  // evaluate label expressions
-  QList<QgsComposerLabel*> labels;
-  mComposition->composerItems( labels );
-  for ( QList<QgsComposerLabel*>::iterator lit = labels.begin(); lit != labels.end(); ++lit )
-  {
-    ( *lit )->setExpressionContext( &mCurrentFeature, mCoverageLayer );
-  }
+  emit featureChanged( &mCurrentFeature );
+
+  // TODO - move these updates to shape/page item
 
   // update shapes (in case they use data defined symbology with atlas properties)
   QList<QgsComposerShape*> shapes;

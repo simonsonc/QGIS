@@ -66,6 +66,11 @@ QgsComposerAttributeTable::QgsComposerAttributeTable( QgsComposition* compositio
     }
   }
   connect( QgsMapLayerRegistry::instance(), SIGNAL( layerWillBeRemoved( QString ) ), this, SLOT( removeLayer( const QString& ) ) );
+
+  if ( mComposition )
+  {
+    connect( mComposition, SIGNAL( refreshItemsTriggered() ), this, SLOT( refreshAttributes() ) );
+  }
 }
 
 QgsComposerAttributeTable::~QgsComposerAttributeTable()
@@ -98,26 +103,111 @@ void QgsComposerAttributeTable::initializeAliasMap()
   }
 }
 
-void QgsComposerAttributeTable::setVectorLayer( QgsVectorLayer* vl )
+void QgsComposerAttributeTable::setVectorLayer( QgsVectorLayer* layer )
 {
-  if ( vl != mVectorLayer )
+  if ( layer == mVectorLayer )
   {
-    mDisplayAttributes.clear();
-    mVectorLayer = vl;
-    initializeAliasMap();
+    return;
   }
+
+  mDisplayAttributes.clear();
+
+  if ( mVectorLayer )
+  {
+    //disconnect from previous layer
+    QObject::disconnect( mVectorLayer, SIGNAL( layerModified() ), this, SLOT( refreshAttributes() ) );
+  }
+
+  mVectorLayer = layer;
+  initializeAliasMap();
+  refreshAttributes();
+
+  //listen for modifications to layer and refresh table when they occur
+  QObject::connect( mVectorLayer, SIGNAL( layerModified() ), this, SLOT( refreshAttributes() ) );
 }
 
 void QgsComposerAttributeTable::setComposerMap( const QgsComposerMap* map )
 {
+  if ( map == mComposerMap )
+  {
+    return;
+  }
+
   if ( mComposerMap )
   {
-    QObject::disconnect( mComposerMap, SIGNAL( extentChanged() ), this, SLOT( repaint() ) );
+    //disconnect from previous map
+    QObject::disconnect( mComposerMap, SIGNAL( extentChanged() ), this, SLOT( refreshAttributes() ) );
   }
   mComposerMap = map;
   if ( mComposerMap )
   {
-    QObject::connect( mComposerMap, SIGNAL( extentChanged() ), this, SLOT( repaint() ) );
+    //listen out for extent changes in linked map
+    QObject::connect( mComposerMap, SIGNAL( extentChanged() ), this, SLOT( refreshAttributes() ) );
+  }
+  refreshAttributes();
+}
+
+void QgsComposerAttributeTable::setMaximumNumberOfFeatures( int features )
+{
+  if ( features == mMaximumNumberOfFeatures )
+  {
+    return;
+  }
+
+  mMaximumNumberOfFeatures = features;
+  refreshAttributes();
+}
+
+void QgsComposerAttributeTable::setDisplayOnlyVisibleFeatures( bool visibleOnly )
+{
+  if ( visibleOnly == mShowOnlyVisibleFeatures )
+  {
+    return;
+  }
+
+  mShowOnlyVisibleFeatures = visibleOnly;
+  refreshAttributes();
+}
+
+void QgsComposerAttributeTable::setFilterFeatures( bool filter )
+{
+  if ( filter == mFilterFeatures )
+  {
+    return;
+  }
+
+  mFilterFeatures = filter;
+  refreshAttributes();
+}
+
+void QgsComposerAttributeTable::setFeatureFilter( const QString& expression )
+{
+  if ( expression == mFeatureFilter )
+  {
+    return;
+  }
+
+  mFeatureFilter = expression;
+  refreshAttributes();
+}
+
+void QgsComposerAttributeTable::setDisplayAttributes( const QSet<int>& attr, bool refresh )
+{
+  mDisplayAttributes = attr;
+
+  if ( refresh )
+  {
+    refreshAttributes();
+  }
+}
+
+void QgsComposerAttributeTable::setFieldAliasMap( const QMap<int, QString>& map, bool refresh )
+{
+  mFieldAliasMap = map;
+
+  if ( refresh )
+  {
+    refreshAttributes();
   }
 }
 
@@ -212,7 +302,7 @@ bool QgsComposerAttributeTable::getFeatureAttributes( QList<QgsAttributeMap> &at
   return true;
 }
 
-QMap<int, QString> QgsComposerAttributeTable::getHeaderLabels() const
+QMap<int, QString> QgsComposerAttributeTable::headerLabels() const
 {
   QMap<int, QString> header;
   if ( mVectorLayer )
@@ -259,7 +349,21 @@ void QgsComposerAttributeTable::setSceneRect( const QRectF& rectangle )
     mMaximumNumberOfFeatures = 0;
   }
   QgsComposerItem::setSceneRect( rectangle );
+
+  //refresh table attributes, since number of features has likely changed
+  refreshAttributes();
+
   emit maximumNumberOfFeaturesChanged( mMaximumNumberOfFeatures );
+}
+
+void QgsComposerAttributeTable::setSortAttributes( const QList<QPair<int, bool> > att, bool refresh )
+{
+  mSortInformation = att;
+
+  if ( refresh )
+  {
+    refreshAttributes();
+  }
 }
 
 bool QgsComposerAttributeTable::writeXML( QDomElement& elem, QDomDocument & doc ) const
@@ -313,7 +417,7 @@ bool QgsComposerAttributeTable::writeXML( QDomElement& elem, QDomDocument & doc 
   {
     QDomElement columnElem = doc.createElement( "column" );
     columnElem.setAttribute( "index", QString::number( sortIt->first ) );
-    columnElem.setAttribute( "ascending", sortIt->second == true ? "true" : "false" );
+    columnElem.setAttribute( "ascending", sortIt->second ? "true" : "false" );
     sortColumnsElem.appendChild( columnElem );
   }
   composerTableElem.appendChild( sortColumnsElem );
@@ -349,6 +453,12 @@ bool QgsComposerAttributeTable::readXML( const QDomElement& itemElem, const QDom
     mComposerMap = 0;
   }
 
+  if ( mComposerMap )
+  {
+    //if we have found a valid map item, listen out to extent changes on it and refresh the table
+    QObject::connect( mComposerMap, SIGNAL( extentChanged() ), this, SLOT( refreshAttributes() ) );
+  }
+
   //vector layer
   QString layerId = itemElem.attribute( "vectorLayer", "not_existing" );
   if ( layerId == "not_existing" )
@@ -361,6 +471,11 @@ bool QgsComposerAttributeTable::readXML( const QDomElement& itemElem, const QDom
     if ( ml )
     {
       mVectorLayer = dynamic_cast<QgsVectorLayer*>( ml );
+      if ( mVectorLayer )
+      {
+        //if we have found a valid vector layer, listen for modifications on it and refresh the table
+        QObject::connect( mVectorLayer, SIGNAL( layerModified() ), this, SLOT( refreshAttributes() ) );
+      }
     }
   }
 
@@ -416,6 +531,8 @@ bool QgsComposerAttributeTable::readXML( const QDomElement& itemElem, const QDom
 
   //must be done here because tableReadXML->setSceneRect changes mMaximumNumberOfFeatures
   mMaximumNumberOfFeatures = itemElem.attribute( "maxFeatures", "5" ).toInt();
+
+  refreshAttributes();
 
   emit itemChanged();
   return success;

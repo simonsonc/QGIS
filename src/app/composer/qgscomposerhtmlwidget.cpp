@@ -60,6 +60,7 @@ void QgsComposerHtmlWidget::blockSignals( bool block )
   mUrlLineEdit->blockSignals( block );
   mFileToolButton->blockSignals( block );
   mResizeModeComboBox->blockSignals( block );
+  mUseSmartBreaksCheckBox->blockSignals( block );
 }
 
 void QgsComposerHtmlWidget::on_mUrlLineEdit_editingFinished()
@@ -87,7 +88,7 @@ void QgsComposerHtmlWidget::on_mFileToolButton_clicked()
 {
   QSettings s;
   QString lastDir = s.value( "/UI/lastHtmlDir", "" ).toString();
-  QString file = QFileDialog::getOpenFileName( this, tr( "Select HTML document" ), lastDir, "HTML (*.html)" );
+  QString file = QFileDialog::getOpenFileName( this, tr( "Select HTML document" ), lastDir, "HTML (*.html *.htm);;All files (*.*)" );
   if ( !file.isEmpty() )
   {
     QUrl url = QUrl::fromLocalFile( file );
@@ -114,6 +115,34 @@ void QgsComposerHtmlWidget::on_mResizeModeComboBox_currentIndexChanged( int inde
   }
 }
 
+void QgsComposerHtmlWidget::on_mUseSmartBreaksCheckBox_stateChanged( int state )
+{
+  if ( !mHtml )
+  {
+    return;
+  }
+
+  QgsComposition* composition = mHtml->composition();
+  if ( composition )
+  {
+    blockSignals( true );
+    composition->beginMultiFrameCommand( mHtml, tr( "Use smart breaks changed" ) );
+    mHtml->setUseSmartBreaks( state );
+    composition->endMultiFrameCommand();
+    blockSignals( false );
+  }
+}
+
+void QgsComposerHtmlWidget::on_mReloadPushButton_clicked()
+{
+  if ( !mHtml )
+  {
+    return;
+  }
+
+  mHtml->loadHtml();
+}
+
 void QgsComposerHtmlWidget::setGuiElementValues()
 {
   if ( !mHtml )
@@ -124,7 +153,6 @@ void QgsComposerHtmlWidget::setGuiElementValues()
   blockSignals( true );
   mUrlLineEdit->setText( mHtml->url().toString() );
   mResizeModeComboBox->setCurrentIndex( mResizeModeComboBox->findData( mHtml->resizeMode() ) );
+  mUseSmartBreaksCheckBox->setChecked( mHtml->useSmartBreaks() );
   blockSignals( false );
 }
-
-

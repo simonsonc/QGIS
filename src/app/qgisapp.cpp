@@ -451,6 +451,7 @@ QgisApp::QgisApp( QSplashScreen *splash, bool restorePlugins, QWidget * parent, 
 #ifdef Q_OS_WIN
     , mSkipNextContextMenuEvent( 0 )
 #endif
+    , mComposerManager( 0 )
     , mpGpsWidget( 0 )
 {
   if ( smInstance )
@@ -775,6 +776,7 @@ QgisApp::QgisApp( )
     , mInternalClipboard( 0 )
     , mpMaptip( 0 )
     , mPythonUtils( 0 )
+    , mComposerManager( 0 )
     , mpGpsWidget( 0 )
 {
   smInstance = this;
@@ -843,6 +845,8 @@ QgisApp::~QgisApp()
   delete mpGpsWidget;
 
   delete mOverviewMapCursor;
+
+  delete mComposerManager;
 
   deletePrintComposers();
   removeAnnotationItems();
@@ -1224,7 +1228,7 @@ void QgisApp::showPythonDialog()
   {
     QString className, text;
     mPythonUtils->getError( className, text );
-    messageBar()->pushMessage( tr( "Error" ), tr( "Failed to open Python console:" ) + "\n" + className + ": " + text, QgsMessageBar::WARNING);
+    messageBar()->pushMessage( tr( "Error" ), tr( "Failed to open Python console:" ) + "\n" + className + ": " + text, QgsMessageBar::WARNING );
   }
 #ifdef Q_WS_MAC
   else
@@ -2132,6 +2136,13 @@ QToolBar *QgisApp::addToolBar( QString name )
   // add to the Toolbar submenu
   mToolbarMenu->addAction( toolBar->toggleViewAction() );
   return toolBar;
+}
+
+void QgisApp::addToolBar( QToolBar* toolBar , Qt::ToolBarArea area )
+{
+  QMainWindow::addToolBar( area, toolBar );
+  // add to the Toolbar submenu
+  mToolbarMenu->addAction( toolBar->toggleViewAction() );
 }
 
 QgsLegend *QgisApp::legend()
@@ -3923,8 +3934,19 @@ void QgisApp::newPrintComposer()
 
 void QgisApp::showComposerManager()
 {
-  QgsComposerManager m( this );
-  m.exec();
+  if ( !mComposerManager )
+  {
+    mComposerManager = new QgsComposerManager( this, Qt::Window );
+    connect( mComposerManager, SIGNAL( finished( int ) ), this, SLOT( deleteComposerManager() ) );
+  }
+  mComposerManager->show();
+  mComposerManager->activate();
+}
+
+void QgisApp::deleteComposerManager()
+{
+  mComposerManager->deleteLater();
+  mComposerManager = 0;
 }
 
 void QgisApp::saveMapAsImage()
@@ -5008,6 +5030,7 @@ void QgisApp::deleteComposer( QgsComposer* c )
   mPrintComposers.remove( c );
   mPrintComposersMenu->removeAction( c->windowAction() );
   markDirty();
+  emit composerRemoved( c->view() );
   delete c;
 }
 
@@ -7090,7 +7113,7 @@ void QgisApp::apiDocumentation()
 
 void QgisApp::supportProviders()
 {
-  openURL( tr( "http://qgis.org/de/site/forusers/commercial_support.html" ), false );
+  openURL( tr( "http://qgis.org/en/site/forusers/commercial_support.html" ), false );
 }
 
 void QgisApp::helpQgisHomePage()

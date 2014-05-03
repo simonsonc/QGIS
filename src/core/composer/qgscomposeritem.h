@@ -197,6 +197,14 @@ class CORE_EXPORT QgsComposerItem: public QObject, public QGraphicsRectItem
      */
     virtual void setFrameOutlineWidth( double outlineWidth );
 
+    /** Returns the frame's outline width. Only used if hasFrame is true.
+     * @returns Frame outline width
+     * @note introduced in 2.3
+     * @see hasFrame
+     * @see setFrameOutlineWidth
+     */
+    double frameOutlineWidth() const { return pen().widthF(); }
+
     /** Returns the join style used for drawing the item's frame
      * @returns Join style for outline frame
      * @note introduced in 2.3
@@ -343,7 +351,7 @@ class CORE_EXPORT QgsComposerItem: public QObject, public QGraphicsRectItem
      * @deprecated Use itemRotation()
      *             instead
      */
-    double rotation() const {return mItemRotation;}
+    Q_DECL_DEPRECATED double rotation() const {return mItemRotation;}
 
     /**Updates item, with the possibility to do custom update for subclasses*/
     virtual void updateItem() { QGraphicsRectItem::update(); }
@@ -477,7 +485,7 @@ class CORE_EXPORT QgsComposerItem: public QObject, public QGraphicsRectItem
      * @deprecated Use bool imageSizeConsideringRotation( double& width, double& height, double rotation )
      * instead
      */
-    bool imageSizeConsideringRotation( double& width, double& height ) const;
+    Q_DECL_DEPRECATED bool imageSizeConsideringRotation( double& width, double& height ) const;
 
     /**Calculates the largest scaled version of originalRect which fits within boundsRect, when it is rotated by
      * a specified amount
@@ -493,7 +501,7 @@ class CORE_EXPORT QgsComposerItem: public QObject, public QGraphicsRectItem
      * @deprecated Use bool cornerPointOnRotatedAndScaledRect( double& x, double& y, double width, double height, double rotation )
      * instead
      */
-    bool cornerPointOnRotatedAndScaledRect( double& x, double& y, double width, double height ) const;
+    Q_DECL_DEPRECATED bool cornerPointOnRotatedAndScaledRect( double& x, double& y, double width, double height ) const;
 
     /**Calculates width / height of the bounding box of a rotated rectangle*/
     void sizeChangedByRotation( double& width, double& height, double rotation );
@@ -501,7 +509,7 @@ class CORE_EXPORT QgsComposerItem: public QObject, public QGraphicsRectItem
     * @deprecated Use void sizeChangedByRotation( double& width, double& height, double rotation )
     * instead
     */
-    void sizeChangedByRotation( double& width, double& height );
+    Q_DECL_DEPRECATED void sizeChangedByRotation( double& width, double& height );
 
     /**Rotates a point / vector
         @param angle rotation angle in degrees, counterclockwise

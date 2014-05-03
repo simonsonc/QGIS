@@ -161,7 +161,7 @@ class QgsComposition : QGraphicsScene
      @return QgsComposerMap or 0 pointer if the composer map item does not exist*/
     const QgsComposerMap* getComposerMapById( int id ) const;
 
-    /*Returns the composer html with specified id (a string as named in the
+    /**Returns the composer html with specified id (a string as named in the
       composer user interface item properties).
       @note Added in QGIS 2.0
       @param id - A QString representing the id of the item.
@@ -408,6 +408,12 @@ class QgsComposition : QGraphicsScene
     @note added in version 2.2*/
     void updateBounds();
 
+    /**Forces items in the composition to refresh. For instance, this causes maps to redraw
+     * and rebuild cached images, html items to reload their source url, and attribute tables
+     * to refresh their contents.
+    @note added in version 2.3*/
+    void refreshItems();
+
   protected:
     void init();
 
@@ -415,6 +421,9 @@ class QgsComposition : QGraphicsScene
   signals:
     void paperSizeChanged();
     void nPagesChanged();
+
+    /**Is emitted when the compositions print resolution changes*/
+    void printResolutionChanged();
 
     /**Is emitted when selected item changed. If 0, no item is selected*/
     void selectedItemChanged( QgsComposerItem* selected );
@@ -438,4 +447,7 @@ class QgsComposition : QGraphicsScene
     void composerTableAdded( QgsComposerAttributeTable* table );
     /**Is emitted when a composer item has been removed from the scene*/
     void itemRemoved( QgsComposerItem* );
+    
+    /**Is emitted when item in the composition must be refreshed*/
+    void refreshItemsTriggered();    
 };

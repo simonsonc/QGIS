@@ -1022,6 +1022,7 @@ void QgsComposer::on_mActionRefreshView_triggered()
     }
   }
 
+  mComposition->refreshItems();
   mComposition->update();
 }
 
@@ -3369,3 +3370,4 @@ void QgsComposer::updateAtlasMapLayerAction( bool atlasEnabled )
     connect( mAtlasFeatureAction, SIGNAL( triggeredForFeature( QgsMapLayer*, QgsFeature* ) ), this, SLOT( setAtlasFeature( QgsMapLayer*, QgsFeature* ) ) );
   }
 }
+

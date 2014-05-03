@@ -261,6 +261,15 @@ void QgsComposerItemWidget::setValuesForGuiPositionElements()
   mYLineEdit->blockSignals( true );
   mWidthLineEdit->blockSignals( true );
   mHeightLineEdit->blockSignals( true );
+  mUpperLeftCheckBox->blockSignals( true );
+  mUpperMiddleCheckBox->blockSignals( true );
+  mUpperRightCheckBox->blockSignals( true );
+  mMiddleLeftCheckBox->blockSignals( true );
+  mMiddleCheckBox->blockSignals( true );
+  mMiddleRightCheckBox->blockSignals( true );
+  mLowerLeftCheckBox->blockSignals( true );
+  mLowerMiddleCheckBox->blockSignals( true );
+  mLowerRightCheckBox->blockSignals( true );
 
 
   if ( mItem->lastUsedPositionMode() == QgsComposerItem::UpperLeft )
@@ -334,6 +343,15 @@ void QgsComposerItemWidget::setValuesForGuiPositionElements()
   mYLineEdit->blockSignals( false );
   mWidthLineEdit->blockSignals( false );
   mHeightLineEdit->blockSignals( false );
+  mUpperLeftCheckBox->blockSignals( false );
+  mUpperMiddleCheckBox->blockSignals( false );
+  mUpperRightCheckBox->blockSignals( false );
+  mMiddleLeftCheckBox->blockSignals( false );
+  mMiddleCheckBox->blockSignals( false );
+  mMiddleRightCheckBox->blockSignals( false );
+  mLowerLeftCheckBox->blockSignals( false );
+  mLowerMiddleCheckBox->blockSignals( false );
+  mLowerRightCheckBox->blockSignals( false );
 }
 
 void QgsComposerItemWidget::setValuesForGuiNonPositionElements()
@@ -357,7 +375,7 @@ void QgsComposerItemWidget::setValuesForGuiNonPositionElements()
 
   mBackgroundColorButton->setColor( mItem->brush().color() );
   mFrameColorButton->setColor( mItem->pen().color() );
-  mOutlineWidthSpinBox->setValue( mItem->pen().widthF() );
+  mOutlineWidthSpinBox->setValue( mItem->frameOutlineWidth() );
   mFrameJoinStyleCombo->setPenJoinStyle( mItem->frameJoinStyle() );
   mItemIdLineEdit->setText( mItem->id() );
   mFrameGroupBox->setChecked( mItem->hasFrame() );

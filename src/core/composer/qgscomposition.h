@@ -217,12 +217,12 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
      @return QgsComposerMap or 0 pointer if the composer map item does not exist*/
     const QgsComposerMap* getComposerMapById( int id ) const;
 
-    /*Returns the composer html with specified id (a string as named in the
+    /**Returns the composer html with specified id (a string as named in the
       composer user interface item properties).
       @note Added in QGIS 2.0
-      @param id - A QString representing the id of the item.
+      @param item the item.
       @return QgsComposerHtml pointer or 0 pointer if no such item exists.
-    */
+     */
     const QgsComposerHtml* getComposerHtmlByItem( QgsComposerItem *item ) const;
 
     /**Returns a composer item given its text identifier.
@@ -231,7 +231,7 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
       @param theId - A QString representing the identifier of the item to
         retrieve.
       @return QgsComposerItem pointer or 0 pointer if no such item exists.
-      **/
+     */
     const QgsComposerItem* getComposerItemById( QString theId ) const;
 
     /**Returns a composer item given its unique identifier.
@@ -241,7 +241,7 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
     const QgsComposerItem* getComposerItemByUuid( QString theUuid ) const;
 
     int printResolution() const {return mPrintResolution;}
-    void setPrintResolution( int dpi ) {mPrintResolution = dpi;}
+    void setPrintResolution( int dpi );
 
     bool printAsRaster() const {return mPrintAsRaster;}
     void setPrintAsRaster( bool enabled ) { mPrintAsRaster = enabled; }
@@ -464,6 +464,12 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
     @note added in version 2.2*/
     void updateBounds();
 
+    /**Forces items in the composition to refresh. For instance, this causes maps to redraw
+     * and rebuild cached images, html items to reload their source url, and attribute tables
+     * to refresh their contents.
+    @note added in version 2.3*/
+    void refreshItems();
+
   protected:
     void init();
 
@@ -570,6 +576,9 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
     void paperSizeChanged();
     void nPagesChanged();
 
+    /**Is emitted when the compositions print resolution changes*/
+    void printResolutionChanged();
+
     /**Is emitted when selected item changed. If 0, no item is selected*/
     void selectedItemChanged( QgsComposerItem* selected );
     /**Is emitted when new composer arrow has been added to the view*/
@@ -592,6 +601,9 @@ class CORE_EXPORT QgsComposition : public QGraphicsScene
     void composerTableAdded( QgsComposerAttributeTable* table );
     /**Is emitted when a composer item has been removed from the scene*/
     void itemRemoved( QgsComposerItem* );
+
+    /**Is emitted when item in the composition must be refreshed*/
+    void refreshItemsTriggered();
 
     /**Is emitted when the composition has an updated status bar message for the composer window*/
     void statusMsgChanged( QString message );
