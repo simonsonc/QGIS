@@ -663,6 +663,15 @@ double QgsSLDConfigParser::maxHeight() const
   return -1;
 }
 
+double QgsSLDConfigParser::imageQuality() const
+{
+  if ( mFallbackParser )
+  {
+    return mFallbackParser->imageQuality();
+  }
+  return -1;
+}
+
 QgsComposition* QgsSLDConfigParser::createPrintComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, const QMap< QString, QString >& parameterMap ) const
 {
   if ( mFallbackParser )
@@ -716,6 +725,18 @@ int QgsSLDConfigParser::nLayers() const
     }
   }
   return 0;
+}
+
+void QgsSLDConfigParser::serviceCapabilities( QDomElement& parentElement, QDomDocument& doc ) const
+{
+  if ( mFallbackParser )
+  {
+    mFallbackParser->serviceCapabilities( parentElement, doc );
+  }
+  else
+  {
+    QgsConfigParserUtils::fallbackServiceCapabilities( parentElement, doc );
+  }
 }
 
 QList<QDomElement> QgsSLDConfigParser::findNamedLayerElements( const QString& layerName ) const

@@ -98,6 +98,7 @@ class QgsSLDConfigParser: public QgsWMSConfigParser
 
     double maxWidth() const;
     double maxHeight() const;
+    double imageQuality() const;
 
     //printing
 
@@ -116,6 +117,8 @@ class QgsSLDConfigParser: public QgsWMSConfigParser
     QList< QPair< QString, QgsLayerCoordinateTransform > > layerCoordinateTransforms() const;
 
     int nLayers() const;
+
+    void serviceCapabilities( QDomElement& parentElement, QDomDocument& doc ) const;
 
   private:
 

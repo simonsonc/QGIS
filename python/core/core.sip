@@ -1,4 +1,4 @@
-%Module(name=qgis.core,
+%Module(name=qgis._core,
         version=0,
         keyword_arguments="Optional")
 
@@ -25,6 +25,7 @@
 %Include qgsdataitem.sip
 %Include qgsdataprovider.sip
 %Include qgsdatasourceuri.sip
+%Include qgsdatumtransformstore.sip
 %Include qgsdbfilterproxymodel.sip
 %Include qgsdistancearea.sip
 %Include qgseditorwidgetconfig.sip
@@ -37,6 +38,7 @@
 %Include qgsgeometry.sip
 %Include qgsgeometryvalidator.sip
 %Include qgsgeometrysimplifier.sip
+%Include qgsmaptopixelgeometrysimplifier.sip
 %Include qgsgml.sip
 %Include qgsgmlschema.sip
 %Include qgshttptransaction.sip
@@ -52,6 +54,7 @@
 %Include qgsmaprendererjob.sip
 %Include qgsmapsettings.sip
 %Include qgsmaptopixel.sip
+%Include qgsmapunitscale.sip
 %Include qgsmessagelog.sip
 %Include qgsmessageoutput.sip
 %Include qgsmimedatautils.sip
@@ -108,6 +111,7 @@
 %Include composer/qgsaddremovemultiframecommand.sip
 %Include composer/qgscomposerarrow.sip
 %Include composer/qgscomposerattributetable.sip
+%Include composer/qgscomposerattributetablemodel.sip
 %Include composer/qgscomposerframe.sip
 %Include composer/qgscomposerhtml.sip
 %Include composer/qgscomposeritem.sip
@@ -123,6 +127,7 @@
 %Include composer/qgscomposerscalebar.sip
 %Include composer/qgscomposershape.sip
 %Include composer/qgscomposertable.sip
+%Include composer/qgscomposertablecolumn.sip
 %Include composer/qgscomposition.sip
 %Include composer/qgsatlascomposition.sip
 %Include composer/qgsdoubleboxscalebarstyle.sip
@@ -148,6 +153,13 @@
 %Include gps/qgsgpsdetector.sip
 %Include gps/qgsnmeaconnection.sip
 %Include gps/qgsqtlocationconnection.sip
+
+%Include layertree/qgslayertree.sip
+%Include layertree/qgslayertreegroup.sip
+%Include layertree/qgslayertreelayer.sip
+%Include layertree/qgslayertreenode.sip
+%Include layertree/qgslayertreeregistrybridge.sip
+%Include layertree/qgslayertreeutils.sip
 
 %Include raster/qgsraster.sip
 %Include raster/qgscliptominmaxenhancement.sip
@@ -202,6 +214,7 @@
 %Include symbology-ng/qgssinglesymbolrendererv2.sip
 %Include symbology-ng/qgspointdisplacementrenderer.sip
 %Include symbology-ng/qgsrulebasedrendererv2.sip
+%Include symbology-ng/qgsinvertedpolygonrenderer.sip
 %Include symbology-ng/qgsrendererv2.sip
 %Include symbology-ng/qgsrendererv2registry.sip
 

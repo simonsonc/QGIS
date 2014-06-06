@@ -46,6 +46,7 @@ QgsPostgresProvider::QgsPostgresProvider( QString const & uri )
     , mPrimaryKeyType( pktUnknown )
     , mSpatialColType( sctNone )
     , mDetectedGeomType( QGis::WKBUnknown )
+    , mForce2d( false )
     , mRequestedGeomType( QGis::WKBUnknown )
     , mShared( new QgsPostgresSharedData )
     , mUseEstimatedMetadata( false )
@@ -639,6 +640,7 @@ bool QgsPostgresProvider::loadFields()
     int fieldPrec = -1;
     QString fieldComment( "" );
     int tableoid = result.PQftable( i );
+    int attnum = result.PQftablecol( i );
 
     sql = QString( "SELECT typname,typtype,typelem,typlen FROM pg_type WHERE oid=%1" ).arg( typOid );
     // just oid; needs more work to support array type
@@ -654,22 +656,19 @@ bool QgsPostgresProvider::loadFields()
     QString formattedFieldType;
     if ( tableoid > 0 )
     {
-      sql = QString( "SELECT attnum,pg_catalog.format_type(atttypid,atttypmod) FROM pg_attribute WHERE attrelid=%1 AND attname=%2" )
-            .arg( tableoid ).arg( quotedValue( fieldName ) );
+      sql = QString( "SELECT pg_catalog.format_type(atttypid,atttypmod) FROM pg_attribute WHERE attrelid=%1 AND attnum=%2" )
+            .arg( tableoid ).arg( quotedValue( attnum ) );
 
       QgsPostgresResult tresult = mConnectionRO->PQexec( sql );
-      QString attnum = tresult.PQgetvalue( 0, 0 );
-      formattedFieldType = tresult.PQgetvalue( 0, 1 );
+      if ( tresult.PQntuples() > 0 )
+        formattedFieldType = tresult.PQgetvalue( 0, 0 );
 
-      if ( !attnum.isEmpty() )
-      {
-        sql = QString( "SELECT description FROM pg_description WHERE objoid=%1 AND objsubid=%2" )
-              .arg( tableoid ).arg( attnum );
+      sql = QString( "SELECT description FROM pg_description WHERE objoid=%1 AND objsubid=%2" )
+            .arg( tableoid ).arg( attnum );
 
-        tresult = mConnectionRO->PQexec( sql );
-        if ( tresult.PQntuples() > 0 )
-          fieldComment = tresult.PQgetvalue( 0, 0 );
-      }
+      tresult = mConnectionRO->PQexec( sql );
+      if ( tresult.PQntuples() > 0 )
+        fieldComment = tresult.PQgetvalue( 0, 0 );
     }
 
     QVariant::Type fieldType;
@@ -1828,7 +1827,7 @@ bool QgsPostgresProvider::deleteFeatures( const QgsFeatureIds & id )
 
       //send DELETE statement and do error handling
       QgsPostgresResult result = mConnectionRW->PQexec( sql );
-      if ( result.PQresultStatus() != PGRES_COMMAND_OK )
+      if ( result.PQresultStatus() != PGRES_COMMAND_OK && result.PQresultStatus() != PGRES_TUPLES_OK )
         throw PGException( result );
 
       mShared->removeFid( *it );
@@ -2039,7 +2038,7 @@ bool QgsPostgresProvider::changeAttributeValues( const QgsChangedAttributesMap &
       sql += QString( " WHERE %1" ).arg( whereClause( fid ) );
 
       QgsPostgresResult result = mConnectionRW->PQexec( sql );
-      if ( result.PQresultStatus() != PGRES_COMMAND_OK )
+      if ( result.PQresultStatus() != PGRES_COMMAND_OK && result.PQresultStatus() != PGRES_TUPLES_OK )
         throw PGException( result );
 
       // update feature id map if key was changed
@@ -2168,25 +2167,19 @@ bool QgsPostgresProvider::changeGeometryValues( QgsGeometryMap & geometry_map )
     QgsDebugMsg( "updating: " + update );
 
     result = mConnectionRW->PQprepare( "updatefeatures", update, 2, NULL );
-    if ( result.PQresultStatus() != PGRES_COMMAND_OK )
+    if ( result.PQresultStatus() != PGRES_COMMAND_OK && result.PQresultStatus() != PGRES_TUPLES_OK )
     {
       QgsDebugMsg( QString( "Exception thrown due to PQprepare of this query returning != PGRES_COMMAND_OK (%1 != expected %2): %3" )
                    .arg( result.PQresultStatus() ).arg( PGRES_COMMAND_OK ).arg( update ) );
       throw PGException( result );
     }
 
+    QgsDebugMsg( "iterating over the map of changed geometries..." );
+
     for ( QgsGeometryMap::iterator iter  = geometry_map.begin();
           iter != geometry_map.end();
           ++iter )
     {
-      QgsDebugMsg( "iterating over the map of changed geometries..." );
-
-      if ( !iter->asWkb() )
-      {
-        QgsDebugMsg( "empty geometry" );
-        continue;
-      }
-
       QgsDebugMsg( "iterating over feature id " + FID_TO_STRING( iter.key() ) );
 
       // Save the id of the current topogeometry
@@ -2212,13 +2205,8 @@ bool QgsPostgresProvider::changeGeometryValues( QgsGeometryMap & geometry_map )
       appendPkParams( iter.key(), params );
 
       result = mConnectionRW->PQexecPrepared( "updatefeatures", params );
-      int expected_status = ( mSpatialColType == sctTopoGeometry ) ? PGRES_TUPLES_OK : PGRES_COMMAND_OK;
-      if ( result.PQresultStatus() != expected_status )
-      {
-        QgsDebugMsg( QString( "Exception thrown due to PQexecPrepared of 'updatefeatures' returning %1 != expected %2" )
-                     .arg( result.PQresultStatus() ).arg( expected_status ) );
+      if ( result.PQresultStatus() != PGRES_COMMAND_OK && result.PQresultStatus() != PGRES_TUPLES_OK )
         throw PGException( result );
-      }
 
       if ( mSpatialColType == sctTopoGeometry )
       {
@@ -2568,12 +2556,12 @@ bool QgsPostgresProvider::getGeometryDetails()
     }
   }
 
-  QString detectedType = mRequestedGeomType == QGis::WKBUnknown ? "" : QgsPostgresConn::postgisWkbTypeName( mRequestedGeomType );
+  QString detectedType;
   QString detectedSrid = mRequestedSrid;
-  if ( !schemaName.isEmpty() && ( detectedType.isEmpty() || detectedSrid.isEmpty() ) )
+  if ( !schemaName.isEmpty() )
   {
     // check geometry columns
-    sql = QString( "SELECT upper(type),srid FROM geometry_columns WHERE f_table_name=%1 AND f_geometry_column=%2 AND f_table_schema=%3" )
+    sql = QString( "SELECT upper(type),srid,coord_dimension FROM geometry_columns WHERE f_table_name=%1 AND f_geometry_column=%2 AND f_table_schema=%3" )
           .arg( quotedValue( tableName ) )
           .arg( quotedValue( geomCol ) )
           .arg( quotedValue( schemaName ) );
@@ -2586,6 +2574,8 @@ bool QgsPostgresProvider::getGeometryDetails()
     {
       detectedType = result.PQgetvalue( 0, 0 );
       detectedSrid = result.PQgetvalue( 0, 1 );
+      if ( result.PQgetvalue( 0, 2 ).toInt() == 4 )
+        mForce2d = true;
       mSpatialColType = sctGeometry;
     }
     else
@@ -2677,6 +2667,10 @@ bool QgsPostgresProvider::getGeometryDetails()
       }
     }
   }
+  else
+  {
+    detectedType = mRequestedGeomType == QGis::WKBUnknown ? "" : QgsPostgresConn::postgisWkbTypeName( mRequestedGeomType );
+  }
 
   mDetectedGeomType = QgsPostgresConn::wkbTypeFromPostgis( detectedType );
   mDetectedSrid     = detectedSrid;
@@ -2698,6 +2692,7 @@ bool QgsPostgresProvider::getGeometryDetails()
     }
     layerProperty.geometryColName = mGeometryColumn;
     layerProperty.geometryColType = sctNone;
+    layerProperty.force2d         = false;
 
     QString delim = "";
 
@@ -2739,6 +2734,7 @@ bool QgsPostgresProvider::getGeometryDetails()
           // only what we requested is available
           mDetectedGeomType = layerProperty.types[ 0 ];
           mDetectedSrid     = QString::number( layerProperty.srids[ 0 ] );
+          mForce2d          = layerProperty.force2d;
         }
       }
       else
@@ -2753,6 +2749,7 @@ bool QgsPostgresProvider::getGeometryDetails()
   QgsDebugMsg( QString( "Requested SRID is %1" ).arg( mRequestedSrid ) );
   QgsDebugMsg( QString( "Detected type is %1" ).arg( mDetectedGeomType ) );
   QgsDebugMsg( QString( "Requested type is %1" ).arg( mRequestedGeomType ) );
+  QgsDebugMsg( QString( "Force to 2D %1" ).arg( mForce2d ? "Yes" : "No" ) );
 
   mValid = ( mDetectedGeomType != QGis::WKBUnknown || mRequestedGeomType != QGis::WKBUnknown )
            && ( !mDetectedSrid.isEmpty() || !mRequestedSrid.isEmpty() );
@@ -2763,7 +2760,8 @@ bool QgsPostgresProvider::getGeometryDetails()
   // store whether the geometry includes measure value
   if ( detectedType == "POINTM" || detectedType == "MULTIPOINTM" ||
        detectedType == "LINESTRINGM" || detectedType == "MULTILINESTRINGM" ||
-       detectedType == "POLYGONM" || detectedType == "MULTIPOLYGONM" )
+       detectedType == "POLYGONM" || detectedType == "MULTIPOLYGONM" ||
+       mForce2d )
   {
     // explicitly disable adding new features and editing of geometries
     // as this would lead to corruption of measures
@@ -2777,9 +2775,17 @@ bool QgsPostgresProvider::getGeometryDetails()
   return mValid;
 }
 
-bool QgsPostgresProvider::convertField( QgsField &field )
+bool QgsPostgresProvider::convertField( QgsField &field , const QMap<QString, QVariant>* options )
 {
-  QString fieldType = "varchar"; //default to string
+  //determine field type to use for strings
+  QString stringFieldType = "varchar";
+  if ( options && options->value( "dropStringConstraints", false ).toBool() )
+  {
+    //drop string length constraints by using PostgreSQL text type for strings
+    stringFieldType = "text";
+  }
+
+  QString fieldType = stringFieldType; //default to string
   int fieldSize = field.length();
   int fieldPrec = field.precision();
   switch ( field.type() )
@@ -2798,7 +2804,7 @@ bool QgsPostgresProvider::convertField( QgsField &field )
       break;
 
     case QVariant::String:
-      fieldType = "varchar";
+      fieldType = stringFieldType;
       fieldPrec = -1;
       break;
 
@@ -2910,7 +2916,7 @@ QgsVectorLayerImport::ImportError QgsPostgresProvider::createEmptyLayer(
       {
         // found, get the field type
         QgsField fld = fields[fldIdx];
-        if ( convertField( fld ) )
+        if ( convertField( fld, options ) )
         {
           primaryKeyType = fld.typeName();
         }
@@ -2961,6 +2967,13 @@ QgsVectorLayerImport::ImportError QgsPostgresProvider::createEmptyLayer(
       result = conn->PQexec( sql );
       if ( result.PQresultStatus() != PGRES_TUPLES_OK )
         throw PGException( result );
+    }
+
+    if ( options && options->value( "lowercaseFieldNames", false ).toBool() )
+    {
+      //convert primary key name to lowercase
+      //this must happen after determining the field type of the primary key
+      primaryKey = primaryKey.toLower();
     }
 
     sql = QString( "CREATE TABLE %1(%2 %3 PRIMARY KEY)" )
@@ -3042,25 +3055,28 @@ QgsVectorLayerImport::ImportError QgsPostgresProvider::createEmptyLayer(
     for ( int fldIdx = 0; fldIdx < fields.count(); ++fldIdx )
     {
       QgsField fld = fields[fldIdx];
+
+      if ( fld.name() == geometryColumn )
+      {
+        //the "lowercaseFieldNames" option does not affect the name of the geometry column, so we perform
+        //this test before converting the field name to lowercase
+        QgsDebugMsg( "Found a field with the same name of the geometry column. Skip it!" );
+        continue;
+      }
+
+      if ( options && options->value( "lowercaseFieldNames", false ).toBool() )
+      {
+        //convert field name to lowercase
+        fld.setName( fld.name().toLower() );
+      }
+
       if ( fld.name() == primaryKey )
       {
         oldToNewAttrIdxMap->insert( fldIdx, 0 );
         continue;
       }
 
-      if ( fld.name() == geometryColumn )
-      {
-        QgsDebugMsg( "Found a field with the same name of the geometry column. Skip it!" );
-        continue;
-      }
-
-      if ( options->contains( "lowercaseFieldNames" ) && options->value( "lowercaseFieldNames" ).toBool() )
-      {
-        //convert field name to lowercase
-        fld.setName( fld.name().toLower() );
-      }
-
-      if ( !convertField( fld ) )
+      if ( !convertField( fld, options ) )
       {
         if ( errorMessage )
           *errorMessage = QObject::tr( "Unsupported type for field %1" ).arg( fld.name() );
@@ -3097,7 +3113,14 @@ QgsVectorLayerImport::ImportError QgsPostgresProvider::createEmptyLayer(
 QgsCoordinateReferenceSystem QgsPostgresProvider::crs()
 {
   QgsCoordinateReferenceSystem srs;
-  srs.createFromSrid( mRequestedSrid.isEmpty() ? mDetectedSrid.toInt() : mRequestedSrid.toInt() );
+  int srid = mRequestedSrid.isEmpty() ? mDetectedSrid.toInt() : mRequestedSrid.toInt();
+  srs.createFromSrid( srid );
+  if ( !srs.isValid() )
+  {
+    QgsPostgresResult result = mConnectionRO->PQexec( QString( "SELECT proj4text FROM spatial_ref_sys WHERE srid=%1" ).arg( srid ) );
+    if ( result.PQresultStatus() == PGRES_TUPLES_OK )
+      srs.createFromProj4( result.PQgetvalue( 0, 0 ) );
+  }
   return srs;
 }
 

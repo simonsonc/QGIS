@@ -15,12 +15,12 @@ class QgsMapCanvasLayer
     bool isVisible() const;
     bool isInOverview() const;
 
-    QgsMapLayer* layer();
+    const QgsMapLayer* layer() const;
 };
 
 
-/*! \class QgsMapCanvas
- * \brief Map canvas class for displaying all GIS data types.
+/** \ingroup gui
+ * Map canvas is a class for displaying all GIS data types on a canvas.
  */
 
 class QgsMapCanvas : QGraphicsView
@@ -92,11 +92,11 @@ class QgsMapCanvas : QGraphicsView
     //! @note added in 2.4
     bool isParallelRenderingEnabled() const;
 
-    //! Set how often map preview should be updated while it is being rendered (in miliseconds)
+    //! Set how often map preview should be updated while it is being rendered (in milliseconds)
     //! @note added in 2.4
     void setMapUpdateInterval( int timeMiliseconds );
 
-    //! Find out how often map preview should be updated while it is being rendered (in miliseconds)
+    //! Find out how often map preview should be updated while it is being rendered (in milliseconds)
     //! @note added in 2.4
     int mapUpdateInterval() const;
 
@@ -264,6 +264,36 @@ class QgsMapCanvas : QGraphicsView
     //! returns last position of mouse cursor
     QPoint mouseLastXY();
 
+    /** Enables a preview mode for the map canvas
+     * @param previewEnabled set to true to enable a preview mode
+     * @see setPreviewMode
+     * @note added in 2.3 */
+    void setPreviewModeEnabled( bool previewEnabled );
+
+    /** Returns whether a preview mode is enabled for the map canvas
+     * @returns true if a preview mode is currently enabled
+     * @see setPreviewModeEnabled
+     * @see previewMode
+     * @note added in 2.3 */
+    bool previewModeEnabled() const;
+
+    /** Sets a preview mode for the map canvas. This setting only has an effect if
+     * previewModeEnabled is true.
+     * @param mode preview mode for the canvas
+     * @see previewMode
+     * @see setPreviewModeEnabled
+     * @see previewModeEnabled
+     * @note added in 2.3 */
+    void setPreviewMode( QgsPreviewEffect::PreviewMode mode );
+
+    /** Returns the current preview mode for the map canvas. This setting only has an effect if
+     * previewModeEnabled is true.
+     * @returns preview mode for map canvas
+     * @see setPreviewMode
+     * @see previewModeEnabled
+     * @note added in 2.3 */
+    QgsPreviewEffect::PreviewMode previewMode() const;
+
   public slots:
 
     /**Repaints the canvas map*/
@@ -333,15 +363,15 @@ class QgsMapCanvas : QGraphicsView
     //! - additional drawing shall be done directly within the renderer job or independently as a map canvas item
     void renderComplete( QPainter * );
 
+    // ### QGIS 3: renamte to mapRefreshFinished()
     /** Emitted when canvas finished a refresh request.
     \note Added in 2.0 */
-    //! @deprecated since 2.4 - anything related to rendering progress is not visible outside of map canvas
-    void mapCanvasRefreshed() /Deprecated/;
+    void mapCanvasRefreshed();
 
+    // ### QGIS 3: rename to mapRefreshStarted()
     /** Emitted when the canvas is about to be rendered.
       \note Added in 1.5 */
-    //! @deprecated since 2.4 - anything related to rendering progress is not visible outside of map canvas
-    void renderStarting() /Deprecated/;
+    void renderStarting();
 
     //! Emitted when a new set of layers has been received
     void layersChanged();
@@ -355,8 +385,9 @@ class QgsMapCanvas : QGraphicsView
     //! Emit map tool changed event
     void mapToolSet( QgsMapTool *tool );
 
-    //! Emit map tool changed with the old tool
-    //! @note added in 2.3
+    /** Emit map tool changed with the old tool
+     * @note added in 2.3
+     */
     void mapToolSet( QgsMapTool *newTool, QgsMapTool* oldTool );
 
     // ### QGIS 3: remove the signal

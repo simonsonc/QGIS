@@ -5,6 +5,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QtConcurrentMap>
+#include <QSettings>
 
 #include "qgscrscache.h"
 #include "qgslogger.h"
@@ -407,7 +408,7 @@ void QgsMapRendererJob::drawOldLabeling( const QgsMapSettings& settings, QgsRend
 
     if ( settings.hasCrsTransformEnabled() )
     {
-      ct = QgsCoordinateTransformCache::instance()->transform( ml->crs().authid(), settings.destinationCrs().authid() );
+      ct = settings.layerTransfrom( ml );
       reprojectToLayerExtent( ct, ml->crs().geographicFlag(), r1, r2 );
     }
 
@@ -570,7 +571,7 @@ LayerRenderJobs QgsMapRendererJob::prepareJobs( QPainter* painter, QgsPalLabelin
 
     if ( mSettings.hasCrsTransformEnabled() )
     {
-      ct = QgsCoordinateTransformCache::instance()->transform( ml->crs().authid(), mSettings.destinationCrs().authid() );
+      ct = mSettings.layerTransfrom( ml );
       reprojectToLayerExtent( ct, ml->crs().geographicFlag(), r1, r2 );
       QgsDebugMsg( "extent: " + r1.toString() );
       if ( !r1.isFinite() || !r2.isFinite() )
@@ -730,6 +731,8 @@ void QgsMapRendererParallelJob::start()
 
 
   mLayerJobs = prepareJobs( 0, mLabelingEngine );
+
+  qDebug( "QThreadPool max thread count is %d", QThreadPool::globalInstance()->maxThreadCount() );
 
   // start async job
 

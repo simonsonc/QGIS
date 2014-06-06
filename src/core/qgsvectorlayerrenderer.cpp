@@ -120,9 +120,7 @@ bool QgsVectorLayerRenderer::render()
   // enable the simplification of the geometries (Using the current map2pixel context) before send it to renderer engine.
   if ( mSimplifyGeometry )
   {
-    QPainter* p = mContext.painter();
-    double dpi = ( p->device()->logicalDpiX() + p->device()->logicalDpiY() ) / 2;
-    double map2pixelTol = mSimplifyMethod.threshold() * 96.0f / dpi;
+    double map2pixelTol = mSimplifyMethod.threshold();
 
     const QgsMapToPixel& mtp = mContext.mapToPixel();
     map2pixelTol *= mtp.mapUnitsPerPixel();
@@ -171,6 +169,15 @@ bool QgsVectorLayerRenderer::render()
     simplifyMethod.setForceLocalOptimization( mSimplifyMethod.forceLocalOptimization() );
 
     featureRequest.setSimplifyMethod( simplifyMethod );
+
+    QgsVectorSimplifyMethod vectorMethod = mSimplifyMethod;
+    mContext.setVectorSimplifyMethod( vectorMethod );
+  }
+  else
+  {
+    QgsVectorSimplifyMethod vectorMethod;
+    vectorMethod.setSimplifyHints( QgsVectorSimplifyMethod::NoSimplification );
+    mContext.setVectorSimplifyMethod( vectorMethod );
   }
 
   QgsFeatureIterator fit = mSource->getFeatures( featureRequest );
@@ -220,11 +227,11 @@ void QgsVectorLayerRenderer::drawRendererV2( QgsFeatureIterator& fit )
 
       if ( mContext.renderingStopped() )
       {
-        qDebug( "breaking!" );
+        QgsDebugMsg( QString( "Drawing of vector layer %1 cancelled." ).arg( layerID() ) );
         break;
       }
 
-      bool sel = mSelectedFeatureIds.contains( fet.id() );
+      bool sel = mContext.showSelection() && mSelectedFeatureIds.contains( fet.id() );
       bool drawMarker = ( mDrawVertexMarkers && mContext.drawEditingInformation() && ( !mVertexMarkerOnlyForSelection || sel ) );
 
       // render feature

@@ -115,62 +115,69 @@ QList<QgsMapToolIdentify::IdentifyResult> QgsMapToolIdentify::identify( int x, i
       }
     }
 
-    //fill selection menu with entries from mmLayerIdResults
-    QMenu layerSelectionMenu;
-    QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator resultIt = mLayerIdResults.constBegin();
-    for ( ; resultIt != mLayerIdResults.constEnd(); ++resultIt )
+    if ( mLayerIdResults.size() > 1 )
     {
-      QAction* action = new QAction( QString( "%1 (%2)" ).arg( resultIt.key()->name() ).arg( resultIt.value().size() ), 0 );
-      action->setData( resultIt.key()->id() );
-      //add point/line/polygon icon
-      QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( resultIt.key() );
-      if ( vl )
+      //fill selection menu with entries from mmLayerIdResults
+      QMenu layerSelectionMenu;
+      QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator resultIt = mLayerIdResults.constBegin();
+      for ( ; resultIt != mLayerIdResults.constEnd(); ++resultIt )
       {
-        switch ( vl->geometryType() )
+        QAction* action = new QAction( QString( "%1 (%2)" ).arg( resultIt.key()->name() ).arg( resultIt.value().size() ), 0 );
+        action->setData( resultIt.key()->id() );
+        //add point/line/polygon icon
+        QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( resultIt.key() );
+        if ( vl )
         {
-          case QGis::Point:
-            action->setIcon( QgsApplication::getThemeIcon( "/mIconPointLayer.png" ) );
-            break;
-          case QGis::Line:
-            action->setIcon( QgsApplication::getThemeIcon( "/mIconLineLayer.png" ) );
-            break;
-          case QGis::Polygon:
-            action->setIcon( QgsApplication::getThemeIcon( "/mIconPolygonLayer.png" ) );
-            break;
-          default:
-            break;
+          switch ( vl->geometryType() )
+          {
+            case QGis::Point:
+              action->setIcon( QgsApplication::getThemeIcon( "/mIconPointLayer.png" ) );
+              break;
+            case QGis::Line:
+              action->setIcon( QgsApplication::getThemeIcon( "/mIconLineLayer.png" ) );
+              break;
+            case QGis::Polygon:
+              action->setIcon( QgsApplication::getThemeIcon( "/mIconPolygonLayer.png" ) );
+              break;
+            default:
+              break;
+          }
         }
+        else if ( resultIt.key()->type() == QgsMapLayer::RasterLayer )
+        {
+          action->setIcon( QgsApplication::getThemeIcon( "/mIconRaster.png" ) );
+        }
+        connect( action, SIGNAL( hovered() ), this, SLOT( handleMenuHover() ) );
+        layerSelectionMenu.addAction( action );
       }
-      else if ( resultIt.key()->type() == QgsMapLayer::RasterLayer )
-      {
-        action->setIcon( QgsApplication::getThemeIcon( "/mIconRaster.png" ) );
-      }
+
+      QAction *action = new QAction( tr( "All (%1)" ).arg( idResult.size() ), 0 );
       connect( action, SIGNAL( hovered() ), this, SLOT( handleMenuHover() ) );
       layerSelectionMenu.addAction( action );
-    }
 
-    QAction *action = new QAction( tr( "All (%1)" ).arg( idResult.size() ), 0 );
-    connect( action, SIGNAL( hovered() ), this, SLOT( handleMenuHover() ) );
-    layerSelectionMenu.addAction( action );
-
-    // exec layer selection menu
-    QPoint globalPos = mCanvas->mapToGlobal( QPoint( x + 5, y + 5 ) );
-    QAction* selectedAction = layerSelectionMenu.exec( globalPos );
-    if ( selectedAction )
-    {
-      if( selectedAction->data().toString().isEmpty() )
+      // exec layer selection menu
+      QPoint globalPos = mCanvas->mapToGlobal( QPoint( x + 5, y + 5 ) );
+      QAction* selectedAction = layerSelectionMenu.exec( globalPos );
+      if ( selectedAction )
       {
-        results = idResult;
-      }
-      else
-      {
-        QgsMapLayer* selectedLayer = QgsMapLayerRegistry::instance()->mapLayer( selectedAction->data().toString() );
-        QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator sIt = mLayerIdResults.find( selectedLayer );
-        if ( sIt != mLayerIdResults.constEnd() )
+        if ( selectedAction->data().toString().isEmpty() )
         {
-          results = sIt.value();
+          results = idResult;
+        }
+        else
+        {
+          QgsMapLayer* selectedLayer = QgsMapLayerRegistry::instance()->mapLayer( selectedAction->data().toString() );
+          QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator sIt = mLayerIdResults.find( selectedLayer );
+          if ( sIt != mLayerIdResults.constEnd() )
+          {
+            results = sIt.value();
+          }
         }
       }
+    }
+    else if ( mLayerIdResults.size() == 1 )
+    {
+      results = idResult;
     }
 
     deleteRubberBands();
@@ -261,7 +268,7 @@ bool QgsMapToolIdentify::identifyLayer( QList<IdentifyResult> *results, QgsMapLa
 
 bool QgsMapToolIdentify::identifyVectorLayer( QList<IdentifyResult> *results, QgsVectorLayer *layer, QgsPoint point )
 {
-  if ( !layer )
+  if ( !layer || !layer->hasGeometryType() )
     return false;
 
   if ( layer->hasScaleBasedVisibility() &&
@@ -671,7 +678,7 @@ void QgsMapToolIdentify::handleMenuHover()
     }
     else
     {
-      for( QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator lIt = mLayerIdResults.constBegin(); lIt != mLayerIdResults.constEnd(); ++lIt )
+      for ( QMap< QgsMapLayer*, QList<IdentifyResult> >::const_iterator lIt = mLayerIdResults.constBegin(); lIt != mLayerIdResults.constEnd(); ++lIt )
       {
         const QList<IdentifyResult>& idList = lIt.value();
         QList<IdentifyResult>::const_iterator idListIt = idList.constBegin();
@@ -681,7 +688,7 @@ void QgsMapToolIdentify::handleMenuHover()
           hl->setColor( QColor( 255, 0, 0 ) );
           hl->setWidth( 2 );
           mRubberBands.append( hl );
-          connect( vl, SIGNAL( destroyed() ), this, SLOT( layerDestroyed() ) );
+          connect( lIt.key(), SIGNAL( destroyed() ), this, SLOT( layerDestroyed() ) );
         }
       }
     }

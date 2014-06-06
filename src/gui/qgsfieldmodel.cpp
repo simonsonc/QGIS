@@ -28,7 +28,7 @@ QgsFieldModel::QgsFieldModel( QObject *parent )
 {
 }
 
-QModelIndex QgsFieldModel::indexFromName( QString fieldName )
+QModelIndex QgsFieldModel::indexFromName( const QString &fieldName )
 {
   int r = mFields.indexFromName( fieldName );
   QModelIndex idx = index( r, 0 );
@@ -104,20 +104,18 @@ void QgsFieldModel::setAllowExpression( bool allowExpression )
   }
 }
 
-QModelIndex QgsFieldModel::setExpression( QString expression )
+QModelIndex QgsFieldModel::setExpression( const QString &expression )
 {
   if ( !mAllowExpression )
     return QModelIndex();
 
+  QModelIndex idx = indexFromName( expression );
+  if ( idx.isValid() )
+    return idx;
+
   beginResetModel();
   mExpression = QList<QString>() << expression;
   endResetModel();
-
-  // fetch feature to be evaluate the expression
-  if ( !mFeature.isValid() )
-  {
-    mLayer->getFeatures().nextFeature( mFeature );
-  }
 
   return index( mFields.count() , 0 );
 }
@@ -164,7 +162,7 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
   if ( !mLayer )
     return QVariant();
 
-  int exprIdx = index.internalId() - mFields.count();
+  qint64 exprIdx = index.internalId() - mFields.count();
 
   switch ( role )
   {
@@ -209,18 +207,22 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
     {
       if ( exprIdx >= 0 )
       {
+        if ( !mLayer )
+          return false;
         QgsExpression exp( mExpression[exprIdx] );
-        if ( mFeature.isValid() )
-        {
-          exp.evaluate( &mFeature, mLayer->pendingFields() );
-          return !exp.hasEvalError();
-        }
-        else
-        {
-          return QVariant();
-        }
+        exp.prepare( mLayer->pendingFields() );
+        return !exp.hasParserError();
       }
       return true;
+    }
+
+    case FieldTypeRole:
+    {
+      if ( exprIdx < 0 )
+      {
+        QgsField field = mFields[index.internalId()];
+        return ( int )field.type();
+      }
     }
 
     case Qt::DisplayRole:
@@ -230,10 +232,7 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
       {
         return mExpression[exprIdx];
       }
-      QgsField field = mFields[index.internalId()];
-      const QMap< QString, QString > aliases = mLayer->attributeAliases();
-      QString alias = aliases.value( field.name(), field.name() );
-      return alias;
+      return mLayer->attributeDisplayName( index.internalId() );
     }
 
     case Qt::ForegroundRole:
@@ -241,15 +240,13 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
       if ( exprIdx >= 0 )
       {
         // if expression, test validity
+        if ( !mLayer )
+          return false;
         QgsExpression exp( mExpression[exprIdx] );
-
-        if ( mFeature.isValid() )
+        exp.prepare( mLayer->pendingFields() );
+        if ( exp.hasParserError() )
         {
-          exp.evaluate( &mFeature, mLayer->pendingFields() );
-          if ( exp.hasEvalError() )
-          {
-            return QBrush( QColor( Qt::red ) );
-          }
+          return QBrush( QColor( Qt::red ) );
         }
       }
       return QVariant();

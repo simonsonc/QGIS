@@ -186,6 +186,13 @@ void QgsComposition::refreshItems()
   emit refreshItemsTriggered();
 }
 
+void QgsComposition::setSelectedItem( QgsComposerItem *item )
+{
+  clearSelection();
+  item->setSelected( true );
+  emit selectedItemChanged( item );
+}
+
 QRectF QgsComposition::compositionBounds() const
 {
   //start with an empty rectangle
@@ -213,6 +220,17 @@ QRectF QgsComposition::compositionBounds() const
 
 void QgsComposition::setPaperSize( double width, double height )
 {
+  QList<QGraphicsItem *> itemList = items();
+  QList<QGraphicsItem *>::iterator itemIt = itemList.begin();
+  for ( ; itemIt != itemList.end(); ++itemIt )
+  {
+    QgsComposerItem* composerItem = dynamic_cast<QgsComposerItem *>( *itemIt );
+    if ( composerItem )
+    {
+      composerItem->updatePagePos( width, height );
+    }
+  }
+
   mPageWidth = width;
   mPageHeight = height;
   double currentY = 0;
@@ -221,6 +239,7 @@ void QgsComposition::setPaperSize( double width, double height )
     mPages.at( i )->setSceneRect( QRectF( 0, currentY, width, height ) );
     currentY += ( height + mSpaceBetweenPages );
   }
+  QgsProject::instance()->dirty( true );
   updateBounds();
   emit paperSizeChanged();
 }
@@ -259,6 +278,7 @@ void QgsComposition::setNumPages( int pages )
   //update the corresponding variable
   QgsExpression::setSpecialColumn( "$numpages", QVariant(( int )numPages() ) );
 
+  QgsProject::instance()->dirty( true );
   updateBounds();
 
   emit nPagesChanged();
@@ -273,6 +293,7 @@ void QgsComposition::setPageStyleSymbol( QgsFillSymbolV2* symbol )
 {
   delete mPageStyleSymbol;
   mPageStyleSymbol = symbol;
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::createDefaultPageStyleSymbol()
@@ -516,6 +537,7 @@ void QgsComposition::setPrintResolution( int dpi )
 {
   mPrintResolution = dpi;
   emit printResolutionChanged();
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::setUseAdvancedEffects( bool effectsEnabled )
@@ -1186,12 +1208,19 @@ void QgsComposition::raiseItem( QgsComposerItem* item )
   QMutableLinkedListIterator<QgsComposerItem*> it( mItemZList );
   if ( it.findNext( item ) )
   {
-    if ( it.hasNext() )
+    it.remove();
+    while ( it.hasNext() )
     {
-      it.remove();
+      //search through item z list to find next item which is present in the scene
+      //(deleted items still exist in the z list so that they can be restored to their correct stacking order,
+      //but since they are not in the scene they should be ignored here)
       it.next();
-      it.insert( item );
+      if ( it.value() && it.value()->scene() )
+      {
+        break;
+      }
     }
+    it.insert( item );
   }
 }
 
@@ -1284,13 +1313,19 @@ void QgsComposition::lowerItem( QgsComposerItem* item )
   QMutableLinkedListIterator<QgsComposerItem*> it( mItemZList );
   if ( it.findNext( item ) )
   {
-    it.previous();
-    if ( it.hasPrevious() )
+    it.remove();
+    while ( it.hasPrevious() )
     {
-      it.remove();
+      //search through item z list to find previous item which is present in the scene
+      //(deleted items still exist in the z list so that they can be restored to their correct stacking order,
+      //but since they are not in the scene they should be ignored here)
       it.previous();
-      it.insert( item );
+      if ( it.value() && it.value()->scene() )
+      {
+        break;
+      }
     }
+    it.insert( item );
   }
 }
 
@@ -1372,6 +1407,7 @@ void QgsComposition::alignSelectedItemsLeft()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::alignSelectedItemsHCenter()
@@ -1401,6 +1437,7 @@ void QgsComposition::alignSelectedItemsHCenter()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::alignSelectedItemsRight()
@@ -1430,6 +1467,7 @@ void QgsComposition::alignSelectedItemsRight()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::alignSelectedItemsTop()
@@ -1458,6 +1496,7 @@ void QgsComposition::alignSelectedItemsTop()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::alignSelectedItemsVCenter()
@@ -1485,6 +1524,7 @@ void QgsComposition::alignSelectedItemsVCenter()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::alignSelectedItemsBottom()
@@ -1512,6 +1552,7 @@ void QgsComposition::alignSelectedItemsBottom()
     subcommand->saveAfterState();
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::lockSelectedItems()
@@ -1529,6 +1570,7 @@ void QgsComposition::lockSelectedItems()
 
   clearSelection();
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::unlockAllItems()
@@ -1557,6 +1599,7 @@ void QgsComposition::unlockAllItems()
     }
   }
   mUndoStack.push( parentCommand );
+  QgsProject::instance()->dirty( true );
 }
 
 void QgsComposition::updateZValues( bool addUndoCommands )
@@ -1592,6 +1635,7 @@ void QgsComposition::updateZValues( bool addUndoCommands )
   if ( addUndoCommands )
   {
     mUndoStack.push( parentCommand );
+    QgsProject::instance()->dirty( true );
   }
 }
 

@@ -62,6 +62,9 @@ class QgsMssqlFeatureSource : public QgsAbstractFeatureSource
     // SQL statement used to limit the features retrieved
     QString mSqlWhereClause;
 
+    // Return True if this feature source has spatial attributes.
+    bool isSpatial() { return !mGeometryColName.isEmpty() || !mGeometryColType.isEmpty(); }
+
     friend class QgsMssqlFeatureIterator;
 };
 
@@ -102,9 +105,6 @@ class QgsMssqlFeatureIterator : public QgsAbstractFeatureIteratorFromSource<QgsM
 
     // Field index of FID column
     long mFidCol;
-
-    // Field index of geometry column
-    long mGeometryCol;
 
     // List of attribute indices to fetch with nextFeature calls
     QgsAttributeList mAttributesToFetch;

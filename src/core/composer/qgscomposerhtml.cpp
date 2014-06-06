@@ -17,6 +17,8 @@
 #include "qgscomposerframe.h"
 #include "qgscomposition.h"
 #include "qgsaddremovemultiframecommand.h"
+#include "qgsnetworkaccessmanager.h"
+
 #include <QCoreApplication>
 #include <QPainter>
 #include <QWebFrame>
@@ -28,10 +30,12 @@ QgsComposerHtml::QgsComposerHtml( QgsComposition* c, bool createUndoCommands ): 
     mLoaded( false ),
     mHtmlUnitsToMM( 1.0 ),
     mRenderedPage( 0 ),
-    mUseSmartBreaks( true )
+    mUseSmartBreaks( true ),
+    mMaxBreakDistance( 10 )
 {
   mHtmlUnitsToMM = htmlUnitsToMM();
   mWebPage = new QWebPage();
+  mWebPage->setNetworkAccessManager( QgsNetworkAccessManager::instance() );
   QObject::connect( mWebPage, SIGNAL( loadFinished( bool ) ), this, SLOT( frameLoaded( bool ) ) );
   if ( mComposition )
   {
@@ -45,7 +49,8 @@ QgsComposerHtml::QgsComposerHtml(): QgsComposerMultiFrame( 0, false ),
     mLoaded( false ),
     mHtmlUnitsToMM( 1.0 ),
     mRenderedPage( 0 ),
-    mUseSmartBreaks( true )
+    mUseSmartBreaks( true ),
+    mMaxBreakDistance( 10 )
 {
 }
 
@@ -188,7 +193,7 @@ double QgsComposerHtml::findNearbyPageBreak( double yPos )
     return yPos;
   }
 
-  int maxSearchDistance = 100;
+  int maxSearchDistance = mMaxBreakDistance * htmlUnitsToMM();
 
   //loop through all lines just before ideal break location, up to max distance
   //of maxSearchDistance
@@ -236,7 +241,7 @@ double QgsComposerHtml::findNearbyPageBreak( double yPos )
   {
     if (( *it ).second != minCandidateChanges || ( *it ).first != minCandidateRow - 1 )
     {
-      //no longer in a consecutive block of rows of minimum pixel colour changes
+      //no longer in a consecutive block of rows of minimum pixel color changes
       //so return the row mid-way through the block
       //first converting back to mm
       return ( minCandidateRow + ( maxCandidateRow - minCandidateRow ) / 2 ) / htmlUnitsToMM();
@@ -253,6 +258,14 @@ void QgsComposerHtml::setUseSmartBreaks( bool useSmartBreaks )
 {
   mUseSmartBreaks = useSmartBreaks;
   recalculateFrameSizes();
+  emit changed();
+}
+
+void QgsComposerHtml::setMaxBreakDistance( double maxBreakDistance )
+{
+  mMaxBreakDistance = maxBreakDistance;
+  recalculateFrameSizes();
+  emit changed();
 }
 
 bool QgsComposerHtml::writeXML( QDomElement& elem, QDomDocument & doc, bool ignoreFrames ) const
@@ -260,6 +273,7 @@ bool QgsComposerHtml::writeXML( QDomElement& elem, QDomDocument & doc, bool igno
   QDomElement htmlElem = doc.createElement( "ComposerHtml" );
   htmlElem.setAttribute( "url", mUrl.toString() );
   htmlElem.setAttribute( "useSmartBreaks", mUseSmartBreaks ? "true" : "false" );
+  htmlElem.setAttribute( "maxBreakDistance", QString::number( mMaxBreakDistance ) );
 
   bool state = _writeXML( htmlElem, doc, ignoreFrames );
   elem.appendChild( htmlElem );
@@ -277,6 +291,7 @@ bool QgsComposerHtml::readXML( const QDomElement& itemElem, const QDomDocument& 
   }
 
   mUseSmartBreaks = itemElem.attribute( "useSmartBreaks", "true" ) == "true" ? true : false;
+  mMaxBreakDistance = itemElem.attribute( "maxBreakDistance", "10" ).toDouble();
 
   //finally load the set url
   QString urlString = itemElem.attribute( "url" );

@@ -55,6 +55,7 @@ class QgsWMSProjectParser: public QgsWMSConfigParser
 
     double maxWidth() const;
     double maxHeight() const;
+    double imageQuality() const;
 
     //printing
     QgsComposition* initComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, QList< QgsComposerMap*>& mapList, QList< QgsComposerLabel* >& labelList, QList<const QgsComposerHtml *>& htmlFrameList ) const;
@@ -98,6 +99,8 @@ class QgsWMSProjectParser: public QgsWMSConfigParser
     void drawOverlays( QPainter* p, int dpi, int width, int height ) const;
 
     int nLayers() const;
+
+    void serviceCapabilities( QDomElement& parentElement, QDomDocument& doc ) const;
 
   private:
     QgsServerProjectParser mProjectParser;

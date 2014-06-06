@@ -19,6 +19,7 @@
 
 #include <QGraphicsView>
 #include "qgsaddremoveitemcommand.h"
+#include "qgsprevieweffect.h" // for QgsPreviewEffect::PreviewMode
 
 class QDomDocument;
 class QDomElement;
@@ -119,8 +120,11 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
     QgsComposerView::Tool currentTool() const {return mCurrentTool;}
     void setCurrentTool( QgsComposerView::Tool t );
 
-    /**Sets composition (derived from QGraphicsScene)*/
+    /**Sets the composition for the view. If the composition is being set manually and not by a QgsComposer, then this must
+     * be set BEFORE adding any items to the composition.
+    */
     void setComposition( QgsComposition* c );
+
     /**Returns the composition or 0 in case of error*/
     QgsComposition* composition();
 
@@ -138,6 +142,20 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
 
     /**Set zoom level, where a zoom level of 1.0 corresponds to 100%*/
     void setZoomLevel( double zoomLevel );
+
+    /**Sets whether a preview effect should be used to alter the view's appearance
+     * @param enabled Set to true to enable the preview effect on the view
+     * @note added in 2.3
+     * @see setPreviewMode
+    */
+    void setPreviewModeEnabled( bool enabled );
+    /**Sets the preview mode which should be used to modify the view's appearance. Preview modes are only used
+     * if setPreviewMode is set to true.
+     * @param mode PreviewMode to be used to draw the view
+     * @note added in 2.3
+     * @see setPreviewModeEnabled
+    */
+    void setPreviewMode( QgsPreviewEffect::PreviewMode mode );
 
   protected:
     void mousePressEvent( QMouseEvent* );
@@ -204,6 +222,8 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
     QPoint mMouseCurrentXY;
     QPoint mMousePressStartPos;
 
+    QgsPreviewEffect* mPreviewEffect;
+
     /**Returns the default mouse cursor for a tool*/
     QCursor defaultCursorForTool( Tool currentTool );
 
@@ -242,6 +262,9 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
     void composerViewShow( QgsComposerView* );
     /**Emitted before composerview is hidden*/
     void composerViewHide( QgsComposerView* );
+
+    /**Emitted when the composition is set for the view*/
+    void compositionSet( QgsComposition* );
 };
 
 #endif
