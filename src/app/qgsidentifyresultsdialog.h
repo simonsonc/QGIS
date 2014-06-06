@@ -94,7 +94,6 @@ class APP_EXPORT QgsIdentifyResultsWebViewItem: public QObject, public QTreeWidg
     QgsIdentifyResultsWebView *mWebView;
 };
 
-#if 0
 class APP_EXPORT QgsIdentifyPlotCurve
 {
   public:
@@ -107,7 +106,6 @@ class APP_EXPORT QgsIdentifyPlotCurve
   private:
     QwtPlotCurve* mPlotCurve;
 };
-#endif
 
 class APP_EXPORT QgsIdentifyResultsDialog: public QDialog, private Ui::QgsIdentifyResultsBase
 {
@@ -254,9 +252,7 @@ class APP_EXPORT QgsIdentifyResultsDialog: public QDialog, private Ui::QgsIdenti
 
     QDockWidget *mDock;
 
-#if 0
     QVector<QgsIdentifyPlotCurve *> mPlotCurves;
-#endif
 };
 
 class QgsIdentifyResultsDialogMapLayerAction : public QAction

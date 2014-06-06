@@ -54,12 +54,10 @@
 #include <QWebFrame>
 
 //graph
-#if 0
 #include <qwt_plot.h>
 #include <qwt_plot_curve.h>
 #include <qwt_symbol.h>
 #include <qwt_legend.h>
-#endif
 #include "qgsvectorcolorrampv2.h" // for random colors
 
 
@@ -302,7 +300,6 @@ QgsIdentifyResultsDialog::QgsIdentifyResultsDialog( QgsMapCanvas *canvas, QWidge
   cmbIdentifyMode->setCurrentIndex( cmbIdentifyMode->findData( identifyMode ) );
   cbxAutoFeatureForm->setChecked( mySettings.value( "/Map/identifyAutoFeatureForm", false ).toBool() );
 
-#if 0
   // graph
   mPlot->setVisible( false );
   mPlot->setAutoFillBackground( false );
@@ -314,7 +311,6 @@ QgsIdentifyResultsDialog::QgsIdentifyResultsDialog( QgsMapCanvas *canvas, QWidge
   sizePolicy.setHeightForWidth( mPlot->sizePolicy().hasHeightForWidth() );
   mPlot->setSizePolicy( sizePolicy );
   mPlot->updateGeometry();
-#endif
 
   connect( lstResults, SIGNAL( itemExpanded( QTreeWidgetItem* ) ),
            this, SLOT( itemExpanded( QTreeWidgetItem* ) ) );
@@ -340,11 +336,9 @@ QgsIdentifyResultsDialog::~QgsIdentifyResultsDialog()
 
   if ( mActionPopup )
     delete mActionPopup;
-#if 0
   foreach ( QgsIdentifyPlotCurve *curve, mPlotCurves )
     delete curve;
   mPlotCurves.clear();
-#endif
 }
 
 QTreeWidgetItem *QgsIdentifyResultsDialog::layerItem( QObject *object )
@@ -564,7 +558,6 @@ void QgsIdentifyResultsDialog::mapLayerActionDestroyed()
   }
 }
 
-#if 0
 QgsIdentifyPlotCurve::QgsIdentifyPlotCurve( const QMap<QString, QString> &attributes,
     QwtPlot* plot, const QString &title, QColor color )
 {
@@ -626,7 +619,6 @@ QgsIdentifyPlotCurve::~QgsIdentifyPlotCurve()
     delete mPlotCurve;
   }
 }
-#endif
 
 QString QgsIdentifyResultsDialog::representValue( QgsVectorLayer* vlayer, const QString& fieldName, const QVariant& value )
 {
@@ -786,12 +778,10 @@ void QgsIdentifyResultsDialog::addFeature( QgsRasterLayer *layer,
   //tblResults->resizeColumnToContents( 1 );
 
   // graph
-#if 0
   if ( attributes.count() > 0 )
   {
     mPlotCurves.append( new QgsIdentifyPlotCurve( attributes, mPlot, layer->name() ) );
   }
-#endif
 }
 
 void QgsIdentifyResultsDialog::editingToggled()
@@ -1074,12 +1064,10 @@ void QgsIdentifyResultsDialog::clear()
   tblResults->clearContents();
   tblResults->setRowCount( 0 );
 
-#if 0
   mPlot->setVisible( false );
   foreach ( QgsIdentifyPlotCurve *curve, mPlotCurves )
     delete curve;
   mPlotCurves.clear();
-#endif
 
   // keep it visible but disabled, it can switch from disabled/enabled
   // after raster format change

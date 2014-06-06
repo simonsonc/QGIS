@@ -37,7 +37,7 @@
 #include "qgspalettedrendererwidget.h"
 #include "qgsproject.h"
 #include "qgsrasterbandstats.h"
-//#include "qgsrasterhistogramwidget.h"
+#include "qgsrasterhistogramwidget.h"
 #include "qgsrasteridentifyresult.h"
 #include "qgsrasterlayer.h"
 #include "qgsrasterlayerproperties.h"
@@ -318,8 +318,8 @@ QgsRasterLayerProperties::QgsRasterLayerProperties( QgsMapLayer* lyr, QgsMapCanv
   mHistogramWidget = NULL;
   if ( mOptsPage_Histogram->isEnabled() )
   {
-    //mHistogramWidget = new QgsRasterHistogramWidget( mRasterLayer, mOptsPage_Histogram );
-    //mHistogramStackedWidget->addWidget( mHistogramWidget );
+    mHistogramWidget = new QgsRasterHistogramWidget( mRasterLayer, mOptsPage_Histogram );
+    mHistogramStackedWidget->addWidget( mHistogramWidget );
   }
 
   //insert renderer widgets into registry
@@ -531,7 +531,7 @@ void QgsRasterLayerProperties::setRendererWidget( const QString& rendererName )
 
   if ( mHistogramWidget )
   {
-    //mHistogramWidget->setRendererWidget( rendererName, mRendererWidget );
+    mHistogramWidget->setRendererWidget( rendererName, mRendererWidget );
   }
 }
 
@@ -572,7 +572,7 @@ void QgsRasterLayerProperties::sync()
     {
       delete mOptsPage_Histogram;
       mOptsPage_Histogram = NULL;
-      //delete mHistogramWidget;
+      delete mHistogramWidget;
       mHistogramWidget = NULL;
     }
   }
@@ -1322,11 +1322,11 @@ void QgsRasterLayerProperties::mOptionsStackedWidget_CurrentChanged( int indx )
 
   if ( indx == 5 )
   {
-    //mHistogramWidget->setActive( true );
+    mHistogramWidget->setActive( true );
   }
   else
   {
-    //mHistogramWidget->setActive( false );
+    mHistogramWidget->setActive( false );
   }
 }
 

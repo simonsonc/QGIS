@@ -133,6 +133,7 @@
 #include "qgsfieldcalculator.h"
 #include "qgshtmlannotationitem.h"
 #include "qgsgenericprojectionselector.h"
+#include "qgsgpsinformationwidget.h"
 #include "qgsguivectorlayertools.h"
 #include "qgslabelinggui.h"
 #include "qgslayertree.h"
@@ -638,7 +639,7 @@ QgisApp::QgisApp( QSplashScreen *splash, bool restorePlugins, QWidget * parent, 
   mBrowserWidget2->hide();
 
   // create the GPS tool on starting QGIS - this is like the browser
-  //mpGpsWidget = new QgsGPSInformationWidget( mMapCanvas );
+  mpGpsWidget = new QgsGPSInformationWidget( mMapCanvas );
   //create the dock widget
   mpGpsDock = new QDockWidget( tr( "GPS Information" ), this );
   mpGpsDock->setObjectName( "GPSInformation" );
@@ -646,7 +647,7 @@ QgisApp::QgisApp( QSplashScreen *splash, bool restorePlugins, QWidget * parent, 
   addDockWidget( Qt::LeftDockWidgetArea, mpGpsDock );
   // add to the Panel submenu
   // now add our widget to the dock - ownership of the widget is passed to the dock
-  //mpGpsDock->setWidget( mpGpsWidget );
+  mpGpsDock->setWidget( mpGpsWidget );
   mpGpsDock->hide();
 
   mLastMapToolMessage = 0;
@@ -2594,7 +2595,7 @@ void QgisApp::about()
 
     versionString += "</tr><tr>";
 
-    //versionString += "<td>" + tr( "QWT Version" ) + "</td><td>" + QWT_VERSION_STR + "</td>";
+    versionString += "<td>" + tr( "QWT Version" ) + "</td><td>" + QWT_VERSION_STR + "</td>";
     versionString += "<td>" + tr( "PROJ.4 Version" ) + "</td><td>" + QString::number( PJ_VERSION ) + "</td>";
 
     versionString += "</tr><tr>";
