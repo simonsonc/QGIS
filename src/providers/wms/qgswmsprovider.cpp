@@ -48,10 +48,8 @@
 #include <QNetworkProxy>
 #include <QNetworkDiskCache>
 
-#if 0
 #include <QtXmlPatterns/QXmlSchema>
 #include <QtXmlPatterns/QXmlSchemaValidator>
-#endif
 
 #include <QUrl>
 #include <QIcon>
@@ -2515,7 +2513,6 @@ QgsRasterIdentifyResult QgsWmsProvider::identify( const QgsPoint & thePoint, Qgs
 
         if ( xsdPart >= 0 )  // XSD available
         {
-#if 0
           // Validate GML by schema
           // Loading schema takes ages! It needs to load all XSD referenced in the schema,
           // for example:
@@ -2544,7 +2541,6 @@ QgsRasterIdentifyResult QgsWmsProvider::identify( const QgsPoint & thePoint, Qgs
             results.insert( count, tr( "GML is not valid" ) );
             continue;
           }
-#endif
           QgsDebugMsg( "GML XSD (first 4000 bytes):\n" + QString::fromUtf8( mIdentifyResultBodies.value( xsdPart ).left( 4000 ) ) );
           gmlSchema.parseXSD( mIdentifyResultBodies.value( xsdPart ) );
         }

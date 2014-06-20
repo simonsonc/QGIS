@@ -32,6 +32,7 @@ TARGET_LINK_LIBRARIES(wmsprovider
   qgis_core
   qgis_gui
   ${QT_QTSCRIPT_LIBRARY}
+  ${QT_QTXMLPATTERNS_LIBRARY}
   ${GDAL_LIBRARY}  # for OGR_G_CreateGeometryFromJson()
 )
 
