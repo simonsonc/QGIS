@@ -300,6 +300,11 @@ QgsIdentifyResultsDialog::QgsIdentifyResultsDialog( QgsMapCanvas *canvas, QWidge
   cmbIdentifyMode->setCurrentIndex( cmbIdentifyMode->findData( identifyMode ) );
   cbxAutoFeatureForm->setChecked( mySettings.value( "/Map/identifyAutoFeatureForm", false ).toBool() );
 
+  // view modes
+  cmbViewMode->addItem( tr( "Tree" ), 0 );
+  cmbViewMode->addItem( tr( "Table" ), 0 );
+  cmbViewMode->addItem( tr( "Graph" ), 0 );
+
   // graph
   mPlot->setVisible( false );
   mPlot->setAutoFillBackground( false );
