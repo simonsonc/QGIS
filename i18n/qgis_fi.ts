@@ -3129,6 +3129,19 @@ yksinkertaistettaessa vähennettiin %2 kulmapisteeseen</translation>
     </message>
 </context>
 <context>
+    <name>DlgGetScriptsAndModels</name>
+    <message>
+        <location filename="../python/plugins/processing/ui/DlgGetScriptsAndModels.ui" line="14"/>
+        <source>Get scripts and models</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../python/plugins/processing/ui/DlgGetScriptsAndModels.ui" line="86"/>
+        <source>about:blank</source>
+        <translation type="unfinished">about:blank</translation>
+    </message>
+</context>
+<context>
     <name>DlgHelpEdition</name>
     <message>
         <location filename="../python/plugins/processing/ui/DlgHelpEdition.ui" line="14"/>
@@ -4290,7 +4303,7 @@ Haluatko silti keskeyttää sen?</translation>
     </message>
     <message>
         <source>[select levels]</source>
-        <translation>[valitse tasot]</translation>
+        <translation type="obsolete">[valitse tasot]</translation>
     </message>
     <message>
         <source>Select the mask file</source>
@@ -7542,24 +7555,40 @@ Toimii nyt aktiivisesti muokattavalle tasolle</translation>
     </message>
     <message>
         <location filename="../src/ui/qgisapp.ui" line="2203"/>
+        <source>Simulate Photocopy (Grayscale)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/qgisapp.ui" line="2206"/>
         <source>Simulate photocopy (grayscale)</source>
         <translation>Simuloi valokopiota (harmaasävy)</translation>
     </message>
     <message>
         <location filename="../src/ui/qgisapp.ui" line="2214"/>
+        <source>Simulate Fax (Mono)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/qgisapp.ui" line="2217"/>
         <source>Simulate fax (mono)</source>
         <translation>Simuloi faxia (mono)</translation>
     </message>
     <message>
         <location filename="../src/ui/qgisapp.ui" line="2225"/>
+        <source>Simulate Color Blindness (Protanope)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/qgisapp.ui" line="2228"/>
         <source>Simulate color blindness (protanope)</source>
         <translation>Simuloi värisokeutta (protanopia eli punasokeus)</translation>
     </message>
     <message>
         <location filename="../src/ui/qgisapp.ui" line="2236"/>
+        <source>Simulate Color Blindness (Deuteranope)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/qgisapp.ui" line="2239"/>
         <source>Simulate color blindness (deuteranope)</source>
         <translation>Simuloi värisokeutta (deuteranopia)</translation>
@@ -10515,7 +10544,7 @@ Virhe(%2): %3</translation>
     <message>
         <location filename="../src/core/qgscoordinatereferencesystem.cpp" line="1411"/>
         <location filename="../src/core/qgscoordinatereferencesystem.cpp" line="1517"/>
-        <location filename="../src/core/qgsvectorlayerrenderer.cpp" line="162"/>
+        <location filename="../src/core/qgsvectorlayerrenderer.cpp" line="176"/>
         <source>CRS</source>
         <translation>CRS</translation>
     </message>
@@ -10529,7 +10558,7 @@ Virhe(%2): %3</translation>
         <location filename="../src/core/qgscoordinatereferencesystem.cpp" line="495"/>
         <location filename="../src/core/qgscoordinatereferencesystem.cpp" line="1260"/>
         <location filename="../src/core/qgsdistancearea.cpp" line="226"/>
-        <location filename="../src/mapserver/qgssldconfigparser.cpp" line="1616"/>
+        <location filename="../src/mapserver/qgssldconfigparser.cpp" line="1643"/>
         <location filename="../src/providers/grass/qgsgrassgislib.cpp" line="231"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3244"/>
         <location filename="../src/providers/sqlanywhere/qgssqlanywhereprovider.cpp" line="1894"/>
@@ -10545,6 +10574,7 @@ Virhe(%2): %3</translation>
     <message>
         <location filename="../src/core/qgsdistancearea.cpp" line="449"/>
         <location filename="../src/core/qgsdistancearea.cpp" line="483"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="752"/>
         <source>Caught a coordinate system exception while trying to transform a point. Unable to calculate line length.</source>
         <translation>Tapahtui koordinaattijärjestelmän poikkeus muunnettaessa pistettä. Viivan pituutta ei voida laskea.</translation>
     </message>
@@ -10554,7 +10584,7 @@ Virhe(%2): %3</translation>
         <translation>Tapahtui koordinaattijärjestelmän poikkeus muunnettaessa pistettä. Monikulmion alaa ei voida laskea.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="871"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="913"/>
         <source> ha</source>
         <translation>ha</translation>
     </message>
@@ -10569,94 +10599,94 @@ Virhe(%2): %3</translation>
         <translation>Tapahtui koordinaattijärjestelmän poikkeus muunnettaessa pistettä. Monikulmion alaa tai piiriä ei voida laskea.</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/core/qgsdistancearea.cpp" line="862"/>
-        <location filename="../src/core/qgsdistancearea.cpp" line="876"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="904"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="918"/>
         <source> m²</source>
         <translation> m²</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/core/qgsdistancearea.cpp" line="866"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="908"/>
         <source> km²</source>
         <translation> km²</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="883"/>
-        <location filename="../src/core/qgsdistancearea.cpp" line="902"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="925"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="944"/>
         <source> m</source>
         <translation> m</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="887"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="929"/>
         <source> km</source>
         <translation> km</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="892"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="934"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="897"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="939"/>
         <source> cm</source>
         <translation> cm</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="917"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="959"/>
         <source> acres</source>
         <translation>.aari</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="923"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="965"/>
         <source> sq mile</source>
         <translation> sq mile</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="912"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="954"/>
         <source> sq ft</source>
         <translation> sq ft</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="942"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="984"/>
         <source> mile</source>
         <translation> maili</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="933"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="975"/>
         <source> foot</source>
         <translation> jalkaa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="937"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="979"/>
         <source> feet</source>
         <translation> jalka</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="950"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="992"/>
         <source> sq. NM</source>
         <translation>neliö mpk</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="954"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="996"/>
         <source> NM</source>
         <translation>mpk</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="960"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="1002"/>
         <source> sq.deg.</source>
         <translation> sq.deg.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="965"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="1007"/>
         <source> degree</source>
         <translation> aste</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="967"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="1009"/>
         <source> degrees</source>
         <translation> astetta</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsdistancearea.cpp" line="971"/>
+        <location filename="../src/core/qgsdistancearea.cpp" line="1013"/>
         <source> unknown</source>
         <translation> tuntematon</translation>
     </message>
@@ -10951,19 +10981,19 @@ Virhe(%2): %3</translation>
         <translation>Kontrolloi puhdistetaanko tason ja kenttien nimet helpompaa SQLite käyttöä varten. Puhdistetut nime muunnetaan pieniin kirjaimiin ja eräät erikoismerkit(&apos; - #) muunnetaan alaviivoiksi. </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1676"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1678"/>
         <source>Invalid variant type for field %1[%2]: received %3 with type %4</source>
         <translation>Virheellinen muunnostyyppi tiedolla %1[%2]; saatiin %3 tyypiä %4</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1713"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1724"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1740"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1715"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1726"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1742"/>
         <source>Feature geometry not imported (OGR error: %1)</source>
         <translation>Kohteen geometriaa ei tuotu (OGR virhe: %1)</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1759"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1761"/>
         <source>Feature creation error (OGR error: %1)</source>
         <translation>Kohteenn luontivirhe (OGR virhe: %1)</translation>
     </message>
@@ -10972,59 +11002,59 @@ Virhe(%2): %3</translation>
         <translation type="obsolete">Epäonnistuminen muunnettaessa pistettä kun piirrettiin tyypin &apos;%1&apos; kohdetta. Kirjoittaminen keskeytettiin. (Poikkeus: %2)</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1980"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1982"/>
         <location filename="../src/core/qgsvectorlayerimport.cpp" line="334"/>
         <source>Feature write errors:</source>
         <translation>Kohteen kirjoittamisessa virheet:</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1990"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1992"/>
         <location filename="../src/core/qgsvectorlayerimport.cpp" line="358"/>
         <source>Stopping after %1 errors</source>
         <translation>Keskeytettiin %1 virheen jälkeen</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2013"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2549"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2015"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2551"/>
         <source>
 Only %1 of %2 features written.</source>
         <translation>Ainoastaan %1 kaikkiaan %2 kohteesta kirjoitettiin.</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="502"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2193"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2195"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1643"/>
         <source>Arc/Info ASCII Coverage</source>
         <translation>Arc/Info ASCII Coverage</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="567"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2200"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2202"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1648"/>
         <source>Atlas BNA</source>
         <translation>Atlas BNA</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="629"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2207"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2209"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1653"/>
         <source>Comma Separated Value</source>
         <translation>Comma Separated Value (csv)</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="677"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2214"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2216"/>
         <source>ESRI Shapefile</source>
         <translation>ESRI Shapefile</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2221"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2223"/>
         <source>DBF file</source>
         <translation>DBF tiedosto</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="707"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2228"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2230"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1681"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1683"/>
         <source>FMEObjects Gateway</source>
@@ -11114,7 +11144,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="734"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2235"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2237"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1689"/>
         <source>GeoJSON</source>
         <translation>GeoJSON</translation>
@@ -11176,7 +11206,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="828"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2242"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2244"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1694"/>
         <source>GeoRSS</source>
         <translation>GeoRSS</translation>
@@ -11228,14 +11258,14 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="917"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2249"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2251"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1699"/>
         <source>Geography Markup Language [GML]</source>
         <translation>Geography Markup Language [GML]</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="932"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2256"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2258"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1704"/>
         <source>Generic Mapping Tools [GMT]</source>
         <translation>Generic Mapping Tools [GMT]</translation>
@@ -11272,7 +11302,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="995"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2263"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2265"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1709"/>
         <source>GPS eXchange Format [GPX]</source>
         <translation>GPS eXchange Format [GPX]</translation>
@@ -11294,7 +11324,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1060"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2284"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2286"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1741"/>
         <source>Keyhole Markup Language [KML]</source>
         <translation>Keyhole Markup Language [KML]</translation>
@@ -11306,13 +11336,13 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1085"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2291"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2293"/>
         <source>Mapinfo TAB</source>
         <translation>Mapinfo TAB</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1097"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2299"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2301"/>
         <source>Mapinfo MIF</source>
         <translation>Mapinfo MIF</translation>
     </message>
@@ -11402,7 +11432,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1266"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2320"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2322"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1790"/>
         <source>Spatial Data Transfer Standard [SDTS]</source>
         <translation>Spatial Data Transfer Standard [SDTS]</translation>
@@ -11451,7 +11481,7 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1422"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2335"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2337"/>
         <location filename="../src/providers/spatialite/qgsspatialitefeatureiterator.cpp" line="176"/>
         <location filename="../src/providers/spatialite/qgsspatialitefeatureiterator.cpp" line="288"/>
         <source>SpatiaLite</source>
@@ -11479,37 +11509,37 @@ Only %1 of %2 features written.</source>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1508"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2356"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2358"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1662"/>
         <source>ESRI FileGDB</source>
         <translation>ESRI FileGDB</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1851"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1853"/>
         <source>Cannot overwrite a OGR layer in place</source>
         <translation>OGR tasoa ei voida ylikirjoittaa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2456"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2458"/>
         <source>Failed to transform, writing stopped. (Exception: %1)</source>
         <translation>Muunnos epäonnistui, kirjoittaminen keskeytettiin. (Poikkeus: %1)</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1010"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2270"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2272"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1727"/>
         <source>INTERLIS 1</source>
         <translation>INTERLIS 1</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1955"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1957"/>
         <location filename="../src/core/qgsvectorlayerimport.cpp" line="380"/>
         <source>Failed to transform a point while drawing a feature with ID &apos;%1&apos;. Writing stopped. (Exception: %2)</source>
         <translation>Epäonnistuminen muunnettaessa pistettä kun piirrettiin ominaisuutta ID:llä &apos;%1&apos;. Kirjoittaminen keskeytettiin. (Poikkeus: %2)</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1025"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2277"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2279"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1732"/>
         <source>INTERLIS 2</source>
         <translation>INTERLIS 2</translation>
@@ -11522,34 +11552,34 @@ Only %1 of %2 features written.</source>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1164"/>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1179"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2306"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2308"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1751"/>
         <source>Microstation DGN</source>
         <translation>Microstation DGN</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1251"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2313"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2315"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1784"/>
         <source>S-57 Base file</source>
         <translation>S-57 Base tiedosto</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1341"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2327"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2329"/>
         <source>SQLite</source>
         <translation>SQLite</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1446"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2342"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2344"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1831"/>
         <source>AutoCAD DXF</source>
         <translation>AutoCAD DXF</translation>
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="1477"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2349"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="2351"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1826"/>
         <source>Geoconcept</source>
         <translation>Geoconcept</translation>
@@ -11582,7 +11612,7 @@ Only %1 of %2 features written.</source>
     <message>
         <location filename="../src/core/symbology-ng/qgsrendererv2registry.cpp" line="50"/>
         <source>Inverted polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Käänteiset monikulmiot</translation>
     </message>
     <message>
         <location filename="../src/gui/qgsprojectbadlayerguihandler.cpp" line="229"/>
@@ -11739,8 +11769,8 @@ Only %1 of %2 features written.</source>
         <translation>Rastereiden georeferointi käyttäen GDAL</translation>
     </message>
     <message>
-        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="31"/>
-        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="41"/>
+        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="46"/>
+        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="56"/>
         <location filename="../src/plugins/georeferencer/qgsgeorefplugin.cpp" line="64"/>
         <location filename="../src/plugins/heatmap/heatmap.cpp" line="58"/>
         <location filename="../src/plugins/interpolation/qgsinterpolationplugin.cpp" line="27"/>
@@ -11750,12 +11780,12 @@ Only %1 of %2 features written.</source>
         <translation>Rasteri</translation>
     </message>
     <message>
-        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="31"/>
+        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="46"/>
         <source>Could not reproject view extent: %1</source>
         <translation>Ei voitu uudelleen projisoida näkymän aluetta: %1</translation>
     </message>
     <message>
-        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="41"/>
+        <location filename="../src/core/raster/qgsrasterlayerrenderer.cpp" line="56"/>
         <source>Could not reproject layer extent: %1</source>
         <translation>Ei voitu uudelleen projisoida tason aluetta: %1</translation>
     </message>
@@ -12375,22 +12405,22 @@ Haluatko määritellä polun (GISBASE) GRASS asennukseesi?</translation>
         <translation>Python polku:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9904"/>
+        <location filename="../src/app/qgisapp.cpp" line="9971"/>
         <source>minidump written to %1</source>
         <translation>pienoisdumppi kirjoitettiin %1:teen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9908"/>
+        <location filename="../src/app/qgisapp.cpp" line="9975"/>
         <source>writing of minidump to %1 failed (%2)</source>
         <translation>pienoisdumpin kirjoittaminen %1:teen epäonnistui (%2)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9915"/>
+        <location filename="../src/app/qgisapp.cpp" line="9982"/>
         <source>creation of minidump to %1 failed (%2)</source>
         <translation>pienoisdumpin luominen %1:teen epäonnistui (%2)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9918"/>
+        <location filename="../src/app/qgisapp.cpp" line="9985"/>
         <source>Crash dumped</source>
         <translation>Ohjelman epäonnistuminen dumppiin</translation>
     </message>
@@ -12490,7 +12520,7 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
         <translation>QGIS rocks!</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgstextannotationitem.cpp" line="96"/>
+        <location filename="../src/gui/qgstextannotationitem.cpp" line="104"/>
         <source>&lt;html&gt;QGIS rocks!&lt;/html&gt;</source>
         <translation>&lt;html&gt;QGIS rocks!&lt;/html&gt;</translation>
     </message>
@@ -12641,11 +12671,11 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
     </message>
     <message>
         <location filename="../src/core/qgsvectorfilewriter.cpp" line="401"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1681"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1716"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1727"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1743"/>
-        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1761"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1683"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1718"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1729"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1745"/>
+        <location filename="../src/core/qgsvectorfilewriter.cpp" line="1763"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="64"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="1631"/>
         <location filename="../src/providers/ogr/qgsogrprovider.cpp" line="2033"/>
@@ -12918,68 +12948,68 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
         <translation>Indeksi rajojen ulkopuolella</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2461"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2483"/>
         <source>Column &apos;%1&apos; not found</source>
         <translation>Saraketta &apos;%1&apos; ei löydy</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2560"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2582"/>
         <source>function help for %1 missing</source>
         <translation>funktion ohje %1:lle kadoksissa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2569"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2591"/>
         <source>Operators</source>
         <translation>Operaattorit</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2570"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2592"/>
         <source>Conditionals</source>
         <translation>Ehdolliset</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2571"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2593"/>
         <source>Fields and Values</source>
         <translation>Tiedot tai arvot</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2572"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2594"/>
         <source>Math</source>
         <translation>Math</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2573"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2595"/>
         <source>Conversions</source>
         <translation>Muunnokset</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2574"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2596"/>
         <source>Date and Time</source>
         <translation>Päivä ja Aika</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2575"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2597"/>
         <source>String</source>
         <translation>String</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2576"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2598"/>
         <source>Color</source>
         <translation>Väri</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2577"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2599"/>
         <source>Geometry</source>
         <translation>Geometria</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2578"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2600"/>
         <source>Record</source>
         <translation>Tieto</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="1833"/>
-        <location filename="../src/core/qgsexpression.cpp" line="1845"/>
+        <location filename="../src/core/qgsexpression.cpp" line="1855"/>
+        <location filename="../src/core/qgsexpression.cpp" line="1867"/>
         <source>No root node! Parsing failed?</source>
         <translation>Ei perus solmua! Jäsennys epäonnistui?</translation>
     </message>
@@ -13124,22 +13154,22 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
         <translation>Ei voida muuntaa &apos;%1:%2:%3:%4:%5&apos; väriksi</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="1866"/>
+        <location filename="../src/core/qgsexpression.cpp" line="1888"/>
         <source>(no root)</source>
         <translation>(no root)</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="1989"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2011"/>
         <source>Unary minus only for numeric values.</source>
         <translation>Looginen negaatio vain numeerisille arvoille.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2039"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2061"/>
         <source>Can&apos;t preform /, *, or % on DateTime and Interval</source>
         <translation>Ei voida muotoilla /, *, tai % DateTime ja Interval tyypeillä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression.cpp" line="2433"/>
+        <location filename="../src/core/qgsexpression.cpp" line="2455"/>
         <source>[unsupported type;%1; value:%2]</source>
         <translation>[tukematon tyyppi%1; arvo:%2]</translation>
     </message>
@@ -13148,23 +13178,23 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
         <translation type="obsolete">Saraketta &apos;%1&apos; ei löydy</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3583"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3604"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3629"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3577"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3598"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3623"/>
         <location filename="../src/core/qgsvectorlayerimport.cpp" line="64"/>
         <source>Unable to load %1 provider</source>
         <translation>Ei voida löytää %1 tarjoajaa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3591"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3612"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3637"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3585"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3606"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3631"/>
         <location filename="../src/core/qgsvectorlayerimport.cpp" line="73"/>
         <source>Provider %1 has no %2 method</source>
         <translation>Tiedontarjoaja %1:llä ei ole metoodia %2</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3684"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3678"/>
         <source>Loaded from Provider</source>
         <translation>Ladattiin tiedontarjoajalta</translation>
     </message>
@@ -13228,16 +13258,16 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
     <message>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2406"/>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2894"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2881"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3252"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3315"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3454"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2887"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3258"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3321"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3460"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="142"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5084"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5166"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5358"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5414"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5527"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5094"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5176"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5368"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5424"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5537"/>
         <source>Connection to database failed</source>
         <translation>Yhteys tietokantaan epäonnistui</translation>
     </message>
@@ -13248,14 +13278,14 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
     </message>
     <message>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2605"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3011"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3017"/>
         <source>Creation of data source %1 failed: 
 %2</source>
         <translation>Lähdetiedon %1 luominen epäonnistui %2</translation>
     </message>
     <message>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2639"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3029"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3035"/>
         <source>Loading of the layer %1 failed</source>
         <translation>Tason %1 lataaminen epäonnistui</translation>
     </message>
@@ -13297,100 +13327,100 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
 %3</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3267"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3295"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3273"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3301"/>
         <source>Unable to delete layer %1: 
 %2</source>
         <translation>Tason %1 poisto epäonnistui: 
 %2</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3339"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3345"/>
         <source>Unable to save layer style. It&apos;s not possible to create the destination table on the database. Maybe this is due to table permissions (user=%1). Please contact your database admin</source>
         <translation>Ei kyetä talentamaan tason tyliä. Ei ole mahdollista luoda vastaanottavaa taulua tietokantaan. Tämä voi johtua taulun oikeuksista (käyttäjä=%1). Ota  yhteyttä tietokannan hallintaan</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3387"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5271"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3393"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5281"/>
         <source>Save style in database</source>
         <translation>Tallenna tyyli tietokantaan</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3388"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5272"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3394"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5282"/>
         <source>A style named &quot;%1&quot; already exists in the database for this layer. Do you want to overwrite it?</source>
         <translation>Tyyli nimeltään &quot;%1&quot; on jo olemassa tietokannassa tälle tasolle. Haluatko korvata sen ?</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3392"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3398"/>
         <source>Operation aborted. No changes were made in the database</source>
         <translation>Toiminto keskeytettiin. Tietokannalle ei tehty mitään muutoksia</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3439"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3445"/>
         <source>Unable to save layer style. It&apos;s not possible to insert a new record into the style table. Maybe this is due to table permissions (user=%1). Please contact your database administrator.</source>
         <translation>Ei voida tallentaa tason tyyliä. Ei ole mahdollista lisätä uutta tietoa tyylitauluun. Tämä voi johtua taulun oikeuksista (käyttäjä=%1). Ota  yhteyttä tietokannan hallintaan.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3486"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3555"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3492"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3561"/>
         <source>Connection to database failed using username: %1</source>
         <translation>Yhteys tietokantaan epäonnistui käyttäjänimellä: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3504"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3530"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3571"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5179"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5263"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5323"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5381"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5427"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5463"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5490"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5545"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3510"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3536"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3577"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5189"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5273"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5333"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5391"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5437"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5473"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5500"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5555"/>
         <source>Error executing query: %1</source>
         <translation>Virhe suoritettaessa kyselyä: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3505"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3511"/>
         <source>Error executing the select query for related styles. The query was logged</source>
         <translation>Virhe suoritettaessa valinta kyselyä liittyvistä tyyleistä. Kyselyn tiedot lokiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3531"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5491"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3537"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5501"/>
         <source>Error executing the select query for unrelated styles. The query was logged</source>
         <translation>Virhe suoritettaessa valinta kyselyä liittymättömistä tyyleistä. Kyselyn tiedot lokiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3572"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5546"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3578"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5556"/>
         <source>Error executing the select query. The query was logged</source>
         <translation>Virhe suoritettaessa valinta kyselyä. Kyselyn tiedot lokiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3567"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5541"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3573"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5551"/>
         <source>Consistency error in table &apos;%1&apos;. Style id should be unique</source>
         <translation>Johdonmukaisuus virhe taulussa &apos;%1&apos;. Tyylin id tulisi olla yksilöllinen</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1668"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1678"/>
         <source>Loading of the MSSQL provider failed</source>
         <translation>MSSQL tarjoajan lataaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1702"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1712"/>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2718"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3074"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3080"/>
         <source>Unsupported type for field %1</source>
         <translation>ei-tuettu tyyppi tiedolle %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1716"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="1726"/>
         <location filename="../src/providers/oracle/qgsoracleprovider.cpp" line="2737"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3094"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3100"/>
         <source>Creation of fields failed</source>
         <translation>Tietojen luonti epäonnistui</translation>
     </message>
@@ -13410,69 +13440,69 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
         <translation>tietojen luonti epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5024"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5034"/>
         <source>Unable to initialize SpatialMetadata:
 </source>
         <translation>Ei voida alustaa SpatialMetadata:
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5051"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5061"/>
         <source>Could not create a new database
 </source>
         <translation>Ei voitu luoda uutta tietokantaa
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5061"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5071"/>
         <source>Unable to activate FOREIGN_KEY constraints [%1]</source>
         <translation>Ei voida aktivoida FOREIGN_KEY rajoituksia [%1]</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5096"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5106"/>
         <source>Unable to delete table %1
 </source>
         <translation>Ei voida poistaa taulua %1
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5108"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5118"/>
         <source>Unable to delete table %1:
 </source>
         <translation>Ei voida poistaa taulua  %1:
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5180"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5264"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5324"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5428"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5190"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5274"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5334"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5438"/>
         <source>Error looking for style. The query was logged</source>
         <translation>Virhe etsittäessä tyyliä. Kysely talletettiin lokiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5215"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5225"/>
         <source>Unable to save layer style. It&apos;s not possible to create the destination table on the database.</source>
         <translation>Ei voida tallentaa tason tyyliä. Ei ollut mahdollista luoda kohdetaulua tietokantaan.</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5277"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5287"/>
         <source>Operation aborted</source>
         <translation>Toiminto keskeytettiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5382"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5392"/>
         <source>Error executing loading style. The query was logged</source>
         <translation>Virhe suoritettaessa tyylin latausta. Kysely talletettiin lokiin</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5442"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5443"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5452"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5453"/>
         <source>No styles available on DB</source>
         <translation>Tietokannasta ei saatavissa tyylejä</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5464"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="5474"/>
         <source>Error loading styles. The query was logged</source>
         <translation>Virhe ladattaessa tyylejä. Kysely talletettiin lokiin</translation>
     </message>
@@ -13503,61 +13533,61 @@ Näet tämän viesti luultavasti koska Sinulla ei ole DISPLAY ympäristömuuttuj
     </message>
     <message>
         <location filename="../src/core/qgsgeometry.cpp" line="46"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="174"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="263"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="287"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="306"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="339"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="408"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="440"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="473"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="495"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="520"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2002"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2301"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2335"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2373"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2508"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2573"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="3392"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="4820"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="4914"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6000"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6029"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6052"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="175"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="264"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="288"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="307"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="340"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="409"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="441"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="474"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="496"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="521"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2003"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2302"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2336"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2374"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2509"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2574"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="3393"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="4821"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="4915"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6056"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6085"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6108"/>
         <source>Exception: %1</source>
         <translation>Poikkeus: %1</translation>
     </message>
     <message>
         <location filename="../src/core/qgsgeometry.cpp" line="46"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="174"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="263"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="287"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="306"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="339"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="408"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="440"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="473"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="495"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="520"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2002"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2301"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2335"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2373"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2508"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="2573"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="3392"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="4820"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="4914"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="5657"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6000"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6029"/>
-        <location filename="../src/core/qgsgeometry.cpp" line="6052"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="175"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="264"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="288"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="307"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="340"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="409"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="441"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="474"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="496"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="521"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2003"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2302"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2336"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2374"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2509"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="2574"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="3393"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="4821"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="4915"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="5713"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6056"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6085"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="6108"/>
         <source>GEOS</source>
         <translation>GEOS</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsgeometry.cpp" line="5657"/>
+        <location filename="../src/core/qgsgeometry.cpp" line="5713"/>
         <source>GEOS prior to 3.2 doesn&apos;t support GEOSInterpolate</source>
         <translation>GEOS ennen 3.2 versiota ei tue GEOSInterpolate</translation>
     </message>
@@ -13832,12 +13862,12 @@ Database error: %2</source>
     <message>
         <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="96"/>
         <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="108"/>
-        <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="226"/>
+        <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="228"/>
         <source>PostGIS</source>
         <translation>PostGIS</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="226"/>
+        <location filename="../src/providers/postgres/qgspostgresfeatureiterator.cpp" line="228"/>
         <source>Infinite filter rectangle specified</source>
         <translation>Ääretön suodatimen suorakulmio määritelty</translation>
     </message>
@@ -13877,34 +13907,28 @@ SQL: %1</translation>
         <translation>Ominaisuustiedon indeksi %1 rajojen [0;%2] ulkopuolella</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1620"/>
         <source>empty response</source>
-        <translation>tyhjä vastaus</translation>
+        <translation type="obsolete">tyhjä vastaus</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1626"/>
         <source>WFS service exception:%1</source>
-        <translation>WFS palvelun poikkeus: %1</translation>
+        <translation type="obsolete">WFS palvelun poikkeus: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1632"/>
         <source>unsuccessful service response: %1</source>
-        <translation>epäonnistunut palvelun vastaus: %1</translation>
+        <translation type="obsolete">epäonnistunut palvelun vastaus: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1639"/>
         <source>WFS exception report (code=%1 text=%2)</source>
-        <translation>WFS poikkeusraportti (koodi=%1 teksti=%2)</translation>
+        <translation type="obsolete">WFS poikkeusraportti (koodi=%1 teksti=%2)</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1640"/>
         <source>missing</source>
-        <translation>puuttuu</translation>
+        <translation type="obsolete">puuttuu</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1646"/>
         <source>unhandled response: %1</source>
-        <translation>käsittelemätön vastaus: %1</translation>
+        <translation type="obsolete">käsittelemätön vastaus: %1</translation>
     </message>
     <message>
         <location filename="../src/plugins/topology/dockModel.cpp" line="24"/>
@@ -13922,47 +13946,47 @@ SQL: %1</translation>
         <translation>Ominaisuuden ID</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="519"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="507"/>
         <source>linear</source>
         <translation>lineaarinen</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="523"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="511"/>
         <source>radial</source>
         <translation>säteettäinen</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="527"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="515"/>
         <source>conical</source>
         <translation>kartiomainen</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="544"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="532"/>
         <source>feature</source>
         <translation>ominaisuus</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="548"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="536"/>
         <source>viewport</source>
         <translation>näkymä</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="565"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="553"/>
         <source>pad</source>
         <translation>alusta</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="569"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="557"/>
         <source>repeat</source>
         <translation>toisto</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="573"/>
+        <location filename="../src/core/symbology-ng/qgsfillsymbollayerv2.cpp" line="561"/>
         <source>reflect</source>
         <translation>kuva</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayerrenderer.cpp" line="162"/>
+        <location filename="../src/core/qgsvectorlayerrenderer.cpp" line="176"/>
         <source>Simplify transform error caught: %1</source>
         <translation>Yksinkertaistamisen muunnosvirhe löydettiin : %1</translation>
     </message>
@@ -14202,7 +14226,7 @@ Vastaus oli:
         <translation type="obsolete">Quantum GIS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="536"/>
+        <location filename="../src/app/qgisapp.cpp" line="535"/>
         <source>Multiple Instances of QgisApp</source>
         <translation>Useita QgisApp ilmentymiä</translation>
     </message>
@@ -14215,17 +14239,17 @@ Ota yhteys kehittäjiin.
 </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="550"/>
+        <location filename="../src/app/qgisapp.cpp" line="549"/>
         <source>Checking database</source>
         <translation>Tarkistetaan tietokantaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="559"/>
+        <location filename="../src/app/qgisapp.cpp" line="558"/>
         <source>Reading settings</source>
         <translation>Luetaan asetuksia</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="562"/>
+        <location filename="../src/app/qgisapp.cpp" line="561"/>
         <source>Setting up the GUI</source>
         <translation>Valmistellaan käyttöliittymää</translation>
     </message>
@@ -14355,7 +14379,7 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9350"/>
+        <location filename="../src/app/qgisapp.cpp" line="9396"/>
         <source>Exit QGIS</source>
         <translation>Poistu QGIS:tä</translation>
     </message>
@@ -14935,38 +14959,38 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Muokkaa pikanäppäimiä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1199"/>
+        <location filename="../src/app/qgisapp.cpp" line="1200"/>
         <source>Minimize</source>
         <translation>Pienennä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1200"/>
+        <location filename="../src/app/qgisapp.cpp" line="1201"/>
         <source>Ctrl+M</source>
         <comment>Minimize Window</comment>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1201"/>
+        <location filename="../src/app/qgisapp.cpp" line="1202"/>
         <source>Minimizes the active window to the dock</source>
         <translation>Pienentää ikkunan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1204"/>
+        <location filename="../src/app/qgisapp.cpp" line="1205"/>
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1205"/>
+        <location filename="../src/app/qgisapp.cpp" line="1206"/>
         <source>Toggles between a predefined size and the window size set by the user</source>
         <translation>Vaihtaa esimääritellyn koon ja käyttäjän määrittelemän koon välillä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1208"/>
+        <location filename="../src/app/qgisapp.cpp" line="1209"/>
         <source>Bring All to Front</source>
         <translation>Tuo kaikki eteen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1209"/>
+        <location filename="../src/app/qgisapp.cpp" line="1210"/>
         <source>Bring forward all open windows</source>
         <translation>Tuo kaikki ikkunat eteen</translation>
     </message>
@@ -15022,20 +15046,20 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Näytä tyylien hallinta V2</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1319"/>
-        <location filename="../src/app/qgisapp.cpp" line="4743"/>
-        <location filename="../src/app/qgisapp.cpp" line="6072"/>
-        <location filename="../src/app/qgisapp.cpp" line="6098"/>
-        <location filename="../src/app/qgisapp.cpp" line="6110"/>
-        <location filename="../src/app/qgisapp.cpp" line="6247"/>
-        <location filename="../src/app/qgisapp.cpp" line="6327"/>
-        <location filename="../src/app/qgisapp.cpp" line="9167"/>
+        <location filename="../src/app/qgisapp.cpp" line="1320"/>
+        <location filename="../src/app/qgisapp.cpp" line="4767"/>
+        <location filename="../src/app/qgisapp.cpp" line="6092"/>
+        <location filename="../src/app/qgisapp.cpp" line="6118"/>
+        <location filename="../src/app/qgisapp.cpp" line="6130"/>
+        <location filename="../src/app/qgisapp.cpp" line="6266"/>
+        <location filename="../src/app/qgisapp.cpp" line="6346"/>
+        <location filename="../src/app/qgisapp.cpp" line="9216"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1313"/>
-        <location filename="../src/app/qgisapp.cpp" line="1319"/>
+        <location filename="../src/app/qgisapp.cpp" line="1314"/>
+        <location filename="../src/app/qgisapp.cpp" line="1320"/>
         <source>Failed to open Python console:</source>
         <translation>Python konsolin aukaisu epäonnistui:</translation>
     </message>
@@ -15056,12 +15080,12 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">&amp;Muokkaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1429"/>
+        <location filename="../src/app/qgisapp.cpp" line="1430"/>
         <source>Panels</source>
         <translation>Paneelit</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1431"/>
+        <location filename="../src/app/qgisapp.cpp" line="1432"/>
         <source>Toolbars</source>
         <translation>Työkalut</translation>
     </message>
@@ -15094,7 +15118,7 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">&amp;Ikkunat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1497"/>
+        <location filename="../src/app/qgisapp.cpp" line="1498"/>
         <source>&amp;Database</source>
         <translation>&amp;Tietokanta</translation>
     </message>
@@ -15139,23 +15163,23 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Nimiö</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1670"/>
+        <location filename="../src/app/qgisapp.cpp" line="1671"/>
         <source>Progress bar that displays the status of rendering layers and other time-intensive operations</source>
         <translation>Edistymispalkki joka näyttää hahmottamisen ja muiden aikaa vievien operaatioiden tilan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1685"/>
+        <location filename="../src/app/qgisapp.cpp" line="1690"/>
         <source>Toggle extents and mouse position display</source>
         <translation>Ota käyttöön rajat ja hiirensijaintinäyttö</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1699"/>
-        <location filename="../src/app/qgisapp.cpp" line="8386"/>
+        <location filename="../src/app/qgisapp.cpp" line="1704"/>
+        <location filename="../src/app/qgisapp.cpp" line="8435"/>
         <source>Coordinate:</source>
         <translation>Koordinaatti:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1700"/>
+        <location filename="../src/app/qgisapp.cpp" line="1705"/>
         <source>Current map coordinate</source>
         <translation>Nykyinen karttakoordinaatti</translation>
     </message>
@@ -15168,22 +15192,22 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Nykyinen karttakoordinaatti (muotoa x,y)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1732"/>
+        <location filename="../src/app/qgisapp.cpp" line="1737"/>
         <source>Scale </source>
         <translation>Mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1733"/>
+        <location filename="../src/app/qgisapp.cpp" line="1738"/>
         <source>Current map scale</source>
         <translation>Nykyisen kartan mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1746"/>
+        <location filename="../src/app/qgisapp.cpp" line="1751"/>
         <source>Displays the current map scale</source>
         <translation>Näyttää nykyisen kartan mittakaavan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1747"/>
+        <location filename="../src/app/qgisapp.cpp" line="1752"/>
         <source>Current map scale (formatted as x:y)</source>
         <translation>Nykyisen kartan mittakaava (muoto x,y)</translation>
     </message>
@@ -15192,17 +15216,17 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">Pysäytä kartan hahmottaminen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1753"/>
+        <location filename="../src/app/qgisapp.cpp" line="1758"/>
         <source>Render</source>
         <translation>Hahmota</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1757"/>
+        <location filename="../src/app/qgisapp.cpp" line="1762"/>
         <source>When checked, the map layers are rendered in response to map navigation commands and other events. When not checked, no rendering is done. This allows you to add a large number of layers and symbolize them before rendering.</source>
         <translation>Kun valittuna, kartan tasot hahmotetaan kun kartalla navigoidaan tai siihen vaikuttaa tapahtumat. Kun tämä on valitsematta hahmottamista ei tehdä, ja sinun on mahdollista lisätä suuri määrä tasoja ja symboleita ennen hahmottamista.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1761"/>
+        <location filename="../src/app/qgisapp.cpp" line="1766"/>
         <source>Toggle map rendering</source>
         <translation>Ota käyttöön kartan hahmottaminen</translation>
     </message>
@@ -15219,17 +15243,17 @@ Ota yhteys kehittäjiin.
  Lopetetaan...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1783"/>
+        <location filename="../src/app/qgisapp.cpp" line="1788"/>
         <source>This icon shows whether on the fly coordinate reference system transformation is enabled or not. Click the icon to bring up the project properties dialog to alter this behaviour.</source>
         <translation>Tämä kuvake näyttää onko reaaliaikainen paikkatietojärjestelmien muunnos käytössä vai ei. Klikkaa kuvaketta nähdäksesi asetus dialogin ja muuttaaksesi tämän toimintaa.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1787"/>
+        <location filename="../src/app/qgisapp.cpp" line="1792"/>
         <source>CRS status - Click to open coordinate reference system dialog</source>
         <translation>CRS tila - Klikkaa päästäksesi asetuksiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1792"/>
+        <location filename="../src/app/qgisapp.cpp" line="1797"/>
         <source>Ready</source>
         <translation>Valmis</translation>
     </message>
@@ -15238,32 +15262,32 @@ Ota yhteys kehittäjiin.
         <translation type="obsolete">http://qgis.org/de/site/forusers/commercial_support.html</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7691"/>
+        <location filename="../src/app/qgisapp.cpp" line="7723"/>
         <source>Do you want to save the current project? %1</source>
         <translation>Haluatko tallentaa nykyisen projektin? %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8304"/>
+        <location filename="../src/app/qgisapp.cpp" line="8336"/>
         <source>Current CRS: %1 (OTFR enabled)</source>
         <translation>Nykyinen CRS: %1 (OTFR käytössä)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8311"/>
+        <location filename="../src/app/qgisapp.cpp" line="8343"/>
         <source>Current CRS: %1 (OTFR disabled)</source>
         <translation>Nykyinen CRS: %1 (OTFR ei käytössä)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9351"/>
+        <location filename="../src/app/qgisapp.cpp" line="9397"/>
         <source>Do you really want to quit QGIS?</source>
         <translation>Haluatko todella poistua QGIS ohjelmasta?</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9459"/>
+        <location filename="../src/app/qgisapp.cpp" line="9505"/>
         <source>This project file was saved by an older version of QGIS. When saving this project file, QGIS will update it to the latest version, possibly rendering it useless for older versions of QGIS.</source>
         <translation>Tämä projektitiedosto on tallennettu vanhemmalla QGIS versiolla. Kun talletat tämän projektitiedoston QGIS päivittää sen viimeisimpään versioon, mahdollisesti tehden sen käyttökelvottomaksi vanhemmille QGIS versioille.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9721"/>
+        <location filename="../src/app/qgisapp.cpp" line="9788"/>
         <source>
 
 Always ignore these errors?</source>
@@ -15272,7 +15296,7 @@ Always ignore these errors?</source>
 Ohita nämä virheet aina?</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="9725"/>
+        <location filename="../src/app/qgisapp.cpp" line="9792"/>
         <source>%n SSL errors occured</source>
         <comment>number of errors</comment>
         <translation>
@@ -15281,27 +15305,27 @@ Ohita nämä virheet aina?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="580"/>
+        <location filename="../src/app/qgisapp.cpp" line="579"/>
         <source>Map canvas. This is where raster and vector layers are displayed when added to the map</source>
         <translation>Karttapohja. Tässä rasteri- ja vektoritasot näytetään kun ne lisätään karttaan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2185"/>
+        <location filename="../src/app/qgisapp.cpp" line="2194"/>
         <source>Map overview canvas. This canvas can be used to display a locator map that shows the current extent of the map canvas. The current extent is shown as a red rectangle. Any layer on the map can be added to the overview canvas.</source>
         <translation>Katselmus ikkuna. Tällä pohjalla voidaan näyttää karttapohjan nykyiset rajat. Raja näkyy punaisena suorakulmiona. Mikävain taso voidaan lisätä katselmukseen.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2194"/>
+        <location filename="../src/app/qgisapp.cpp" line="2203"/>
         <source>Overview</source>
         <translation>Katselmus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2286"/>
+        <location filename="../src/app/qgisapp.cpp" line="2295"/>
         <source>Map legend that displays all the layers currently on the map canvas. Click on the check box to turn a layer on or off. Double click on a layer in the legend to customize its appearance and set other properties.</source>
         <translation>Karttaselite joka näyttää kaikki karttapohjalla olevat tasot. Klikkaa valintaruutua piilottaaksesi tason. Tuplaklikkaa tasoa selitteessä kustomoidaksesi sitä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2288"/>
+        <location filename="../src/app/qgisapp.cpp" line="2297"/>
         <source>Layers</source>
         <translation>Tasot</translation>
     </message>
@@ -15345,15 +15369,15 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         <translation type="obsolete">Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2711"/>
-        <location filename="../src/app/qgisapp.cpp" line="3042"/>
+        <location filename="../src/app/qgisapp.cpp" line="2739"/>
+        <location filename="../src/app/qgisapp.cpp" line="3070"/>
         <source>%1 is not a valid or recognized data source</source>
         <translation>%1 ei ole oikea tai tunnistettu tiedonlähde</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2705"/>
-        <location filename="../src/app/qgisapp.cpp" line="2712"/>
-        <location filename="../src/app/qgisapp.cpp" line="3043"/>
+        <location filename="../src/app/qgisapp.cpp" line="2733"/>
+        <location filename="../src/app/qgisapp.cpp" line="2740"/>
+        <location filename="../src/app/qgisapp.cpp" line="3071"/>
         <source>Invalid Data Source</source>
         <translation>Viallinen tietolähde</translation>
     </message>
@@ -15363,7 +15387,7 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         <translation type="obsolete">Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9147"/>
+        <location filename="../src/app/qgisapp.cpp" line="9196"/>
         <source>Invalid Layer</source>
         <translation>Viallinen taso</translation>
     </message>
@@ -15376,18 +15400,18 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         <translation type="obsolete">Tallenna nimellä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3627"/>
+        <location filename="../src/app/qgisapp.cpp" line="3651"/>
         <source>Calculating...</source>
         <translation>Lasketaan...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3627"/>
-        <location filename="../src/app/qgisapp.cpp" line="4667"/>
+        <location filename="../src/app/qgisapp.cpp" line="3651"/>
+        <location filename="../src/app/qgisapp.cpp" line="4691"/>
         <source>Abort...</source>
         <translation>Keskeytä...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3648"/>
+        <location filename="../src/app/qgisapp.cpp" line="3672"/>
         <source>Choose a QGIS project file to open</source>
         <translation>Valitse QGIS projekti tiedosto jonka haluat avata</translation>
     </message>
@@ -15400,70 +15424,70 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         <translation type="obsolete">QGIS projekti luku virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3699"/>
+        <location filename="../src/app/qgisapp.cpp" line="3723"/>
         <source>Unable to open project</source>
         <translation>Projektia ei voida avata</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3805"/>
+        <location filename="../src/app/qgisapp.cpp" line="3829"/>
         <source>Choose a QGIS project file</source>
         <translation>Valitse QGIS projekti tiedosto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3837"/>
-        <location filename="../src/app/qgisapp.cpp" line="3891"/>
+        <location filename="../src/app/qgisapp.cpp" line="3861"/>
+        <location filename="../src/app/qgisapp.cpp" line="3915"/>
         <source>Saved project to: %1</source>
         <translation>Projekti tallennettiin nimellä %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3849"/>
-        <location filename="../src/app/qgisapp.cpp" line="3898"/>
+        <location filename="../src/app/qgisapp.cpp" line="3873"/>
+        <location filename="../src/app/qgisapp.cpp" line="3922"/>
         <source>Unable to save project %1</source>
         <translation>Projektia %1 ei voida tallentaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3870"/>
+        <location filename="../src/app/qgisapp.cpp" line="3894"/>
         <source>Choose a file name to save the QGIS project file as</source>
         <translation>Valitse tallennettavan QGIS projektitiedoston nimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4124"/>
+        <location filename="../src/app/qgisapp.cpp" line="4148"/>
         <source>Choose a file name to save the map image as</source>
         <translation>Valitse tallennettavan karttakuvan nimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4129"/>
+        <location filename="../src/app/qgisapp.cpp" line="4153"/>
         <source>Saved map image to %1</source>
         <translation>Karttakuva tallennettiin nimellä %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4477"/>
+        <location filename="../src/app/qgisapp.cpp" line="4501"/>
         <source>Default system font substituted.</source>
         <translation>Järjestelmän oletus kirjasinlaji korvattu.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4497"/>
+        <location filename="../src/app/qgisapp.cpp" line="4521"/>
         <source>Font for layer &lt;b&gt;&lt;u&gt;%1&lt;/u&gt;&lt;/b&gt; was not found (&lt;i&gt;%2&lt;/i&gt;). %3</source>
         <translation>Kirjasinlajia tasolle &lt;b&gt;&lt;u&gt;%1&lt;/u&gt;&lt;/b&gt; ei löytynyt (&lt;i&gt;%2&lt;/i&gt;). %3</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4488"/>
+        <location filename="../src/app/qgisapp.cpp" line="4512"/>
         <source>Open labeling dialog</source>
         <translation>Avaa nimiöinti ikkuna</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="499"/>
-        <location filename="../src/app/qgisapp.cpp" line="506"/>
+        <location filename="../src/app/qgisapp.cpp" line="498"/>
+        <location filename="../src/app/qgisapp.cpp" line="505"/>
         <source>CRS was undefined</source>
         <translation>CRS oli tuntematon</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="499"/>
+        <location filename="../src/app/qgisapp.cpp" line="498"/>
         <source>defaulting to project CRS %1 - %2</source>
         <translation>oletuksena projisoida CRS %1 - %2</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="506"/>
+        <location filename="../src/app/qgisapp.cpp" line="505"/>
         <source>defaulting to CRS %1 - %2</source>
         <translation>oletuksena CRS %1 - %2</translation>
     </message>
@@ -15548,122 +15572,122 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         <translation>Päivä/Aika</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2549"/>
+        <location filename="../src/app/qgisapp.cpp" line="2577"/>
         <source>Compiled against GEOS</source>
         <translation>Käännetty käyttäen GEOS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2550"/>
+        <location filename="../src/app/qgisapp.cpp" line="2578"/>
         <source>Running against GEOS</source>
         <translation>Suoritetaan käyttäen GEOS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3827"/>
+        <location filename="../src/app/qgisapp.cpp" line="3851"/>
         <source>Insufficient permissions</source>
         <translation>Riittämättömät käyttöoikeudet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3828"/>
+        <location filename="../src/app/qgisapp.cpp" line="3852"/>
         <source>The project file is not writable.</source>
         <translation>Projektitiedosto ei ole kirjoitettavissa.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3931"/>
+        <location filename="../src/app/qgisapp.cpp" line="3955"/>
         <source>DXF export completed</source>
         <translation>DXF vienti suoritettu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3935"/>
+        <location filename="../src/app/qgisapp.cpp" line="3959"/>
         <source>DXF export failed</source>
         <translation>DXF vienti epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4508"/>
-        <location filename="../src/app/qgisapp.cpp" line="4529"/>
+        <location filename="../src/app/qgisapp.cpp" line="4532"/>
+        <location filename="../src/app/qgisapp.cpp" line="4553"/>
         <source>Commit errors</source>
         <translation>Vahvistus (commit) virheet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4509"/>
-        <location filename="../src/app/qgisapp.cpp" line="4530"/>
+        <location filename="../src/app/qgisapp.cpp" line="4533"/>
+        <location filename="../src/app/qgisapp.cpp" line="4554"/>
         <source>Could not commit changes to layer %1</source>
         <translation>Ei voitu vahvistaa muutoksia tasolle %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4511"/>
+        <location filename="../src/app/qgisapp.cpp" line="4535"/>
         <source>Errors: %1
 </source>
         <translation>Virheet: %1
 </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4518"/>
+        <location filename="../src/app/qgisapp.cpp" line="4542"/>
         <source>Show more</source>
         <translation>Näytä lisää</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4959"/>
-        <location filename="../src/app/qgisapp.cpp" line="7298"/>
-        <location filename="../src/app/qgisapp.cpp" line="7307"/>
-        <location filename="../src/app/qgisapp.cpp" line="7368"/>
-        <location filename="../src/app/qgisapp.cpp" line="7377"/>
+        <location filename="../src/app/qgisapp.cpp" line="4983"/>
+        <location filename="../src/app/qgisapp.cpp" line="7333"/>
+        <location filename="../src/app/qgisapp.cpp" line="7342"/>
+        <location filename="../src/app/qgisapp.cpp" line="7403"/>
+        <location filename="../src/app/qgisapp.cpp" line="7412"/>
         <source>No Layer Selected</source>
         <translation>Tasoa ei valittuna</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4960"/>
+        <location filename="../src/app/qgisapp.cpp" line="4984"/>
         <source>To delete features, you must select a vector layer in the legend</source>
         <translation>Poistaaksesi kohteet, sinun täytyy valita vektoritaso selitteestä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4968"/>
+        <location filename="../src/app/qgisapp.cpp" line="4992"/>
         <source>No Vector Layer Selected</source>
         <translation>Ei vektoritasoa valittuna</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4969"/>
+        <location filename="../src/app/qgisapp.cpp" line="4993"/>
         <source>Deleting features only works on vector layers</source>
         <translation>Kohteiden poisto onnistuu vain vektoritasoilla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4976"/>
+        <location filename="../src/app/qgisapp.cpp" line="5000"/>
         <source>Provider does not support deletion</source>
         <translation>Tarjoaja ei tue poistamista</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4977"/>
+        <location filename="../src/app/qgisapp.cpp" line="5001"/>
         <source>Data provider does not support deleting features</source>
         <translation>Tiedontarjoaja ei tue kohteiden poistamista</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4984"/>
-        <location filename="../src/app/qgisapp.cpp" line="5464"/>
-        <location filename="../src/app/qgisapp.cpp" line="5523"/>
+        <location filename="../src/app/qgisapp.cpp" line="5008"/>
+        <location filename="../src/app/qgisapp.cpp" line="5488"/>
+        <location filename="../src/app/qgisapp.cpp" line="5547"/>
         <source>Layer not editable</source>
         <translation>Taso ei ole muokattavissa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4985"/>
+        <location filename="../src/app/qgisapp.cpp" line="5009"/>
         <source>The current layer is not editable. Choose &apos;Start editing&apos; in the digitizing toolbar.</source>
         <translation>Nykyinen taso ei ole muokattavissa. Valitse &apos;aloita muokkaus&apos; digitointi työkalussa.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4994"/>
+        <location filename="../src/app/qgisapp.cpp" line="5018"/>
         <source>No Features Selected</source>
         <translation>Ominaisuuksia ei valittu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4995"/>
+        <location filename="../src/app/qgisapp.cpp" line="5019"/>
         <source>The current layer has not selected features</source>
         <translation>Nykyiseltä tasolta ei ole valittu ominaisuuksia</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5000"/>
+        <location filename="../src/app/qgisapp.cpp" line="5024"/>
         <source>Delete features</source>
         <translation>Poista kohteet</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="5000"/>
+        <location filename="../src/app/qgisapp.cpp" line="5024"/>
         <source>Delete %n feature(s)?</source>
         <comment>number of features to delete</comment>
         <translation>
@@ -15672,22 +15696,22 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5005"/>
+        <location filename="../src/app/qgisapp.cpp" line="5029"/>
         <source>Features deleted</source>
         <translation>Kohteet poistettu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5008"/>
+        <location filename="../src/app/qgisapp.cpp" line="5032"/>
         <source>Problem deleting features</source>
         <translation>Ongelma kohteita poistettaessa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5009"/>
+        <location filename="../src/app/qgisapp.cpp" line="5033"/>
         <source>A problem occured during deletion of features</source>
         <translation>Virhe kohteita poistettaessa</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="5014"/>
+        <location filename="../src/app/qgisapp.cpp" line="5038"/>
         <source>%n feature(s) deleted.</source>
         <comment>number of features deleted</comment>
         <translation>
@@ -15696,215 +15720,215 @@ Tämä ohjelmakoodi käännettii toimimaan Qt %1:ssä, ja sitä suoritetaan nyt 
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5060"/>
+        <location filename="../src/app/qgisapp.cpp" line="5084"/>
         <source>Merging features...</source>
         <translation>Yhdistetään kohteita...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5060"/>
+        <location filename="../src/app/qgisapp.cpp" line="5084"/>
         <source>Abort</source>
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5180"/>
-        <location filename="../src/app/qgisapp.cpp" line="5263"/>
+        <location filename="../src/app/qgisapp.cpp" line="5204"/>
+        <location filename="../src/app/qgisapp.cpp" line="5287"/>
         <source>Composer %1</source>
         <translation>Muodostaja %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5449"/>
-        <location filename="../src/app/qgisapp.cpp" line="5512"/>
+        <location filename="../src/app/qgisapp.cpp" line="5473"/>
+        <location filename="../src/app/qgisapp.cpp" line="5536"/>
         <source>No active layer</source>
         <translation>Ei aktiivista tasoa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5450"/>
-        <location filename="../src/app/qgisapp.cpp" line="5512"/>
+        <location filename="../src/app/qgisapp.cpp" line="5474"/>
+        <location filename="../src/app/qgisapp.cpp" line="5536"/>
         <source>No active layer found. Please select a layer in the layer list</source>
         <translation>Aktiivista tasoa ei löydy. Valitse taso tasolistasta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5458"/>
-        <location filename="../src/app/qgisapp.cpp" line="5518"/>
+        <location filename="../src/app/qgisapp.cpp" line="5482"/>
+        <location filename="../src/app/qgisapp.cpp" line="5542"/>
         <source>Active layer is not vector</source>
         <translation>Aktiivinen taso ei ole vektoritaso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5458"/>
-        <location filename="../src/app/qgisapp.cpp" line="5518"/>
+        <location filename="../src/app/qgisapp.cpp" line="5482"/>
+        <location filename="../src/app/qgisapp.cpp" line="5542"/>
         <source>The merge features tool only works on vector layers. Please select a vector layer from the layer list</source>
         <translation>Kohteiden yhdistämien toimii vain vektoritasoilla. Valitse vektoritaso tasolistasta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5464"/>
-        <location filename="../src/app/qgisapp.cpp" line="5523"/>
+        <location filename="../src/app/qgisapp.cpp" line="5488"/>
+        <location filename="../src/app/qgisapp.cpp" line="5547"/>
         <source>Merging features can only be done for layers in editing mode. To use the merge tool, go to  Layer-&gt;Toggle editing</source>
         <translation>Kohteiden yhdistäminen toimii vain tasoilla joilla muokkaus on sallittu. Mene valikkoon Taso-&gt;Salli muokkaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5472"/>
-        <location filename="../src/app/qgisapp.cpp" line="5538"/>
-        <location filename="../src/app/qgisapp.cpp" line="5575"/>
+        <location filename="../src/app/qgisapp.cpp" line="5496"/>
+        <location filename="../src/app/qgisapp.cpp" line="5562"/>
+        <location filename="../src/app/qgisapp.cpp" line="5599"/>
         <source>The merge tool requires at least two selected features</source>
         <translation>Yhdistämistyökalu vaatii vähintään kaksi valittua kohdetta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5486"/>
+        <location filename="../src/app/qgisapp.cpp" line="5510"/>
         <source>Merged feature attributes</source>
         <translation>Yhdistettiin kohteiden ominaisuustietoja</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5550"/>
-        <location filename="../src/app/qgisapp.cpp" line="5590"/>
+        <location filename="../src/app/qgisapp.cpp" line="5574"/>
+        <location filename="../src/app/qgisapp.cpp" line="5614"/>
         <source>Merge failed</source>
         <translation>Yhdistäminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5550"/>
-        <location filename="../src/app/qgisapp.cpp" line="5590"/>
+        <location filename="../src/app/qgisapp.cpp" line="5574"/>
+        <location filename="../src/app/qgisapp.cpp" line="5614"/>
         <source>An error occured during the merge operation</source>
         <translation>Virhe yhdistettäessä </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5558"/>
-        <location filename="../src/app/qgisapp.cpp" line="5597"/>
+        <location filename="../src/app/qgisapp.cpp" line="5582"/>
+        <location filename="../src/app/qgisapp.cpp" line="5621"/>
         <source>The union operation would result in a geometry type that is not compatible with the current layer and therefore is canceled</source>
         <translation>Liitto-operaatio johtaisi geometriaan jota nykyinen taso ei tue. Operaatio peruttiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5603"/>
+        <location filename="../src/app/qgisapp.cpp" line="5627"/>
         <source>Merged features</source>
         <translation>Kohteet yhdistettiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5756"/>
+        <location filename="../src/app/qgisapp.cpp" line="5776"/>
         <source>Features cut</source>
         <translation>Kohteet leikattiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5782"/>
+        <location filename="../src/app/qgisapp.cpp" line="5802"/>
         <source>Features pasted</source>
         <translation>Kohteet liitettiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5861"/>
-        <location filename="../src/app/qgisapp.cpp" line="5868"/>
-        <location filename="../src/app/qgisapp.cpp" line="5874"/>
+        <location filename="../src/app/qgisapp.cpp" line="5881"/>
+        <location filename="../src/app/qgisapp.cpp" line="5888"/>
+        <location filename="../src/app/qgisapp.cpp" line="5894"/>
         <source>Paste features</source>
         <translation>Liitä ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5862"/>
+        <location filename="../src/app/qgisapp.cpp" line="5882"/>
         <source>no features could be successfully pasted.</source>
         <translation>ominaisuuksia ei kyetty liittämään onnistuneesti.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5869"/>
+        <location filename="../src/app/qgisapp.cpp" line="5889"/>
         <source>%1 features were successfully pasted.</source>
         <translation>%1 ominaisuutta liitettiin onnistuneesti.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5875"/>
+        <location filename="../src/app/qgisapp.cpp" line="5895"/>
         <source>%1 of %2 features could be successfully pasted.</source>
         <translation>%1 ominaisuutta kaikkiaan %2 liitettiin onnistuneesti.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5902"/>
+        <location filename="../src/app/qgisapp.cpp" line="5922"/>
         <source>Pasted</source>
         <translation>Liitetty</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5903"/>
+        <location filename="../src/app/qgisapp.cpp" line="5923"/>
         <source>New memory layer name</source>
         <translation>Uuden muistitason nimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5904"/>
+        <location filename="../src/app/qgisapp.cpp" line="5924"/>
         <source>Layer name</source>
         <translation>Tason nimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5980"/>
+        <location filename="../src/app/qgisapp.cpp" line="6000"/>
         <source>No features in clipboard.</source>
         <translation>Leikepöydällä ei ominaisuuksia.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5984"/>
+        <location filename="../src/app/qgisapp.cpp" line="6004"/>
         <source>No features with geometry found, point type layer will be created.</source>
         <translation>Ei löydetty ominaisuuksia geometrialla, pistetyypin taso luodaan.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5988"/>
+        <location filename="../src/app/qgisapp.cpp" line="6008"/>
         <source>Multiple geometry types found, features with geometry different from %1 will be created without geometry.</source>
         <translation>Useita geometriatyyppejä löydetty, ominaisuudet joiden geometria erilainen kuin %1 luodaan ilman geometriaa.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6002"/>
+        <location filename="../src/app/qgisapp.cpp" line="6022"/>
         <source>Cannot create new layer</source>
         <translation>Uutta tasoa ei voida luoda</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6015"/>
+        <location filename="../src/app/qgisapp.cpp" line="6035"/>
         <source>Cannot create field %1 (%2,%3)</source>
         <translation>Ei voida luoda tietoa %1 (%2,%3)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6073"/>
+        <location filename="../src/app/qgisapp.cpp" line="6093"/>
         <source>Cannot copy style: %1</source>
         <translation>Ei voida kopioida tyyliä: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6099"/>
+        <location filename="../src/app/qgisapp.cpp" line="6119"/>
         <source>Cannot parse style: %1:%2:%3</source>
         <translation>Ei voida jäsentää tyyliä: %1:%2:%3</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6111"/>
+        <location filename="../src/app/qgisapp.cpp" line="6131"/>
         <source>Cannot read style: %1</source>
         <translation>Ei voida lukea tyyliä: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6190"/>
+        <location filename="../src/app/qgisapp.cpp" line="6209"/>
         <source>Start editing failed</source>
         <translation>Muokkaamisen aloittaminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6191"/>
+        <location filename="../src/app/qgisapp.cpp" line="6210"/>
         <source>Provider cannot be opened for editing</source>
         <translation>Tarjoajaa ei voi muokata</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6216"/>
+        <location filename="../src/app/qgisapp.cpp" line="6235"/>
         <source>Stop editing</source>
         <translation>Lopeta muokkaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6217"/>
+        <location filename="../src/app/qgisapp.cpp" line="6236"/>
         <source>Do you want to save the changes to layer %1?</source>
         <translation>Haluatko tallentaa muutokset tasolle %1?</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6817"/>
+        <location filename="../src/app/qgisapp.cpp" line="6836"/>
         <source>Set scale visibility for selected layers</source>
         <translation>Aseta mittakaavan näkyvyys valituille tasoille</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7422"/>
+        <location filename="../src/app/qgisapp.cpp" line="7457"/>
         <source>http://qgis.org/en/site/forusers/commercial_support.html</source>
         <translation>http://qgis.org/en/site/forusers/commercial_support.html</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9740"/>
+        <location filename="../src/app/qgisapp.cpp" line="9807"/>
         <source>The request &apos;%1&apos; timed out. Any data received is likely incomplete.</source>
         <translation>Pyyntö &apos;%1&apos; on vanhentunut. Vastaanotettu data on todennäköisesti epätäydellistä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9741"/>
+        <location filename="../src/app/qgisapp.cpp" line="9808"/>
         <source>Network request timeout</source>
         <translation>Verkkopyyntö vanhentunut</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9741"/>
+        <location filename="../src/app/qgisapp.cpp" line="9808"/>
         <source>A network request timed out, any data received is likely incomplete.</source>
         <translation>Verkkopyyntö on vanhentunut. Vastaanotettu data on todennäköisesti epätäydellistä.</translation>
     </message>
@@ -15918,7 +15942,7 @@ Errors: %2
 Virheet: %2</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4496"/>
+        <location filename="../src/app/qgisapp.cpp" line="4520"/>
         <source>Labeling</source>
         <translation>Nimiöinti</translation>
     </message>
@@ -15932,7 +15956,7 @@ Virheet: %2</translation>
         <translation type="obsolete">Tallenna nimellä...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="556"/>
+        <location filename="../src/app/qgisapp.cpp" line="555"/>
         <source>Private qgis.db</source>
         <translation>Yksityinen qgis.db</translation>
     </message>
@@ -15951,7 +15975,7 @@ Virheet: %2</translation>
         <translation type="obsolete">Huom. Tämä versio on yksi uusimmista versioista. Ja se sisältää uutta toiminnallisuutta ja laajentaa ohjelmoitavaa rajapintaa verrattuna QGIS versioihin 1.0.x ja 1.3.0. Jos muuttumaton käyttöliittymä, ohjelmoitava API ja parempi tuki on sinulle tärkeää, suosittelemme sinua käyttämään QGISin vanhempaa versiota (1.0.x). Mutta jos haluat kokeilla uusia toimintoja, käytä tätä versiota. {1.0.?} {1.4.0.?} {1.0.?}</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2704"/>
+        <location filename="../src/app/qgisapp.cpp" line="2732"/>
         <source>%1 doesn&apos;t have any layers</source>
         <translation>%1 ei ole yhtään tasoa</translation>
     </message>
@@ -15973,7 +15997,7 @@ Virheet: %2</translation>
         <translation type="obsolete">Valitse vektoritasot lisättäväksi...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3186"/>
+        <location filename="../src/app/qgisapp.cpp" line="3213"/>
         <source>Cannot get MSSQL select dialog from provider.</source>
         <translation>Ei saada MSSQL valintadialogia palveluntarjoajalta.</translation>
     </message>
@@ -15982,41 +16006,41 @@ Virheet: %2</translation>
         <translation type="obsolete">Ole ystävällinen ja valitse ensin vektoritaso.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4890"/>
+        <location filename="../src/app/qgisapp.cpp" line="4914"/>
         <source>Saving done</source>
         <translation>Tallennus valmis</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4891"/>
+        <location filename="../src/app/qgisapp.cpp" line="4915"/>
         <source>Export to vector file has been completed</source>
         <translation>Vienti vektoritiedostoon suoritettu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4897"/>
+        <location filename="../src/app/qgisapp.cpp" line="4921"/>
         <source>Save error</source>
         <translation>Tallennus virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4898"/>
+        <location filename="../src/app/qgisapp.cpp" line="4922"/>
         <source>Export to vector file failed.
 Error: %1</source>
         <translation>Vienti vektoritiedostoon epäonnistui.
 Virhe: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5472"/>
-        <location filename="../src/app/qgisapp.cpp" line="5538"/>
-        <location filename="../src/app/qgisapp.cpp" line="5575"/>
+        <location filename="../src/app/qgisapp.cpp" line="5496"/>
+        <location filename="../src/app/qgisapp.cpp" line="5562"/>
+        <location filename="../src/app/qgisapp.cpp" line="5599"/>
         <source>Not enough features selected</source>
         <translation>Kohteita ei ole valittu riittävästi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5558"/>
+        <location filename="../src/app/qgisapp.cpp" line="5582"/>
         <source>Union operation canceled</source>
         <translation>Yhdistävä operaatio peruutettiin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6248"/>
+        <location filename="../src/app/qgisapp.cpp" line="6267"/>
         <source>Problems during roll back</source>
         <translation>Ongelmia palautuksessa</translation>
     </message>
@@ -16025,7 +16049,7 @@ Virhe: %1</translation>
         <translation type="obsolete">Väärä skaala</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="645"/>
+        <location filename="../src/app/qgisapp.cpp" line="644"/>
         <source>GPS Information</source>
         <translation>GPS tieto</translation>
     </message>
@@ -16038,30 +16062,30 @@ Virhe: %1</translation>
         <translation type="obsolete">Python konsoli</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7138"/>
+        <location filename="../src/app/qgisapp.cpp" line="7157"/>
         <source>There is a new version of QGIS available</source>
         <translation>Uusi versio QGIS:stä löytyi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7142"/>
+        <location filename="../src/app/qgisapp.cpp" line="7161"/>
         <source>You are running a development version of QGIS</source>
         <translation>Tämä on QGIS kehitysversio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7146"/>
+        <location filename="../src/app/qgisapp.cpp" line="7165"/>
         <source>You are running the current version of QGIS</source>
         <translation>Tämä on uusin versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7151"/>
+        <location filename="../src/app/qgisapp.cpp" line="7170"/>
         <source>Would you like more information?</source>
         <translation>Haluaisitko lisätietoa?</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7154"/>
-        <location filename="../src/app/qgisapp.cpp" line="7167"/>
-        <location filename="../src/app/qgisapp.cpp" line="7172"/>
-        <location filename="../src/app/qgisapp.cpp" line="7193"/>
+        <location filename="../src/app/qgisapp.cpp" line="7173"/>
+        <location filename="../src/app/qgisapp.cpp" line="7186"/>
+        <location filename="../src/app/qgisapp.cpp" line="7191"/>
+        <location filename="../src/app/qgisapp.cpp" line="7212"/>
         <source>QGIS Version Information</source>
         <translation>QGIS Version tietoja</translation>
     </message>
@@ -16070,17 +16094,17 @@ Virhe: %1</translation>
         <translation type="obsolete">QGIS - Muutokset SVN:ssä viimeisimmän julkaisun jälkeen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7172"/>
+        <location filename="../src/app/qgisapp.cpp" line="7191"/>
         <source>Unable to get current version information from server</source>
         <translation>Versiotietoa ei saada haettua palvelimelta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7182"/>
+        <location filename="../src/app/qgisapp.cpp" line="7201"/>
         <source>Connection refused - server may be down</source>
         <translation>Yhteys epäonnistui - palvelin voi olla alhaalla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7185"/>
+        <location filename="../src/app/qgisapp.cpp" line="7204"/>
         <source>QGIS server was not found</source>
         <translation>QGIS palvelinta ei löydy</translation>
     </message>
@@ -16093,15 +16117,15 @@ Virhe: %1</translation>
         <translation type="obsolete">Tuntematon verkkosokettivirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7193"/>
+        <location filename="../src/app/qgisapp.cpp" line="7212"/>
         <source>Unable to communicate with QGIS Version server
 %1</source>
         <translation>QGIS versio palvelimen kanssa kommunikointi epäonnistui
 %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7299"/>
-        <location filename="../src/app/qgisapp.cpp" line="7308"/>
+        <location filename="../src/app/qgisapp.cpp" line="7334"/>
+        <location filename="../src/app/qgisapp.cpp" line="7343"/>
         <source>To perform a full histogram stretch, you need to have a raster layer selected.</source>
         <translation>Suorittaaksesi täyden histogrammin laajentamisen, Sinulla tulee olla rasteritaso valittuna.</translation>
     </message>
@@ -16128,7 +16152,7 @@ Virhe: %1</translation>
         <translation>QGIS käynnistyy...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1482"/>
+        <location filename="../src/app/qgisapp.cpp" line="1483"/>
         <source>Window</source>
         <translation>Ikkuna</translation>
     </message>
@@ -16137,17 +16161,17 @@ Virhe: %1</translation>
         <translation type="obsolete">Vekt&amp;ori</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1501"/>
+        <location filename="../src/app/qgisapp.cpp" line="1502"/>
         <source>&amp;Web</source>
         <translation>&amp;Web</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1715"/>
+        <location filename="../src/app/qgisapp.cpp" line="1720"/>
         <source>Shows the map coordinates at the current cursor position. The display is continuously updated as the mouse is moved. It also allows editing to set the canvas center to a given position. The format is lat,lon or east,north</source>
         <translation>Näyttää kartan koordinaatit nykyisestä kursorin sijainnista. Näyttö päivitetään jatkuvasti hiiren liikkuessa. Se sallii myös muokkauksella asettaa kartan näyttöalueen  keskipisteen annettavaan sijaintiin. Muoto on leveyspiiri, pituuspiiri tai itä,pohjoinen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1719"/>
+        <location filename="../src/app/qgisapp.cpp" line="1724"/>
         <source>Current map coordinate (lat,lon or east,north)</source>
         <translation>Nykyinen kartan koordinaatti (leveyspiiri, pituuspiiri tai itä,pohjoinen)</translation>
     </message>
@@ -16156,12 +16180,12 @@ Virhe: %1</translation>
         <translation type="obsolete">Kontrolloi tekemisjärjestystä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2314"/>
+        <location filename="../src/app/qgisapp.cpp" line="2329"/>
         <source>Map layer list that displays all layers in drawing order.</source>
         <translation>Kartan tasojen listaus joka näyttää kaikkien tasojen piirtämisjärjestyksen.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2315"/>
+        <location filename="../src/app/qgisapp.cpp" line="2330"/>
         <source>Layer order</source>
         <translation>Tasojärjestys</translation>
     </message>
@@ -16176,28 +16200,28 @@ Virhe: %1</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2479"/>
-        <location filename="../src/app/qgisapp.cpp" line="3583"/>
+        <location filename="../src/app/qgisapp.cpp" line="2507"/>
+        <location filename="../src/app/qgisapp.cpp" line="3607"/>
         <source>&lt; Blank &gt;</source>
         <translation>&lt; Tyhjä &gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2534"/>
+        <location filename="../src/app/qgisapp.cpp" line="2562"/>
         <source>QGIS version</source>
         <translation>QGIS versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2535"/>
+        <location filename="../src/app/qgisapp.cpp" line="2563"/>
         <source>QGIS code revision</source>
         <translation>Qgis koodin tarkistus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2539"/>
+        <location filename="../src/app/qgisapp.cpp" line="2567"/>
         <source>Compiled against Qt</source>
         <translation>Käännetty Qt mukana</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2540"/>
+        <location filename="../src/app/qgisapp.cpp" line="2568"/>
         <source>Running against Qt</source>
         <translation>Suoritetaan QT:n kanssa</translation>
     </message>
@@ -16206,172 +16230,172 @@ Virhe: %1</translation>
         <translation type="obsolete">GEOS Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2554"/>
+        <location filename="../src/app/qgisapp.cpp" line="2582"/>
         <source>PostgreSQL Client Version</source>
         <translation>PostgreSQL Client Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2558"/>
+        <location filename="../src/app/qgisapp.cpp" line="2586"/>
         <source>No support.</source>
         <translation>Ei tuettu.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2562"/>
+        <location filename="../src/app/qgisapp.cpp" line="2590"/>
         <source>SpatiaLite Version</source>
         <translation>SpatiaLite Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2568"/>
+        <location filename="../src/app/qgisapp.cpp" line="2596"/>
         <source>QWT Version</source>
         <translation>QWT Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2569"/>
+        <location filename="../src/app/qgisapp.cpp" line="2597"/>
         <source>PROJ.4 Version</source>
         <translation>PROJ.4 Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2573"/>
+        <location filename="../src/app/qgisapp.cpp" line="2601"/>
         <source>QScintilla2 Version</source>
         <translation>QScintilla2 Versio</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2576"/>
+        <location filename="../src/app/qgisapp.cpp" line="2604"/>
         <source>This copy of QGIS writes debugging output.</source>
         <translation>Tämä QGIS versio kirjoittaa vianetsintätietoja.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2803"/>
+        <location filename="../src/app/qgisapp.cpp" line="2831"/>
         <source>Vector</source>
         <translation>Vektori</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3066"/>
+        <location filename="../src/app/qgisapp.cpp" line="3094"/>
         <source>PostgreSQL</source>
         <translation>PostgreSQL</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3066"/>
+        <location filename="../src/app/qgisapp.cpp" line="3094"/>
         <source>Cannot get PostgreSQL select dialog from provider.</source>
         <translation>Ei saada PostgreSQL valinta ikkunaa palveluntarjoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3122"/>
+        <location filename="../src/app/qgisapp.cpp" line="3150"/>
         <source>%1 is an invalid layer - not loaded</source>
         <translation>%1 on virheellinen taso - ei ladattu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3123"/>
+        <location filename="../src/app/qgisapp.cpp" line="3151"/>
         <source>%1 is an invalid layer and cannot be loaded. Please check the &lt;a href=&quot;#messageLog&quot;&gt;message log&lt;/a&gt; for further info.</source>
         <translation>%1 on virheellinen taso eikä sitä voida ladata. Ole ystävällinen ja tarkista &lt;a href=&quot;#messageLog&quot;&gt;virhe loki&lt;/a&gt; lisäinformaation saamiseksi.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3150"/>
+        <location filename="../src/app/qgisapp.cpp" line="3177"/>
         <source>SpatiaLite</source>
         <translation>SpatiaLite</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3150"/>
+        <location filename="../src/app/qgisapp.cpp" line="3177"/>
         <source>Cannot get SpatiaLite select dialog from provider.</source>
         <translation>Ei saada SpatiaLite valinta ikkunaa palveluntarjoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3165"/>
+        <location filename="../src/app/qgisapp.cpp" line="3192"/>
         <source>Delimited Text</source>
         <translation>Eroteltu teksti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3165"/>
+        <location filename="../src/app/qgisapp.cpp" line="3192"/>
         <source>Cannot get Delimited Text select dialog from provider.</source>
         <translation>Ei saada Erotellun Tekstin valinta ikkunaa palveluntarjoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3186"/>
+        <location filename="../src/app/qgisapp.cpp" line="3213"/>
         <source>MSSQL</source>
         <translation>MSSQL</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3208"/>
+        <location filename="../src/app/qgisapp.cpp" line="3230"/>
         <source>Oracle</source>
         <translation>Oracle</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3208"/>
+        <location filename="../src/app/qgisapp.cpp" line="3230"/>
         <source>Cannot get Oracle select dialog from provider.</source>
         <translation>Ei saada Oracle valintadialogia tajoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3231"/>
+        <location filename="../src/app/qgisapp.cpp" line="3253"/>
         <source>WMS</source>
         <translation>WMS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3231"/>
+        <location filename="../src/app/qgisapp.cpp" line="3253"/>
         <source>Cannot get WMS select dialog from provider.</source>
         <translation>Ei saada WMS valinta ikkunaa palveluntarjoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3248"/>
+        <location filename="../src/app/qgisapp.cpp" line="3270"/>
         <source>WCS</source>
         <translation>WCS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3248"/>
+        <location filename="../src/app/qgisapp.cpp" line="3270"/>
         <source>Cannot get WCS select dialog from provider.</source>
         <translation>Ei saada WCS valintadialogia tajoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3270"/>
+        <location filename="../src/app/qgisapp.cpp" line="3292"/>
         <source>WFS</source>
         <translation>WFS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3270"/>
+        <location filename="../src/app/qgisapp.cpp" line="3292"/>
         <source>Cannot get WFS select dialog from provider.</source>
         <translation>Ei saada WFS valintadialogia tajoajalta.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3453"/>
+        <location filename="../src/app/qgisapp.cpp" line="3477"/>
         <source>Default failed to open: %1</source>
         <translation>Oletus epäonnistui avauksessa: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3457"/>
+        <location filename="../src/app/qgisapp.cpp" line="3481"/>
         <source>Default not found: %1</source>
         <translation>Oletusta ei löydy: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3459"/>
+        <location filename="../src/app/qgisapp.cpp" line="3483"/>
         <source>Open Template Project</source>
         <translation>Avaa Malli Projekti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3484"/>
+        <location filename="../src/app/qgisapp.cpp" line="3508"/>
         <source>Auto-open Project</source>
         <translation>Automaattinen Projektin avaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3517"/>
+        <location filename="../src/app/qgisapp.cpp" line="3541"/>
         <source>Failed to open: %1</source>
         <translation>Avaus epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3540"/>
+        <location filename="../src/app/qgisapp.cpp" line="3564"/>
         <source>Not valid project file: %1</source>
         <translation>Virheellinen projektitiedosto: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3553"/>
+        <location filename="../src/app/qgisapp.cpp" line="3577"/>
         <source>Project failed to open: %1</source>
         <translation>Projektitiedoston avaus epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3560"/>
+        <location filename="../src/app/qgisapp.cpp" line="3584"/>
         <source>Default template has been reopened: %1</source>
         <translation>Oletusmalli on avattu uudelleen: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3567"/>
+        <location filename="../src/app/qgisapp.cpp" line="3591"/>
         <source>File not found: %1</source>
         <translation>Tiedostoa ei löydy: %1</translation>
     </message>
@@ -16380,102 +16404,102 @@ Virhe: %1</translation>
         <translation type="obsolete">QGIS tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3685"/>
+        <location filename="../src/app/qgisapp.cpp" line="3709"/>
         <source>Loading project: %1</source>
         <translation>Ladataan projektia: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3754"/>
+        <location filename="../src/app/qgisapp.cpp" line="3778"/>
         <source>Security warning</source>
         <translation>Turvallisuus varoitus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3755"/>
+        <location filename="../src/app/qgisapp.cpp" line="3779"/>
         <source>project macros have been disabled.</source>
         <translation>Projektin makrot on poistettu käytöstä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3746"/>
+        <location filename="../src/app/qgisapp.cpp" line="3770"/>
         <source>Enable macros</source>
         <translation>Ota makrot käyttöön</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3778"/>
+        <location filename="../src/app/qgisapp.cpp" line="3802"/>
         <source>Project loaded</source>
         <translation>Projekti ladattu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4037"/>
+        <location filename="../src/app/qgisapp.cpp" line="4061"/>
         <source>Unable to load %1</source>
         <translation>Ei voida ladata %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4568"/>
+        <location filename="../src/app/qgisapp.cpp" line="4592"/>
         <source>Labeling Options</source>
         <translation>Nimiöinnin vaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4569"/>
+        <location filename="../src/app/qgisapp.cpp" line="4593"/>
         <source>Please select a vector layer first</source>
         <translation>Ole hyvä ja valitse vektoritaso ensin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4577"/>
+        <location filename="../src/app/qgisapp.cpp" line="4601"/>
         <source>Layer labeling settings</source>
         <translation>Tason nimiöiden asetukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4669"/>
+        <location filename="../src/app/qgisapp.cpp" line="4693"/>
         <source>Reading raster</source>
         <translation>Luetaan rasteria</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="4744"/>
+        <location filename="../src/app/qgisapp.cpp" line="4768"/>
         <source>Cannot write raster error code: %1</source>
         <translation>Ei voida kirjoittaa rasterin virhe koodia: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5120"/>
+        <location filename="../src/app/qgisapp.cpp" line="5144"/>
         <source>Create unique print composer title</source>
         <translation>Luo yksilöllinen tulosteen muodostajan otsikko</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5123"/>
+        <location filename="../src/app/qgisapp.cpp" line="5147"/>
         <source>(title generated if left empty)</source>
         <translation>(generoitava otsikko jos jätetään tyhjäksi)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5137"/>
+        <location filename="../src/app/qgisapp.cpp" line="5161"/>
         <source>Composer title</source>
         <translation>Muodostajan otsikko</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5152"/>
+        <location filename="../src/app/qgisapp.cpp" line="5176"/>
         <source>Title can not be empty!</source>
         <translation>Otsikko ei voi olla tyhjä!</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5163"/>
+        <location filename="../src/app/qgisapp.cpp" line="5187"/>
         <source>Title already exists!</source>
         <translation>Otsikko on jo olemassa!</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5225"/>
+        <location filename="../src/app/qgisapp.cpp" line="5249"/>
         <source> copy</source>
         <translation>kopioi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5714"/>
+        <location filename="../src/app/qgisapp.cpp" line="5738"/>
         <source>No active vector layer</source>
         <translation>Ei aktiivista vektoritasoa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5715"/>
+        <location filename="../src/app/qgisapp.cpp" line="5739"/>
         <source>To select features, choose a vector layer in the legend</source>
         <translation>Valitaksesi ominaisuuksia, valitse vektoritaso selitteessä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6328"/>
+        <location filename="../src/app/qgisapp.cpp" line="6347"/>
         <source>Could not %1 changes to layer %2
 
 Errors: %3
@@ -16485,44 +16509,44 @@ Errors: %3
 Virheet: %3</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6329"/>
+        <location filename="../src/app/qgisapp.cpp" line="6348"/>
         <source>rollback</source>
         <translation>palautus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6329"/>
+        <location filename="../src/app/qgisapp.cpp" line="6348"/>
         <source>cancel</source>
         <translation>peruuta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6359"/>
+        <location filename="../src/app/qgisapp.cpp" line="6378"/>
         <source>Save</source>
         <translation>Tallenna</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6359"/>
-        <location filename="../src/app/qgisapp.cpp" line="6385"/>
-        <location filename="../src/app/qgisapp.cpp" line="6411"/>
+        <location filename="../src/app/qgisapp.cpp" line="6378"/>
+        <location filename="../src/app/qgisapp.cpp" line="6404"/>
+        <location filename="../src/app/qgisapp.cpp" line="6430"/>
         <source>all</source>
         <translation>kaikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6385"/>
+        <location filename="../src/app/qgisapp.cpp" line="6404"/>
         <source>Rollback</source>
         <translation>Palautus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6411"/>
+        <location filename="../src/app/qgisapp.cpp" line="6430"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6427"/>
+        <location filename="../src/app/qgisapp.cpp" line="6446"/>
         <source>Current edits</source>
         <translation>Nykyiset muokkaukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6428"/>
+        <location filename="../src/app/qgisapp.cpp" line="6447"/>
         <source>%1 current changes for %2 layer(s)?</source>
         <translation>%1 nykyisiä muutoksia %2 tasolle(tasoille)?</translation>
     </message>
@@ -16555,28 +16579,28 @@ Virheet: %3</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6707"/>
+        <location filename="../src/app/qgisapp.cpp" line="6726"/>
         <source>copy</source>
         <translation>kopioi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6711"/>
+        <location filename="../src/app/qgisapp.cpp" line="6730"/>
         <source>Plugin layer</source>
         <translation>Liitännäistaso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6723"/>
+        <location filename="../src/app/qgisapp.cpp" line="6742"/>
         <source>Memory layer</source>
         <translation>Muistitaso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6743"/>
-        <location filename="../src/app/qgisapp.cpp" line="6754"/>
+        <location filename="../src/app/qgisapp.cpp" line="6762"/>
+        <location filename="../src/app/qgisapp.cpp" line="6773"/>
         <source>Duplicate layer: </source>
         <translation>Duplikaattitaso:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6744"/>
+        <location filename="../src/app/qgisapp.cpp" line="6763"/>
         <source>%1 (duplication resulted in invalid layer)</source>
         <translation>%1 (tuplaaminen johti virheelliseen tasoon)</translation>
     </message>
@@ -16585,27 +16609,27 @@ Virheet: %3</translation>
         <translation type="obsolete">%1 (%2 tyyppi tukematon)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7064"/>
+        <location filename="../src/app/qgisapp.cpp" line="7083"/>
         <source>Couldn&apos;t load Python support library: %1</source>
         <translation>Ei voida ladata Python tukikirjastoa: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7075"/>
+        <location filename="../src/app/qgisapp.cpp" line="7094"/>
         <source>Couldn&apos;t resolve python support library&apos;s instance() symbol.</source>
         <translation>Ei voida ratkaista Python tukikirjaston instance() symbolia.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7090"/>
+        <location filename="../src/app/qgisapp.cpp" line="7109"/>
         <source>Python support ENABLED :-) </source>
         <translation>Python tuki MAHDOLLISTETTU. :-)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7160"/>
+        <location filename="../src/app/qgisapp.cpp" line="7179"/>
         <source>QGIS - Changes since last release</source>
         <translation>QGIS - Muutokset edellisestä julkaisusta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7188"/>
+        <location filename="../src/app/qgisapp.cpp" line="7207"/>
         <source>Unknown network socket error: %1</source>
         <translation>Tuntematon verkon  socket error: %1</translation>
     </message>
@@ -16614,23 +16638,23 @@ Virheet: %3</translation>
         <translation type="obsolete">Hyväksyttävää rasteritasoa ei valittu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7532"/>
-        <location filename="../src/app/qgisapp.cpp" line="7577"/>
+        <location filename="../src/app/qgisapp.cpp" line="7566"/>
+        <location filename="../src/app/qgisapp.cpp" line="7609"/>
         <source>Layer is not valid</source>
         <translation>Taso virheellinen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7533"/>
+        <location filename="../src/app/qgisapp.cpp" line="7567"/>
         <source>The layer %1 is not a valid layer and can not be added to the map</source>
         <translation>Taso %1 ei ole hyväksyttävä taso eikä sitä voida lisätä kartalle</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7578"/>
+        <location filename="../src/app/qgisapp.cpp" line="7610"/>
         <source>The layer is not a valid layer and can not be added to the map</source>
         <translation>Tämä taso on virheellinen eikä sitä voida lisätä kartalle</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7690"/>
+        <location filename="../src/app/qgisapp.cpp" line="7722"/>
         <source>Save?</source>
         <translation>Tallenna?</translation>
     </message>
@@ -16639,27 +16663,27 @@ Virheet: %3</translation>
         <translation type="obsolete">Haluatko tallentaa nykyisen projektin?</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8376"/>
+        <location filename="../src/app/qgisapp.cpp" line="8425"/>
         <source>Map coordinates for the current view extents</source>
         <translation>Koordinaatit nykyisen katselmuksen rajoille</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8384"/>
+        <location filename="../src/app/qgisapp.cpp" line="8433"/>
         <source>Map coordinates at mouse cursor position</source>
         <translation>Koordinaatit kursorin kohdalla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8449"/>
+        <location filename="../src/app/qgisapp.cpp" line="8498"/>
         <source>Extents:</source>
         <translation>Rajat:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="8542"/>
+        <location filename="../src/app/qgisapp.cpp" line="8591"/>
         <source>Maptips require an active layer</source>
         <translation>Vinkit tarvitsevat aktiivisen tason</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="8615"/>
+        <location filename="../src/app/qgisapp.cpp" line="8664"/>
         <source>%n feature(s) selected on layer %1.</source>
         <comment>number of selected features</comment>
         <translation>
@@ -16668,7 +16692,7 @@ Virheet: %3</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9066"/>
+        <location filename="../src/app/qgisapp.cpp" line="9115"/>
         <source>Open a GDAL Supported Raster Data Source</source>
         <translation>Avaa GDAL tuettu rasteri tietolähde</translation>
     </message>
@@ -16677,12 +16701,12 @@ Virheet: %3</translation>
         <translation type="obsolete">%1 on virheellinen tai tuntematon rasteri tietue</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9303"/>
+        <location filename="../src/app/qgisapp.cpp" line="9350"/>
         <source>%1 is not a supported raster data source</source>
         <translation>%1 rasteri tietuetta ei tueta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9308"/>
+        <location filename="../src/app/qgisapp.cpp" line="9355"/>
         <source>Unsupported Data Source</source>
         <translation>Tukematon tietue</translation>
     </message>
@@ -16695,17 +16719,17 @@ Virheet: %3</translation>
         <translation type="obsolete">Kirjanmerkin luonti ei onnistu. Tietokantasi voi olla korruptoitunut tai sitä ei löydy</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9481"/>
+        <location filename="../src/app/qgisapp.cpp" line="9527"/>
         <source>Project file is older</source>
         <translation>Projektitiedosto on vanhempi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9463"/>
+        <location filename="../src/app/qgisapp.cpp" line="9509"/>
         <source>&lt;p&gt;This project file was saved by an older version of QGIS. When saving this project file, QGIS will update it to the latest version, possibly rendering it useless for older versions of QGIS.&lt;p&gt;Even though QGIS developers try to maintain backwards compatibility, some of the information from the old project file might be lost. To improve the quality of QGIS, we appreciate if you file a bug report at %3. Be sure to include the old project file, and state the version of QGIS you used to discover the error.&lt;p&gt;To remove this warning when opening an older project file, uncheck the box &apos;%5&apos; in the %4 menu.&lt;p&gt;Version of the project file: %1&lt;br&gt;Current version of QGIS: %2</source>
         <translation>&lt;p&gt;Tämä projektitiedosto on tallennettu QGIS:n vanhemmalla versiolla. Kun tämä projekti tallennetaan QGIS päivittää sen uusimmalle versiolle, ja on mahdollista että sitä ei voi enään avata QGIS:n vanhemmilla versioilla. &lt;p&gt; QGIS kehittäjät pyrkivät säilyttämään taaksepäinyhteensopivuuden, mutta osa vanhan projektin tiedoista voi kadota. Parantaaksemme QGIS ohjelmiston laatua, olisimme kiitollisia jos raportoit kaikista bugeista mitä löydät. Bugit voit ilmoittaa kohteeseen %3. Muista myös liittää mukaan vanha projektitiedosto, sekä ilmoittaa mitä QGIS versiota käytit virheen löytämiseen.&lt;p&gt; Poistaaksesi tämän varoituksen vanhoja projekteja aukaistessa, ota ruksi pois valintaruudusta &apos;%5&apos; valikossa %4.&lt;p&gt; Projektitiedoston versionumero: %1 &lt;br&gt; Nykyisen QGIS installaation versio: %2</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="344"/>
+        <location filename="../src/app/qgisapp.cpp" line="343"/>
         <source>QGIS </source>
         <translation>QGIS</translation>
     </message>
@@ -16718,7 +16742,7 @@ Virheet: %3</translation>
         <translation type="obsolete">CRS määrittelemätön - käytetään oletusarvoisesti projektin CRS: %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="537"/>
+        <location filename="../src/app/qgisapp.cpp" line="536"/>
         <source>Multiple instances of QGIS application object detected.
 Please contact the developers.
 </source>
@@ -16726,12 +16750,12 @@ Please contact the developers.
 Ota yhteyttä kehittäjiin.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="632"/>
+        <location filename="../src/app/qgisapp.cpp" line="631"/>
         <source>Browser</source>
         <translation>Selain</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="637"/>
+        <location filename="../src/app/qgisapp.cpp" line="636"/>
         <source>Browser (2)</source>
         <translation>Selain (2)</translation>
     </message>
@@ -16741,44 +16765,44 @@ Ota yhteyttä kehittäjiin.</translation>
         <translation>QGIS - %1 (&apos;%2&apos;)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="1217"/>
+        <location filename="../src/app/qgisapp.cpp" line="1218"/>
         <source>Current Edits</source>
         <translation>Nykyiset muokkaukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2544"/>
+        <location filename="../src/app/qgisapp.cpp" line="2572"/>
         <source>Compiled against GDAL/OGR</source>
         <translation>Käännetty mukana GDAL/OGR</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="2545"/>
+        <location filename="../src/app/qgisapp.cpp" line="2573"/>
         <source>Running against GDAL/OGR</source>
         <translation>Suoritetaan mukana GDAL/OGR</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="3650"/>
-        <location filename="../src/app/qgisapp.cpp" line="3807"/>
-        <location filename="../src/app/qgisapp.cpp" line="3872"/>
+        <location filename="../src/app/qgisapp.cpp" line="3674"/>
+        <location filename="../src/app/qgisapp.cpp" line="3831"/>
+        <location filename="../src/app/qgisapp.cpp" line="3896"/>
         <source>QGIS files</source>
         <translation>QGIS tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6660"/>
+        <location filename="../src/app/qgisapp.cpp" line="6679"/>
         <source>No legend entries selected</source>
         <translation>Selitteitä ei ole valittu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6661"/>
+        <location filename="../src/app/qgisapp.cpp" line="6680"/>
         <source>Select the layers and groups you want to remove in the legend.</source>
         <translation>Valitse tasot ja ryhmät jotka haluat poistaa selitteestä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6668"/>
+        <location filename="../src/app/qgisapp.cpp" line="6687"/>
         <source>Remove layers and groups</source>
         <translation>Poista tasot ja ryhmät</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="6668"/>
+        <location filename="../src/app/qgisapp.cpp" line="6687"/>
         <source>Remove %n legend entries?</source>
         <comment>number of legend items to remove</comment>
         <translation>
@@ -16787,7 +16811,7 @@ Ota yhteyttä kehittäjiin.</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgisapp.cpp" line="6680"/>
+        <location filename="../src/app/qgisapp.cpp" line="6699"/>
         <source>%n legend entries removed.</source>
         <comment>number of removed legend entries</comment>
         <translation>
@@ -16796,18 +16820,18 @@ Ota yhteyttä kehittäjiin.</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="6755"/>
+        <location filename="../src/app/qgisapp.cpp" line="6774"/>
         <source>%1 (%2 type unsupported)</source>
         <translation>%1 (%2 tyyppiä ei tueta)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7369"/>
-        <location filename="../src/app/qgisapp.cpp" line="7378"/>
+        <location filename="../src/app/qgisapp.cpp" line="7404"/>
+        <location filename="../src/app/qgisapp.cpp" line="7413"/>
         <source>To change brightness or contrast, you need to have a raster layer selected.</source>
         <translation>Muuttaaksesi kirkkautta tai kontrastia, Sinulla tulee olla rasteritaso valittuna.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7404"/>
+        <location filename="../src/app/qgisapp.cpp" line="7439"/>
         <source>en</source>
         <comment>documentation language</comment>
         <translation>en</translation>
@@ -16817,7 +16841,7 @@ Ota yhteyttä kehittäjiin.</translation>
         <translation type="obsolete">http://www.qgis.org/en/commercial-support.html</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="7666"/>
+        <location filename="../src/app/qgisapp.cpp" line="7698"/>
         <source>Project has layer(s) in edit mode with unsaved edits, which will NOT be saved!</source>
         <translation>Projektissa on tasoja muokkaustilassa joiden muokkauksia ei ole tallennettu, joita EI tulla tallentamaan!</translation>
     </message>
@@ -16826,57 +16850,57 @@ Ota yhteyttä kehittäjiin.</translation>
         <translation type="obsolete">Haluatko tallentaa nykyisen projektin? %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9165"/>
+        <location filename="../src/app/qgisapp.cpp" line="9214"/>
         <source>Error adding valid layer to map canvas</source>
         <translation>Virhe lisättäessä kelvollinen taso kartan näyttöalalle</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9166"/>
-        <location filename="../src/app/qgisapp.cpp" line="9306"/>
+        <location filename="../src/app/qgisapp.cpp" line="9215"/>
+        <location filename="../src/app/qgisapp.cpp" line="9353"/>
         <source>Raster layer</source>
         <translation>Rasteritaso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9479"/>
+        <location filename="../src/app/qgisapp.cpp" line="9525"/>
         <source>&lt;tt&gt;Settings:Options:General&lt;/tt&gt;</source>
         <comment>Menu path to setting options</comment>
         <translation>&lt;tt&gt;Muokkaa:Asetukset:Yleiset&lt;/tt&gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9480"/>
+        <location filename="../src/app/qgisapp.cpp" line="9526"/>
         <source>Warn me when opening a project file saved with an older version of QGIS</source>
         <translation>Varoita minua kun avaan projektin joka on tallennettu vanhemmalla QGIS versiolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9485"/>
+        <location filename="../src/app/qgisapp.cpp" line="9531"/>
         <source>This project file was saved by an older version of QGIS</source>
         <translation>Tämä projektitiedosto tallennettiin vanhemmalla QGIS versiolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="5993"/>
-        <location filename="../src/app/qgisapp.cpp" line="6002"/>
-        <location filename="../src/app/qgisapp.cpp" line="6014"/>
-        <location filename="../src/app/qgisapp.cpp" line="9632"/>
+        <location filename="../src/app/qgisapp.cpp" line="6013"/>
+        <location filename="../src/app/qgisapp.cpp" line="6022"/>
+        <location filename="../src/app/qgisapp.cpp" line="6034"/>
+        <location filename="../src/app/qgisapp.cpp" line="9699"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9633"/>
+        <location filename="../src/app/qgisapp.cpp" line="9700"/>
         <source>This layer doesn&apos;t have a properties dialog.</source>
         <translation>Tällä tasolla ei ole asetus dialogia.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9667"/>
+        <location filename="../src/app/qgisapp.cpp" line="9734"/>
         <source>Authentication required</source>
         <translation>Todennusta tarvitaan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9694"/>
+        <location filename="../src/app/qgisapp.cpp" line="9761"/>
         <source>Proxy authentication required</source>
         <translation>Proxy todennusta tarvitaan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgisapp.cpp" line="9705"/>
+        <location filename="../src/app/qgisapp.cpp" line="9772"/>
         <source>SSL errors occured accessing URL %1:</source>
         <translation>SSL virheitä tapahtui käytettäessä URL %1:</translation>
     </message>
@@ -17219,74 +17243,90 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QgsAppLayerTreeViewMenuProvider</name>
     <message>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="36"/>
+        <source>&amp;Expand All</source>
+        <translation type="unfinished">L&amp;aajenna kaikki</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="37"/>
+        <source>&amp;Collapse All</source>
+        <translation type="unfinished">&amp;Tiivistä kaikki</translation>
+    </message>
+    <message>
         <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="48"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="76"/>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">&amp;Poista</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="51"/>
         <source>&amp;Set Group CRS</source>
         <translation>&amp;Aseta ryhmän CRS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="66"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="69"/>
         <source>&amp;Zoom to Best Scale (100%)</source>
         <translation>&amp;Zoomaa parhaalle mittakaavalle (100%)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="70"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="73"/>
         <source>&amp;Stretch Using Current Extent</source>
         <translation>&amp;venytä käyttäen nykyistä laajuutta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="76"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="79"/>
         <source>&amp;Duplicate</source>
         <translation>&amp;Monista</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="79"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="82"/>
         <source>&amp;Set Layer Scale Visibility</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="82"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="85"/>
         <source>&amp;Set Layer CRS</source>
         <translation>&amp;Aseta tason CRS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="85"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="88"/>
         <source>Set &amp;Project CRS from Layer</source>
         <translation>Aseta &amp;Projektin CRS tasosta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="98"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="101"/>
         <source>&amp;Open Attribute Table</source>
         <translation>&amp;Avaa ominaisuustietotaulu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="124"/>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="136"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="127"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="139"/>
         <source>Save As...</source>
         <translation>Tallenna nimellä...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="125"/>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="137"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="128"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="140"/>
         <source>Save As Layer Definition File...</source>
         <translation>Tallenna Tason Määritykset tiedostoon...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="128"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="131"/>
         <source>&amp;Filter...</source>
         <translation>&amp;Suodatin...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="148"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="151"/>
         <source>&amp;Properties</source>
         <translation>&amp;Ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="161"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="164"/>
         <source>Copy Style</source>
         <translation>Kopioi tyyli</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="164"/>
+        <location filename="../src/app/qgsapplayertreeviewmenuprovider.cpp" line="167"/>
         <source>Paste Style</source>
         <translation>Liitä tyyli</translation>
     </message>
@@ -17387,34 +17427,46 @@ Käyttäjän DB polku:	%8</translation>
 <context>
     <name>QgsAtlasComposition</name>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="693"/>
         <source>Filename parsing error: %1</source>
-        <translation>Tiedostonimen jäsennysvirhe: %1</translation>
+        <translation type="obsolete">Tiedostonimen jäsennysvirhe: %1</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="184"/>
         <source>Feature filter parser error: %1</source>
-        <translation>Ominaisuus suotimen jäsentely virhe: %1</translation>
+        <translation type="obsolete">Ominaisuus suotimen jäsentely virhe: %1</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="201"/>
         <source>Feature filter eval error: %1</source>
-        <translation>Ominaisuus suotimen evaluointi virhe: %1</translation>
+        <translation type="obsolete">Ominaisuus suotimen evaluointi virhe: %1</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="344"/>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="206"/>
+        <source>Atlas filter eval error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="206"/>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="741"/>
+        <source>Composer</source>
+        <translation type="unfinished">Mallin muodostus</translation>
+    </message>
+    <message>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="349"/>
         <source>No matching atlas features</source>
         <translation>Ei vastaavia atlas ominaisuuksia</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="361"/>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="370"/>
         <source>Atlas feature %1 of %2</source>
         <translation>Atlas ominaisuus %1 kaikkiaan %2</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="716"/>
+        <location filename="../src/core/composer/qgsatlascomposition.cpp" line="741"/>
+        <source>Atlas filename evaluation error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Filename eval error: %1</source>
-        <translation>Tiedostonimen evaluointi virhe: %1</translation>
+        <translation type="obsolete">Tiedostonimen evaluointi virhe: %1</translation>
     </message>
 </context>
 <context>
@@ -17424,22 +17476,36 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Kartta %1</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="111"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="103"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="132"/>
+        <source>Could not evaluate filename pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="104"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="133"/>
+        <source>Could not set filename pattern as &apos;%1&apos;.
+Parser error:
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="120"/>
         <source>Expression based filename</source>
         <translation>Lauseke perusteinen tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="193"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="212"/>
         <source>Atlas preview</source>
         <translation>Atlas esikatselu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="194"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="213"/>
         <source>No matching atlas features found!</source>
         <translation>Vastaavia atlas ominaisuuksia ei löytynyt!</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="258"/>
+        <location filename="../src/app/composer/qgsatlascompositionwidget.cpp" line="277"/>
         <source>Expression based filter</source>
         <translation>Lauseke perusteinen suodatin</translation>
     </message>
@@ -17452,17 +17518,17 @@ Käyttäjän DB polku:	%8</translation>
         <translation>Atlaksen luonti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="47"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="65"/>
         <source>Generate an atlas</source>
         <translation>Luo Atlas</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="107"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="125"/>
         <source>Configuration</source>
         <translation>Konfiguraatio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="122"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="140"/>
         <source>Coverage layer </source>
         <translation>Kattavuustaso</translation>
     </message>
@@ -17479,7 +17545,7 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Näkyvyys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="176"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="184"/>
         <source>Hidden coverage layer</source>
         <translation>Piilotettu kattavuustaso</translation>
     </message>
@@ -17488,19 +17554,19 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Ominaisuuksien lajittelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="220"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="238"/>
         <source>Sort by</source>
         <translation>Lajittelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="227"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="245"/>
         <source>Sort direction</source>
         <translation>Lajittelun suunta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="165"/>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="230"/>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="240"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="173"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="248"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="258"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -17509,7 +17575,7 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Ominaisuuksien suodatus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="129"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="147"/>
         <source>Filter with</source>
         <translation>Suodata</translation>
     </message>
@@ -17530,17 +17596,17 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Kiinteä mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="189"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="207"/>
         <source>Output</source>
         <translation>Tuloste</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="254"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="272"/>
         <source>Single file export when possible</source>
         <translation>Yhden tiedoston vienti jos mahdollista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="204"/>
+        <location filename="../src/ui/qgsatlascompositionwidgetbase.ui" line="222"/>
         <source>Output filename expression</source>
         <translation>Tulostettavan tiedostonimen lauseke</translation>
     </message>
@@ -17848,6 +17914,11 @@ Käyttäjän DB polku:	%8</translation>
         <source>Attributes - %1</source>
         <translation type="obsolete">Ominaisuustiedot - %1</translation>
     </message>
+    <message>
+        <location filename="../src/gui/qgsattributedialog.cpp" line="147"/>
+        <source>Feature Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsAttributeEditor</name>
@@ -18063,12 +18134,12 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Hakutulokset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="709"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="704"/>
         <source>Parsing error</source>
         <translation>Jäsentelyvirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="715"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="710"/>
         <source>Evaluation error</source>
         <translation>Arviointivirhe</translation>
     </message>
@@ -18090,69 +18161,69 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Attribuutti taulu - %1 (Ei kohdistuvaa kohdetta)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="220"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="222"/>
         <source>Attribute table - %1 :: Features total: %2, filtered: %3, selected: %4</source>
         <translation>Ominaisuustietotaulu - %1 :: Ominaisuuksia yhteensä: %2, suodatettu: %3, valittu: %4</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="230"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="232"/>
         <source>Update Filtered</source>
         <translation>Päivitä suodatetut</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="357"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="361"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="357"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="361"/>
         <source>An error occured while evaluating the calculation string:
 %1</source>
         <translation>Tapahtui virhe evaluoitaessa laskentajonoa:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="387"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="382"/>
         <source>Expression based filter</source>
         <translation>Lauseke perusteinen suodatin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="591"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="586"/>
         <source>Attribute added</source>
         <translation>Ominaisuustieto lisätty</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="598"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="593"/>
         <source>Attribute Error</source>
         <translation>Ominaisuustietovirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="598"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="593"/>
         <source>The attribute could not be added to the layer</source>
         <translation>Ominaisuustietoa ei voitu lisätä tasolle</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="625"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="620"/>
         <source>Deleted attribute</source>
         <translation>Ominaisuustieto poistettu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="632"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="627"/>
         <source>The attribute(s) could not be deleted</source>
         <translation>Ominaisuustietoa/tietoja ei voitu poistaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="632"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="627"/>
         <source>Attribute error</source>
         <translation>Ominaisuustietovirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="751"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="746"/>
         <source>Error filtering</source>
         <translation>Virhe suodatuksessa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="496"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="491"/>
         <source>Geometryless feature added</source>
         <translation>Kohde ilman geometria tietoja lisätty</translation>
     </message>
@@ -18309,7 +18380,7 @@ Käyttäjän DB polku:	%8</translation>
     </message>
     <message>
         <location filename="../src/ui/qgsattributetabledialog.ui" line="481"/>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="658"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="660"/>
         <source>Apply</source>
         <translation>Käytä</translation>
     </message>
@@ -18334,7 +18405,7 @@ Käyttäjän DB polku:	%8</translation>
         <translation>Taulunäyttö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="568"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="574"/>
         <source>=</source>
         <translation>=</translation>
     </message>
@@ -18343,58 +18414,57 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">päivitä lauseke ...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="582"/>
         <source>[update field expression]</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">[päivitä tiedon lauseke]</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="589"/>
-        <location filename="../src/app/qgsattributetabledialog.cpp" line="228"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="591"/>
+        <location filename="../src/app/qgsattributetabledialog.cpp" line="230"/>
         <source>Update All</source>
         <translation>Päivitä kaikki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="603"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="605"/>
         <source>Advanced Filter (Expression)</source>
         <translation>Laajennettu Suodatus (Lauseke)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="606"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="608"/>
         <source>Use the Expression Builder to define the filter</source>
         <translation>Käytä lausekkeen muodostajaa määritelläksesi suodattimen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="609"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="611"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="618"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="620"/>
         <source>Show All Features</source>
         <translation>Näytä kaikki ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="627"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="629"/>
         <source>Show Selected Features</source>
         <translation>Näytä valitut ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="636"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="638"/>
         <source>Show Features Visible On Map</source>
         <translation>Näytä ominaisuudet jotka näkyvissä kartalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="641"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="643"/>
         <source>Column Filter</source>
         <translation>Sarakesuodatin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="650"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="652"/>
         <source>Show Edited and New Features</source>
         <translation>Näytä muokatut ja uudet ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="653"/>
+        <location filename="../src/ui/qgsattributetabledialog.ui" line="655"/>
         <source>Filter all the features which have been edited but not yet saved</source>
         <translation>Suodata kaikki ominaisuudet joita on muokattu muttei vielä tallennettu</translation>
     </message>
@@ -18465,7 +18535,6 @@ Käyttäjän DB polku:	%8</translation>
     <message>
         <location filename="../src/ui/qgsattributetabledialog.ui" line="127"/>
         <location filename="../src/ui/qgsattributetabledialog.ui" line="154"/>
-        <location filename="../src/ui/qgsattributetabledialog.ui" line="575"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -18493,7 +18562,7 @@ Käyttäjän DB polku:	%8</translation>
         <translation type="obsolete">Attribuutti muutettu</translation>
     </message>
     <message>
-        <location filename="../src/gui/attributetable/qgsattributetablemodel.cpp" line="429"/>
+        <location filename="../src/gui/attributetable/qgsattributetablemodel.cpp" line="435"/>
         <source>feature id</source>
         <translation>Kohde id</translation>
     </message>
@@ -18551,9 +18620,8 @@ Virhe oli:%2</translation>
         <translation type="obsolete">Tieto sisältää URLin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsattributetypeedit.ui" line="14"/>
         <source>Attribute Edit Dialog</source>
-        <translation>Ominaisuustiedon muokkausikkuna</translation>
+        <translation type="obsolete">Ominaisuustiedon muokkausikkuna</translation>
     </message>
     <message>
         <source>Line edit</source>
@@ -18682,6 +18750,11 @@ Virhe oli:%2</translation>
     <message>
         <source>Width</source>
         <translation type="obsolete">Leveys</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsattributetypeedit.ui" line="14"/>
+        <source>Edit Widget Properties</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/qgsattributetypeedit.ui" line="43"/>
@@ -19157,7 +19230,7 @@ Tietokanta: %2</translation>
         <translation type="obsolete">Lisää valinta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="378"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="356"/>
         <source>Add Selected Layers</source>
         <translation>Lisää valitut tasot</translation>
     </message>
@@ -19166,78 +19239,78 @@ Tietokanta: %2</translation>
         <translation type="obsolete">Tiivistä kaikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="362"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="340"/>
         <source>Add as a favourite</source>
         <translation>Lisää suosikiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="367"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="345"/>
         <source>Remove favourite</source>
         <translation>Poista suosikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="377"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="355"/>
         <source>Add Layer</source>
         <translation>Lisää taso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="369"/>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="379"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="347"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="357"/>
         <source>Properties</source>
         <translation>Ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="275"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="254"/>
         <source>Case Sensitive</source>
         <translation>Kirjainkoko riippuvainen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="282"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="261"/>
         <source>Filter Pattern Syntax</source>
         <translation>Suodatin kuvion syntaksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="285"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="264"/>
         <source>Normal</source>
         <translation>Normaali</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="290"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="269"/>
         <source>Wildcard(s)</source>
         <translation>Vastike(et)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="294"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="273"/>
         <source>Regular Expression</source>
         <translation>Säännöllinen lauseke</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="370"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="348"/>
         <source>Fast scan this dir.</source>
         <translation>Kartoita tämä hakemisto nopeasti.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="383"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="361"/>
         <source>Add a directory</source>
         <translation>Lisää hakemisto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="420"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="398"/>
         <source>Add directory to favourites</source>
         <translation>Lisää hakemisto suosikkeihin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="553"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="531"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="604"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="582"/>
         <source>Layer Properties</source>
         <translation>Tason ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="631"/>
+        <location filename="../src/app/qgsbrowserdockwidget.cpp" line="609"/>
         <source>Directory Properties</source>
         <translation>Hakemiston ominaisuudet</translation>
     </message>
@@ -19528,57 +19601,57 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation type="obsolete">vaihda</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="22"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="31"/>
         <source>Column</source>
         <translation>Sarake</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="52"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="68"/>
         <source>Symbol</source>
         <translation>Symboli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="65"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="81"/>
         <source>Change...</source>
         <translation>Muuta...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="72"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="88"/>
         <source>Color ramp</source>
         <translation>Väritys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="89"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="105"/>
         <source>Invert</source>
         <translation>Käännä päinvastaiseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="134"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="150"/>
         <source>Classify</source>
         <translation>Luokittele</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="141"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="157"/>
         <source>Add</source>
         <translation>Lisää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="148"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="164"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="155"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="171"/>
         <source>Delete all</source>
         <translation>Poista kaikki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="178"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="194"/>
         <source>Join</source>
         <translation>Yhdistä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="185"/>
+        <location filename="../src/ui/qgscategorizedsymbolrendererv2widget.ui" line="201"/>
         <source>Advanced</source>
         <translation>Vaativammat</translation>
     </message>
@@ -19639,17 +19712,17 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
 <context>
     <name>QgsColorButton</name>
     <message>
-        <location filename="../src/gui/qgscolorbutton.cpp" line="47"/>
+        <location filename="../src/gui/qgscolorbutton.cpp" line="67"/>
         <source>Select Color</source>
         <translation>Valitse väri</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscolorbutton.cpp" line="217"/>
+        <location filename="../src/gui/qgscolorbutton.cpp" line="237"/>
         <source>Copy color</source>
         <translation>Kopioi väri</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscolorbutton.cpp" line="219"/>
+        <location filename="../src/gui/qgscolorbutton.cpp" line="239"/>
         <source>Paste color</source>
         <translation>Liitä väri</translation>
     </message>
@@ -19752,35 +19825,35 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="502"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="507"/>
         <source>Item properties</source>
         <translation>Nimikkeen ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="506"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="511"/>
         <source>Command history</source>
         <translation>Komentohistoria</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="509"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="514"/>
         <source>Atlas generation</source>
         <translation>Atlaksen luonti</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="764"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3431"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3476"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="784"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3463"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3508"/>
         <source>Set as atlas feature for %1</source>
         <translation>Aseta atlas ominaisuuden arvoksi %1</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1277"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1944"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1332"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1975"/>
         <source>Choose a file name to save the map as</source>
         <translation>Valitse tiedoston nimi jonne kartta tallennetaan nimellä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1279"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1334"/>
         <source>PDF Format</source>
         <translation>PDF Formaatti</translation>
     </message>
@@ -19793,17 +19866,17 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation type="obsolete">Kuvan luominen %1x%2 pikselillä epäonnistui. Yritätkö uudelleen ilman &apos;Tulosta rasteina&apos; valintaa?</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1601"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1640"/>
         <source>Big image</source>
         <translation>Iso kuva</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1602"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1641"/>
         <source>To create image %1x%2 requires about %3 MB of memory. Proceed?</source>
         <translation>Kuvan luominen %1x%2 tarvitsee noin %3 MB muistia. Jatkatko?</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="498"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="503"/>
         <source>Composition</source>
         <translation>Sommittelu</translation>
     </message>
@@ -19860,24 +19933,40 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="269"/>
+        <source>Simulate Photocopy (Grayscale)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="270"/>
         <source>Simulate photocopy (grayscale)</source>
         <translation>Simuloi valokopiota (harmaasävy)</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="273"/>
+        <source>Simulate Fax (Mono)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="274"/>
         <source>Simulate fax (mono)</source>
         <translation>Simuloi faxia (mono)</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="277"/>
+        <source>Simulate Color Blindness (Protanope)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="278"/>
         <source>Simulate color blindness (Protanope)</source>
         <translation>Simuloi värisokeutta (protanopia eli punasokeus)</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="281"/>
+        <source>Simulate Color Blindness (Deuteranope)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="282"/>
         <source>Simulate color blindness (Deuteranope)</source>
         <translation>Simuloi värisokeutta (deuteranopia)</translation>
@@ -19894,8 +19983,8 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="427"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="797"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="809"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="817"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="829"/>
         <source>%1%</source>
         <translation>%1%</translation>
     </message>
@@ -19904,99 +19993,111 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation type="obsolete">Nimikkeen ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="779"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="799"/>
         <source>x: %1 mm</source>
         <translation>x: %1 mm</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="780"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="800"/>
         <source>y: %1 mm</source>
         <translation>y: %1 mm</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="781"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="801"/>
         <source>page: %3</source>
         <translation>sivu: %3</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="894"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="915"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="914"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="935"/>
         <source>Enable atlas preview</source>
         <translation>Ota Atlas esikatselu käyttöön</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="895"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="915"/>
         <source>Atlas in not currently enabled for this composition!</source>
         <translation>Atlasta ei ole otettu käyttöön tälle kokoonpanolle !</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="916"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="936"/>
         <source>No matching atlas features found!</source>
         <translation>Vastaavia atlas ominaisuuksia ei löytynyt!</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1297"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1679"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1972"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1352"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1718"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2003"/>
         <source>Empty filename pattern</source>
         <translation>Tyhjä tiedostopääte</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1298"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1680"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1973"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1353"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1719"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2004"/>
         <source>The filename pattern is empty. A default one will be used.</source>
         <translation>Tyhjä tiedostopääte. Käytetään oletusta.</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1311"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1366"/>
         <source>Directory where to save PDF files</source>
         <translation>Hakemisto minne PDF tiedostot tallennetaan</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1321"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1743"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1999"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1376"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1782"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2030"/>
         <source>Unable to write into the directory</source>
         <translation>Hakemistoon ei voida kirjoittaa</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1322"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1744"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2000"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1377"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1783"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2031"/>
         <source>The given output directory is not writable. Cancelling.</source>
         <translation>Annettu tulostehakemisto on kirjoitussuojattu. Peruutetaan.</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1346"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1380"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1501"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1527"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1763"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1790"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2031"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2062"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1397"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1427"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1428"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1545"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1567"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1568"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1798"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1821"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1822"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2058"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2085"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2086"/>
         <source>Atlas processing error</source>
         <translation>Atlaksen prosessointi virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1361"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1508"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1771"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2039"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1398"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1546"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1799"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2059"/>
+        <source>Feature filter parser error: %1</source>
+        <translation type="unfinished">Ominaisuus suotimen jäsentely virhe: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1412"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1552"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1806"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2066"/>
         <source>Rendering maps...</source>
         <translation>Hahmotetaan karttoja...</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1361"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1508"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1771"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2039"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1412"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1552"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1806"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2066"/>
         <source>Abort</source>
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1622"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1661"/>
         <source>Choose a file name to save the map image as</source>
         <translation>Valitse tallennettavan karttakuvan nimi</translation>
     </message>
@@ -20009,13 +20110,13 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation type="obsolete">Kuvan luominen %1x%2 pikselillä epäonnistui. Vienti epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1903"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1934"/>
         <source>SVG warning</source>
         <translation>SVG varoitus</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1904"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3181"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1935"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3213"/>
         <source>Don&apos;t show this message again</source>
         <translation>Älä näytä tätä viestiä uudestaan</translation>
     </message>
@@ -20024,29 +20125,29 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <translation type="obsolete">&lt;p&gt;SVG vientifunktiossa QGISsissä on lukuisia ongelmia johtuen virheistä ja puuteista </translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1637"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1676"/>
         <source>Trying to create image #%1( %2x%3 @ %4dpi ) may result in a memory overflow.
 Please try a lower resolution or a smaller papersize</source>
         <translation>Yritys luoda kuva #%1 ( %2x%3 @ %4dpi ) saattaaa johtaa muistin ylivuotoon.
 Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paperin koolla</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1910"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1941"/>
         <source>Qt4 svg code. In particular, there are problems with layers not being clipped to the map bounding box.&lt;/p&gt;</source>
         <translation>Qt4 svg koodissa. Erityisesti ongelmia on tasoissa joita eivät leikkaa kartan rajauslaatikkoa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1913"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1944"/>
         <source>If you require a vector-based output file from Qgis it is suggested that you try printing to PostScript if the SVG output is not satisfactory.&lt;/p&gt;</source>
         <translation>Jos tarvitse vektoripohjaisen tulostustiedoston QGISsistä on suositeltavaa että yrität tulostaa PostScriptin jos SVG tuloste ei ole tyydyttävä.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1946"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1977"/>
         <source>SVG Format</source>
         <translation>SVG Formaatti</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1988"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2019"/>
         <source>Directory where to save SVG files</source>
         <translation>Hakemisto minne SVG tiedostot tallennetaan</translation>
     </message>
@@ -20059,92 +20160,92 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Löytyi virhe svg tulosteessa svg tasolle </translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2178"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2201"/>
         <source> on page </source>
         <translation> sivulla </translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2178"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2201"/>
         <source>SVG error</source>
         <translation>SVG virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2178"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2201"/>
         <source>There was an error in SVG output for SVG layer </source>
         <translation>SVG tulosteessa löytyi virhe SVG tasolle</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2332"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2355"/>
         <source> copy</source>
         <translation>kopioi</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2339"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2362"/>
         <source>Duplicating composer...</source>
         <translation>Tuplataan muodostaja...</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2351"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2374"/>
         <source>Duplicate Composer</source>
         <translation>Tuplaa muodostaja</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2352"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2375"/>
         <source>Composer duplication failed.</source>
         <translation>Muodostajan tuplaus epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2371"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2394"/>
         <source>Save template</source>
         <translation>Tallenna malli</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2373"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2396"/>
         <source>Composer templates</source>
         <translation>Sommittelumallit</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2397"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2420"/>
         <source>Save error</source>
         <translation>Tallennusvirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2397"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2420"/>
         <source>Error, could not save file</source>
         <translation>Virhe, ei voitu tallentaa tiedostoa</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2415"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2438"/>
         <source>Load template</source>
         <translation>Lataa malli</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2428"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2451"/>
         <source>Read error</source>
         <translation>Lukuvirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2428"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2451"/>
         <source>Error, could not read file</source>
         <translation>Virhe, ei voitu lukue tiedostoa</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3194"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3226"/>
         <source>Project contains composition effects</source>
         <translation>Projekti sisältää sommittelun vaikutukset</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3195"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3227"/>
         <source>Advanced composition effects such as blend modes or vector layer transparency are enabled in this project, which cannot be printed as vectors. Printing as a raster is recommended.</source>
         <translation>Laajennetut sommittelu efektit kuten sekoitusmoodi tai vektoritason läpinäkvyys ovat mahdollistettu tässä projektissa ja joita ei voida tulostaa vektoreina. Tulostusta raterina suositellaan.</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3196"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3228"/>
         <source>Print as raster</source>
         <translation>Tulosta rasterina</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3439"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3471"/>
         <source>Landscape</source>
         <translation>Vaakasuora</translation>
     </message>
@@ -20154,12 +20255,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposer.cpp" line="197"/>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2853"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2890"/>
         <source>Composer</source>
         <translation>Mallin muodostus</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1636"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1675"/>
         <source>Memory Allocation Error</source>
         <translation>Muistin allokoinnissa virhe</translation>
     </message>
@@ -20170,42 +20271,42 @@ Please try a lower resolution or a smaller papersize</source>
 Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paperin koolla</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1694"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1733"/>
         <source>Directory where to save image files</source>
         <translation>Hakemisto jonne kuvatiedostot tallennetaan</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1718"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1757"/>
         <source>Image format: </source>
         <translation>Kuvan formaatti:</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="1908"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="1939"/>
         <source>&lt;p&gt;The SVG export function in QGIS has several problems due to bugs and deficiencies in the </source>
         <translation>&lt;p&gt;SVG vienti funktiossa QGIS ohjelmassa on useita ongelmia johtuen virheistä ja puutteista </translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2445"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2468"/>
         <source>Composer error</source>
         <translation>Muodostus virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2445"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2468"/>
         <source>Error, could not create new composer</source>
         <translation>Virhe, ei voitu luoda uutta muodostajaa</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="2462"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="2485"/>
         <source>Loading template into composer...</source>
         <translation>Ladataan mallia muodostajaan...</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3179"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3211"/>
         <source>Project contains WMS layers</source>
         <translation>Projekti sisältää WMS tasoja</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposer.cpp" line="3180"/>
+        <location filename="../src/app/composer/qgscomposer.cpp" line="3212"/>
         <source>Some WMS servers (e.g. UMN mapserver) have a limit for the WIDTH and HEIGHT parameter. Printing layers from such servers may exceed this limit. If this is the case, the WMS layer will not be printed</source>
         <translation>Joissakin WMS palvelimissa (kuten UMN karttapalvelimessa) on rajoituksia LEVEYS ja KORKEUS parametreille. Tulostettaessa tasoja näistä palvelimista voivat ylittää nämä rajat. Jos näin, WMS tasoa ei tulosteta</translation>
     </message>
@@ -21401,52 +21502,52 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>HTML Frame</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="35"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="44"/>
         <source>HTML frame</source>
         <translation>HTML frame</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="57"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="66"/>
         <source>Main properties</source>
         <translation>Pääominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="69"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="81"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="84"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="96"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="93"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="105"/>
         <source>Refresh HTML</source>
         <translation>Virkistä HTML</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="100"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="112"/>
         <source>Resize mode</source>
         <translation>Koonmuutostila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="113"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="132"/>
         <source>Add Frame</source>
         <translation>Lisää raami</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="123"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="142"/>
         <source>Use smart page breaks</source>
         <translation>Kaytä viisaita sivun katkoja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="138"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="157"/>
         <source>Maximum distance</source>
         <translation>Maksimi etäisyys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="145"/>
+        <location filename="../src/ui/qgscomposerhtmlwidgetbase.ui" line="164"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
@@ -21461,12 +21562,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
 <context>
     <name>QgsComposerItemWidget</name>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="91"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="93"/>
         <source>Frame color changed</source>
         <translation>Reunuksen väri muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="114"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="116"/>
         <source>Background color changed</source>
         <translation>Taustaväri muutettu</translation>
     </message>
@@ -21475,57 +21576,57 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kohteen peittävyyttä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="199"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="201"/>
         <source>Item outline width</source>
         <translation>Kohteen ulkoreunan leveys</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="224"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="226"/>
         <source>Item frame toggled</source>
         <translation>Kohteen kehys vaihdettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="130"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="132"/>
         <source>Item position changed</source>
         <translation>Kohteen sijaintia muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="212"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="214"/>
         <source>Item frame join style</source>
         <translation>Kohteen kehysten liitynnän tyyli</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="237"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="239"/>
         <source>Item background toggled</source>
         <translation>Kohteen tausta vaihdettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="408"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="414"/>
         <source>Select background color</source>
         <translation>Valitse taustaväri</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="410"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="416"/>
         <source>Select frame color</source>
         <translation>Valitse kehyksen väri</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="422"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="428"/>
         <source>Item blend mode changed</source>
         <translation>Kohteen sekoitustapa muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="432"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="438"/>
         <source>Item transparency changed</source>
         <translation>Kohteen läpinäkyvyys muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="442"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="448"/>
         <source>Item id changed</source>
         <translation>Kohteen id (tunnus) muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="560"/>
+        <location filename="../src/app/composer/qgscomposeritemwidget.cpp" line="566"/>
         <source>Item rotation changed</source>
         <translation>Jäsen rotaatiota muutettu</translation>
     </message>
@@ -21572,17 +21673,17 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Viitepiste</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="185"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="208"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="195"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="194"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="205"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="201"/>
         <source>Width</source>
         <translation>Leveys</translation>
     </message>
@@ -21592,44 +21693,54 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="232"/>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="244"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="225"/>
+        <source>Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="246"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="258"/>
         <source>Rotation</source>
         <translation>Rotaatio</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="251"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="271"/>
         <source> °</source>
         <translation> °</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="264"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="284"/>
         <source>Frame</source>
         <translation>Raami</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="286"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="312"/>
         <source>Thickness</source>
         <translation>Paksuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="279"/>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="333"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="305"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="382"/>
         <source>Color...</source>
         <translation>Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="302"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="331"/>
+        <source> mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="338"/>
         <source>Join style</source>
         <translation>Yhdistämistyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="315"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="358"/>
         <source>Background</source>
         <translation>Tausta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="343"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="392"/>
         <source>Item ID</source>
         <translation>Osan ID</translation>
     </message>
@@ -21638,22 +21749,22 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Uuid (ainoastaan luettava)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="361"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="410"/>
         <source>Id</source>
         <translation>Tunniste</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="374"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="423"/>
         <source>Rendering</source>
         <translation>Hahmotetaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="392"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="441"/>
         <source>Blending mode</source>
         <translation>Sekoitustila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="402"/>
+        <location filename="../src/ui/qgscomposeritemwidgetbase.ui" line="451"/>
         <source>Transparency</source>
         <translation>Läpinäkyvyys</translation>
     </message>
@@ -21684,7 +21795,6 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="97"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="127"/>
         <source>Label font changed</source>
         <translation>Nimiön fontti muutettu</translation>
     </message>
@@ -21694,18 +21804,23 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Nimiön marginaali muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="152"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="158"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="123"/>
+        <source>Label color changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="148"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="154"/>
         <source>Insert expression</source>
         <translation>Lisää lauseke</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="169"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="180"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="191"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="202"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="213"/>
-        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="224"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="165"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="176"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="187"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="198"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="209"/>
+        <location filename="../src/app/composer/qgscomposerlabelwidget.cpp" line="220"/>
         <source>Label alignment changed</source>
         <translation>Nimiön kohdistus muutettu</translation>
     </message>
@@ -21726,62 +21841,62 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Nimiön asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="41"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="50"/>
         <source>Label</source>
         <translation>Nimiö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="63"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="72"/>
         <source>Main properties</source>
         <translation>Pääominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="85"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="94"/>
         <source>Render as HTML</source>
         <translation>Hahmota HTML muodossa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="92"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="101"/>
         <source>Insert an expression</source>
         <translation>Lisää lauseke</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="105"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="114"/>
         <source>Font</source>
         <translation>Kirjain</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="112"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="121"/>
         <source>Font color...</source>
         <translation>Kirjaimen väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="122"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="131"/>
         <source>Alignment</source>
         <translation>Kohdistus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="156"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="165"/>
         <source>Vertical</source>
         <translation>Pystytaso</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="257"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="266"/>
         <source>Horizontal</source>
         <translation>Vaakataso</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="267"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="276"/>
         <source>Display</source>
         <translation>Näytä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="288"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="297"/>
         <source>Margin</source>
         <translation>Marginaali</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="298"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="307"/>
         <source> mm</source>
         <translation></translation>
     </message>
@@ -21798,17 +21913,17 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Marginaali (mm)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="212"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="221"/>
         <source>Left</source>
         <translation>Vasen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="222"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="231"/>
         <source>Center</source>
         <translation>Keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="232"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="241"/>
         <source>Right</source>
         <translation>Oikea</translation>
     </message>
@@ -21817,17 +21932,17 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Pystytason kohdistus:</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="165"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="174"/>
         <source>Top</source>
         <translation>Ylhäällä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="175"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="184"/>
         <source>Middle</source>
         <translation>Keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="185"/>
+        <location filename="../src/ui/qgscomposerlabelwidgetbase.ui" line="194"/>
         <source>Bottom</source>
         <translation>Alhaalla</translation>
     </message>
@@ -21843,7 +21958,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
 <context>
     <name>QgsComposerLegend</name>
     <message>
-        <location filename="../src/core/composer/qgscomposerlegend.cpp" line="35"/>
+        <location filename="../src/core/composer/qgscomposerlegend.cpp" line="36"/>
         <source>Legend</source>
         <translation>Merkkien määritykset</translation>
     </message>
@@ -21890,140 +22005,140 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Otsikon tyyli</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="207"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="208"/>
         <source>Item wrapping changed</source>
         <translation>Kohteen kokooma muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="219"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="220"/>
         <source>Legend title changed</source>
         <translation>Selitteen otsikko muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="232"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="233"/>
         <source>Legend title alignment changed</source>
         <translation>Selitteen otsikon kohdistus muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="243"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="244"/>
         <source>Legend column count</source>
         <translation>Selitteen sarakelaskuri</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="257"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="258"/>
         <source>Legend split layers</source>
         <translation>Selitteen jaetut tasot</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="269"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="270"/>
         <source>Legend equal column width</source>
         <translation>Selitteen yhtäläinen sarakkeen leveys</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="281"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="282"/>
         <source>Legend symbol width</source>
         <translation>Selitteen symboolin leveys</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="293"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="294"/>
         <source>Legend symbol height</source>
         <translation>Seliteen symboolin korkeus</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="305"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="306"/>
         <source>Wms Legend width</source>
         <translation>Wms selitteen leveys</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="317"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="318"/>
         <source>Wms Legend height</source>
         <translation>Wms selitteen korkeus</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="329"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="330"/>
         <source>Legend title space bottom</source>
         <translation>Seliteotsikon alatila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="341"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="342"/>
         <source>Legend group space</source>
         <translation>Selitteen ryhmän tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="353"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="354"/>
         <source>Legend layer space</source>
         <translation>Selitteen tason tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="365"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="366"/>
         <source>Legend symbol space</source>
         <translation>Selitteen symboolin tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="379"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="380"/>
         <source>Legend icon label space</source>
         <translation>Selitteen ikonien nimiön tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="400"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="401"/>
         <source>Title font changed</source>
         <translation>Otsikon kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="422"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="423"/>
         <source>Legend group font changed</source>
         <translation>Selitteen ryhmä kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="444"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="445"/>
         <source>Legend layer font changed</source>
         <translation>Selitteen tason kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="466"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="467"/>
         <source>Legend item font changed</source>
         <translation>Selitteen kohteen kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="490"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="483"/>
         <source>Legend font color changed</source>
         <translation>Selitteen kirjasimen väri  muuttunut</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="500"/>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="512"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="493"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="505"/>
         <source>Legend box space</source>
         <translation>Selitelaatikon tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="675"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="668"/>
         <source>Legend map changed</source>
         <translation>Selitteen kartta muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="789"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="782"/>
         <source>Legend item edited</source>
         <translation>Selitteen kohdetta muokattu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="822"/>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="867"/>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="898"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="815"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="860"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="891"/>
         <source>Legend updated</source>
         <translation>Selite päivitetty</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="887"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="880"/>
         <source>Legend group added</source>
         <translation>Selitteen ryhmä lisätty</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="973"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="967"/>
         <source>Map %1</source>
         <translation>Kartta %1</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="975"/>
+        <location filename="../src/app/composer/qgscomposerlegendwidget.cpp" line="969"/>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
@@ -22277,9 +22392,8 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Otsikon tila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerlegendwidgetbase.ui" line="805"/>
         <source>mm</source>
-        <translation>mm</translation>
+        <translation type="obsolete">mm</translation>
     </message>
     <message>
         <source>Layer Font...</source>
@@ -22304,6 +22418,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <location filename="../src/ui/qgscomposerlegendwidgetbase.ui" line="748"/>
         <location filename="../src/ui/qgscomposerlegendwidgetbase.ui" line="768"/>
         <location filename="../src/ui/qgscomposerlegendwidgetbase.ui" line="785"/>
+        <location filename="../src/ui/qgscomposerlegendwidgetbase.ui" line="805"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
@@ -22555,7 +22670,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Kartta %1</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermap.cpp" line="314"/>
+        <location filename="../src/core/composer/qgscomposermap.cpp" line="317"/>
         <source>Map will be printed here</source>
         <translation>Kartta tulostuu tähän</translation>
     </message>
@@ -22569,34 +22684,34 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="56"/>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="274"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="431"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="450"/>
         <source>Cache</source>
         <translation>Cache</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="57"/>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="279"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="436"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="455"/>
         <source>Render</source>
         <translation>Hahmota</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="58"/>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="284"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="441"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="460"/>
         <source>Rectangle</source>
         <translation>Suorakulmio</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="60"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="510"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="529"/>
         <source>Solid</source>
         <translation>Kiinteä</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="61"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="506"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="975"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="525"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="994"/>
         <source>Cross</source>
         <translation>Risti</translation>
     </message>
@@ -22617,15 +22732,15 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="80"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="529"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1163"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="548"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1182"/>
         <source>No frame</source>
         <translation>Ei raamia</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="81"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="524"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1171"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="543"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1190"/>
         <source>Zebra</source>
         <translation>Zebra</translation>
     </message>
@@ -22646,102 +22761,102 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Valitse ruudukon raamin täyttöväri</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="778"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1386"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1410"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="797"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1405"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1429"/>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="830"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="849"/>
         <source>Overview frame style changed</source>
         <translation>Yhteenveto raamityyleistä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="864"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="883"/>
         <source>Overview centering mode changed</source>
         <translation>Yhteenvedon keskittämisen tila muuttunut</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="956"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="975"/>
         <source>Grid line style changed</source>
         <translation>Ruudukon viivatyyli muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1041"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1060"/>
         <source>Label font changed</source>
         <translation>Nimiön fontti muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1067"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1086"/>
         <source>Annotation format changed</source>
         <translation>Huomautuksen muoto muuttunut</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1170"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1189"/>
         <source>Changed grid frame style</source>
         <translation>Muutettu ruudukon raamin tyyyiliä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1188"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1207"/>
         <source>Changed grid frame width</source>
         <translation>Muutettu ruudukon raamin leveyttä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1200"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1219"/>
         <source>Changed grid frame line thickness</source>
         <translation>Muutettu ruudukon raamiviivan paksuutta</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1214"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1233"/>
         <source>Grid frame color changed</source>
         <translation>Ruudukon raamin väriä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1226"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1245"/>
         <source>Grid frame first fill color changed</source>
         <translation>Ruudukon raamin ensimmäistä täyttöväriä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1238"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1257"/>
         <source>Grid frame second fill color changed</source>
         <translation>Ruudukon raamin toista täyttöväriä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1259"/>
         <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1278"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1326"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1297"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1345"/>
         <source>Inside frame</source>
         <translation>Kehyksen sisällä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1260"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1330"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1279"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1349"/>
         <source>Outside frame</source>
         <translation>Kehyksen ulkopuolella</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1261"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1282"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1334"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1280"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1301"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1353"/>
         <source>Disabled</source>
         <translation>Käytöstä poistettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1266"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1304"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1351"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1285"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1323"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1370"/>
         <source>Horizontal</source>
         <translation>Vaakataso</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1267"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1347"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1286"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1366"/>
         <source>Vertical</source>
         <translation>Pystytaso</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1399"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1418"/>
         <source>Map %1</source>
         <translation>Kartta %1</translation>
     </message>
@@ -22762,40 +22877,40 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Muuta kohyeen korkeus</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="309"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="312"/>
         <source>Map scale changed</source>
         <translation>Kartan mittakaavaa muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="321"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="324"/>
         <source>Map rotation changed</source>
         <translation>Kartan rotaatiota muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="363"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="657"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="366"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="676"/>
         <source>Map extent changed</source>
         <translation>Kartan laajuutta muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="761"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="780"/>
         <source>Canvas items toggled</source>
         <translation>Mäyttöalan kohteet vaihdettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="877"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="896"/>
         <source>Grid checkbox toggled</source>
         <translation>Ruudukon valinta vaihdettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="898"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="911"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="917"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="930"/>
         <source>Grid interval changed</source>
         <translation>Ruudukon intervalli muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="924"/>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="937"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="943"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="956"/>
         <source>Grid offset changed</source>
         <translation>Ruudukon offsetti muutettu</translation>
     </message>
@@ -22804,42 +22919,42 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Ruudukon kynä muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="983"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1002"/>
         <source>Grid type changed</source>
         <translation>Ruudukon tyyppi muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="995"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1014"/>
         <source>Grid cross width changed</source>
         <translation>Ruudukon ristikon leveys muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1027"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1046"/>
         <source>Annotation font changed</source>
         <translation>Huomautuksen kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1053"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1072"/>
         <source>Annotation distance changed</source>
         <translation>Huomautuksen etäisyys muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1277"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1296"/>
         <source>Annotation position changed</source>
         <translation>Huomautuksen sijainti muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1101"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1120"/>
         <source>Annotation toggled</source>
         <translation>Huomautukset päällä/pois</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1303"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1322"/>
         <source>Changed annotation direction</source>
         <translation>Muutettu huomautuksen suuntaa</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1141"/>
+        <location filename="../src/app/composer/qgscomposermapwidget.cpp" line="1160"/>
         <source>Changed annotation precision</source>
         <translation>Muutettu huomautuksen tarkkuutta</translation>
     </message>
@@ -22851,7 +22966,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Karta asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="41"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="50"/>
         <source>Map</source>
         <translation>Kartta</translation>
     </message>
@@ -22860,7 +22975,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Esikatselu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="102"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="111"/>
         <source>Update preview</source>
         <translation>Päivitä esikatselu</translation>
     </message>
@@ -22873,7 +22988,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="111"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="120"/>
         <source>Scale</source>
         <translation>Mittakaava</translation>
     </message>
@@ -22886,27 +23001,27 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">astetta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="158"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="167"/>
         <source>Lock layers for map item</source>
         <translation>Lukitse tasot kartalle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="145"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="154"/>
         <source>Draw map canvas items</source>
         <translation>Piirrä kartan näyttöalueen osat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="168"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="177"/>
         <source>Extents</source>
         <translation>Alueet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="183"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="192"/>
         <source>X min</source>
         <translation>X min</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="215"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="224"/>
         <source>X max</source>
         <translation>X max</translation>
     </message>
@@ -22916,7 +23031,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Kartan vaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="72"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="81"/>
         <source>Main properties</source>
         <translation>Kartan ominaisuudet</translation>
     </message>
@@ -22925,94 +23040,102 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kartan kierto</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="135"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="144"/>
         <source> °</source>
         <translation> °</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="199"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="208"/>
         <source>Y min</source>
         <translation>Y min</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="231"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="240"/>
         <source>Y max</source>
         <translation>Y max</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="247"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="256"/>
         <source>Set to map canvas extent</source>
         <translation>Aseta kartta näyttöalueen laajuiseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="254"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="263"/>
         <source>View extent in map canvas</source>
         <translation>Näytä laajuus karttapohjalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="264"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="273"/>
         <source>Controlled by atlas</source>
         <translation>Atlaksen ohjaama</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="282"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="291"/>
         <source>Margin around feature</source>
         <translation>Marginaali ominaisuuden ympärillä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="298"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="307"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="314"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="323"/>
         <source>Fixed scale</source>
         <translation>Kiinteä mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="321"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="330"/>
         <source>Use one of the predefined scales of the project where the atlas feature best fits.</source>
         <translation>Käytä yhtä projektissä määritellyistä mittakaavoista joka parhaiten sopii atlas ominaisuuteen.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="324"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="333"/>
         <source>Predefined scale (best fit)</source>
         <translation>Edeltä määritelty mittakaava (parhaiten sopiva)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="334"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="343"/>
         <source>Show grid</source>
         <translation>Näytä ruudukko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="502"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="477"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="567"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="581"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="765"/>
+        <source> mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="514"/>
         <source>Interval</source>
         <translation>Intervalli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="384"/>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="427"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="393"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="436"/>
         <source>X </source>
         <translation>X </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="128"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="137"/>
         <source>Map rotation</source>
         <translation>Kartan kierto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="397"/>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="440"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="406"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="449"/>
         <source>Y </source>
         <translation>Y </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="412"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="421"/>
         <source>Offset</source>
         <translation>Siirtymä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="532"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="544"/>
         <source>Frame style</source>
         <translation></translation>
     </message>
@@ -23021,117 +23144,117 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kehyksen leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="475"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="487"/>
         <source>Line style</source>
         <translation>Viivatyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="485"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="497"/>
         <source>change...</source>
         <translation>muuta...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="495"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="507"/>
         <source>Blend mode</source>
         <translation>Sekoitustila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="517"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="529"/>
         <source>Grid frame</source>
         <translation>Ruudukon reunus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="545"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="557"/>
         <source>Frame size</source>
         <translation>Reunuksen koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="558"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="574"/>
         <source>Frame line thickness</source>
         <translation>Reunusviivan paksuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="568"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="588"/>
         <source>Color...</source>
         <translation>Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="575"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="595"/>
         <source>Frame fill colors</source>
         <translation>Reunuksen täyttöväri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="602"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="622"/>
         <source>Draw coordinates</source>
         <translation>Piirrä koordinaatit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="632"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="652"/>
         <source>Format</source>
         <translation>Tiedostomuoto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="642"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="662"/>
         <source>Left</source>
         <translation>Vasen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="661"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="681"/>
         <source>Right</source>
         <translation>Oikea</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="680"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="700"/>
         <source>Top</source>
         <translation>Ylhäällä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="699"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="719"/>
         <source>Bottom</source>
         <translation>Alhaalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="718"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="738"/>
         <source>Font</source>
         <translation>Kirjasin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="764"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="788"/>
         <source>Font color...</source>
         <translation>Kirjaimen väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="777"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="801"/>
         <source>Overview</source>
         <translation>Yhteenveto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="795"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="819"/>
         <source>Overview frame</source>
         <translation>Yhteenvedon raami</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="805"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="829"/>
         <source>Overview style</source>
         <translation>Yhteenvedon tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="812"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="836"/>
         <source>Change...</source>
         <translation>Muuta...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="819"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="843"/>
         <source>Overview blending mode</source>
         <translation>Yhteenvedon sekoituksen tila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="829"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="853"/>
         <source>Invert overview</source>
         <translation>Käännä yhteenveto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="836"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="860"/>
         <source>Center on overview</source>
         <translation>Keskitä yhteenveto</translation>
     </message>
@@ -23144,7 +23267,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Näytä ruudukko?</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="366"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="375"/>
         <source>Grid &amp;type</source>
         <translation>Ruudukon &amp;tyyppi</translation>
     </message>
@@ -23173,17 +23296,17 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Huomautuksen suunta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="725"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="745"/>
         <source>Font...</source>
         <translation>Kirjain...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="732"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="752"/>
         <source>Distance to map frame</source>
         <translation>Etäisyys kartan reunukseen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="748"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="772"/>
         <source>Coordinate precision</source>
         <translation>Koordinaattien tarkkuus</translation>
     </message>
@@ -23196,7 +23319,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Siirtymä Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="455"/>
+        <location filename="../src/ui/qgscomposermapwidgetbase.ui" line="464"/>
         <source>Cross width</source>
         <translation>Ristin leveys</translation>
     </message>
@@ -23208,32 +23331,32 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
 <context>
     <name>QgsComposerMouseHandles</name>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="592"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="604"/>
         <source>Change item position</source>
         <translation>Muuta osan sijaintia</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="617"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="629"/>
         <source>Change item size</source>
         <translation>Muuta osan kokoa</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="682"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="695"/>
         <source>%1 items selected</source>
         <translation>%1 jäsentä valittu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="687"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="700"/>
         <source>1 item selected</source>
         <translation>1 jäsen valittu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="821"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="839"/>
         <source>dx: %1 mm dy: %2 mm</source>
         <translation>dx: %1 mm dy: %2 mm</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="1047"/>
+        <location filename="../src/core/composer/qgscomposermousehandles.cpp" line="1065"/>
         <source>width: %1 mm height: %2 mm</source>
         <translation>leveys: %1 mm korkeus: %2 mm</translation>
     </message>
@@ -23361,127 +23484,127 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Lataa seuraava</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="41"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="50"/>
         <source>Picture</source>
         <translation>Kuva</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="63"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="72"/>
         <source>Main properties</source>
         <translation>Pääominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="77"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="86"/>
         <source>Path</source>
         <translation>Polku</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="108"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="117"/>
         <source>Image source</source>
         <translation>Kuvan lähde</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="115"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="124"/>
         <source>Placement</source>
         <translation>Sijoittaminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="122"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="131"/>
         <source>Resize mode</source>
         <translation>Koonmuutostila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="130"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="139"/>
         <source>Zoom</source>
         <translation>Zoomaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="135"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="144"/>
         <source>Stretch</source>
         <translation>Venytä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="140"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="149"/>
         <source>Clip</source>
         <translation>Leikkaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="145"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="154"/>
         <source>Zoom and resize frame</source>
         <translation>Zoomaa ja muuta raamin kokoa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="150"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="159"/>
         <source>Resize frame to image size</source>
         <translation>Muuta raamin koko kuvan kooksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="160"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="169"/>
         <source>Expression</source>
         <translation>Lauseke</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="190"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="199"/>
         <source>Top left</source>
         <translation>Vasen yläkulma</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="195"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="204"/>
         <source>Top center</source>
         <translation>Ylhäällä keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="200"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="209"/>
         <source>Top right</source>
         <translation>Ylhäällä oikealla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="205"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="214"/>
         <source>Middle left</source>
         <translation>Keskellä vasemmalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="210"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="219"/>
         <source>Middle</source>
         <translation>Keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="215"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="224"/>
         <source>Middle right</source>
         <translation>Keskellä oikealla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="220"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="229"/>
         <source>Bottom left</source>
         <translation>Alhaalla vasemalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="225"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="234"/>
         <source>Bottom center</source>
         <translation>Alhaalla keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="230"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="239"/>
         <source>Bottom right</source>
         <translation>Alhaalla oikealla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="247"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="256"/>
         <source>Search directories</source>
         <translation>Etsi kansioista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="264"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="273"/>
         <source>Loading previews...</source>
         <translation>Ladataan esikatseluja...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="308"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="317"/>
         <source>Image search paths</source>
         <translation>Kuvien hakupolku</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="343"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="352"/>
         <source>Image rotation</source>
         <translation>Kuvan rotaatio</translation>
     </message>
@@ -23490,7 +23613,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Ladataan SVG esikatseluja...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="331"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="340"/>
         <source>Add...</source>
         <translation>Lisää...</translation>
     </message>
@@ -23499,12 +23622,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kuvan rotaatio</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="371"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="380"/>
         <source> °</source>
         <translation> °</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="324"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="333"/>
         <source>Remove</source>
         <translation>Poista</translation>
     </message>
@@ -23521,8 +23644,8 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Lataa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="99"/>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="176"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="108"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="185"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -23539,7 +23662,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Rotaatio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="361"/>
+        <location filename="../src/ui/qgscomposerpicturewidgetbase.ui" line="370"/>
         <source>Sync with map</source>
         <translation>Synkronoi kartan kanssa</translation>
     </message>
@@ -23589,38 +23712,38 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="38"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="416"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="395"/>
         <source>Single Box</source>
         <translation>Yksinkertainen kehys</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="39"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="420"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="399"/>
         <source>Double Box</source>
         <translation>Kaksoiskehys</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="40"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="424"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="428"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="403"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="407"/>
         <source>Line Ticks Middle</source>
         <translation>Viivan ruksit keskellä</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="41"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="432"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="411"/>
         <source>Line Ticks Down</source>
         <translation>Viivan ruksit alhaalla</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="42"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="436"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="415"/>
         <source>Line Ticks Up</source>
         <translation>Viivan ruksit ylhäällä</translation>
     </message>
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="43"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="440"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="419"/>
         <source>Numeric</source>
         <translation>Numeerinen</translation>
     </message>
@@ -23662,7 +23785,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
     <message>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="81"/>
         <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="89"/>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="178"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="181"/>
         <source>Map %1</source>
         <translation>Kartta %1</translation>
     </message>
@@ -23672,52 +23795,52 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Mittakaavajanan kartta muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="209"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="212"/>
         <source>Scalebar line width</source>
         <translation>Mittakaavajanan viivan leveys</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="226"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="229"/>
         <source>Scalebar segment size</source>
         <translation>Mittakaavajanan segmentin koko</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="241"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="244"/>
         <source>Scalebar segments left</source>
         <translation>Mittakaavajanan segmenttejä vasemmalla</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="256"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="259"/>
         <source>Number of scalebar segments changed</source>
         <translation>Mittakaavajanan muutettujen segmenttien lukumäärä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="556"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="535"/>
         <source>Scalebar changed to map units</source>
         <translation>Mittakaavajana muutettu karttayksiköihin</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="562"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="541"/>
         <source>Scalebar changed to feet</source>
         <translation>Mittakaavajana muutettu jaloiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="568"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="547"/>
         <source>Scalebar changed to nautical miles</source>
         <translation>Mittakaavajana muutettu meripenikulmiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="575"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="554"/>
         <source>Scalebar changed to meters</source>
         <translation>Mittakaavajana muutettu metreiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="629"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="611"/>
         <source>Scalebar line join style</source>
         <translation>Mittakaavajanan yhdistämistyyli</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="642"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="624"/>
         <source>Scalebar line cap style</source>
         <translation>Mittakaavajanan päätyjen tyyli</translation>
     </message>
@@ -23726,57 +23849,57 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Mittakaavajana n segmenttiä</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="270"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="273"/>
         <source>Scalebar height changed</source>
         <translation>Mittakaavajanan korkeus muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="295"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="298"/>
         <source>Scalebar font changed</source>
         <translation>Mittakaavajanan kirjaisin muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="319"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="314"/>
         <source>Scalebar font color changed</source>
         <translation>Mittakaavajanan kirjainten väri muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="342"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="329"/>
         <source>Scalebar color changed</source>
         <translation>Mittakaavajanan väri muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="366"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="345"/>
         <source>Scalebar stroke color changed</source>
         <translation>Mittakaavajanan viivan väri muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="383"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="362"/>
         <source>Scalebar unit text</source>
         <translation>Mittakaavajanan yksikön teksti</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="398"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="377"/>
         <source>Scalebar map units per segment</source>
         <translation>Mittakaavajanan kartan yksiköitä per segmentti</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="413"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="392"/>
         <source>Scalebar style changed</source>
         <translation>Mittakaavajanan tyyli muutettu</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="500"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="479"/>
         <source>Scalebar label bar space</source>
         <translation>Mittakaavajanan nimiön tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="515"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="494"/>
         <source>Scalebar box content space</source>
         <translation>Mittakaavajanalaatikon sisällön tila</translation>
     </message>
     <message>
-        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="530"/>
+        <location filename="../src/app/composer/qgscomposerscalebarwidget.cpp" line="509"/>
         <source>Scalebar alignment</source>
         <translation>Mittakaavajanan kohdistus</translation>
     </message>
@@ -23844,91 +23967,91 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Nimiö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="189"/>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="207"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="192"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="210"/>
         <source>Segments</source>
         <translation>Segmentit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="219"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="222"/>
         <source>left </source>
         <translation>vasen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="229"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="232"/>
         <source>right </source>
         <translation>oikea</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="238"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="241"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="251"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="254"/>
         <source> units</source>
         <translation>yksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="264"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="267"/>
         <source>Height</source>
         <translation>Korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="271"/>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="306"/>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="323"/>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="346"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="274"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="315"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="332"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="355"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="284"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="287"/>
         <source>Display</source>
         <translation>Näytä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="296"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="305"/>
         <source>Box margin</source>
         <translation>Laatikon marginaali</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="313"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="322"/>
         <source>Labels margin</source>
         <translation>Nimiöiden marginaali</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="330"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="339"/>
         <source>Line width</source>
         <translation>Viivan leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="362"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="371"/>
         <source>Join style</source>
         <translation>Yhdistämistyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="372"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="381"/>
         <source>Cap style</source>
         <translation>Päädyn tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="395"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="404"/>
         <source>Fonts and colors</source>
         <translation>Kirjasimet ja värit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="420"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="429"/>
         <source>Font color...</source>
         <translation>Kirjaimen väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="427"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="436"/>
         <source>Fill color...</source>
         <translation>Täyttöväri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="434"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="443"/>
         <source>Stroke color...</source>
         <translation>Viivan väri...</translation>
     </message>
@@ -23953,7 +24076,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Yksikön nimiö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="413"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="422"/>
         <source>Font...</source>
         <translation>Kirjain...</translation>
     </message>
@@ -23962,7 +24085,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="382"/>
+        <location filename="../src/ui/qgscomposerscalebarwidgetbase.ui" line="391"/>
         <source>Alignment</source>
         <translation>Kohdistus</translation>
     </message>
@@ -24057,12 +24180,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Pääominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="95"/>
+        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="104"/>
         <source>Style</source>
         <translation>Tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="102"/>
+        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="117"/>
         <source>Change...</source>
         <translation>Muuta...</translation>
     </message>
@@ -24075,12 +24198,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete"> °</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="78"/>
+        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="81"/>
         <source>Corner radius</source>
         <translation>Kulman säde</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="85"/>
+        <location filename="../src/ui/qgscomposershapewidgetbase.ui" line="94"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
@@ -24239,22 +24362,22 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Taulukko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="72"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="84"/>
         <source>Layer</source>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="99"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="111"/>
         <source>Attributes...</source>
         <translation>Ominaisuustiedot...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="106"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="118"/>
         <source>Show only visible features</source>
         <translation>Näytä vain näkyvät kohteet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="113"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="125"/>
         <source>Composer map</source>
         <translation>Kohdekartta</translation>
     </message>
@@ -24264,92 +24387,98 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Ominaisuustietotaulu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="35"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="44"/>
         <source>Attribute table</source>
         <translation>Ominaisuustietotaulu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="57"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="66"/>
         <source>Main properties</source>
         <translation>Pääominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="92"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="104"/>
         <source>Refresh table data</source>
         <translation>Virkistä taulun data</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="129"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="141"/>
         <source>Filter with</source>
         <translation>Suodata</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="141"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="153"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="154"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="166"/>
         <source>Maximum rows</source>
         <translation>Max rivejä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="170"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="186"/>
         <source>Margin</source>
         <translation>Marginaali</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="189"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="199"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="243"/>
+        <source> mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="209"/>
         <source>Show grid</source>
         <translation>Näytä ruudukko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="210"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="230"/>
         <source>Stroke width</source>
         <translation>Viivan leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="226"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="250"/>
         <source>Color...</source>
         <translation>Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="236"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="260"/>
         <source>Fonts</source>
         <translation>Kirjasimet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="248"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="272"/>
         <source>Header font...</source>
         <translation>Otsikon kirjain...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="255"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="279"/>
         <source>Content font...</source>
         <translation>Sisällön kirjain...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="262"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="286"/>
         <source>Header alignment</source>
         <translation>Otsikon kohdistus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="270"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="300"/>
         <source>Follow column alignment</source>
         <translation>Seuraa sarakkeen kohdistusta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="275"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="305"/>
         <source>Left</source>
         <translation>Vasen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="280"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="310"/>
         <source>Center</source>
         <translation>Keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="285"/>
+        <location filename="../src/ui/qgscomposertablewidgetbase.ui" line="315"/>
         <source>Right</source>
         <translation>Oikea</translation>
     </message>
@@ -24425,75 +24554,75 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Quantum GIS</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="788"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="727"/>
         <source>Move item content</source>
         <translation>Siirrä jäsenen sisältöä</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="848"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="905"/>
         <source>Html item added</source>
         <translation>HTML jösen lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="853"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="910"/>
         <source>Html frame added</source>
         <translation>HTML frame lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="1293"/>
-        <location filename="../src/gui/qgscomposerview.cpp" line="1302"/>
-        <location filename="../src/gui/qgscomposerview.cpp" line="1311"/>
-        <location filename="../src/gui/qgscomposerview.cpp" line="1320"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="1354"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="1363"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="1372"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="1381"/>
         <source>Item moved</source>
         <translation>Jäsentä siirretty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="1401"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="1462"/>
         <source>Zoom item content</source>
         <translation>Zoomaa jäsenen sisältöä</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="812"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="758"/>
         <source>Arrow added</source>
         <translation>Nuoli lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="373"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="836"/>
         <source>Label added</source>
         <translation>Nimiö lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="839"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="785"/>
         <source>Map added</source>
         <translation>Kartta lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="395"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="382"/>
         <source>Scale bar added</source>
         <translation>Mittakaavajana lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="363"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="820"/>
         <source>QGIS</source>
         <translation>QGIS</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="413"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="859"/>
         <source>Legend added</source>
         <translation>Selite lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="429"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="807"/>
         <source>Picture added</source>
         <translation>Kuva lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="518"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="457"/>
         <source>Shape added</source>
         <translation>Muoto lisätty</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgscomposerview.cpp" line="444"/>
+        <location filename="../src/gui/qgscomposerview.cpp" line="891"/>
         <source>Table added</source>
         <translation>Taulu lisätty</translation>
     </message>
@@ -24501,57 +24630,57 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
 <context>
     <name>QgsComposition</name>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="879"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="931"/>
         <source>Label added</source>
         <translation>Nimiö lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="922"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="974"/>
         <source>Map added</source>
         <translation>Kartta lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="965"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1017"/>
         <source>Arrow added</source>
         <translation>Nuoli lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="993"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1045"/>
         <source>Scale bar added</source>
         <translation>Mittakaavajana lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1023"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1075"/>
         <source>Shape added</source>
         <translation>Muoto lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1051"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1103"/>
         <source>Picture added</source>
         <translation>Kuva lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1079"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1131"/>
         <source>Legend added</source>
         <translation>Selite lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1107"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1159"/>
         <source>Table added</source>
         <translation>Taulu lisätty</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1385"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1437"/>
         <source>Aligned items left</source>
         <translation>Kohdistettu jäsenet vasemmalle</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1414"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1467"/>
         <source>Aligned items horizontal center</source>
         <translation>Kohdista jäsenet vaakatasossa keskelle</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1498"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1554"/>
         <source>Aligned items vertical center</source>
         <translation>Kohdista jäsenet pystytasossa keskelle</translation>
     </message>
@@ -24560,12 +24689,12 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kohdistettu jäsenet vaakatasossa keskelle</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1443"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1497"/>
         <source>Aligned items right</source>
         <translation>Kohdistettu jäsenet oikealle</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1471"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1526"/>
         <source>Aligned items top</source>
         <translation>Kohdistettu jäsenet ylös</translation>
     </message>
@@ -24574,42 +24703,42 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Kohdistettu jäsenet pystytasossa keskelle</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1525"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1582"/>
         <source>Aligned items bottom</source>
         <translation>Kohdistettu jäsenet alas</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1539"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1597"/>
         <source>Items locked</source>
         <translation>Jäsenet lukittu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1558"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1617"/>
         <source>Items unlocked</source>
         <translation>Jäsenet poistettu lukituksesta</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="1591"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="1651"/>
         <source>Item z-order changed</source>
         <translation>Jäsenen z-järjestys muutettu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="2168"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="2229"/>
         <source>Remove item group</source>
         <translation>Poista jäsenen ryhmä</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="2192"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="2253"/>
         <source>Frame deleted</source>
         <translation>Frame poistettu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="2199"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="2260"/>
         <source>Item deleted</source>
         <translation>Jäsen poistettu</translation>
     </message>
     <message>
-        <location filename="../src/core/composer/qgscomposition.cpp" line="2216"/>
+        <location filename="../src/core/composer/qgscomposition.cpp" line="2277"/>
         <source>Multiframe removed</source>
         <translation>Usea frame poistettu</translation>
     </message>
@@ -24884,7 +25013,7 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation>Sommittelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="68"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="59"/>
         <source>Paper and quality</source>
         <translation>Paperi ja laatu</translation>
     </message>
@@ -24893,52 +25022,52 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="92"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="77"/>
         <source>Presets</source>
         <translation>Esiasetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="112"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="103"/>
         <source>Width</source>
         <translation>Leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="141"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="132"/>
         <source>Height</source>
         <translation>Korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="170"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="161"/>
         <source>Units</source>
         <translation>Yksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="193"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="184"/>
         <source>Number of pages</source>
         <translation>Sivujen lukumäärä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="216"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="201"/>
         <source>Orientation</source>
         <translation>Suuntautuminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="262"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="247"/>
         <source>Print as raster</source>
         <translation>Tulosta rasterina</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="292"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="283"/>
         <source>Change...</source>
         <translation>Muuta...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="299"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="290"/>
         <source>Page background</source>
         <translation>Sivun tausta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="309"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="300"/>
         <source>Grid</source>
         <translation>Ruudukko</translation>
     </message>
@@ -24947,17 +25076,17 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Resoluutio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="242"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="227"/>
         <source> dpi</source>
         <translation> dpi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="255"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="240"/>
         <source>Export resolution</source>
         <translation>Vie resoluutio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="275"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="266"/>
         <source>World file on</source>
         <translation>Worldtiedosto voimassa</translation>
     </message>
@@ -24966,29 +25095,29 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Yleiset asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="333"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="324"/>
         <source>Spacing</source>
         <translation>Välistys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="346"/>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="406"/>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="450"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="337"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="397"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="441"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="359"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="350"/>
         <source>Grid offset</source>
         <translation>Ruudukon siirtymä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="371"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="362"/>
         <source>x: </source>
         <translation>x: </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="381"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="372"/>
         <source>y: </source>
         <translation>y: </translation>
     </message>
@@ -25005,13 +25134,13 @@ Ole ystävällinen ja yritä pienemmällä resoluutiolla tai pienemmällä paper
         <translation type="obsolete">Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="419"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="410"/>
         <source>Snap to alignments</source>
         <translation>Kiinnitä kohdistuksiin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="393"/>
-        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="440"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="384"/>
+        <location filename="../src/ui/qgscompositionwidgetbase.ui" line="431"/>
         <source>Tolerance</source>
         <translation>Toleranssi</translation>
     </message>
@@ -26184,17 +26313,17 @@ ja nykyinen tiedosto on [%3]</translation>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="89"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="91"/>
         <source>double</source>
         <translation>tupla</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="94"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="96"/>
         <source>&apos;&lt;red&gt;,&lt;green&gt;,&lt;blue&gt;,&lt;alpha&gt;&apos;</source>
         <translation>&apos;&lt;punainen&gt;,&lt;vihreä&gt;,&lt;sininen&gt;,&lt;alpha&gt;&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="104"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="106"/>
         <source>&apos;&lt;filename&gt;&apos;</source>
         <translation>&apos;&lt;tiedostonimi&gt;&apos;</translation>
     </message>
@@ -26207,22 +26336,22 @@ ja nykyinen tiedosto on [%3]</translation>
         <translation type="obsolete">&apos;ylös&apos;|&apos;keskelle&apos;|&apos;alas&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="121"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="123"/>
         <source>&apos;linear&apos;|&apos;radial&apos;|&apos;conical&apos;</source>
         <translation>&apos;lineaarinen&apos;|&apos;säteittäinen&apos;|&apos;kartiomainen&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="126"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="128"/>
         <source>&apos;feature&apos;|&apos;viewport&apos;</source>
         <translation>&apos;ominaisuus&apos;|&apos;näkymä&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="131"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="133"/>
         <source>&apos;pad&apos;|&apos;repeat&apos;|&apos;reflect&apos;</source>
         <translation>&apos;alusta&apos;|&apos;toisto&apos;|&apos;kuva&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="136"/>
+        <location filename="../src/gui/symbology-ng/qgsdatadefinedsymboldialog.cpp" line="138"/>
         <source>0 (false)|1 (true)</source>
         <translation>0 (epätosi)|1 (tosi)</translation>
     </message>
@@ -26299,14 +26428,19 @@ ja nykyinen tiedosto on [%3]</translation>
 <context>
     <name>QgsDatumTransformDialog</name>
     <message>
-        <location filename="../src/gui/qgsdatumtransformdialog.cpp" line="33"/>
         <source>Select datum transformations for layer</source>
-        <translation>Valitse koordinaattimuunnos tasolle</translation>
+        <translation type="obsolete">Valitse koordinaattimuunnos tasolle</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsdatumtransformdialog.cpp" line="209"/>
+        <location filename="../src/gui/qgsdatumtransformdialog.cpp" line="220"/>
         <source>File &apos;%1&apos; not found in directory &apos;%2&apos;</source>
         <translation>Tiedostoa &apos;%1&apos; ei löydy halemistosta &apos;%2&apos;</translation>
+    </message>
+    <message>
+        <location filename="../src/gui/qgsdatumtransformdialog.cpp" line="242"/>
+        <location filename="../src/gui/qgsdatumtransformdialog.cpp" line="244"/>
+        <source>unknown</source>
+        <translation type="unfinished">tuntematon</translation>
     </message>
 </context>
 <context>
@@ -26335,6 +26469,21 @@ ja nykyinen tiedosto on [%3]</translation>
         <location filename="../src/ui/qgsdatumtransformdialogbase.ui" line="61"/>
         <source>Hide deprecated</source>
         <translation>Piilota vanhentuneet</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsdatumtransformdialogbase.ui" line="70"/>
+        <source>Destination CRS</source>
+        <translation type="unfinished">Kohteen CRS</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsdatumtransformdialogbase.ui" line="91"/>
+        <source>Source CRS</source>
+        <translation type="unfinished">Syötettävä CRS</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsdatumtransformdialogbase.ui" line="108"/>
+        <source>Layer</source>
+        <translation type="unfinished">Taso</translation>
     </message>
 </context>
 <context>
@@ -26616,9 +26765,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QgsDecorationGridDialog</name>
     <message>
-        <location filename="../src/ui/qgsdecorationgriddialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialogi</translation>
+        <translation type="obsolete">Dialogi</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsdecorationgriddialog.ui" line="14"/>
+        <source>Grid properties</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/qgsdecorationgriddialog.ui" line="34"/>
@@ -28758,13 +28911,13 @@ Jäsentelyvirhe:
 <context>
     <name>QgsEditorWidgetRegistry</name>
     <message>
-        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="158"/>
-        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="219"/>
+        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="162"/>
+        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="223"/>
         <source>Unknown attribute editor widget &apos;%1&apos;</source>
         <translation>Tuntematon ominaisuuden muokaustyökalu &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="192"/>
+        <location filename="../src/gui/editorwidgets/core/qgseditorwidgetregistry.cpp" line="196"/>
         <source>Could not save unknown editor widget type &apos;%1&apos;.</source>
         <translation>Tuntematonta ominaisuuden muokkaustyökalun tyyppiä &apos;%1&apos; ei voitu tallentaa.</translation>
     </message>
@@ -28931,31 +29084,36 @@ Jäsentelyvirhe:
         <translation>Monikulmio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsengineconfigdialog.ui" line="243"/>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="274"/>
         <source>Show all labels and features for all layers</source>
         <translation>Näytä kaikki nimiöt ja ominaisuudet kaikille tasoille</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="297"/>
+        <source>Draw text as outlines (recommended)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Save settings with project</source>
         <translation type="obsolete">Tallenna asetukset projektin kanssa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsengineconfigdialog.ui" line="250"/>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="248"/>
         <source>Show candidates (for debugging)</source>
         <translation>Näytä ehdokkaat (testaamiseksi)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsengineconfigdialog.ui" line="263"/>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="261"/>
         <source>(i.e. including colliding objects)</source>
         <translation>(esim. sisältäen törmäävät objektit)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsengineconfigdialog.ui" line="283"/>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="228"/>
         <source>Show shadow rectangles (for debugging)</source>
         <translation>Näytä varjomonikulmiot (testaamiseksi)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsengineconfigdialog.ui" line="290"/>
+        <location filename="../src/ui/qgsengineconfigdialog.ui" line="221"/>
         <source>Show partials labels</source>
         <translation>Näytä osittaiset nimiöt</translation>
     </message>
@@ -29454,7 +29612,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QgsFeatureAction</name>
     <message>
-        <location filename="../src/app/qgsfeatureaction.cpp" line="68"/>
+        <location filename="../src/app/qgsfeatureaction.cpp" line="69"/>
         <source>Run actions</source>
         <translation>Suorita toiminnot</translation>
     </message>
@@ -29666,139 +29824,139 @@ Lauseke on virheellinen katso (lisää tietoja) yksityiskohtia</translation>
         <translation>Kenttä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="470"/>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="539"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="472"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="541"/>
         <source>Name conflict</source>
         <translation>Nimikonflikti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="470"/>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="539"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="472"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="541"/>
         <source>The attribute could not be inserted. The name already exists in the table.</source>
         <translation>Ominaisuustietoa ei voitu lisätä. Nimi on jo käytössä tässä taulussa.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="482"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="484"/>
         <source>Added attribute</source>
         <translation>Lisättiin ominaisuustieto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="559"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="561"/>
         <source>Deleted attribute</source>
         <translation>Poistettiin ominaisuustieto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="631"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="633"/>
         <source>Line edit</source>
         <translation>Viivamuokkaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="632"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="634"/>
         <source>Unique values</source>
         <translation>Yksilölliset arvot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="633"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="635"/>
         <source>Unique values editable</source>
         <translation>Yksilölliset arvot muokattavissa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="634"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="636"/>
         <source>Classification</source>
         <translation>Luokittelu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="635"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="637"/>
         <source>Value map</source>
         <translation>Arvokartta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="636"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="638"/>
         <source>Edit range</source>
         <translation>Muokkaa rajoja</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="637"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="639"/>
         <source>Slider range</source>
         <translation>Liukusäätimen rajat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="638"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="640"/>
         <source>Dial range</source>
         <translation>Valinta-alue</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="639"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="641"/>
         <source>File name</source>
         <translation>Tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="640"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="642"/>
         <source>Enumeration</source>
         <translation>Luokittelu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="641"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="643"/>
         <source>Immutable</source>
         <translation>Muuttamaton</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="642"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="644"/>
         <source>Hidden</source>
         <translation>Piilotettu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="643"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="645"/>
         <source>Checkbox</source>
         <translation>Valintaruutu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="644"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="646"/>
         <source>Text edit</source>
         <translation>Tekstin muokkaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="645"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="647"/>
         <source>Calendar</source>
         <translation>Kalenteri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="646"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="648"/>
         <source>Value relation</source>
         <translation>Arvojen suhde</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="647"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="649"/>
         <source>UUID generator</source>
         <translation>UUID generaattori</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="648"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="650"/>
         <source>Photo</source>
         <translation>Kuva</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="649"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="651"/>
         <source>Web view</source>
         <translation>Web näyttö</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="650"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="652"/>
         <source>Color</source>
         <translation>Väri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="651"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="653"/>
         <source>Editor Widget</source>
         <translation>Muokkaaja työkalu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="701"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="703"/>
         <source>Select edit form</source>
         <translation>Valitse muokkauslomake</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsfieldsproperties.cpp" line="701"/>
+        <location filename="../src/app/qgsfieldsproperties.cpp" line="703"/>
         <source>UI file</source>
         <translation>UI tiedosto</translation>
     </message>
@@ -32665,57 +32823,57 @@ Näppäile Cancel keskeyttääksesi katkojen luokittelun laskennan tai OK jatkaa
         <translation type="obsolete">vaihda</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="129"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="138"/>
         <source>Column</source>
         <translation>Sarake</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="74"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="83"/>
         <source>Symbol</source>
         <translation>Symboli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="90"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="99"/>
         <source>Change...</source>
         <translation>Muuta...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="116"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="125"/>
         <source>Classes</source>
         <translation>Luokat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="22"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="31"/>
         <source>Color ramp</source>
         <translation>Väritys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="32"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="41"/>
         <source>Mode</source>
         <translation>Tila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="46"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="55"/>
         <source>Equal Interval</source>
         <translation>Tasaväli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="51"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="60"/>
         <source>Quantile (Equal Count)</source>
         <translation>Kvantiilit (yhtäläinen lukumäärä)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="141"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="150"/>
         <source>Invert</source>
         <translation>Käännä päinvastaiseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="216"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="232"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="223"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="239"/>
         <source>Delete all</source>
         <translation>Poista kaikki</translation>
     </message>
@@ -32724,27 +32882,27 @@ Näppäile Cancel keskeyttääksesi katkojen luokittelun laskennan tai OK jatkaa
         <translation type="obsolete">Kvantiili</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="56"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="65"/>
         <source>Natural Breaks (Jenks)</source>
         <translation>Luonnolliset Katkot (Jenks)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="61"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="70"/>
         <source>Standard Deviation</source>
         <translation>Keskihajonta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="66"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="75"/>
         <source>Pretty Breaks</source>
         <translation>Somat Katkot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="202"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="218"/>
         <source>Classify</source>
         <translation>Luokittele</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="209"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="225"/>
         <source>Add class</source>
         <translation>Lisää luokka</translation>
     </message>
@@ -32753,7 +32911,7 @@ Näppäile Cancel keskeyttääksesi katkojen luokittelun laskennan tai OK jatkaa
         <translation type="obsolete">Poista luokka</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="243"/>
+        <location filename="../src/ui/qgsgraduatedsymbolrendererv2widget.ui" line="259"/>
         <source>Advanced</source>
         <translation>Vaativammat</translation>
     </message>
@@ -35636,49 +35794,52 @@ rivillä %2 sarakkeessa %3</translation>
         <translation>Palveluntarjoaja</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="86"/>
         <source>New file</source>
-        <translation>Uusi tiedosto</translation>
+        <translation type="obsolete">Uusi tiedosto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="87"/>
         <source>New datasource</source>
-        <translation>Uusi syötteenlahde</translation>
+        <translation type="obsolete">Uusi syötteenlahde</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="126"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="86"/>
+        <source>Datasource</source>
+        <translation type="unfinished">Tietolähde</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="97"/>
         <source>none</source>
         <translation>ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="230"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="251"/>
         <source>Select file to replace &apos;%1&apos;</source>
         <translation>Valitse tiedosto korvaamaan &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="236"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="256"/>
         <source>Please select exactly one file.</source>
         <translation>Valitse täsmälleen yksi tiedosto.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="246"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="266"/>
         <source>Select new directory of selected files</source>
         <translation>Valitse uusi hakemisto valituille tiedostoille</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="248"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="268"/>
         <source>All files (*)</source>
         <translation>Kaikki tiedostot (*)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="341"/>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="360"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="329"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="348"/>
         <source>Unhandled layer will be lost.</source>
         <translation>Käsittelemätön kerros menetetään.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="342"/>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="361"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="330"/>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="349"/>
         <source>There are still %n unhandled layer(s), that will be lost if you closed now.</source>
         <comment>unhandled layers</comment>
         <translation>
@@ -35695,47 +35856,44 @@ rivillä %2 sarakkeessa %3</translation>
         <translation>Käsittele huonot tasot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="21"/>
         <source>Layer name</source>
-        <translation>Tason nimi</translation>
+        <translation type="obsolete">Tason nimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="26"/>
         <source>Type</source>
-        <translation>Tyyppi</translation>
+        <translation type="obsolete">Tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="31"/>
         <source>Provider</source>
-        <translation>Palveluntarjoaja</translation>
+        <translation type="obsolete">Palveluntarjoaja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="36"/>
         <source>Original filename</source>
-        <translation>Alkuperäinen tiedostonimi</translation>
+        <translation type="obsolete">Alkuperäinen tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="41"/>
         <source>New filename</source>
-        <translation>Uusi tiedostonimi</translation>
+        <translation type="obsolete">Uusi tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="46"/>
         <source>Original datasource</source>
-        <translation>Alkuperäinen tiedonlähde</translation>
+        <translation type="obsolete">Alkuperäinen tiedonlähde</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgshandlebadlayersbase.ui" line="51"/>
         <source>New datasource</source>
-        <translation>Uusi tiedonlähde</translation>
+        <translation type="obsolete">Uusi tiedonlähde</translation>
     </message>
 </context>
 <context>
     <name>QgsHandleBadLayersHandler</name>
     <message>
-        <location filename="../src/app/qgshandlebadlayers.cpp" line="44"/>
         <source>Handle Bad layers</source>
-        <translation>Käsittele huonot tasot</translation>
+        <translation type="obsolete">Käsittele huonot tasot</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgshandlebadlayers.cpp" line="44"/>
+        <source>Handle bad layers</source>
+        <translation type="unfinished">Käsittele huonot tasot</translation>
     </message>
     <message>
         <location filename="../src/app/qgshandlebadlayers.cpp" line="45"/>
@@ -36023,93 +36181,105 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation>Tunnista tulokset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="27"/>
         <source>Tree</source>
-        <translation>Puurakenne</translation>
+        <translation type="obsolete">Puurakenne</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="58"/>
         <source>Table</source>
-        <translation>Taulu</translation>
+        <translation type="obsolete">Taulu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="71"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="68"/>
         <source>Layer</source>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="76"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="73"/>
         <source>FID</source>
         <translation>FID</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="81"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="78"/>
         <source>Attribute</source>
         <translation>Attribuutti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="86"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="83"/>
         <source>Value</source>
         <translation>Arvo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="95"/>
         <source>Graph</source>
-        <translation>Kaavio</translation>
+        <translation type="obsolete">Kaavio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="110"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="104"/>
         <source>Expand tree.</source>
         <translation>Laajenna puurakenne.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="113"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="127"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="141"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="155"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="169"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="186"/>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="206"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="107"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="121"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="135"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="149"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="163"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="180"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="200"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="166"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="160"/>
         <source>Clear Results</source>
         <translation>Tyhjää tulokset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="236"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="230"/>
         <source>Help</source>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="250"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="244"/>
+        <source>Select identify mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="247"/>
         <source>Mode</source>
         <translation>Tila</translation>
     </message>
     <message>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="270"/>
+        <source>Select view mode for raster layers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/qgsidentifyresultsbase.ui" line="273"/>
+        <source>View</source>
+        <translation type="unfinished">Näytä</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="296"/>
         <source>Auto open form</source>
         <translation>Avaa lomake automaattisesti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="124"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="118"/>
         <source>Collapse tree.</source>
         <translation>Tiivistä puurakenne.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="138"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="132"/>
         <source>New results will be expanded by default.</source>
         <translation>Uudet tulokset laajennetaan oletuksena.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="183"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="177"/>
         <source>Copy selected feature to clipboard.</source>
         <translation>Kopioi valitut ominaisuudet leikepöydälle.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="203"/>
+        <location filename="../src/ui/qgsidentifyresultsbase.ui" line="197"/>
         <source>Print selected HTML response.</source>
         <translation>Tulosta valittu HTML vastaus.</translation>
     </message>
@@ -36152,109 +36322,129 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation>Tason valinta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="432"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="750"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="444"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="753"/>
         <source>(Derived)</source>
         <translation>(Johdettu)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="447"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="459"/>
         <source>(Actions)</source>
         <translation>(Toiminnot)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="453"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="826"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="936"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1288"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="465"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="821"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="944"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1310"/>
         <source>Edit feature form</source>
         <translation>Muokkaa ominaisuuslomaketta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="453"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="826"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="936"/>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1288"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="465"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="821"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="944"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1310"/>
         <source>View feature form</source>
         <translation>Näytä ominaisuuslomake</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="695"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="305"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="304"/>
+        <source>Tree</source>
+        <translation type="unfinished">Puurakenne</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="306"/>
+        <source>Graph</source>
+        <translation type="unfinished">Kaavio</translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="438"/>
+        <source>feature id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="698"/>
         <source>Format</source>
         <translation>Tiedostomuoto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="942"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="950"/>
         <source>Zoom to feature</source>
         <translation>Zoomaa kohteeseen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="943"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="951"/>
         <source>Copy feature</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="944"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="952"/>
         <source>Toggle feature selection</source>
         <translation>Vaihda ominaisuuden valintaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="947"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="955"/>
         <source>Copy attribute value</source>
         <translation>Kopioi ominaisuustiedon arvo</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="948"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="956"/>
         <source>Copy feature attributes</source>
         <translation>Kopioi kohteen ominaisuustiedot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="961"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="969"/>
         <source>Copy GetFeatureInfo request URL</source>
         <translation>Kopioi GetFeatureInfo kyselyn URL</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="969"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="977"/>
         <source>Clear results</source>
         <translation>Tyhjää tulokset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="970"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="978"/>
         <source>Clear highlights</source>
         <translation>Tyhjää korostukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="971"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="979"/>
         <source>Highlight all</source>
         <translation>Korosta kaikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="972"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="980"/>
         <source>Highlight layer</source>
         <translation>Korosta taso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="975"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="983"/>
         <source>Activate layer</source>
         <translation>Aktiivinen taso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="976"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="984"/>
         <source>Layer properties...</source>
         <translation>Tason ominaisuudet...</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="979"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="987"/>
         <source>Expand all</source>
         <translation>Laajenna kaikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="980"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="988"/>
         <source>Collapse all</source>
         <translation>Tiivistä kaikki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1566"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1578"/>
         <source>Attributes changed</source>
         <translation>Ominaisuustietoja muutettu</translation>
     </message>
@@ -36263,7 +36453,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Ominaisuustietojen muutokset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1725"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1737"/>
         <source>Cannot print</source>
         <translation>Ei voida tulostaa</translation>
     </message>
@@ -36272,7 +36462,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Ei voida avata tulostaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1725"/>
+        <location filename="../src/app/qgsidentifyresultsdialog.cpp" line="1737"/>
         <source>Cannot print this item</source>
         <translation>Ei voida avata tulostaa tätä jäsentä</translation>
     </message>
@@ -36499,7 +36689,8 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <location filename="../src/gui/symbology-ng/qgsinvertedpolygonrendererwidget.cpp" line="46"/>
         <source>The inverted polygon renderer only applies to polygon and multipolygon layers. 
 &apos;%1&apos; is not a polygon layer and then cannot be displayed</source>
-        <translation type="unfinished"></translation>
+        <translation>Käänteinen monikulmio hahmottaja koskee vain monikulmio- ja multimonikulmiokerroksia. 
+&apos;%1&apos; ei ole monikulmiotaso ja siksi sitä ei voida näyttää</translation>
     </message>
 </context>
 <context>
@@ -36507,11 +36698,16 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
     <message>
         <location filename="../src/ui/qgsinvertedpolygonrendererwidgetbase.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Lomake</translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <location filename="../src/ui/qgsinvertedpolygonrendererwidgetbase.ui" line="22"/>
         <source>Sub renderer:</source>
+        <translation>Alihahmottaja:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsinvertedpolygonrendererwidgetbase.ui" line="37"/>
+        <source>Merge polygons before rendering (slow)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -37086,92 +37282,92 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation>% pituudesta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="825"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="827"/>
         <source>string </source>
         <translation>string </translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="830"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="832"/>
         <source>[&lt;b&gt;family&lt;/b&gt;|&lt;b&gt;family[foundry]&lt;/b&gt;],&lt;br&gt;e.g. Helvetica or Helvetica [Cronyx]</source>
         <translation>[&lt;b&gt;family&lt;/b&gt;|&lt;b&gt;family[foundry]&lt;/b&gt;],&lt;br&gt;esim. Helvetica tai Helvetica [Cronyx]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="835"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="837"/>
         <source>[&lt;b&gt;font style name&lt;/b&gt;|&lt;b&gt;Ignore&lt;/b&gt;],&lt;br&gt;e.g. Bold Condensed or Light Italic</source>
         <translation>[&lt;b&gt;font style name&lt;/b&gt;|&lt;b&gt;Ignore&lt;/b&gt;],&lt;br&gt;esim. Bold Condensed tai Light Italic</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="879"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="881"/>
         <source>double [0.0-10.0]</source>
         <translation>double [0.0-10.0]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="901"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="903"/>
         <source>int [0-20]</source>
         <translation>int [0-20]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="990"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="992"/>
         <source>int [0-2000]</source>
         <translation>int [0-2000]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1002"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1004"/>
         <source>int&lt;br&gt;</source>
         <translation>int&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1017"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1019"/>
         <source>double coord [&lt;b&gt;in,out&lt;/b&gt; as 20.0-60.0,20.0-95.0]</source>
         <translation>double coord [&lt;b&gt;in,out&lt;/b&gt; as 20.0-60.0,20.0-95.0]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1024"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1026"/>
         <source>In edit mode, layer&apos;s relevant labeling map tool is:&lt;br&gt;&amp;nbsp;&amp;nbsp;Defined attribute field -&amp;gt; &lt;i&gt;enabled&lt;/i&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;Defined expression -&amp;gt; &lt;i&gt;disabled&lt;/i&gt;</source>
         <translation>Muokkaustilassa, tason merkityksellinen nimiöinti karttatyökalu on:&lt;br&gt;&amp;nbsp;&amp;nbsp;Määrittele ominaisuustieto -&amp;gt; &lt;i&gt;käytössä&lt;/i&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;Määritetty lauseke -&amp;gt; &lt;i&gt;pois käytöstä&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1063"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1065"/>
         <source>int [1-1000]</source>
         <translation>int [1-1000]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1065"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1067"/>
         <source>int [1-10000]</source>
         <translation>int [1-10000]</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="392"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="393"/>
         <source>%1 not found. Default substituted.</source>
         <translation>%1 ei löytynyt. Oletus korvattu.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="393"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="394"/>
         <source>Chosen font</source>
         <translation>Valittu kirjasin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1047"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1049"/>
         <source>Value &amp;lt; 0 represents a scale closer than 1:1, e.g. -10 = 10:1&lt;br&gt;Value of 0 disables the specific limit.</source>
         <translation>Arvo &amp;lt; 0 edustaa mittakaavaa lähempänä kuin 1:1, esim. -10 = 10:1.&lt;br&gt;Arvo 0 poistaa nimenomaisen rajan.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1130"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1132"/>
         <source>Text/Buffer sample</source>
         <translation>Teksti/Puskuri esimerkki</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1137"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1139"/>
         <source> @ %1 pts (using map units)</source>
         <translation> @ %1 pts (käyttäen karttayksiköitä)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1150"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1152"/>
         <source> @ %1 pts (using map units, BUFFER IN MILLIMETERS)</source>
         <translation>@ %1 pts (käyttäen karttayksiköitä, PUSKURI MILLIMETREISSÄ)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1170"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1172"/>
         <source> (BUFFER NOT SHOWN, in map units)</source>
         <translation>(PUSKURIA EI NÄYTETÄ, karttayksiköissä)</translation>
     </message>
@@ -37180,37 +37376,37 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Lausekeperusteinen nimiö</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1304"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1306"/>
         <source>No change</source>
         <translation>Ei muutosta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1305"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1307"/>
         <source>All uppercase</source>
         <translation>Kaikki isoin kirjaimin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1306"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1308"/>
         <source>All lowercase</source>
         <translation>Kaikki pienin kirjaimin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1310"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1312"/>
         <source>Capitalize first letter</source>
         <translation>Ensimmäinen kirjain isolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1466"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1468"/>
         <source>Size%1</source>
         <translation>Koko %1</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1466"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1468"/>
         <source> X</source>
         <translation> X</translation>
     </message>
     <message>
-        <location filename="../src/app/qgslabelinggui.cpp" line="1516"/>
+        <location filename="../src/app/qgslabelinggui.cpp" line="1518"/>
         <source>File not found</source>
         <translation>Tiedostoa ei löydy</translation>
     </message>
@@ -37227,14 +37423,14 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Nimiön asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4898"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5026"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4837"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4965"/>
         <source>Minimum </source>
         <translation>Minimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4927"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5061"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4866"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5000"/>
         <source>Maximum </source>
         <translation>Maksimi</translation>
     </message>
@@ -37247,12 +37443,12 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5296"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5235"/>
         <source>Label every part of multi-part features</source>
         <translation>Nimiöi kaikki moniosaisen kohteen osat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5303"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5242"/>
         <source>Merge connected lines to avoid duplicate labels</source>
         <translation>Yhdistä kytketyt viivat välttääksesi monistetut nimiöt</translation>
     </message>
@@ -37269,10 +37465,10 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Katkaise nimiö merkistä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="510"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="513"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1669"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3491"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="442"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="445"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1560"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3423"/>
         <source>Placement</source>
         <translation>Sijoittaminen</translation>
     </message>
@@ -37293,7 +37489,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">kaareva</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4650"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4589"/>
         <source>horizontal</source>
         <translation>vaakataso</translation>
     </message>
@@ -37322,9 +37518,9 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Nimiön etäisyyd</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2385"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4305"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4590"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2317"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4244"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4529"/>
         <source>Rotation</source>
         <translation>Rotaatio</translation>
     </message>
@@ -37349,13 +37545,13 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Suuntautuminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="453"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="578"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="385"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="510"/>
         <source>Text style</source>
         <translation>Tekstityyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="752"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="684"/>
         <source>Font</source>
         <translation>Kirjasin</translation>
     </message>
@@ -37364,112 +37560,112 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Tekstinimiö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="271"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="670"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="790"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="797"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="804"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="811"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="818"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="897"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="920"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1000"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1045"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1086"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1140"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1182"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1194"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1350"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1367"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1472"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1506"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1591"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1601"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1646"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1656"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1721"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1735"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1790"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1838"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1855"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1933"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1981"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1988"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2135"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2142"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2174"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2181"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2317"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2392"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2421"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2428"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2435"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2455"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2499"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2561"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2578"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2633"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2653"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2690"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2711"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2766"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2786"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2793"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2803"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2849"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2856"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2915"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2977"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3090"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3383"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3390"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3397"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3404"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3411"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3418"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3425"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3432"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3439"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3446"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3836"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3857"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4100"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4156"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4163"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4261"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4268"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4337"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4382"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="203"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="602"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="722"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="729"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="736"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="743"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="750"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="829"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="852"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="932"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="977"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1018"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1072"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1114"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1126"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1282"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1299"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1404"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1438"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1510"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1520"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1527"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1574"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1612"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1622"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1722"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1770"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1787"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1865"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1913"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1920"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2067"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2074"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2106"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2113"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2249"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2324"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2353"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2360"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2367"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2387"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2431"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2493"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2510"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2565"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2585"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2622"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2643"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2698"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2718"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2725"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2735"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2781"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2788"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2847"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2909"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3022"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3315"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3322"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3329"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3336"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3343"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3350"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3357"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3364"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3371"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3378"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3768"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3796"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4039"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4095"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4102"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4200"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4207"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4276"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4321"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4331"/>
         <location filename="../src/ui/qgslabelingguibase.ui" line="4392"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4453"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4548"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4568"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4613"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4657"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4677"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4848"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4911"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4943"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4973"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5042"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4487"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4507"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4552"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4596"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4616"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4787"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4850"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4882"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4912"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4981"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5016"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5070"/>
         <location filename="../src/ui/qgslabelingguibase.ui" line="5077"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5131"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5138"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="910"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2011"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3321"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="842"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1943"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3253"/>
         <source>Color</source>
         <translation>Väri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="474"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="477"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2661"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3268"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="406"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="409"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2593"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3200"/>
         <source>Buffer</source>
         <translation>Puskuri</translation>
     </message>
@@ -37478,119 +37674,119 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Muokkaa lauseketta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="74"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5451"/>
         <source>Automated placement settings (apply to all layers)</source>
         <translation>Automatisoidut sijoitteluasetukset (käytä kaikilla tasoilla)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="131"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="63"/>
         <source>Text/Buffer Sample</source>
         <translation>Teksti/Puskuri esimerkki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="249"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="181"/>
         <source>Sample text</source>
         <translation>Esimerkkiteksti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="268"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="200"/>
         <source>Reset sample text</source>
         <translation>Aseta esimerkkiteksti alkuarvoon</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="310"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="242"/>
         <source>Size for sample text in map units</source>
         <translation>Esimerkki tekstin koko karttayksiköissä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="363"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="295"/>
         <source>Sample background color</source>
         <translation>Esimerkin taustaväri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="450"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3263"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="382"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3195"/>
         <source>Text</source>
         <translation>Teksti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="462"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="465"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="394"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="397"/>
         <source>Formatting</source>
         <translation>Muotoilu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="486"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="489"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2252"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3273"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="418"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="421"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2184"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3205"/>
         <source>Background</source>
         <translation>Tausta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="498"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="501"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="430"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="433"/>
         <source>Shadow</source>
         <translation>Varjo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="522"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="525"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4781"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="454"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="457"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4720"/>
         <source>Rendering</source>
         <translation>Hahmotus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="641"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="573"/>
         <source>letter</source>
         <translation>kirjasin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="654"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="984"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="586"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="916"/>
         <source>Space in pixels or map units, relative to size unit choice</source>
         <translation>Tila pikseleinä tai karttayksiköinä, suhteellisena kokoyksikön valintaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1207"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2194"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1139"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2126"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="707"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="639"/>
         <source>Style</source>
         <translation>Tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="729"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="661"/>
         <source>Capitalization style of text</source>
         <translation>Tekstin isojen kirjainten tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="739"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2121"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2509"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3331"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="671"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2053"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2441"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3263"/>
         <source>Transparency</source>
         <translation>Läpinäkyvyys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="780"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="712"/>
         <source>Available typeface styles</source>
         <translation>Saatavilla olevien kirjasintyyppien tyylit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="871"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2105"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2549"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3288"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3371"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="803"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2037"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2481"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3220"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3303"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="890"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="822"/>
         <source>Type case</source>
         <translation>Kirjainten koko</translation>
     </message>
@@ -37603,179 +37799,179 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">karttayksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="927"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="859"/>
         <source>Spacing</source>
         <translation>Välistys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="956"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2128"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2740"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3301"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="888"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2060"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2672"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3233"/>
         <source>Blend mode</source>
         <translation>Sekoitustila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="971"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="903"/>
         <source>word</source>
         <translation>sana</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1032"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="964"/>
         <source>Underlined text</source>
         <translation>Alleviivattu teksti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1035"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="967"/>
         <source>U</source>
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1073"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1005"/>
         <source>Strikeout text</source>
         <translation>Läpiviivattu teksti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1076"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1008"/>
         <source>S</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1126"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1058"/>
         <source>Bold text
 (data defined only, overrides Style)</source>
         <translation>Lihavoitu teksti
 (data määritelty ainoastaan, ohittaa Tyylin)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1130"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1062"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1168"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1100"/>
         <source>Italic text
 (data defined only, overrides Style)</source>
         <translation>Kursivoitu teksti
 (data määritelty ainoastaan, ohittaa Tyylin)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1172"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1104"/>
         <source>I</source>
         <translation>I</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1230"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1162"/>
         <source>Font is missing.</source>
         <translation>Kirjasin puuttuu.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1283"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1215"/>
         <source>Text formatting</source>
         <translation>Tekstin muotoilu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1322"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1254"/>
         <source>Multiple lines</source>
         <translation>Monirivinen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1380"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1312"/>
         <source>Wrap on character</source>
         <translatorcomment>tarkista</translatorcomment>
         <translation>Rivinvaihto merkistä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1393"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1325"/>
         <source>Line height</source>
         <translation>Rivin korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1409"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1341"/>
         <source>Line height spacing for multi-line text</source>
         <translation>Rivin korkeusvälistys monirivisessä tekstissä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1412"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1344"/>
         <source> line</source>
         <translation> riviä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1437"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4604"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1369"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4543"/>
         <source>Alignment</source>
         <translation>Kohdistus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1447"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1379"/>
         <source>Paragraph style alignment of multi-line text</source>
         <translation>Kappaleen tyylin kohdistus monirivisessä tekstissä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1454"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1553"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1386"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1540"/>
         <source>Left</source>
         <translation>Vasen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1459"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1391"/>
         <source>Center</source>
         <translation>Keskellä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1464"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1608"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1396"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1547"/>
         <source>Right</source>
         <translation>Oikea</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1519"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1451"/>
         <source>Line direction symbol</source>
         <translation>Rivin suunnan symboli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1575"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1596"/>
         <source>&lt;</source>
         <translation>&lt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1630"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1494"/>
         <source>&gt;</source>
         <translation>&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1688"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1641"/>
         <source>left/right</source>
         <translation>vasen/oikea</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1704"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1657"/>
         <source>above</source>
         <translation>yllä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1711"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1664"/>
         <source>below</source>
         <translation>alla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1728"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1567"/>
         <source>Reverse direction</source>
         <translation>Taaksepäin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1894"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1826"/>
         <source>Text buffer</source>
         <translation>Tekstipuskuri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1946"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1878"/>
         <source>Draw text buffer</source>
         <translation>Piirrä tekstipuskuri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2021"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2607"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1953"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2539"/>
         <source>Pen join style</source>
         <translation>Kynäliitoksen tyyli</translation>
     </message>
@@ -37784,63 +37980,63 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2207"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2139"/>
         <source>Color buffer&apos;s fill</source>
         <translation>Värillisen puskurin täyttö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2297"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2229"/>
         <source>Draw background</source>
         <translation>Piirrä tausta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2342"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2274"/>
         <source>Radius X,Y</source>
         <translation>Säde X,Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2471"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2403"/>
         <source>Size X</source>
         <translation>Koko X</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2478"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2410"/>
         <source>Size type</source>
         <translation>Koon tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2485"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2417"/>
         <source>Shape</source>
         <translation>Muoto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2492"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2424"/>
         <source>Size Y</source>
         <translation>Koko Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2626"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2558"/>
         <source>Fill color</source>
         <translation>Täyttöväri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2646"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2578"/>
         <source>Border color</source>
         <translation>Rajan väri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2666"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2758"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2598"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2690"/>
         <source>Fixed</source>
         <translation>Kiinteä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2697"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2629"/>
         <source>Load symbol parameters</source>
         <translation>Lataa symboliparametrit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2704"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2636"/>
         <source>Border width</source>
         <translation>Rajan leveys</translation>
     </message>
@@ -37849,354 +38045,359 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">% pituudesta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2748"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2680"/>
         <source>Sync with label</source>
         <translation>Synkronoi nimiön kanssa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2753"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2685"/>
         <source>Offset of label</source>
         <translation>Nimiön siirtymä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2840"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2772"/>
         <source>symbol units</source>
         <translation>symbolin yksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2872"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2804"/>
         <source>Rectangle</source>
         <translation>Suorakulmio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2877"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2809"/>
         <source>Square</source>
         <translation>Neliö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2882"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2814"/>
         <source>Ellipse</source>
         <translation>Ellipsi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2887"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2819"/>
         <source>Circle</source>
         <translation>Kehä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2892"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2824"/>
         <source>SVG</source>
         <translation>SVG</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="2922"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4201"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2854"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4140"/>
         <source>Offset X,Y</source>
         <translation>Siirtymä X,Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3025"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="2957"/>
         <source>Drop shadow</source>
         <translation>Heittovarjo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3070"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3002"/>
         <source>Draw drop shadow</source>
         <translation>Piirrä heittovarjo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3144"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3076"/>
         <source>Scale</source>
         <translation>Mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3151"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3083"/>
         <source>Blur radius</source>
         <translation>Sumennussäde</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3164"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3096"/>
         <source>Blur only alpha pixels</source>
         <translation>Sumenna ainoastaan alphapikselit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3190"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3122"/>
         <source>Label&apos;s rotation is ignored</source>
         <translation>Nimiön kierto ohitetaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3193"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3125"/>
         <source>Use global shadow</source>
         <translation>Käytä yleistä varjoa</translation>
     </message>
     <message utf8="true">
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3236"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4324"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3168"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4263"/>
         <source>˚</source>
         <translation>˚</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3258"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3190"/>
         <source>Lowest label component</source>
         <translation>Matalin nimiökomponentti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3281"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3213"/>
         <source>Draw under</source>
         <translation>Piirrä alle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3308"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3240"/>
         <source>Offset</source>
         <translation>Siirtymä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3568"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3500"/>
         <source>Around point</source>
         <translation>Pisteen ympäri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3578"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3510"/>
         <source>Offset from point</source>
         <translation>Siirtymällä pisteestä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3598"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3530"/>
         <source>Curved</source>
         <translation>Kaareva</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3611"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3543"/>
         <source>Parallel</source>
         <translation>Rinnakkain</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3621"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3553"/>
         <source>Horizontal</source>
         <translation>Vaakataso</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3641"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3573"/>
         <source>Offset from centroid</source>
         <translation>Siirtymällä keskipisteestä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3657"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3589"/>
         <source>Around centroid</source>
         <translation>Keskipisteen ympäri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3664"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3596"/>
         <source>Horizontal (slow)</source>
         <translation>Vaakatasossa (hidas)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3671"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3603"/>
         <source>Free (slow)</source>
         <translation>Vapaasti (hidas)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3684"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3616"/>
         <source>Using perimeter</source>
         <translation>Käyttäen kehää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3737"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3669"/>
         <source>Above line</source>
         <translation>Viivan päällä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3753"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3685"/>
         <source>On line</source>
         <translation>viivalla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3760"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3692"/>
         <source>Below line</source>
         <translation>Viivan alle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3797"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3729"/>
         <source>Centroid</source>
         <translation>Keskipiste</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3813"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3745"/>
         <source>visible polygon</source>
         <translation>näkyvä monikulmio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3829"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3761"/>
         <source>whole polygon</source>
         <translation>koko monikulmio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3880"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3900"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3920"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3940"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3960"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3980"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4000"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4020"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3775"/>
+        <source>Force point inside polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3819"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3839"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3859"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3879"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3899"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3919"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3939"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3959"/>
         <source>abc</source>
         <translation>abc</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4048"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3987"/>
         <source>Quadrant</source>
         <translation>Neljännes</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4251"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4190"/>
         <source>Distance</source>
         <translation>Etäisyys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4362"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4301"/>
         <source>Repeat</source>
         <translation>Toista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4433"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4372"/>
         <source>inside</source>
         <translation>sisällä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4466"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4405"/>
         <source>outside</source>
         <translation>ulkopuolella</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4492"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4431"/>
         <source>Maximum angle between curved characters</source>
         <translation>Maksimi kulma kaarevien merkkien välillä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4515"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5197"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4454"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5136"/>
         <source>Data defined</source>
         <translation>Datan määräämä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4541"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4480"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4561"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4500"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4597"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4536"/>
         <source>Coordinate</source>
         <translation>Koordinaatti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4620"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4559"/>
         <source>Uncheck to write labeling engine derived rotation on pin and NULL on unpin</source>
         <translation>Poista merkintä kirjoittaaksesi nimiöintityökalulta perityn kierron kiinnityksessä ja NULL kiinnityksen poistossa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4626"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4565"/>
         <source>Preserve data rotation values</source>
         <translation>Säilytä tiedon kiertoarvot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4670"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4609"/>
         <source>vertical</source>
         <translation>vaakatasossa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4815"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4754"/>
         <source>Label options</source>
         <translation>Nimiön vaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4895"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4924"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4834"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4863"/>
         <source>Value &amp;lt; 0 represents a scale closer than 1:1, e.g. -10 = 10:1.&lt;br&gt;Value of 0 disables the specific limit.</source>
         <translation>Arvo &amp;lt; 0 edustaa mittakaavaa lähempänä kuin 1:1, esim. -10 = 10:1.&lt;br&gt;Arvo 0 poistaa nimenomaisen rajan.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4966"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4905"/>
         <source>Pixel size-based visibility (labels in map units)</source>
         <translation>Pikselin kokoon perustuva näköisyys (nimiöt karttayksiköissä)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5020"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4959"/>
         <source>Labels will not show if smaller than this on screen</source>
         <translation>Nimiöt eivät näy jos pienempiä kuin tämä ruudulla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5023"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5058"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4962"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4997"/>
         <source> px</source>
         <translation> px</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5055"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4994"/>
         <source>Labels will not show if larger than this on screen</source>
         <translation>Nimiöt eivät näy jos suurempia kuin tämä ruudulla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5096"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5035"/>
         <source>Show all labels for this layer (including colliding labels)</source>
         <translation>Näytä kaikki nimiöt tällä tasolla (myös törmäävät nimiöt)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5151"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5090"/>
         <source>Always show</source>
         <translation>Näytä aina</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5167"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5106"/>
         <source>Show label</source>
         <translation>Näytä nimiö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5216"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5155"/>
         <source>always</source>
         <translation>aina</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5229"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5168"/>
         <source>never</source>
         <translation>ei koskaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5245"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5184"/>
         <source>when rotation defined</source>
         <translation>kun rotaatio on määritelty</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5268"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5207"/>
         <source>Show upside-down labels</source>
         <translation>Näytä ylösalaisin nimiöt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5281"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5220"/>
         <source>Feature options</source>
         <translation>Ominaisuuden vaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5338"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5277"/>
         <source>Number of features sent to labeling engine, though not all may be labeled</source>
         <translation>Ominaisuuksien joukko lähetetty nimiöintiin vaikka kaikkia ei ehkä nimiöidäkkään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5354"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5293"/>
         <source>Limit number of features to be labeled to</source>
         <translation>Rajoita ominaisuuksien lukumäärää jotka nimiöidään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5389"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5328"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5409"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5348"/>
         <source>Discourage labels from covering features</source>
         <translation>Vastusta nimiöiden peittävän ominaisuuksia</translation>
     </message>
@@ -38205,13 +38406,13 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Esimerkki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="209"/>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="252"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="141"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="184"/>
         <source>Lorem Ipsum</source>
         <translation>Lorem Ipsum</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="32"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5396"/>
         <source>Label this layer with</source>
         <translation>Nimiöi tämä taso</translation>
     </message>
@@ -38224,37 +38425,37 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">karttayksikköinä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1783"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1715"/>
         <source>Formatted numbers</source>
         <translation>Muotoillut numerot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1818"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1750"/>
         <source>Decimal places </source>
         <translation>Desimaalien paikat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="1848"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="1780"/>
         <source>Show plus sign</source>
         <translation>Näytä etumerkki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4703"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4642"/>
         <source>Priority</source>
         <translation>Prioriteetti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4718"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4657"/>
         <source>Low</source>
         <translation>Matala</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4744"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4683"/>
         <source>High</source>
         <translation>Korkea</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="4841"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="4780"/>
         <source>Scale-based visibility</source>
         <translation>Mittakaava perusteinen näkyvyys</translation>
     </message>
@@ -38271,7 +38472,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Maksimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="5396"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="5335"/>
         <source>Suppress labeling of features smaller than</source>
         <translation>Häivytä nimiöinti kohteilta jotka ovat pienempiä kuin</translation>
     </message>
@@ -38284,7 +38485,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Miilimetreissä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3769"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3701"/>
         <source>Line orientation dependent position</source>
         <translation>Viivasuunnasta riippuvainen sijoittelu</translation>
     </message>
@@ -38313,7 +38514,7 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
         <translation type="obsolete">Kirjasinperhe</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgslabelingguibase.ui" line="3722"/>
+        <location filename="../src/ui/qgslabelingguibase.ui" line="3654"/>
         <source>Position</source>
         <translation>Sijainti</translation>
     </message>
@@ -38361,12 +38562,12 @@ Tämä voi johtua ongelmasta verkkoyhteydessä, tai WMS palvelimesta. </numerusf
 <context>
     <name>QgsLayerTreeModel</name>
     <message>
-        <location filename="../src/gui/layertree/qgslayertreemodel.cpp" line="591"/>
+        <location filename="../src/gui/layertree/qgslayertreemodel.cpp" line="681"/>
         <source>Double-click to view legend</source>
         <translation>Tupla-klikkaa nähdäksesi selitteen</translation>
     </message>
     <message>
-        <location filename="../src/gui/layertree/qgslayertreemodel.cpp" line="613"/>
+        <location filename="../src/gui/layertree/qgslayertreemodel.cpp" line="706"/>
         <source>following %1 items
 not displayed</source>
         <translation>seuraavia %1 jäsentä ei näytetä</translation>
@@ -38929,12 +39130,12 @@ not displayed</source>
 <context>
     <name>QgsMapCanvas</name>
     <message>
-        <location filename="../src/gui/qgsmapcanvas.cpp" line="611"/>
+        <location filename="../src/gui/qgsmapcanvas.cpp" line="630"/>
         <source>canvas</source>
         <translation>karttapohja</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmapcanvas.cpp" line="668"/>
+        <location filename="../src/gui/qgsmapcanvas.cpp" line="689"/>
         <source>Canvas refresh: %1 ms</source>
         <translation>Karttapohjan virkistys: %1 ms</translation>
     </message>
@@ -38943,8 +39144,8 @@ not displayed</source>
         <translation type="obsolete">, lähettäjä &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmapcanvas.cpp" line="649"/>
-        <location filename="../src/gui/qgsmapcanvas.cpp" line="669"/>
+        <location filename="../src/gui/qgsmapcanvas.cpp" line="670"/>
+        <location filename="../src/gui/qgsmapcanvas.cpp" line="690"/>
         <source>Rendering</source>
         <translation>Hahmotetaan</translation>
     </message>
@@ -39134,12 +39335,12 @@ not displayed</source>
         <translation type="obsolete">Nykyinen taso ei ole vektoritaso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="84"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="79"/>
         <source>Layer cannot be added to</source>
         <translation>Tasoon ei voi lisätä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="85"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="80"/>
         <source>The data provider for this layer does not support the addition of features.</source>
         <translation>Tämän tason tiedontarjoaja ei tue kohteiden lisäämistä.</translation>
     </message>
@@ -39152,77 +39353,75 @@ not displayed</source>
         <translation type="obsolete">Vektoritasoa ei voida muokata. Käytä &apos;Vaihda muokkausta&apos; saadaksesi muokattavaksi.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="104"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="172"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="180"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="99"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="157"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="165"/>
         <source>Wrong editing tool</source>
         <translation>Väärä muokkaustyökalu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="105"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="100"/>
         <source>Cannot apply the &apos;capture point&apos; tool on this vector layer</source>
         <translation>Pisteen kaappaus työkalua ei voi käyttää tällä vektoritasolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="125"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="197"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="120"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="182"/>
         <source>Coordinate transform error</source>
         <translation>Koordinaatin muunnosvirhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="126"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="198"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="121"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="183"/>
         <source>Cannot transform the point to the layers coordinate system</source>
         <translation>Pisteen muuntaminen tason koordinaattijärjestelmälle ei onnistunut</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="150"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="310"/>
         <source>Feature added</source>
-        <translation>Kohde lisätty</translation>
+        <translation type="obsolete">Kohde lisätty</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="173"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="158"/>
         <source>Cannot apply the &apos;capture line&apos; tool on this vector layer</source>
         <translation>Viivan kaappaus työkalua ei voi käyttää tällä vektoritasolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="181"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="166"/>
         <source>Cannot apply the &apos;capture polygon&apos; tool on this vector layer</source>
         <translation>Monikulmion kaappaus työkalua ei voi käyttää tällä vektoritasolla</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="240"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="259"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="281"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="289"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="303"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="225"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="244"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="266"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="274"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="288"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="240"/>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="259"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="225"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="244"/>
         <source>Cannot add feature. Unknown WKB type</source>
         <translation>Kohdetta ei voida lisätä. Tuntematon WKB tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="281"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="266"/>
         <source>The feature could not be added because removing the polygon intersections would change the geometry type</source>
         <translation>Kohdetta ei voi lisätä. Syy: Leikkaavien monikulmioiden poistaminen muuttaisi geometriatyypin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="289"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="274"/>
         <source>An error was reported during intersection removal</source>
         <translation>Virhe tapahtui leikkauksen poistamisessa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="297"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="282"/>
         <source>The feature cannot be added because it&apos;s geometry is empty</source>
         <translation>Ominaisuutta ei voida lisätä koska sen geometria on tyhjä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="301"/>
+        <location filename="../src/app/qgsmaptooladdfeature.cpp" line="286"/>
         <source>The feature cannot be added because it&apos;s geometry collapsed due to intersection avoidance</source>
         <translation>Ominaisuutta ei voida lisätä koska sen geometria romahti risteämien välttämiseksi</translation>
     </message>
@@ -39448,12 +39647,12 @@ not displayed</source>
 <context>
     <name>QgsMapToolCapture</name>
     <message>
-        <location filename="../src/app/qgsmaptoolcapture.cpp" line="368"/>
+        <location filename="../src/app/qgsmaptoolcapture.cpp" line="376"/>
         <source>Validation started.</source>
         <translation>Tarkastus aloitettiin.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmaptoolcapture.cpp" line="404"/>
+        <location filename="../src/app/qgsmaptoolcapture.cpp" line="412"/>
         <source>Validation finished.</source>
         <translation>Tarkastus lopetettiin.</translation>
     </message>
@@ -39639,12 +39838,12 @@ not displayed</source>
         <translation type="obsolete">Tunnistaaksesi kohteen sinun täytyy valita aktiivinen taso klikkaamalla sen nimeä selitteessä</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="218"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="222"/>
         <source>Identifying on %1...</source>
         <translation>Tunnistetaan %1...</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="231"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="235"/>
         <source>Identifying done.</source>
         <translation>Tunnistus valmis.</translation>
     </message>
@@ -39653,66 +39852,66 @@ not displayed</source>
         <translation type="obsolete">Tästä sijainnista ei löytynyt kohteita.</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="280"/>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="509"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="284"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="513"/>
         <source>(clicked coordinate)</source>
         <translation>(koordinaattia klikattu)</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="383"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="387"/>
         <source>Length</source>
         <translation>Pituus</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="389"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="393"/>
         <source>firstX</source>
         <comment>attributes get sorted; translation for lastX should be lexically larger than this one</comment>
         <translation>ensimmäinenX</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="391"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="395"/>
         <source>firstY</source>
         <translation>ensimmäinenY</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="394"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="398"/>
         <source>lastX</source>
         <comment>attributes get sorted; translation for firstX should be lexically smaller than this one</comment>
         <translation>viimeinenX</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="396"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="400"/>
         <source>lastY</source>
         <translation>viimeinenY</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="406"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="410"/>
         <source>Area</source>
         <translation>Alue</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="409"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="413"/>
         <source>Perimeter</source>
         <translation>Ympärysmitta</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="522"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="526"/>
         <source>no data</source>
         <translation>Ei dataa</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="551"/>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="611"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="555"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="615"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="612"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="616"/>
         <source>Identify error</source>
         <translation>Tunnista virhe</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="340"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="344"/>
         <source>feature id</source>
         <translation>kohteen id</translation>
     </message>
@@ -39722,12 +39921,12 @@ not displayed</source>
         <translation>Kaikki(%1) </translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="187"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="191"/>
         <source>No active layer. To identify features, you must choose an active layer.</source>
         <translation>Ei aktiivista tasoa. Tunnistaaksesi ominaisuuksia, Sinun täytyy valita aktiivinen kerros.</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="340"/>
+        <location filename="../src/gui/qgsmaptoolidentify.cpp" line="344"/>
         <source>new feature</source>
         <translation>uusi kohde</translation>
     </message>
@@ -40126,9 +40325,13 @@ not displayed</source>
 <context>
     <name>QgsMapUnitScaleDialog</name>
     <message>
-        <location filename="../src/ui/qgsmapunitscaledialog.ui" line="14"/>
         <source>Adjust map unit scales</source>
-        <translation>Sovita karttayksiköiden mittakaava</translation>
+        <translation type="obsolete">Sovita karttayksiköiden mittakaava</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsmapunitscaledialog.ui" line="14"/>
+        <source>Adjust scaling range</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/qgsmapunitscaledialog.ui" line="24"/>
@@ -40139,6 +40342,11 @@ not displayed</source>
         <location filename="../src/ui/qgsmapunitscaledialog.ui" line="31"/>
         <source>Minimum scale:</source>
         <translation>Minimi mittakaava:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsmapunitscaledialog.ui" line="54"/>
+        <source>Scale only within the following map unit scale range:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -40402,62 +40610,62 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
         <translation>&amp;Uusi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="219"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="208"/>
         <source>The calculations are based on:</source>
         <translation>Laskennat perustuvat:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="222"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="211"/>
         <source>Project CRS transformation is turned off.</source>
         <translation>Projektin CRS muutos on kytketty pois päältä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="223"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="212"/>
         <source>Canvas units setting is taken from project properties setting (%1).</source>
         <translation>Näyttöalan yksikköjen asetukset haetaan projektin ominaisuuksien asetuksista (%1).</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="224"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="213"/>
         <source>Ellipsoidal calculation is not possible, as project CRS is undefined.</source>
         <translation>Ellipsoidin laskeminen ei ole mahdollista, koska projektin CRS on määrittelemättä.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="225"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="214"/>
         <source>Measure (OTF off)</source>
         <translation>Mittaa (OTF poissa)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="231"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="220"/>
         <source>Project CRS transformation is turned on and ellipsoidal calculation is selected.</source>
         <translation>Projektin CRS muunnos on käytössä ja ellipsoidin laskenta on valittu.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="232"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="221"/>
         <source>The coordinates are transformed to the chosen ellipsoid (%1), and the result is in meters</source>
         <translation>Koordinaatit on muunnettu valittuun ellipsoidiin (%1), ja tulos on metrinen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="236"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="225"/>
         <source>Project CRS transformation is turned on but ellipsoidal calculation is not selected.</source>
         <translation>Projektin CRS muunnos on käytössä mutta ellipsoidin laskentaa ei ole valittu.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="237"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="226"/>
         <source>The canvas units setting is taken from the project CRS (%1).</source>
         <translation>Näyttöalan yksikköjen asetukset haetaan projektin CRS tiedoista (%1).</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="239"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="228"/>
         <source>Measure (OTF on)</source>
         <translation>Mittaa (OTF voimassa)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="244"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="233"/>
         <source>Finally, the value is converted from %1 to %2.</source>
         <translation>Lopuksi, arvo muunnetaan %1:stä %2:teen.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsmeasuredialog.cpp" line="253"/>
+        <location filename="../src/app/qgsmeasuredialog.cpp" line="242"/>
         <source>Segments [%1]</source>
         <translation>Segmentit [%1]</translation>
     </message>
@@ -40680,33 +40888,33 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
         <translation>QGIS Loki</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="60"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="61"/>
         <source>No messages.</source>
         <translation>Ei viestejä.</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="116"/>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="176"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="117"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="178"/>
         <source>%1 message(s) logged.</source>
         <translation>%1 viesti(ä) lokiin.</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="126"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="128"/>
         <source>General</source>
         <translation>Yleistä</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="148"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="150"/>
         <source>Timestamp</source>
         <translation>Aikaleima</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="148"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="150"/>
         <source>Message</source>
         <translation>Viesti</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="148"/>
+        <location filename="../src/gui/qgsmessagelogviewer.cpp" line="150"/>
         <source>Level</source>
         <translation>Taso</translation>
     </message>
@@ -40727,39 +40935,39 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 <context>
     <name>QgsMssqlConnectionItem</name>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="309"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="292"/>
         <source>Show non-spatial tables</source>
         <translation>Näytä paikkaansitomattomat taulut</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="315"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="298"/>
         <source>Edit...</source>
         <translation>Muokkaa ...</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="319"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="302"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="368"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="351"/>
         <source>%1: Not a vector layer!</source>
         <translation>%1: Ei ole vektoritaso!</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="384"/>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="393"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="367"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="376"/>
         <source>%1: OK!</source>
         <translation>%1: OK!</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="404"/>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="408"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="387"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="391"/>
         <source>Import to MSSQL database</source>
         <translation>Hae MSSQL tietokantaan</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="404"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="387"/>
         <source>Failed to import some layers!
 
 </source>
@@ -40768,7 +40976,7 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="408"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="391"/>
         <source>Import was successful.</source>
         <translation>Haku onnistui.</translation>
     </message>
@@ -40800,8 +41008,8 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
     <message>
         <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="161"/>
         <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="169"/>
-        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="185"/>
-        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="196"/>
+        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="187"/>
+        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="198"/>
         <source>Test connection</source>
         <translation>Testaa yhteyttä</translation>
     </message>
@@ -40824,7 +41032,7 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="197"/>
+        <location filename="../src/providers/mssql/qgsmssqlnewconnection.cpp" line="199"/>
         <source>Connection to %1 was successful</source>
         <translation>Yhdistäminen kohteeseen %1 onnistui</translation>
     </message>
@@ -40915,72 +41123,72 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 <context>
     <name>QgsMssqlProvider</name>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="147"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="149"/>
         <source>8 Bytes integer</source>
         <translation>8 tavun kokonaisluku</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="148"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="150"/>
         <source>4 Bytes integer</source>
         <translation>4 tavun kokonaisluku</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="149"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="151"/>
         <source>2 Bytes integer</source>
         <translation>2 tavun kokonaisluku</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="150"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="152"/>
         <source>1 Bytes integer</source>
         <translation>1 tavun kokonaisluku</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="151"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="153"/>
         <source>Decimal number (numeric)</source>
         <translation>Desimaalinumero (numeerinen)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="152"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="154"/>
         <source>Decimal number (decimal)</source>
         <translation>Desimaalinumero (desimaalit)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="155"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="157"/>
         <source>Decimal number (real)</source>
         <translation>Desimaalinumero (reaali)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="156"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="158"/>
         <source>Decimal number (double)</source>
         <translation>Desimaalinumero (double)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="159"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="161"/>
         <source>Text, fixed length (char)</source>
         <translation>Teksti, kiinteä mitta (char)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="160"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="162"/>
         <source>Text, limited variable length (varchar)</source>
         <translation>Teksti, rajoitettu vaihteleva pituus (varchar)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="161"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="163"/>
         <source>Text, fixed length unicode (nchar)</source>
         <translation>Teksti,  kiinteä mitta unicode (nchar)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="162"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="164"/>
         <source>Text, limited variable length unicode (nvarchar)</source>
         <translation>Teksti, rajoitettu vaihteleva pituus unicode (nvarchar)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="163"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="165"/>
         <source>Text, unlimited length (text)</source>
         <translation>Teksti, rajoittamaton pituus (text)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="164"/>
+        <location filename="../src/providers/mssql/qgsmssqlprovider.cpp" line="166"/>
         <source>Text, unlimited length unicode (ntext)</source>
         <translation>Teksti, rajoittamaton pituus unicode (ntext)</translation>
     </message>
@@ -40988,7 +41196,7 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 <context>
     <name>QgsMssqlRootItem</name>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="565"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="548"/>
         <source>New Connection...</source>
         <translation>Uusi yhteys...</translation>
     </message>
@@ -40996,12 +41204,12 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
 <context>
     <name>QgsMssqlSchemaItem</name>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="492"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="475"/>
         <source>%1 as %2 in %3</source>
         <translation>%1 kuten %2 joukossa %3</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="519"/>
+        <location filename="../src/providers/mssql/qgsmssqldataitems.cpp" line="502"/>
         <source>as geometryless table</source>
         <translation>kuten taulu ilman geometriaa</translation>
     </message>
@@ -41117,30 +41325,28 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
         <translation>XML tiedosto (*.xml *.XML)</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="448"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="449"/>
         <source>Select Table</source>
         <translation>Valitse taulu</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="448"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="449"/>
         <source>You must select a table in order to add a layer.</source>
         <translation>Sinun tulee valita taulu voidaksesi lisätä tason.</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="508"/>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="518"/>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="525"/>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="611"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="515"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="598"/>
         <source>MSSQL Provider</source>
         <translation>MSSQL palveluntarjoaja</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="590"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="577"/>
         <source>Stop</source>
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="636"/>
+        <location filename="../src/providers/mssql/qgsmssqlsourceselect.cpp" line="623"/>
         <source>Connect</source>
         <translation>Yhdistä</translation>
     </message>
@@ -43587,34 +43793,34 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation>Täysy skannaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="876"/>
-        <location filename="../src/app/qgsoptions.cpp" line="887"/>
-        <location filename="../src/app/qgsoptions.cpp" line="891"/>
+        <location filename="../src/app/qgsoptions.cpp" line="875"/>
+        <location filename="../src/app/qgsoptions.cpp" line="886"/>
+        <location filename="../src/app/qgsoptions.cpp" line="890"/>
         <source>Save default project</source>
         <translation>Tallenna oletus projekti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="876"/>
+        <location filename="../src/app/qgsoptions.cpp" line="875"/>
         <source>You must set a default project</source>
         <translation>Sinun tulee asettaa oletus projekti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="887"/>
+        <location filename="../src/app/qgsoptions.cpp" line="886"/>
         <source>Current project saved as default</source>
         <translation>Nykyine projekti tallennettu oletukseksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="891"/>
+        <location filename="../src/app/qgsoptions.cpp" line="890"/>
         <source>Error saving current project as default</source>
         <translation>Virhe tallennettaessa nykyistä projektia oletukseksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="907"/>
+        <location filename="../src/app/qgsoptions.cpp" line="906"/>
         <source>Choose a directory to store project template files</source>
         <translation>Valitse hakemisto jonne projektin mallitiedostot tallennetaan</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="944"/>
+        <location filename="../src/app/qgsoptions.cpp" line="943"/>
         <source>Choose project file to open at launch</source>
         <translation>Valitse projektitiedosto joka avataan käynnistettäessä</translation>
     </message>
@@ -43623,98 +43829,98 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">QGIS tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1492"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1490"/>
         <source>Create Options - %1 Driver</source>
         <translation>Luo vaihtoehdot - %1 ajuri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1494"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1492"/>
         <source>Create Options - pyramids</source>
         <translation>Luo vaihtoehdot - pyramidit</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1552"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1550"/>
         <source>Restore UI defaults</source>
         <translation>Palauta käyttäjäliitynnän oletukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1552"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1550"/>
         <source>Are you sure to reset the UI to default (needs restart)?</source>
         <translation>Haluatko todella palauttaa käyttäjäliitynnän oletukset (vaatii uudelleenkäynnistyksen)?</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1570"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1568"/>
         <source>Overwrite</source>
         <translation>Korvaa</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1571"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1569"/>
         <source>If Undefined</source>
         <translation>Jos määrittelemätön</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1572"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1570"/>
         <source>Unset</source>
         <translation>Poista asetus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1573"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1571"/>
         <source>Prepend</source>
         <translation>Liitä alkuun</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1574"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1572"/>
         <source>Append</source>
         <translation>Lisää</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1874"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1872"/>
         <source>Enter scale</source>
         <translation>Anna mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1875"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1873"/>
         <source>Scale denominator</source>
         <translation>Mittakaavan nimittäjä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1914"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1912"/>
         <source>Load scales</source>
         <translation>Lataa mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1915"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1941"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1913"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1939"/>
         <source>XML files (*.xml *.XML)</source>
         <translation>XML tiedostot (*.xml *.XML)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1940"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1938"/>
         <source>Save scales</source>
         <translation>Talleta mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1971"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1969"/>
         <source>No Stretch</source>
         <translation>Ei levitystä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1972"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1970"/>
         <source>Stretch To MinMax</source>
         <translation>Levitä min/max</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1973"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1971"/>
         <source>Stretch And Clip To MinMax</source>
         <translation>Levitä ja leikkaa min/max</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1974"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1972"/>
         <source>Clip To MinMax</source>
         <translation>Leikkaa min/max</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="740"/>
+        <location filename="../src/app/qgsoptions.cpp" line="739"/>
         <source>Detected active locale on your system: %1</source>
         <translation>Käyttöjärjestelmästäsi löytyi: %1</translation>
     </message>
@@ -43742,95 +43948,95 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Kaikki</translation>
     </message>
     <message>
+        <location filename="../src/app/qgsoptions.cpp" line="598"/>
         <location filename="../src/app/qgsoptions.cpp" line="599"/>
-        <location filename="../src/app/qgsoptions.cpp" line="600"/>
         <source>Cumulative pixel count cut</source>
         <translation>Kumulatiivinen pikselien lukumäärän leikkaus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="601"/>
+        <location filename="../src/app/qgsoptions.cpp" line="600"/>
         <source>Minimum / maximum</source>
         <translation>Minimi/maksimi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="602"/>
+        <location filename="../src/app/qgsoptions.cpp" line="601"/>
         <source>Mean +/- standard deviation</source>
         <translation>Keskimääräinen + / keskihajonta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="704"/>
+        <location filename="../src/app/qgsoptions.cpp" line="703"/>
         <source>Select grid color</source>
         <translation>Valitse ruudukon väri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="710"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1303"/>
+        <location filename="../src/app/qgsoptions.cpp" line="709"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1301"/>
         <source>Solid</source>
         <translation>Kiinteä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="711"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1307"/>
+        <location filename="../src/app/qgsoptions.cpp" line="710"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1305"/>
         <source>Dots</source>
         <translation>Pisteillä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="712"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1311"/>
+        <location filename="../src/app/qgsoptions.cpp" line="711"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1309"/>
         <source>Crosses</source>
         <translation>Risteillä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="766"/>
+        <location filename="../src/app/qgsoptions.cpp" line="765"/>
         <source>To vertex</source>
         <translation>verteksiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="767"/>
+        <location filename="../src/app/qgsoptions.cpp" line="766"/>
         <source>To segment</source>
         <translation>segmentiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="768"/>
+        <location filename="../src/app/qgsoptions.cpp" line="767"/>
         <source>To vertex and segment</source>
         <translation>verteksiksi ja segmentiksi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="776"/>
-        <location filename="../src/app/qgsoptions.cpp" line="785"/>
+        <location filename="../src/app/qgsoptions.cpp" line="775"/>
+        <location filename="../src/app/qgsoptions.cpp" line="784"/>
         <source>map units</source>
         <translation>Kartta yksikkö</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="780"/>
-        <location filename="../src/app/qgsoptions.cpp" line="789"/>
+        <location filename="../src/app/qgsoptions.cpp" line="779"/>
+        <location filename="../src/app/qgsoptions.cpp" line="788"/>
         <source>pixels</source>
         <translation>pikseleihin</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="796"/>
-        <location filename="../src/app/qgsoptions.cpp" line="811"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1254"/>
+        <location filename="../src/app/qgsoptions.cpp" line="795"/>
+        <location filename="../src/app/qgsoptions.cpp" line="810"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1252"/>
         <source>Semi transparent circle</source>
         <translation>Osittain läpinäkyvä ympyrä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="797"/>
-        <location filename="../src/app/qgsoptions.cpp" line="815"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1258"/>
+        <location filename="../src/app/qgsoptions.cpp" line="796"/>
+        <location filename="../src/app/qgsoptions.cpp" line="814"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1256"/>
         <source>Cross</source>
         <translation>Risti</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="798"/>
-        <location filename="../src/app/qgsoptions.cpp" line="819"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1262"/>
+        <location filename="../src/app/qgsoptions.cpp" line="797"/>
+        <location filename="../src/app/qgsoptions.cpp" line="818"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1260"/>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="769"/>
-        <location filename="../src/app/qgsoptions.cpp" line="801"/>
+        <location filename="../src/app/qgsoptions.cpp" line="768"/>
+        <location filename="../src/app/qgsoptions.cpp" line="800"/>
         <source>Off</source>
         <translation>Pois</translation>
     </message>
@@ -43840,27 +44046,27 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation>Tunnista korostusväri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="802"/>
+        <location filename="../src/app/qgsoptions.cpp" line="801"/>
         <source>QGIS</source>
         <translation>QGIS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="805"/>
+        <location filename="../src/app/qgsoptions.cpp" line="804"/>
         <source>GEOS</source>
         <translation>GEOS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="827"/>
+        <location filename="../src/app/qgsoptions.cpp" line="826"/>
         <source>Round</source>
         <translation>Pyöreä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="828"/>
+        <location filename="../src/app/qgsoptions.cpp" line="827"/>
         <source>Mitre</source>
         <translation>Katkaisu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="829"/>
+        <location filename="../src/app/qgsoptions.cpp" line="828"/>
         <source>Bevel</source>
         <translation>Viistoreuna</translation>
     </message>
@@ -43885,19 +44091,19 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Popmusic Chain</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="619"/>
+        <location filename="../src/app/qgsoptions.cpp" line="618"/>
         <source>Selection color</source>
         <translation>Valinnan väri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="946"/>
+        <location filename="../src/app/qgsoptions.cpp" line="945"/>
         <source>QGIS files</source>
         <translation>QGIS tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsoptions.cpp" line="1636"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1662"/>
-        <location filename="../src/app/qgsoptions.cpp" line="1704"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1634"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1660"/>
+        <location filename="../src/app/qgsoptions.cpp" line="1702"/>
         <source>Choose a directory</source>
         <translation>Valitse kansio</translation>
     </message>
@@ -43915,20 +44121,20 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="85"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="88"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4261"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="91"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4273"/>
         <source>General</source>
         <translation>Yleiset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="148"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="151"/>
         <source>Map tools</source>
         <translation>Karttatyökalut</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="193"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="196"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="199"/>
         <source>CRS</source>
         <translation>CRS</translation>
     </message>
@@ -43937,18 +44143,18 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Uusien projektien oletus koordinaattijärjestelmä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4012"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4024"/>
         <source>Enable &apos;on the &amp;fly&apos; reprojection by default</source>
         <translation>Aseta &apos;&amp;lennossa&apos; uudelleen projektointi oletukseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3943"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4043"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3955"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4055"/>
         <source>Select...</source>
         <translation>Valitse...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4050"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4062"/>
         <source>Always start new projects with this CRS</source>
         <translation>Aloita uudet projektit aina tällä CRS:llä</translation>
     </message>
@@ -43957,28 +44163,28 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Koordinaattijärjestelmä uusille projekteille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3957"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3969"/>
         <source>Prompt for &amp;CRS</source>
         <translation>Kysy &amp;CRSää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3950"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3962"/>
         <source>Use &amp;project CRS</source>
         <translation>Kätä &amp;projektin CRSää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3964"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3976"/>
         <source>Use default CRS displa&amp;yed below</source>
         <translation>Käytä oletus CRSää jota nä&amp;ytetään alla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="205"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="208"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="211"/>
         <source>Locale</source>
         <translation>Locale</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="636"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="639"/>
         <source>Project files</source>
         <translation>Projektitiedostot</translation>
     </message>
@@ -43987,7 +44193,7 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Kysy tarvvittaessa projektin muutosten tallentamisesta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="836"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="839"/>
         <source>Warn when opening a project file saved with an older version of QGIS</source>
         <translation>Varoita avattaessa projektitiedosto joka on tallennettu vanhemmalla QGIS versiolla</translation>
     </message>
@@ -43996,17 +44202,17 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Kartan ulkoasun oletus (projektin ominaisuudet syrjäyttävät)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2316"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2332"/>
         <source>Selection color</source>
         <translation>Valinnan väri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2303"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2319"/>
         <source>Background color</source>
         <translation>Taustaväri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="323"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="326"/>
         <source>Icon theme</source>
         <translation>Ikonien teema</translation>
     </message>
@@ -44023,7 +44229,7 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Luo rasteri ikonit selitteessä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="536"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="539"/>
         <source>Hide splash screen at startup</source>
         <translation>Kätke aloitusruutu käynnistyksessä</translation>
     </message>
@@ -44032,22 +44238,22 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Avaa tunnistustulokset telakkaikkunaan (QGIS uudelleenkäynnistys tarvitaan)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1552"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1568"/>
         <source>Add PostGIS layers with double click and select in extended mode</source>
         <translation>Lisää PostGIS tasot tuplaklikkauksella ja valitse laajennettu moodi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1332"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1348"/>
         <source>Attribute table behaviour</source>
         <translation>Ominaisuustietotaulun käyttäytyminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1614"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1630"/>
         <source>Rendering behavior</source>
         <translation>Hahmottamisen käyttäytyminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1620"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1636"/>
         <source>By default new la&amp;yers added to the map should be displayed</source>
         <translation>Oletuksena lisät&amp;yt uudet tasot tulee näyttää kartalla</translation>
     </message>
@@ -44064,17 +44270,17 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">&lt;b&gt;Homautus:&lt;/b&gt; Käytä nollaa estääksesi näytön päivittämisen ennenkuin kaikki kohteet on hahmotettu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1627"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1643"/>
         <source>Use render caching where possible to speed up redraws</source>
         <translation>Käytä hahmottamisen välimuistia aina kun on mahdollista nopeuttaaksesi uudelleen piirtämistä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1822"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1838"/>
         <source>Rendering quality</source>
         <translation>Hahmottamisen laatu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1831"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1847"/>
         <source>Make lines appear less jagged at the expense of some drawing performance</source>
         <translation>Tee viivat vähemmän rosoreunaisiksi lievällä piirtämistehokkuuden kustannuksella </translation>
     </message>
@@ -44083,38 +44289,38 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Korjaa ongelmat väärin täytetyissä monikulmioissa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="942"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="945"/>
         <source>SVG paths</source>
         <translation>SVG polut</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="948"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="951"/>
         <source>Path(s) to search for Scalable Vector Graphic (SVG) symbols</source>
         <translation>Polku (polut) SVG symbolien hakuun</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="968"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1021"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1167"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4503"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="971"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1024"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1118"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4515"/>
         <source>Add</source>
         <translation>Lisää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="975"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1028"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1154"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4496"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="978"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1031"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1105"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4508"/>
         <source>Remove</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2809"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2818"/>
         <source>Decimal places</source>
         <translation>Desimaalien paikat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2819"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2828"/>
         <source>Keep base unit</source>
         <translation>Pidä perusyksiköt</translation>
     </message>
@@ -44123,39 +44329,39 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Kun uusi taso luodaan tai taso ladataan jolla ei ole koordinaattijärjestelmää (CRS)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="217"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="220"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="223"/>
         <source>Network</source>
         <translation>Verkko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4487"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4499"/>
         <source>Exclude URLs (starting with)</source>
         <translation>Jätä URL-osoitteet (alkaen)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4352"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4364"/>
         <source>Cache settings</source>
         <translation>Välimuistin asetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4358"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4370"/>
         <source>Directory</source>
         <translation>Hakemisto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="675"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2958"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2972"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2986"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3013"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3027"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4368"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="678"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2967"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2981"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2995"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3022"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3036"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4380"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="460"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="463"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
@@ -44164,213 +44370,213 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Ota käyttöön oletuksen ominaisuuksien yksinkertaistaminen uusille lisättäville tasoille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1727"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1743"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Feature simplification may speed up rendering but can result in rendering inconsistencies</source>
         <translation>&lt;b&gt;Huomautus:&lt;/b&gt; Ominaisuuksien yksinkertaistaminen voi johtaa nopeampaan hahmottamiseen mutta tuloksena voi olla myös epäjohdonmukaisuuksia</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1734"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1750"/>
         <source>Simplification threshold (higher values result in more simplification): </source>
         <translation>Yksinkertaistamisen kynnysarvo (suurempi arvo johtaa lisääntyvään yksinkertaistamiseen):</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1744"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1760"/>
         <source>Higher values result in more simplification</source>
         <translation>Suurempi arvo johtaa lisääntyvään yksinkertaistamiseen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1789"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1805"/>
         <source>Simplify on provider side if possible</source>
         <translation>Yksinkertaista palveluntarjoajan puolella jos mahdollista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1796"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1812"/>
         <source>Maximum scale at which the layer should be simplified (1:1 always simplifies): </source>
         <translation>Maksimi mittakaava jolla taso voidaan yksinkertaistaa (1:1 yksintertaistaa aina): </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2503"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2512"/>
         <source>WMS getLegendGraphic Resolution</source>
         <translation>WMS getLegendGraphic resolutio</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2774"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2783"/>
         <source>Nautical Miles</source>
         <translation>meripenikulmat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3088"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3100"/>
         <source>Composition defaults</source>
         <translation>Rakenteen oletusarvot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3096"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3108"/>
         <source>Default font</source>
         <translation>Oletuskirjasin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3111"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3123"/>
         <source>Grid appearance</source>
         <translation>Ruudukon ulkoasu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3119"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3131"/>
         <source>Grid style</source>
         <translation>Ruudukon tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3129"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3141"/>
         <source>Color...</source>
         <translation>Väri...</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3141"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3153"/>
         <source>Grid defaults</source>
         <translation>Ruudukon oletusarvot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3147"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3159"/>
         <source>Spacing</source>
         <translation>Välistys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2604"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2695"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2715"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3154"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3211"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3242"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2613"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2704"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2724"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3166"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3223"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3254"/>
         <source> mm</source>
         <translation> mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1636"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1652"/>
         <source>Render layers in parallel using many CPU cores</source>
         <translation>Hahmota tasot rinnan käyttäen useaa CPU ydintä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1650"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1666"/>
         <source>Max cores to use:</source>
         <translation>Ytimien maksimi määrä käytettäväksi:</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2647"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2656"/>
         <source>Highlight color</source>
         <translation>Korostusväri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2672"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2681"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The color used to highlight identified feature. The alpha channel is only used for polygons fill, lines and outlines are fully opaque.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Väri jota käytetään korostamaan tunnistettua ominaisuutta. Alpha kanavaa käytetään ainoastaan monikulmiotäytölle, viivat ja ääriviivat ovat täysin läpikuultamattomia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2685"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2694"/>
         <source>Buffer</source>
         <translation>Puskuri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2692"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2701"/>
         <source>Lines / outlines buffer in millimeters.</source>
         <translation>Viivojen ja ääriviivojen puskuri millimetreissä.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2705"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2714"/>
         <source>Minimum width</source>
         <translation>Minimi leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2712"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2721"/>
         <source>Minimum line / outline width in millimeters.</source>
         <translation>Minimi viivan / ääriviivan leveys millimetreissä.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3167"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3179"/>
         <source>Grid offset</source>
         <translation>Ruudukon siirtymä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3179"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3191"/>
         <source>x: </source>
         <translation>x: </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3189"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3201"/>
         <source>y: </source>
         <translation>y: </translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3201"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3232"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3213"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3244"/>
         <source>Snap tolerance</source>
         <translation>Kiinnitystoleranssi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3224"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3236"/>
         <source>Guide defaults</source>
         <translation>Oppaan oletusarvot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3322"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3334"/>
         <source>Suppress attribute form pop-up after feature creation</source>
         <translation>Häivytä ominaisuustietojen pop-up ikkunat ominaisuuden luonnin jälkeen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3660"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3672"/>
         <source>Curve offset tool</source>
         <translation>Käyrän siirtymän työkalu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3669"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3681"/>
         <source>Miter limit</source>
         <translation>Liitynnän rajat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3676"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3688"/>
         <source>Join style</source>
         <translation>Yhdistä tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3693"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3705"/>
         <source>Quadrant segments</source>
         <translation>Neljännessegmentit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3787"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3799"/>
         <source>GDAL driver options</source>
         <translation>GDAl ajurin vaihtoehdot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3809"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3821"/>
         <source>Edit Pyramids Options</source>
         <translation>Muokkaa pyramidien vaihtoehtoja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3829"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3841"/>
         <source>Edit Create Options</source>
         <translation>Muokkaa luonnin vaihtoehtoja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3839"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3851"/>
         <source>GDAL drivers</source>
         <translation>GDAL ajurit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3862"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3874"/>
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3867"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3879"/>
         <source>ext</source>
         <translation>laajuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3872"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3884"/>
         <source>Flags</source>
         <translation>Liput</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3877"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3889"/>
         <source>Description</source>
         <translation>Kuvaus</translation>
     </message>
@@ -44379,92 +44585,92 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Koordinaattijärjestelmä (CRS)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3930"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3942"/>
         <source>CRS for new layers</source>
         <translation>CRS uusille tasoille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3993"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4005"/>
         <source>When a new layer is created, or when a layer is loaded that has no CRS</source>
         <translation>Kun uusi taso on luotu, tai kun taso on ladattu, eikä sillä ole CRS</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4006"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4018"/>
         <source>Default CRS for new projects</source>
         <translation>Oletus CRS uusille projekteille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4019"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4031"/>
         <source>Automatically enable &apos;on the fly&apos; reprojection if CRS of a new added layer differ from CRS of layer(s) already present. CRS of present layer(s) will be used.</source>
         <translation>Ota käyttöön automaattisesti &apos;lennossa&apos; uudelleen projektointi jos lisätyn uuden tason CRS ero jo olemassa olevien tasojen CRS:stä. Nykyisen tason/tasojen CRS otetaan käyttöön.</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4022"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4034"/>
         <source>Automatically enable &apos;on the fly&apos; reprojection if layers have different CRS</source>
         <translation>Ota käyttöön automaattinen &apos;lennossa&apos; uudelleen projektointi jos tasoilla on eri CRS</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4036"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4048"/>
         <source>Don&apos;t enable &apos;on the fly&apos; reprojection</source>
         <translation>Älä mahdollista &apos;lennossa&apos; uudelleen projektointia</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4063"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4075"/>
         <source>Default datum transformations</source>
         <translation>Oletus koordinaattimuunnoksesta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4109"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4121"/>
         <source>Source CRS</source>
         <translation>Syötettävä CRS</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4114"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4126"/>
         <source>Destination CRS</source>
         <translation>Kohteen CRS</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4119"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4131"/>
         <source>Source datum transform</source>
         <translation>Syötettävän koordinaattimuunnos</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4124"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4136"/>
         <source>Destination datum transform</source>
         <translation>Tuloksen koordinaattimuunnos</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4132"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4144"/>
         <source>Ask for datum transformation when no default is defined</source>
         <translation>Kysy koordinaattimuunnosta jos oletusta ei ole määritelty</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4301"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4313"/>
         <source>Default expiration period for WMS-C/WMTS tiles (hours)</source>
         <translation>Oletus vanhenemisen ajanjakso WMS-C/WMTS kuvakkeille (tunneissa)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4319"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4331"/>
         <source>Max retry in case of tile request errors</source>
         <translation>Laattojen uusintapyyntöjen maksimimäärä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4337"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4349"/>
         <source>User-Agent</source>
         <translation>Käyttäjän toimija</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4375"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4387"/>
         <source>Size [KiB]</source>
         <translation>Koko [KiB]</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4385"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4397"/>
         <source>Clear</source>
         <translation>Tyhjennä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4283"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4295"/>
         <source>Timeout for network requests (ms)</source>
         <translation>Aikakatkaisu verkossa esitettyihin pyyntöihin (ms)</translation>
     </message>
@@ -44473,8 +44679,8 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Yhteensopivuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="169"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="172"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="175"/>
         <source>Digitizing</source>
         <translation>Digitointi</translation>
     </message>
@@ -44483,32 +44689,32 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Käytä uuden sukupolven symboliikkaa hahmottamiseen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="279"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="282"/>
         <source>Application</source>
         <translation>Sovellutus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="290"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="293"/>
         <source>Style &lt;i&gt;(QGIS restart required)&lt;/i&gt;</source>
         <translation>Tyyli &lt;i&gt;(QGIS uudelleen käynnistys tarpeellinen)&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="365"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="368"/>
         <source>Icon size</source>
         <translation>Ikonin koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="389"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="392"/>
         <source>16</source>
         <translation>16</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="394"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="397"/>
         <source>24</source>
         <translation>24</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="399"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="402"/>
         <source>32</source>
         <translation>32</translation>
     </message>
@@ -44517,22 +44723,22 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Valikon sijainti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2365"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2381"/>
         <source>Double click action in legend</source>
         <translation>Tupla klikkaus toiminto selitteessä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2386"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2402"/>
         <source>Open layer properties</source>
         <translation>Avaa tason ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2391"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2407"/>
         <source>Open attribute table</source>
         <translation>Avaa ominaisuustietotaulu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="556"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="559"/>
         <source>Show tips at start up</source>
         <translation>Näytä vinkit käynnistyksessä</translation>
     </message>
@@ -44541,27 +44747,26 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Avaa kohdistus vaihtoehdot lisäikkunaan (QGIS uudellenkäynnistys tarvitaan)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1310"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1326"/>
         <source>Open attribute table in a dock window (QGIS restart required)</source>
         <translation>Avaa ominaisuustietotaulu lisäikkunaan (QGIS uudelleenkäynnistys tarvitaan)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2494"/>
         <source>Add new layers to selected or current group</source>
-        <translation>Lisää uudet tasot valittuun tai nykyiseen ryhmään</translation>
+        <translation type="obsolete">Lisää uudet tasot valittuun tai nykyiseen ryhmään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1317"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1333"/>
         <source>Copy geometry in WKT representation from attribute table</source>
         <translation>Kopioi geometria WKT esityksessä ominaisuustietotaulusta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1371"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1387"/>
         <source>Attribute table row cache</source>
         <translation>Ominaisuustietotaulun rivien välimuisti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1411"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1427"/>
         <source>Representation for NULL values</source>
         <translation>NULL arvojen esitysmuoto</translation>
     </message>
@@ -44570,18 +44775,18 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Kysy rasterin alatasoja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1447"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1463"/>
         <source>Scan for valid items in the browser dock</source>
         <translation>Skannaa moitteettomia jäseniä selaimen lisäikkunassa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1474"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1490"/>
         <source>Scan for contents of compressed files (.zip) in browser dock</source>
         <translation>Skannaa pakattujen tiedostojen sisältöä (.zip) selaimen lisäikkunassa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="181"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="184"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="187"/>
         <source>GDAL</source>
         <translation>GDAL</translation>
     </message>
@@ -44590,7 +44795,7 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">GDAL ajurit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3845"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3857"/>
         <source>In some cases more than one GDAL driver can be used to load the same raster format. Use the list below to specify which to use.</source>
         <translation>Joissain tapauksissa useampaa kuin yhtä GDAL ajuria voidaan käyttää lataamaan samaa rasteriformaattia. Käytä alla olevaa listaa määritelleksesi mitä käytät.</translation>
     </message>
@@ -44599,43 +44804,43 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Liitännäiset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="995"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="998"/>
         <source>Plugin paths</source>
         <translation>Liitännäisten polku</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1001"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1004"/>
         <source>Path(s) to search for additional C++ plugins libraries</source>
         <translation>Polku (polut) josta haetaan muita C++ liitännäisten kirjastoja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="121"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="124"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="127"/>
         <source>Rendering</source>
         <translation>Hahmottaminen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1841"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1857"/>
         <source>Rasters</source>
         <translation>Rasterit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1853"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1869"/>
         <source>RGB band selection</source>
         <translation>RGB kaista valinta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1876"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1892"/>
         <source>Red band</source>
         <translation>Punainen kaista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1886"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1902"/>
         <source>Green band</source>
         <translation>Vihreä kaista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1896"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1912"/>
         <source>Blue band</source>
         <translation>Sininen kaista</translation>
     </message>
@@ -44644,27 +44849,27 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Käytä keskihajontaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1922"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1938"/>
         <source>Contrast enhancement</source>
         <translation>Kontrastinparannus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2589"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2598"/>
         <source>Identify</source>
         <translation>Tunnista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2635"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2644"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Specify the search radius as a percentage of the map width</source>
         <translation>&lt;b&gt;Huomautus:&lt;/b&gt; Määrittele hakusäde prosenteissa kartan leveydestä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2597"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2606"/>
         <source>Search radius for identifying features and displaying map tips</source>
         <translation>Hakusäde kohteiden tunnistamiseksi ja karttavinkkien näyttämiseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2100"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2116"/>
         <source>%</source>
         <translation>%</translation>
     </message>
@@ -44677,7 +44882,7 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Avaa ominaisuuslomake jos yksi ominaisuus on tunnistettu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2740"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2749"/>
         <source>Measure tool</source>
         <translation>Mittatyökalu</translation>
     </message>
@@ -44686,33 +44891,33 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Ellipsoidi etäisyyslaskentaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2746"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2755"/>
         <source>Rubberband color</source>
         <translation>Värinavigaattorista väri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2753"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2762"/>
         <source>Preferred measurements units</source>
         <translation>Suositut mittayksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2760"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2769"/>
         <source>Meters</source>
         <translation>Metrit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2767"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2776"/>
         <source>Feet</source>
         <translation>Jalat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2788"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2797"/>
         <source>Preferred angle units</source>
         <translation>Suositut kulmayksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2781"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2795"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2790"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2804"/>
         <source>Degrees</source>
         <translation>Asteet</translation>
     </message>
@@ -44721,62 +44926,62 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Hahmota tasot rinnakkain käyttäen kaikkia CPU ytimiä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1677"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1693"/>
         <source>Map update interval</source>
         <translation>Karttapäivitysten intervalli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1684"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1700"/>
         <source> ms</source>
         <translation> ms</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1715"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1731"/>
         <source>Enable feature simplification by default for newly added layers</source>
         <translation>Käytä ominaisuuksien yksinkertaistamista oletuksena uusille lisättäville tasoille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2802"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2811"/>
         <source>Radians</source>
         <translation>Radiaanit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2833"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2842"/>
         <source>Gon</source>
         <translation>Gon</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2881"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2890"/>
         <source>Panning and zooming</source>
         <translation>Panorointi ja zoomaus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2918"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2927"/>
         <source>Zoom</source>
         <translation>Zoomaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2923"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2932"/>
         <source>Zoom and recenter</source>
         <translation>Zoomaa ja keskitä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2928"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2937"/>
         <source>Zoom to mouse cursor</source>
         <translation>Zoomaa hiiren kursoriin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2933"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2942"/>
         <source>Nothing</source>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2890"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2899"/>
         <source>Zoom factor</source>
         <translation>Zoomauskerroin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2897"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2906"/>
         <source>Mouse wheel action</source>
         <translation>Hiiripyörän toiminta</translation>
     </message>
@@ -44789,257 +44994,257 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Sijainti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3358"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3370"/>
         <source>Rubberband</source>
         <translation>Värinavigaattori</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3393"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3405"/>
         <source>Line width</source>
         <translation>Viivan leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3377"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3389"/>
         <source>Line width in pixels</source>
         <translation>Viivan leveys pikseleinä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="97"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="100"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="103"/>
         <source>System</source>
         <translation>Järjestelmä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="109"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="112"/>
         <source>Data Sources</source>
         <translation>Tiedon lähteet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="112"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="115"/>
         <source>Data sources</source>
         <translation>Tiedon lähteet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="133"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="136"/>
         <source>Canvas &amp; Legend</source>
         <translation>Näyttöala &amp; Selite</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="136"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="139"/>
         <source>Canvas and legend</source>
         <translation>Näyttöala ja selite</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="145"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="148"/>
         <source>Map Tools</source>
         <translation>Karttatyökalut</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="157"/>
         <location filename="../src/ui/qgsoptionsbase.ui" line="160"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="163"/>
         <source>Composer</source>
         <translation>Mallin muodostus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="411"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="414"/>
         <source>Font</source>
         <translation>Kirjainlaji</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="424"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="427"/>
         <source>Qt default</source>
         <translation>Qt oletus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="490"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="493"/>
         <source>Timeout for timed messages or dialogs</source>
         <translation>Aikakatkaisu ajoitetuille viestelle tai dialogeille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="510"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="513"/>
         <source> s</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="573"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="576"/>
         <source>Bold group box titles</source>
         <translation>Vahvennetut ryhmälaatikoiden otsikot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="593"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="596"/>
         <source>QGIS-styled group boxes</source>
         <translation>QGIS-tyyliset ryhmälaatikot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="624"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="627"/>
         <source>Custom side bar style</source>
         <translation>Räätälöity sivupalkin tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="604"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="607"/>
         <source>Use live-updating color chooser dialogs</source>
         <translation>Käytä live-päivityksen värivalinnan dialogeja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="651"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="654"/>
         <source>New</source>
         <translation>Uusi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="656"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="659"/>
         <source>Most recent</source>
         <translation>Viimeisin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="661"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="664"/>
         <source>Specific</source>
         <translation>Erityinen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="727"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="730"/>
         <source>Open project on launch</source>
         <translation>Avaa projekti avauksessa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="736"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="739"/>
         <source>Create new project from default project</source>
         <translation>Luo uusi projekti oletus projektista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="761"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="764"/>
         <source>Set current project as default</source>
         <translation>Aseta nykyinen projekti oletukseksi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="768"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="771"/>
         <source>Reset default</source>
         <translation>Aseta oletus alkuarvoihin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="792"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="795"/>
         <source>Template folder</source>
         <translation>Mallien hakemisto</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="806"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="809"/>
         <source>Browse</source>
         <translation>Selaile</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="813"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1067"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="816"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1070"/>
         <source>Reset</source>
         <translation>Aseta alkuarvoihin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="822"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="825"/>
         <source>Prompt to save project and data source changes when required</source>
         <translation>Kysy tarvittaessa projektin tallennuksesta ja data lähteiden muutosten tallentamisesta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="829"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="832"/>
         <source>Prompt for confirmation when a layer is to be removed</source>
         <translation>Pyydä vahvistusta kun  taso poistetaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="845"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="848"/>
         <source>Enable macros</source>
         <translation>Salli makrot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="859"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="862"/>
         <source>Never</source>
         <translation>Ei koskaan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="864"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="867"/>
         <source>Ask</source>
         <translation>Kysy</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="869"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="872"/>
         <source>For this session only</source>
         <translation>Ainoastaan tälle istunnolle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="874"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="877"/>
         <source>Always (not recommended)</source>
         <translation>Aina (ei suositeltava)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1048"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1051"/>
         <source>QSettings</source>
         <translation>QSettings/QAsetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1074"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1077"/>
         <source>Reset the User Interface settings, to reset QGIS to it&apos;s default view</source>
         <translation>Käyttöliittymän asetukset takaisin alkuarvoihin, asettaaksei uudelleen QGIS sen oletusnäkymään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1090"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1093"/>
         <source>Environment</source>
         <translation>Ympäristö</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1130"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1257"/>
         <source>Apply</source>
         <translation>Käytä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1135"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1229"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1180"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1262"/>
         <source>Variable</source>
         <translation>Muuttuja</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1140"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1234"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1185"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1267"/>
         <source>Value</source>
         <translation>Arvo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1180"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1131"/>
         <source>Current environment variables (read-only - bold indicates modified at startup)</source>
         <translation>Nykyiset ympäristömuuttujat (ainoastaan luku - vahvennettu tarkoittaa käynnistyksessä muutettua)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1242"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1193"/>
         <source>Show only QGIS-specific variables</source>
         <translation>Näytä ainoastaan QGIS-erityiset muuttujat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1252"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1203"/>
         <source>Use custom variables (restart required - include separators)</source>
         <translation>Käytä räätälöityjä muuttujia (uudelleen käynnistys tarvitaan - ota mukaan erotinmerkit)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1304"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1320"/>
         <source>Feature attributes and table</source>
         <translation>Ominaisuuden ominaisuustiedot ja taulut</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1439"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1455"/>
         <source>Data source handling</source>
         <translation>Tietolähteen käsittely</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1511"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1527"/>
         <source>Prompt for raster sublayers when opening</source>
         <translation>Kysy rasterin alatasoja avattaessa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1545"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1561"/>
         <source>Ignore shapefile encoding declaration</source>
         <translation>Ohita shapefile koodauksen ilmoitus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1542"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1558"/>
         <source>Disable OGR on-the-fly conversion from declared encoding to UTF-8</source>
         <translation>Poista OGR &apos;lennossa&apos; muunnos ilmooitetusta koodauksesta UTF-8:aan</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1559"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1575"/>
         <source>Add Oracle layers with double click and select in extended mode</source>
         <translation>Lisää Oracle tasot tuplaklikkauksella ja valitse laajennettu tila</translation>
     </message>
@@ -45056,52 +45261,52 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">&lt;b&gt;Huomautus:&lt;/b&gt; Aseta alle 1000 estääksesi näytön päivittämisen kunnes kaikki ominaisuudet on hahmotettu</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1937"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1953"/>
         <source>Single band gray</source>
         <translation>Yhden kaistan harmaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1969"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1985"/>
         <source>Multi band color (byte / band) </source>
         <translation>Monikaista väri (tavu / kaista)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2001"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2017"/>
         <source>Multi band color (&gt; byte / band) </source>
         <translation>Monikaista väri (&gt; tavu / kaista)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2040"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2056"/>
         <source>Limits (minimum/maximum)</source>
         <translation>Rajat (minimi/maksimi)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2072"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2088"/>
         <source>Cumulative pixel count cut limits</source>
         <translation>Kumulatiivinen pikselien lukumäärän leikkauksen rajat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2086"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2102"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2129"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2145"/>
         <source>Standard deviation multiplier</source>
         <translation>Keskihajonnan kerroin</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2168"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2184"/>
         <source>Debugging</source>
         <translation>Testaus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2174"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2190"/>
         <source>Show these events in the Log Message panel (under Rendering tab)</source>
         <translation>Näytä nämä tapahtumat Lokin Viestipanelissa (Hahmottaminen välilehdellä)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2199"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2215"/>
         <source>Map canvas refresh</source>
         <translation>Karttapohjan virkistys</translation>
     </message>
@@ -45110,42 +45315,42 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Karttapohja ja selite</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2253"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2269"/>
         <source>Default map appearance (overridden by project properties)</source>
         <translation>Oletus kartan ulkoasu (ohitetaan projektin ominaisuuksilla)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2357"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2373"/>
         <source>Layer legend</source>
         <translation>Tason selite</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2438"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2454"/>
         <source>Capitalise layer names</source>
         <translation>Tasojen nimet isoilla kirjaimilla</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2451"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2467"/>
         <source>Bold layer names</source>
         <translation>Tasojen nimet vahvennettuina</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2458"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2474"/>
         <source>Display classification attribute names</source>
         <translation>Näytä luokittelevien ominaisuustietojen nimet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2465"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2481"/>
         <source>Bold group names</source>
         <translation>Vahvennetut ryhmien nimet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2472"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2488"/>
         <source>Create raster icons (may be slow)</source>
         <translation>Luo rasterin ikonit (voi olla hidas)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2485"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2501"/>
         <source>Legend item styles</source>
         <translation>Selitteen jäsenten tyylit</translation>
     </message>
@@ -45154,105 +45359,105 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Päällyksen sijainti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2944"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2953"/>
         <source>Predefined scales</source>
         <translation>Ennalta määrätyt mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2955"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2964"/>
         <source>Add predefined scale</source>
         <translation>Lisää ennalta määrätty mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2969"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2978"/>
         <source>Remove selected</source>
         <translation>Poista valitut</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="2983"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="2992"/>
         <source>Insert default scales</source>
         <translation>Lisää oletus mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3010"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3019"/>
         <source>Import from file</source>
         <translation>Vie tiedostosta</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3024"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3033"/>
         <source>Export to file</source>
         <translation>Vie tiedostoon</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3299"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3311"/>
         <source>Feature creation</source>
         <translation>Ominaisuuden luonti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3370"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3382"/>
         <source>Line color</source>
         <translation>Viivan väri</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3441"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3453"/>
         <source>Snapping</source>
         <translation>Kohdistus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3447"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3459"/>
         <source>Default snap mode</source>
         <translation>Oletus kohdistustila</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3464"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3476"/>
         <source>Default snapping tolerance</source>
         <translation>Oletus kohdistustilan toleranssi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3481"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3493"/>
         <source>Search radius for vertex edits</source>
         <translation>Hakusäde kärkipisteiden muokkaukseen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3505"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3519"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3517"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3531"/>
         <source>map units</source>
         <translation>karttayksiköt</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="1766"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3510"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3524"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="1782"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3522"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3536"/>
         <source>pixels</source>
         <translation>pikselit</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3571"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3583"/>
         <source>Open snapping options in a dock window (QGIS restart required)</source>
         <translation>Avaa kiinnityksen vaihtoehdot lisäikkunaan (QGIS uudelleenkäynnistys tarvitaan)</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3581"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3593"/>
         <source>Vertex markers</source>
         <translation>Kärkipisteen symboli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3650"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3662"/>
         <source>Show markers only for selected features</source>
         <translation>Näytä symbolit ainoastaan valituille kohteille</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3587"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3599"/>
         <source>Marker style</source>
         <translation>Symboliin tyyli</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3630"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3642"/>
         <source>Marker size</source>
         <translation>Symbolin koko</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3345"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3357"/>
         <source>Reuse last entered attribute values</source>
         <translation>Käytä uudelleen viimeksi annettua ominaisuustiedon arvoa</translation>
     </message>
@@ -45269,7 +45474,7 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Muut aseetukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="3315"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="3327"/>
         <source>Validate geometries</source>
         <translation>Tarkista geometriat</translation>
     </message>
@@ -45286,68 +45491,68 @@ Aina verkosta: lataa aina verkosta äläkä tarkista onko välimuistin merkintä
         <translation type="obsolete">Miter rajoite käyrän muutokselle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4171"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4183"/>
         <source>Override system locale</source>
         <translation>Ohita järjestelmän locale</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4180"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4192"/>
         <source>Locale to use instead</source>
         <translation>Locale jota käytetään</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4190"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4202"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Enabling / changing overide on local requires an application restart</source>
         <translation>&lt;b&gt;Huomautus:&lt;/b&gt; Mahdollistamalla/ muuttamalla ohituksen locale arvoon tarvitsee sovelluksen (QGIS) uudelleen käynnistyksen muutoksen voimaantuloon</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4203"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4215"/>
         <source>Additional Info</source>
         <translation>Lisäinfo</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4209"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4221"/>
         <source>Detected active locale on your system:</source>
         <translation>Löydettiin aktiivinen locale järjestelmässäsi:</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4395"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4407"/>
         <source>Use proxy for web access</source>
         <translation>Käytä proxya verkon käytössä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4413"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4425"/>
         <source>Host</source>
         <translation>Isäntä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4423"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4435"/>
         <source>Port</source>
         <translation>Portti</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4433"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4445"/>
         <source>User</source>
         <translation>Käyttäjä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4440"/>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4454"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4452"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4466"/>
         <source>Leave this blank if no proxy username / password are required</source>
         <translation>Jätä tämä tyhjäksi jos proxylle ei tarvita käyttäjänimi/salasanaa</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4447"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4459"/>
         <source>Password</source>
         <translation>Salasana</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4464"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4476"/>
         <source>Proxy type</source>
         <translation>Proxy tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsoptionsbase.ui" line="4269"/>
+        <location filename="../src/ui/qgsoptionsbase.ui" line="4281"/>
         <source>WMS search address</source>
         <translation>WMS haku osoite</translation>
     </message>
@@ -46694,10 +46899,9 @@ Virhe: %2</translation>
 <context>
     <name>QgsPasteTransformations</name>
     <message>
-        <location filename="../src/app/qgspastetransformations.cpp" line="36"/>
         <source>&amp;Add New Transfer</source>
         <translatorcomment>unsure....</translatorcomment>
-        <translation>&amp;Lisää uusi muunnos</translation>
+        <translation type="obsolete">&amp;Lisää uusi muunnos</translation>
     </message>
 </context>
 <context>
@@ -47405,6 +47609,11 @@ Virheilmoitus:
         <location filename="../src/ui/editorwidgets/qgsphotoconfigdlgbase.ui" line="14"/>
         <source>Form</source>
         <translation>Lomake</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/editorwidgets/qgsphotoconfigdlgbase.ui" line="23"/>
+        <source>The field contains a filename for a picture. The widget will show a preview of this picture.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/editorwidgets/qgsphotoconfigdlgbase.ui" line="33"/>
@@ -49162,25 +49371,25 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="238"/>
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="255"/>
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="323"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="453"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="507"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="592"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="621"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="632"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="676"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="690"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="790"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="813"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="824"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="876"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="459"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="513"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="598"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="627"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="638"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="682"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="696"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="796"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="819"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="830"/>
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="882"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="892"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="888"/>
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="898"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="903"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="904"/>
         <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="909"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="914"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1619"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1628"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="915"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="920"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1625"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1634"/>
         <source>PostGIS</source>
         <translation>PostGIS</translation>
     </message>
@@ -49215,12 +49424,12 @@ tulos:%2
 virhe:%3</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="453"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="459"/>
         <source>Database connection was successful, but the accessible tables could not be determined.</source>
         <translation>Tietokanta yhteys onnistui, mutta saatavilla olevia tauluja ei voitu päätellä.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="505"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="511"/>
         <source>Database connection was successful, but the accessible tables could not be determined. The error message from the database was:
 %1
 </source>
@@ -49229,7 +49438,7 @@ virhe:%3</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="590"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="596"/>
         <source>Database connection was successful, but the accessible tables could not be determined.
 The error message from the database was:
 %1</source>
@@ -49238,37 +49447,37 @@ Tietokannan virheilmoitus oli:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="621"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="627"/>
         <source>Database connection was successful, but no accessible tables were found.  Please verify that you have SELECT privilege on a table carrying PostGIS geometry.</source>
         <translation>Tietokanta yhteys onnistui, mutta saatavilla olevia tauluja ei voitu päätellä. Varmista, että sinulla on SELECT oikeus tauluun jossa PostGIS geometria.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="632"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="638"/>
         <source>Unable to get list of spatially enabled tables from the database</source>
         <translation>Ei saada luetteloa spatiaalisesti käytössä olevista tietokannan tauluista</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="676"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="682"/>
         <source>Retrieval of postgis version failed</source>
         <translation>PostGIS version haku epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="690"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="696"/>
         <source>Could not parse postgis version string &apos;%1&apos;</source>
         <translation>Ei voitu jäsentää merkkijonoa &apos;%1&apos; PostGIS versiosta</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="788"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="794"/>
         <source>Connection error: %1 returned %2 [%3]</source>
         <translation>Yhteysvirhe: %1 palautti %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="811"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="817"/>
         <source>Erroneous query: %1 returned %2 [%3]</source>
         <translation>Virheelinen kysely: %1 palautti %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="824"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="830"/>
         <source>Query failed: %1
 Error: no result buffer</source>
         <translation>Kysely epäonnistui: %1
@@ -49281,12 +49490,12 @@ Error: no result buffer</source>
 Virhe: ei tulospuskuria</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="872"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="878"/>
         <source>Query: %1 returned %2 [%3]</source>
         <translation>Kysely: %1 palautti %2 [%3]</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="880"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="886"/>
         <source>%1 cursor states lost.
 SQL: %2
 Result: %3 (%4)</source>
@@ -49295,98 +49504,98 @@ SQL: %2
 Tulos: %3 (%4)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="892"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="898"/>
         <source>resetting bad connection.</source>
         <translation>alustetaan uudelleen huono yhteys.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="898"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="904"/>
         <source>retry after reset succeeded.</source>
         <translation>uudelleen yritys resetin jälkeen onnistui.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="903"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="909"/>
         <source>retry after reset failed again.</source>
         <translation>uudelleen yritys resetin jälkeen epäonnistui taas.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="909"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="915"/>
         <source>connection still bad after reset.</source>
         <translation>yhteys huono edelleen resetin jälkeen.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="914"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="920"/>
         <source>bad connection, not retrying.</source>
         <translation>huono yhteys, ei yritetä uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1418"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1424"/>
         <source>Point</source>
         <translation>Piste</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1426"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1432"/>
         <source>Line</source>
         <translation>Viiva</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1434"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1440"/>
         <source>Polygon</source>
         <translation>Monikulmio</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1441"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1447"/>
         <source>No Geometry</source>
         <translation>Ei geometriaa</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1456"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1462"/>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1458"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1464"/>
         <source>Geometry</source>
         <translation>Geometria</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1460"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1466"/>
         <source>Geography</source>
         <translation>Geografia</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1462"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1468"/>
         <source>TopoGeometry</source>
         <translation>TopoGeometria</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1618"/>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1628"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1624"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1634"/>
         <source>Query could not be canceled [%1]</source>
         <translation>Kyselyä ei voitu peruuttaa [%1]</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1618"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1624"/>
         <source>PQgetCancel failed</source>
         <translation>PQgetCancel epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1422"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1428"/>
         <source>Multipoint</source>
         <translation>Monipiste</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1430"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1436"/>
         <source>Multiline</source>
         <translation>Moniviiva</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1438"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1444"/>
         <source>Multipolygon</source>
         <translation>Multipolygoni (Monimonikulmio)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1444"/>
+        <location filename="../src/providers/postgres/qgspostgresconn.cpp" line="1450"/>
         <source>Unknown Geometry</source>
         <translation>Tuntematon geometria</translation>
     </message>
@@ -49409,7 +49618,7 @@ Tulos: %3 (%4)</translation>
 <context>
     <name>QgsPostgresProvider</name>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="849"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="850"/>
         <source>Unable to access the %1 relation.
 The error message from the database was:
 %2.
@@ -49420,7 +49629,7 @@ Tietokannan virheilmoitus oli:
 SQL: %3</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="907"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="908"/>
         <source>Unable to determine table access privileges for the %1 relation.
 The error message from the database was:
 %2.
@@ -49431,134 +49640,134 @@ Tietokannan virheilmoitus oli:
 SQL: %3</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="156"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="157"/>
         <source>Whole number (smallint - 16bit)</source>
         <translation>Kokonaisluku (smallint - 16bit)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="121"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="122"/>
         <source>invalid PostgreSQL layer</source>
         <translation>virheellinen PostgreSQL taso</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="121"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="130"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="141"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="200"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="333"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="566"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="722"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="799"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="818"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="824"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="852"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="863"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="911"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="961"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="990"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1070"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1093"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1098"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1103"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1108"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1161"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1474"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2471"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="122"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="131"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="142"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="201"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="334"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="567"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="723"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="800"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="819"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="825"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="853"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="864"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="912"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="962"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="991"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1071"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1094"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1099"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1104"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1109"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1162"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1475"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2467"/>
         <source>PostGIS</source>
         <translation>PostGIS</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="130"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="131"/>
         <source>invalid PostgreSQL topology layer</source>
         <translation>virheellinen PostgreSQL topologia taso</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="141"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="142"/>
         <source>PostgreSQL layer has no primary key.</source>
         <translation>PostgreSQL tasolla ei ole primääriavainta.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="157"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="158"/>
         <source>Whole number (integer - 32bit)</source>
         <translation>Kokonaisluku (integer - 32bit)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="158"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="159"/>
         <source>Whole number (integer - 64bit)</source>
         <translation>Kokonaisluku (integer - 64bit)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="159"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="160"/>
         <source>Decimal number (numeric)</source>
         <translation>Desimaalinumero (numeric)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="160"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="161"/>
         <source>Decimal number (decimal)</source>
         <translation>Desimaalinumero (decimal)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="163"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="164"/>
         <source>Decimal number (real)</source>
         <translation>Desimaalinumero (reaali)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="164"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="165"/>
         <source>Decimal number (double)</source>
         <translation>Desimaaliluku</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="167"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="168"/>
         <source>Text, fixed length (char)</source>
         <translation>Teksti, kiinteä pituus (char)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="168"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="169"/>
         <source>Text, limited variable length (varchar)</source>
         <translation>Teksti, rajoitettu vaihtuva pituus (varchar)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="169"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="170"/>
         <source>Text, unlimited length (text)</source>
         <translation>Teksti, rajoittamaton pituus (text)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="172"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="173"/>
         <source>Date</source>
         <translation>Päiväys</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="200"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="201"/>
         <source>PostgreSQL layer has unknown primary key type.</source>
         <translation>PostgreSQL tasolla on tuntematon primääriavaimen tyyppi.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="566"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="567"/>
         <source>FAILURE: Field %1 not found.</source>
         <translation>VIRHE: Tietoa %1 ei löytynyt.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1070"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1071"/>
         <source>The table has no column suitable for use as a key. QGIS requires a primary key, a PostgreSQL oid column or a ctid for tables.</source>
         <translation>Taulussa ei ole sarakeetta joka soveltuu käytettäväksi avaimena. QGIS tarvitsee primääriavaimen, PostgreSQL oid sarakkeen tai ctid tiedon tauluille.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3142"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3148"/>
         <source>PostgreSQL version: unknown</source>
         <translation>PostgreSQL versio: tuntematon</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3143"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3149"/>
         <source>unknown</source>
         <translation>tuntematon</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3163"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3169"/>
         <source>PostgreSQL not connected</source>
         <translation>PostgreSQL ei yhdistetty</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3166"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="3172"/>
         <source>PostgreSQL/PostGIS provider
 %1
 PostGIS %2</source>
@@ -49571,7 +49780,7 @@ PostGIS %2</translation>
         <translation type="obsolete">Ei saatu kohteen geometriaa binäärisessä muodossa</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="333"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="334"/>
         <source>Read attempt on an invalid postgresql data source</source>
         <translation>Luku yritys virheelliseen postgresql tiedon lähteeseen</translation>
     </message>
@@ -49593,23 +49802,23 @@ Database error: %2</source>
         <translation type="obsolete">löytyi %1 kohdetta vain yhden sijasta.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="719"/>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="790"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="720"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="791"/>
         <source>unexpected formatted field type &apos;%1&apos; for field %2</source>
         <translation>odottamaton muotoiltu tietotyyppi &apos;%1&apos; tiedolle %2</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="799"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="800"/>
         <source>Field %1 ignored, because of unsupported type %2</source>
         <translation>Tieto %1 ohitettu koska se oli tukematonta tyyppiä %2</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="818"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="819"/>
         <source>Field %1 ignored, because of unsupported type type %2</source>
         <translation>Tieto %1 ohitettiin, koska tukematon tyyppi tyyppiä %2</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="961"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="962"/>
         <source>The custom query is not a select query.</source>
         <translation>Räätälöity kysely ei ole valittava kysely.</translation>
     </message>
@@ -49618,7 +49827,7 @@ Database error: %2</source>
         <translation type="obsolete">Taulussa ei ole sopivaa saraketta käytettäväksi avaimena. Quantum GIS tarvitsee ensisijaisen avaimen, PostgreSQL oid sarakkeen tai ctid tauluille.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1093"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1094"/>
         <source>Primary key field &apos;%1&apos; for view not unique.</source>
         <translation>Ensisijainen avain tieto &apos;%1&apos; näkymälle ei ole yksilöllinen.</translation>
     </message>
@@ -49627,77 +49836,77 @@ Database error: %2</source>
         <translation type="obsolete">Tyyppi &apos;%1&apos; ensisijaisen avain tiedon &apos;%2&apos; näkymässä on virheellinen.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1098"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1099"/>
         <source>Key field &apos;%1&apos; for view not found.</source>
         <translation>Avain tietoa &apos;%1&apos; näkymälle ei löytynyt.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1103"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1104"/>
         <source>No key field for view given.</source>
         <translation>Näytölle ei ole annettu avain tietoa.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1108"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1109"/>
         <source>Unexpected relation type &apos;%1&apos;.</source>
         <translation>Odottamaton relaatiotyyppi &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1161"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1162"/>
         <source>No key field for query given.</source>
         <translation>Kyselylle ei ole annettu avain tietoa.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1470"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1471"/>
         <source>Could not find topology of layer %1.%2.%3</source>
         <translation>Ei löydetty topologiaa taululle %1.%2.%3</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1796"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1797"/>
         <source>PostGIS error while adding features: %1</source>
         <translation>PostGIS virhe kun lisättiin kohteita: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1850"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1851"/>
         <source>PostGIS error while deleting features: %1</source>
         <translation>PostGIS virhe kun poistettiin kohteita: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1913"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1914"/>
         <source>PostGIS error while adding attributes: %1</source>
         <translation>PostGIS virhe kun lisättiin ominaisuustietoja: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1963"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="1964"/>
         <source>PostGIS error while deleting attributes: %1</source>
         <translation>PostGIS virhe kun poistettiin ominaisuustietoja: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2065"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2066"/>
         <source>PostGIS error while changing attributes: %1</source>
         <translation>PostGIS virhe kun muutettiin ominaisuustietoja: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2261"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2257"/>
         <source>PostGIS error while changing geometry values: %1</source>
         <translation>PostGIS virhe kun muutettiin geometria-arvoja: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2471"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2467"/>
         <source>result of extents query invalid: %1</source>
         <translation>kyselyn tulos alueesta virheellinen: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2709"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2712"/>
         <source>Geometry type and srid for empty column %1 of %2 undefined.</source>
         <translation>Geometria tyyppi ja srid tyhjälle sarakeelle %1 %2 määrittelemätön.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2737"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2741"/>
         <source>Feature type or srid for %1 of %2 could not be determined or was not requested.</source>
         <translation>Kohteen tyyppiä tai srid %1 %2 ei voida määritellä tai ei kysytty.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2760"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="2766"/>
         <source>Editing and adding disabled for 2D+ layer (%1; %2)</source>
         <translation>Muokkaaminen tai lisääminen estetty 2D+ tasolle (%1; %2)</translation>
     </message>
@@ -49724,14 +49933,14 @@ Kohteiden valinta ja tunnistus ei tule toimimaan oikein.
 Ole hyvä ja asenna PostGIS GEOS tuella (http://geos.refractions.net)</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="824"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="825"/>
         <source>Duplicate field %1 found
 </source>
         <translation>Duplikaatti tieto %1 löydetty
 </translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="863"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="864"/>
         <source>PostgreSQL is still in recovery after a database crash
 (or you are connected to a (read-only) slave).
 Write accesses will be denied.</source>
@@ -49740,7 +49949,7 @@ Write accesses will be denied.</source>
 Kirjoitusoikeudet kielletty.</translation>
     </message>
     <message>
-        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="988"/>
+        <location filename="../src/providers/postgres/qgspostgresprovider.cpp" line="989"/>
         <source>Unable to execute the query.
 The error message from the database was:
 %1.
@@ -49784,17 +49993,17 @@ SQL: %2</translation>
         <translation>%1 tiedostossa %2</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsproject.cpp" line="1052"/>
+        <location filename="../src/core/qgsproject.cpp" line="1063"/>
         <source>Unable to save to file %1</source>
         <translation>Virhe tallennettaessa tiedostoa %1</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsproject.cpp" line="1061"/>
+        <location filename="../src/core/qgsproject.cpp" line="1072"/>
         <source>%1 is not writable. Please adjust permissions (if possible) and try again.</source>
         <translation>%1 ei ole tallennettavissa. Muokkaa oikeuksia (jos mahdollista) ja yritä uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsproject.cpp" line="1180"/>
+        <location filename="../src/core/qgsproject.cpp" line="1192"/>
         <source>Unable to save to file %1. Your project may be corrupted on disk. Try clearing some space on the volume and check file permissions before pressing save again.</source>
         <translation>Ei voida tallentaa tiedostoon %1. Projektisi voi olla vioittunut. Yritä vapauttaa levytilaa ja tarvista tiedosto-oikeudet ennen kuin painat tallenna nappia uudestaan.</translation>
     </message>
@@ -49873,94 +50082,94 @@ Haluatko etsiä puuttuvat tasot?</translation>
 <context>
     <name>QgsProjectProperties</name>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="219"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="197"/>
         <source>Layer</source>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="220"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="198"/>
         <source>Type</source>
         <translation>Tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="221"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="199"/>
         <source>Identifiable</source>
         <translation>Tunnistettava</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="241"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="219"/>
         <source>Vector</source>
         <translation>Vektori</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="249"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="227"/>
         <source>WMS</source>
         <translation>WMS</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="253"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="231"/>
         <source>Raster</source>
         <translation>Rasteri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="743"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1094"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="728"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1090"/>
         <source>Coordinate System Restriction</source>
         <translation>Koordinaattijärjestelmän rajoitus</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="743"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="728"/>
         <source>No coordinate systems selected. Disabling restriction.</source>
         <translation>Koordinaattijärjestelmää ei valittu. Poistetaan rajoitukset.</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1148"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1144"/>
         <source>Select print composer</source>
         <translation>Valitse tulosteen muodostaja</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1148"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1144"/>
         <source>Composer Title</source>
         <translation>Muodostajan otsikko</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1170"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1166"/>
         <source>Select restricted layers and groups</source>
         <translation>Valitse rajoitetut tasot ja ryhmät</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1244"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1240"/>
         <source>Enter scale</source>
         <translation>Anna mittakaava</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1245"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1241"/>
         <source>Scale denominator</source>
         <translation>Mittakaavan nimittäjä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1269"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1265"/>
         <source>Load scales</source>
         <translation>Lataa mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1270"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1296"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1266"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1292"/>
         <source>XML files (*.xml *.XML)</source>
         <translation>XML tiedostot (*.xml *.XML)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1295"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1291"/>
         <source>Save scales</source>
         <translation>Talleta mittakaavat</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1444"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1440"/>
         <source>Select a valid symbol</source>
         <translation>Valitse oikea symboli</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1450"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1446"/>
         <source>Invalid symbol : </source>
         <translation>Virheellinen symboli : </translation>
     </message>
@@ -49969,62 +50178,62 @@ Haluatko etsiä puuttuvat tasot?</translation>
         <translation type="obsolete">Parametrit:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1496"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1600"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1601"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1492"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1596"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1597"/>
         <source>Parameters:</source>
         <translation>Parametrit:</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1600"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1601"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1596"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1597"/>
         <source>Select %1 from pull-down menu to adjust radii</source>
         <translation>Valitse %1 alasvetovalikosta asettaaksesi säteen</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1612"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1608"/>
         <source>Can only use ellipsoidal calculations when CRS transformation is enabled</source>
         <translation>Ellipsoidin laskentaa voidaan käyttää ainoastaan kun CRS muunnos on käytössä</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="172"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="150"/>
         <source>Selection color</source>
         <translation>Valinnan väri</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="898"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="894"/>
         <source>Measure tool (CRS transformation: %1)</source>
         <translation>Mittatyökalu (CRS muunnos: %1)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="899"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="895"/>
         <source>Canvas units (CRS transformation: %1)</source>
         <translation>Karttanäytön yksiköt (CRS muunnos: %1)</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="932"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="933"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="928"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="929"/>
         <source>OFF</source>
         <translation>OFF</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="943"/>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="944"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="939"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="940"/>
         <source>ON</source>
         <translation>ON</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1094"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1090"/>
         <source>CRS %1 was already selected</source>
         <translation>CRS %1 oli jo valittu</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1114"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1110"/>
         <source>Coordinate System Restrictions</source>
         <translation>Koordinaattijärjestelmän rajoitukset</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsprojectproperties.cpp" line="1115"/>
+        <location filename="../src/app/qgsprojectproperties.cpp" line="1111"/>
         <source>The current selection of coordinate systems will be lost.
 Proceed?</source>
         <translation>Nykyinen koordinaattijärjestelmän valita menetetään.
@@ -50233,54 +50442,59 @@ Proceed?</source>
         <translation>WMS valmiudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1421"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1527"/>
         <source>Add geometry to feature response</source>
         <translation>Lisää geometria kohteen vastaukseen</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1428"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1534"/>
         <source>Exclude layers</source>
         <translation>Poissulje tasot</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1489"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1832"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1898"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1595"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1859"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1925"/>
         <source>Advertised URL</source>
         <translation>Ilmoitetut URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1503"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1609"/>
         <source>Width</source>
         <translation>Leveys</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1532"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1638"/>
         <source>Height</source>
         <translation>Korkeus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1539"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1645"/>
         <source>Maximums for GetMap request</source>
         <translation>Maksimit GetMap pyynnölle</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1548"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1654"/>
         <source>Advertised extent</source>
         <translation>Ilmoitettu laajuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1657"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1421"/>
         <source>CRS restrictions</source>
         <translation>CRS rajoitukset</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1704"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1468"/>
         <source>Exclude composers</source>
         <translation>Poissulje muodostajat</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1772"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1765"/>
+        <source>Quality for JPEG images ( 10 : smaller image - 100 : best quality )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1799"/>
         <source>WFS capabilities</source>
         <translation>WFS valmiudet</translation>
     </message>
@@ -50289,39 +50503,39 @@ Proceed?</source>
         <translation type="obsolete">WFS valmiudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1798"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1825"/>
         <source>Update</source>
         <translation>Päivitä</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1803"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1830"/>
         <source>Insert</source>
         <translation>Lisää</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1808"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1835"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1816"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1882"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1843"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1909"/>
         <source>Unselect all</source>
         <translation>Poista valinta kaikista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1823"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1889"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1850"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1916"/>
         <source>Select all</source>
         <translation>Valitse kaikki</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1853"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1880"/>
         <source>WCS capabilities</source>
         <translation>WCS valmiudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1961"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1988"/>
         <source>Python macros</source>
         <translation>Python makrot</translation>
     </message>
@@ -50364,8 +50578,8 @@ Proceed?</source>
         <translation type="obsolete">WFS valmiudet</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1793"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1874"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1820"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1901"/>
         <source>Published</source>
         <translation>Julkaistu</translation>
     </message>
@@ -50498,27 +50712,27 @@ Proceed?</source>
         <translation type="obsolete">Ilmoitettu alueen laajuus</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1566"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1672"/>
         <source>Min. X</source>
         <translation>Min. X</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1583"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1689"/>
         <source>Min. Y</source>
         <translation>Min. Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1600"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1706"/>
         <source>Max. X</source>
         <translation>Max. X</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1617"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1723"/>
         <source>Max. Y</source>
         <translation>Max. Y</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1634"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1740"/>
         <source>Use Current Canvas Extent</source>
         <translation>Käytä nykyisen näyttöalueen laajuutta</translation>
     </message>
@@ -50535,7 +50749,7 @@ Proceed?</source>
         <translation type="obsolete">Poista</translation>
     </message>
     <message>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1686"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1450"/>
         <source>Used</source>
         <translation>Käytetty</translation>
     </message>
@@ -50581,8 +50795,8 @@ Proceed?</source>
     </message>
     <message>
         <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="849"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1788"/>
-        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1869"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1815"/>
+        <location filename="../src/ui/qgsprojectpropertiesbase.ui" line="1896"/>
         <source>Layer</source>
         <translation>Taso</translation>
     </message>
@@ -50604,27 +50818,27 @@ Proceed?</source>
         <translation type="obsolete">Kaikki</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsprojectionselector.cpp" line="501"/>
+        <location filename="../src/gui/qgsprojectionselector.cpp" line="503"/>
         <source>User Defined Coordinate Systems</source>
         <translation>Käyttäjän määrittelemät koordinaattijärjestelmät</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsprojectionselector.cpp" line="577"/>
+        <location filename="../src/gui/qgsprojectionselector.cpp" line="579"/>
         <source>Geographic Coordinate Systems</source>
         <translation>Maantieteelliset koordinaattijärjestelmät</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsprojectionselector.cpp" line="586"/>
+        <location filename="../src/gui/qgsprojectionselector.cpp" line="588"/>
         <source>Projected Coordinate Systems</source>
         <translation>Projektoidut koordinaattijärjestelmät</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsprojectionselector.cpp" line="1002"/>
+        <location filename="../src/gui/qgsprojectionselector.cpp" line="1004"/>
         <source>Resource Location Error</source>
         <translation>Resurssin paikannusvirhe</translation>
     </message>
     <message>
-        <location filename="../src/gui/qgsprojectionselector.cpp" line="1003"/>
+        <location filename="../src/gui/qgsprojectionselector.cpp" line="1005"/>
         <source>Error reading database file from: 
  %1
 Because of this the projection selector will not work...</source>
@@ -52202,18 +52416,18 @@ Klikkaa ohje näppäintä saadaksesi oikeat luonnin vaihtoehdot tälle muodolle.
         <translation>Tekstitiedosto</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1641"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1642"/>
         <source>Load layer properties from style file</source>
         <translation>Lataa tason asetuksia tyylitiedostosta</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1643"/>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1679"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1644"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1681"/>
         <source>QGIS Layer Style File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1677"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1679"/>
         <source>Save layer properties as style file</source>
         <translation>Tallenna tason asetuksia tyylitiedostoon</translation>
     </message>
@@ -52388,14 +52602,14 @@ Klikkaa ohje näppäintä saadaksesi oikeat luonnin vaihtoehdot tälle muodolle.
 </translation>
     </message>
     <message>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1607"/>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1627"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1608"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1628"/>
         <source>Default Style</source>
         <translation>Oletus tyyli</translation>
     </message>
     <message>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1665"/>
-        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1697"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1667"/>
+        <location filename="../src/app/qgsrasterlayerproperties.cpp" line="1696"/>
         <source>Saved Style</source>
         <translation>Tallennettiin tyyli</translation>
     </message>
@@ -54104,9 +54318,13 @@ keskihajonta ×</translation>
 <context>
     <name>QgsRelationAddDlgBase</name>
     <message>
-        <location filename="../src/ui/qgsrelationadddlgbase.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Valintaikkuna</translation>
+        <translation type="obsolete">Valintaikkuna</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgsrelationadddlgbase.ui" line="14"/>
+        <source>Add relation</source>
+        <translation type="unfinished">Lisää relaatio</translation>
     </message>
     <message>
         <location filename="../src/ui/qgsrelationadddlgbase.ui" line="26"/>
@@ -54339,32 +54557,32 @@ keskihajonta ×</translation>
     </message>
     <message>
         <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="199"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="337"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="336"/>
         <source>Scale area</source>
         <translation>Mittakaavan alue</translation>
     </message>
     <message>
         <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="200"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="341"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="340"/>
         <source>Scale diameter</source>
         <translation>Mittakaavan läpimitta</translation>
     </message>
     <message>
         <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="235"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="272"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="291"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="294"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="299"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="318"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="321"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="326"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="271"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="290"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="293"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="298"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="317"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="320"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="325"/>
         <source>- expression -</source>
         <translation>- lauseke -</translation>
     </message>
     <message>
         <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="239"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="287"/>
-        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="314"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="286"/>
+        <location filename="../src/gui/symbology-ng/qgsrendererv2widget.cpp" line="313"/>
         <source>- no field -</source>
         <translation>- ei tietoa -</translation>
     </message>
@@ -56321,29 +56539,29 @@ lisäys</translation>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3702"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3739"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3781"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3837"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3938"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3978"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4024"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4157"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4195"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4239"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4259"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4279"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4400"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4516"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4602"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4672"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4788"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4826"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4909"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3847"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3948"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3988"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4034"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4167"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4205"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4249"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4269"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4289"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4410"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4526"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4612"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4682"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4798"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4836"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4919"/>
         <source>SQLite error: %2
 SQL: %1</source>
         <translation>SQLite virhe: %2
 SQL: %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4919"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4929"/>
         <source>FAILURE: Field %1 not found.</source>
         <translation>VIRHE: Tietoa %1 ei löydetty.</translation>
     </message>
@@ -56356,20 +56574,20 @@ SQL: %1</translation>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3369"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3443"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3479"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3978"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4157"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4195"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4239"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4259"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4279"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4400"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4516"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4602"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4672"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4788"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4826"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4909"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3988"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4167"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4205"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4249"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4269"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4289"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4410"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4526"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4612"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4682"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4798"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4836"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4919"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4929"/>
         <source>SpatiaLite</source>
         <translation>SpatiaLite</translation>
     </message>
@@ -56379,10 +56597,10 @@ SQL: %1</translation>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3369"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3702"/>
         <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3781"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3837"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3938"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4024"/>
-        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4516"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3847"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="3948"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4034"/>
+        <location filename="../src/providers/spatialite/qgsspatialiteprovider.cpp" line="4526"/>
         <source>unknown cause</source>
         <translation>tuntematon syy</translation>
     </message>
@@ -58599,23 +58817,23 @@ Symbolien tietokannassa oli ongelma.</translation>
 <context>
     <name>QgsSvgCache</name>
     <message>
-        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="309"/>
+        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="313"/>
         <source>SVG request failed [error: %1 - url: %2]</source>
         <translation>SVG kysely epäonnistui [virhe: %1 - url: %2]</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="309"/>
-        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="332"/>
+        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="313"/>
+        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="336"/>
         <source>SVG</source>
         <translation>SVG</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="332"/>
+        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="336"/>
         <source>SVG request error [status: %1 - reason phrase: %2]</source>
         <translation>SVG kysely virhe [tila: %1 - syy fraasi: %2]</translation>
     </message>
     <message>
-        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="734"/>
+        <location filename="../src/core/symbology-ng/qgssvgcache.cpp" line="738"/>
         <source>%1 of %2 bytes of svg image downloaded.</source>
         <translation>%1 yhteensä %2 tavusta svg kuvassa ladattu.</translation>
     </message>
@@ -58868,9 +59086,13 @@ Symbolien tietokannassa oli ongelma.</translation>
     </message>
     <message>
         <location filename="../src/ui/qgssymbolv2selectordialogbase.ui" line="129"/>
-        <location filename="../src/ui/qgssymbolv2selectordialogbase.ui" line="155"/>
         <source>Move down</source>
         <translation>Siirrä alas</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgssymbolv2selectordialogbase.ui" line="155"/>
+        <source>Save symbol</source>
+        <translation type="unfinished">Tallenna symboli</translation>
     </message>
     <message>
         <location filename="../src/ui/qgssymbolv2selectordialogbase.ui" line="158"/>
@@ -58971,32 +59193,32 @@ Symbolien tietokannassa oli ongelma.</translation>
         <translation>Karttayksikkö</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="219"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="207"/>
         <source>Symbol name</source>
         <translation>Symbolin nimi</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="220"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="208"/>
         <source>Please enter name for the symbol:</source>
         <translation>Ole hyvä ja anna symbolin nimi:</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="220"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="208"/>
         <source>New symbol</source>
         <translation>Uusi symboli</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="227"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="215"/>
         <source>Save symbol</source>
         <translation>Tallenna symboli</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="228"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="216"/>
         <source>Symbol with name &apos;%1&apos; already exists. Overwrite?</source>
         <translation>Symboli nimellä &apos;%1&apos; on jo olemassa. Ylikirjoita?</translation>
     </message>
     <message>
-        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="271"/>
+        <location filename="../src/gui/symbology-ng/qgssymbolslistwidget.cpp" line="259"/>
         <source>Transparency %1%</source>
         <translation>Läpinäkyvyys: %1%</translation>
     </message>
@@ -59718,6 +59940,11 @@ Pitäisikö olemassa olevat luokat poistaa ennen luokitusta?</translation>
         <source>Form</source>
         <translation>Lomake</translation>
     </message>
+    <message>
+        <location filename="../src/gui/qgsunitselectionwidget.cpp" line="78"/>
+        <source>Adjust scaling range</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsValueMapConfigDlg</name>
@@ -59775,6 +60002,14 @@ Virhe oli:%2</translation>
         <location filename="../src/ui/editorwidgets/qgsvaluemapconfigdlgbase.ui" line="71"/>
         <source>Remove Selected</source>
         <translation>Poista valitut</translation>
+    </message>
+</context>
+<context>
+    <name>QgsValueRelationConfigDlg</name>
+    <message>
+        <location filename="../src/gui/editorwidgets/qgsvaluerelationconfigdlg.cpp" line="65"/>
+        <source>Edit filter expression</source>
+        <translation type="unfinished">Muokkaa suodatinlauseketta</translation>
     </message>
 </context>
 <context>
@@ -60090,12 +60325,12 @@ Virhe oli:%2</translation>
         <translation type="obsolete">ei hahmottajaa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="2188"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="2182"/>
         <source>ERROR: no provider</source>
         <translation>VIRHE: Ei tarjoajaa</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="2194"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="2188"/>
         <source>ERROR: layer not editable</source>
         <translation>VIRHE: Taso ei muokattavissa</translation>
     </message>
@@ -60219,7 +60454,7 @@ Virhe oli:%2</translation>
   Palveluntarjoajan virheet:</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="2211"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="2205"/>
         <source>Commit errors:
   %1</source>
         <translation>Tehdyt virheet:
@@ -60262,13 +60497,13 @@ Virhe oli:%2</translation>
         <translation type="obsolete">Tason koordinaattijärjestelmän yksiköt : </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3358"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3377"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3352"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3371"/>
         <source>xMin,yMin %1,%2 : xMax,yMax %3,%4</source>
         <translation>xMin,yMin %1,%2 : xMax,yMax %3,%4</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3363"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3357"/>
         <source>unknown extent</source>
         <translation>tuntematon alueen laajuus</translation>
     </message>
@@ -60285,7 +60520,7 @@ Virhe oli:%2</translation>
         <translation type="obsolete">Projektin (tulosteen) koordinaattijärjestelmä:</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3412"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3406"/>
         <source>(Invalid transformation of layer extents)</source>
         <translation>(Tason alueen muunnos virheellinen)</translation>
     </message>
@@ -60302,118 +60537,118 @@ Virhe oli:%2</translation>
         <translation type="obsolete">CRS</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="763"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="757"/>
         <source>Updating feature count for layer %1</source>
         <translation>Päivitetään kohteiden lukumäärä tasolle: %1</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="763"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="757"/>
         <source>Abort</source>
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3226"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3220"/>
         <source>General</source>
         <translation>Yleistä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3232"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3226"/>
         <source>Layer comment</source>
         <translation>Tason kommentti</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3239"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3233"/>
         <source>Storage type of this layer</source>
         <translation>Tämän kerroksen tallennustyyppi</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3247"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3241"/>
         <source>Description of this provider</source>
         <translation>Tämän palveluntarjoajan kuvaus</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3254"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3248"/>
         <source>Source for this layer</source>
         <translation>Tämän tason alkuperä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3271"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3265"/>
         <source>Geometry type of the features in this layer</source>
         <translation>Tämän tason ominaisuuksien geometriatyyppi</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3280"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3274"/>
         <source>Primary key attributes</source>
         <translation>Primääriavaimen ominaisuustiedot</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3291"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3285"/>
         <source>The number of features in this layer</source>
         <translation>Tämän tason ominaisuuksien lukumäärä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3296"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3290"/>
         <source>Editing capabilities of this layer</source>
         <translation>Tämän tason muokkausvalmiudet</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3305"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3299"/>
         <source>Extents</source>
         <translation>Alueet</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3309"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3303"/>
         <source>In layer spatial reference system units</source>
         <translation>Tason koordinaattijärjestelmän yksiköissä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3375"/>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3410"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3369"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3404"/>
         <source>In project spatial reference system units</source>
         <translation>Projektin koordinaattijärjestelmän yksiköissä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3388"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3382"/>
         <source>Layer Spatial Reference System</source>
         <translation>Tason koordinaattijärjestelmä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3399"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3393"/>
         <source>Project (Output) Spatial Reference System</source>
         <translation>Projektin (tulosteen) koordinaattijärjestelmä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3421"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3415"/>
         <source>Attribute field info</source>
         <translation>Ominaisuustiedon info</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3427"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3421"/>
         <source>Field</source>
         <translation>Kenttä</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3430"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3424"/>
         <source>Type</source>
         <translation>Tyyppi</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3433"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3427"/>
         <source>Length</source>
         <translation>Pituus</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3436"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3430"/>
         <source>Precision</source>
         <translation>Tarkkuus</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3439"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3433"/>
         <source>Comment</source>
         <translation>Kommentti</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayer.cpp" line="3702"/>
+        <location filename="../src/core/qgsvectorlayer.cpp" line="3696"/>
         <source>Error: qgis element could not be found</source>
         <translation>Virhe: qgis elementtiä ei löytynyt</translation>
     </message>
@@ -60421,7 +60656,7 @@ Virhe oli:%2</translation>
 <context>
     <name>QgsVectorLayerEditBuffer</name>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="258"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="256"/>
         <source>SUCCESS: %n attribute(s) deleted.</source>
         <comment>deleted attributes count</comment>
         <translation>
@@ -60430,7 +60665,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="267"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="265"/>
         <source>ERROR: %n attribute(s) not deleted.</source>
         <comment>not deleted attributes count</comment>
         <translation>
@@ -60439,7 +60674,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="287"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="285"/>
         <source>SUCCESS: %n attribute(s) added.</source>
         <comment>added attributes count</comment>
         <translation>
@@ -60448,7 +60683,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="296"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="294"/>
         <source>ERROR: %n new attribute(s) not added</source>
         <comment>not added attributes count</comment>
         <translation>
@@ -60457,17 +60692,37 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="320"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="318"/>
         <source>ERROR: the count of fields is incorrect after addition/removal of fields!</source>
         <translation>VIRHE: tietojen lukumäärä on virheellinen tietojen lisäyksen/poistamisen jälkeen!</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="330"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="329"/>
         <source>ERROR: field with index %1 is not the same!</source>
         <translation>VIRHE: tieto ei ole sama indeksi %1 kanssa!</translation>
     </message>
+    <message>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="330"/>
+        <source>Provider: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="331"/>
+        <source>Storage: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="333"/>
+        <source>expected field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="340"/>
+        <source>retrieved field</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="345"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="360"/>
         <source>SUCCESS: %n attribute value(s) changed.</source>
         <comment>changed attribute values count</comment>
         <translation>
@@ -60476,7 +60731,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="353"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="368"/>
         <source>ERROR: %n attribute value change(s) not applied.</source>
         <comment>not changed attribute values count</comment>
         <translation>
@@ -60485,7 +60740,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="378"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="393"/>
         <source>SUCCESS: %n feature(s) deleted.</source>
         <comment>deleted features count</comment>
         <translation>
@@ -60494,7 +60749,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="392"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="407"/>
         <source>ERROR: %n feature(s) not deleted.</source>
         <comment>not deleted features count</comment>
         <translation>
@@ -60503,7 +60758,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="417"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="432"/>
         <source>SUCCESS: %n feature(s) added.</source>
         <comment>added features count</comment>
         <translation>
@@ -60512,7 +60767,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="441"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="456"/>
         <source>ERROR: %n feature(s) not added.</source>
         <comment>not added features count</comment>
         <translation>
@@ -60521,7 +60776,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="460"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="475"/>
         <source>ERROR: %n feature(s) not added - provider doesn&apos;t support adding features.</source>
         <comment>not added features count</comment>
         <translation>
@@ -60530,7 +60785,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="477"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="492"/>
         <source>SUCCESS: %n geometries were changed.</source>
         <comment>changed geometries count</comment>
         <translation>
@@ -60539,7 +60794,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="485"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="500"/>
         <source>ERROR: %n geometries not changed.</source>
         <comment>not changed geometries count</comment>
         <translation>
@@ -60548,7 +60803,7 @@ Virhe oli:%2</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="499"/>
+        <location filename="../src/core/qgsvectorlayereditbuffer.cpp" line="507"/>
         <source>
   Provider errors:</source>
         <translation>
@@ -61873,24 +62128,54 @@ Virhe oli:%2</translation>
 <context>
     <name>QgsWFSProvider</name>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="102"/>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="107"/>
         <source>DescribeFeatureType failed for url %1</source>
         <translation>DescribeFeatureType epäonnistui url %1</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="102"/>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="107"/>
         <source>WFS</source>
         <translation>WFS</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1264"/>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1281"/>
         <source>unknown</source>
         <translation>tuntematon</translation>
     </message>
     <message>
-        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1270"/>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1287"/>
         <source>received %1 bytes from %2</source>
         <translation>vastaanotettu %1 tavua kokonaismäärästä: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1659"/>
+        <source>empty response</source>
+        <translation type="unfinished">tyhjä vastaus</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1665"/>
+        <source>WFS service exception:%1</source>
+        <translation type="unfinished">WFS palvelun poikkeus: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1671"/>
+        <source>unsuccessful service response: %1</source>
+        <translation type="unfinished">epäonnistunut palvelun vastaus: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1678"/>
+        <source>WFS exception report (code=%1 text=%2)</source>
+        <translation type="unfinished">WFS poikkeusraportti (koodi=%1 teksti=%2)</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1679"/>
+        <source>missing</source>
+        <translation type="unfinished">puuttuu</translation>
+    </message>
+    <message>
+        <location filename="../src/providers/wfs/qgswfsprovider.cpp" line="1685"/>
+        <source>unhandled response: %1</source>
+        <translation type="unfinished">käsittelemätön vastaus: %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -63146,6 +63431,11 @@ Vastaus oli:
         <translation>Lomake</translation>
     </message>
     <message>
+        <location filename="../src/ui/editorwidgets/qgswebviewconfigdlgbase.ui" line="20"/>
+        <source>Field contains a filename or URL for a webpage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/editorwidgets/qgswebviewconfigdlgbase.ui" line="27"/>
         <source>Width</source>
         <translation>Leveys</translation>
@@ -64252,9 +64542,13 @@ Syy: %2</translation>
 <context>
     <name>QgsWmtsDimensionsBase</name>
     <message>
-        <location filename="../src/ui/qgswmtsdimensionsbase.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialogi</translation>
+        <translation type="obsolete">Dialogi</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/qgswmtsdimensionsbase.ui" line="14"/>
+        <source>Select dimensions</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/qgswmtsdimensionsbase.ui" line="21"/>
@@ -64564,106 +64858,106 @@ Syy: %2</translation>
 <context>
     <name>RgShortestPathWidget</name>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="58"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="59"/>
         <source>Shortest path</source>
         <translation>Lyhin polku</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="69"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="70"/>
         <source>Start</source>
         <translation>Aloita</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="81"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="82"/>
         <source>Stop</source>
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="94"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="95"/>
         <source>Criterion</source>
         <translation>Kriteeri</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="96"/>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="103"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="97"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="104"/>
         <source>Length</source>
         <translation>Pituus</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="97"/>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="111"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="98"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="112"/>
         <source>Time</source>
         <translation>Aika</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="119"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="120"/>
         <source>Calculate</source>
         <translation>Laske</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="121"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="122"/>
         <source>Export</source>
         <translation>Vie</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="126"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="127"/>
         <source>Clear</source>
         <translation>Tyhjennä</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="131"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="132"/>
         <source>Help</source>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="238"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="239"/>
         <source>Point not selected</source>
         <translation>Pistettä ei valittu</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="238"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="239"/>
         <source>First, select start and stop points.</source>
         <translation>Ensiksi valitse lähtöpiste ja stop-pisteet.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="250"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="251"/>
         <source>Plugin isn&apos;t configured</source>
         <translation>Liitännäistä ei ole konfiguroitu</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="250"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="251"/>
         <source>Plugin isn&apos;t configured!</source>
         <translation>Liitännäistä ei ole konfiguroitu!</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="271"/>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="276"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="272"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="277"/>
         <source>Tie point failed</source>
         <translatorcomment>???</translatorcomment>
         <translation>Osumapiste epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="271"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="272"/>
         <source>Start point doesn&apos;t tie to the road!</source>
         <translation>Lähtöpiste ei osu tiehen!</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="276"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="277"/>
         <source>Stop point doesn&apos;t tie to the road!</source>
         <translation>Stop-piste ei osu tiehen!</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="291"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="292"/>
         <source>Cannot calculate path</source>
         <translation>Polkua ei voida laskea</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="292"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="293"/>
         <source>The created graph is empty. Please check your input data.</source>
         <translation>Luotu verkko on tyhjä. Ole hyvä ja tarkista syöttötiedot.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="307"/>
+        <location filename="../src/plugins/roadgraph/shortestpathwidget.cpp" line="308"/>
         <source>Path not found</source>
         <translation>Polkua ei löydy</translation>
     </message>
@@ -65368,207 +65662,207 @@ Kuvaus: %3</translation>
 <context>
     <name>SettingsDialogPythonConsole</name>
     <message>
-        <location filename="../python/console/console_settings.ui" line="262"/>
+        <location filename="../python/console/console_settings.ui" line="265"/>
         <source>Editor</source>
         <translation>Muokkaaja</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="268"/>
+        <location filename="../python/console/console_settings.ui" line="271"/>
         <source>Auto-save script before running</source>
         <translation>Skriptin automaattinen tallennus ennen suoritusta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="285"/>
-        <location filename="../python/console/console_settings.ui" line="817"/>
+        <location filename="../python/console/console_settings.ui" line="288"/>
+        <location filename="../python/console/console_settings.ui" line="820"/>
         <source>Font and Colors</source>
         <translation>Kirjasimet ja Värit</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="299"/>
-        <location filename="../python/console/console_settings.ui" line="831"/>
+        <location filename="../python/console/console_settings.ui" line="302"/>
+        <location filename="../python/console/console_settings.ui" line="834"/>
         <source>Font</source>
         <translation>Kirjasin</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="319"/>
-        <location filename="../python/console/console_settings.ui" line="851"/>
+        <location filename="../python/console/console_settings.ui" line="322"/>
+        <location filename="../python/console/console_settings.ui" line="854"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="355"/>
-        <location filename="../python/console/console_settings.ui" line="887"/>
+        <location filename="../python/console/console_settings.ui" line="358"/>
+        <location filename="../python/console/console_settings.ui" line="890"/>
         <source>Default:</source>
         <translation>Oletus:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="369"/>
-        <location filename="../python/console/console_settings.ui" line="901"/>
+        <location filename="../python/console/console_settings.ui" line="372"/>
+        <location filename="../python/console/console_settings.ui" line="904"/>
         <source>Keyword:</source>
         <translation>Avainsana:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="383"/>
-        <location filename="../python/console/console_settings.ui" line="915"/>
+        <location filename="../python/console/console_settings.ui" line="386"/>
+        <location filename="../python/console/console_settings.ui" line="918"/>
         <source>Class name:</source>
         <translation>Luokan nimi:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="397"/>
-        <location filename="../python/console/console_settings.ui" line="929"/>
+        <location filename="../python/console/console_settings.ui" line="400"/>
+        <location filename="../python/console/console_settings.ui" line="932"/>
         <source>Function:</source>
         <translation>Funktio:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="411"/>
-        <location filename="../python/console/console_settings.ui" line="943"/>
+        <location filename="../python/console/console_settings.ui" line="414"/>
+        <location filename="../python/console/console_settings.ui" line="946"/>
         <source>Decorator:</source>
         <translation>Koristelu:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="425"/>
-        <location filename="../python/console/console_settings.ui" line="957"/>
+        <location filename="../python/console/console_settings.ui" line="428"/>
+        <location filename="../python/console/console_settings.ui" line="960"/>
         <source>Comment:</source>
         <translation>Kommentti:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="439"/>
-        <location filename="../python/console/console_settings.ui" line="971"/>
+        <location filename="../python/console/console_settings.ui" line="442"/>
+        <location filename="../python/console/console_settings.ui" line="974"/>
         <source>Comment block:</source>
         <translation>Kommenttiblokki:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="453"/>
-        <location filename="../python/console/console_settings.ui" line="985"/>
+        <location filename="../python/console/console_settings.ui" line="456"/>
+        <location filename="../python/console/console_settings.ui" line="988"/>
         <source>Cursor:</source>
         <translation>Osoitin:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="467"/>
-        <location filename="../python/console/console_settings.ui" line="999"/>
+        <location filename="../python/console/console_settings.ui" line="470"/>
+        <location filename="../python/console/console_settings.ui" line="1002"/>
         <source>Caretline:</source>
         <translation>Osoitinviiva:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="481"/>
-        <location filename="../python/console/console_settings.ui" line="1013"/>
+        <location filename="../python/console/console_settings.ui" line="484"/>
+        <location filename="../python/console/console_settings.ui" line="1016"/>
         <source>Single quote:</source>
         <translation>Heittomerkki:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="495"/>
-        <location filename="../python/console/console_settings.ui" line="1027"/>
+        <location filename="../python/console/console_settings.ui" line="498"/>
+        <location filename="../python/console/console_settings.ui" line="1030"/>
         <source>Double quote:</source>
         <translation>Lainausmerkki:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="509"/>
-        <location filename="../python/console/console_settings.ui" line="1041"/>
+        <location filename="../python/console/console_settings.ui" line="512"/>
+        <location filename="../python/console/console_settings.ui" line="1044"/>
         <source>Triple single quote:</source>
         <translation>Kolminkert.heittomerkki:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="523"/>
-        <location filename="../python/console/console_settings.ui" line="1055"/>
+        <location filename="../python/console/console_settings.ui" line="526"/>
+        <location filename="../python/console/console_settings.ui" line="1058"/>
         <source>Triple double quote:</source>
         <translation>Kolminkert.lainausmerkki:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="537"/>
-        <location filename="../python/console/console_settings.ui" line="1069"/>
+        <location filename="../python/console/console_settings.ui" line="540"/>
+        <location filename="../python/console/console_settings.ui" line="1072"/>
         <source>Background:</source>
         <translation>Tausta:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="555"/>
-        <location filename="../python/console/console_settings.ui" line="1101"/>
+        <location filename="../python/console/console_settings.ui" line="558"/>
+        <location filename="../python/console/console_settings.ui" line="1104"/>
         <source>Reset to default colors</source>
         <translation>Palauta oletusväreihin</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="586"/>
-        <location filename="../python/console/console_settings.ui" line="706"/>
+        <location filename="../python/console/console_settings.ui" line="589"/>
+        <location filename="../python/console/console_settings.ui" line="709"/>
         <source>Typing</source>
         <translation>Kirjoittaminen</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="607"/>
-        <location filename="../python/console/console_settings.ui" line="727"/>
+        <location filename="../python/console/console_settings.ui" line="610"/>
+        <location filename="../python/console/console_settings.ui" line="730"/>
         <source>Automatic insertion of the &apos;import&apos; string on &apos;from xxx&apos;</source>
         <translation>Automaattinen lisäys &apos;tuonti&apos; merkkijonosta &apos;xxx&apos;</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="619"/>
-        <location filename="../python/console/console_settings.ui" line="739"/>
+        <location filename="../python/console/console_settings.ui" line="622"/>
+        <location filename="../python/console/console_settings.ui" line="742"/>
         <source>Autocompletion</source>
         <translation>Tekstintäydennys</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="677"/>
-        <location filename="../python/console/console_settings.ui" line="760"/>
+        <location filename="../python/console/console_settings.ui" line="680"/>
+        <location filename="../python/console/console_settings.ui" line="763"/>
         <source>Autocompletion threshold</source>
         <translation>Tekstintäydennyksen raja-arvo</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="1083"/>
+        <location filename="../python/console/console_settings.ui" line="1086"/>
         <source>Error:</source>
         <translation>Virhe:</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="642"/>
-        <location filename="../python/console/console_settings.ui" line="802"/>
+        <location filename="../python/console/console_settings.ui" line="645"/>
+        <location filename="../python/console/console_settings.ui" line="805"/>
         <source>Get autocompletion from current document</source>
         <translation>Hae tekstintäydennys nykyisestä asiakirjasta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="645"/>
-        <location filename="../python/console/console_settings.ui" line="805"/>
+        <location filename="../python/console/console_settings.ui" line="648"/>
+        <location filename="../python/console/console_settings.ui" line="808"/>
         <source>from Document</source>
         <translation>asiakirjasta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="662"/>
-        <location filename="../python/console/console_settings.ui" line="789"/>
+        <location filename="../python/console/console_settings.ui" line="665"/>
+        <location filename="../python/console/console_settings.ui" line="792"/>
         <source>Get autocompletion from installed APIs</source>
         <translation>tekstintäydennys asennetuista API:sta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="665"/>
-        <location filename="../python/console/console_settings.ui" line="792"/>
+        <location filename="../python/console/console_settings.ui" line="668"/>
+        <location filename="../python/console/console_settings.ui" line="795"/>
         <source>from APIs files</source>
         <translation>API tiedostoista</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="652"/>
-        <location filename="../python/console/console_settings.ui" line="779"/>
+        <location filename="../python/console/console_settings.ui" line="655"/>
+        <location filename="../python/console/console_settings.ui" line="782"/>
         <source>Get autocompletion from current document and installed APIs</source>
         <translation>Hae tekstintäydennys nykyisestä asiakirjasta ja asennetuista API:sta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="655"/>
-        <location filename="../python/console/console_settings.ui" line="782"/>
+        <location filename="../python/console/console_settings.ui" line="658"/>
+        <location filename="../python/console/console_settings.ui" line="785"/>
         <source>from Doc and APIs</source>
         <translation>asiakirjasta ja APIsta</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="275"/>
+        <location filename="../python/console/console_settings.ui" line="278"/>
         <source>Enable Object Inspector (switching between tabs may be slow)</source>
         <translation>Ota käyttöön Objektin tarkastaja (vaihto välilehdeltä toiselle voi olla hidasta)</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="600"/>
-        <location filename="../python/console/console_settings.ui" line="720"/>
+        <location filename="../python/console/console_settings.ui" line="603"/>
+        <location filename="../python/console/console_settings.ui" line="723"/>
         <source>Automatic parentheses insertion</source>
         <translation>Automaattinen sulkujen lisäys</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="700"/>
+        <location filename="../python/console/console_settings.ui" line="703"/>
         <source>Console</source>
         <translation>Konsoli</translation>
     </message>
     <message>
         <location filename="../python/console/console_settings.ui" line="69"/>
-        <location filename="../python/console/console_settings.ui" line="203"/>
+        <location filename="../python/console/console_settings.ui" line="206"/>
         <source>APIs</source>
         <translation>APIt</translation>
     </message>
@@ -65578,17 +65872,17 @@ Kuvaus: %3</translation>
         <translation>Käytetään ennakkoon ladattuja API tiedostoja</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="208"/>
+        <location filename="../python/console/console_settings.ui" line="211"/>
         <source>Path</source>
         <translation>Polku</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="218"/>
+        <location filename="../python/console/console_settings.ui" line="221"/>
         <source>Using prepared APIs file</source>
         <translation>Käytetään valmisteltuja API tiedostoja</translation>
     </message>
     <message>
-        <location filename="../python/console/console_settings.ui" line="239"/>
+        <location filename="../python/console/console_settings.ui" line="242"/>
         <source>Compile APIs...</source>
         <translation>Käännä APIt...</translation>
     </message>
@@ -65950,6 +66244,11 @@ Haluatko lisätä uuden tason Sisällysluetteloon (TOC)?</translation>
         <location filename="../src/ui/symbollayer/widget_centroidfill.ui" line="14"/>
         <source>Form</source>
         <translation>Lomake</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/symbollayer/widget_centroidfill.ui" line="22"/>
+        <source>Force point inside polygon</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Marker</source>
@@ -70594,7 +70893,7 @@ Liitännäistä ei voi käyttää.</translation>
 <context>
     <name>function_help</name>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1956"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1955"/>
         <source>&lt;h3&gt;$scale function&lt;/h3&gt;
 Returns the current scale of the map canvas.
 &lt;br&gt;
@@ -70623,7 +70922,7 @@ Huomautus: Tämä funktio on käytettävissä ainoastaan joissakin yhteyksissä,
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1609"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1608"/>
         <source>&lt;h3&gt;lpad() function&lt;/h3&gt;
 Returns a string with supplied width padded
 using the fill character.
@@ -70690,7 +70989,7 @@ geometry &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1666"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1665"/>
         <source>&lt;h3&gt;cos() function&lt;/h3&gt;
 Returns cosinus of an angle.
 
@@ -70719,7 +71018,7 @@ Palauttaa kulman kosinin.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1793"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1792"/>
         <source>
 &lt;h3&gt;color_cmyka() function&lt;/h3&gt;
 Returns a string representation of a color based on its cyan, magenta, yellow, black and alpha (transparency) components
@@ -70760,7 +71059,7 @@ Palauttaa merkkijonon joka edustaa väriä perustuen sen syaani, purppura, kelta
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1263"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1262"/>
         <source>&lt;h3&gt;day() function&lt;/h3&gt;
 Extract the day from a date, or the number of days
 from a &lt;code&gt;Interval&lt;/code&gt;
@@ -70856,7 +71155,7 @@ WFS tason kenttien arvojen lataamista ei ole tuettu, ennenkuin taso on todella l
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1402"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1401"/>
         <source>&lt;h3&gt;format_number() function&lt;/h3&gt;
 Returns a number formatted with the locale separator for thousands. 
 Also truncates the number to the number of supplied places. 
@@ -71077,7 +71376,7 @@ geometry &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1491"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1490"/>
         <source>&lt;h3&gt;ILIKE expression&lt;/h3&gt;
 Returns 1 if the first parameter matches case-insensitive the supplied pattern. LIKE can be used instead of ILIKE to make the match case-sensitive. Works with numbers also.
 
@@ -71108,7 +71407,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1545"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1544"/>
         <source>&lt;h3&gt;LIKE expression&lt;/h3&gt;
 Returns 1 if the first parameter matches the supplied pattern. Works with numbers also.
 
@@ -71207,7 +71506,7 @@ Palauttaa -1 jos lauseketta ei löydy.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1995"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1994"/>
         <source>&lt;h3&gt;xmin function&lt;/h3&gt;
 Returns the minimum x coordinate of a geometry. Calculations are in the Spatial Reference System of this Geometry. 
 
@@ -71236,7 +71535,7 @@ geom &amp;rarr; geometria
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2024"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2023"/>
         <source>&lt;h3&gt;combine function&lt;/h3&gt;
 Returns the combination of geometry a and geometry b.
 
@@ -71333,7 +71632,7 @@ Palauttaa osamerkkijoukon joka sisältää &lt;i&gt;n&lt;/i&gt; oikean puolimmai
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1382"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1381"/>
         <source>&lt;h3&gt;clamp() function&lt;/h3&gt;
 Restricts an input value to a specified range.
 
@@ -71410,7 +71709,6 @@ Palauttaa merkkijonon annetulla merkkijonolla korvattuna..
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1223"/>
         <source>&lt;h3&gt;IS expression&lt;/h3&gt;
 Returns 1 if a is the same as b.
 
@@ -71430,7 +71728,7 @@ None
 &lt;pre&gt; $geometry IS NULL  &amp;rarr; returns 0, if your geometry is not NULL&lt;/pre&gt;
 
 </source>
-        <translation>&lt;h3&gt;IS lauseke&lt;/h3&gt;
+        <translation type="obsolete">&lt;h3&gt;IS lauseke&lt;/h3&gt;
 Palauttaa 1 jos a on sama kuin b.
 
 &lt;h4&gt;Syntaksi&lt;/h4&gt;
@@ -71451,7 +71749,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1574"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1573"/>
         <source>&lt;h3&gt;disjoint function&lt;/h3&gt;
 Returns 1 if the geometries do not &quot;spatially intersect&quot; - if they do not share any space together. 
 
@@ -71573,7 +71871,7 @@ geometry &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1296"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1295"/>
         <source>&lt;h3&gt;geomToWKT function&lt;/h3&gt;
 Returns the Well-Known Text (WKT) representation of the geometry without SRID metadata.
 
@@ -71662,7 +71960,7 @@ b &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2092"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2091"/>
         <source>&lt;h3&gt;sqrt() function&lt;/h3&gt;
 Returns square root of a value
 
@@ -71736,7 +72034,7 @@ This group contains functions to convert on data type to another e.g string to i
 Tämä ryhmä sisältää funktot joilla muunnetaan eri datatyyppejä toisiin, esim. merkkijono numeroksi, numero merkkijonoksi.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1764"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1763"/>
         <source>&lt;h3&gt;CASE expression&lt;/h3&gt;
 A conditional expression that can be used to evaluate multiple expressions and
 return a result.
@@ -71796,7 +72094,7 @@ Ehdollinen lauseke jota voidaan käyttää useiden lausekkeiden ratkaisemiseksi 
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1478"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1477"/>
         <source>&lt;h3&gt;abs() function&lt;/h3&gt;
 Returns the absolute value of a number.&lt;br&gt;
 
@@ -71824,7 +72122,7 @@ abs(&lt;i&gt;value&lt;/i&gt;)&lt;br&gt;
 &lt;code&gt;abs(-2) &amp;rarr; 2&lt;/code&gt;&lt;br</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1588"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1587"/>
         <source>&lt;h3&gt;round() function&lt;/h3&gt;
 Rounds a number to number of decimal places.
 &lt;br&gt;
@@ -71870,7 +72168,7 @@ use &lt;code&gt;round(decimal)&lt;/code&gt; pyöristetään lähimpään kokonai
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2021"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2020"/>
         <source>&lt;h3&gt;Date and Time Group&lt;/h3&gt;
 This group contains functions for handling date and time data.
 </source>
@@ -71947,7 +72245,7 @@ käytä &lt;code&gt;day&lt;/code&gt; saadaksesi päivien lukumäärän&lt;br&gt;
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1895"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1894"/>
         <source>&lt;h3&gt;title() function&lt;/h3&gt;
 Converts all words of a string to title case (all words lower case with leading
 capital letter).
@@ -71979,7 +72277,7 @@ Muuntaa merkkijonon kaikki sanat otsikkomuotoon (kaikki sanat pienistä isoon et
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1939"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1938"/>
         <source>&lt;h3&gt;Conditions Group&lt;/h3&gt;
 This group contains functions that operate on condition.
 </source>
@@ -72075,7 +72373,7 @@ Palauttaa arcustangentin arvon radiaaneina.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1679"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1678"/>
         <source>&lt;h3&gt;lower() function&lt;/h3&gt;
 Converts a string to lower case letters.
 
@@ -72160,7 +72458,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1559"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1558"/>
         <source>&lt;h3&gt;regexp_match() function&lt;/h3&gt;
 Returns true if any part of a string matches the supplied regular expression.
 
@@ -72193,7 +72491,7 @@ Palauttaa toden jos mikä tahansa merkkijonon osa vastaa annettua säännöllist
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1434"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1433"/>
         <source>&lt;h3&gt;rand() function&lt;/h3&gt;
 Returns a random integer within the range specified by the minimum and 
 maximum argument (inclusive).
@@ -72294,7 +72592,7 @@ Muuntaa merkkijonon Qt päivämäärä tyyppiin.
 &lt;code&gt;todate(&apos;2012-05-04&apos;) &amp;rarr; 2012-05-04&lt;/code&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1451"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1450"/>
         <source>&lt;h3&gt;regexp_substr() function&lt;/h3&gt;
 Returns the portion of a string which matches a supplied regular expression.
 
@@ -72387,7 +72685,7 @@ Muuntaa merkkijonon interval tyyypiksi.  Voidaan käyttää ottamaan päiviä, t
 &lt;code&gt;todatetime(&apos;2012-05-05 12:00:00&apos;) - tointerval(&apos;1 päivää 2 tuntia&apos;) &amp;rarr; 2012-05-04T10:00:00&lt;/code&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1923"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1922"/>
         <source>&lt;h3&gt;left() function&lt;/h3&gt;
 Returns a substring that contains the &lt;i&gt;n&lt;/i&gt; leftmost characters of the string.
 
@@ -72422,7 +72720,7 @@ Palauttaa osamerkkijoukon joka sisältää &lt;i&gt;n&lt;/i&gt; vasemmanpuoleisi
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1838"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1837"/>
         <source>&lt;h3&gt;$id function&lt;/h3&gt;
 Returns the feature id of the current row.
 
@@ -72523,7 +72821,7 @@ Palauttaa merkkijonon värin esityksestä perustuen sen sävyn, kylläisyyden, v
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1340"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1339"/>
         <source>&lt;h3&gt;$y function&lt;/h3&gt;
 Returns the y coordinate of the current feature.
 
@@ -72560,7 +72858,7 @@ This group contains functions that operate on record identifiers.
 Tämä ryhmä sisältää toiminnot, jotka toimivat tietuetunnuksilla.</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1748"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1747"/>
         <source>&lt;h3&gt;log10() function&lt;/h3&gt;
 Returns the value of the base 10 logarithm of the passed expression.
 &lt;br&gt;
@@ -72795,6 +73093,24 @@ geom &amp;rarr; geometria
 </translation>
     </message>
     <message>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="888"/>
+        <source>&lt;h3&gt;contains function&lt;/h3&gt;
+Returns true if and only if no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a. 
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;contains( geometry a , geometry b)&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+geometry &amp;rarr; geometry
+geometry &amp;rarr; geometry
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; returns 0&lt;/pre&gt;
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/core/qgsexpression_texts.cpp" line="974"/>
         <source>&lt;h3&gt;bbox function&lt;/h3&gt;
 Returns 1 if the geometries spatially intersect the bounding box defined and 0 if they don&apos;t.
@@ -72945,7 +73261,29 @@ ei ehkä anna odotettuja tuloksia jos siirrät QGIS projektisia .
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1308"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1223"/>
+        <source>&lt;h3&gt;IS expression&lt;/h3&gt;
+Returns 1 if a is the same as b.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;a IS b&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+None
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;A&apos;  &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;a&apos;  &amp;rarr; returns 0 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 4      &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2+2    &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2      &amp;rarr; returns 0 &lt;/pre&gt;
+&lt;pre&gt; $geometry IS NULL  &amp;rarr; returns 0, if your geometry is not NULL&lt;/pre&gt;
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1307"/>
         <source>&lt;h3&gt;toreal() function&lt;/h3&gt;
 Converts a string to real number. Nothing changed if a value cannot be converted to real (e.g &apos;123.56asd&apos; is invalid). Numbers are rounded after saving changes if the precision is smaller than the result of the conversion.
 
@@ -72976,7 +73314,7 @@ Muuntaa merkkijonon liukuluvuksi (real). Mikään ei muutu jos arvoa ei voida mu
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1366"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1365"/>
         <source>&lt;h3&gt;color_hsv() function&lt;/h3&gt;
 Returns a string representation of a color based on its hue, saturation, and value attributes
 
@@ -73011,7 +73349,7 @@ Palauttaa merkkijono joka edustaa väriä perustuen sen sävy, kylläisyys ja ar
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1691"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1690"/>
         <source>&lt;h3&gt;$atlasgeometry function&lt;/h3&gt;
 Returns the geometry of the current feature iterated in atlas.
 Can be used for rule based display of geometry when using atlas.
@@ -73047,7 +73385,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1707"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1706"/>
         <source>&lt;h3&gt;$atlasfeatureid function&lt;/h3&gt;
 Returns the feature id of the current row while using atlas.
 This enables you to use features of atlas in rules 
@@ -73080,7 +73418,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1812"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1811"/>
         <source>&lt;h3&gt;bounds_width function&lt;/h3&gt;
 Returns the width of the bounding box of a geometry. Calculations are in the Spatial Reference System of this Geometry. 
 
@@ -73109,7 +73447,7 @@ geom &amp;rarr; geometria
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1910"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1909"/>
         <source>&lt;h3&gt;bounds_height function&lt;/h3&gt;
 Returns the height of the bounding box of a geometry. Calculations are in the Spatial Reference System of this Geometry. 
 
@@ -73138,7 +73476,7 @@ geom &amp;rarr; geometria
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1969"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1968"/>
         <source>&lt;h3&gt;xat() function&lt;/h3&gt;
 Retrieves a x coordinate of the current feature
 
@@ -73165,7 +73503,7 @@ Palauttaa nykyisen ominaisuuden x koordinaatine
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2105"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2104"/>
         <source>&lt;h3&gt;ymin function&lt;/h3&gt;
 Returns the minimum y coordinate of a geometry. Calculations are in the Spatial Reference System of this Geometry. 
 
@@ -73236,7 +73574,7 @@ ei ehkä anna oikaa odotettua lopputulosta jos siirrät QGIS hankettasi.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1322"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1321"/>
         <source>&lt;h3&gt;$pi constant&lt;/h3&gt;
 Returns pi as value for calculations
 
@@ -73263,7 +73601,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1880"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1879"/>
         <source>&lt;h3&gt;floor() function&lt;/h3&gt;
 Rounds a number downwards.
 
@@ -73385,7 +73723,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1653"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1652"/>
         <source>&lt;h3&gt;centroid function&lt;/h3&gt;
 Returns the geometric center of a geometry.
 
@@ -73481,7 +73819,7 @@ $map &amp;rarr; &quot;karttapohja (QGIS pääkarttapohjasta)&lt;/pre&gt;
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1283"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1282"/>
         <source>&lt;h3&gt;distance function&lt;/h3&gt;
  Returns the minimum distance (based on spatial ref) between two geometries in projected units.
 
@@ -73539,7 +73877,7 @@ geometry &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1419"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1418"/>
         <source>&lt;h3&gt;NOT&lt;/h3&gt;
 Returns 1 if a is not the same as b.
 
@@ -73601,7 +73939,7 @@ Palauttaa arcussinin arvon radiaaneina.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1942"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1941"/>
         <source>&lt;h3&gt;toint() function&lt;/h3&gt;
 Converts a string to integer number. Nothing changed if a value cannot be converted to integer (e.g &apos;123asd&apos; is invalid).
 
@@ -73632,7 +73970,7 @@ Muuntaa merkkijonon kokonaisluvuksi. Mitään ei muuteta jos arvoa ei voida muun
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1640"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1639"/>
         <source>&lt;h3&gt;$perimeter function&lt;/h3&gt;
 Returns the perimeter length of the current feature.
 
@@ -73661,7 +73999,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1722"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1721"/>
         <source>&lt;h3&gt;yat() function&lt;/h3&gt;
 Retrieves a y coordinate of the current feature
 
@@ -73688,7 +74026,7 @@ Hakee nykyisen ominaisuuden y koordinaatin
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2078"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2077"/>
         <source>&lt;h3&gt;tostring() function&lt;/h3&gt;
 Converts a number to string.
 
@@ -73909,7 +74247,7 @@ Erottelee vuosiosan päiväyksestä, tai vuosien lukumäärän &lt;code&gt;Inter
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1353"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1352"/>
         <source>&lt;h3&gt;$now function&lt;/h3&gt;
 Returns the current date and time
 
@@ -73938,7 +74276,6 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="888"/>
         <source>&lt;h3&gt;contains function&lt;/h3&gt;
  Returns true if and only if no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a. 
 
@@ -73953,7 +74290,7 @@ geometry &amp;rarr; geometry
 &lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation>&lt;h3&gt;contains funktio&lt;/h3&gt;
+        <translation type="obsolete">&lt;h3&gt;contains funktio&lt;/h3&gt;
 Palauttaa arvon tosi jos ja ainoastaan jos yhtään ainutta pistettä ei ole a:n ulkopuolella, ja vähintään b:n yksi sisäpuolinen piste  sijaitsee a:n sisäpuolella. 
 
 &lt;h4&gt;Syntaksi&lt;/h4&gt;
@@ -73969,7 +74306,7 @@ geometry &amp;rarr; geometry
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1825"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1824"/>
         <source>&lt;h3&gt;$rownum function&lt;/h3&gt;
 Returns the number of the current row.
 
@@ -74042,7 +74379,7 @@ tai muuten &quot;fallbackField&quot; arvo tai merkkijono &apos;ERROR&apos; jos m
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1867"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1866"/>
         <source>&lt;h3&gt;todatetime() function&lt;/h3&gt;
 Convert a string into Qt data time type.
 
@@ -74072,7 +74409,7 @@ Muuntaa merkkijonon Qt data time tyypiksi.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1734"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1733"/>
         <source>&lt;h3&gt;min() function&lt;/h3&gt;
 Returns the smallest value in a set of values.
 
@@ -74137,7 +74474,7 @@ Palauttaa merkkijonon esityksen väristä joka perustuu sen sävyn, kylläisyyde
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1334"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1333"/>
         <source>&lt;h3&gt;String Group&lt;/h3&gt;
 This group contains functions that operate on strings e.g replace, convert to upper case.
 </source>
@@ -74146,7 +74483,7 @@ Tämä ryhmä sisältää funktiot joilla operoidaan merkkijonoja esim. korvaust
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2058"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2057"/>
         <source>&lt;h3&gt;month() function&lt;/h3&gt;
 Extract the month part from a date, or the number of months
 from a &lt;code&gt;Interval&lt;/code&gt;
@@ -74189,7 +74526,7 @@ Erottelee kuukaisiosan päiväyksestä, tai kuukausien lukumäärän
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2038"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2037"/>
         <source>&lt;h3&gt;scale_linear() function&lt;/h3&gt;
 Transforms a given value from an input domain to an output range using linear interpolation. 
 
@@ -74335,7 +74672,7 @@ Palauttaa merkkijonon värin esityksestä perustuen sen punaisen, vihreän ja si
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1981"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1980"/>
         <source>&lt;h3&gt;trim() function&lt;/h3&gt;
 Removes all leading and trailing whitespace (spaces, tabs, etc) from a string.
 
@@ -74488,7 +74825,7 @@ Erottelee minuutit datetime tai time tiedosta, tai minuuttien lukumäärän
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="2008"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="2007"/>
         <source>&lt;h3&gt;$x function&lt;/h3&gt;
 Returns the x coordinate of the current feature.
 
@@ -74517,7 +74854,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1242"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1241"/>
         <source>&lt;h3&gt;second() function&lt;/h3&gt;
 Extract the seconds from a datetime or time, or the number of seconds
 from a &lt;code&gt;Interval&lt;/code&gt;
@@ -74629,7 +74966,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1466"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1465"/>
         <source>&lt;h3&gt;$length function&lt;/h3&gt;
 Returns the length of the current feature.
 
@@ -74656,7 +74993,7 @@ Ei mitään
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1505"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1504"/>
         <source>&lt;h3&gt;tan() function&lt;/h3&gt;
 Returns tangent of an angle.
 
@@ -74728,7 +75065,7 @@ Erottelee viikon numeron päiväyksestä, viikkojen määrän
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1531"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1530"/>
         <source>&lt;h3&gt;length() function&lt;/h3&gt;
 Returns the length of a string.
 
@@ -74769,7 +75106,7 @@ Tämä ryhmä sisältää funktiot värien käsittelyyn
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1851"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1850"/>
         <source>&lt;h3&gt;atan2() function&lt;/h3&gt;
 Returns arcustangens of y/x using the signs of the two 
 arguments to determine the quadrant of the result
@@ -74867,7 +75204,7 @@ Kokoaa useita merkkijonoja yhdeksi merkkijonoksi.
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1518"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1517"/>
         <source>&lt;h3&gt;acos() function&lt;/h3&gt;
 Returns arcuscosinus of a value in radians.
 
@@ -75337,7 +75674,7 @@ Muotoillee tyypin tai merkkijonon räätälöidyksi merkkijonoksi. Käyttää Qt
 </translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1337"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1336"/>
         <source>&lt;h3&gt;Operators Group&lt;/h3&gt;
 This group contains operators e.g + - * 
 </source>
@@ -75345,7 +75682,7 @@ This group contains operators e.g + - *
 Tämä ryhmä sisältää operaattorit esim. + - *</translation>
     </message>
     <message>
-        <location filename="../src/core/qgsexpression_texts.cpp" line="1627"/>
+        <location filename="../src/core/qgsexpression_texts.cpp" line="1626"/>
         <source>&lt;h3&gt;sin() function&lt;/h3&gt;
 Returns sinus of an angle.
 
@@ -77735,18 +78072,18 @@ Palauttaa kulman sinin.
         <location filename="../src/plugins/topology/topolTest.cpp" line="531"/>
         <location filename="../src/plugins/topology/topolTest.cpp" line="537"/>
         <location filename="../src/plugins/topology/topolTest.cpp" line="543"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="772"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="778"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="873"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="944"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1178"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1267"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1352"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1443"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1517"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1558"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1677"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1683"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="770"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="776"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="871"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="942"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1176"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1265"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1350"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1441"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1515"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1556"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1675"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1681"/>
         <source>Topology plugin</source>
         <translation>Topologia liitännäinen</translation>
     </message>
@@ -77811,35 +78148,35 @@ Palauttaa kulman sinin.
         <translation>Ohitetaan ominaisuuden %1 virheellinen toinen geometria päällekkäisyystestissä.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="772"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="770"/>
         <source>Skipping invalid first geometry in pseudo line test.</source>
         <translation>Ohitetaan virheellinen ensimmäinen geometria pseudo viivan testissä.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="778"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="776"/>
         <source>Failed to import first geometry into GEOS in pseudo line test.</source>
         <translation>Epäonnistuminen tuoda ensimmäinen geometria GEOS pseudo viivan testiin.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="873"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="871"/>
         <source>Invalid geometry in validity test.</source>
         <translation>Virheellinen geometria oikeellisuus tarkistuksessa.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="944"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="942"/>
         <source>Invalid geometry in covering test.</source>
         <translation>Virheellinen geometria kattavuuden tarkistuksessa.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1178"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1176"/>
         <source>Second geometry missing.</source>
         <translation>Toinen geometria puuttuu.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1267"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1352"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1443"/>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1517"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1265"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1350"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1441"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1515"/>
         <source>Second geometry missing or GEOS import failed.</source>
         <translation>Toinen geometria puuttuu tai tuonti GEOSiin epäonnistui.</translation>
     </message>
@@ -77848,17 +78185,17 @@ Palauttaa kulman sinin.
         <translation type="obsolete">Toinen geometria ei puuttuu tai GEOS tuonti epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1558"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1556"/>
         <source>Missing geometry in multipart check.</source>
         <translation>Puuttuva geometria moniosaisessa tarkistuksessa.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1677"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1675"/>
         <source>First layer not found in registry.</source>
         <translation>Ensimmäistä tasoa ei löydy rekisteristä.</translation>
     </message>
     <message>
-        <location filename="../src/plugins/topology/topolTest.cpp" line="1683"/>
+        <location filename="../src/plugins/topology/topolTest.cpp" line="1681"/>
         <source>Second layer not found in registry.</source>
         <translation>Toista tasoa ei löydy rekisteristä.</translation>
     </message>

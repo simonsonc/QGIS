@@ -61,9 +61,12 @@ class CORE_EXPORT QgsLayerTreeRegistryBridge : public QObject
     void groupWillRemoveChildren( QgsLayerTreeNode* node, int indexFrom, int indexTo );
     void groupRemovedChildren();
 
+    void removeLayersFromRegistry( QStringList layerIds );
+
   protected:
     QgsLayerTreeGroup* mRoot;
     QStringList mLayerIdsForRemoval;
+    bool mRegistryRemovingLayers;
     bool mEnabled;
     bool mNewLayersVisible;
 

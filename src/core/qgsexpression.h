@@ -152,6 +152,8 @@ class CORE_EXPORT QgsExpression
     //! @note added in 2.2
     static bool hasSpecialColumn( const QString& name );
 
+    static bool isValid( const QString& text, const QgsFields& fields, QString &errorMessage );
+
     void setScale( double scale ) { mScale = scale; }
 
     double scale() { return mScale; }
@@ -314,9 +316,9 @@ class CORE_EXPORT QgsExpression
     static QList<Function*> specialColumns();
 
     //! return quoted column reference (in double quotes)
-    static QString quotedColumnRef( QString name ) { return QString( "\"%1\"" ).arg( name.replace( "\"", "\"\"" ) ); }
+    static QString quotedColumnRef( QString name );
     //! return quoted string (in single quotes)
-    static QString quotedString( QString text ) { return QString( "'%1'" ).arg( text.replace( "'", "''" ) ); }
+    static QString quotedString( QString text );
 
     //////
 

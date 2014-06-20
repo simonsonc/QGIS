@@ -1729,6 +1729,14 @@ bool QgsExpression::hasSpecialColumn( const QString& name )
   return gmSpecialColumns.contains( name );
 }
 
+bool QgsExpression::isValid( const QString &text, const QgsFields &fields, QString &errorMessage )
+{
+  QgsExpression exp( text );
+  exp.prepare( fields );
+  errorMessage = exp.parserErrorString();
+  return !exp.hasParserError();
+}
+
 QList<QgsExpression::Function*> QgsExpression::specialColumns()
 {
   QList<Function*> defs;
@@ -1737,6 +1745,20 @@ QList<QgsExpression::Function*> QgsExpression::specialColumns()
     defs << new StaticFunction( it.key(), 0, 0, "Record" );
   }
   return defs;
+}
+
+QString QgsExpression::quotedColumnRef( QString name )
+{
+  return QString( "\"%1\"" ).arg( name.replace( "\"", "\"\"" ) );
+}
+
+QString QgsExpression::quotedString( QString text )
+{
+  text.replace( "'", "''" );
+  text.replace( '\\', "\\\\" );
+  text.replace( '\n', "\\n" );
+  text.replace( '\t', "\\t" );
+  return QString( "'%1'" ).arg( text );
 }
 
 bool QgsExpression::isFunctionName( QString name )
@@ -2429,7 +2451,7 @@ QString QgsExpression::NodeLiteral::dump() const
   {
     case QVariant::Int: return QString::number( mValue.toInt() );
     case QVariant::Double: return QString::number( mValue.toDouble() );
-    case QVariant::String: return QString( "'%1'" ).arg( mValue.toString() );
+    case QVariant::String: return quotedString( mValue.toString() );
     default: return QObject::tr( "[unsupported type;%1; value:%2]" ).arg( mValue.typeName() ).arg( mValue.toString() );
   }
 }

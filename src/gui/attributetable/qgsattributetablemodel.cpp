@@ -35,6 +35,7 @@
 QgsAttributeTableModel::QgsAttributeTableModel( QgsVectorLayerCache *layerCache, QObject *parent )
     : QAbstractTableModel( parent )
     , mLayerCache( layerCache )
+    , mFieldCount( 0 )
     , mCachedField( -1 )
 {
   QgsDebugMsg( "entered." );
@@ -247,6 +248,8 @@ void QgsAttributeTableModel::loadAttributes()
   for ( int idx = 0; idx < fields.count(); ++idx )
   {
     QgsEditorWidgetFactory* widgetFactory = QgsEditorWidgetRegistry::instance()->factory( layer()->editorWidgetV2( idx ) );
+    if ( !widgetFactory || !layer() )
+      continue;
 
     mWidgetFactories.append( widgetFactory );
     mWidgetConfigs.append( layer()->editorWidgetV2Config( idx ) );
@@ -283,9 +286,12 @@ void QgsAttributeTableModel::loadLayer()
 {
   QgsDebugMsg( "entered." );
 
-  beginRemoveRows( QModelIndex(), 0, rowCount() - 1 );
-  removeRows( 0, rowCount() );
-  endRemoveRows();
+  if ( rowCount() != 0 )
+  {
+    beginRemoveRows( QModelIndex(), 0, rowCount() - 1 );
+    removeRows( 0, rowCount() );
+    endRemoveRows();
+  }
 
   QgsFeatureIterator features = mLayerCache->getFeatures( mFeatureRequest );
 

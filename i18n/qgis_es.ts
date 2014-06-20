@@ -1611,7 +1611,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Grid Spacing</source>
-        <translation>Separación de rejilla</translation>
+        <translation>Separación de cuadrícula</translation>
     </message>
     <message>
         <source>Use this point spacing</source>
@@ -2528,7 +2528,7 @@ Would you like to add the new layer to the TOC?</source>
     </message>
     <message>
         <source>Could not replace geometry of feature with id %s</source>
-        <translation>No se pudo reemplazar la geometría del objeto espacial con ID %s</translation>
+        <translation>No se pudo remplazar la geometría del objeto espacial con ID %s</translation>
     </message>
     <message>
         <source>Could not eliminate features with these ids:
@@ -2989,11 +2989,11 @@ Los siguientes nombres de campo tienen más de 10 caracteres:
     <name>DlgGetScriptsAndModels</name>
     <message>
         <source>Get scripts and models</source>
-        <translation type="unfinished"></translation>
+        <translation>Obtener scritps y modelos</translation>
     </message>
     <message>
         <source>about:blank</source>
-        <translation type="unfinished"></translation>
+        <translation>about:blank</translation>
     </message>
 </context>
 <context>
@@ -4161,7 +4161,7 @@ Do you want terminate it anyway?</source>
     </message>
     <message>
         <source>Select the input file for Grid</source>
-        <translation>Seleccionar el archivo de entrada para la rejilla</translation>
+        <translation>Seleccionar el archivo de entrada para la cuadrícula</translation>
     </message>
     <message>
         <source>Select the raster file to save the results to</source>
@@ -4425,7 +4425,7 @@ Desactive la opción &quot;Usar extensión de la intersección&quot; para obtene
     </message>
     <message>
         <source>[select levels]</source>
-        <translation>[seleccionar niveles]</translation>
+        <translation type="obsolete">[seleccionar niveles]</translation>
     </message>
     <message>
         <source>{0} not created.</source>
@@ -6092,7 +6092,7 @@ Error de geoprocesamiento GEOS: uno o más objetos espaciales de entrada tiene u
     <name>Heatmap</name>
     <message>
         <source>Heatmap</source>
-        <translation>Heatmap</translation>
+        <translation>Mapa de calor</translation>
     </message>
     <message>
         <source>Creates a heatmap raster for the input point vector.</source>
@@ -6136,7 +6136,7 @@ Error de geoprocesamiento GEOS: uno o más objetos espaciales de entrada tiene u
     </message>
     <message>
         <source>Creating heatmap</source>
-        <translation>Creando heatmap</translation>
+        <translation>Creando mapa de calor</translation>
     </message>
     <message>
         <source>Abort</source>
@@ -6171,7 +6171,7 @@ Error de geoprocesamiento GEOS: uno o más objetos espaciales de entrada tiene u
     </message>
     <message>
         <source>Save Heatmap as:</source>
-        <translation>Guardar heatmap como:</translation>
+        <translation>Guardar mapa de calor como:</translation>
     </message>
     <message>
         <source>No valid layers found!</source>
@@ -6186,7 +6186,7 @@ Error de geoprocesamiento GEOS: uno o más objetos espaciales de entrada tiene u
     <name>HeatmapGuiBase</name>
     <message>
         <source>Heatmap Plugin</source>
-        <translation>Complemento Heatmap</translation>
+        <translation>Complemento Mapa de calor</translation>
     </message>
     <message>
         <source>Input Point Vector</source>
@@ -7321,11 +7321,11 @@ Ctl (Cmd) incrementa cada 15 grados.</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation>&amp;Rejilla</translation>
+        <translation>Cuad&amp;rícula</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Rejilla</translation>
+        <translation>Cuadrícula</translation>
     </message>
     <message>
         <source>Pin/Unpin Labels</source>
@@ -11516,11 +11516,11 @@ Error(%2): %3</translation>
     </message>
     <message>
         <source>Heatmap</source>
-        <translation>Heatmap</translation>
+        <translation>Mapa de calor</translation>
     </message>
     <message>
         <source>Creates a Heatmap raster for the input point vector</source>
-        <translation>Crea un mapa de calor (Heatmap) de la capa de puntos de entrada.</translation>
+        <translation>Crea un mapa de calor (Heatmap) de la capa de puntos de entrada</translation>
     </message>
     <message>
         <source>MSSQL</source>
@@ -12176,27 +12176,27 @@ Se desactivará.</translation>
     </message>
     <message>
         <source>empty response</source>
-        <translation>respuesta vacía</translation>
+        <translation type="obsolete">respuesta vacía</translation>
     </message>
     <message>
         <source>WFS service exception:%1</source>
-        <translation>excepción del servicio WFS: %1</translation>
+        <translation type="obsolete">excepción del servicio WFS: %1</translation>
     </message>
     <message>
         <source>unsuccessful service response: %1</source>
-        <translation>respuesta del servicio sin éxito: %1</translation>
+        <translation type="obsolete">respuesta del servicio sin éxito: %1</translation>
     </message>
     <message>
         <source>WFS exception report (code=%1 text=%2)</source>
-        <translation>Informe de excepción WFS (código=%1 texto=%2)</translation>
+        <translation type="obsolete">Informe de excepción WFS (código=%1 texto=%2)</translation>
     </message>
     <message>
         <source>missing</source>
-        <translation>falta</translation>
+        <translation type="obsolete">falta</translation>
     </message>
     <message>
         <source>unhandled response: %1</source>
-        <translation>respuesta no manejada: %1</translation>
+        <translation type="obsolete">respuesta no manejada: %1</translation>
     </message>
     <message>
         <source>DBF file</source>
@@ -16040,7 +16040,7 @@ Por favor, contacte con los desarrolladores.</translation>
     </message>
     <message>
         <source>This project file was saved by an older version of QGIS. When saving this project file, QGIS will update it to the latest version, possibly rendering it useless for older versions of QGIS.</source>
-        <translation>Este archivo de proyecto se guardó con una versión anterior de QGIS. Al guardar este archivo de proyecto QGIS lo actualizará a la última versión, haciéndolo probablemente inservible para versiones anteriors de QGIS.</translation>
+        <translation>Este archivo de proyecto se guardó con una versión anterior de QGIS. Al guardar este archivo de proyecto QGIS lo actualizará a la última versión, haciéndolo probablemente inservible para versiones anteriores de QGIS.</translation>
     </message>
     <message>
         <source>The request &apos;%1&apos; timed out. Any data received is likely incomplete.</source>
@@ -16839,7 +16839,7 @@ Error del analizador:
     </message>
     <message>
         <source>Enter the action here. This can be any program, script or command that is available on your system. When the action is invoked any set of characters that start with a % and then have the name of a field will be replaced by the value of that field. The special characters %% will be replaced by the value of the field that was selected. Double quote marks group text into single arguments to the program, script or command. Double quotes will be ignored if prefixed with a backslash</source>
-        <translation>Introduzca aquí la acción. Ésta puede ser cualquier programa, script o instrucción que haya disponible en su sistema. Cuando se invoca la acción, cualquier conjunto de caracteres que empiece por % y luego tenga el nombre de un campo se reemplazará por el valor de ese campo. Los caracteres especiales %% se reemplazarán por el valor del campo que se haya seleccionado. Las comillas dobles agrupan texto en argumentos sencillos para el programa, script o instrucción. Las comillas dobles se ignorarán si van precedidas de una barra invertida.</translation>
+        <translation>Introduzca aquí la acción. Ésta puede ser cualquier programa, script o instrucción que haya disponible en su sistema. Cuando se invoca la acción, cualquier conjunto de caracteres que empiece por % y luego tenga el nombre de un campo se remplazará por el valor de ese campo. Los caracteres especiales %% se remplazarán por el valor del campo que se haya seleccionado. Las comillas dobles agrupan texto en argumentos sencillos para el programa, script o instrucción. Las comillas dobles se ignorarán si van precedidas de una barra invertida.</translation>
     </message>
     <message>
         <source>The valid attribute names for this layer</source>
@@ -17030,7 +17030,7 @@ Error del analizador:
     </message>
     <message>
         <source>Feature Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributos del objeto espacial</translation>
     </message>
 </context>
 <context>
@@ -17632,7 +17632,7 @@ Error del analizador:
     </message>
     <message>
         <source>[update field expression]</source>
-        <translation>[expresión de actualización de campo]</translation>
+        <translation type="obsolete">[expresión de actualización de campo]</translation>
     </message>
 </context>
 <context>
@@ -17699,7 +17699,7 @@ El error fue: %2</translation>
     </message>
     <message>
         <source>Attribute Edit Dialog</source>
-        <translation>Diálogo de edición de atributos</translation>
+        <translation type="obsolete">Diálogo de edición de atributos</translation>
     </message>
     <message>
         <source>Line edit</source>
@@ -17952,6 +17952,10 @@ El error fue: %2</translation>
     <message>
         <source>Field contains an URL</source>
         <translation type="obsolete">El campo contiene una URL</translation>
+    </message>
+    <message>
+        <source>Edit Widget Properties</source>
+        <translation>Editar propiedades del control</translation>
     </message>
 </context>
 <context>
@@ -20362,7 +20366,11 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Página</translation>
+    </message>
+    <message>
+        <source> mm</source>
+        <translation> mm</translation>
     </message>
 </context>
 <context>
@@ -20402,6 +20410,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     <message>
         <source>Label text HTML state changed</source>
         <translation>Cambiado el estado HTML del texto de etiqueta</translation>
+    </message>
+    <message>
+        <source>Label color changed</source>
+        <translation>Color de etiqueta cambiado</translation>
     </message>
 </context>
 <context>
@@ -20907,7 +20919,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>mm</source>
-        <translation>mm</translation>
+        <translation type="obsolete">mm</translation>
     </message>
     <message>
         <source>WMS LegendGraphic</source>
@@ -21175,7 +21187,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Grid checkbox toggled</source>
-        <translation>Casilla de verificación de rejilla conmutada</translation>
+        <translation>Casilla de verificación de cuadrícula conmutada</translation>
     </message>
     <message>
         <source>Grid interval changed</source>
@@ -21366,7 +21378,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Grid &amp;type</source>
-        <translation>&amp;Tipo de rejilla</translation>
+        <translation>&amp;Tipo de cuadrícula</translation>
     </message>
     <message>
         <source>Interval X</source>
@@ -21655,6 +21667,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     <message>
         <source>Predefined scale (best fit)</source>
         <translation>Escala predefinida (mejor ajuste)</translation>
+    </message>
+    <message>
+        <source> mm</source>
+        <translation> mm</translation>
     </message>
 </context>
 <context>
@@ -22120,7 +22136,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Scalebar line cap style</source>
-        <translation>Estilo de mayúsculsa de línea de barra de escala</translation>
+        <translation>Estilo de mayúsculas de línea de barra de escala</translation>
     </message>
 </context>
 <context>
@@ -22609,6 +22625,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     <message>
         <source>Right</source>
         <translation>Derecha</translation>
+    </message>
+    <message>
+        <source> mm</source>
+        <translation> mm</translation>
     </message>
 </context>
 <context>
@@ -23190,7 +23210,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Grid</source>
-        <translation>Rejilla</translation>
+        <translation>Cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -23594,10 +23614,10 @@ and current file is [%3]</source>
 
 Tiene dos formas de instalarlos:
 
-1) Instalar el complemento de python &quot;Administrador de rampas de color&quot; (debe activar los complementos experimentales en el administrador de complementos) y úsarlo para descargar el último paquete de ciudades-cpt.
-You can install the entire cpt-city archive or a selection for QGIS.
+1) Instalar el complemento de python &quot;Administrador de rampas de color&quot; (debe activar los complementos experimentales en el administrador de complementos) y usarlo para descargar el último paquete de ciudades-cpt.
+Puede instalar el archivo de ciudades cpt completo o una selección para QGIS.
 
-2) Descargar el archivo completo (en formato svg) y descomprimirlo en su directorio de configuracion de QGIS [%1] .
+2) Descargar el archivo completo (en formato svg) y descomprimirlo en su directorio de configuración de QGIS [%1] .
 
 Este archivo se puede encontrar en [%2]
 y el archivo actual es [%3]</translation>
@@ -24212,7 +24232,7 @@ y el archivo actual es [%3]</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Format&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Examples result&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;dd.MM.yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;21.05.2001&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ddd MMMM d yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;Tue May 21 01&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;hh:mm:ss.zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;14:13:09.042&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;h:m:s ap&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;2:13:9 pm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expression&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Date output&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the day as number without a leading zero (1 to 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the day as number with a leading zero (01 to 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;ddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the abbreviated localized day name (e.g. &apos;Mon&apos; to &apos;Sun&apos;). Uses the system locale to localize the name, i.e.&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::system&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the long localized day name (e.g. &apos;Monday&apos; to &apos;&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qt.html#DayOfWeek-enum&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;Qt::Sunday&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;&apos;). Uses the system locale to localize the name, i.e.&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::system&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;M&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the month as number without a leading zero (1-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the month as number with a leading zero (01-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;MMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the abbreviated localized month name (e.g. &apos;Jan&apos; to &apos;Dec&apos;). Uses the system locale to localize the name, i.e.&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::system&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MMMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the long localized month name (e.g. &apos;January&apos; to &apos;December&apos;). Uses the system locale to localize the name, i.e.&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::system&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the year as two digit number (00-99)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the year as four digit number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expression&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Time output&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;h&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;hh&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;H&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the hour without a leading zero (0 to 23, even with AM/PM display)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;HH&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the hour with a leading zero (00 to 23, even with AM/PM display)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the minute without a leading zero (0 to 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;mm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the minute with a leading zero (00 to 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;s&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the second without a leading zero (0 to 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ss&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the second with a leading zero (00 to 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the milliseconds without leading zeroes (0 to 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;the milliseconds with leading zeroes (000 to 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;AP or A&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;use AM/PM display.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;A/AP&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; will be replaced by either &amp;quot;AM&amp;quot; or &amp;quot;PM&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ap or a&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;use am/pm display.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;a/ap&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; will be replaced by either &amp;quot;am&amp;quot; or &amp;quot;pm&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;t&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;the timezone (for example &amp;quot;CEST&amp;quot;)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Formato&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Resultado de ejemplos&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;dd.MM.yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;21.05.2001&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ddd MMMM d yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;Mar Mayo 21 01&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;hh:mm:ss.zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;14:13:09.042&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;h:m:s ap&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;2:13:9 pm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expresión&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Salida de fecha&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el día como número sin cero delante (1 a 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el día como número con un cero delante (01 a 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;ddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el nombre del día abreviado localizado (ej.: &apos;Lun&apos; a &apos;Dom&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el nombre completo del día localizado (ej.: &apos;Lunes&apos; a &apos;&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qt.html#DayOfWeek-enum&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;Qt::Domingo&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;M&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el mes como número sin cero delante (1-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el mes como número con un cero delante (01-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;MMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el nombre localizado del mes abreviado (ej.: &apos;Ene&apos; a &apos;Dic&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MMMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el nombre localizado completo del mes (ej.: &apos;Enero&apos; a &apos;Diciembre&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el año como número de dos dígitos (00-99)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el año como número de cuatro dígitos&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expression&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Hora output&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;h&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la hora sin cero delante (0 a 23 o 1 a 12 si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;hh&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;la hora con un cero delante (00 a 23 o 01 a 12 si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;H&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la hora sin un cero delante (0 a 23, incluso si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;HH&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;la hora con un cero delante (00 to 23, incluso si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los minutos sin cero delante (0 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;mm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los minutos con cero delante  (00 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;s&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los segundos sin cero delante  (0 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ss&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los segundos con cero delante (00 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los milisegundos sin ceros delante (0 a 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los milisegundos con ceros delante (000 a 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;AP o A&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;muestra AM/PM.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;A/AP&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; será remplazado por &amp;quot;AM&amp;quot; o &amp;quot;PM&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ap o a&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;muestra am/pm.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;a/ap&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; será remplazado por &amp;quot;am&amp;quot; or &amp;quot;pm&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;t&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la zona horaria (por ejemplo &amp;quot;CEST&amp;quot;)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Formato&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Resultado de ejemplos&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;dd.MM.yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;21.05.2001&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ddd MMMM d yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;Mar Mayo 21 01&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;hh:mm:ss.zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;14:13:09.042&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;h:m:s ap&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;2:13:9 pm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expresión&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Salida de fecha&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el día como número sin cero delante (1 a 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el día como número con un cero delante (01 a 31)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;ddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el nombre del día abreviado localizado (ej.: &apos;Lun&apos; a &apos;Dom&apos;). Usa la localización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;dddd&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el nombre completo del día localizado (ej.: &apos;Lunes&apos; a &apos;&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qt.html#DayOfWeek-enum&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;Qt::Domingo&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;&apos;). Usa la localización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;M&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el mes como número sin cero delante (1-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el mes como número con un cero delante (01-12)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;MMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el nombre localizado del mes abreviado (ej.: &apos;Ene&apos; a &apos;Dic&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;MMMM&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el nombre localizado completo del mes (ej.: &apos;Enero&apos; a &apos;Diciembre&apos;). Usa la lozacización del sistema para localizar el nombre, esto es&lt;/span&gt;&lt;a href=&quot;http://qt-project.org/doc/qt-5/qlocale.html#system&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial,FreeSans,sans-serif&apos;; font-size:12px; font-weight:600; text-decoration: underline; color:#00732f;&quot;&gt;QLocale::sistema&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt;().&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;yy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;el año como número de dos dígitos (00-99)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;yyyy&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;el año como número de cuatro dígitos&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f6f6f6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Expresión&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:top; padding-left:10; padding-right:15; padding-top:5; padding-bottom:5;&quot;&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:12px; font-weight:600; color:#363534;&quot;&gt;Salida de hora&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;h&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la hora sin cero delante (0 a 23 o 1 a 12 si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;hh&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;la hora con un cero delante (00 a 23 o 01 a 12 si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;H&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la hora sin un cero delante (0 a 23, incluso si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;HH&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;la hora con un cero delante (00 to 23, incluso si se muestra AM/PM)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;m&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los minutos sin cero delante (0 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;mm&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los minutos con cero delante  (00 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;s&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los segundos sin cero delante  (0 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ss&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los segundos con cero delante (00 a 59)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;z&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;los milisegundos sin ceros delante (0 a 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;zzz&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;los milisegundos con ceros delante (000 a 999)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;AP o A&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;muestra AM/PM.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;A/AP&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; será remplazado por &amp;quot;AM&amp;quot; o &amp;quot;PM&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;ap o a&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#ffffff&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#ffffff;&quot;&gt;muestra am/pm.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; font-style:italic; color:#66666e;&quot;&gt;a/ap&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e;&quot;&gt; será remplazado por &amp;quot;am&amp;quot; or &amp;quot;pm&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;t&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f6f6f6&quot; style=&quot; vertical-align:top; padding-left:10; padding-right:10; padding-top:3; padding-bottom:3;&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-family:&apos;Open Sans,sans-serif&apos;; font-size:11px; color:#66666e; background-color:#f6f6f6;&quot;&gt;la zona horaria (por ejemplo &amp;quot;CEST&amp;quot;)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Field format</source>
@@ -24263,11 +24283,15 @@ y el archivo actual es [%3]</translation>
     <name>QgsDatumTransformDialog</name>
     <message>
         <source>Select datum transformations for layer</source>
-        <translation>Seleccionar transformaciones de dátum para la capa</translation>
+        <translation type="obsolete">Seleccionar transformaciones de dátum para la capa</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; not found in directory &apos;%2&apos;</source>
         <translation>No se ha encontrado el archivo &apos;%1&apos; en el directorio &apos;%2&apos;</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconocido</translation>
     </message>
 </context>
 <context>
@@ -24291,6 +24315,18 @@ y el archivo actual es [%3]</translation>
     <message>
         <source>Hide deprecated</source>
         <translation>Ocultar obsoletos</translation>
+    </message>
+    <message>
+        <source>Destination CRS</source>
+        <translation>SRC de destino</translation>
+    </message>
+    <message>
+        <source>Source CRS</source>
+        <translation>SRC de origen</translation>
+    </message>
+    <message>
+        <source>Layer</source>
+        <translation>Capa</translation>
     </message>
 </context>
 <context>
@@ -24541,11 +24577,11 @@ p, li { white-space: pre-wrap; }
     <name>QgsDecorationGridDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="obsolete">Diálogo</translation>
     </message>
     <message>
         <source>Enable grid</source>
-        <translation>Activar grilla</translation>
+        <translation>Activar cuadrícula</translation>
     </message>
     <message>
         <source>Interval X</source>
@@ -24557,7 +24593,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Grid type</source>
-        <translation>Tipo de rejilla</translation>
+        <translation>Tipo de cuadrícula</translation>
     </message>
     <message>
         <source>Line symbol</source>
@@ -24634,6 +24670,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Horizontal and Vertical</source>
         <translation>Horizontal y vertical</translation>
+    </message>
+    <message>
+        <source>Grid properties</source>
+        <translation>Propiedades de la cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -26559,6 +26599,10 @@ Error del analizador:
         <source>Show partials labels</source>
         <translation>Mostrar etiquetas parciales</translation>
     </message>
+    <message>
+        <source>Draw text as outlines (recommended)</source>
+        <translation>Dibujar texto como líneas exteriores (recomendado)</translation>
+    </message>
 </context>
 <context>
     <name>QgsErrorDialog</name>
@@ -27464,7 +27508,7 @@ MyForms.py must live on PYTHONPATH, .qgis/python, or inside the project folder.<
         <translation>Los formularios de QGIS pueden tener una función de Python que es llamada cuando se abre el formulario.  
 Use esta función para añadir lógica extra a sus formularios.
 
-Un ejamplo es (en módulo MyForms.py):
+Un ejemplo es (en módulo MyForms.py):
 
           def open(dialog, layer, feature):
 	geom = feature.geometry()
@@ -29041,7 +29085,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;p&gt;The selected file already seems to have a world file! Do you want to replace it with the new world file?&lt;/p&gt;</source>
-        <translation>&lt;p&gt;El archivo seleccionado parece que ya tiene un archivo de georreferenciación ¿Quiere reemplazarlo con el nuevo?&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;El archivo seleccionado parece que ya tiene un archivo de georreferenciación ¿Quiere remplazarlo con el nuevo?&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Failed to compute GCP transform: Transform is not solvable</source>
@@ -32080,11 +32124,11 @@ en la línea %2 columna %3</translation>
     </message>
     <message>
         <source>New file</source>
-        <translation>Archivo nuevo</translation>
+        <translation type="obsolete">Archivo nuevo</translation>
     </message>
     <message>
         <source>New datasource</source>
-        <translation>Nuevo origen de datos</translation>
+        <translation type="obsolete">Nuevo origen de datos</translation>
     </message>
     <message>
         <source>none</source>
@@ -32092,7 +32136,7 @@ en la línea %2 columna %3</translation>
     </message>
     <message>
         <source>Select file to replace &apos;%1&apos;</source>
-        <translation>Seleccionar archivo a reemplazar &apos;%1&apos;</translation>
+        <translation>Seleccionar archivo a remplazar &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Please select exactly one file.</source>
@@ -32118,6 +32162,10 @@ en la línea %2 columna %3</translation>
             <numerusform>Todavía hay %n capas no manejadas, que se perderán si cierra ahora.</numerusform>
         </translation>
     </message>
+    <message>
+        <source>Datasource</source>
+        <translation>Origen de datos</translation>
+    </message>
 </context>
 <context>
     <name>QgsHandleBadLayersBase</name>
@@ -32127,31 +32175,31 @@ en la línea %2 columna %3</translation>
     </message>
     <message>
         <source>Layer name</source>
-        <translation>Nombre de la capa</translation>
+        <translation type="obsolete">Nombre de la capa</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tipo</translation>
+        <translation type="obsolete">Tipo</translation>
     </message>
     <message>
         <source>Provider</source>
-        <translation>Proveedor</translation>
+        <translation type="obsolete">Proveedor</translation>
     </message>
     <message>
         <source>Original filename</source>
-        <translation>Nombre de archivo original</translation>
+        <translation type="obsolete">Nombre de archivo original</translation>
     </message>
     <message>
         <source>New filename</source>
-        <translation>Nuevo nombre de archivo</translation>
+        <translation type="obsolete">Nuevo nombre de archivo</translation>
     </message>
     <message>
         <source>Original datasource</source>
-        <translation>Fuente de datos original</translation>
+        <translation type="obsolete">Fuente de datos original</translation>
     </message>
     <message>
         <source>New datasource</source>
-        <translation>Nuevo origen de datos</translation>
+        <translation type="obsolete">Nuevo origen de datos</translation>
     </message>
 </context>
 <context>
@@ -32170,7 +32218,7 @@ en la línea %2 columna %3</translation>
     </message>
     <message>
         <source>Handle bad layers</source>
-        <translation type="unfinished">Manejo de capas incorrectas</translation>
+        <translation>Manejar capas incorrectas</translation>
     </message>
 </context>
 <context>
@@ -32332,9 +32380,9 @@ This may be a problem in your network connection or at the WMS server.</source>
         <comment>inactivity timeout</comment>
         <translation>
             <numerusform>La conexión expiró después de 1 segundo de inactividad.
-Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerusform>
+Puede haber un problema en su conexión a la red o en el servidor WMS.</numerusform>
             <numerusform>La conexión expiró después de %n segundos de inactividad.
-Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerusform>
+Puede haber un problema en su conexión a la red o en el servidor WMS.</numerusform>
         </translation>
     </message>
 </context>
@@ -32476,11 +32524,11 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     </message>
     <message>
         <source>Tree</source>
-        <translation>Árbol</translation>
+        <translation type="obsolete">Árbol</translation>
     </message>
     <message>
         <source>Table</source>
-        <translation>Tabla</translation>
+        <translation type="obsolete">Tabla</translation>
     </message>
     <message>
         <source>Layer</source>
@@ -32500,7 +32548,7 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     </message>
     <message>
         <source>Graph</source>
-        <translation>Grafo</translation>
+        <translation type="obsolete">Grafo</translation>
     </message>
     <message>
         <source>Clear Results</source>
@@ -32509,6 +32557,18 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     <message>
         <source>Help</source>
         <translation>Ayuda</translation>
+    </message>
+    <message>
+        <source>Select identify mode</source>
+        <translation>Seleccionar modo de identificación</translation>
+    </message>
+    <message>
+        <source>Select view mode for raster layers</source>
+        <translation>Seleccionar modo de vista para capas ráster</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ver</translation>
     </message>
 </context>
 <context>
@@ -32644,6 +32704,22 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     <message>
         <source>Toggle feature selection</source>
         <translation>Alternar selección de objetos espaciales</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabla</translation>
+    </message>
+    <message>
+        <source>Graph</source>
+        <translation>Grafo</translation>
+    </message>
+    <message>
+        <source>Tree</source>
+        <translation>Árbol</translation>
+    </message>
+    <message>
+        <source>feature id</source>
+        <translation>ID del objeto espacial</translation>
     </message>
 </context>
 <context>
@@ -32821,7 +32897,7 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     <message>
         <source>The inverted polygon renderer only applies to polygon and multipolygon layers. 
 &apos;%1&apos; is not a polygon layer and then cannot be displayed</source>
-        <translation>El renderizador de polígonos invertidos sólo se aplica a capas de polígonos y mulitipolígonos.
+        <translation>El renderizador de polígonos invertidos sólo se aplica a capas de polígonos y multipolígonos.
 &apos;%1&apos; no es una capa de polígonos y por tanto no se puede mostrar.</translation>
     </message>
 </context>
@@ -32834,6 +32910,10 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     <message>
         <source>Sub renderer:</source>
         <translation>Sub renderizador:</translation>
+    </message>
+    <message>
+        <source>Merge polygons before rendering (slow)</source>
+        <translation>Combinar polígonos antes de renderizar (lento)</translation>
     </message>
 </context>
 <context>
@@ -34425,7 +34505,7 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     </message>
     <message>
         <source>Force point inside polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Forzar puntos dentro de polígono</translation>
     </message>
 </context>
 <context>
@@ -34439,7 +34519,7 @@ Puede haber un problema en su conexión a la red o en el servidoor WMS.</numerus
     <name>QgsLayerTreeModel</name>
     <message>
         <source>Double-click to view legend</source>
-        <translation>Doble clic para ver la leyende</translation>
+        <translation>Doble clic para ver la leyenda</translation>
     </message>
     <message>
         <source>following %1 items
@@ -35999,11 +36079,11 @@ no se muestran</translation>
     </message>
     <message>
         <source>Adjust scaling range</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar intervalo de escalado</translation>
     </message>
     <message>
         <source>Scale only within the following map unit scale range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar sólo dentro del intervalo de unidades de mapa siguientes:</translation>
     </message>
 </context>
 <context>
@@ -38241,7 +38321,7 @@ Always network: always load from network and do not check if the cache has a val
 
 Siempre caché: cargar desde el caché, incluso si éste ha expirado
 
-Preferir caché: cargar desde el caché si está disponible, si no, cargar desde la red. Note que ésto puede devolver elementos pasados (pero no expirados) desde el caché
+Preferir caché: cargar desde el caché si está disponible, si no, cargar desde la red. Note que ésto puede devolver elementos pasados (pero no expirados) desde la caché
 
 Preferir red: valor predeterminado; cargar desde la red si la entrada en el caché es más antigua que la entrada usando la red.
 
@@ -39712,7 +39792,7 @@ Siempre red: siempre cargar desde la red y no chequear si el caché tiene una en
     </message>
     <message>
         <source>Add new layers to selected or current group</source>
-        <translation>Añadir nuevas capas al grupo seleccionado o al actual</translation>
+        <translation type="obsolete">Añadir nuevas capas al grupo seleccionado o al actual</translation>
     </message>
     <message>
         <source>Attribute table row cache</source>
@@ -41442,7 +41522,7 @@ Error: %4</translation>
     <name>QgsPasteTransformations</name>
     <message>
         <source>&amp;Add New Transfer</source>
-        <translation>&amp;Añadir nueva transferencia</translation>
+        <translation type="obsolete">&amp;Añadir nueva transferencia</translation>
     </message>
 </context>
 <context>
@@ -41702,7 +41782,7 @@ Información de error ampliada:
 &lt;p&gt;Cuando se configura la capa se necesitan varios metadatos para la tabla de PostGIS. Esto incluye información tal como el número de filas de la tabla, el tipo de geometría y la extensión espacial de los datos de la columna de geometría. Si la tabla contiene un gran número de filas, determinar estos metadatos lleva su tiempo.&lt;/p&gt;
 &lt;p&gt;Activando esta opción se hacen las siguientes operaciones rápidas de metadatos de la tabla:&lt;/p&gt;
 &lt;p&gt;1) El recuento de filas se determina de las estadísticas de la tabla obtenidas ejecutando la función de análisis de tablas de PostgreSQL.&lt;/p&gt;
-&lt;p&gt;2) La extensión de la tabla siempre se determina con la función estimated_extent de PostGIS incluso si se aplia un filtro de capa.&lt;/p&gt;
+&lt;p&gt;2) La extensión de la tabla siempre se determina con la función estimated_extent de PostGIS incluso si se aplica un filtro de capa.&lt;/p&gt;
 &lt;p&gt;3) Si el tipo de geometría de la tabla es desconocido y no se toma exclusivamente de la tabla de columnas de geometría, entonces se determina a partir de las primeras 100 filas de geometría no nulas de la tabla.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</translation>
@@ -42145,6 +42225,10 @@ lleve la geometría PostGIS.</translation>
     <message>
         <source>Specify the size of the preview. If you leave it set to 0, an optimal size will be estimated.</source>
         <translation>Especificar el tamaño de la vista previa. Si se deja en 0 se estimará un tamaño óptimo.</translation>
+    </message>
+    <message>
+        <source>The field contains a filename for a picture. The widget will show a preview of this picture.</source>
+        <translation>El campo contiene un nombre de archivo para una imagen. El control mostrará una vista previa de esta imagen.</translation>
     </message>
 </context>
 <context>
@@ -45099,6 +45183,10 @@ Proceed?</source>
         <source>WCS capabilities</source>
         <translation>Capacidades WCS</translation>
     </message>
+    <message>
+        <source>Quality for JPEG images ( 10 : smaller image - 100 : best quality )</source>
+        <translation>Calidad para imágenes JPEG ( 10: imagen más pequeña - 100: mejor calidad )</translation>
+    </message>
 </context>
 <context>
     <name>QgsProjectionSelector</name>
@@ -46009,7 +46097,7 @@ Pulse el botón de ayuda para obtener opciones de creación válidas para este f
     </message>
     <message>
         <source>Draw as lines (only int layers)</source>
-        <translation>Dibujar como línes (sólo capas de enteros)</translation>
+        <translation>Dibujar como líneas (sólo capas de enteros)</translation>
     </message>
 </context>
 <context>
@@ -48312,7 +48400,7 @@ desviación estándar ×</translation>
     <name>QgsRelationAddDlgBase</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="obsolete">Diálogo</translation>
     </message>
     <message>
         <source>Referencing Field</source>
@@ -48337,6 +48425,10 @@ desviación estándar ×</translation>
     <message>
         <source>Id</source>
         <translation>ID</translation>
+    </message>
+    <message>
+        <source>Add relation</source>
+        <translation>Añadir relación</translation>
     </message>
 </context>
 <context>
@@ -53155,7 +53247,7 @@ Should the existing classes be deleted before classification?</source>
     </message>
     <message>
         <source>Adjust scaling range</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar intervalo de escalado</translation>
     </message>
 </context>
 <context>
@@ -53204,6 +53296,13 @@ El error fue: %2</translation>
     <message>
         <source>Remove Selected</source>
         <translation>Eliminar lo seleccionado</translation>
+    </message>
+</context>
+<context>
+    <name>QgsValueRelationConfigDlg</name>
+    <message>
+        <source>Edit filter expression</source>
+        <translation>Editar expresión de filtrado</translation>
     </message>
 </context>
 <context>
@@ -53881,6 +53980,22 @@ El error fue: %2</translation>
   Provider errors:</source>
         <translation>
   Errores del proveedor:</translation>
+    </message>
+    <message>
+        <source>Provider: %1</source>
+        <translation>Proveedor: %1</translation>
+    </message>
+    <message>
+        <source>Storage: %1</source>
+        <translation>Almacenamiento: %1</translation>
+    </message>
+    <message>
+        <source>expected field</source>
+        <translation>campo esperado</translation>
+    </message>
+    <message>
+        <source>retrieved field</source>
+        <translation>campo obtenido</translation>
     </message>
 </context>
 <context>
@@ -55159,6 +55274,30 @@ El error fue: %2</translation>
         <source>WFS</source>
         <translation>WFS</translation>
     </message>
+    <message>
+        <source>empty response</source>
+        <translation>respuesta vacía</translation>
+    </message>
+    <message>
+        <source>WFS service exception:%1</source>
+        <translation>excepción del servicio WFS: %1</translation>
+    </message>
+    <message>
+        <source>unsuccessful service response: %1</source>
+        <translation>respuesta del servicio sin éxito: %1</translation>
+    </message>
+    <message>
+        <source>WFS exception report (code=%1 text=%2)</source>
+        <translation>Informe de excepción WFS (código=%1 texto=%2)</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>falta</translation>
+    </message>
+    <message>
+        <source>unhandled response: %1</source>
+        <translation>respuesta no manejada: %1</translation>
+    </message>
 </context>
 <context>
     <name>QgsWFSRootItem</name>
@@ -56278,6 +56417,10 @@ La respuesta fue:
         <source>Height</source>
         <translation>Altura</translation>
     </message>
+    <message>
+        <source>Field contains a filename or URL for a webpage</source>
+        <translation>El campo contiene un nombre de archivo o URL para una página web</translation>
+    </message>
 </context>
 <context>
     <name>QgsWmsCapabilitiesDownload</name>
@@ -57215,7 +57358,7 @@ Frase de motivo: %2</translation>
     <name>QgsWmtsDimensionsBase</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="obsolete">Diálogo</translation>
     </message>
     <message>
         <source>Dimension</source>
@@ -57232,6 +57375,10 @@ Frase de motivo: %2</translation>
     <message>
         <source>Default</source>
         <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>Select dimensions</source>
+        <translation>Seleccionar dimensiones</translation>
     </message>
 </context>
 <context>
@@ -57749,7 +57896,7 @@ SQL Anywhere error code: %1
 Description: %2</source>
         <translation>Falló la conexión - Compruebe la configuración y vuelva a probar.
 
-Cógido de error de SQL Anywhere: %1
+Código de error de SQL Anywhere: %1
 Descripción: %2</translation>
     </message>
 </context>
@@ -58008,7 +58155,7 @@ SQL Anywhere error code: %2
 Description: %3</source>
         <translation>Falló la conexión a la base de datos %1- Compruebe la configuración y vuelva a probar.
 
-Cógido de error de SQL Anywhere: %2
+Código de error de SQL Anywhere: %2
 Descripción: %3</translation>
     </message>
     <message>
@@ -58783,7 +58930,7 @@ Would you like to add the new layer to the TOC?</source>
     </message>
     <message>
         <source>Force point inside polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Forzar puntos dentro de polígono</translation>
     </message>
 </context>
 <context>
@@ -59370,7 +59517,7 @@ Would you like to add the new layer to the TOC?</source>
     </message>
     <message>
         <source>Blur strength</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuerza de enturbiamiento</translation>
     </message>
     <message>
         <source>Offset X,Y</source>
@@ -59992,7 +60139,7 @@ Este diálogo permite establecer algunas propiedades relacionadas con el &lt;lab
 La pestaña Sistema de referencia de coordenadas (SRC) le permite establecer la proyección para el proyecto actual y activar la transformación «al vuelo». No necesita tener guardado un proyecto para configurar y activar la transformación «al vuelo» del SRC.
 &lt;p&gt;Para usar la transformación «al vuelo» del SRC, marque la casilla &lt;label&gt;Activar transformación de SRC «al vuelo»&lt;/label&gt;. Luego elija la proyección para el proyecto (lienzo del mapa) de la lista de sistemas de coordenadas geográficas o proyectadas.
 &lt;p&gt;Puede encontrar un sistema de coordenadas introduciendo su nombre, código EPSG o la ID de QGIS ID y pulsando el botón &lt;label&gt;Encontrar&lt;/label&gt;.
-&lt;p&gt;Para un acceso rápido, en la parte de abajo estará disponible la lista de sistemeas de coordenadas usados recientemente.
+&lt;p&gt;Para un acceso rápido, en la parte de abajo estará disponible la lista de sistemas de coordenadas usados recientemente.
 
 &lt;a name=&quot;layers&quot;&gt;
 &lt;h4&gt;Pestaña Capas identificables&lt;/h4&gt;
@@ -60399,7 +60546,7 @@ Detailed description how to proceed with vector data is described in chapter 5 &
 </source>
         <translation>&lt;h3&gt;Diálogo Abrir capa vectorial&lt;/h3&gt;
 
-El diálogo Abrir capa vectorial se usa para añadir datos vectoriales a la vista del mapa de QGIS. Los datos vectoriales son datos espaciales descritor usando geometrías de puntos, líneas y polígonos (áreas cerradas).&lt;/p&gt;
+El diálogo Abrir capa vectorial se usa para añadir datos vectoriales a la vista del mapa de QGIS. Los datos vectoriales son datos espaciales descritos usando geometrías de puntos, líneas y polígonos (áreas cerradas).&lt;/p&gt;
 QGIS admite datos vectoriales en distintos formatos, incluyendo aquellos admitidos por el complemento del proveedor de datos de la biblioteca OGR, tales como archivos shape de ESRI, MapInfo MIF (formato de intercambio) y MapInfo TAB (formato nativo).&lt;/p&gt;
 QGIS admite capas PostGIS en una base datos PostgreSQL y capas SpatiaLite. La capacidad para tipos de datos adicionales (ej. texto delimitado) es proporcionada por complementos de proveedores de datos adicionales. Se puede encontrar una lista de los formatos vectoriales soportados por OGR en el Apéndice A.1 del manual de usuario.&lt;/p&gt;
 En el capítulo 5 «Trabajar con datos vectoriales» se describe con detalle cómo proceder con los datos vectoriales.
@@ -60525,7 +60672,7 @@ Este diálogo le permite definir la configuración para una conexión a una base
 
 &lt;li&gt; &lt;label&gt;Servidor&lt;/label&gt;Nombre o dirección IP del ordenador que aloja el servidor de bases de datos (dejar en blanco para conexiones o servicios locales).
 
-&lt;li&gt;&lt;label&gt;Puerto&lt;/label&gt; Puerto IP usado por el servidor de bases de datos (dejar en blanco para conexiones locales o para usar el puerto prederminado 5432).
+&lt;li&gt;&lt;label&gt;Puerto&lt;/label&gt; Puerto IP usado por el servidor de bases de datos (dejar en blanco para conexiones locales o para usar el puerto predeterminado 5432).
 
 &lt;li&gt; &lt;label&gt;Base de datos&lt;/label&gt; Nombre de la base de datos (dejar en blanco para la base de datos predeterminada).
 
@@ -60544,7 +60691,7 @@ Este diálogo le permite definir la configuración para una conexión a una base
 
 &lt;li&gt; &lt;label&gt;Listar también tablas sin geometría&lt;/label&gt;  Indica que las tablas sin geometría se listen también por omisión.
 
-&lt;li&gt; &lt;label&gt;Usar metadatos de tabla estimados&lt;/label&gt; Al inicializar tablas pueden ser necesarias varias consultas para establecer las características de las geometrías guardades en la tabla de la base de datos. Cuando esta opción está marcada, estas consultas examinan solo una muestra de las filas y usan las estadísticas de la tabla en vez de toda la tabla. Esto puede acelerar drásticamente las operaciones en grandes conjuntos de datos, pero puede dar una caracterización incorrecta de las capas (ej. la &lt;font color=&quot;red&quot;&gt;cuenta de objetos espaciales&lt;/font&gt; de capas filtradas no se determinará con precisión).
+&lt;li&gt; &lt;label&gt;Usar metadatos de tabla estimados&lt;/label&gt; Al inicializar tablas pueden ser necesarias varias consultas para establecer las características de las geometrías guardadas en la tabla de la base de datos. Cuando esta opción está marcada, estas consultas examinan solo una muestra de las filas y usan las estadísticas de la tabla en vez de toda la tabla. Esto puede acelerar drásticamente las operaciones en grandes conjuntos de datos, pero puede dar una caracterización incorrecta de las capas (ej. la &lt;font color=&quot;red&quot;&gt;cuenta de objetos espaciales&lt;/font&gt; de capas filtradas no se determinará con precisión).
 
 &lt;/ul&gt;
 </translation>
@@ -60572,12 +60719,12 @@ In this section you can see the list of attributes. To delete one of them, click
 </source>
         <translation>&lt;h3&gt;Crear nueva capa vectorial&lt;/h3&gt;
 Para crear una capa nueva para editar, seleccione &lt;label&gt;Capa vectorial nueva&lt;/label&gt; del menú &lt;label&gt;Capa&lt;/label&gt;.&lt;br/&gt;
-COn este diálogo puede crear una capa de archivo shape.
+Con este diálogo puede crear una capa de archivo shape.
 &lt;h4&gt;Tipo&lt;/h4&gt;
 Seleccione el tipo de capa &lt;label&gt;Punto&lt;/label&gt;, &lt;label&gt;Línea&lt;/label&gt; o &lt;label&gt;Polígono&lt;/label&gt;.&lt;br/&gt;
 Si es necesario, pulse el botón &lt;label&gt;Especificar SRC&lt;/label&gt; para cambiar el sistema de referencia de coordenadas de la capa.
 &lt;h4&gt;Nuevo atributo&lt;/h4&gt;
-Añada los atributos que desee haciendo clic en el botón &lt;label&gt;Añadir a la lista de atributos&lt;/label&gt; después de que haya especificado un nombre y tipo para el atributo. Solo se adminten atributos de tipo real, entero o cadena.&lt;br/&gt;
+Añada los atributos que desee haciendo clic en el botón &lt;label&gt;Añadir a la lista de atributos&lt;/label&gt; después de que haya especificado un nombre y tipo para el atributo. Solo se admiten atributos de tipo real, entero o cadena.&lt;br/&gt;
 También puede definir la anchura y precisión de la columna del nuevo atributo.
 &lt;h4&gt;Lista de atributos&lt;/h4&gt;
 En esta sección puede ver la lista de atributos. Para borrar uno de ellos, pulse en él y seleccione el botón &lt;label&gt;Eliminar el atributo seleccionado&lt;/label&gt;.
@@ -60794,7 +60941,7 @@ In this section you can see the list of attributes. To delete one of them, click
 Click on &lt;label&gt;OK&lt;/label&gt; to create the layer and close the dialog.  Clicking &lt;label&gt;Apply&lt;/label&gt; also creates the layer, but keeps the dialog open, thereby allowing you to create more similar layers. &lt;label&gt;Cancel&lt;/label&gt; will close the layer without further changes.
 </source>
         <translation>&lt;h3&gt;Crear una nueva capa SpatiaLite&lt;/h3&gt;
-Puede usar este cuadro de diálogo para crear una nueva base de datos SpatiaLite y/o una capa vacía SpatiaLite para edición. Vea más adelante una explicaión de las entradas del diálogo.
+Puede usar este cuadro de diálogo para crear una nueva base de datos SpatiaLite y/o una capa vacía SpatiaLite para edición. Vea más adelante una explicación de las entradas del diálogo.
 &lt;h4&gt;Base de datos&lt;/h4&gt;
 Elija la base de datos de la lista desplegable. Esta lista se crea desde sus conexiones de SpatiaLite guardadas. Si no tiene ninguna conexión guardada o si quiere crear una nueva base de datos, haga clic en el botón (&lt;label&gt;...&lt;/label&gt;) a la derecha de la lista desplegable.
 &lt;h4&gt;Nombre de la capa&lt;/h4&gt;
@@ -60932,7 +61079,7 @@ To visualize the results, select an table entry, press the &lt;label&gt;Add sele
 You only need to request the list of layers by clicking the &lt;label&gt;Connect&lt;/label&gt; button.
 </source>
         <translation>&lt;h3&gt;Crear una nueva conexión WMS&lt;/h3&gt;
-Se pueden añadir capas WMS de forma muy sencilla, con tal de que se sepa la URL para acceder al servidor WMS, se tenga una conexion en servicio con ese servidor y el servidor entienda HTML como mecanismo de transporte de datos.&lt;p&gt;
+Se pueden añadir capas WMS de forma muy sencilla, con tal de que se sepa la URL para acceder al servidor WMS, se tenga una conexión en servicio con ese servidor y el servidor entienda HTML como mecanismo de transporte de datos.&lt;p&gt;
 QGIS actualmente puede comportarse como un cliente WMS que entiende servidores WMS 1.1, 1.1 y 1.3.
 &lt;p&gt;
 &lt;a href=&quot;#serv&quot;&gt;Servidores&lt;/a&gt;&lt;br/&gt;
@@ -60965,7 +61112,7 @@ En esta pestaña puede cambiar el orden de las capas WMS cargadas.
 &lt;a name=&quot;search&quot;&gt;
 &lt;h4&gt;Búsqueda de servidores&lt;/h4&gt;
 &lt;/a&gt;
-En esta pestaña puede buscar servidores WMS. Es posible introducir una cadena de búsqueda en el campo de texoto y pulsar el botón &lt;label&gt;Buscar&lt;/label&gt;&lt;p&gt;
+En esta pestaña puede buscar servidores WMS. Es posible introducir una cadena de búsqueda en el campo de texto y pulsar el botón &lt;label&gt;Buscar&lt;/label&gt;&lt;p&gt;
 Para visualizar los resultados, seleccione una entrada de la tabla, pulse el botón &lt;label&gt;Añadir la fila seleccionada a la lista de WMS&lt;/label&gt; y vuelva a la pestaña &lt;label&gt;Servidores&lt;/label&gt;&lt;p&gt;
 Solo necesita solicitar la lista de capas haciendo clic en el botón &lt;label&gt;Conectar&lt;/label&gt;.
 </translation>
@@ -61016,7 +61163,7 @@ To filter a layer before adding it to the map, either double click on its name o
 Ticking &lt;label&gt;Search options&lt;/label&gt; enables additional options for searching in different column types and using 2 search modes: &lt;label&gt;Wildcard&lt;/label&gt; or &lt;label&gt;RegExp&lt;/label&gt;.
 </source>
         <translation>&lt;h3&gt;Añadir tablas de SQL Anywhere&lt;/h3&gt;
-Este diálogo le permite añandir capas de SQL Anywhere (tablas con una columna de geometría) a la vista del mapa de QGIS.
+Este diálogo le permite añadir capas de SQL Anywhere (tablas con una columna de geometría) a la vista del mapa de QGIS.
 &lt;p&gt;
 &lt;a href=&quot;#connect&quot;&gt;Conexiones&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;#add&quot;&gt;Añadir capas&lt;/a&gt;&lt;br/&gt;
@@ -61301,20 +61448,20 @@ La calculadora de campos le permite actualizar campos con expresiones.
 &lt;tr&gt;&lt;td&gt;sin(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;seno de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;cos(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;coseno de &lt;tt&gt;b&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;tan(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;tangente de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;asin(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arcoseno de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;acos(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arcocoseno de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;atan(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arcotangente de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;asin(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arco seno de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;acos(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arco coseno de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;atan(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arco tangente de &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;to int(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;convertir cadena &lt;tt&gt;a&lt;/tt&gt; entero&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;to real(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;convertir cadena &lt;tt&gt;a&lt;/tt&gt; a real&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;to string(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;convertir número &lt;tt&gt;a&lt;/tt&gt; a cadena&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;lower(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;convertir cadena &lt;tt&gt;a&lt;/tt&gt; a minúsculas&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;upper(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;convertir cadena &lt;tt&gt;a&lt;/tt&gt; a mayúsculas&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;length(&lt;tt&gt;a&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;longitud de cadena &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;atan2(&lt;tt&gt;y&lt;/tt&gt;,&lt;tt&gt;x&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arcotangente de &lt;tt&gt;y&lt;/tt&gt;/&lt;tt&gt;x&lt;/tt&gt; usando los signos de los dos argumentos para determinar el cuadrante del resultado.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;atan2(&lt;tt&gt;y&lt;/tt&gt;,&lt;tt&gt;x&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;arco tangente de &lt;tt&gt;y&lt;/tt&gt;/&lt;tt&gt;x&lt;/tt&gt; usando los signos de los dos argumentos para determinar el cuadrante del resultado.&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;replace(&lt;tt&gt;a&lt;/tt&gt;,&lt;tt&gt;remplazaresto&lt;/tt&gt;,&lt;tt&gt;conesto&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;remplazar &lt;tt&gt;remplazaresto&lt;/tt&gt; con &lt;tt&gt;conesto&lt;/tt&gt; en la cadena &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/td&gt;
 &lt;tr&gt;&lt;td&gt;regexp_replace(&lt;tt&gt;a&lt;/tt&gt;,&lt;tt&gt;remplazaresto&lt;/tt&gt;,&lt;tt&gt;conesto&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;remplazar la expresión regular &lt;tt&gt;remplazaresto&lt;/tt&gt; con &lt;tt&gt;conesto&lt;/tt&gt; en la cadena &lt;tt&gt;a&lt;/tt&gt;&lt;/td&gt;&lt;/td&gt;
 &lt;tr&gt;&lt;td&gt;substr(&lt;tt&gt;a&lt;/tt&gt;,&lt;tt&gt;desde&lt;/tt&gt;,&lt;tt&gt;long&lt;/tt&gt;)&lt;/td&gt;&lt;td&gt;&lt;tt&gt;long&lt;/tt&gt; caracteres de la cadena &lt;tt&gt;a&lt;/tt&gt; comenzando desde &lt;tt&gt;desde&lt;/tt&gt; (el primer carácter tiene índice 1)&lt;/td&gt;&lt;/td&gt;
-&lt;tr&gt;&lt;td&gt;&lt;tt&gt;a&lt;/tt&gt; || &lt;tt&gt;b&lt;/tt&gt;&lt;/td&gt;&lt;td&gt;concatenar las cednas &lt;tt&gt;a&lt;/tt&gt; y &lt;tt&gt;b&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt&gt;a&lt;/tt&gt; || &lt;tt&gt;b&lt;/tt&gt;&lt;/td&gt;&lt;td&gt;concatenar las cadenas &lt;tt&gt;a&lt;/tt&gt; y &lt;tt&gt;b&lt;/tt&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;$rownum&lt;/td&gt;&lt;td&gt;número de la fila actual&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;$area&lt;/td&gt;&lt;td&gt;área de polígono&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;$perimeter&lt;/td&gt;&lt;td&gt;perímetro de polígono&lt;/td&gt;&lt;/tr&gt;
@@ -61386,9 +61533,9 @@ Para añadir una barra de escala:
 &lt;li&gt;Seleccione la ubicación en la lista desplegable &lt;label&gt;Ubicación&lt;/label&gt;.&lt;/li&gt;
 &lt;li&gt;Seleccione el estilo de la lista &lt;label&gt;Estilo de barra de escala&lt;/label&gt;.&lt;/li&gt;
 &lt;li&gt;Defina el color para la barra &lt;label&gt;Color de barra&lt;/label&gt; o use el color negro predeterminado.&lt;/li&gt;
-&lt;li&gt;Defina el tamaño de la barra y su etiquera en &lt;label&gt;Tamaño de la barra&lt;/label&gt;. &lt;/li&gt;
+&lt;li&gt;Defina el tamaño de la barra y su etiqueta en &lt;label&gt;Tamaño de la barra&lt;/label&gt;. &lt;/li&gt;
 &lt;li&gt;Asegúrese de que el cuadro &lt;label&gt;Activar barra de escala&lt;/label&gt; está marcado.&lt;/li&gt;
-&lt;li&gt;De forma opcional seleccione redondear números automáticamente al cambiar el tamaño de la vista del mapa &lt;label&gt;Redondear números automáticamente al cambir de tamaño&lt;/label&gt;.&lt;/li&gt;
+&lt;li&gt;De forma opcional seleccione redondear números automáticamente al cambiar el tamaño de la vista del mapa &lt;label&gt;Redondear números automáticamente al cambiar de tamaño&lt;/label&gt;.&lt;/li&gt;
 &lt;li&gt;Haga clic en &lt;label&gt;Aceptar&lt;/label&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 </translation>
@@ -61463,7 +61610,7 @@ Para medir áreas, seleccione la herramienta y haga clic para crear el área a m
 &lt;a name=&quot;topologyTolerance&quot;&gt;
 &lt;h4&gt;Tolerancia topológica&lt;/h4&gt;
 &lt;/a&gt;
-&lt;p&gt;&lt;label&gt;Tolerancia topológica&lt;/label&gt; - la distancia en unidades del proyecto. Si la distancia de dos puntos cae en la tolerancia topológica, se consideran vértices. Un valor de tolerancia topológica mayor de cero relentiza el complemento, pero puede utilizar fuentes de datos no ideales.&lt;/p&gt;
+&lt;p&gt;&lt;label&gt;Tolerancia topológica&lt;/label&gt; - la distancia en unidades del proyecto. Si la distancia de dos puntos cae en la tolerancia topológica, se consideran vértices. Un valor de tolerancia topológica mayor de cero ralentiza el complemento, pero puede utilizar fuentes de datos no ideales.&lt;/p&gt;
 
 &lt;h5&gt;Nota&lt;/h5&gt;
 &lt;p&gt;El complemento Gráfico de ruta considera que dos carreteras están enlazadas si tienen un nodo en común. Un node se identifica de forma única por sus coordenadas. Sin embargo, en el proceso de digitalización pueden ocurrir errores. Los errores a veces ocurren cuando se transforma una red de un sistema de coordenadas a otro. Esto puede hacer que el complemento Gráfico de ruta considere no conectadas carreteras que sí lo están. En ese caso la tolerancia topológica se debe establecer a un valor mayor que cero.&lt;/p&gt;
@@ -61620,7 +61767,7 @@ See &lt;a href=&quot;http://gdal.org/ogr/ogr_formats.html&quot;&gt;OGR Vector fo
 &lt;li&gt;Puede seleccionar el formato de destino de la lista &lt;label&gt;Formato&lt;/label&gt; (como se aconseja por OGR).
 &lt;li&gt;En &lt;label&gt;Guardar como&lt;/label&gt; puede introducir un nombre de archivo de destino o seleccionar uno usando el botón &lt;label&gt;Explorar&lt;/label&gt;.
 &lt;li&gt;En la lista &lt;label&gt;Codificación&lt;/label&gt; puede definir con qué codificación se deben guardar los datos.
-&lt;li&gt;Puede seleccionar un SRC enel que se deban reproyectar los datos que se van a guardar usando &lt;label&gt;CRS&lt;/label&gt;.
+&lt;li&gt;Puede seleccionar un SRC en el que se deban reproyectar los datos que se van a guardar usando &lt;label&gt;CRS&lt;/label&gt;.
 &lt;li&gt;OGR también tiene varias opciones para los distintos formatos que soporta. Utilice el campo de creación de &lt;label&gt;fuente de datos&lt;/label&gt; para establecer las opciones de la fuente de datos y las opciones de creación de la &lt;label&gt;capa&lt;/label&gt;. Introduzca una opción por línea (ej. &lt;code&gt;SPATIALITE=yes&lt;/code&gt; en la &lt;label&gt;fuente de datos&lt;/label&gt; para crear una base de datos spatialite usando el controlador SQLite).
 &lt;/ul&gt;
 
@@ -61647,7 +61794,7 @@ El diseñador de impresión permite ordenar los elementos que serán impresos de
 &lt;/p&gt;
 
 &lt;p&gt;
-Haga clic sobre uno de los íconos a lo largo de la parte superior de la ventana Diseñador para seleccionar el tipo de elemento a colocar en la página, luego haga clic y dibuje sobre la página para ubicar el elementoo. El tamaño de algunos elementos, tales como la vista del mapa y la barra de escala se pueden definir haciendo clic y arrastrando sobre la página. Otros elementos tienen tamaño fijo, pero se puede cambiar después seleccionando el elementos y ajustándo el campo de tamaño en el panel derecho.
+Haga clic sobre uno de los iconos a lo largo de la parte superior de la ventana Diseñador para seleccionar el tipo de elemento a colocar en la página, luego haga clic y dibuje sobre la página para ubicar el elemento. El tamaño de algunos elementos, tales como la vista del mapa y la barra de escala se pueden definir haciendo clic y arrastrando sobre la página. Otros elementos tienen tamaño fijo, pero se puede cambiar después seleccionando el elementos y ajustando el campo de tamaño en el panel derecho.
 
 &lt;/p&gt;
 
@@ -61682,7 +61829,7 @@ Si QGIS no ofrece el sistema de referencia de coordenadas que necesita, puede de
 Para definir un SRC, seleccione &lt;label&gt;SRC personalizado&lt;/label&gt; del menú &lt;label&gt;Edición&lt;/label&gt; (Gnome, OSX) o del menú &lt;label&gt;Configuración&lt;/label&gt; (KDE, Windows). Los SRC personalizados se almacenan en la base de datos de su usuario de QGIS. Además de sus SRC personalizados, esta base de datos también contiene los marcadores geoespaciales y otros datos personalizados.
 
 &lt;h4&gt;Definición&lt;/h4&gt;
-Para crear un nuevo SRC, haga clic sobre el boton &lt;label&gt;Nuevo&lt;/label&gt; e introduzca:
+Para crear un nuevo SRC, haga clic sobre el botón &lt;label&gt;Nuevo&lt;/label&gt; e introduzca:
 &lt;ul&gt;
 &lt;li&gt;nombre descriptivo 
 &lt;li&gt;parámetros del SRC
@@ -61801,7 +61948,7 @@ QGIS le permite controlar el proceso de renderizado de diversas maneras:&lt;p&gt
 Puede establecer una opción para cargar siempre las nuevas capas sin representarlas.&lt;br&gt;
 Esto significa que la capa se añadirá al mapa, pero la casilla de verificación de visibilidad en el panel Capas estará sin marcar de forma predeterminada. Para establecer esta opción, desmarque la casilla &lt;label&gt;Por omisión, las nuevas capas añadidas al mapa se deben visualizar&lt;/label&gt;.&lt;p&gt;
 Puede establecer una opción para actualizar la vista del mapa a medida que se dibujan los objetos espaciales.&lt;br&gt;
-Por omisión, QGIS no muestra cada objeto espacial de una capa hasta que se ha renderizado toda la capa. Para actualizar la visualización a medida que se leen los objetos espaciales de la capa, establezca el &lt;label&gt;Número de objetos espaciales a dibujar antes de actualizar la visualización&lt;/label&gt;a un valor apropieado. Un valor de 0 deshabilita la actualización mientras se dibuja (es lo predeterminado). Establecer un valor demasiado bajo dará lugar a un rendimiendo pobre, ya que la vista del mapa se actualizará continuamente mientras se leen los objetos espaciales.Se sugiere 500 como un valor por el que comenzar.
+Por omisión, QGIS no muestra cada objeto espacial de una capa hasta que se ha renderizado toda la capa. Para actualizar la visualización a medida que se leen los objetos espaciales de la capa, establezca el &lt;label&gt;Número de objetos espaciales a dibujar antes de actualizar la visualización&lt;/label&gt;a un valor apropiado. Un valor de 0 deshabilita la actualización mientras se dibuja (es lo predeterminado). Establecer un valor demasiado bajo dará lugar a un rendimiento pobre, ya que la vista del mapa se actualizará continuamente mientras se leen los objetos espaciales.Se sugiere 500 como un valor por el que comenzar.
 &lt;a name=&quot;map&quot;&gt;
 &lt;h4&gt;Herramientas del mapa&lt;/h4&gt;
 &lt;/a&gt;
@@ -61819,11 +61966,11 @@ Define el algoritmo de ubicación para las etiquetas. Elija entre &lt;label&gt;p
 &lt;a name=&quot;digit&quot;&gt;
 &lt;h4&gt;Digitalización&lt;/h4&gt;
 &lt;/a&gt;
-&lt;h5&gt;Banda elastica&lt;/h5&gt;
+&lt;h5&gt;Banda elástica&lt;/h5&gt;
 En la pestaña &lt;label&gt;Digitalización&lt;/label&gt;puede definir la anchura y color de la línea de digitalización.
 &lt;h5&gt;Autoensamblado&lt;/h5&gt;
 Aquí puede definir una tolerancia general de autoensamblado para todo el proyecto.&lt;p&gt;
-Puede seleccionar entre &lt;label&gt;A vértice&lt;/label&gt;, &lt;label&gt;A segmento&lt;/label&gt; o &lt;label&gt;A vértice y segmento&lt;/label&gt; como modo predeterminado de ensamblado. También puede definir una tolerancia predeterminada de autoensamblado y un radio de búsqueda para la edición de vértices. La tolerancia se puede establecer en unidades del mapa o en píxeles. La ventaja de elegir píxeles es que ho nay que cambiar la tolerancia de autoensamblado después de hacer operaciones de zum.&lt;p&gt;
+Puede seleccionar entre &lt;label&gt;A vértice&lt;/label&gt;, &lt;label&gt;A segmento&lt;/label&gt; o &lt;label&gt;A vértice y segmento&lt;/label&gt; como modo predeterminado de ensamblado. También puede definir una tolerancia predeterminada de autoensamblado y un radio de búsqueda para la edición de vértices. La tolerancia se puede establecer en unidades del mapa o en píxeles. La ventaja de elegir píxeles es que no hay que cambiar la tolerancia de autoensamblado después de hacer operaciones de zum.&lt;p&gt;
 Se puede definir una tolerancia de autoensamblando basada en capas eligiendo &lt;label&gt;Configuración&lt;/label&gt; (o &lt;label&gt;Archivo&lt;/label&gt;) &gt; &lt;label&gt;Propiedades del proyecto...&lt;/label&gt;. En la pestaña &lt;label&gt;General&lt;/label&gt; , sección &lt;label&gt;Digitalización&lt;/label&gt; puede pinchar en &lt;label&gt;Opciones de autoensamblado...&lt;/label&gt; para habilitar y ajustar el modo de autoensamblado y la tolerancia basándose en capas.
 &lt;h5&gt;Marcadores de vértices&lt;/h5&gt;
 Puede definir el estilo de los marcadores como &lt;label&gt;Círculo semitransparente&lt;/label&gt;, &lt;label&gt;Cruz&lt;/label&gt; o &lt;label&gt;Ninguno&lt;/label&gt; y el tamaño; también puede seleccionar mostrar los marcadores solo para los objetos espaciales seleccionados.
@@ -61886,7 +62033,7 @@ SQL Anywhere.
 
 &lt;li&gt; &lt;label&gt;Servidor&lt;/label&gt; Nombre o dirección IP del ordenador que aloja el servidor de la base de datos (dejar en blanco para conexiones locales).
 
-&lt;li&gt; &lt;label&gt;Puerto&lt;/label&gt; Puerto IP port usado por el servidor de la base de datos (dejar en blanco para conexiones locales o para usar el puerto preceterminado 2638).
+&lt;li&gt; &lt;label&gt;Puerto&lt;/label&gt; Puerto IP port usado por el servidor de la base de datos (dejar en blanco para conexiones locales o para usar el puerto predeterminado 2638).
 
 &lt;li&gt; &lt;label&gt;Servidor&lt;/label&gt; Nombre del servidor de la base de datos (dejar en blanco para el servidor predeterminado).
 
@@ -61899,7 +62046,7 @@ SQL Anywhere.
 
 &lt;li&gt; &lt;label&gt;Guardar nombre de usuario&lt;/label&gt; Indica si guardar el nombre de usuario de la base de datos en la configuración de la conexión.
 
-&lt;li&gt; &lt;label&gt;Guardar contraseña&lt;/label&gt; Indica si guardar la contraseña de la base de datos en la confitguración de la conexión.  &lt;em&gt;¡Las contraseñas de guardan en &lt;strong&gt;texto plano&lt;/strong&gt; en la configuración del sistema!&lt;/em&gt;
+&lt;li&gt; &lt;label&gt;Guardar contraseña&lt;/label&gt; Indica si guardar la contraseña de la base de datos en la configuración de la conexión.  &lt;em&gt;¡Las contraseñas de guardan en &lt;strong&gt;texto plano&lt;/strong&gt; en la configuración del sistema!&lt;/em&gt;
 
 &lt;li&gt; &lt;label&gt;Encriptado sencillo&lt;/label&gt; Asegurar la conexión a la base de datos usando encriptado sencillo.
 
@@ -61973,7 +62120,7 @@ Oracle.
 
 &lt;li&gt; &lt;label&gt;Mirar solo en la tabla de metadatos&lt;/label&gt; Restringe las tablas mostradas a aquellas que están en la vista all_sdo_geom_metadata. Esto puede acelerar la visualización inicial de tablas espaciales.
 
-&lt;li&gt; &lt;label&gt;Buscar solo tablas del usuario&lt;/label&gt; Cuando se buscan tablas espaciales, restringir la búsqueda a las tablas que son propieada del usuario.
+&lt;li&gt; &lt;label&gt;Buscar solo tablas del usuario&lt;/label&gt; Cuando se buscan tablas espaciales, restringir la búsqueda a las tablas que son propiedad del usuario.
 
 &lt;li&gt; &lt;label&gt;Listar también tablas sin geometría&lt;/label&gt; Indica que se listen también tablas sin geometría de forma predeterminada.
 
@@ -62070,13 +62217,13 @@ Muestra todos los objetos espaciales de la capa.
 &lt;h5&gt;Mostrar objetos espaciales seleccionados&lt;/h5&gt;
 Muestra todos los objetos espaciales que estén seleccionados.
 &lt;h5&gt;Mostrar objetos espaciales visibles en el mapa&lt;/h5&gt;
-Muestra todos los objetos espaciales que sean visibles actualmente en la vista del mapa, teniendo en cuenta la extesión visible y la visibilidad basada en la escala.
+Muestra todos los objetos espaciales que sean visibles actualmente en la vista del mapa, teniendo en cuenta la extensión visible y la visibilidad basada en la escala.
 &lt;h5&gt;Mostrar objetos espaciales editados y nuevos&lt;/h5&gt;
 Muestra sólo los objetos espaciales editados y nuevos. En este modo, se muestran los objetos espaciales con cambios sin guardar. y es por tanto un buen filtro para revisar cambios antes de guardarlos. Tenga en cuenta que los objetos espaciales borrados no se muestran en este modo.
 &lt;h5&gt;Filtro de columna&lt;/h5&gt;
-Un filtro sencillo, que le permite filtrar por un atributo. Si el atributo contiene texto, también busca subcadenas. Por tanto, busca &lt;b&gt;mano&lt;/b&gt; también mostrará los registros que contengan &lt;b&gt;humano&lt;/b&gt;. Después de cambiar el texto del filtro, pulse &lt;label&gt;Intro&lt;/label&gt; o haga clid en &lt;label&gt;Aplicar&lt;/label&gt;. También puede conmutar la casilla &lt;label&gt;Sensible a mayúsculas&lt;/label&gt;, de forma que su filtro también encuentre &lt;b&gt;Noche&lt;/b&gt; cuando busque el texto &lt;b&gt;noche&lt;/b&gt;.   
+Un filtro sencillo, que le permite filtrar por un atributo. Si el atributo contiene texto, también busca subcadenas. Por tanto, busca &lt;b&gt;mano&lt;/b&gt; también mostrará los registros que contengan &lt;b&gt;humano&lt;/b&gt;. Después de cambiar el texto del filtro, pulse &lt;label&gt;Intro&lt;/label&gt; o haga clic en &lt;label&gt;Aplicar&lt;/label&gt;. También puede conmutar la casilla &lt;label&gt;Sensible a mayúsculas&lt;/label&gt;, de forma que su filtro también encuentre &lt;b&gt;Noche&lt;/b&gt; cuando busque el texto &lt;b&gt;noche&lt;/b&gt;.   
 &lt;h5&gt;Filtro avanzado&lt;/h5&gt;
-Para búsquedas más complejsa, este modo un potente constructor de expresiones, que es similar a una cláusula WHERE de SQL. Por favor, consulte la ayuda incluida en el constructor de consultas para detalles sobre la sintaxis.
+Para búsquedas más complejas, este modo un potente constructor de expresiones, que es similar a una cláusula WHERE de SQL. Por favor, consulte la ayuda incluida en el constructor de consultas para detalles sobre la sintaxis.
 
 &lt;a name=&quot;Editing&quot;&gt;
 &lt;h4&gt;Editar&lt;/h4&gt;
@@ -62444,7 +62591,7 @@ Pressing the &lt;label&gt;Calculate&lt;/label&gt; button will run the shortest p
 &lt;p&gt;In order to bind the start and stop points of the route to the road network Road graph selects the nearest point or arc of the graph. In fact it can bind to any part of the road network. Nevertheless, their route and its characteristics do not take into account the distance from the starting point to the road network and of the road network to the stopping point.&lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Encontrar ruta más corta&lt;/h3&gt;
-&lt;p&gt;Grafo de ruta es un complemento en C++ para QGIS, que calcula la ruta más corta entre dos puntos de cualquier capa de líneas y dibuja esta ruta sobre la red de carreteras. Antes de usar el complemento configúrelo. Ésto se puede hacer en el munú &lt;label&gt;Complementos &amp;rarr; Grafo de ruta &amp;rarr; Configuración&lt;/label&gt;&lt;/p&gt;
+&lt;p&gt;Grafo de ruta es un complemento en C++ para QGIS, que calcula la ruta más corta entre dos puntos de cualquier capa de líneas y dibuja esta ruta sobre la red de carreteras. Antes de usar el complemento configúrelo. Ésto se puede hacer en el menú &lt;label&gt;Complementos &amp;rarr; Grafo de ruta &amp;rarr; Configuración&lt;/label&gt;&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&quot;#howto&quot;&gt;Cómo&lt;/a&gt;&lt;br/&gt;
 &lt;/p&gt;
@@ -62775,7 +62922,7 @@ The following options can be added
 
 </source>
         <translation>&lt;h3&gt;Capa de archivo de texto delimitado&lt;/h3&gt;
-Carga y muestra archivos de texto delmiitado.
+Carga y muestra archivos de texto delimitado.
 &lt;p&gt;
 &lt;a href=&quot;#re&quot;&gt;Generalidades&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;#creating&quot;&gt;Crear una capa de texto delimitado&lt;/a&gt;&lt;br/&gt;
@@ -63252,7 +63399,7 @@ QGIS admite varios renderizadores de simbología para controlar cómo se muestra
 &lt;ul&gt;
 &lt;li&gt;&lt;label&gt;Símbolo único&lt;/label&gt; - se aplica un único estilo a todos los objetos de la capa.
 &lt;li&gt;&lt;label&gt;Símbolo graduado&lt;/label&gt; - los objetos de la capa se muestran con diferentes símbolos, clasificados por el valor de un determinado campo.
-&lt;li&gt;&lt;label&gt;Color continuo&lt;/label&gt; - los objetos de la capa se muestran con un abanico de colores, clasificados por el valor numérico dentro de un campo espeficado.
+&lt;li&gt;&lt;label&gt;Color continuo&lt;/label&gt; - los objetos de la capa se muestran con un abanico de colores, clasificados por el valor numérico dentro de un campo especificado.
 &lt;li&gt;&lt;label&gt;Valor único&lt;/label&gt; - los objetos se clasifican por los valores únicos dentro de un campo especificado, teniendo cada valor un símbolo diferente.
 &lt;/ul&gt;
 
@@ -63309,9 +63456,9 @@ Dentro de la pestaña Campos también puede encontrar una columna de control de 
 &lt;li&gt;&lt;label&gt;Intervalo&lt;/label&gt; Permite establecer valores numéricos de un determinado intervalo. El control de edición puede ser un deslizador o una caja con flechas.
 &lt;li&gt;&lt;label&gt;Valor único&lt;/label&gt; El usuario puede seleccionar uno de los valores que ya estén en uso en la tabla de atributos. Si está activado &lt;label&gt;editable&lt;/label&gt;, se muestra una línea de edición con capacidad para autocompletar, pero serán posibles valores adicionales. De lo contrario se usará un cuadro combinado.
 &lt;li&gt;&lt;label&gt;Nombre de archivo&lt;/label&gt; Simplifica la selección al añadir un diálogo para elegir archivos.
-&lt;li&gt;&lt;label&gt;Mapa de valor&lt;/label&gt; Un cuadro combinado con elementos predefinidos. El valor se guarda en el atributo, la descripción se muestra en el cuadro combinado. Puede definir los valores manualmente o cargarlos de una capa o un archvo CSV.
+&lt;li&gt;&lt;label&gt;Mapa de valor&lt;/label&gt; Un cuadro combinado con elementos predefinidos. El valor se guarda en el atributo, la descripción se muestra en el cuadro combinado. Puede definir los valores manualmente o cargarlos de una capa o un archivo CSV.
 &lt;li&gt;&lt;label&gt;Enumeración&lt;/label&gt; Abre un cuadro combinado con valores que se pueden usar dentro del tipo de la columna. Actualmente esto sólo es admitido por el proveedor Postgres.
-&lt;li&gt;&lt;label&gt;Immutable&lt;/label&gt; Las columnas de atributos immutables son de sólo lectura. El usuario no puede modificar el contenido.
+&lt;li&gt;&lt;label&gt;Inmutable&lt;/label&gt; Las columnas de atributos inmutables son de sólo lectura. El usuario no puede modificar el contenido.
 &lt;li&gt;&lt;label&gt;Oculta&lt;/label&gt; Una columna de atributos oculta es invisible para el usuario.
 &lt;li&gt;&lt;label&gt;Casilla de verificación&lt;/label&gt; Se muestra una casilla de verificación. Hay que introducir el valor que representa el estado de la casilla de verificación en el atributo.
 &lt;li&gt;&lt;label&gt;Edición de texto&lt;/label&gt; Se muestra un campo de edición de texto que permite introducir texto multilínea.
@@ -63320,11 +63467,11 @@ Dentro de la pestaña Campos también puede encontrar una columna de control de 
 &lt;a name=&quot;general&quot;&gt;
 &lt;h4&gt;General&lt;/h4&gt;
 &lt;/a&gt;
-La pestaña General permite cambiar el nombre mostrado, establecer opciones de representacion dependiente de la escala, crear un índice espacial del archivo vectorial (solo para formatos soportados por OGR y PostGIS) y ver o cambiar la proyección de la capa vectorial.&lt;p&gt;
+La pestaña General permite cambiar el nombre mostrado, establecer opciones de representación dependiente de la escala, crear un índice espacial del archivo vectorial (solo para formatos soportados por OGR y PostGIS) y ver o cambiar la proyección de la capa vectorial.&lt;p&gt;
 También puede establecer filtros específicos de un proveedor usando el &lt;label&gt;Constructor de consultas&lt;/label&gt;.
 
 &lt;h5&gt;Subconjuntos&lt;/h5&gt;
-El botón &lt;label&gt;Constructor de consultas&lt;/label&gt; premite limitar los objetos espaciales de una capa a un subconjunto que cumpla una expresión de filtrado específica de un proveedor.
+El botón &lt;label&gt;Constructor de consultas&lt;/label&gt; permite limitar los objetos espaciales de una capa a un subconjunto que cumpla una expresión de filtrado específica de un proveedor.
 
 &lt;a name=&quot;metadata&quot;&gt;
 &lt;h4&gt;Metadatos&lt;/h4&gt;
@@ -63334,27 +63481,27 @@ La pestaña &lt;label&gt;Metadata&lt;/label&gt; contiene información sobre la c
 &lt;a name=&quot;actions&quot;&gt;
 &lt;h4&gt;Acciones&lt;/h4&gt;
 &lt;/a&gt;
-QGIS proporciona la capacidad de realizar una acción basada en los atributos de un objeto espacial. Esto se puede usar para realizar cierto número de acciones, por ejemplo ejecutar un programa con argumentos contruidos a partir de los atributos de un objeto espacial o pasar pará metros a una herremienta de informe vía web. &lt;br/&gt;
+QGIS proporciona la capacidad de realizar una acción basada en los atributos de un objeto espacial. Esto se puede usar para realizar cierto número de acciones, por ejemplo ejecutar un programa con argumentos construidos a partir de los atributos de un objeto espacial o pasar parámetros a una herramienta de informe vía web. &lt;br/&gt;
 Las acciones son útiles cuando se quiere ejecutar una aplicación externa con frecuencia o ver una página web en base a uno o más valores de su capa vectorial.&lt;p&gt;
 
-La nueva implementación de las acciones utiliza el motor de expresiones de QGIS para hacer evaluaciones. Cada expresión se evalua y remplaza por su resultado en tiempo de ejecución.&lt;p&gt;
+La nueva implementación de las acciones utiliza el motor de expresiones de QGIS para hacer evaluaciones. Cada expresión se evalúa y remplaza por su resultado en tiempo de ejecución.&lt;p&gt;
 Una expresión debe estar encerrada entre &lt;code&gt;[%&lt;/code&gt; y &lt;code&gt;%]&lt;/code&gt; - la interfaz de usuario tiene botones que hacen ésto automáticamente por usted 
 El botón &lt;label&gt;Insertar expresión...&lt;/label&gt; lanza el &lt;label&gt;Constructor de expresiones&lt;/label&gt; que permite escribir fácilmente una expresión, el botón &lt;label&gt;Insertar campo&lt;/label&gt; inserta en la acción un posicionador como &lt;code&gt;[% &quot;nombrecampo&quot; %]&lt;/code&gt; donde nombrecampo es el nombre del campo seleccionado en la lista desplegable de campos.&lt;p&gt;
 
-COnsulte la Guía de usuario para más información.
+Consulte la Guía de usuario para más información.
 
 &lt;h5&gt;Usar las acciones&lt;/h5&gt;
 Las acciones se pueden invocar desde el diálogo &lt;label&gt;Resultados de la identificación&lt;/label&gt; o usando la herramienta &lt;label&gt;Ejecutar acción de objeto espacial&lt;/label&gt; de la barra de herramientas.&lt;p&gt;
 
 Cada acción añade un pequeño conjunto de expresiones personalizadas al conjunto predeterminado disponible en el &lt;label&gt;Constructor de expresiones&lt;/label&gt;.&lt;br/&gt;
-Mientras que al ejecutar las acciones desde el diálogo &lt;label&gt;Resultados de la identificación&lt;/label&gt; la expresión pernonalizada &lt;code&gt;$currfield&lt;/code&gt; será remplazada con el valor del campo seleccionado en el diálogo, al usar la herramienta &lt;label&gt;Ejecutar acción de objeto espacial&lt;/label&gt; estarán disponibles las expresiones personalizadas siguientes (en vez de $currfield):
+Mientras que al ejecutar las acciones desde el diálogo &lt;label&gt;Resultados de la identificación&lt;/label&gt; la expresión personalizada &lt;code&gt;$currfield&lt;/code&gt; será remplazada con el valor del campo seleccionado en el diálogo, al usar la herramienta &lt;label&gt;Ejecutar acción de objeto espacial&lt;/label&gt; estarán disponibles las expresiones personalizadas siguientes (en vez de $currfield):
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;$clickx&lt;/code&gt; devuelve la coordenada X de la posición donde se hace clic en el lienzo del mapa&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;$clicky&lt;/code&gt; devuelve la coordenada Y de la posición donde se hace clic en el lienzo del mapa&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;$layerid&lt;/code&gt; devuelve la ID de la capa seleccionada en el panel Capas&lt;/li&gt;
 &lt;/ul&gt;
 
-Nota: la herramienta &lt;label&gt;Ejecutar acción de objeto espacial&lt;/label&gt; ejecuata the actions on all the matching features, where as &lt;label&gt;Identify Results&lt;/label&gt; allows you to select which specific feature to run action on.&lt;p&gt;
+Nota: la herramienta &lt;label&gt;Ejecutar acción de objeto espacial&lt;/label&gt; ejecuta las acciones sobre todos los objetos espaciales que coincidan, mientras que &lt;label&gt;Identificar resultados&lt;/label&gt; permite seleccionar sobre qué objeto espacial específico ejecutar al acción.&lt;p&gt;
 
 
 &lt;h5&gt;Ejemplos de acciones&lt;/h5&gt;
@@ -63364,9 +63511,9 @@ Puede añadir algunas acciones de ejemplo haciendo clic en el botón &lt;label&g
 &lt;a name=&quot;diagram&quot;&gt;
 &lt;h4&gt;Superposición de diagramas&lt;/h4&gt;
 &lt;/a&gt;
-La pestaña Diagramas permite añadir un gráfico superpuesto a una capa vectorial. Para activar esta función, abra el &lt;label&gt;Administrador de complementos&lt;/label&gt; y seleccione el complemento &lt;label&gt;Superposición de diagramas&lt;/label&gt;. Después de estos habrá una nueva pestaña en el diálogo &lt;label&gt;Propieadades de capa&lt;/label&gt; vectorial, en el que se pueden introducir los ajustes para los diagramas.&lt;p&gt;
-La implementación actual de los diagramas proporcioa soporte para gráficos de tipo queso y de barras y para escalado lineal
-of the diagram size according to a classification attribute.
+La pestaña Diagramas permite añadir un gráfico superpuesto a una capa vectorial. Para activar esta función, abra el &lt;label&gt;Administrador de complementos&lt;/label&gt; y seleccione el complemento &lt;label&gt;Superposición de diagramas&lt;/label&gt;. Después de estos habrá una nueva pestaña en el diálogo &lt;label&gt;Propiedades de capa&lt;/label&gt; vectorial, en el que se pueden introducir los ajustes para los diagramas.&lt;p&gt;
+La implementación actual de los diagramas proporciona soporte para gráficos de tipo queso y de barras y para escalado lineal
+del tamaño del diagrama de acuerdo con un atributo de clasificación.
 </translation>
     </message>
     <message>
@@ -63697,7 +63844,7 @@ which are described and illustrated on &lt;a href=&quot;http://en.wikipedia.org/
 
 </source>
         <translation>&lt;h1&gt;Ayuda del complemento Mapa de calor&lt;/h1&gt;
-&lt;p&gt;El complemento Mapa de calor utiliza Estimacioń de Densidad de Núcleo para crear un ráster de densidad (mapa de calor)
+&lt;p&gt;El complemento Mapa de calor utiliza Estimación de Densidad de Núcleo para crear un ráster de densidad (mapa de calor)
 de una capa vectorial de puntos de entrada. La densidad se calcula en base al número de puntos en cada localización, de
 forma que números más grandes de puntos agrupados dan como resultado valores mas grandes.
 Los mapas de calor permiten una fácil identificación de «puntos calientes» y agrupamiento de puntos.&lt;/p&gt;
@@ -63709,7 +63856,7 @@ Los mapas de calor permiten una fácil identificación de «puntos calientes» y
 
 &lt;h3&gt;Ráster de salida&lt;/h3&gt;
 &lt;p&gt;Se puede establecer la ubicación del ráster de salida y su nombre de archivo haciendo clic en el botón &lt;label&gt;...&lt;/label&gt; que hay junto al cuadro de texto Ráster de salida.&lt;br/&gt;
-&lt;b&gt;Nota:&lt;/b&gt; El formato de archivo se añade automáticamente según el formtato de salida seleccionado, si no se indica explícitamente.&lt;/p&gt;
+&lt;b&gt;Nota:&lt;/b&gt; El formato de archivo se añade automáticamente según el formato de salida seleccionado, si no se indica explícitamente.&lt;/p&gt;
 
 &lt;h3&gt;Formato de salida&lt;/h3&gt;
 &lt;p&gt;En la lista desplegable están todos los formatos admitidos para escritura por GDAL. Pulse y seleccione el formato de salida requerido para su archivo.&lt;br/&gt;
@@ -63745,7 +63892,7 @@ las cuales están descritas e ilustradas en la &lt;a href=&quot;http://en.wikipe
 &lt;p&gt;De forma opcional, se puede usar un atributo que contenga los pesos para puntos para dar más peso a unos puntos de la capa de entrada que a otros.&lt;/p&gt;
 
 &lt;h2&gt;Más detalles&lt;/h2&gt;
-&lt;p&gt;Contacte con el autor en aruntheguy arroba gmail puntot com&lt;/p&gt;
+&lt;p&gt;Contacte con el autor en aruntheguy arroba gmail punto com&lt;/p&gt;
 
 </translation>
     </message>
@@ -63937,7 +64084,7 @@ that will be automatically deleted after running.&lt;/li&gt;
 				La consola se divide en dos paneles principales, superior e inferior 
 				cuyo tamaño se puede ajustar usando el separador horizontal. El panel del área de salida es un control de solo lectura que 
 				muestra la salida de las órdenes. Puede arrastrar y soltar o copiar y pegar texto en el área de entrada y 
-				ejecutar porciones de códifo desde el panel de salida seleccionado algo de texto y haciendo clic en la 
+				ejecutar porciones de código desde el panel de salida seleccionado algo de texto y haciendo clic en la 
 				orden&lt;label&gt;Introducir seleccionado&lt;/label&gt; del menú contextual. 
 				No importa si el texto seleccionado contiene el punto de inserción del intérprete (&gt;&gt;&gt;, ...). El área de entrada es una termina 
 				interactiva de python para las órdenes de entrada.&lt;br&gt;Para acceder al editor de archivos de python use el 
@@ -63971,7 +64118,7 @@ that will be automatically deleted after running.&lt;/li&gt;
 			&lt;br&gt;
 			&lt;li&gt;&lt;label&gt;Ctrl+Mayús+Espacio&lt;/label&gt; para ver el historial de órdenes.&lt;/li&gt;
 			&lt;br&gt;
-                        &lt;li&gt;Ejecutar porciones de códifo con el órden &lt;label&gt;Introducir seleccionado&lt;/label&gt; del panel de salida.&lt;/li&gt;
+                        &lt;li&gt;Ejecutar porciones de código con el orden &lt;label&gt;Introducir seleccionado&lt;/label&gt; del panel de salida.&lt;/li&gt;
 			&lt;br&gt;
 			&lt;li&gt;Abrir la documentación de la API de QGIS tecleando &lt;label&gt;_api&lt;/label&gt;.&lt;/li&gt;
 			&lt;br&gt;
@@ -64008,7 +64155,7 @@ that will be automatically deleted after running.&lt;/li&gt;
 		&lt;/tr&gt;
                 &lt;tr&gt;
 			&lt;td&gt;&lt;img src=&quot;qrc:/images/themes/default/console/iconRunConsole.png&quot; /&gt;&lt;/td&gt;
-			&lt;td colspan=&quot;2&quot;&gt;Ejecutar órden (como la tecla Enter pulsada)&lt;/td&gt;
+			&lt;td colspan=&quot;2&quot;&gt;Ejecutar orden (como la tecla Enter pulsada)&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
 			&lt;td&gt;&lt;img src=&quot;qrc:/images/themes/default/console/iconSettingsConsole.png&quot; /&gt;&lt;/td&gt;
@@ -64049,7 +64196,7 @@ that will be automatically deleted after running.&lt;/li&gt;
 			&lt;br&gt;
 			&lt;li&gt;Inspector de objetos: un explorador de clases y funciones.&lt;/li&gt;
 			&lt;br&gt;
-			&lt;li&gt;Ir a la definicioń de un objeto con un clic del ratón. (desde el inspector de objectos)&lt;/li&gt;
+			&lt;li&gt;Ir a la definición de un objeto con un clic del ratón. (desde el inspector de objetos)&lt;/li&gt;
 			&lt;br&gt;
 			&lt;li&gt;Ejecutar porciones de código con la orden &lt;label&gt;Introducir seleccionado&lt;/label&gt;.&lt;/li&gt;
 			&lt;br&gt;
@@ -64066,7 +64213,7 @@ that will be automatically deleted after running.&lt;/li&gt;
 &lt;b&gt;&lt;i&gt;Más ajustes para la consola de python:&lt;/i&gt;&lt;/b&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;label&gt;Autocompleción:&lt;/label&gt; Si está marcado la compleción de código está habilitada. Puede obtener autocompleción
-a partir del documento actual, desde API onstaladas y tanto desde API como desde el documento actual.&lt;/li&gt;
+a partir del documento actual, desde API instaladas y tanto desde API como desde el documento actual.&lt;/li&gt;
 &lt;br&gt;
 &lt;li&gt;&lt;label&gt;Umbral de autocompleción:&lt;/label&gt; Establece el umbral para mostrar la lista de autocompleción (en caracteres tecleados)&lt;/li&gt;
 &lt;br&gt;
@@ -64169,7 +64316,7 @@ For support send a mail to scala@itc.cnr.it
 * Archivo DXF de entrada: ruta al archivo DXF a convertir
 * Archivo Shp de salida: nombre deseado para el archivo shape a crear
 * Tipo de archivo shp de salida: especifica el tipo del archivo shape de salida
-* Casilla de verificacion Exportar etiquetas de texto: si se marca se creará una capa de puntos shp adicional cuya tabla dbf asociada contendrá información sobre los campos &quot;TEXTO&quot; encontrados en el archivo dxf y las propias cadenas de texto
+* Casilla de verificación Exportar etiquetas de texto: si se marca se creará una capa de puntos shp adicional cuya tabla dbf asociada contendrá información sobre los campos &quot;TEXTO&quot; encontrados en el archivo dxf y las propias cadenas de texto
 
 ---
 Desarrollado por Paolo L. Scala, Barbara Rita Barricelli, Marco Padula
@@ -65257,7 +65404,7 @@ use &lt;code&gt;day&lt;/code&gt; to extract number of days&lt;br&gt;
 Devuelve la diferencia entre dos fechas.
 &lt;br&gt;&lt;br&gt;
 La diferencia es devuelta como un &lt;code&gt;Intervalo&lt;/code&gt; 
-y necesita que se use en uno de las siguientes funciones
+y necesita que se use con una de las siguientes funciones
 para extraer información útil:
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;year&lt;/code&gt;
@@ -65344,14 +65491,14 @@ Returns arcustanget of a value in radians.
      atan(0.5) &amp;rarr; 0.463647609000806&lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Función atan()&lt;/h3&gt;
-Devuelve la arcotangente de un valor en radianes.
+Devuelve la arco tangente de un valor en radianes.
 
 
 &lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
      atan(&lt;i&gt;real&lt;/i&gt;)&lt;/p&gt;
 
 &lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
-&lt;i&gt;real&lt;/i&gt; &amp;rarr; arcotangente de un ángulo.&lt;/p&gt;
+&lt;i&gt;real&lt;/i&gt; &amp;rarr; arco tangente de un ángulo.&lt;/p&gt;
 
 &lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
      atan(0.5) &amp;rarr; 0.463647609000806&lt;/p&gt;
@@ -65457,7 +65604,7 @@ This function takes one argument.
         <translation>&lt;h3&gt;Función log10()&lt;/h3&gt;
 Devuelve el valor del logaritmo en base 10 de la expresión pasada.
 &lt;br&gt;
-Esa funcion toma un argumento.
+Esta función toma un argumento.
 &lt;h4&gt;Sintaxis&lt;/h4&gt;
 &lt;code&gt;log10(value)&lt;/code&gt;&lt;br&gt;
 
@@ -65807,19 +65954,19 @@ Devuelve el primer valor no NULO de una lista de expresiones.
 &lt;br&gt;
 Esta función puede tomar cualquier número de argumentos.
 &lt;h4&gt;Sintaxis&lt;/h4&gt;
-&lt;code&gt;coalesce(expresión1, expresiónn2 ...)&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;coalesce(expresión1, expresión2 ...)&lt;/code&gt;&lt;br&gt;
 
 &lt;h4&gt;Argumentos&lt;/h4&gt;
-&lt;code&gt;expresiónn&lt;/code&gt; - cualquier expresión o valor válidos, cualquiera que sea el tipo.
+&lt;code&gt;expresión&lt;/code&gt; - cualquier expresión o valor válidos, cualquiera que sea el tipo.
 &lt;br&gt;
 
-&lt;h4&gt;Ejmeplo&lt;/h4&gt;
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
 &lt;!-- Show example of function.--&gt;
 &lt;code&gt;coalesce(NULL, 2) &amp;rarr; 2&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;coalesce(NULL, 2, 3) &amp;rarr; 2&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;coalesce(7, NULL, 3*2) &amp;rarr; 7&lt;/code&gt;&lt;br&gt;&lt;br&gt;
 &lt;code&gt;coalesce(&quot;fieldA&quot;, &quot;fallbackField&quot;, &apos;ERROR&apos;) &amp;rarr; el valor de fieldA si no es NULO
- de lo contrario el valor de &quot;fallbackField&quot; o la cedena &apos;ERROR&apos; si ambos son NULOS&lt;/code&gt;&lt;br&gt;
+ de lo contrario el valor de &quot;fallbackField&quot; o la cadena &apos;ERROR&apos; si ambos son NULOS&lt;/code&gt;&lt;br&gt;
 
 </translation>
     </message>
@@ -65852,9 +65999,9 @@ Transforma un valor dado de un dominio de entrada a un intervalo de salida usand
 
 &lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
 &lt;!-- List args for functions here--&gt;
-&lt;i&gt;  valor&lt;/i&gt; &amp;rarr; es un valor en el dominio de entrada. La función devolverá un valor escalado correspondientedentro del intervalo de salida.&lt;br&gt;
+&lt;i&gt;  valor&lt;/i&gt; &amp;rarr; es un valor en el dominio de entrada. La función devolverá un valor escalado correspondiente dentro del intervalo de salida.&lt;br&gt;
 &lt;i&gt;  dominio_min, dominio_max&lt;/i&gt; &amp;rarr; especifica el dominio de entrada, los valores menor y mayor que el &lt;i&gt;valor&lt;/i&gt; de entrada debería tomar.&lt;br&gt;
-&lt;i&gt;  intervalo_min, intervalo_max&lt;/i&gt; &amp;rarr; especifa el intervalo de salida, los valores menor y mayor que debería sacar la función.&lt;br&gt;
+&lt;i&gt;  intervalo_min, intervalo_max&lt;/i&gt; &amp;rarr; especifica el intervalo de salida, los valores menor y mayor que debería sacar la función.&lt;br&gt;
 
 &lt;h4&gt;Ejemplo&lt;/h4&gt;
 &lt;!-- Show example of function.--&gt;
@@ -65888,7 +66035,7 @@ Devuelve el tamaño del área del objeto espacial actual.
 &lt;h4&gt;Argumentos&lt;/h4&gt;
 Ninguno
 
-&lt;h4&gt;Ejmeplo&lt;/h4&gt;
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
 &lt;pre&gt;$area &amp;rarr; 42&lt;/pre&gt;
 
 </translation>
@@ -65978,7 +66125,7 @@ Convierte una cadena al tipo fecha hora de Qt.
 &lt;code&gt;todatetime(&apos;cadena&apos;)&lt;/code&gt;&lt;br&gt;
 
 &lt;h4&gt;Argumentos&lt;/h4&gt;
-&lt;code&gt;cadena&lt;/code&gt; - es una cadena el el formtato fecha hora de Qt.
+&lt;code&gt;cadena&lt;/code&gt; - es una cadena el el formato fecha hora de Qt.
 &lt;br&gt;
 
 &lt;h4&gt;Ejemplo&lt;/h4&gt;
@@ -66069,7 +66216,7 @@ devolver un resultado.
         [ ELSE &lt;i&gt;resultado&lt;/i&gt; ]
      END
 &lt;/pre&gt;
-[ ] marca componentes optionales
+[ ] marca componentes opcionales
 
 &lt;h4&gt;Argumentos&lt;/h4&gt;
 &lt;!-- List args for functions here--&gt;
@@ -66493,8 +66640,8 @@ Devuelve una representación en forma de cadena del color basada en sus atributo
 &lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
 &lt;!-- List args for functions here--&gt;
 &lt;i&gt;  matiz&lt;/i&gt; &amp;rarr; el matiz del color, como un valor entero de 0 a 360.&lt;br&gt;
-&lt;i&gt;  saturación&lt;/i&gt; &amp;rarr; el porcentaje de saturación del color, como un valor entereo de 0 a 100.&lt;br&gt;
-&lt;i&gt;  brillo&lt;/i&gt; &amp;rarr; el porcentaje de brillo del color, como un valor entereo de 0 a 100.&lt;br&gt;
+&lt;i&gt;  saturación&lt;/i&gt; &amp;rarr; el porcentaje de saturación del color, como un valor entero de 0 a 100.&lt;br&gt;
+&lt;i&gt;  brillo&lt;/i&gt; &amp;rarr; el porcentaje de brillo del color, como un valor entero de 0 a 100.&lt;br&gt;
 &lt;i&gt;  alfa&lt;/i&gt; &amp;rarr; el componente alfa como un valor entero de 0 (completamente transparente) a 255 (opaco).&lt;br&gt;
 
 &lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
@@ -66517,7 +66664,7 @@ Returns arcussinus of a value in radians.
      asin(1.0) &amp;rarr; 1.5707963267949&lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Función asin()&lt;/h3&gt;
-Devuelve el arcoseno de un valor en radianes.
+Devuelve el arco seno de un valor en radianes.
 
 
 &lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
@@ -67351,7 +67498,7 @@ Returns arcuscosinus of a value in radians.
      acos(0.5) &amp;rarr; 1.0471975511966&lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Función acos()&lt;/h3&gt;
-Devuelve el arcocoseno de un valor en radianes.
+Devuelve el arco coseno de un valor en radianes.
 
 
 &lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
@@ -67412,8 +67559,8 @@ arguments to determine the quadrant of the result
      atan2(1.0, 1.732) &amp;rarr; 0.523611477769969&lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Función atan2()&lt;/h3&gt;
-Devuelve la arcotangente de y/x usando los signos de los dos 
-argumentos para determinar el cuadrante del resultadp
+Devuelve la arco tangente de y/x usando los signos de los dos 
+argumentos para determinar el cuadrante del resultado.
 
 
 
@@ -68014,7 +68161,34 @@ accelerating as the input values approach the domain maximum. Smaller exponents 
      
      
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función scale_exp()&lt;/h3&gt;
+Transforma un valor dado de un dominio de entrada a un intervalo de salida usando una curva exponencial. Esta función se puede usar para facilitar valores dentro o fuera 
+del intervalo de salida dado.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     exp_escala(&lt;i&gt;valor&lt;/i&gt;,&lt;i&gt;dominio_min&lt;/i&gt;,&lt;i&gt;dominio_max&lt;/i&gt;,&lt;i&gt;intervalo_min&lt;/i&gt;,&lt;i&gt;intervalo_max&lt;/i&gt;,&lt;i&gt;exponente&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  valor&lt;/i&gt; &amp;rarr; es un valor en el dominio de entrada. La función devolverá un valor escalado correspondiente en el intervalo de salida.&lt;br&gt;
+&lt;i&gt;  dominio_min, dominio_max&lt;/i&gt; &amp;rarr; especifica el dominio de entrada y los valores menor y mayor que el &lt;i&gt;valor&lt;/i&gt; de entrada debería tomar.&lt;br&gt;
+&lt;i&gt;  intervalo_min, intervalo_max&lt;/i&gt; &amp;rarr; especifica el intervalo de salida y los valores menor y mayor que debería resultar de la función.&lt;br&gt;
+&lt;i&gt;  exponente&lt;/i&gt; &amp;rarr; un valor positivo (mayor que 0), que determina la forma en que los valores de entrada son mapeados al intervalo de salida. Exponentes grandes harán que los valores de salida comiencen lentamente, antes de acelerar a medida que los valores de entrada se aproximan al dominio máximo. Exponentes más pequeños (menores de 1) harán que los valores de salida comiencen rápidamente pero se ralenticen a medida que se aproxima el dominio máximo.&lt;br&gt;
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+&lt;b&gt;Acelerando, usando un exponente de 2:&lt;/b&gt;&lt;br&gt;
+     scale_exp(5,0,10,0,100,2) &amp;rarr; 25&lt;br&gt;
+     scale_exp(7.5,0,10,0,100,2) &amp;rarr; 56.25&lt;br&gt;
+     scale_exp(9.5,0,10,0,100,2) &amp;rarr; 90.25&lt;br&gt;               
+     &lt;br&gt;
+&lt;b&gt;Ralentizando, usando un exponente de 0.5:&lt;/b&gt;&lt;br&gt;          
+     scale_exp(3,0,10,0,100,0.5) &amp;rarr; 54.772&lt;br&gt;
+     scale_exp(6,0,10,0,100,0.5) &amp;rarr; 77.459&lt;br&gt;
+     scale_exp(9,0,10,0,100,0.5) &amp;rarr; 94.868&lt;br&gt;          
+     
+     
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Fields and Values&lt;/h3&gt;
@@ -68028,7 +68202,7 @@ actually inserted, ie. when building queries.
 &lt;/p&gt;
 </source>
         <translation>&lt;h3&gt;Campos y valores&lt;/h3&gt;
-Contiene una lista de campoor de una capa. También se puede acceder a datos de muestra vía clic derecho.
+Contiene una lista de campos de una capa. También se puede acceder a datos de muestra vía clic derecho.
 &lt;br&gt;&lt;br&gt;
 Seleccione el nombre del campo de la lista, luego haga clic derecho para acceder al menú contextual con opciones para cargar valores de muestra del campo seleccionado.
 
@@ -68076,7 +68250,21 @@ Returns true if any part of a string matches the supplied regular expression.
 &lt;!-- Show example of function.--&gt;
      regexp_match(&apos;QGIS ROCKS&apos;,&apos;&amp;#92;&amp;#92;sROCKS&apos;) &amp;rarr; 1&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función regexp_match()&lt;/h3&gt;
+Devuelve verdadero si cualquier parte de la cadena coincide con la expresión regular proporcionada.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     regexp_match(&lt;i&gt;cadena,expresión regular&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  cadena&lt;/i&gt; &amp;rarr; es una cadena. La cadena a probar contra la expresión regular.&lt;br&gt;
+&lt;i&gt;  expresión regular&lt;/i&gt; &amp;rarr; es una cadena. La expresión regular contra la que probar. La barra invertida debe escaparse dos veces (ej &quot;&amp;#92;&amp;#92;s&quot; para coincidir con un caracter espacio). No se admiten expresiones regulares non-greedy.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     regexp_match(&apos;QGIS ROCKS&apos;,&apos;&amp;#92;&amp;#92;sROCKS&apos;) &amp;rarr; 1&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;regexp_replace() function&lt;/h3&gt;
@@ -68095,7 +68283,22 @@ Returns a string with the supplied regular expression replaced.
 &lt;!-- Show example of function.--&gt;
      regexp_replace(&apos;QGIS SHOULD ROCK&apos;,&apos;&amp;#92;&amp;#92;sSHOULD&amp;#92;&amp;#92;s&apos;,&apos; DOES &apos;) &amp;rarr; &apos;QGIS DOES ROCK&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función regexp_replace()&lt;/h3&gt;
+Devuelve una cadena con la expresión regular proporcionada sustituida.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     regexp_replace(&lt;i&gt;cadena,expresión regular,después&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  cadena&lt;/i&gt; &amp;rarr; es una cadena. La cadena inicial.&lt;br&gt;
+&lt;i&gt;  The start string&lt;/i&gt; &amp;rarr; es una cadena. La The start string a remplazar. La barra invertida debe escaparse dos veces (ej &quot;&amp;#92;&amp;#92;s&quot; para coincidir con un caracter espacio). No se admiten expresiones regulares non-greedy.&lt;br&gt;
+&lt;i&gt;  después&lt;/i&gt; &amp;rarr; es una cadena. La cadena que remplazará cualquier coincidencia de la expresión regular proporcionada. Los grupos capturados se pueden insertar en la cadena de remplazo usando &amp;#92;&amp;#92;1, &amp;#92;&amp;#92;2, etc. &lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     regexp_replace(&apos;QGIS SHOULD ROCK&apos;,&apos;&amp;#92;&amp;#92;sSHOULD&amp;#92;&amp;#92;s&apos;,&apos; DOES &apos;) &amp;rarr; &apos;QGIS DOES ROCK&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;regexp_substr() function&lt;/h3&gt;
@@ -68113,7 +68316,21 @@ Returns the portion of a string which matches a supplied regular expression.
 &lt;!-- Show example of function.--&gt;
      regexp_substr(&apos;abc123&apos;,&apos;(&amp;#92;&amp;#92;d+)&apos;) &amp;rarr; &apos;123&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función regexp_substr()&lt;/h3&gt;
+Devuelve la porción de una cadena que coincide con una expresión regular proporcionada.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     regexp_substr(&lt;i&gt;cadena,expresión regular&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  cadena&lt;/i&gt; &amp;rarr; es una cadena. La cadena de entrada.&lt;br&gt;
+&lt;i&gt;  expresión regular&lt;/i&gt; &amp;rarr; es una cadena. La expresión regular con la que coincidir. La barra invertida debe escaparse dos veces (ej &quot;&amp;#92;&amp;#92;s&quot; para coincidir con un caracter espacio). No se admiten expresiones regulares non-greedy.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     regexp_substr(&apos;abc123&apos;,&apos;(&amp;#92;&amp;#92;d+)&apos;) &amp;rarr; &apos;123&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;ceil() function&lt;/h3&gt;
@@ -68368,7 +68585,18 @@ a &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; geomToWKT( $geometry ) &amp;rarr; POINT(6 50)&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función geomToWKT&lt;/h3&gt;
+Devuelve la representación en Texto Bien Conocido (WKT) de la geometría sin metadatos SRID.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;geomToWKT(a)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( $geometry ) &amp;rarr; POINT(6 50)&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;crosses function&lt;/h3&gt;
@@ -68385,7 +68613,20 @@ geometry &amp;rarr; geometry
 &lt;pre&gt; crosses( geomFromWKT( &apos;LINESTRING(3 5 , 4 4 , 5 3)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; crosses( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))             &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función crosses()&lt;/h3&gt;
+Devuelva 1 si las geometrías proporcionadas tienen alguno, pero no todos, de sus puntos interiores en común.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;crosses( $geometry , $geometry)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometry &amp;rarr; geometría
+geometry &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; crosses( geomFromWKT( &apos;LINESTRING(3 5 , 4 4 , 5 3)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; crosses( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))             &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;AND logical operator&lt;/h3&gt;
@@ -68402,7 +68643,20 @@ None
 &lt;pre&gt; 4 = 2+2 AND 1 = 2  &amp;rarr; returns 0 &lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;operador lógico AND&lt;/h3&gt;
+Devuelve 1 cuando se cumplen las condiciones a y b.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt; condición a AND condición b &lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; 4 = 2+2 AND 1 = 1  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 = 2+2 AND 1 = 2  &amp;rarr; devuelve 0 &lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;convexHull function&lt;/h3&gt;
@@ -68418,7 +68672,19 @@ a &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt;  geomToWKT( convexHull( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 4 10)&apos; )) )   &amp;rarr; returns POLYGON((3 3,4 10,4 4,3 3)) &lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función convexHull()&lt;/h3&gt;
+Devuelve la envolvente convexa de una geometría. Representa la geometría convexa mínima que engloba todas las geometrías del conjunto.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;convexHull( a, b )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+a &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt;  geomToWKT( convexHull( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 4 10)&apos; )) )   &amp;rarr; devuelve POLYGON((3 3,4 10,4 4,3 3)) &lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;$map function&lt;/h3&gt;
@@ -68438,7 +68704,22 @@ $map &amp;rarr; &quot;canvas&quot; (within the main QGIS main canvas)&lt;/pre&gt
 
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función $map&lt;/h3&gt;
+Devuelve la ID del elemento del mapa actual si el mapa se está dibujando en una composición o &quot;canvas&quot; si el mapa está siendo dibujado en la ventana principal de QGIS.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;$map&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+&lt;pre&gt;$map &amp;rarr; &quot;overview_map&quot; (dentro de un elemento de diseñador)&lt;br /&gt;
+$map &amp;rarr; &quot;canvas&quot; (dentro de la ventana principal de QGIS)&lt;/pre&gt;
+
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;combine function&lt;/h3&gt;
@@ -68455,7 +68736,20 @@ geometry &amp;rarr; geometry
 &lt;pre&gt; geomToWKT( combine( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5 )&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4,  2 1 )&apos; ))  )    &amp;rarr; returns MULTILINESTRING((4 4, 2 1), (3 3, 4 4), (4 4, 5 5)) &lt;/pre&gt;
 &lt;pre&gt; geomToWKT( combine( geomFromWKT( &apos;LINESTRING(3 3 , 4 4  )&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 6 6,  2 1 )&apos; ))  )  &amp;rarr; returns LINESTRING(3 3, 4 4, 6 6, 2 1) &lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función combine()&lt;/h3&gt;
+Devuelve la combinación de las geometrías A y B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;combine( geometría A , geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( combine( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5 )&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4,  2 1 )&apos; ))  )    &amp;rarr; returns MULTILINESTRING((4 4, 2 1), (3 3, 4 4), (4 4, 5 5)) &lt;/pre&gt;
+&lt;pre&gt; geomToWKT( combine( geomFromWKT( &apos;LINESTRING(3 3 , 4 4  )&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 6 6,  2 1 )&apos; ))  )  &amp;rarr; returns LINESTRING(3 3, 4 4, 6 6, 2 1) &lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;touches function&lt;/h3&gt;
@@ -68472,7 +68766,20 @@ b &amp;rarr; geometry
 &lt;pre&gt; touches( geomFromWKT( &apos;LINESTRING(5 3 , 4 4)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; touches( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))                     &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función touches()&lt;/h3&gt;
+Devuelve 1 si las geometrías tienen al menos un punto en común, pero sus interiores no intersectan.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;touches( a, b )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; touches( geomFromWKT( &apos;LINESTRING(5 3 , 4 4)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; touches( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))                     &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;LIKE expression&lt;/h3&gt;
@@ -68489,7 +68796,20 @@ None
 &lt;pre&gt; &apos;A&apos; LIKE &apos;a&apos;  &amp;rarr; returns 0 &lt;/pre&gt;
 &lt;pre&gt; &apos;A&apos; LIKE &apos;B&apos;  &amp;rarr; returns 0 &lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Expresión LIKE&lt;/h3&gt;
+Devuelve 1 si el primer parámetro coincide con el patrón proporcionado. También funciona con números.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;cadena/número LIKE patrón&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; LIKE &apos;A&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; LIKE &apos;a&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; LIKE &apos;B&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;geomFromGML function&lt;/h3&gt;
@@ -68505,7 +68825,19 @@ text &amp;rarr; GML representation of a geometry
 &lt;pre&gt; geomFromGML( &apos;&lt;gml:LineString srsName=&quot;EPSG:4326&quot;&gt;&lt;gml:coordinates&gt;4,4 5,5 6,6&lt;/gml:coordinates&gt;&lt;/gml:LineString&gt;&apos;) &amp;rarr; returns a geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función geomFromGML()&lt;/h3&gt;
+Devuelve una geometría a partir de una representación GML de geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;geomFromGML(texto)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+texto &amp;rarr; representación GML de geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomFromGML( &apos;&lt;gml:LineString srsName=&quot;EPSG:4326&quot;&gt;&lt;gml:coordinates&gt;4,4 5,5 6,6&lt;/gml:coordinates&gt;&lt;/gml:LineString&gt;&apos;) &amp;rarr; devuelve una geometría&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;contains function&lt;/h3&gt;
@@ -68522,7 +68854,20 @@ geometry &amp;rarr; geometry
 &lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&lt;h3&gt;Función contains()&lt;/h3&gt;
+Devuelve verdadero si y sólo si ningún punto de B cae en el exterior de A, y al menos un punto del interior de B cae en el interior de A.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;contains( geometría A, geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;distance function&lt;/h3&gt;
@@ -68538,7 +68883,19 @@ b &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; distance( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(4 8)&apos; ))    &amp;rarr; returns 4&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función distance()&lt;/h3&gt;
+Devuelve la distancia mínima (basada en referencia espacial) entre dos geometrías en unidades proyectadas.
+
+&lt;h4&gt;Sintasix&lt;/h4&gt;
+&lt;pre&gt;distance( a, b )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; distance( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(4 8)&apos; ))    &amp;rarr; devuelve 4&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;ILIKE expression&lt;/h3&gt;
@@ -68555,7 +68912,20 @@ None
 &lt;pre&gt; &apos;A&apos; ILIKE &apos;a&apos;  &amp;rarr; returns 1 &lt;/pre&gt;
 &lt;pre&gt; &apos;A&apos; ILIKE &apos;B&apos;  &amp;rarr; returns 0 &lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Expresión ILIKE&lt;/h3&gt;
+Devuelve 1 si el primer parámetro coincide con el patrón proporcionado, sin tener en cuenta las mayúsculas/minúsculas. Se puede usar LIKE en vez de ILIKE para que se distingan mayúsculas y minúscula. También funciona con números.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;cadena/número ILIKE patrón&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; ILIKE &apos;A&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; ILIKE &apos;a&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; ILIKE &apos;B&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;intersection function&lt;/h3&gt;
@@ -68571,7 +68941,19 @@ geometry &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; geomToWKT( intersection( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 )&apos; ))  )   &amp;rarr; returns LINESTRING(3 3, 4 4)&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función intersection()&lt;/h3&gt;
+Devuelve una geometría que representa la porción compartida de las geometrías A y B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;intersection( geometría A , geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( intersection( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 )&apos; ))  )   &amp;rarr; devuelve LINESTRING(3 3, 4 4)&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;union function&lt;/h3&gt;
@@ -68587,7 +68969,19 @@ b &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; geomToWKT( union( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))  )   &amp;rarr; returns MULTIPOINT(4 4, 5 5)&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función union()&lt;/h3&gt;
+Devuelve una geometría que representa la unión del conjunto de puntos de las geometrías.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;union( A, B )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( union( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))  )   &amp;rarr; devuelve MULTIPOINT(4 4, 5 5)&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;disjoint function&lt;/h3&gt;
@@ -68604,7 +68998,20 @@ b &amp;rarr; geometry
 &lt;pre&gt; disjoint( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; )) &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; disjoint( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;POINT(4 4)&apos; ))                              &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función disjoint()&lt;/h3&gt;
+Devuelve 1 si las geometrías no &quot;intersectan espacialmente&quot; - si no comparten ningún espacio común.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;disjoint( A, B )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; disjoint( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; )) &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; disjoint( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;POINT(4 4)&apos; ))                              &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;IS expression&lt;/h3&gt;
@@ -68626,7 +69033,24 @@ None
 &lt;pre&gt; $geometry IS NULL  &amp;rarr; returns 0, if your geometry is not NULL&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&lt;h3&gt;Expresión IS&lt;/h3&gt;
+Devuelve 1 si A es lo mismo que B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;A IS B&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;A&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;a&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 4      &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2+2    &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2      &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; $geometry IS NULL  &amp;rarr; devuelve 0, si su geometría no es NULL&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;strpos() function&lt;/h3&gt;
@@ -68647,7 +69071,24 @@ Returns -1 if the expression isn&apos;t found.
      strpos(&apos;HELLO WORLD&apos;,&apos;WORLD&apos;) &amp;rarr; 6&lt;br&gt;
      strpos(&apos;HELLO WORLD&apos;,&apos;GOODBYE&apos;) &amp;rarr; -1&lt;br&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función strpos()&lt;/h3&gt;
+Devuelve el índice de una expresión regular en una cadena.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     strpos(&lt;i&gt;pajar&lt;/i&gt;, &lt;i&gt;aguja&lt;/i&gt;)
+&lt;br&gt;&lt;br&gt;
+Devuelve -1 si no se encuentra la expresión.
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  pajar&lt;/i&gt; &amp;rarr;es cadena. La cadena en la que hay que buscar.&lt;br&gt;
+&lt;i&gt;  aguja&lt;/i&gt; &amp;rarr; es cadena. La expresión regular que buscar.&lt;br&gt;
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     strpos(&apos;HOLA MUNDO&apos;,&apos;MUNDO&apos;) &amp;rarr; 6&lt;br&gt;
+     strpos(&apos;HOLA MUNDO&apos;,&apos;ADIÓS&apos;) &amp;rarr; -1&lt;br&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;clamp() function&lt;/h3&gt;
@@ -68670,7 +69111,26 @@ Restricts an input value to a specified range.
      
      
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función clamp()&lt;/h3&gt;
+Restringe un valor de entrada a un intervalo especificado.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     clamp(&lt;i&gt;mínimo&lt;/i&gt;,&lt;i&gt;entrada&lt;/i&gt;,&lt;i&gt;máximo&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  mínimo&lt;/i&gt; &amp;rarr; El valor más pequeño que puede tomar &lt;i&gt;entrada&lt;/i&gt;.&lt;br&gt;
+&lt;i&gt;  entrada&lt;/i&gt; &amp;rarr; Un valor que será restringido al intervalo especificado por &lt;i&gt;mínimo&lt;/i&gt; y &lt;i&gt;máximo&lt;/i&gt;.&lt;br&gt;
+&lt;i&gt;  máximo&lt;/i&gt; &amp;rarr; El valor más grande que puede tomar &lt;i&gt;entrada&lt;/i&gt;.&lt;br&gt;
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     clamp(1,5,10) &amp;rarr; 5 (&lt;i&gt;entrada&lt;/i&gt; está entre 1 y 10 por lo que se devuelve sin cambios)&lt;br&gt;
+     clamp(1,0,10) &amp;rarr; 1 (&lt;i&gt;entrada&lt;/i&gt; es menor que el valor mínimo 1, así que la función devuelve 1)&lt;br&gt;
+     clamp(1,11,10) &amp;rarr; 10 (&lt;i&gt;entrada&lt;/i&gt; es mayor que el valor máximo 10, así que la función devuelve 10)&lt;br&gt;
+     
+     
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;symDifference function&lt;/h3&gt;
@@ -68686,7 +69146,19 @@ geometry &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; geomToWKT( symDifference(  geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 8 8)&apos; ))   )   &amp;rarr; returns LINESTRING(5 5, 8 8)&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función symDifference()&lt;/h3&gt;
+Devuelve una geometría que representa las porciones de A y B que no intersectan.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;symDifference( geometría A, geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( symDifference(  geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 8 8)&apos; ))   )   &amp;rarr; returns LINESTRING(5 5, 8 8)&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;intersects function&lt;/h3&gt;
@@ -68703,7 +69175,20 @@ b &amp;rarr; geometry
 &lt;pre&gt; intersects( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; intersects( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))             &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función intersects()&lt;/h3&gt;
+Devuelve 1 si las geometrías intersectan espacialmente (comparten cualquier porción del espacio) y 0 si no.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;intersects( A, B )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+A &amp;rarr; geometría
+B &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; intersects( geomFromWKT( &apos;POINT(4 4)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; intersects( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;POINT(5 5)&apos; ))             &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;bbox function&lt;/h3&gt;
@@ -68720,7 +69205,20 @@ b &amp;rarr; geometry
 &lt;pre&gt;bbox( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; )) &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt;bbox( geomFromWKT( &apos;POINT(6 5)&apos; ) , geomFromWKT( &apos;POLYGON((3 3 , 4 4 , 5 5, 3 3))&apos; )) &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función bbox()&lt;/h3&gt;
+Devuelve 1 si las geometrías intersectan espacialmente el recuadro delimitador definido y 0 si no.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;bbox( a, b )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt;bbox( geomFromWKT( &apos;POINT(4 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; )) &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt;bbox( geomFromWKT( &apos;POINT(6 5)&apos; ) , geomFromWKT( &apos;POLYGON((3 3 , 4 4 , 5 5, 3 3))&apos; )) &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;buffer function&lt;/h3&gt;
@@ -68737,7 +69235,20 @@ b &amp;rarr; distance for the buffer
 &lt;pre&gt; buffer($geometry, 10.5 ) &amp;rarr; returns a polygon&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función buffer()&lt;/h3&gt;
+Devuelve una geometría que representa todos los puntos cuya distancia desde esta geometría es menor o igual a distancia. Los cálculos están en el sistema de referencia espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;buffer(a, b)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+a &amp;rarr; geometría
+b &amp;rarr; distancia para el buffer
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; buffer($geometry, 10.5 ) &amp;rarr; devuelve un polígono&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;centroid function&lt;/h3&gt;
@@ -68753,7 +69264,19 @@ b &amp;rarr; geometry
 &lt;pre&gt; centroid($geometry) &amp;rarr; returns a point geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función centroid()&lt;/h3&gt;
+Devuelve el centro geométrico de una geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;centroid(a)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+b &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; centroid($geometry) &amp;rarr; devuelve una geometría de tipo punto&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;OR logical operator&lt;/h3&gt;
@@ -68770,7 +69293,20 @@ None
 &lt;pre&gt; 4 = 2+2 OR 1 = 2  &amp;rarr; returns 1 &lt;/pre&gt;
 &lt;pre&gt; 4 = 2   OR 1 = 2  &amp;rarr; returns 0 &lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Operador lógico OR&lt;/h3&gt;
+Devuelve 1 cuando la condición A o B es verdadera.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt; condición A OR condición B &lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; 4 = 2+2 OR 1 = 1  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 = 2+2 OR 1 = 2  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 = 2   OR 1 = 2  &amp;rarr; devuelve 0 &lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;NOT&lt;/h3&gt;
@@ -68788,7 +69324,21 @@ None
 &lt;pre&gt; 4 IS NOT 2+2    &amp;rarr; returns 0 &lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;NOT&lt;/h3&gt;
+Devuelve 1 si A no es lo mismo que B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt; A NOT B &lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; &apos;a&apos; IS NOT &apos;b&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;a&apos; IS NOT &apos;a&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; 4 IS NOT 2+2    &amp;rarr; devuelve 0 &lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;$geometry function&lt;/h3&gt;
@@ -68804,7 +69354,19 @@ None
 &lt;pre&gt; geomToWKT( $geometry ) &amp;rarr; POINT(6 50)&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función $geometry&lt;/h3&gt;
+Devuelve la geometría del objeto espacial actual. Se puede usar para procesar con otras funciones.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;$geometry&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( $geometry ) &amp;rarr; POINT(6 50)&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;within function&lt;/h3&gt;
@@ -68821,7 +69383,20 @@ geometry &amp;rarr; geometry
 &lt;pre&gt; within( geomFromWKT( &apos;POINT( 0.5 0.5 )&apos;) , geomFromWKT(&apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) )    &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; within( geomFromWKT( &apos;POINT( 5 5 )&apos;) , geomFromWKT(&apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) )        &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función within()&lt;/h3&gt;
+Devuelve 1 si la geometría A está completamente dentro de la geometría B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;within( geometría A , geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; within( geomFromWKT( &apos;POINT( 0.5 0.5 )&apos;) , geomFromWKT(&apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) )    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; within( geomFromWKT( &apos;POINT( 5 5 )&apos;) , geomFromWKT(&apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) )        &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;overlaps function&lt;/h3&gt;
@@ -68838,7 +69413,20 @@ b &amp;rarr; geometry
 &lt;pre&gt; overlaps( geomFromWKT( &apos;LINESTRING(3 5 , 4 4 , 5 5 , 5 3)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))   &amp;rarr; returns 1&lt;/pre&gt;
 &lt;pre&gt; overlaps( geomFromWKT( &apos;LINESTRING(0 0 , 1 1)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; returns 0&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función overlaps()&lt;/h3&gt;
+Devuelve 1 si las geometrías comparten espacio, son de la misma dimensión, pero no están completamente contenidas por la otra.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;overlaps( A, B )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+A &amp;rarr; geometría
+B &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; overlaps( geomFromWKT( &apos;LINESTRING(3 5 , 4 4 , 5 5 , 5 3)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))   &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; overlaps( geomFromWKT( &apos;LINESTRING(0 0 , 1 1)&apos;  ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))    &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;geomFromWKT function&lt;/h3&gt;
@@ -68854,7 +69442,19 @@ text &amp;rarr; Well-Known Text (WKT) representation of a geometry
 &lt;pre&gt; geomFromWKT( &apos;POINT(4 5)&apos; ) &amp;rarr; returns a geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función geomFromWKT()&lt;/h3&gt;
+Devuelve una geometría creada a partir de una representación de Texto Bien Conocido (WKT).
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;geomFromWKT(texto)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+texto &amp;rarr; representación de una geometría en Texto Bien Conocido (WKT)
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomFromWKT( &apos;POINT(4 5)&apos; ) &amp;rarr; devuelve una geometría&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;difference function&lt;/h3&gt;
@@ -68870,7 +69470,19 @@ geometry &amp;rarr; geometry
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;pre&gt; geomToWKT( difference( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4)&apos; ))  )   &amp;rarr; returns LINESTRING(4 4, 5 5)&lt;/pre&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función difference()&lt;/h3&gt;
+Devuelve una geometría que representa la parte de la geometría A que no intersecta con la geometría B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;difference( A, B )&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; geomToWKT( difference( geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4)&apos; ))  )   &amp;rarr; devuelve LINESTRING(4 4, 5 5)&lt;/pre&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;wordwrap() function&lt;/h3&gt;
@@ -68890,7 +69502,23 @@ Returns a string wrapped to a maximum/minimum number of characters.
      wordwrap(&apos;UNIVERSITY OF QGIS&apos;,13) &amp;rarr; &apos;UNIVERSITY OF&amp;#92;nQGIS&apos;&lt;br&gt;
      wordwrap(&apos;UNIVERSITY OF QGIS&apos;,-3) &amp;rarr; &apos;UNIVERSITY&amp;#92;nOF QGIS&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función wordwrap()&lt;/h3&gt;
+Devuelve una cadena recortada mediante saltos de línea a un número máximo/mínimo de caracteres.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     wordwrap(&lt;i&gt;cadena,longitud_recorte[,cadena_delimitadora]&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  cadena&lt;/i&gt; &amp;rarr; es una cadena. La cadena a recortar.&lt;br&gt;
+&lt;i&gt;  longitud_recorte&lt;/i&gt; &amp;rarr; es un número. Si es positivo, el número representa el número máximo ideal de caracteres a recortar en cada línea; si es negativo, el número representa el número mínimo de caracteres a mantener en cada línea.&lt;br&gt;
+&lt;i&gt;  cadena_delimitadora&lt;/i&gt; &amp;rarr; es una cadena. La cadena delimitadora para recortar una nueva cadena (&lt;u&gt;opcional&lt;/u&gt;).&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     wordwrap(&apos;UNIVERSIDAD DE QGIS&apos;,14) &amp;rarr; &apos;UNIVERSIDAD DE&amp;#92;nQGIS&apos;&lt;br&gt;
+     wordwrap(&apos;UNIVERSIDAD DE QGIS&apos;,-3) &amp;rarr; &apos;UNIVERSIDAD&amp;#92;nDE QGIS&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;$atlasgeometry function&lt;/h3&gt;
@@ -68909,7 +69537,22 @@ None
 &lt;pre&gt; intersects(  $atlasgeometry,  $geometry ) &lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función $atlasgeometry&lt;/h3&gt;
+Devuelve la geometría del objeto espacial actual iterado en atlas.
+Se puede usar para representar geometrías en base a reglas cuando se usa atlas.
+Por ejemplo, para mostrar sólo las geometrías de otras capas cuando su geometría 
+intersecta la geometría iterada de objetos espaciales usando atlas.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;$atlasgeometry&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; intersects(  $atlasgeometry,  $geometry ) &lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;$atlasfeatureid function&lt;/h3&gt;
@@ -68927,7 +69570,21 @@ None
 &lt;pre&gt;$atlasfeatureid = $id&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función $atlasfeatureid&lt;/h3&gt;
+Devuelve el ID del objeto espacial de la fila actual mientras se usa atlas.
+Esto le permite usar objetos de atlas en reglas 
+y por ejemplo mostrar u ocultar objetos en base a su ID.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;$atlasfeatureid&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt;$atlasfeatureid = $id&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;color_hsl() function&lt;/h3&gt;
@@ -68946,7 +69603,22 @@ Returns a string representation of a color based on its hue, saturation, and lig
 &lt;!-- Show example of function.--&gt;
      color_hsl(100,50,70) &amp;rarr; &apos;166,217,140&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función color_hsl()&lt;/h3&gt;
+Devuelve una representación mediante cadena de un color basada en sus atributos de tono, saturación y brillo
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     color_hsl(&lt;i&gt;tono, saturación, brillo&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  tono&lt;/i&gt; &amp;rarr; el tono del color, como un entero de 0 a 360.&lt;br&gt;
+&lt;i&gt;  saturación&lt;/i&gt; &amp;rarr; el porcentaje de saturación del color, como un entero de 0 a 100.&lt;br&gt;
+&lt;i&gt;  brillo&lt;/i&gt; &amp;rarr; el porcentaje de brillo del color, como un entero de 0 a 100.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     color_hsl(100,50,70) &amp;rarr; &apos;166,217,140&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;xmax function&lt;/h3&gt;
@@ -68962,7 +69634,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; xmax($geometry) &amp;rarr; returns maximum x coordinate of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función xmax()&lt;/h3&gt;
+Devuelve la coordenada X máxima de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;xmax(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; xmax($geometry) &amp;rarr; devuelve la coordenada X máxima de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;bounds function&lt;/h3&gt;
@@ -68978,7 +69662,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; bounds($geometry) &amp;rarr; returns bounding box of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función bounds()&lt;/h3&gt;
+Devuelve una geometría que representa el recuadro delimitador de una geometría de entrada. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;bounds(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; bounds($geometry) &amp;rarr; devuelve el recuadro delimitador de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;ymax function&lt;/h3&gt;
@@ -68994,7 +69690,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; ymax($geometry) &amp;rarr; returns maximum y coordinate of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función ymax()&lt;/h3&gt;
+Devuelve la coordenada Y máxima de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;ymax(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; ymax($geometry) &amp;rarr; devuelve la coordenada Y máxima de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>
@@ -69014,7 +69722,22 @@ Returns a string representation of a color based on its red, green, and blue com
 &lt;!-- Show example of function.--&gt;
      color_rgb(255,127,0) &amp;rarr; &apos;255,127,0&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función color_rgb()&lt;/h3&gt;
+Devuelve una representación en forma de cadena de un color basada en sus componentes rojo, verde y azul.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     color_rgb(&lt;i&gt;rojo, verde, azul&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  rojo&lt;/i&gt; &amp;rarr; el componente rojo como un entero de 0 a 255.&lt;br&gt;
+&lt;i&gt;  verde&lt;/i&gt; &amp;rarr; el componente verde como un entero de 0 a 255.&lt;br&gt;
+&lt;i&gt;  azul&lt;/i&gt; &amp;rarr; el componente azul como un entero de 0 a 255.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     color_rgb(255,127,0) &amp;rarr; &apos;255,127,0&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>
@@ -69035,7 +69758,24 @@ Returns a string representation of a color based on its cyan, magenta, yellow an
 &lt;!-- Show example of function.--&gt;
      color_cmyk(100,50,0,10) &amp;rarr; &apos;0,115,230&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+&lt;h3&gt;color_cmyk() function&lt;/h3&gt;
+Devuelve una representación en forma de cadena de un color basada en sus componentes cian, magenta, amarillo y negro.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     color_cmyk(&lt;i&gt;cian, magenta, amarillo, negro&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  cian&lt;/i&gt; &amp;rarr; el componente cian del color, como un valor entero de porcentaje de 0 a 100.&lt;br&gt;
+&lt;i&gt;  magenta&lt;/i&gt; &amp;rarr; el componente magenta del color, como un valor entero de porcentaje de 0 a 100.&lt;br&gt;
+&lt;i&gt;  amarillo&lt;/i&gt; &amp;rarr; el componente amarillo del color, como un valor entero de porcentaje de 0 a 100.&lt;br&gt;
+&lt;i&gt;  negro&lt;/i&gt; &amp;rarr; el componente negro del color, como un valor entero de porcentaje de 0 a 100.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     color_cmyk(100,50,0,10) &amp;rarr; &apos;0,115,230&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>
@@ -69059,7 +69799,26 @@ The color ramps available vary between QGIS installations.  This function
 may not give the expected results if you move your Quantum project.
 &lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función ramp_color()&lt;/h3&gt;
+Devuelve una cadena que representa un color de una rampa de color.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     ramp_color(&lt;i&gt;nombre_rampa,valor&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  nombre_rampa&lt;/i&gt; &amp;rarr; el nombre de la rampa de color como una cadena, por ejemplo &apos;Espectral&apos;.&lt;br&gt;
+&lt;i&gt;  valor&lt;/i&gt; &amp;rarr; la posición en la rampa de la que seleccionar el color, como un número real entre 0 y 1.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     ramp_color(&apos;Espectral&apos;,0.3) &amp;rarr; &apos;253,190,115,255&apos;&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Nota:&lt;/h4&gt;
+Las rampas de color disponibles varían entre instalaciones de QGIS. Esta función
+puede no dar los resultados esperados si mueve su proyecto de QGIS.
+&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;color_hsv() function&lt;/h3&gt;
@@ -69078,7 +69837,22 @@ Returns a string representation of a color based on its hue, saturation, and val
 &lt;!-- Show example of function.--&gt;
      color_hsv(40,100,100) &amp;rarr; &apos;255,170,0&apos;&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función color_hsv()&lt;/h3&gt;
+Devuelve una representación en forma de cadena de un color basada en sus atributos de tono, saturación y valor.
+
+&lt;p&gt;&lt;h4&gt;Sintaxis&lt;/h4&gt;
+     color_hsv(&lt;i&gt;tono, saturación, valor&lt;/i&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;h4&gt;Argumentos&lt;/h4&gt;
+&lt;!-- List args for functions here--&gt;
+&lt;i&gt;  tono&lt;/i&gt; &amp;rarr; el tono del color como un valor entero de 0 a 360.&lt;br&gt;
+&lt;i&gt;  saturación&lt;/i&gt; &amp;rarr; el porcentaje de saturación del color como un entero de 0 a 100.&lt;br&gt;
+&lt;i&gt;  valor&lt;/i&gt; &amp;rarr;  el porcentaje de valor del color como un entero de 0 a 100.&lt;br&gt;
+
+&lt;p&gt;&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;!-- Show example of function.--&gt;
+     color_hsv(40,100,100) &amp;rarr; &apos;255,170,0&apos;&lt;/p&gt;
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;bounds_width function&lt;/h3&gt;
@@ -69094,7 +69868,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; bounds_width($geometry) &amp;rarr; returns width of bounding box of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función bounds_width()&lt;/h3&gt;
+Devuelve la anchura del recuadro delimitador de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;bounds_width(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; bounds_width($geometry) &amp;rarr; devuelve la anchura del recuadro delimitador de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;bounds_height function&lt;/h3&gt;
@@ -69110,7 +69896,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; bounds_height($geometry) &amp;rarr; returns height of bounding box of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función bounds_height()&lt;/h3&gt;
+Devuelve la altura del recuadro delimitador de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;bounds_height(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; bounds_height($geometry) &amp;rarr; devuelve la altura del recuadro delimitador de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;xmin function&lt;/h3&gt;
@@ -69126,7 +69924,19 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; xmin($geometry) &amp;rarr; returns minimum x coordinate of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función xmin()&lt;/h3&gt;
+Devuelve la coordenada X mínima de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;xmin(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; xmin($geometry) &amp;rarr; devuelve la coordenada X mínima de $geometry&lt;/pre&gt;
+
+</translation>
     </message>
     <message>
         <source>&lt;h3&gt;ymin function&lt;/h3&gt;
@@ -69142,7 +69952,87 @@ geom &amp;rarr; a geometry
 &lt;pre&gt; ymin($geometry) &amp;rarr; returns minimum y coordinate of $geometry&lt;/pre&gt;
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Función ymin()&lt;/h3&gt;
+Devuelve la coordenada Y mínima de una geometría. Los cálculos se hacen en el Sistema de Referencia Espacial de esta geometría.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;ymin(geom)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geom &amp;rarr; una geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; ymin($geometry) &amp;rarr; devuelve la coordenada Y mínima de $geometry&lt;/pre&gt;
+
+</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;contains function&lt;/h3&gt;
+Returns true if and only if no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a. 
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;contains( geometry a , geometry b)&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+geometry &amp;rarr; geometry
+geometry &amp;rarr; geometry
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; returns 1&lt;/pre&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; returns 0&lt;/pre&gt;
+</source>
+        <translation>&lt;h3&gt;Función contains()&lt;/h3&gt;
+Devuelve verdadero si y sólo si ningún punto de B cae en el exterior de A, y al menos un punto del interior de B cae en el interior de A.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;contains( geometría A, geometría B)&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+geometría &amp;rarr; geometría
+geometría &amp;rarr; geometría
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;POINT( 0.5 0.5 )&apos; ))    &amp;rarr; devuelve 1&lt;/pre&gt;
+&lt;pre&gt; contains( geomFromWKT( &apos;POLYGON((0 0 , 0 1 , 1 1 , 1 0 , 0 0 ))&apos; ) , geomFromWKT( &apos;LINESTRING(3 3 , 4 4 , 5 5)&apos; ))          &amp;rarr; devuelve 0&lt;/pre&gt;
+</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;IS expression&lt;/h3&gt;
+Returns 1 if a is the same as b.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;a IS b&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+None
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;A&apos;  &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;a&apos;  &amp;rarr; returns 0 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 4      &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2+2    &amp;rarr; returns 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2      &amp;rarr; returns 0 &lt;/pre&gt;
+&lt;pre&gt; $geometry IS NULL  &amp;rarr; returns 0, if your geometry is not NULL&lt;/pre&gt;
+
+</source>
+        <translation>&lt;h3&gt;Expresión IS&lt;/h3&gt;
+Devuelve 1 si A es lo mismo que B.
+
+&lt;h4&gt;Sintaxis&lt;/h4&gt;
+&lt;pre&gt;A IS B&lt;/pre&gt;
+
+&lt;h4&gt;Argumentos&lt;/h4&gt;
+Ninguno
+
+&lt;h4&gt;Ejemplo&lt;/h4&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;A&apos;  &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; &apos;A&apos; IS &apos;a&apos;  &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 4      &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2+2    &amp;rarr; devuelve 1 &lt;/pre&gt;
+&lt;pre&gt; 4 IS 2      &amp;rarr; devuelve 0 &lt;/pre&gt;
+&lt;pre&gt; $geometry IS NULL  &amp;rarr; devuelve 0, si su geometría no es NULL&lt;/pre&gt;
+
+</translation>
     </message>
 </context>
 <context>
@@ -69572,7 +70462,7 @@ geom &amp;rarr; a geometry
     </message>
     <message>
         <source>Create grid in current region</source>
-        <translation>Crear rejilla en la región actual</translation>
+        <translation>Crear cuadrícula en la región actual</translation>
     </message>
     <message>
         <source>Create new GRASS location and transfer data into it</source>

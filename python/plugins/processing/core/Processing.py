@@ -38,7 +38,7 @@ from processing.core.SilentProgress import SilentProgress
 from processing.gui.AlgorithmClassification import AlgorithmDecorator
 from processing.gui.MessageBarProgress import MessageBarProgress
 from processing.gui.RenderingStyles import RenderingStyles
-from processing.gui.Postprocessing import Postprocessing
+from processing.gui.Postprocessing import handleAlgorithmResults
 from processing.gui.UnthreadedAlgorithmExecutor import \
         UnthreadedAlgorithmExecutor
 from processing.modeler.Providers import Providers
@@ -57,8 +57,6 @@ from processing.algs.r.RAlgorithmProvider import RAlgorithmProvider
 from processing.algs.saga.SagaAlgorithmProvider import SagaAlgorithmProvider
 from processing.script.ScriptAlgorithmProvider import ScriptAlgorithmProvider
 from processing.algs.taudem.TauDEMAlgorithmProvider import TauDEMAlgorithmProvider
-from processing.algs.admintools.AdminToolsAlgorithmProvider import \
-        AdminToolsAlgorithmProvider
 from processing.tools import dataobjects
 
 
@@ -143,7 +141,6 @@ class Processing:
         Processing.addProvider(Grass7AlgorithmProvider())
         Processing.addProvider(ScriptAlgorithmProvider())
         Processing.addProvider(TauDEMAlgorithmProvider())
-        Processing.addProvider(AdminToolsAlgorithmProvider())
         Processing.modeler.initializeSettings()
 
         # And initialize
@@ -278,8 +275,7 @@ class Processing:
 
     @staticmethod
     def runandload(name, *args):
-        Processing.runAlgorithm(name, Postprocessing.handleAlgorithmResults,
-                                *args)
+        Processing.runAlgorithm(name, handleAlgorithmResults, *args)
 
     @staticmethod
     def runAlgorithm(algOrName, onFinish, *args):

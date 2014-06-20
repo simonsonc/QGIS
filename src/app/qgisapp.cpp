@@ -158,7 +158,6 @@
 #include "qgsmultibandcolorrenderer.h"
 #include "qgsnewvectorlayerdialog.h"
 #include "qgsoptions.h"
-// #include "qgspastetransformations.h"
 #include "qgspluginlayer.h"
 #include "qgspluginlayerregistry.h"
 #include "qgspluginmanager.h"
@@ -653,6 +652,7 @@ QgisApp::QgisApp( QSplashScreen *splash, bool restorePlugins, QWidget * parent, 
   mLastMapToolMessage = 0;
 
   mLogViewer = new QgsMessageLogViewer( statusBar(), this );
+  mLogViewer->setShowToolTips( false );
 
   mLogDock = new QDockWidget( tr( "Log Messages" ), this );
   mLogDock->setObjectName( "MessageLog" );
@@ -853,6 +853,7 @@ QgisApp::QgisApp( QSplashScreen *splash, bool restorePlugins, QWidget * parent, 
   toggleFullScreen();
 #endif
 
+  mLogViewer->setShowToolTips( true );
 } // QgisApp ctor
 
 QgisApp::QgisApp( )
@@ -1722,6 +1723,8 @@ void QgisApp::createStatusBar()
   mCoordsEdit->setToolTip( tr( "Current map coordinate (lat,lon or east,north)" ) );
   statusBar()->addPermanentWidget( mCoordsEdit, 0 );
   connect( mCoordsEdit, SIGNAL( returnPressed() ), this, SLOT( userCenter() ) );
+  mDizzyTimer = new QTimer( this );
+  connect( mDizzyTimer, SIGNAL( timeout() ), this, SLOT( dizzy() ) );
 
   // add a label to show current scale
   mScaleLabel = new QLabel( QString(), statusBar() );
@@ -2217,7 +2220,7 @@ void QgisApp::createOverview()
   double zoomFactor = mySettings.value( "/qgis/zoom_factor", 2 ).toDouble();
   mMapCanvas->setWheelAction(( QgsMapCanvas::WheelAction ) action, zoomFactor );
 
-  mMapCanvas->setCachingEnabled( mySettings.value( "/qgis/enable_render_caching", false ).toBool() );
+  mMapCanvas->setCachingEnabled( mySettings.value( "/qgis/enable_render_caching", true ).toBool() );
 
   mMapCanvas->setParallelRenderingEnabled( mySettings.value( "/qgis/parallel_rendering", false ).toBool() );
 
@@ -2300,9 +2303,12 @@ void QgisApp::initLayerTreeView()
   model->setFlag( QgsLayerTreeModel::AllowNodeReorder );
   model->setFlag( QgsLayerTreeModel::AllowNodeRename );
   model->setFlag( QgsLayerTreeModel::AllowNodeChangeVisibility );
+  model->setAutoCollapseSymbologyNodes( 10 );
 
   mLayerTreeView->setModel( model );
   mLayerTreeView->setMenuProvider( new QgsAppLayerTreeViewMenuProvider( mLayerTreeView, mMapCanvas ) );
+
+  setupLayerTreeViewFromSettings();
 
   connect( mLayerTreeView, SIGNAL( doubleClicked( QModelIndex ) ), this, SLOT( layerTreeViewDoubleClicked( QModelIndex ) ) );
   connect( mLayerTreeView, SIGNAL( currentLayerChanged( QgsMapLayer* ) ), this, SLOT( activeLayerChanged( QgsMapLayer* ) ) );
@@ -2315,6 +2321,9 @@ void QgisApp::initLayerTreeView()
   connect( QgsProject::instance(), SIGNAL( writeProject( QDomDocument& ) ), mLayerTreeCanvasBridge, SLOT( writeProject( QDomDocument& ) ) );
   connect( QgsProject::instance(), SIGNAL( readProject( QDomDocument ) ), mLayerTreeCanvasBridge, SLOT( readProject( QDomDocument ) ) );
 
+  bool otfTransformAutoEnable = QSettings().value( "/Projections/otfTransformAutoEnable", true ).toBool();
+  mLayerTreeCanvasBridge->setAutoEnableCrsTransform( otfTransformAutoEnable );
+
   mMapLayerOrder = new QgsCustomLayerOrderWidget( mLayerTreeCanvasBridge, this );
   mMapLayerOrder->setObjectName( "theMapLayerOrder" );
 
@@ -2326,6 +2335,20 @@ void QgisApp::initLayerTreeView()
   mLayerOrderDock->setWidget( mMapLayerOrder );
   addDockWidget( Qt::LeftDockWidgetArea, mLayerOrderDock );
   mLayerOrderDock->hide();
+}
+
+void QgisApp::setupLayerTreeViewFromSettings()
+{
+  QSettings s;
+
+  QgsLayerTreeModel* model = mLayerTreeView->layerTreeModel();
+  model->setFlag( QgsLayerTreeModel::ShowRasterPreviewIcon, s.value( "/qgis/createRasterLegendIcons", false ).toBool() );
+
+  QFont fontLayer, fontGroup;
+  fontLayer.setBold( s.value( "/qgis/legendLayersBold", true ).toBool() );
+  fontGroup.setBold( s.value( "/qgis/legendGroupsBold", false ).toBool() );
+  model->setLayerTreeNodeFont( QgsLayerTreeNode::NodeLayer, fontLayer );
+  model->setLayerTreeNodeFont( QgsLayerTreeNode::NodeGroup, fontGroup );
 }
 
 
@@ -6119,17 +6142,6 @@ void QgisApp::pasteStyle( QgsMapLayer * destinationLayer )
   }
 }
 
-#if 0
-void QgisApp::pasteTransformations()
-{
-  QgsPasteTransformations *pt = new QgsPasteTransformations();
-
-  mMapCanvas->freeze();
-
-  pt->exec();
-}
-#endif
-
 void QgisApp::copyFeatures( QgsFeatureStore & featureStore )
 {
   clipboard()->replaceWithCopyOf( featureStore );
@@ -6594,8 +6606,36 @@ void QgisApp::userScale()
   mMapCanvas->zoomScale( 1.0 / mScaleEdit->scale() );
 }
 
+void QgisApp::dizzy()
+{
+  // constants should go to options so that people can customize them to their taste
+  int d = 10; // max. translational dizziness offset
+  int r = 4;  // max. rotational dizzines angle
+  QRectF rect = mMapCanvas->sceneRect();
+  if ( rect.x() < -d || rect.x() > d || rect.y() < -d || rect.y() > d )
+    return; // do not affect panning
+  rect.moveTo(( rand() % ( 2 * d ) ) - d, ( rand() % ( 2 * d ) ) - d );
+  mMapCanvas->setSceneRect( rect );
+  QTransform matrix;
+  matrix.rotate(( rand() % ( 2 * r ) ) - r );
+  mMapCanvas->setTransform( matrix );
+}
+
 void QgisApp::userCenter()
 {
+  if ( mCoordsEdit->text() == "dizzy" )
+  {
+    // sometimes you may feel a bit dizzy...
+    if ( mDizzyTimer->isActive() )
+    {
+      mDizzyTimer->stop();
+      mMapCanvas->setSceneRect( mMapCanvas->viewport()->rect() );
+      mMapCanvas->setTransform( QTransform() );
+    }
+    else
+      mDizzyTimer->start( 100 );
+  }
+
   QStringList parts = mCoordsEdit->text().split( ',' );
   if ( parts.size() != 2 )
     return;
@@ -7225,6 +7265,8 @@ void QgisApp::showOptionsDialog( QWidget *parent, QString currentPage )
   QSettings mySettings;
   QString oldScales = mySettings.value( "Map/scales", PROJECT_SCALES ).toString();
 
+  bool oldCapitalise = mySettings.value( "/qgis/capitaliseLayerName", QVariant( false ) ).toBool();
+
   QgsOptions *optionsDialog = new QgsOptions( parent );
   if ( !currentPage.isEmpty() )
   {
@@ -7238,17 +7280,26 @@ void QgisApp::showOptionsDialog( QWidget *parent, QString currentPage )
 
     QgsProject::instance()->layerTreeRegistryBridge()->setNewLayersVisible( mySettings.value( "/qgis/new_layers_visible", true ).toBool() );
 
+    setupLayerTreeViewFromSettings();
+
     mMapCanvas->enableAntiAliasing( mySettings.value( "/qgis/enable_anti_aliasing" ).toBool() );
 
     int action = mySettings.value( "/qgis/wheel_action", 2 ).toInt();
     double zoomFactor = mySettings.value( "/qgis/zoom_factor", 2 ).toDouble();
     mMapCanvas->setWheelAction(( QgsMapCanvas::WheelAction ) action, zoomFactor );
 
-    mMapCanvas->setCachingEnabled( mySettings.value( "/qgis/enable_render_caching", false ).toBool() );
+    mMapCanvas->setCachingEnabled( mySettings.value( "/qgis/enable_render_caching", true ).toBool() );
 
     mMapCanvas->setParallelRenderingEnabled( mySettings.value( "/qgis/parallel_rendering", false ).toBool() );
 
     mMapCanvas->setMapUpdateInterval( mySettings.value( "/qgis/map_update_interval", 250 ).toInt() );
+
+    if ( oldCapitalise != mySettings.value( "/qgis/capitaliseLayerName", QVariant( false ) ).toBool() )
+    {
+      // if the layer capitalization has changed, we need to update all layer names
+      foreach ( QgsMapLayer* layer, QgsMapLayerRegistry::instance()->mapLayers() )
+        layer->setLayerName( layer->originalName() );
+    }
 
     //update any open compositions so they reflect new composer settings
     //we have to push the changes to the compositions here, because compositions
@@ -7274,6 +7325,9 @@ void QgisApp::showOptionsDialog( QWidget *parent, QString currentPage )
     qobject_cast<QgsMeasureTool*>( mMapTools.mMeasureDist )->updateSettings();
     qobject_cast<QgsMeasureTool*>( mMapTools.mMeasureArea )->updateSettings();
     qobject_cast<QgsMapToolMeasureAngle*>( mMapTools.mMeasureAngle )->updateSettings();
+
+    bool otfTransformAutoEnable = mySettings.value( "/Projections/otfTransformAutoEnable", true ).toBool();
+    mLayerTreeCanvasBridge->setAutoEnableCrsTransform( otfTransformAutoEnable );
   }
 
   delete optionsDialog;
@@ -9589,11 +9643,18 @@ void QgisApp::readProject( const QDomDocument &doc )
   projectChanged( doc );
 
   // force update of canvas, without automatic changes to extent and OTF projections
+  bool autoEnableCrsTransform = mLayerTreeCanvasBridge->autoEnableCrsTransform();
+  bool autoSetupOnFirstLayer = mLayerTreeCanvasBridge->autoSetupOnFirstLayer();
   mLayerTreeCanvasBridge->setAutoEnableCrsTransform( false );
   mLayerTreeCanvasBridge->setAutoSetupOnFirstLayer( false );
+
   mLayerTreeCanvasBridge->setCanvasLayers();
-  mLayerTreeCanvasBridge->setAutoEnableCrsTransform( true );
-  mLayerTreeCanvasBridge->setAutoSetupOnFirstLayer( true );
+
+  if ( autoEnableCrsTransform )
+    mLayerTreeCanvasBridge->setAutoEnableCrsTransform( true );
+
+  if ( autoSetupOnFirstLayer )
+    mLayerTreeCanvasBridge->setAutoSetupOnFirstLayer( true );
 }
 
 void QgisApp::showLayerProperties( QgsMapLayer *ml )

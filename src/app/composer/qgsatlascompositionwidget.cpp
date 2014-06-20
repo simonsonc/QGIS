@@ -123,8 +123,18 @@ void QgsAtlasCompositionWidget::on_mAtlasFilenameExpressionButton_clicked()
     QString expression =  exprDlg.expressionText();
     if ( !expression.isEmpty() )
     {
-      // will emit a textChanged signal
+      //set atlas filename expression
       mAtlasFilenamePatternEdit->setText( expression );
+      if ( ! atlasMap->setFilenamePattern( expression ) )
+      {
+        //expression could not be set
+        QMessageBox::warning( this
+                              , tr( "Could not evaluate filename pattern" )
+                              , tr( "Could not set filename pattern as '%1'.\nParser error:\n%2" )
+                              .arg( expression )
+                              .arg( atlasMap->filenamePatternErrorString() )
+                            );
+      }
     }
   }
 }
@@ -312,7 +322,7 @@ void QgsAtlasCompositionWidget::updateGuiElements()
 
   mAtlasSingleFileCheckBox->setCheckState( atlasMap->singleFile() ? Qt::Checked : Qt::Unchecked );
   mAtlasFilenamePatternEdit->setEnabled( !atlasMap->singleFile() );
-  mAtlasFilenameExpressionButton->setEnabled( atlasMap->singleFile() );
+  mAtlasFilenameExpressionButton->setEnabled( !atlasMap->singleFile() );
 
   mAtlasSortFeatureCheckBox->setCheckState( atlasMap->sortFeatures() ? Qt::Checked : Qt::Unchecked );
   mAtlasSortFeatureDirectionButton->setEnabled( atlasMap->sortFeatures() );

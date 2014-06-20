@@ -306,6 +306,9 @@ void QgsComposerMapWidget::on_mScaleLineEdit_editingFinished()
     return;
   }
 
+  if ( qRound( scaleDenominator ) == qRound( mComposerMap->scale() ) )
+    return;
+
   mComposerMap->beginCommand( tr( "Map scale changed" ) );
   mComposerMap->setNewScale( scaleDenominator );
   mComposerMap->endCommand();
@@ -420,8 +423,24 @@ void QgsComposerMapWidget::updateGuiElements()
     blockAllSignals( true );
 
     //width, height, scale
-//    QRectF composerMapRect = mComposerMap->rect();
-    mScaleLineEdit->setText( QString::number( mComposerMap->scale(), 'f', 0 ) );
+    double scale = mComposerMap->scale();
+
+    //round scale to an appropriate number of decimal places
+    if ( scale >= 10 )
+    {
+      //round scale to integer if it's greater than 10
+      mScaleLineEdit->setText( QString::number( mComposerMap->scale(), 'f', 0 ) );
+    }
+    else if ( scale >= 1 )
+    {
+      //don't round scale if it's less than 10, instead use 4 decimal places
+      mScaleLineEdit->setText( QString::number( mComposerMap->scale(), 'f', 4 ) );
+    }
+    else
+    {
+      //if scale < 1 then use 10 decimal places
+      mScaleLineEdit->setText( QString::number( mComposerMap->scale(), 'f', 10 ) );
+    }
 
     //preview mode
     QgsComposerMap::PreviewMode previewMode = mComposerMap->previewMode();

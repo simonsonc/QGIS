@@ -262,6 +262,7 @@ void QgsWMSServer::executeRequest()
       //do some error handling
       QgsDebugMsg( "result image is 0" );
     }
+    delete result;
   }
   //GetPrint
   else if ( request.compare( "GetPrint", Qt::CaseInsensitive ) == 0 )
@@ -318,7 +319,7 @@ QDomDocument QgsWMSServer::getCapabilities( QString version, bool fullProjectInf
     wmsCapabilitiesElement = doc.createElement( "WMS_Capabilities"/*wms:WMS_Capabilities*/ );
     wmsCapabilitiesElement.setAttribute( "xmlns", "http://www.opengis.net/wms" );
     wmsCapabilitiesElement.setAttribute( "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance" );
-    wmsCapabilitiesElement.setAttribute( "xsi:schemaLocation", "http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd" );
+    wmsCapabilitiesElement.setAttribute( "xsi:schemaLocation", "http://www.opengis.net/wms http://qgis.org/wms_1_3_0.xsd" );
   }
   wmsCapabilitiesElement.setAttribute( "version", version );
   doc.appendChild( wmsCapabilitiesElement );
@@ -767,7 +768,7 @@ void QgsWMSServer::legendParameters( double mmToPixelFactor, double fontOversamp
   QMap<QString, QString>::const_iterator layerTitleIt = mParameters.find( "LAYERTITLE" );
   if ( layerTitleIt != mParameters.constEnd() )
   {
-    mDrawLegendLayerLabel = layerTitleIt.value().compare( "TRUE", Qt::CaseInsensitive );
+    mDrawLegendLayerLabel = ( layerTitleIt.value().compare( "TRUE", Qt::CaseInsensitive ) == 0 );
   }
   else
   {
@@ -812,7 +813,7 @@ void QgsWMSServer::legendParameters( double mmToPixelFactor, double fontOversamp
   QMap<QString, QString>::const_iterator itemLabelIt = mParameters.find( "RULELABEL" );
   if ( itemLabelIt != mParameters.constEnd() )
   {
-    mDrawLegendItemLabel = itemLabelIt.value().compare( "TRUE", Qt::CaseInsensitive );
+    mDrawLegendItemLabel = ( itemLabelIt.value().compare( "TRUE", Qt::CaseInsensitive ) == 0 );
   }
   else
   {
@@ -1384,6 +1385,12 @@ QImage* QgsWMSServer::initializeRendering( QStringList& layersList, QStringList&
   QgsDebugMsg( QString( "Number of layers to be rendered. %1" ).arg( layerIdList.count() ) );
 #endif
   mMapRenderer->setLayerSet( layerIdList );
+
+  //load label settings
+  if ( mConfigParser )
+  {
+    mConfigParser->loadLabelSettings( mMapRenderer->labelingEngine() );
+  }
 
   return theImage;
 }
@@ -2869,12 +2876,18 @@ QDomElement QgsWMSServer::createFeatureGML(
     }
   }
 
-  //read all attribute values from the feature
+  //read all allowed attribute values from the feature
+  const QSet<QString>& excludedAttributes = layer->excludeAttributesWMS();
   QgsAttributes featureAttributes = feat->attributes();
   const QgsFields* fields = feat->fields();
   for ( int i = 0; i < fields->count(); ++i )
   {
     QString attributeName = fields->at( i ).name();
+    //skip attribute if it is explicitly excluded from WMS publication
+    if ( excludedAttributes.contains( attributeName ) )
+    {
+      continue;
+    }
     QDomElement fieldElem = doc.createElement( "qgs:" + attributeName.replace( QString( " " ), QString( "_" ) ) );
     QString fieldTextString = featureAttributes[i].toString();
     if ( layer )

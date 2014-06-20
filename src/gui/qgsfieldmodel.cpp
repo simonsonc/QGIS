@@ -49,6 +49,12 @@ QModelIndex QgsFieldModel::indexFromName( const QString &fieldName )
   return QModelIndex();
 }
 
+bool QgsFieldModel::isField( const QString& expression )
+{
+  int index = mFields.indexFromName( expression );
+  return index >= 0;
+}
+
 void QgsFieldModel::setLayer( QgsVectorLayer *layer )
 {
   if ( mLayer )
@@ -159,9 +165,6 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
   if ( !index.isValid() )
     return QVariant();
 
-  if ( !mLayer )
-    return QVariant();
-
   qint64 exprIdx = index.internalId() - mFields.count();
 
   switch ( role )
@@ -207,10 +210,8 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
     {
       if ( exprIdx >= 0 )
       {
-        if ( !mLayer )
-          return false;
         QgsExpression exp( mExpression[exprIdx] );
-        exp.prepare( mLayer->pendingFields() );
+        exp.prepare( mLayer ? mLayer->pendingFields() : QgsFields() );
         return !exp.hasParserError();
       }
       return true;
@@ -223,6 +224,7 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
         QgsField field = mFields[index.internalId()];
         return ( int )field.type();
       }
+      return QVariant();
     }
 
     case Qt::DisplayRole:
@@ -232,7 +234,16 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
       {
         return mExpression[exprIdx];
       }
-      return mLayer->attributeDisplayName( index.internalId() );
+      else if ( role == Qt::EditRole )
+      {
+        return mFields[index.internalId()].name();
+      }
+      else if ( mLayer )
+      {
+        return mLayer->attributeDisplayName( index.internalId() );
+      }
+      else
+        return QVariant();
     }
 
     case Qt::ForegroundRole:
@@ -240,10 +251,8 @@ QVariant QgsFieldModel::data( const QModelIndex &index, int role ) const
       if ( exprIdx >= 0 )
       {
         // if expression, test validity
-        if ( !mLayer )
-          return false;
         QgsExpression exp( mExpression[exprIdx] );
-        exp.prepare( mLayer->pendingFields() );
+        exp.prepare( mLayer ? mLayer->pendingFields() : QgsFields() );
         if ( exp.hasParserError() )
         {
           return QBrush( QColor( Qt::red ) );

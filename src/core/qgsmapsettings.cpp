@@ -1,3 +1,17 @@
+/***************************************************************************
+  qgsmapsettings.cpp
+  --------------------------------------
+  Date                 : December 2013
+  Copyright            : (C) 2013 by Martin Dobias
+  Email                : wonder dot sk at gmail dot com
+ ***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
 #include "qgsmapsettings.h"
 
@@ -27,6 +41,7 @@ QgsMapSettings::QgsMapSettings()
     , mSelectionColor( Qt::yellow )
     , mShowSelection( true )
     , mFlags( Antialiasing | UseAdvancedEffects | DrawLabeling )
+    , mImageFormat( QImage::Format_ARGB32_Premultiplied )
 {
   updateDerived();
 
@@ -430,7 +445,7 @@ QgsRectangle QgsMapSettings::fullExtent() const
       QgsDebugMsg( "Updating extent using " + lyr->name() );
       QgsDebugMsg( "Input extent: " + lyr->extent().toString() );
 
-      if ( lyr->extent().isEmpty() )
+      if ( lyr->extent().isNull() )
       {
         it++;
         continue;

@@ -112,9 +112,7 @@ class ProcessingToolbox(QDockWidget, Ui_ProcessingToolbox):
 
         self.fillTree()
 
-
-    def updateTree(self):
-        Processing.updateAlgsList()
+    def algsListHasChanged(self):
         self.fillTree()
 
     def updateProvider(self, providerName, updateAlgsList = True):

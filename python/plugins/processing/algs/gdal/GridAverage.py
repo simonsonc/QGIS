@@ -48,6 +48,9 @@ class GridAverage(GdalAlgorithm):
     NODATA = 'NODATA'
     OUTPUT = 'OUTPUT'
 
+    def commandLineName(self):
+        return "gdalogr:gridaverage"
+
     def defineCharacteristics(self):
         self.name = 'Grid (Moving average)'
         self.group = '[GDAL] Analysis'

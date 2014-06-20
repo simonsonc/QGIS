@@ -152,7 +152,7 @@ void QgsMapCanvasRendererSync::onCrsTransformR2C()
 
 void QgsMapCanvasRendererSync::onDestCrsC2R()
 {
-  mRenderer->setDestinationCrs( mCanvas->mapSettings().destinationCrs() );
+  mRenderer->setDestinationCrs( mCanvas->mapSettings().destinationCrs(), true, false );
 }
 
 void QgsMapCanvasRendererSync::onDestCrsR2C()
@@ -223,10 +223,11 @@ QgsMapCanvas::QgsMapCanvas( QWidget * parent, const char *name )
   // it is parented to map canvas, will be deleted automatically
   new QgsMapCanvasRendererSync( this, mMapRenderer );
 
-  mSettings.setOutputSize( size() );
-  mMapRenderer->setOutputSize( size(), mSettings.outputDpi() );
-  setSceneRect( 0, 0, size().width(), size().height() );
-  mScene->setSceneRect( QRectF( 0, 0, size().width(), size().height() ) );
+  QSize s = viewport()->size();
+  mSettings.setOutputSize( s );
+  mMapRenderer->setOutputSize( s, mSettings.outputDpi() );
+  setSceneRect( 0, 0, s.width(), s.height() );
+  mScene->setSceneRect( QRectF( 0, 0, s.width(), s.height() ) );
 
   moveCanvasContents( true );
 
@@ -479,6 +480,8 @@ void QgsMapCanvas::setCrsTransformEnabled( bool enabled )
     return;
 
   mSettings.setCrsTransformEnabled( enabled );
+
+  updateDatumTransformEntries();
 
   refresh();
 
@@ -1218,7 +1221,7 @@ void QgsMapCanvas::resizeEvent( QResizeEvent * e )
   QGraphicsView::resizeEvent( e );
   mResizeTimer->start( 500 );
 
-  QSize lastSize = size();
+  QSize lastSize = viewport()->size();
 
   mSettings.setOutputSize( lastSize );
   mMapRenderer->setOutputSize( lastSize, mSettings.outputDpi() );
@@ -1555,11 +1558,18 @@ void QgsMapCanvas::connectNotify( const char * signal )
 
 void QgsMapCanvas::updateDatumTransformEntries()
 {
+  if ( !mSettings.hasCrsTransformEnabled() )
+    return;
+
   QString destAuthId = mSettings.destinationCrs().authid();
   foreach ( QString layerID, mSettings.layers() )
   {
     QgsMapLayer* layer = QgsMapLayerRegistry::instance()->mapLayer( layerID );
     if ( !layer )
+      continue;
+
+    QgsVectorLayer *vl = qobject_cast<QgsVectorLayer *>( layer );
+    if ( vl && vl->geometryType() == QGis::NoGeometry )
       continue;
 
     // if there are more options, ask the user which datum transform to use
@@ -1635,7 +1645,7 @@ void QgsMapCanvas::moveCanvasContents( bool reset )
   if ( !reset )
     pnt += mCanvasProperties->mouseLastXY - mCanvasProperties->rubberStartPoint;
 
-  setSceneRect( -pnt.x(), -pnt.y(), size().width(), size().height() );
+  setSceneRect( -pnt.x(), -pnt.y(), viewport()->size().width(), viewport()->size().height() );
 }
 
 void QgsMapCanvas::showError( QgsMapLayer * mapLayer )
