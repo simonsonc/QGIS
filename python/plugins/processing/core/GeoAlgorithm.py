@@ -205,7 +205,7 @@ class GeoAlgorithm:
         it should be called using this method, since it performs
         some additional operations.
 
-        Raises a GeoAlgorithmExecutionException in case anything goe
+        Raises a GeoAlgorithmExecutionException in case anything goes
         wrong.
         """
         self.model = model
@@ -215,6 +215,7 @@ class GeoAlgorithm:
             self.checkOutputFileExtensions()
             self.runPreExecutionScript(progress)
             self.processAlgorithm(progress)
+            progress.setPercentage(100)
             self.convertUnsupportedFormats(progress)
             self.runPostExecutionScript(progress)
         except GeoAlgorithmExecutionException, gaee:
@@ -360,17 +361,10 @@ class GeoAlgorithm:
                             if layer.source() == inputlayer:
                                 self.crs = layer.crs()
                                 return
-                        if isinstance(param, ParameterRaster) \
-                                or isinstance(param, ParameterMultipleInput) \
-                                and param.datatype \
-                                == ParameterMultipleInput.TYPE_RASTER:
-                            p = QgsProviderRegistry.instance().provider('gdal',
-                                    inputlayer)
-                        else:
-                            p = QgsProviderRegistry.instance().provider('ogr',
-                                    inputlayer)
+                        p = dataobjects.getObjectFromUri(inputlayer)
                         if p is not None:
                             self.crs = p.crs()
+                            p = None
                             return
         try:
             from qgis.utils import iface

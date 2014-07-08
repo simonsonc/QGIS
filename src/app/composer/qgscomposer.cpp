@@ -1406,7 +1406,16 @@ void QgsComposer::exportCompositionAsPDF( QgsComposer::OutputMode mode )
       mComposition->beginPrintAsPDF( printer, outputFileName );
       // set the correct resolution
       mComposition->beginPrint( printer );
-      painter.begin( &printer );
+      bool printReady =  painter.begin( &printer );
+      if ( !printReady )
+      {
+        QMessageBox::warning( this, tr( "Atlas processing error" ),
+                              QString( tr( "Error creating %1." ) ).arg( outputFileName ),
+                              QMessageBox::Ok,
+                              QMessageBox::Ok );
+        mView->setPaintingEnabled( true );
+        return;
+      }
     }
 
     QProgressDialog progress( tr( "Rendering maps..." ), tr( "Abort" ), 0, atlasMap->numFeatures(), this );
@@ -1429,6 +1438,7 @@ void QgsComposer::exportCompositionAsPDF( QgsComposer::OutputMode mode )
                               QMessageBox::Ok,
                               QMessageBox::Ok );
         mView->setPaintingEnabled( true );
+        QApplication::restoreOverrideCursor();
         return;
       }
       if ( !atlasOnASingleFile )
@@ -1441,17 +1451,24 @@ void QgsComposer::exportCompositionAsPDF( QgsComposer::OutputMode mode )
         mComposition->beginPrintAsPDF( multiFilePrinter, outputFileName );
         // set the correct resolution
         mComposition->beginPrint( multiFilePrinter );
-        painter.begin( &multiFilePrinter );
+        bool printReady = painter.begin( &multiFilePrinter );
+        if ( !printReady )
+        {
+          QMessageBox::warning( this, tr( "Atlas processing error" ),
+                                QString( tr( "Error creating %1." ) ).arg( outputFileName ),
+                                QMessageBox::Ok,
+                                QMessageBox::Ok );
+          mView->setPaintingEnabled( true );
+          QApplication::restoreOverrideCursor();
+          return;
+        }
         mComposition->doPrint( multiFilePrinter, painter );
         painter.end();
       }
       else
       {
-        if ( featureI > 0 )
-        {
-          printer.newPage();
-        }
-        mComposition->doPrint( printer, painter );
+        //start print on a new page if we're not on the first feature
+        mComposition->doPrint( printer, painter, featureI > 0 );
       }
     }
     atlasMap->endRender();
@@ -1462,7 +1479,17 @@ void QgsComposer::exportCompositionAsPDF( QgsComposer::OutputMode mode )
   }
   else
   {
-    mComposition->exportAsPDF( outputFileName );
+    bool exportOk = mComposition->exportAsPDF( outputFileName );
+    if ( !exportOk )
+    {
+      QMessageBox::warning( this, tr( "Atlas processing error" ),
+                            QString( tr( "Error creating %1." ) ).arg( outputFileName ),
+                            QMessageBox::Ok,
+                            QMessageBox::Ok );
+      mView->setPaintingEnabled( true );
+      QApplication::restoreOverrideCursor();
+      return;
+    }
   }
 
   if ( ! mComposition->useAdvancedEffects() )
@@ -1547,6 +1574,7 @@ void QgsComposer::printComposition( QgsComposer::OutputMode mode )
                             QMessageBox::Ok,
                             QMessageBox::Ok );
       mView->setPaintingEnabled( true );
+      QApplication::restoreOverrideCursor();
       return;
     }
     QProgressDialog progress( tr( "Rendering maps..." ), tr( "Abort" ), 0, atlasMap->numFeatures(), this );
@@ -1569,14 +1597,12 @@ void QgsComposer::printComposition( QgsComposer::OutputMode mode )
                               QMessageBox::Ok,
                               QMessageBox::Ok );
         mView->setPaintingEnabled( true );
+        QApplication::restoreOverrideCursor();
         return;
       }
 
-      if ( i > 0 )
-      {
-        mPrinter.newPage();
-      }
-      mComposition->doPrint( mPrinter, painter );
+      //start print on a new page if we're not on the first feature
+      mComposition->doPrint( mPrinter, painter, i > 0 );
     }
     atlasMap->endRender();
     painter.end();
@@ -1681,15 +1707,25 @@ void QgsComposer::exportCompositionAsImage( QgsComposer::OutputMode mode )
         mView->setPaintingEnabled( true );
         return;
       }
+      bool saveOk;
       if ( i == 0 )
       {
-        image.save( fileNExt.first, fileNExt.second.toLocal8Bit().constData() );
+        saveOk = image.save( fileNExt.first, fileNExt.second.toLocal8Bit().constData() );
       }
       else
       {
         QFileInfo fi( fileNExt.first );
         QString outputFilePath = fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix();
-        image.save( outputFilePath, fileNExt.second.toLocal8Bit().constData() );
+        saveOk = image.save( outputFilePath, fileNExt.second.toLocal8Bit().constData() );
+      }
+      if ( !saveOk )
+      {
+        QMessageBox::warning( this, tr( "Image export error" ),
+                              QString( tr( "Error creating %1." ) ).arg( fileNExt.first ),
+                              QMessageBox::Ok,
+                              QMessageBox::Ok );
+        mView->setPaintingEnabled( true );
+        return;
       }
     }
 
@@ -1800,6 +1836,7 @@ void QgsComposer::exportCompositionAsImage( QgsComposer::OutputMode mode )
                             QMessageBox::Ok,
                             QMessageBox::Ok );
       mView->setPaintingEnabled( true );
+      QApplication::restoreOverrideCursor();
       return;
     }
 
@@ -1823,6 +1860,7 @@ void QgsComposer::exportCompositionAsImage( QgsComposer::OutputMode mode )
                               QMessageBox::Ok,
                               QMessageBox::Ok );
         mView->setPaintingEnabled( true );
+        QApplication::restoreOverrideCursor();
         return;
       }
 
@@ -1831,16 +1869,25 @@ void QgsComposer::exportCompositionAsImage( QgsComposer::OutputMode mode )
       for ( int i = 0; i < mComposition->numPages(); ++i )
       {
         QImage image = mComposition->printPageAsRaster( i );
+        QString imageFilename = filename;
 
-        if ( i == 0 )
+        if ( i != 0 )
         {
-          image.save( filename, format.toLocal8Bit().constData() );
-        }
-        else
-        {
+          //append page number
           QFileInfo fi( filename );
-          QString outputFilePath = fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix();
-          image.save( outputFilePath, format.toLocal8Bit().constData() );
+          imageFilename = fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix();
+        }
+
+        bool saveOk = image.save( imageFilename, format.toLocal8Bit().constData() );
+        if ( !saveOk )
+        {
+          QMessageBox::warning( this, tr( "Atlas processing error" ),
+                                QString( tr( "Error creating %1." ) ).arg( imageFilename ),
+                                QMessageBox::Ok,
+                                QMessageBox::Ok );
+          mView->setPaintingEnabled( true );
+          QApplication::restoreOverrideCursor();
+          return;
         }
       }
 
@@ -2098,6 +2145,7 @@ void QgsComposer::exportCompositionAsSVG( QgsComposer::OutputMode mode )
       {
         QSvgGenerator generator;
         generator.setTitle( QgsProject::instance()->title() );
+        QString currentFileName = outputFileName;
         if ( i == 0 )
         {
           generator.setFileName( outputFileName );
@@ -2105,7 +2153,8 @@ void QgsComposer::exportCompositionAsSVG( QgsComposer::OutputMode mode )
         else
         {
           QFileInfo fi( outputFileName );
-          generator.setFileName( fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix() );
+          currentFileName = fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix();
+          generator.setFileName( currentFileName );
         }
 
         //width in pixel
@@ -2116,7 +2165,17 @@ void QgsComposer::exportCompositionAsSVG( QgsComposer::OutputMode mode )
         generator.setViewBox( QRect( 0, 0, width, height ) );
         generator.setResolution( mComposition->printResolution() ); //because the rendering is done in mm, convert the dpi
 
-        QPainter p( &generator );
+        QPainter p;
+        bool createOk = p.begin( &generator );
+        if ( !createOk )
+        {
+          QMessageBox::warning( this, tr( "SVG export error" ),
+                                QString( tr( "Error creating %1." ) ).arg( currentFileName ),
+                                QMessageBox::Ok,
+                                QMessageBox::Ok );
+          mView->setPaintingEnabled( true );
+          return;
+        }
 
         mComposition->renderPage( &p, i );
         p.end();
@@ -2224,8 +2283,19 @@ void QgsComposer::exportCompositionAsSVG( QgsComposer::OutputMode mode )
           }
         }
         QFileInfo fi( outputFileName );
-        QFile out( i == 0 ? outputFileName : fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix() );
-        out.open( QIODevice::WriteOnly | QIODevice::Text );
+        QString currentFileName = i == 0 ? outputFileName : fi.absolutePath() + "/" + fi.baseName() + "_" + QString::number( i + 1 ) + "." + fi.suffix();
+        QFile out( currentFileName );
+        bool openOk = out.open( QIODevice::WriteOnly | QIODevice::Text );
+        if ( !openOk )
+        {
+          QMessageBox::warning( this, tr( "SVG export error" ),
+                                QString( tr( "Error creating %1." ) ).arg( currentFileName ),
+                                QMessageBox::Ok,
+                                QMessageBox::Ok );
+          mView->setPaintingEnabled( true );
+          return;
+        }
+
         out.write( svg.toByteArray() );
       }
     }
@@ -2911,8 +2981,13 @@ void QgsComposer::readXML( const QDomElement& composerElem, const QDomDocument& 
   createCompositionWidget();
 
   //read and restore all the items
+  QDomElement atlasElem;
   if ( mComposition )
   {
+    // read atlas parameters - must be done before adding items
+    atlasElem = composerElem.firstChildElement( "Atlas" );
+    mComposition->atlasComposition().readXML( atlasElem, doc );
+
     mComposition->addItemsFromXML( composerElem, doc, &mMapsToRestore );
   }
 
@@ -2947,15 +3022,14 @@ void QgsComposer::readXML( const QDomElement& composerElem, const QDomDocument& 
 
   setupUndoView();
 
-  // atlas properties reading
-  QDomNodeList atlasNodeList = composerElem.elementsByTagName( "Atlas" );
-
   //delete old atlas composition widget
   QgsAtlasCompositionWidget* oldAtlasWidget = qobject_cast<QgsAtlasCompositionWidget *>( mAtlasDock->widget() );
   delete oldAtlasWidget;
   mAtlasDock->setWidget( new QgsAtlasCompositionWidget( mAtlasDock, mComposition ) );
 
-  mComposition->atlasComposition().readXML( atlasNodeList.at( 0 ).toElement(), doc );
+  //read atlas map parameters (for pre 2.2 templates)
+  //this part must be done after adding items
+  mComposition->atlasComposition().readXMLMapSettings( atlasElem, doc );
 
   //set state of atlas controls
   QgsAtlasComposition* atlasMap = &mComposition->atlasComposition();

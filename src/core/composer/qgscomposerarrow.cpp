@@ -61,9 +61,8 @@ void QgsComposerArrow::initGraphicsSettings()
   mPen.setColor( QColor( 0, 0, 0 ) );
   mPen.setWidthF( 1 );
 
-  //set composer item brush and pen to transparent white by default
-  setPen( QPen( QColor( 255, 255, 255, 0 ) ) );
-  setBrush( QBrush( QColor( 255, 255, 255, 0 ) ) );
+  //default to no background
+  setBackgroundEnabled( false );
 }
 
 void QgsComposerArrow::paint( QPainter* painter, const QStyleOptionGraphicsItem *itemStyle, QWidget *pWidget )
@@ -76,6 +75,10 @@ void QgsComposerArrow::paint( QPainter* painter, const QStyleOptionGraphicsItem 
   }
 
   drawBackground( painter );
+
+  painter->save();
+  //antialiasing on
+  painter->setRenderHint( QPainter::Antialiasing, true );
 
   //draw arrow
   QPen arrowPen = mPen;
@@ -99,6 +102,8 @@ void QgsComposerArrow::paint( QPainter* painter, const QStyleOptionGraphicsItem 
     drawSVGMarker( painter, EndMarker, mEndMarkerFile );
   }
 
+  painter->restore();
+
   drawFrame( painter );
   if ( isSelected() )
   {
@@ -108,11 +113,14 @@ void QgsComposerArrow::paint( QPainter* painter, const QStyleOptionGraphicsItem 
 
 void QgsComposerArrow::setSceneRect( const QRectF& rectangle )
 {
-  if ( rectangle.width() < 0 )
+  //update rect for data defined size and position
+  QRectF evaluatedRect = evalItemRect( rectangle );
+
+  if ( evaluatedRect.width() < 0 )
   {
     mStartXIdx = 1 - mStartXIdx;
   }
-  if ( rectangle.height() < 0 )
+  if ( evaluatedRect.height() < 0 )
   {
     mStartYIdx = 1 - mStartYIdx;
   }
@@ -120,7 +128,7 @@ void QgsComposerArrow::setSceneRect( const QRectF& rectangle )
   double margin = computeMarkerMargin();
 
   // Ensure the rectangle is at least as large as needed to include the markers
-  QRectF rect = rectangle.united( QRectF( rectangle.x(), rectangle.y(), 2. * margin, 2. * margin ) );
+  QRectF rect = rectangle.united( QRectF( evaluatedRect.x(), evaluatedRect.y(), 2. * margin, 2. * margin ) );
 
   // Compute new start and stop positions
   double x[2] = {rect.x(), rect.x() + rect.width()};

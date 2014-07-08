@@ -1575,7 +1575,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Modify current selection by:</source>
-        <translation>Modificar la selección actual:</translation>
+        <translation type="obsolete">Modificar la selección actual:</translation>
     </message>
     <message>
         <source>adding to current selection</source>
@@ -2177,7 +2177,7 @@ Esto puede ocasionar resultados inesperados.</translation>
     </message>
     <message>
         <source>Use selected features only</source>
-        <translation>Usar sólo objetos espaciales seleccionados</translation>
+        <translation type="obsolete">Usar sólo objetos espaciales seleccionados</translation>
     </message>
     <message>
         <source>Select files to merge</source>
@@ -2579,6 +2579,22 @@ Los siguientes nombres de campo tienen más de 10 caracteres:
     <message>
         <source>Currently QGIS doesn&apos;t allow simultaneous access from different threads to the same datasource. Make sure your layer&apos;s attribute tables are closed. Continue?</source>
         <translation>Actualmente QGIS no permite el acceso simultáneo desde distintos hilos a la misma fuente de datos. Asegúrese de que las tablas de atributos de su capa están cerradas. ¿Continuar?</translation>
+    </message>
+    <message>
+        <source>Include input features that touch the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include input features that overlap/cross the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include input features completely within the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only selected features</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5817,7 +5833,7 @@ Would you like to add the new layer to the TOC?</source>
         <source>Currently QGIS doesn&apos;t allow simultaneous access from 
                                  different threads to the same datasource. Make sure your layer&apos;s 
                                  attribute tables are closed. Continue?</source>
-        <translation>Actualmente QGIS no permite el acceso simultáneo desde 
+        <translation type="obsolete">Actualmente QGIS no permite el acceso simultáneo desde 
                                 distintos hilos a la misma fuente de datos. Asegúrese de que las 
                                 tablas de atributos de su capa están cerradas. ¿Continuar?</translation>
     </message>
@@ -5856,6 +5872,10 @@ Would you like to add the new layer to the TOC?</source>
         <translation>Archivo shape de salida creado:
 %s
 %s</translation>
+    </message>
+    <message>
+        <source>Currently QGIS doesn&apos;t allow simultaneous access from different threads to the same datasource. Make sure your layer&apos;s attribute tables are closed. Continue?</source>
+        <translation type="unfinished">Actualmente QGIS no permite el acceso simultáneo desde distintos hilos a la misma fuente de datos. Asegúrese de que las tablas de atributos de su capa están cerradas. ¿Continuar?</translation>
     </message>
 </context>
 <context>
@@ -8017,7 +8037,7 @@ Actúa sobre la capa actual en edición</translation>
     </message>
     <message>
         <source>Model doesn&apos;t contains any algorithms and/or parameters and can&apos;t be executed</source>
-        <translation type="obsolete">El modelo no contiene ningún algoritmo y/o parámetros y no se puede ejecutar</translation>
+        <translation type="unfinished">El modelo no contiene ningún algoritmo y/o parámetros y no se puede ejecutar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8098,7 +8118,7 @@ Por favor, use la opción &apos;Guardar como...&apos;</translation>
     <message>
         <source>Model doesn&apos;t contains any algorithms and/or 
                              parameters and can&apos;t be executed</source>
-        <translation>El modelo no contiene ningún algoritmo y/o 
+        <translation type="obsolete">El modelo no contiene ningún algoritmo y/o 
                              parámetro y no se puede ejecutar</translation>
     </message>
     <message>
@@ -8120,7 +8140,7 @@ Por favor, use la opción &apos;Guardar como...&apos;</translation>
                                      original location (probably you do not 
                                      have permission to do it). Please, use 
                                      the &apos;Save as...&apos; option.</source>
-        <translation>Este modelo no se puede guardar en su 
+        <translation type="obsolete">Este modelo no se puede guardar en su 
                                      ubicación original (probablemente no tenga 
                                      permiso para hacerlo). Por favor, use la
                                      opción «Guardar como...»</translation>
@@ -8129,9 +8149,18 @@ Por favor, use la opción &apos;Guardar como...&apos;</translation>
         <source>The selected model could not be loaded.
 
                                  Wrong line: %s</source>
-        <translation>No se pudo cargar el modelo seleccionado.
+        <translation type="obsolete">No se pudo cargar el modelo seleccionado.
 
 ................................Línea incorrecta: %s</translation>
+    </message>
+    <message>
+        <source>This model can&apos;t be saved in its original location (probably you do not have permission to do it). Please, use the &apos;Save as...&apos; option.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected model could not be loaded.
+See the log for more information.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11609,72 +11638,72 @@ Error(%2): %3</translation>
     <message>
         <source>day</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>día</translation>
+        <translation type="obsolete">día</translation>
     </message>
     <message>
         <source>days</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>días</translation>
+        <translation type="obsolete">días</translation>
     </message>
     <message>
         <source>week</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>semana</translation>
+        <translation type="obsolete">semana</translation>
     </message>
     <message>
         <source>weeks</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>semanas</translation>
+        <translation type="obsolete">semanas</translation>
     </message>
     <message>
         <source>month</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>mes</translation>
+        <translation type="obsolete">mes</translation>
     </message>
     <message>
         <source>months</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>meses</translation>
+        <translation type="obsolete">meses</translation>
     </message>
     <message>
         <source>year</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>año</translation>
+        <translation type="obsolete">año</translation>
     </message>
     <message>
         <source>years</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>años</translation>
+        <translation type="obsolete">años</translation>
     </message>
     <message>
         <source>second</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>segundo</translation>
+        <translation type="obsolete">segundo</translation>
     </message>
     <message>
         <source>seconds</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>segundos</translation>
+        <translation type="obsolete">segundos</translation>
     </message>
     <message>
         <source>minute</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>minuto</translation>
+        <translation type="obsolete">minuto</translation>
     </message>
     <message>
         <source>minutes</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>minutos</translation>
+        <translation type="obsolete">minutos</translation>
     </message>
     <message>
         <source>hour</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>hora</translation>
+        <translation type="obsolete">hora</translation>
     </message>
     <message>
         <source>hours</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>horas</translation>
+        <translation type="obsolete">horas</translation>
     </message>
     <message>
         <source>Cannot convert &apos;%1&apos; to DateTime</source>
@@ -12717,6 +12746,49 @@ La respuesta fue:
     <message>
         <source>Inverted polygons</source>
         <translation>Polígonos invertidos</translation>
+    </message>
+    <message>
+        <source>second|seconds</source>
+        <comment>list of words separated by | which reference years</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minute|minutes</source>
+        <comment>list of words separated by | which reference minutes</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hour|hours</source>
+        <comment>list of words separated by | which reference minutes hours</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>day|days</source>
+        <comment>list of words separated by | which reference days</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>week|weeks</source>
+        <comment>wordlist separated by | which reference weeks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>month|months</source>
+        <comment>list of words separated by | which reference months</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>year|years</source>
+        <comment>list of words separated by | which reference years</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storage and eXchange Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legend</source>
+        <translation type="unfinished">Leyenda</translation>
     </message>
 </context>
 <context>
@@ -16044,11 +16116,11 @@ Por favor, contacte con los desarrolladores.</translation>
     </message>
     <message>
         <source>The request &apos;%1&apos; timed out. Any data received is likely incomplete.</source>
-        <translation>Expiró la solicitud &apos;%1&apos;. Cualquier dato recibido probablemente está incompleto.</translation>
+        <translation type="obsolete">Expiró la solicitud &apos;%1&apos;. Cualquier dato recibido probablemente está incompleto.</translation>
     </message>
     <message>
         <source>Network request timeout</source>
-        <translation>Solicitud de red expirada</translation>
+        <translation type="obsolete">Solicitud de red expirada</translation>
     </message>
     <message>
         <source>A network request timed out, any data received is likely incomplete.</source>
@@ -16121,6 +16193,14 @@ Por favor, contacte con los desarrolladores.</translation>
     <message>
         <source>http://qgis.org/en/site/forusers/commercial_support.html</source>
         <translation>http://qgis.org/en/site/forusers/commercial_support.html</translation>
+    </message>
+    <message>
+        <source>Layer creation failed. Please check the &lt;a href=&quot;#messageLog&quot;&gt;message log&lt;/a&gt; for further information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Please check the &lt;a href=&quot;#messageLog&quot;&gt;message log&lt;/a&gt; for further info.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19155,6 +19235,18 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
         <source>Feature filter parser error: %1</source>
         <translation>Error del analizador de filtros de objetos espaciales: %1</translation>
     </message>
+    <message>
+        <source>Error creating %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image export error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG export error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerArrowWidget</name>
@@ -20372,6 +20464,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
         <source> mm</source>
         <translation> mm</translation>
     </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerLabelWidget</name>
@@ -20531,7 +20627,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     <name>QgsComposerLegend</name>
     <message>
         <source>Legend</source>
-        <translation>Leyenda</translation>
+        <translation type="obsolete">Leyenda</translation>
     </message>
 </context>
 <context>
@@ -21672,6 +21768,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
         <source> mm</source>
         <translation> mm</translation>
     </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerMouseHandles</name>
@@ -22138,6 +22238,26 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
         <source>Scalebar line cap style</source>
         <translation>Estilo de mayúsculas de línea de barra de escala</translation>
     </message>
+    <message>
+        <source>Select fill color</source>
+        <translation type="unfinished">Seleccionar color de relleno</translation>
+    </message>
+    <message>
+        <source>Select alternate fill color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select font color</source>
+        <translation type="unfinished">Seleccionar color de letra</translation>
+    </message>
+    <message>
+        <source>Select stroke color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalebar secondary color changed</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerScaleBarWidgetBase</name>
@@ -22292,6 +22412,10 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     <message>
         <source>Cap style</source>
         <translation>Estilo de mayúsculas</translation>
+    </message>
+    <message>
+        <source>Secondary fill color...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -23154,7 +23278,7 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Spacing</source>
-        <translation>Separación</translation>
+        <translation type="obsolete">Separación</translation>
     </message>
     <message>
         <source> mm</source>
@@ -23186,11 +23310,11 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Snap to alignments</source>
-        <translation>Autoensamblar a las alineaciones</translation>
+        <translation type="obsolete">Autoensamblar a las alineaciones</translation>
     </message>
     <message>
         <source>Tolerance</source>
-        <translation>Tolerancia</translation>
+        <translation type="obsolete">Tolerancia</translation>
     </message>
     <message>
         <source>Export resolution</source>
@@ -23210,7 +23334,23 @@ Por favor, pruebe una resolución menor o un tamaño de papel más pequeño.</tr
     </message>
     <message>
         <source>Grid</source>
-        <translation>Cuadrícula</translation>
+        <translation type="obsolete">Cuadrícula</translation>
+    </message>
+    <message>
+        <source>Guides and Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Snap tolerance</source>
+        <translation type="unfinished">Tolerancia de autoensamblado</translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
     </message>
 </context>
 <context>
@@ -31402,7 +31542,7 @@ en la línea %2 columna %3</translation>
     </message>
     <message>
         <source>&lt;p align=&quot;center&quot;&gt;Existing masets&lt;/p&gt;</source>
-        <translation>&lt;p align=&quot;center&quot;&gt;Directorios de mapas existentes&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p align=&quot;center&quot;&gt;Directorios de mapas existentes&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Location:</source>
@@ -31499,6 +31639,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Create New Mapset</source>
         <translation>Crear nuevo directorio de mapas</translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;Existing mapsets&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -32720,6 +32864,10 @@ Puede haber un problema en su conexión a la red o en el servidor WMS.</numerusf
     <message>
         <source>feature id</source>
         <translation>ID del objeto espacial</translation>
+    </message>
+    <message>
+        <source>No attributes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -35136,7 +35284,7 @@ no se muestran</translation>
     </message>
     <message>
         <source>style not found in database</source>
-        <translation>estilo no encontrado en la base de datos</translation>
+        <translation type="obsolete">estilo no encontrado en la base de datos</translation>
     </message>
     <message>
         <source>Specify CRS for layer %1</source>
@@ -35173,6 +35321,10 @@ no se muestran</translation>
     <message>
         <source>Unable to open file %1</source>
         <translation>No se puede abrir el archivo %1</translation>
+    </message>
+    <message>
+        <source>Style not found in database</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -35954,7 +36106,7 @@ no se muestran</translation>
     </message>
     <message>
         <source>An error occured during feature splitting</source>
-        <translation>Ocurrió un error durante la división de los objetos espaciales</translation>
+        <translation type="obsolete">Ocurrió un error durante la división de los objetos espaciales</translation>
     </message>
     <message>
         <source>No feature split done</source>
@@ -35970,7 +36122,7 @@ no se muestran</translation>
     </message>
     <message>
         <source>If there are selected features, the split tool only applies to the selected ones. If you like to split all features under the split line, clear the selection</source>
-        <translation>Si hay objetos espaciales seleccionados, la herramienta de división sólo se aplica a aquellos seleccionados. Si quiere dividir todos los objetos espaciales bajo la línea de división, elimine la selección.</translation>
+        <translation type="obsolete">Si hay objetos espaciales seleccionados, la herramienta de división sólo se aplica a aquellos seleccionados. Si quiere dividir todos los objetos espaciales bajo la línea de división, elimine la selección.</translation>
     </message>
     <message>
         <source>Not a vector layer</source>
@@ -36000,6 +36152,18 @@ no se muestran</translation>
         <source>The geometry is invalid. Please repair before trying to split it.</source>
         <translation>La geometría no es válida. Por favor, arréglela antes de intentar dividirla.</translation>
     </message>
+    <message>
+        <source>No features were split</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If there are selected features, the split tool only applies to those. If you would like to split all features under the split line, clear the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occured during splitting.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsMapToolSplitParts</name>
@@ -36021,7 +36185,7 @@ no se muestran</translation>
     </message>
     <message>
         <source>If there are selected parts, the split tool only applies to the selected ones. If you like to split all parts under the split line, clear the selection</source>
-        <translation>Si hay partes seleccionadas, la herramienta de división sólo se aplica a las seleccionadas. Si quiere dividir todas las partes bajo la línea de división, elimine la selección</translation>
+        <translation type="obsolete">Si hay partes seleccionadas, la herramienta de división sólo se aplica a las seleccionadas. Si quiere dividir todas las partes bajo la línea de división, elimine la selección</translation>
     </message>
     <message>
         <source>Cut edges detected. Make sure the line splits parts into multiple parts.</source>
@@ -36037,7 +36201,19 @@ no se muestran</translation>
     </message>
     <message>
         <source>An error occured during feature splitting</source>
-        <translation>Ocurrió un error durante la división de los objetos espaciales</translation>
+        <translation type="obsolete">Ocurrió un error durante la división de los objetos espaciales</translation>
+    </message>
+    <message>
+        <source>No parts were split</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If there are selected parts, the split tool only applies to those. If you would like to split all parts under the split line, clear the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occured during splitting.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -36470,7 +36646,7 @@ http://my.host.com/cgi-bin/mapserv.exe</translation>
     </message>
     <message>
         <source>feature %1</source>
-        <translation>objeto espacial %1</translation>
+        <translation type="obsolete">objeto espacial %1</translation>
     </message>
     <message>
         <source>Minimum</source>
@@ -40344,11 +40520,11 @@ Siempre red: siempre cargar desde la red y no chequear si el caché tiene una en
     </message>
     <message>
         <source>Grid defaults</source>
-        <translation>Predeterminados de la cuadrícula</translation>
+        <translation type="obsolete">Predeterminados de la cuadrícula</translation>
     </message>
     <message>
         <source>Spacing</source>
-        <translation>Separación</translation>
+        <translation type="obsolete">Separación</translation>
     </message>
     <message>
         <source> mm</source>
@@ -40372,7 +40548,7 @@ Siempre red: siempre cargar desde la red y no chequear si el caché tiene una en
     </message>
     <message>
         <source>Guide defaults</source>
-        <translation>Predeterminados de las guías</translation>
+        <translation type="obsolete">Predeterminados de las guías</translation>
     </message>
     <message>
         <source>Don&apos;t enable &apos;on the fly&apos; reprojection</source>
@@ -40473,6 +40649,18 @@ Siempre red: siempre cargar desde la red y no chequear si el caché tiene una en
     <message>
         <source>Max cores to use:</source>
         <translation>Máximo de núcleos a usar:</translation>
+    </message>
+    <message>
+        <source>Grid and guide defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
     </message>
 </context>
 <context>
@@ -41194,6 +41382,10 @@ Error: %4</source>
         <translation>No se pudieron actualizar los metadatos para %1.%2.
 SQL: %3
 Error: %4</translation>
+    </message>
+    <message>
+        <source>Could not reload fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -45187,6 +45379,10 @@ Proceed?</source>
         <source>Quality for JPEG images ( 10 : smaller image - 100 : best quality )</source>
         <translation>Calidad para imágenes JPEG ( 10: imagen más pequeña - 100: mejor calidad )</translation>
     </message>
+    <message>
+        <source>Project file</source>
+        <translation type="unfinished">Archivos de proyecto</translation>
+    </message>
 </context>
 <context>
     <name>QgsProjectionSelector</name>
@@ -48514,6 +48710,10 @@ desviación estándar ×</translation>
     <message>
         <source>The relation is not valid. Please make sure your relation definitions are ok.</source>
         <translation>La relación no es válida. Por favor, asegúrese de que la definición de su relación es correcta.</translation>
+    </message>
+    <message>
+        <source>(no selection)</source>
+        <translation type="unfinished">(ninguna selección)</translation>
     </message>
 </context>
 <context>
@@ -52156,6 +52356,22 @@ Hubo un problema con su base de datos de símbolos.</translation>
         <source>Un-group</source>
         <translation>Desagrupar</translation>
     </message>
+    <message>
+        <source>All Symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ungrouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Smart Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsStyleV2ManagerDialogBase</name>
@@ -55750,8 +55966,18 @@ Esto puede ser un error de configuración del servidor. ¿Se debe usar la URL?</
     <message>
         <source>Failed to parse capabilities:
 </source>
-        <translation>No se pudieron analizar las capacidades:
+        <translation type="obsolete">No se pudieron analizar las capacidades:
 </translation>
+    </message>
+    <message>
+        <source>The server you are trying to connect to does not seem to be a WMS server. Please check the URL.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instead of the capabilities string that was expected, the following response has been received:
+
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -58230,7 +58456,7 @@ Descripción: %3</translation>
     <name>SaveAsPythonScriptAction</name>
     <message>
         <source>I/O error</source>
-        <translation>Error de E/S</translation>
+        <translation type="obsolete">Error de E/S</translation>
     </message>
     <message>
         <source>Unable to save edits. Reason:
@@ -58241,7 +58467,7 @@ Descripción: %3</translation>
     <message>
         <source>Unable to save edits. Reason:
  %s</source>
-        <translation>No se pueden guardar los cambios. Motivo:
+        <translation type="obsolete">No se pueden guardar los cambios. Motivo:
  %s</translation>
     </message>
 </context>
@@ -70033,6 +70259,23 @@ Ninguno
 &lt;pre&gt; $geometry IS NULL  &amp;rarr; devuelve 0, si su geometría no es NULL&lt;/pre&gt;
 
 </translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;$uuid function&lt;/h3&gt;
+Generates a Universally Unique Identifier (UUID) for each row using the Qt
+&lt;a href=&apos;http://qt-project.org/doc/qt-4.8/quuid.html#createUuid&apos;&gt;QUuid::createUuid&lt;/a&gt;
+method.  Each UUID is 38 characters long.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;$uuid&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+None
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt;$uuid &amp;rarr; {0bd2f60f-f157-4a6d-96af-d4ba4cb366a1}&lt;/pre&gt;
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -52,7 +52,9 @@ email                : sherman at mrcc.com
 #include "qgsmapoverviewcanvas.h"
 #include "qgsmaprenderer.h"
 #include "qgsmaprenderercache.h"
-#include "qgsmaprendererjob.h"
+#include "qgsmaprenderercustompainterjob.h"
+#include "qgsmaprendererparalleljob.h"
+#include "qgsmaprenderersequentialjob.h"
 #include "qgsmessagelog.h"
 #include "qgsmessageviewer.h"
 #include "qgspallabeling.h"
@@ -243,6 +245,8 @@ QgsMapCanvas::QgsMapCanvas( QWidget * parent, const char *name )
 
   mPreviewEffect = new QgsPreviewEffect( this );
   viewport()->setGraphicsEffect( mPreviewEffect );
+
+  setInteractive( false );
 
   refresh();
 
@@ -1080,6 +1084,7 @@ void QgsMapCanvas::keyPressEvent( QKeyEvent * e )
         zoomOut();
         break;
 
+#if 0
       case Qt::Key_P:
         mUseParallelRendering = !mUseParallelRendering;
         refresh();
@@ -1089,6 +1094,7 @@ void QgsMapCanvas::keyPressEvent( QKeyEvent * e )
         mDrawRenderingStats = !mDrawRenderingStats;
         refresh();
         break;
+#endif
 
       default:
         // Pass it on

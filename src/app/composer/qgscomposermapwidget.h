@@ -20,12 +20,14 @@
 
 #include "ui_qgscomposermapwidgetbase.h"
 #include "qgscomposermap.h"
+#include "qgscomposeritemwidget.h"
+
 class QgsMapLayer;
 
 /** \ingroup MapComposer
  * Input widget for the configuration of QgsComposerMap
  * */
-class QgsComposerMapWidget: public QWidget, private Ui::QgsComposerMapWidgetBase
+class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsComposerMapWidgetBase
 {
     Q_OBJECT
 
@@ -105,6 +107,12 @@ class QgsComposerMapWidget: public QWidget, private Ui::QgsComposerMapWidgetBase
 
     /**Sets the current composer map values to the GUI elements*/
     virtual void updateGuiElements();
+
+    QgsComposerItem::DataDefinedProperty ddPropertyForWidget( QgsDataDefinedButton *widget );
+
+  protected slots:
+    /**Initializes data defined buttons to current atlas coverage layer*/
+    void populateDataDefinedButtons();
 
   private slots:
 

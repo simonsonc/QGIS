@@ -49,6 +49,9 @@ QgsComposerLabel::QgsComposerLabel( QgsComposition *composition ):
   //default to a 10 point font size
   mFont.setPointSizeF( 10 );
 
+  //default to no background
+  setBackgroundEnabled( false );
+
   if ( mComposition && mComposition->atlasMode() == QgsComposition::PreviewAtlas )
   {
     //a label added while atlas preview is enabled needs to have the expression context set,
@@ -77,6 +80,9 @@ void QgsComposerLabel::paint( QPainter* painter, const QStyleOptionGraphicsItem*
 
   drawBackground( painter );
   painter->save();
+
+  //antialiasing on
+  painter->setRenderHint( QPainter::Antialiasing, true );
 
   double penWidth = hasFrame() ? pen().widthF() : 0;
   QRectF painterRect( penWidth + mMargin, penWidth + mMargin, rect().width() - 2 * penWidth - 2 * mMargin, rect().height() - 2 * penWidth - 2 * mMargin );
@@ -266,7 +272,9 @@ void QgsComposerLabel::adjustSizeToText()
   double yShift = 0;
   itemShiftAdjustSize( width, height, xShift, yShift );
 
-  setSceneRect( QRectF( pos().x() + xShift, pos().y() + yShift, width, height ) );
+  //update rect for data defined size and position
+  QRectF evaluatedRect = evalItemRect( QRectF( pos().x() + xShift, pos().y() + yShift, width, height ) );
+  setSceneRect( evaluatedRect );
 }
 
 QFont QgsComposerLabel::font() const

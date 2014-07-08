@@ -1724,7 +1724,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Modify current selection by:</source>
-        <translation>Mainīt pašreizējo izvēli pēc:</translation>
+        <translation type="obsolete">Mainīt pašreizējo izvēli pēc:</translation>
     </message>
     <message>
         <source>Please specify input layer</source>
@@ -2131,7 +2131,7 @@ Vai tiešām vēlaties turpināt?</translation>
     </message>
     <message>
         <source>Use selected features only</source>
-        <translation>Lietot tikai izvēlētos objektus</translation>
+        <translation type="obsolete">Lietot tikai izvēlētos objektus</translation>
     </message>
     <message>
         <source>Simplify results</source>
@@ -2372,6 +2372,22 @@ vienkāršošanas samazinājās uz %s virsotnēm</translation>
     </message>
     <message>
         <source>Currently QGIS doesn&apos;t allow simultaneous access from different threads to the same datasource. Make sure your layer&apos;s attribute tables are closed. Continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include input features that touch the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include input features that overlap/cross the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include input features completely within the selection features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only selected features</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5233,12 +5249,6 @@ Vai vēlaties pievienot jauno slāni TOC?</translation>
         <translation type="obsolete">Slānis &apos;%1&apos; atjaunināts</translation>
     </message>
     <message>
-        <source>Currently QGIS doesn&apos;t allow simultaneous access from 
-                                 different threads to the same datasource. Make sure your layer&apos;s 
-                                 attribute tables are closed. Continue?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Layer &apos;{0}&apos; updated</source>
         <translation>Slānis {0} atjaunināts</translation>
     </message>
@@ -5255,6 +5265,10 @@ Vai vēlaties pievienot jauno slāni TOC?</translation>
         <translation>Izveidots izvades shapefile:
 %s
 %s</translation>
+    </message>
+    <message>
+        <source>Currently QGIS doesn&apos;t allow simultaneous access from different threads to the same datasource. Make sure your layer&apos;s attribute tables are closed. Continue?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7389,11 +7403,6 @@ Acts on currently active editable layer</source>
         <translation>Modelim ir nesaglabātas izmaiņas. Aizvērt modelētāju bez saglabāšanas? </translation>
     </message>
     <message>
-        <source>Model doesn&apos;t contains any algorithms and/or 
-                             parameters and can&apos;t be executed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save Model As Image</source>
         <translation>Saglabāt modeli kā attēlu</translation>
     </message>
@@ -7408,19 +7417,25 @@ Acts on currently active editable layer</source>
  %s</translation>
     </message>
     <message>
-        <source>This model can&apos;t be saved in its 
-                                     original location (probably you do not 
-                                     have permission to do it). Please, use 
-                                     the &apos;Save as...&apos; option.</source>
+        <source>The selected model could not be loaded.
+
+                                 Wrong line: %s</source>
+        <translation type="obsolete">Izvēlētais modelis nevar tikt ielādēts.
+
+------------------------Kļūdaina rinda: %s</translation>
+    </message>
+    <message>
+        <source>Model doesn&apos;t contains any algorithms and/or parameters and can&apos;t be executed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This model can&apos;t be saved in its original location (probably you do not have permission to do it). Please, use the &apos;Save as...&apos; option.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The selected model could not be loaded.
-
-                                 Wrong line: %s</source>
-        <translation>Izvēlētais modelis nevar tikt ielādēts.
-
-------------------------Kļūdaina rinda: %s</translation>
+See the log for more information.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10657,74 +10672,14 @@ Error(%2): %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>day</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>days</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>week</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>weeks</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>month</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>months</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>year</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>years</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>second</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>sekunde</translation>
-    </message>
-    <message>
-        <source>seconds</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>minute</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>minutes</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">sekunde</translation>
     </message>
     <message>
         <source>hour</source>
         <comment>Note: Word is part matched in code</comment>
-        <translation>stunda</translation>
-    </message>
-    <message>
-        <source>hours</source>
-        <comment>Note: Word is part matched in code</comment>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">stunda</translation>
     </message>
     <message>
         <source>Cannot convert &apos;%1&apos; to DateTime</source>
@@ -11697,6 +11652,49 @@ Response was:
     <message>
         <source>Inverted polygons</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>second|seconds</source>
+        <comment>list of words separated by | which reference years</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minute|minutes</source>
+        <comment>list of words separated by | which reference minutes</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hour|hours</source>
+        <comment>list of words separated by | which reference minutes hours</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>day|days</source>
+        <comment>list of words separated by | which reference days</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>week|weeks</source>
+        <comment>wordlist separated by | which reference weeks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>month|months</source>
+        <comment>list of words separated by | which reference months</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>year|years</source>
+        <comment>list of words separated by | which reference years</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storage and eXchange Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legend</source>
+        <translation type="unfinished">Leģenda</translation>
     </message>
 </context>
 <context>
@@ -14059,14 +14057,6 @@ Please contact the developers.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The request &apos;%1&apos; timed out. Any data received is likely incomplete.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network request timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>A network request timed out, any data received is likely incomplete.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14136,6 +14126,14 @@ Please contact the developers.
     </message>
     <message>
         <source>http://qgis.org/en/site/forusers/commercial_support.html</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layer creation failed. Please check the &lt;a href=&quot;#messageLog&quot;&gt;message log&lt;/a&gt; for further information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Please check the &lt;a href=&quot;#messageLog&quot;&gt;message log&lt;/a&gt; for further info.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16863,6 +16861,18 @@ Please try a lower resolution or a smaller papersize</source>
         <source>Feature filter parser error: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error creating %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image export error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SVG export error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerArrowWidget</name>
@@ -18060,6 +18070,10 @@ Please try a lower resolution or a smaller papersize</source>
         <source> mm</source>
         <translation type="unfinished"> mm</translation>
     </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerLabelWidget</name>
@@ -18211,7 +18225,7 @@ Please try a lower resolution or a smaller papersize</source>
     <name>QgsComposerLegend</name>
     <message>
         <source>Legend</source>
-        <translation>Leģenda</translation>
+        <translation type="obsolete">Leģenda</translation>
     </message>
 </context>
 <context>
@@ -19308,6 +19322,10 @@ Please try a lower resolution or a smaller papersize</source>
         <source> mm</source>
         <translation type="unfinished"> mm</translation>
     </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerMouseHandles</name>
@@ -19766,6 +19784,26 @@ Please try a lower resolution or a smaller papersize</source>
         <source>Scalebar line cap style</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select fill color</source>
+        <translation type="unfinished">Izvēlieties aizpildījuma krāsu</translation>
+    </message>
+    <message>
+        <source>Select alternate fill color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select font color</source>
+        <translation type="unfinished">Izvēlēties fonta krāsu</translation>
+    </message>
+    <message>
+        <source>Select stroke color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalebar secondary color changed</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsComposerScaleBarWidgetBase</name>
@@ -19916,6 +19954,10 @@ Please try a lower resolution or a smaller papersize</source>
     <message>
         <source>Cap style</source>
         <translation type="unfinished">Galu stils</translation>
+    </message>
+    <message>
+        <source>Secondary fill color...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20777,10 +20819,6 @@ Please try a lower resolution or a smaller papersize</source>
         <translation type="obsolete">Izšķirtspēja</translation>
     </message>
     <message>
-        <source>Spacing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> mm</source>
         <translation type="unfinished"> mm</translation>
     </message>
@@ -20805,14 +20843,6 @@ Please try a lower resolution or a smaller papersize</source>
         <translation type="obsolete">Krāsa...</translation>
     </message>
     <message>
-        <source>Snap to alignments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tolerance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export resolution</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20830,7 +20860,23 @@ Please try a lower resolution or a smaller papersize</source>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished">Tīkls</translation>
+        <translation type="obsolete">Tīkls</translation>
+    </message>
+    <message>
+        <source>Guides and Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Snap tolerance</source>
+        <translation type="unfinished">Pielipšanas tolerance</translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished">px</translation>
     </message>
 </context>
 <context>
@@ -28842,7 +28888,7 @@ rindā %2 kolonnā %3</translation>
     </message>
     <message>
         <source>&lt;p align=&quot;center&quot;&gt;Existing masets&lt;/p&gt;</source>
-        <translation>&lt;p align=&quot;center&quot;&gt;Eksistējošās karšu kopas&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p align=&quot;center&quot;&gt;Eksistējošās karšu kopas&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Location:</source>
@@ -28931,6 +28977,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Create New Mapset</source>
         <translation>Izveidot jaunu karšu kopu</translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;Existing mapsets&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -30118,6 +30168,10 @@ Tā varētu būt problēma ar jūsu tīkla savienojumu vai arī ar WMS serveri.<
     <message>
         <source>feature id</source>
         <translation type="unfinished">objekta id</translation>
+    </message>
+    <message>
+        <source>No attributes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -32397,7 +32451,7 @@ not displayed</source>
     </message>
     <message>
         <source>style not found in database</source>
-        <translation>stils datubāzē netika atrasts</translation>
+        <translation type="obsolete">stils datubāzē netika atrasts</translation>
     </message>
     <message>
         <source>Loading style file %1 failed because:
@@ -32434,6 +32488,10 @@ not displayed</source>
     <message>
         <source>Unable to open file %1</source>
         <translation>Nav iespējams atvērt failu %1</translation>
+    </message>
+    <message>
+        <source>Style not found in database</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -33175,7 +33233,7 @@ not displayed</source>
     </message>
     <message>
         <source>An error occured during feature splitting</source>
-        <translation>Dalot objektus notika kļūda</translation>
+        <translation type="obsolete">Dalot objektus notika kļūda</translation>
     </message>
     <message>
         <source>No feature split done</source>
@@ -33187,7 +33245,7 @@ not displayed</source>
     </message>
     <message>
         <source>If there are selected features, the split tool only applies to the selected ones. If you like to split all features under the split line, clear the selection</source>
-        <translation>Ja ir izvēlēti objekti, dalīšanas rīks darbosies tikai ar izvēlētajiem objektiem. Lai dalītu visus objektus, noņemiet izvēli no objektiem.</translation>
+        <translation type="obsolete">Ja ir izvēlēti objekti, dalīšanas rīks darbosies tikai ar izvēlētajiem objektiem. Lai dalītu visus objektus, noņemiet izvēli no objektiem.</translation>
     </message>
     <message>
         <source>Not a vector layer</source>
@@ -33221,6 +33279,18 @@ not displayed</source>
         <source>The geometry is invalid. Please repair before trying to split it.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No features were split</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If there are selected features, the split tool only applies to those. If you would like to split all features under the split line, clear the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occured during splitting.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsMapToolSplitParts</name>
@@ -33241,10 +33311,6 @@ not displayed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If there are selected parts, the split tool only applies to the selected ones. If you like to split all parts under the split line, clear the selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cut edges detected. Make sure the line splits parts into multiple parts.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -33258,7 +33324,19 @@ not displayed</source>
     </message>
     <message>
         <source>An error occured during feature splitting</source>
-        <translation type="unfinished">Dalot objektus notika kļūda</translation>
+        <translation type="obsolete">Dalot objektus notika kļūda</translation>
+    </message>
+    <message>
+        <source>No parts were split</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If there are selected parts, the split tool only applies to those. If you would like to split all parts under the split line, clear the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occured during splitting.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -33625,7 +33703,7 @@ not displayed</source>
     </message>
     <message>
         <source>feature %1</source>
-        <translation>objekts %1</translation>
+        <translation type="obsolete">objekts %1</translation>
     </message>
     <message>
         <source>Minimum</source>
@@ -37332,14 +37410,6 @@ Always network: always load from network and do not check if the cache has a val
         <translation>Krāsa...</translation>
     </message>
     <message>
-        <source>Grid defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spacing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> mm</source>
         <translation> mm</translation>
     </message>
@@ -37358,10 +37428,6 @@ Always network: always load from network and do not check if the cache has a val
     <message>
         <source>Snap tolerance</source>
         <translation>Pielipšanas tolerance</translation>
-    </message>
-    <message>
-        <source>Guide defaults</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Don&apos;t enable &apos;on the fly&apos; reprojection</source>
@@ -37462,6 +37528,18 @@ Always network: always load from network and do not check if the cache has a val
     <message>
         <source>Max cores to use:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid and guide defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished">px</translation>
     </message>
 </context>
 <context>
@@ -38144,6 +38222,10 @@ Error: %2</source>
         <source>Could not update metadata for %1.%2.
 SQL:%3
 Error: %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not reload fields.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -41737,6 +41819,10 @@ Proceed?</source>
         <source>Quality for JPEG images ( 10 : smaller image - 100 : best quality )</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Project file</source>
+        <translation type="unfinished">Projekta fails</translation>
+    </message>
 </context>
 <context>
     <name>QgsProjectionSelector</name>
@@ -44783,6 +44869,10 @@ standard deviation ×</source>
     <message>
         <source>The relation is not valid. Please make sure your relation definitions are ok.</source>
         <translation>Relācijas ir nederīgas. Pārbaudi vai tavs relāciju definīcijas ir korektas.</translation>
+    </message>
+    <message>
+        <source>(no selection)</source>
+        <translation type="unfinished">(nav izvēles)</translation>
     </message>
 </context>
 <context>
@@ -48219,6 +48309,22 @@ There was a problem with your symbol database.</source>
         <source>Un-group</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>All Symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ungrouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Smart Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QgsStyleV2ManagerDialogBase</name>
@@ -51616,8 +51722,13 @@ Kļūda bija %2</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Failed to parse capabilities:
-</source>
+        <source>The server you are trying to connect to does not seem to be a WMS server. Please check the URL.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instead of the capabilities string that was expected, the following response has been received:
+
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -53837,12 +53948,12 @@ Apraksts: %3</translation>
     <name>SaveAsPythonScriptAction</name>
     <message>
         <source>I/O error</source>
-        <translation>I/O kļūda</translation>
+        <translation type="obsolete">I/O kļūda</translation>
     </message>
     <message>
         <source>Unable to save edits. Reason:
  %s</source>
-        <translation>Nav iespejams saglabāt izmaiņas. Iemesls:
+        <translation type="obsolete">Nav iespejams saglabāt izmaiņas. Iemesls:
  %s</translation>
     </message>
 </context>
@@ -60762,6 +60873,23 @@ None
 &lt;pre&gt; 4 IS 2      &amp;rarr; returns 0 &lt;/pre&gt;
 &lt;pre&gt; $geometry IS NULL  &amp;rarr; returns 0, if your geometry is not NULL&lt;/pre&gt;
 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;$uuid function&lt;/h3&gt;
+Generates a Universally Unique Identifier (UUID) for each row using the Qt
+&lt;a href=&apos;http://qt-project.org/doc/qt-4.8/quuid.html#createUuid&apos;&gt;QUuid::createUuid&lt;/a&gt;
+method.  Each UUID is 38 characters long.
+
+&lt;h4&gt;Syntax&lt;/h4&gt;
+&lt;pre&gt;$uuid&lt;/pre&gt;
+
+&lt;h4&gt;Arguments&lt;/h4&gt;
+None
+
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;pre&gt;$uuid &amp;rarr; {0bd2f60f-f157-4a6d-96af-d4ba4cb366a1}&lt;/pre&gt;
 </source>
         <translation type="unfinished"></translation>
     </message>

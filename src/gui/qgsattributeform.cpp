@@ -28,6 +28,7 @@
 #include <QFormLayout>
 #include <QGridLayout>
 #include <QGroupBox>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QPushButton>
 #include <QScrollArea>
@@ -155,7 +156,7 @@ bool QgsAttributeForm::save()
         QVariant srcVar = eww->value();
         if ( dstVar != srcVar && srcVar.isValid() )
         {
-          dst[eww->fieldIdx()] = eww->value();
+          dst[eww->fieldIdx()] = srcVar;
 
           doUpdate = true;
         }
@@ -322,6 +323,8 @@ void QgsAttributeForm::init()
       formWidget->show();
       file.close();
       createWrappers();
+
+      formWidget->installEventFilter( this );
     }
   }
 
@@ -378,26 +381,30 @@ void QgsAttributeForm::init()
       QString fieldName = mLayer->attributeDisplayName( idx );
 
       const QString widgetType = mLayer->editorWidgetV2( idx );
-      const QgsEditorWidgetConfig widgetConfig = mLayer->editorWidgetV2Config( idx );
-      bool labelOnTop = mLayer->labelOnTop( idx );
 
-      // This will also create the widget
-      QWidget *l = new QLabel( fieldName );
-      QgsEditorWidgetWrapper* eww = QgsEditorWidgetRegistry::instance()->create( widgetType, mLayer, idx, widgetConfig, 0, this, mContext );
-      QWidget *w = eww ? eww->widget() : new QLabel( QString( "<p style=\"color: red; font-style: italic;\">Failed to create widget with type '%1'</p>" ).arg( widgetType ) );
-
-      if ( eww )
-        mWidgets.append( eww );
-
-      if ( labelOnTop )
+      if ( widgetType != "Hidden" )
       {
-        gridLayout->addWidget( l, row++, 0, 1, 2 );
-        gridLayout->addWidget( w, row++, 0, 1, 2 );
-      }
-      else
-      {
-        gridLayout->addWidget( l, row, 0 );
-        gridLayout->addWidget( w, row++, 1 );
+        const QgsEditorWidgetConfig widgetConfig = mLayer->editorWidgetV2Config( idx );
+        bool labelOnTop = mLayer->labelOnTop( idx );
+
+        // This will also create the widget
+        QWidget *l = new QLabel( fieldName );
+        QgsEditorWidgetWrapper* eww = QgsEditorWidgetRegistry::instance()->create( widgetType, mLayer, idx, widgetConfig, 0, this, mContext );
+        QWidget *w = eww ? eww->widget() : new QLabel( QString( "<p style=\"color: red; font-style: italic;\">Failed to create widget with type '%1'</p>" ).arg( widgetType ) );
+
+        if ( eww )
+          mWidgets.append( eww );
+
+        if ( labelOnTop )
+        {
+          gridLayout->addWidget( l, row++, 0, 1, 2 );
+          gridLayout->addWidget( w, row++, 0, 1, 2 );
+        }
+        else
+        {
+          gridLayout->addWidget( l, row, 0 );
+          gridLayout->addWidget( w, row++, 1 );
+        }
       }
     }
 
@@ -659,4 +666,23 @@ void QgsAttributeForm::connectWrappers()
     if ( eww )
       connect( eww, SIGNAL( valueChanged( const QVariant& ) ), this, SLOT( onAttributeChanged( const QVariant& ) ) );
   }
+}
+
+
+bool QgsAttributeForm::eventFilter( QObject* object, QEvent* e )
+{
+  Q_UNUSED( object )
+
+  if ( e->type() == QEvent::KeyPress )
+  {
+    QKeyEvent* keyEvent = dynamic_cast<QKeyEvent*>( e );
+    if ( keyEvent->key() == Qt::Key_Escape )
+    {
+      // Re-emit to this form so it will be forwarded to parent
+      event( e );
+      return true;
+    }
+  }
+
+  return false;
 }

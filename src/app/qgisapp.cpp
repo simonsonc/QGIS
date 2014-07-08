@@ -459,8 +459,8 @@ void QgisApp::validateSrs( QgsCoordinateReferenceSystem &srs )
   QString myDefaultProjectionOption = mySettings.value( "/Projections/defaultBehaviour", "prompt" ).toString();
   if ( myDefaultProjectionOption == "prompt" )
   {
-    //@note this class is not a descendent of QWidget so we cant pass
-    //it in the ctor of the layer projection selector
+    // @note this class is not a descendent of QWidget so we can't pass
+    // it in the ctor of the layer projection selector
 
     QgsGenericProjectionSelector *mySelector = new QgsGenericProjectionSelector();
     mySelector->setMessage( srs.validationHint() ); //shows a generic message, if not specified
@@ -916,11 +916,10 @@ QgisApp::~QgisApp()
   delete mMapTools.mRotateFeature;
   delete mMapTools.mRotateLabel;
   delete mMapTools.mRotatePointSymbolsTool;
-  delete mMapTools.mSelect;
   delete mMapTools.mSelectFreehand;
   delete mMapTools.mSelectPolygon;
   delete mMapTools.mSelectRadius;
-  delete mMapTools.mSelectRectangle;
+  delete mMapTools.mSelectFeatures;
   delete mMapTools.mShowHideLabels;
   delete mMapTools.mSimplifyFeature;
   delete mMapTools.mSplitFeatures;
@@ -1108,8 +1107,7 @@ void QgisApp::createActions()
   connect( mActionPanToSelected, SIGNAL( triggered() ), this, SLOT( panToSelected() ) );
   connect( mActionZoomIn, SIGNAL( triggered() ), this, SLOT( zoomIn() ) );
   connect( mActionZoomOut, SIGNAL( triggered() ), this, SLOT( zoomOut() ) );
-  connect( mActionSelect, SIGNAL( triggered() ), this, SLOT( select() ) );
-  connect( mActionSelectRectangle, SIGNAL( triggered() ), this, SLOT( selectByRectangle() ) );
+  connect( mActionSelectFeatures, SIGNAL( triggered() ), this, SLOT( selectFeatures() ) );
   connect( mActionSelectPolygon, SIGNAL( triggered() ), this, SLOT( selectByPolygon() ) );
   connect( mActionSelectFreehand, SIGNAL( triggered() ), this, SLOT( selectByFreehand() ) );
   connect( mActionSelectRadius, SIGNAL( triggered() ), this, SLOT( selectByRadius() ) );
@@ -1340,8 +1338,7 @@ void QgisApp::createActionGroups()
   mMapToolGroup->addAction( mActionZoomOut );
   mMapToolGroup->addAction( mActionIdentify );
   mMapToolGroup->addAction( mActionFeatureAction );
-  mMapToolGroup->addAction( mActionSelect );
-  mMapToolGroup->addAction( mActionSelectRectangle );
+  mMapToolGroup->addAction( mActionSelectFeatures );
   mMapToolGroup->addAction( mActionSelectPolygon );
   mMapToolGroup->addAction( mActionSelectFreehand );
   mMapToolGroup->addAction( mActionSelectRadius );
@@ -1553,15 +1550,15 @@ void QgisApp::createToolBars()
   QToolButton *bt = new QToolButton( mAttributesToolBar );
   bt->setPopupMode( QToolButton::MenuButtonPopup );
   QList<QAction*> selectActions;
-  selectActions << mActionSelect << mActionSelectRectangle << mActionSelectPolygon
+  selectActions << mActionSelectFeatures << mActionSelectPolygon
   << mActionSelectFreehand << mActionSelectRadius;
   bt->addActions( selectActions );
 
-  QAction* defSelectAction = mActionSelect;
+  QAction* defSelectAction = mActionSelectFeatures;
   switch ( settings.value( "/UI/selectTool", 0 ).toInt() )
   {
-    case 0: defSelectAction = mActionSelect; break;
-    case 1: defSelectAction = mActionSelectRectangle; break;
+    case 0: defSelectAction = mActionSelectFeatures; break;
+    case 1: defSelectAction = mActionSelectFeatures; break;
     case 2: defSelectAction = mActionSelectRadius; break;
     case 3: defSelectAction = mActionSelectPolygon; break;
     case 4: defSelectAction = mActionSelectFreehand; break;
@@ -1939,8 +1936,7 @@ void QgisApp::setTheme( QString theThemeName )
   mActionZoomActualSize->setIcon( QgsApplication::getThemeIcon( "/mActionZoomActual.svg" ) );
   mActionIdentify->setIcon( QgsApplication::getThemeIcon( "/mActionIdentify.svg" ) );
   mActionFeatureAction->setIcon( QgsApplication::getThemeIcon( "/mAction.svg" ) );
-  mActionSelect->setIcon( QgsApplication::getThemeIcon( "/mActionSelect.svg" ) );
-  mActionSelectRectangle->setIcon( QgsApplication::getThemeIcon( "/mActionSelectRectangle.svg" ) );
+  mActionSelectFeatures->setIcon( QgsApplication::getThemeIcon( "/mActionSelectRectangle.svg" ) );
   mActionSelectPolygon->setIcon( QgsApplication::getThemeIcon( "/mActionSelectPolygon.svg" ) );
   mActionSelectFreehand->setIcon( QgsApplication::getThemeIcon( "/mActionSelectFreehand.svg" ) );
   mActionSelectRadius->setIcon( QgsApplication::getThemeIcon( "/mActionSelectRadius.svg" ) );
@@ -2148,10 +2144,8 @@ void QgisApp::createCanvasTools()
   mMapTools.mSplitFeatures->setAction( mActionSplitFeatures );
   mMapTools.mSplitParts = new QgsMapToolSplitParts( mMapCanvas );
   mMapTools.mSplitParts->setAction( mActionSplitParts );
-  mMapTools.mSelect = new QgsMapToolSelect( mMapCanvas );
-  mMapTools.mSelect->setAction( mActionSelect );
-  mMapTools.mSelectRectangle = new QgsMapToolSelectRectangle( mMapCanvas );
-  mMapTools.mSelectRectangle->setAction( mActionSelectRectangle );
+  mMapTools.mSelectFeatures = new QgsMapToolSelectFeatures( mMapCanvas );
+  mMapTools.mSelectFeatures->setAction( mActionSelectFeatures );
   mMapTools.mSelectPolygon = new QgsMapToolSelectPolygon( mMapCanvas );
   mMapTools.mSelectPolygon->setAction( mActionSelectPolygon );
   mMapTools.mSelectFreehand = new QgsMapToolSelectFreehand( mMapCanvas );
@@ -2364,6 +2358,14 @@ void QgisApp::updateNewLayerInsertionPoint()
   {
     if ( QgsLayerTreeNode* currentNode = mLayerTreeView->currentNode() )
     {
+      // if the insertion point is actually a group, insert new layers into the group
+      if ( QgsLayerTree::isGroup( currentNode ) )
+      {
+        QgsProject::instance()->layerTreeRegistryBridge()->setLayerInsertionPoint( QgsLayerTree::toGroup( currentNode ), 0 );
+        return;
+      }
+
+      // otherwise just set the insertion point in front of the current node
       QgsLayerTreeNode* parentNode = currentNode->parent();
       if ( QgsLayerTree::isGroup( parentNode ) )
         parentGroup = QgsLayerTree::toGroup( parentNode );
@@ -3633,6 +3635,14 @@ void QgisApp::newVectorLayer()
     //todo: the last parameter will change accordingly to layer type
     addVectorLayers( fileNames, enc, "file" );
   }
+  else if ( fileName.isNull() )
+  {
+    QLabel *msgLabel = new QLabel( tr( "Layer creation failed. Please check the <a href=\"#messageLog\">message log</a> for further information." ), messageBar() );
+    msgLabel->setWordWrap( true );
+    connect( msgLabel, SIGNAL( linkActivated( QString ) ), mLogDock, SLOT( show() ) );
+    QgsMessageBarItem *item = new QgsMessageBarItem( msgLabel, QgsMessageBar::WARNING );
+    messageBar()->pushItem( item );
+  }
 }
 
 void QgisApp::newSpatialiteLayer()
@@ -4804,6 +4814,9 @@ void QgisApp::saveAsLayerDefinition()
   if ( path.isEmpty() )
     return;
 
+  if ( !path.endsWith( ".qlr" ) )
+    path = path.append( ".qlr" );
+
   QDomDocument doc = QgsMapLayer::asLayerDefinition( layers );
   QFile file( path );
   if ( file.open( QFile::WriteOnly | QFile::Truncate ) )
@@ -5684,14 +5697,9 @@ void QgisApp::addFeature()
   mMapCanvas->setMapTool( mMapTools.mAddFeature );
 }
 
-void QgisApp::select()
+void QgisApp::selectFeatures()
 {
-  mMapCanvas->setMapTool( mMapTools.mSelect );
-}
-
-void QgisApp::selectByRectangle()
-{
-  mMapCanvas->setMapTool( mMapTools.mSelectRectangle );
+  mMapCanvas->setMapTool( mMapTools.mSelectFeatures );
 }
 
 void QgisApp::selectByPolygon()
@@ -5857,6 +5865,11 @@ void QgisApp::editPaste( QgsMapLayer *destinationLayer )
       // convert geometry to match destination layer
       QGis::GeometryType destType = pasteVectorLayer->geometryType();
       bool destIsMulti = QGis::isMultiType( pasteVectorLayer->wkbType() );
+      if ( pasteVectorLayer->storageType() == "ESRI Shapefile" )
+      {
+        // force destination to multi if shapefile
+        destIsMulti = true;
+      }
       if ( destType != QGis::UnknownGeometry )
       {
         QgsGeometry* newGeometry = featureIt->geometry()->convertToType( destType, destIsMulti );
@@ -8776,8 +8789,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer* layer )
 
   if ( !layer )
   {
-    mActionSelect->setEnabled( false );
-    mActionSelectRectangle->setEnabled( false );
+    mActionSelectFeatures->setEnabled( false );
     mActionSelectPolygon->setEnabled( false );
     mActionSelectFreehand->setEnabled( false );
     mActionSelectRadius->setEnabled( false );
@@ -8878,8 +8890,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer* layer )
     mActionZoomActualSize->setEnabled( false );
     mActionLabeling->setEnabled( true );
 
-    mActionSelect->setEnabled( true );
-    mActionSelectRectangle->setEnabled( true );
+    mActionSelectFeatures->setEnabled( true );
     mActionSelectPolygon->setEnabled( true );
     mActionSelectFreehand->setEnabled( true );
     mActionSelectRadius->setEnabled( true );
@@ -9041,8 +9052,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer* layer )
 
     mActionLayerSubsetString->setEnabled( false );
     mActionFeatureAction->setEnabled( false );
-    mActionSelect->setEnabled( false );
-    mActionSelectRectangle->setEnabled( false );
+    mActionSelectFeatures->setEnabled( false );
     mActionSelectPolygon->setEnabled( false );
     mActionSelectFreehand->setEnabled( false );
     mActionSelectRadius->setEnabled( false );
@@ -9745,7 +9755,8 @@ void QgisApp::namSetup()
   connect( nam, SIGNAL( proxyAuthenticationRequired( const QNetworkProxy &, QAuthenticator * ) ),
            this, SLOT( namProxyAuthenticationRequired( const QNetworkProxy &, QAuthenticator * ) ) );
 
-  connect( nam, SIGNAL( requestTimedOut( QNetworkReply* ) ), this, SLOT( namRequestTimedOut( QNetworkReply* ) ) );
+  connect( nam, SIGNAL( requestTimedOut( QNetworkReply* ) ),
+           this, SLOT( namRequestTimedOut( QNetworkReply* ) ) );
 
 #ifndef QT_NO_OPENSSL
   connect( nam, SIGNAL( sslErrors( QNetworkReply *, const QList<QSslError> & ) ),
@@ -9758,15 +9769,43 @@ void QgisApp::namAuthenticationRequired( QNetworkReply *reply, QAuthenticator *a
   QString username = auth->user();
   QString password = auth->password();
 
-  bool ok = QgsCredentials::instance()->get(
-              QString( "%1 at %2" ).arg( auth->realm() ).arg( reply->url().host() ),
-              username, password,
-              tr( "Authentication required" ) );
-  if ( !ok )
-    return;
+  {
+    QMutexLocker lock( QgsCredentials::instance()->mutex() );
 
-  if ( reply->isFinished() )
-    return;
+    do
+    {
+      bool ok = QgsCredentials::instance()->get(
+                  QString( "%1 at %2" ).arg( auth->realm() ).arg( reply->url().host() ),
+                  username, password,
+                  tr( "Authentication required" ) );
+      if ( !ok )
+        return;
+
+      if ( reply->isFinished() )
+        return;
+
+      if ( auth->user() == username && password == auth->password() )
+      {
+        if ( !password.isNull() )
+        {
+          // credentials didn't change - stored ones probably wrong? clear password and retry
+          QgsCredentials::instance()->put(
+            QString( "%1 at %2" ).arg( auth->realm() ).arg( reply->url().host() ),
+            username, QString::null );
+          continue;
+        }
+      }
+      else
+      {
+        // save credentials
+        QgsCredentials::instance()->put(
+          QString( "%1 at %2" ).arg( auth->realm() ).arg( reply->url().host() ),
+          username, password
+        );
+      }
+    }
+    while ( 0 );
+  }
 
   auth->setUser( username );
   auth->setPassword( password );
@@ -9785,12 +9824,39 @@ void QgisApp::namProxyAuthenticationRequired( const QNetworkProxy &proxy, QAuthe
   QString username = auth->user();
   QString password = auth->password();
 
-  bool ok = QgsCredentials::instance()->get(
-              QString( "proxy %1:%2 [%3]" ).arg( proxy.hostName() ).arg( proxy.port() ).arg( auth->realm() ),
-              username, password,
-              tr( "Proxy authentication required" ) );
-  if ( !ok )
-    return;
+  {
+    QMutexLocker lock( QgsCredentials::instance()->mutex() );
+
+    do
+    {
+      bool ok = QgsCredentials::instance()->get(
+                  QString( "proxy %1:%2 [%3]" ).arg( proxy.hostName() ).arg( proxy.port() ).arg( auth->realm() ),
+                  username, password,
+                  tr( "Proxy authentication required" ) );
+      if ( !ok )
+        return;
+
+      if ( auth->user() == username && password == auth->password() )
+      {
+        if ( !password.isNull() )
+        {
+          // credentials didn't change - stored ones probably wrong? clear password and retry
+          QgsCredentials::instance()->put(
+            QString( "proxy %1:%2 [%3]" ).arg( proxy.hostName() ).arg( proxy.port() ).arg( auth->realm() ),
+            username, QString::null );
+          continue;
+        }
+      }
+      else
+      {
+        QgsCredentials::instance()->put(
+          QString( "proxy %1:%2 [%3]" ).arg( proxy.hostName() ).arg( proxy.port() ).arg( auth->realm() ),
+          username, password
+        );
+      }
+    }
+    while ( 0 );
+  }
 
   auth->setUser( username );
   auth->setPassword( password );
@@ -9834,8 +9900,12 @@ void QgisApp::namSslErrors( QNetworkReply *reply, const QList<QSslError> &errors
 
 void QgisApp::namRequestTimedOut( QNetworkReply *reply )
 {
-  QgsMessageLog::logMessage( tr( "The request '%1' timed out. Any data received is likely incomplete." ).arg( reply->url().toString() ), QString::null, QgsMessageLog::WARNING );
-  messageBar()->pushMessage( tr( "Network request timeout" ), tr( "A network request timed out, any data received is likely incomplete." ), QgsMessageBar::WARNING, messageTimeout() );
+  Q_UNUSED( reply );
+  QLabel *msgLabel = new QLabel( tr( "A network request timed out, any data received is likely incomplete." ) +
+                                 tr( " Please check the <a href=\"#messageLog\">message log</a> for further info." ), messageBar() );
+  msgLabel->setWordWrap( true );
+  connect( msgLabel, SIGNAL( linkActivated( QString ) ), mLogDock, SLOT( show() ) );
+  messageBar()->pushItem( new QgsMessageBarItem( msgLabel, QgsMessageBar::WARNING, messageTimeout() ) );
 }
 
 void QgisApp::namUpdate()
@@ -9855,9 +9925,7 @@ void QgisApp::toolButtonActionTriggered( QAction *action )
     return;
 
   QSettings settings;
-  if ( action == mActionSelect )
-    settings.setValue( "/UI/selectTool", 0 );
-  else if ( action == mActionSelectRectangle )
+  if ( action == mActionSelectFeatures )
     settings.setValue( "/UI/selectTool", 1 );
   else if ( action == mActionSelectRadius )
     settings.setValue( "/UI/selectTool", 2 );
