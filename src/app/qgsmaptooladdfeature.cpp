@@ -27,7 +27,6 @@
 #include "qgslogger.h"
 #include "qgsfeatureaction.h"
 
-#include <QMessageBox>
 #include <QMouseEvent>
 #include <QSettings>
 
@@ -39,10 +38,10 @@ QgsMapToolAddFeature::~QgsMapToolAddFeature()
 {
 }
 
-bool QgsMapToolAddFeature::addFeature( QgsVectorLayer *vlayer, QgsFeature *f )
+bool QgsMapToolAddFeature::addFeature(QgsVectorLayer *vlayer, QgsFeature *f, bool showModal )
 {
   QgsFeatureAction action( tr( "add feature" ), *f, vlayer, -1, -1, this );
-  return action.addFeature();
+  return action.addFeature( QgsAttributeMap(), showModal );
 }
 
 void QgsMapToolAddFeature::activate()
@@ -51,7 +50,7 @@ void QgsMapToolAddFeature::activate()
   if ( vlayer && vlayer->geometryType() == QGis::NoGeometry )
   {
     QgsFeature f;
-    addFeature( vlayer, &f );
+    addFeature( vlayer, &f, false );
     return;
   }
 
@@ -76,8 +75,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
 
   if ( !( provider->capabilities() & QgsVectorDataProvider::AddFeatures ) )
   {
-    QMessageBox::information( 0, tr( "Layer cannot be added to" ),
-                              tr( "The data provider for this layer does not support the addition of features." ) );
+    emit messageEmitted( tr( "The data provider for this layer does not support the addition of features." ), QgsMessageBar::WARNING );
     return;
   }
 
@@ -96,8 +94,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
     //check we only use this tool for point/multipoint layers
     if ( vlayer->geometryType() != QGis::Point )
     {
-      QMessageBox::information( 0, tr( "Wrong editing tool" ),
-                                tr( "Cannot apply the 'capture point' tool on this vector layer" ) );
+      emit messageEmitted( tr( "Wrong editing tool, cannot apply the 'capture point' tool on this vector layer" ), QgsMessageBar::WARNING );
       return;
     }
 
@@ -117,8 +114,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
       catch ( QgsCsException &cse )
       {
         Q_UNUSED( cse );
-        QMessageBox::information( 0, tr( "Coordinate transform error" ),
-                                  tr( "Cannot transform the point to the layers coordinate system" ) );
+        emit messageEmitted( tr( "Cannot transform the point to the layers coordinate system" ), QgsMessageBar::WARNING );
         return;
       }
     }
@@ -142,7 +138,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
 
       f.setGeometry( g );
 
-      addFeature( vlayer, &f );
+      addFeature( vlayer, &f, false );
 
       mCanvas->refresh();
     }
@@ -154,16 +150,14 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
     //check we only use the line tool for line/multiline layers
     if ( mode() == CaptureLine && vlayer->geometryType() != QGis::Line )
     {
-      QMessageBox::information( 0, tr( "Wrong editing tool" ),
-                                tr( "Cannot apply the 'capture line' tool on this vector layer" ) );
+      emit messageEmitted( tr( "Wrong editing tool, cannot apply the 'capture line' tool on this vector layer" ), QgsMessageBar::WARNING );
       return;
     }
 
     //check we only use the polygon tool for polygon/multipolygon layers
     if ( mode() == CapturePolygon && vlayer->geometryType() != QGis::Polygon )
     {
-      QMessageBox::information( 0, tr( "Wrong editing tool" ),
-                                tr( "Cannot apply the 'capture polygon' tool on this vector layer" ) );
+      emit messageEmitted( tr( "Wrong editing tool, cannot apply the 'capture polygon' tool on this vector layer" ), QgsMessageBar::WARNING );
       return;
     }
 
@@ -179,8 +173,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
       else if ( error == 2 )
       {
         //problem with coordinate transformation
-        QMessageBox::information( 0, tr( "Coordinate transform error" ),
-                                  tr( "Cannot transform the point to the layers coordinate system" ) );
+        emit messageEmitted( tr( "Cannot transform the point to the layers coordinate system" ), QgsMessageBar::WARNING );
         return;
       }
 
@@ -222,7 +215,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
         }
         else
         {
-          QMessageBox::critical( 0, tr( "Error" ), tr( "Cannot add feature. Unknown WKB type" ) );
+          emit messageEmitted( tr( "Cannot add feature. Unknown WKB type" ), QgsMessageBar::CRITICAL );
           stopCapturing();
           return; //unknown wkbtype
         }
@@ -241,7 +234,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
         }
         else
         {
-          QMessageBox::critical( 0, tr( "Error" ), tr( "Cannot add feature. Unknown WKB type" ) );
+          emit messageEmitted( tr( "Cannot add feature. Unknown WKB type" ), QgsMessageBar::CRITICAL );
           stopCapturing();
           return; //unknown wkbtype
         }
@@ -263,7 +256,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
         else if ( avoidIntersectionsReturn == 2 ) //MH120131: disable this error message until there is a better way to cope with the single type / multi type problem
         {
           //bail out...
-          QMessageBox::critical( 0, tr( "Error" ), tr( "The feature could not be added because removing the polygon intersections would change the geometry type" ) );
+          emit messageEmitted( tr( "The feature could not be added because removing the polygon intersections would change the geometry type" ), QgsMessageBar::CRITICAL );
           delete f;
           stopCapturing();
           return;
@@ -271,7 +264,7 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
 #endif
         else if ( avoidIntersectionsReturn == 3 )
         {
-          QMessageBox::critical( 0, tr( "Error" ), tr( "An error was reported during intersection removal" ) );
+          emit messageEmitted( tr( "An error was reported during intersection removal" ), QgsMessageBar::CRITICAL );
         }
 
         if ( !f->geometry()->asWkb() ) //avoid intersection might have removed the whole geometry
@@ -285,14 +278,14 @@ void QgsMapToolAddFeature::canvasReleaseEvent( QMouseEvent * e )
           {
             reason = tr( "The feature cannot be added because it's geometry collapsed due to intersection avoidance" );
           }
-          QMessageBox::critical( 0, tr( "Error" ), reason );
+          emit messageEmitted( reason, QgsMessageBar::CRITICAL );
           delete f;
           stopCapturing();
           return;
         }
       }
 
-      if ( addFeature( vlayer, f ) )
+      if ( addFeature( vlayer, f, false ) )
       {
         //add points to other features to keep topology up-to-date
         int topologicalEditing = QgsProject::instance()->readNumEntry( "Digitizing", "/TopologicalEditing", 0 );

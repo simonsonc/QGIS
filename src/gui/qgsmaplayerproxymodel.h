@@ -21,7 +21,7 @@
 class QgsMapLayerModel;
 
 /**
- * @brief The QgsMapLayerProxModel class provides an easy to use model to display the list of layers in widgets.
+ * @brief The QgsMapLayerProxyModel class provides an easy to use model to display the list of layers in widgets.
  * @note added in 2.3
  */
 class GUI_EXPORT QgsMapLayerProxyModel : public QSortFilterProxyModel
@@ -52,7 +52,7 @@ class GUI_EXPORT QgsMapLayerProxyModel : public QSortFilterProxyModel
     /**
      * @brief layerModel returns the QgsMapLayerModel used in this QSortFilterProxyModel
      */
-    QgsMapLayerModel* sourceLayerModel() { return mModel; }
+    QgsMapLayerModel* sourceLayerModel() const { return mModel; }
 
     /**
      * @brief setFilters set flags that affect how layers are filtered

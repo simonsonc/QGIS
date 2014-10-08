@@ -42,6 +42,7 @@ class QgsMapLayerAction;
 class GUI_EXPORT QgsDualView : public QStackedWidget, private Ui::QgsDualViewBase
 {
     Q_OBJECT
+    Q_ENUMS( ViewMode )
 
   public:
 
@@ -231,6 +232,7 @@ class GUI_EXPORT QgsDualView : public QStackedWidget, private Ui::QgsDualViewBas
     QProgressDialog* mProgressDlg;
     QgsIFeatureSelectionManager* mFeatureSelectionManager;
     QgsDistanceArea mDistanceArea;
+    QString mDisplayExpression;
 
     friend class TestQgsDualView;
 };

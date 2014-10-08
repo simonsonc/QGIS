@@ -20,6 +20,7 @@
 
 #include "ui_qgscomposermapwidgetbase.h"
 #include "qgscomposermap.h"
+#include "qgscomposermapgrid.h"
 #include "qgscomposeritemwidget.h"
 
 class QgsMapLayer;
@@ -56,21 +57,48 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     void on_mYMinLineEdit_editingFinished();
     void on_mYMaxLineEdit_editingFinished();
 
+    void on_mAtlasMarginRadio_toggled( bool checked );
+
+    void on_mAtlasCheckBox_toggled( bool checked );
+    void on_mAtlasMarginSpinBox_valueChanged( int value );
+    void on_mAtlasFixedScaleRadio_toggled( bool checked );
+    void on_mAtlasPredefinedScaleRadio_toggled( bool checked );
+
+    void on_mAddGridPushButton_clicked();
+    void on_mRemoveGridPushButton_clicked();
+    void on_mGridUpButton_clicked();
+    void on_mGridDownButton_clicked();
+
+    QgsComposerMapGrid* currentGrid();
     void on_mGridCheckBox_toggled( bool state );
+    void on_mGridListWidget_currentItemChanged( QListWidgetItem* current, QListWidgetItem* previous );
+    void on_mGridListWidget_itemChanged( QListWidgetItem* item );
+    void setGridItemsEnabled( bool enabled );
+    void setGridItems( const QgsComposerMapGrid* grid );
+    void blockGridItemsSignals( bool block );
+    void on_mGridLineStyleButton_clicked();
+    void on_mGridMarkerStyleButton_clicked();
     void on_mIntervalXSpinBox_editingFinished();
     void on_mIntervalYSpinBox_editingFinished();
-    void on_mOffsetXSpinBox_editingFinished();
-    void on_mOffsetYSpinBox_editingFinished();
-    void on_mGridLineStyleButton_clicked();
+    void on_mOffsetXSpinBox_valueChanged( double value );
+    void on_mOffsetYSpinBox_valueChanged( double value );
+    void on_mCrossWidthSpinBox_valueChanged( double val );
+    void on_mFrameWidthSpinBox_valueChanged( double val );
+    void on_mFrameStyleComboBox_currentIndexChanged( const QString& text );
+    void on_mGridFramePenSizeSpinBox_valueChanged( double d );
+    void on_mGridFramePenColorButton_colorChanged( const QColor& newColor );
+    void on_mGridFrameFill1ColorButton_colorChanged( const QColor& newColor );
+    void on_mGridFrameFill2ColorButton_colorChanged( const QColor& newColor );
     void on_mGridTypeComboBox_currentIndexChanged( const QString& text );
-    void on_mCrossWidthSpinBox_valueChanged( double d );
+    void on_mMapGridCRSButton_clicked();
+    void on_mMapGridUnitComboBox_currentIndexChanged( const QString& text );
     void on_mGridBlendComboBox_currentIndexChanged( int index );
-    void on_mAnnotationFontButton_clicked();
-    void on_mAnnotationFontColorButton_colorChanged( const QColor& newFontColor );
-    void on_mDistanceToMapFrameSpinBox_valueChanged( double d );
+    void on_mCheckGridLeftSide_toggled( bool checked );
+    void on_mCheckGridRightSide_toggled( bool checked );
+    void on_mCheckGridTopSide_toggled( bool checked );
+    void on_mCheckGridBottomSide_toggled( bool checked );
 
-    void on_mAnnotationFormatComboBox_currentIndexChanged( int index );
-
+    void on_mDrawAnnotationGroupBox_toggled( bool state );
     //annotation position
     void on_mAnnotationPositionLeftComboBox_currentIndexChanged( const QString& text );
     void on_mAnnotationPositionRightComboBox_currentIndexChanged( const QString& text );
@@ -83,22 +111,24 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     void on_mAnnotationDirectionComboBoxTop_currentIndexChanged( const QString& text );
     void on_mAnnotationDirectionComboBoxBottom_currentIndexChanged( const QString& text );
 
-    void on_mDrawAnnotationCheckableGroupBox_toggled( bool state );
+    void on_mAnnotationFormatComboBox_currentIndexChanged( int index );
     void on_mCoordinatePrecisionSpinBox_valueChanged( int value );
+    void on_mDistanceToMapFrameSpinBox_valueChanged( double d );
+    void on_mAnnotationFontButton_clicked();
+    void on_mAnnotationFontColorButton_colorChanged( const QColor &color );
 
-    void on_mFrameStyleComboBox_currentIndexChanged( const QString& text );
-    void on_mFrameWidthSpinBox_valueChanged( double d );
-    void on_mGridFramePenSizeSpinBox_valueChanged( double d );
-    void on_mGridFramePenColorButton_colorChanged( const QColor& newColor );
-    void on_mGridFrameFill1ColorButton_colorChanged( const QColor& newColor );
-    void on_mGridFrameFill2ColorButton_colorChanged( const QColor& newColor );
-
-    void on_mAtlasMarginRadio_toggled( bool checked );
-
-    void on_mAtlasCheckBox_toggled( bool checked );
-    void on_mAtlasMarginSpinBox_valueChanged( int value );
-    void on_mAtlasFixedScaleRadio_toggled( bool checked );
-    void on_mAtlasPredefinedScaleRadio_toggled( bool checked );
+    //overviews
+    void on_mAddOverviewPushButton_clicked();
+    void on_mRemoveOverviewPushButton_clicked();
+    void on_mOverviewUpButton_clicked();
+    void on_mOverviewDownButton_clicked();
+    QgsComposerMapOverview* currentOverview();
+    void on_mOverviewCheckBox_toggled( bool state );
+    void on_mOverviewListWidget_currentItemChanged( QListWidgetItem* current, QListWidgetItem* previous );
+    void on_mOverviewListWidget_itemChanged( QListWidgetItem* item );
+    void setOverviewItemsEnabled( bool enabled );
+    void setOverviewItems( const QgsComposerMapOverview* overview );
+    void blockOverviewItemsSignals( bool block );
 
   protected:
     void showEvent( QShowEvent * event );
@@ -108,7 +138,7 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     /**Sets the current composer map values to the GUI elements*/
     virtual void updateGuiElements();
 
-    QgsComposerItem::DataDefinedProperty ddPropertyForWidget( QgsDataDefinedButton *widget );
+    QgsComposerObject::DataDefinedProperty ddPropertyForWidget( QgsDataDefinedButton *widget );
 
   protected slots:
     /**Initializes data defined buttons to current atlas coverage layer*/
@@ -125,6 +155,10 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     /**Enables or disables the atlas controls when composer atlas is toggled on/off*/
     void compositionAtlasToggled( bool atlasEnabled );
 
+    void aboutToShowVisibilityPresetsMenu();
+
+    void visibilityPresetSelected();
+
   private:
     QgsComposerMap* mComposerMap;
 
@@ -134,23 +168,23 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     /**Blocks / unblocks the signals of all GUI elements*/
     void blockAllSignals( bool b );
 
-    void handleChangedAnnotationPosition( QgsComposerMap::Border border, const QString& text );
-    void handleChangedAnnotationDirection( QgsComposerMap::Border border, const QString& text );
+    void handleChangedAnnotationPosition( QgsComposerMapGrid::BorderSide border, const QString& text );
+    void handleChangedAnnotationDirection( QgsComposerMapGrid::BorderSide border, const QString& text );
 
     void insertAnnotationPositionEntries( QComboBox* c );
     void insertAnnotationDirectionEntries( QComboBox* c );
 
-    void initAnnotationPositionBox( QComboBox* c, QgsComposerMap::GridAnnotationPosition pos );
-    void initAnnotationDirectionBox( QComboBox* c, QgsComposerMap::GridAnnotationDirection dir );
+    void initAnnotationPositionBox( QComboBox* c, QgsComposerMapGrid::AnnotationPosition pos );
+    void initAnnotationDirectionBox( QComboBox* c, QgsComposerMapGrid::AnnotationDirection dir );
 
-    void updateOverviewSymbolMarker();
-    void updateLineSymbolMarker();
+    void updateGridLineSymbolMarker( const QgsComposerMapGrid* grid );
+    void updateGridMarkerSymbolMarker( const QgsComposerMapGrid* grid );
 
     /**Updates the map combo box with the current composer map ids*/
     void refreshMapComboBox();
 
     /**Enables/disables grid frame related controls*/
-    void toggleFrameControls( bool frameEnabled );
+    void toggleFrameControls( bool frameEnabled , bool frameFillEnabled, bool frameSizeEnabled );
 
     /**Enables or disables the atlas margin and predefined scales radio depending on the atlas coverage layer type*/
     void toggleAtlasScalingOptionsByLayerType();
@@ -161,6 +195,15 @@ class QgsComposerMapWidget: public QgsComposerItemBaseWidget, private Ui::QgsCom
     /**Is there some predefined scales, globally or as project's options ?*/
     bool hasPredefinedScales() const;
 
+    QListWidgetItem* addGridListItem( const QString& id, const QString& name );
+
+    void loadGridEntries();
+
+    QListWidgetItem* addOverviewListItem( const QString& id, const QString& name );
+
+    void loadOverviewEntries();
+
+    void updateOverviewFrameSymbolMarker( const QgsComposerMapOverview* overview );
 };
 
 #endif

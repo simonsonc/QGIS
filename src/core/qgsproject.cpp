@@ -1003,24 +1003,6 @@ void QgsProject::loadEmbeddedNodes( QgsLayerTreeGroup* group )
   }
 }
 
-void QgsProject::updateEmbeddedGroupsProjectPath( QgsLayerTreeGroup* group )
-{
-  foreach ( QgsLayerTreeNode* node, group->children() )
-  {
-    if ( QgsLayerTree::isGroup( node ) )
-    {
-      if ( !node->customProperty( "embedded_project" ).toString().isEmpty() )
-      {
-        // may change from absolute path to relative path
-        QString newPath = writePath( node->customProperty( "embedded_project" ).toString() );
-        node->setCustomProperty( "embedded_project", newPath );
-      }
-      else
-        updateEmbeddedGroupsProjectPath( QgsLayerTree::toGroup( node ) );
-    }
-  }
-}
-
 
 bool QgsProject::read( QDomNode & layerNode )
 {
@@ -1102,7 +1084,7 @@ bool QgsProject::write()
   // write layer tree - make sure it is without embedded subgroups
   QgsLayerTreeNode* clonedRoot = mRootGroup->clone();
   QgsLayerTreeUtils::removeChildrenOfEmbeddedGroups( QgsLayerTree::toGroup( clonedRoot ) );
-  updateEmbeddedGroupsProjectPath( QgsLayerTree::toGroup( clonedRoot ) ); // convert absolute paths to relative paths if required
+  QgsLayerTreeUtils::updateEmbeddedGroupsProjectPath( QgsLayerTree::toGroup( clonedRoot ) ); // convert absolute paths to relative paths if required
   clonedRoot->writeXML( qgisNode );
   delete clonedRoot;
 
@@ -1579,7 +1561,7 @@ QString QgsProject::readPath( QString src ) const
 }
 
 // return the absolute or relative path to write it to the project file
-QString QgsProject::writePath( QString src ) const
+QString QgsProject::writePath( QString src, QString relativeBasePath ) const
 {
   if ( readBoolEntry( "Paths", "/Absolute", false ) || src.isEmpty() )
   {
@@ -1590,6 +1572,11 @@ QString QgsProject::writePath( QString src ) const
   QFileInfo projFileInfo( fileName() );
   QString srcPath = srcFileInfo.canonicalFilePath();
   QString projPath = projFileInfo.canonicalFilePath();
+
+  if ( !relativeBasePath.isNull() )
+  {
+    projPath = relativeBasePath;
+  }
 
   if ( projPath.isEmpty() )
   {
@@ -1716,6 +1703,7 @@ bool QgsProject::createEmbeddedLayer( const QString& layerId, const QString& pro
 
   //does project store pathes absolute or relative?
   bool useAbsolutePathes = true;
+
   QDomElement propertiesElem = projectDocument.documentElement().firstChildElement( "properties" );
   if ( !propertiesElem.isNull() )
   {

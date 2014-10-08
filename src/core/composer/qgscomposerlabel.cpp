@@ -17,8 +17,10 @@
 
 #include "qgscomposerlabel.h"
 #include "qgscomposition.h"
+#include "qgscomposerutils.h"
 #include "qgsexpression.h"
 #include "qgsnetworkaccessmanager.h"
+#include "qgscomposermodel.h"
 
 #include <QCoreApplication>
 #include <QDate>
@@ -59,10 +61,12 @@ QgsComposerLabel::QgsComposerLabel( QgsComposition *composition ):
     setExpressionContext( mComposition->atlasComposition().currentFeature(), mComposition->atlasComposition().coverageLayer() );
   }
 
-  //connect to atlas feature changes
-  //to update the expression context
-  connect( &mComposition->atlasComposition(), SIGNAL( featureChanged( QgsFeature* ) ), this, SLOT( refreshExpressionContext() ) );
-
+  if ( mComposition )
+  {
+    //connect to atlas feature changes
+    //to update the expression context
+    connect( &mComposition->atlasComposition(), SIGNAL( featureChanged( QgsFeature* ) ), this, SLOT( refreshExpressionContext() ) );
+  }
 }
 
 QgsComposerLabel::~QgsComposerLabel()
@@ -74,6 +78,10 @@ void QgsComposerLabel::paint( QPainter* painter, const QStyleOptionGraphicsItem*
   Q_UNUSED( itemStyle );
   Q_UNUSED( pWidget );
   if ( !painter )
+  {
+    return;
+  }
+  if ( !shouldDrawItem() )
   {
     return;
   }
@@ -92,7 +100,6 @@ void QgsComposerLabel::paint( QPainter* painter, const QStyleOptionGraphicsItem*
   if ( mHtmlState )
   {
     painter->scale( 1.0 / mHtmlUnitsToMM / 10.0, 1.0 / mHtmlUnitsToMM / 10.0 );
-
     QWebPage *webPage = new QWebPage();
     webPage->setNetworkAccessManager( QgsNetworkAccessManager::instance() );
 
@@ -143,20 +150,15 @@ void QgsComposerLabel::paint( QPainter* painter, const QStyleOptionGraphicsItem*
       // Pause until html is loaded
       loop.exec();
     }
-
     webPage->mainFrame()->render( painter );//DELETE WEBPAGE ?
   }
   else
   {
-    painter->setPen( QPen( QColor( mFontColor ) ) );
     painter->setFont( mFont );
-
-    QFontMetricsF fontSize( mFont );
-
     //debug
     //painter->setPen( QColor( Qt::red ) );
     //painter->drawRect( painterRect );
-    drawText( painter, painterRect, textToDraw, mFont, mHAlignment, mVAlignment, Qt::TextWordWrap );
+    QgsComposerUtils::drawText( painter, painterRect, textToDraw, mFont, mFontColor, mHAlignment, mVAlignment, Qt::TextWordWrap );
   }
 
   painter->restore();
@@ -190,6 +192,28 @@ void QgsComposerLabel::setText( const QString& text )
 {
   mText = text;
   emit itemChanged();
+
+  if ( mComposition && id().isEmpty() && !mHtmlState )
+  {
+    //notify the model that the display name has changed
+    mComposition->itemsModel()->updateItemDisplayName( this );
+  }
+}
+
+void QgsComposerLabel::setHtmlState( int state )
+{
+  if ( state == mHtmlState )
+  {
+    return;
+  }
+
+  mHtmlState = state;
+
+  if ( mComposition && id().isEmpty() )
+  {
+    //notify the model that the display name has changed
+    mComposition->itemsModel()->updateItemDisplayName( this );
+  }
 }
 
 void QgsComposerLabel::setExpressionContext( QgsFeature* feature, QgsVectorLayer* layer, QMap<QString, QVariant> substitutions )
@@ -259,8 +283,8 @@ void QgsComposerLabel::setFont( const QFont& f )
 
 void QgsComposerLabel::adjustSizeToText()
 {
-  double textWidth = textWidthMillimeters( mFont, displayText() );
-  double fontHeight = fontHeightMillimeters( mFont );
+  double textWidth = QgsComposerUtils::textWidthMM( mFont, displayText() );
+  double fontHeight = QgsComposerUtils::fontHeightMM( mFont );
 
   double penWidth = hasFrame() ? pen().widthF() : 0;
 
@@ -383,6 +407,34 @@ bool QgsComposerLabel::readXML( const QDomElement& itemElem, const QDomDocument&
   }
   emit itemChanged();
   return true;
+}
+
+QString QgsComposerLabel::displayName() const
+{
+  if ( !id().isEmpty() )
+  {
+    return id();
+  }
+
+  if ( mHtmlState )
+  {
+    return tr( "<HTML label>" );
+  }
+
+  //if no id, default to portion of label text
+  QString text = displayText();
+  if ( text.isEmpty() )
+  {
+    return tr( "<label>" );
+  }
+  if ( text.length() > 25 )
+  {
+    return QString( tr( "%1..." ) ).arg( text.left( 25 ).simplified() );
+  }
+  else
+  {
+    return text.simplified();
+  }
 }
 
 void QgsComposerLabel::itemShiftAdjustSize( double newWidth, double newHeight, double& xShift, double& yShift ) const

@@ -47,6 +47,12 @@ class GUI_EXPORT QgsAttributeForm : public QWidget
     void showButtonBox();
 
     /**
+     * Disconnects the button box (Ok/Cancel) from the accept/resetValues slots
+     * If this method is called, you have to create these connections from outside
+     */
+    void disconnectButtonBox();
+
+    /**
      * Takes ownership
      * @param iface
      */
@@ -173,6 +179,8 @@ class GUI_EXPORT QgsAttributeForm : public QWidget
     void initPython();
 
     QWidget* createWidgetFromDef( const QgsAttributeEditorElement* widgetDef, QWidget* parent, QgsVectorLayer* vl, QgsAttributeEditorContext& context, QString& labelText, bool& labelOnTop );
+
+    void addWidgetWrapper( QgsEditorWidgetWrapper* eww );
 
     /**
      * Creates widget wrappers for all suitable widgets found.

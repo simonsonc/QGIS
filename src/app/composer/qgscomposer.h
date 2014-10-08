@@ -34,6 +34,7 @@ class QgsComposerRuler;
 class QgsComposerScaleBar;
 class QgsComposerShape;
 class QgsComposerAttributeTable;
+class QgsComposerAttributeTableV2;
 class QgsComposerView;
 class QgsComposition;
 class QgsMapCanvas;
@@ -50,6 +51,7 @@ class QSizeGrip;
 class QUndoView;
 class QComboBox;
 class QLabel;
+class QTreeView;
 
 /** \ingroup MapComposer
  * \brief A gui for composing a printable map.
@@ -98,9 +100,9 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     void setTitle( const QString& title );
 
     //! Load template into current or blank composer
-    //! @param newCompser whether to create a new composer first
+    //! @param newComposer whether to create a new composer first
     //! @note added in 1.9
-    void loadTemplate( bool newCompser );
+    void loadTemplate( const bool newComposer );
 
   protected:
     //! Move event
@@ -130,6 +132,7 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     void atlasPreviewFeatureChanged();
 
   public slots:
+
     //! Zoom to full extent of the paper
     void on_mActionZoomAll_triggered();
 
@@ -190,6 +193,9 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     //! Add attribute table
     void on_mActionAddTable_triggered();
 
+    //! Add attribute table
+    void on_mActionAddAttributeTable_triggered();
+
     void on_mActionAddHtml_triggered();
 
     //! Save parent project
@@ -210,10 +216,6 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
 
     //! Save composer as template
     void on_mActionSaveAsTemplate_triggered();
-
-    //! Load template into blank composer
-    //! @note added in 1.9
-    void on_mActionNewFromTemplate_triggered();
 
     void on_mActionLoadFromTemplate_triggered();
 
@@ -384,6 +386,9 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
 
     /**Adds a composer table to the item/widget map and creates a configuration widget*/
     void addComposerTable( QgsComposerAttributeTable* table );
+
+    /**Adds a composer table v2 to the item/widget map and creates a configuration widget*/
+    void addComposerTableV2( QgsComposerAttributeTableV2* table, QgsComposerFrame* frame );
 
     /**Adds composer html and creates a configuration widget*/
     void addComposerHtmlFrame( QgsComposerHtml* html, QgsComposerFrame* frame );
@@ -566,6 +571,9 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     QDockWidget* mUndoDock;
     QDockWidget* mGeneralDock;
     QDockWidget* mAtlasDock;
+    QDockWidget* mItemsDock;
+
+    QTreeView* mItemsTreeView;
 
     QMenu* mPanelMenu;
     QMenu* mToolbarMenu;
@@ -615,7 +623,7 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
 
     //! Sets the specified feature as the current atlas feature
     //! @note added in 2.1
-    void setAtlasFeature( QgsMapLayer* layer, QgsFeature * feat );
+    void setAtlasFeature( QgsMapLayer* layer, const QgsFeature &feat );
 
     //! Updates the "set as atlas feature" map layer action when atlas coverage layer changes
     void updateAtlasMapLayerAction( QgsVectorLayer* coverageLayer );

@@ -22,6 +22,7 @@
 
 class QgsComposerHtml;
 class QgsComposerLabel;
+class QgsComposerLegend;
 class QgsComposerMap;
 class QgsComposition;
 class QgsMapLayer;
@@ -98,13 +99,16 @@ class QgsWMSConfigParser
     virtual double maxHeight() const = 0;
     virtual double imageQuality() const = 0;
 
+    // WMS GetFeatureInfo precision (decimal places)
+    virtual int WMSPrecision() const = 0;
+
     //printing
 
     /**Creates a print composition, usually for a GetPrint request. Replaces map and label parameters*/
     QgsComposition* createPrintComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, const QMap< QString, QString >& parameterMap ) const;
 
     /**Creates a composition from the project file (probably delegated to the fallback parser)*/
-    virtual QgsComposition* initComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, QList< QgsComposerMap*>& mapList, QList< QgsComposerLabel* >& labelList, QList<const QgsComposerHtml *>& htmlFrameList ) const = 0;
+    virtual QgsComposition* initComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, QList< QgsComposerMap*>& mapList, QList< QgsComposerLegend* >& legendList, QList< QgsComposerLabel* >& labelList, QList<const QgsComposerHtml *>& htmlFrameList ) const = 0;
 
     /**Adds print capabilities to xml document. ParentElem usually is the <Capabilities> element*/
     virtual void printCapabilities( QDomElement& parentElement, QDomDocument& doc ) const = 0;
@@ -117,6 +121,8 @@ class QgsWMSConfigParser
     virtual int nLayers() const = 0;
 
     virtual void serviceCapabilities( QDomElement& parentElement, QDomDocument& doc ) const = 0;
+
+    virtual bool useLayerIDs() const = 0;
 
 #if 0
     /**List of GML datasets passed outside SLD (e.g. in a SOAP request). Key of the map is the layer name*/

@@ -38,7 +38,8 @@ class GUI_EXPORT QgsSymbolLayerV2Widget : public QWidget
     const QgsVectorLayer* mVectorLayer;
     /** Get label for data defined entry.
      * Implemented only for 'size' of marker symbols
-     * @added in 2.1 */
+     * @note added in 2.1
+     */
     virtual QString dataDefinedPropertyLabel( const QString &entryName );
 
   signals:
@@ -181,6 +182,7 @@ class GUI_EXPORT QgsGradientFillSymbolLayerV2Widget : public QgsSymbolLayerV2Wid
     void setColor( const QColor& color );
     void setColor2( const QColor& color );
     void applyColorRamp();
+    void on_mButtonEditRamp_clicked();
     void setGradientType( int index );
     void setCoordinateMode( int index );
     void setGradientSpread( int index );
@@ -223,6 +225,7 @@ class GUI_EXPORT QgsShapeburstFillSymbolLayerV2Widget : public QgsSymbolLayerV2W
     void on_mDistanceUnitWidget_changed( );
     void on_mRadioUseWholeShape_toggled( bool value );
     void applyColorRamp();
+    void on_mButtonEditRamp_clicked();
     void offsetChanged();
     void on_mOffsetUnitWidget_changed( );
     void on_mDataDefinedPropertiesButton_clicked();

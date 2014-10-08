@@ -77,16 +77,16 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QgsColorButton" name="btnColor">
+        <widget class="QgsColorButtonV2" name="btnColor">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>120</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>120</width>
            <height>16777215</height>
           </size>
          </property>
@@ -330,9 +330,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QgsColorButton</class>
-   <extends>QPushButton</extends>
-   <header>qgscolorbutton.h</header>
+   <class>QgsColorButtonV2</class>
+   <extends>QToolButton</extends>
+   <header>qgscolorbuttonv2.h</header>
   </customwidget>
   <customwidget>
    <class>QgsUnitSelectionWidget</class>
@@ -341,6 +341,18 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>viewSymbols</tabstop>
+  <tabstop>mSymbolUnitWidget</tabstop>
+  <tabstop>mTransparencySlider</tabstop>
+  <tabstop>btnColor</tabstop>
+  <tabstop>spinSize</tabstop>
+  <tabstop>spinAngle</tabstop>
+  <tabstop>groupsCombo</tabstop>
+  <tabstop>openStyleManagerButton</tabstop>
+  <tabstop>btnAdvanced</tabstop>
+  <tabstop>spinWidth</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

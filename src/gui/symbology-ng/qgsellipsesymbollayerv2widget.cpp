@@ -22,6 +22,23 @@
 QgsEllipseSymbolLayerV2Widget::QgsEllipseSymbolLayerV2Widget( const QgsVectorLayer* vl, QWidget* parent ): QgsSymbolLayerV2Widget( parent, vl )
 {
   setupUi( this );
+
+  mSymbolWidthUnitWidget->setUnits( QStringList() << tr( "Millimeter" ) << tr( "Map unit" ), 1 );
+  mSymbolHeightUnitWidget->setUnits( QStringList() << tr( "Millimeter" ) << tr( "Map unit" ), 1 );
+  mOutlineWidthUnitWidget->setUnits( QStringList() << tr( "Millimeter" ) << tr( "Map unit" ), 1 );
+  mOffsetUnitWidget->setUnits( QStringList() << tr( "Millimeter" ) << tr( "Map unit" ), 1 );
+
+  btnChangeColorFill->setAllowAlpha( true );
+  btnChangeColorFill->setColorDialogTitle( tr( "Select fill color" ) );
+  btnChangeColorFill->setContext( "symbology" );
+  btnChangeColorFill->setShowNoColor( true );
+  btnChangeColorFill->setNoColorString( tr( "Transparent fill" ) );
+  btnChangeColorBorder->setAllowAlpha( true );
+  btnChangeColorBorder->setColorDialogTitle( tr( "Select border color" ) );
+  btnChangeColorBorder->setContext( "symbology" );
+  btnChangeColorBorder->setShowNoColor( true );
+  btnChangeColorBorder->setNoColorString( tr( "Transparent border" ) );
+
   QStringList names;
   names << "circle" << "rectangle" << "cross" << "triangle";
   QSize iconSize = mShapeListWidget->iconSize();
@@ -59,11 +76,8 @@ void QgsEllipseSymbolLayerV2Widget::setSymbolLayer( QgsSymbolLayerV2* layer )
   mRotationSpinBox->setValue( mLayer->angle() );
   mOutlineStyleComboBox->setPenStyle( mLayer->outlineStyle() );
   mOutlineWidthSpinBox->setValue( mLayer->outlineWidth() );
-
   btnChangeColorBorder->setColor( mLayer->outlineColor() );
-  btnChangeColorBorder->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
   btnChangeColorFill->setColor( mLayer->fillColor() );
-  btnChangeColorFill->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
 
   QList<QListWidgetItem *> symbolItemList = mShapeListWidget->findItems( mLayer->symbolName(), Qt::MatchExactly );
   if ( symbolItemList.size() > 0 )
@@ -81,6 +95,8 @@ void QgsEllipseSymbolLayerV2Widget::setSymbolLayer( QgsSymbolLayerV2* layer )
     mOutlineWidthUnitWidget->setMapUnitScale( mLayer->outlineWidthMapUnitScale() );
     mSymbolHeightUnitWidget->setUnit( mLayer->symbolHeightUnit() );
     mSymbolHeightUnitWidget->setMapUnitScale( mLayer->symbolHeightMapUnitScale() );
+    mOffsetUnitWidget->setUnit( mLayer->offsetUnit() );
+    mOffsetUnitWidget->setMapUnitScale( mLayer->offsetMapUnitScale() );
   }
 
   QPointF offsetPt = mLayer->offset();
@@ -178,38 +194,46 @@ void QgsEllipseSymbolLayerV2Widget::on_btnChangeColorFill_colorChanged( const QC
   emit changed();
 }
 
-void QgsEllipseSymbolLayerV2Widget::on_mSymbolWidthUnitComboBox_currentIndexChanged( int index )
+void QgsEllipseSymbolLayerV2Widget::on_mSymbolWidthUnitWidget_changed()
 {
   if ( mLayer )
   {
-    mLayer->setSymbolWidthUnit(( QgsSymbolV2::OutputUnit ) index );
+    QgsSymbolV2::OutputUnit unit = static_cast<QgsSymbolV2::OutputUnit>( mSymbolWidthUnitWidget->getUnit() );
+    mLayer->setSymbolWidthUnit( unit );
+    mLayer->setSymbolWidthMapUnitScale( mSymbolWidthUnitWidget->getMapUnitScale() );
     emit changed();
   }
 }
 
-void QgsEllipseSymbolLayerV2Widget::on_mOutlineWidthUnitComboBox_currentIndexChanged( int index )
+void QgsEllipseSymbolLayerV2Widget::on_mOutlineWidthUnitWidget_changed()
 {
   if ( mLayer )
   {
-    mLayer->setOutlineWidthUnit(( QgsSymbolV2::OutputUnit ) index );
+    QgsSymbolV2::OutputUnit unit = static_cast<QgsSymbolV2::OutputUnit>( mOutlineWidthUnitWidget->getUnit() );
+    mLayer->setOutlineWidthUnit( unit );
+    mLayer->setOutlineWidthMapUnitScale( mOutlineWidthUnitWidget->getMapUnitScale() );
     emit changed();
   }
 }
 
-void QgsEllipseSymbolLayerV2Widget::on_mSymbolHeightUnitComboBox_currentIndexChanged( int index )
+void QgsEllipseSymbolLayerV2Widget::on_mSymbolHeightUnitWidget_changed()
 {
   if ( mLayer )
   {
-    mLayer->setSymbolHeightUnit(( QgsSymbolV2::OutputUnit ) index );
+    QgsSymbolV2::OutputUnit unit = static_cast<QgsSymbolV2::OutputUnit>( mSymbolHeightUnitWidget->getUnit() );
+    mLayer->setSymbolHeightUnit( unit );
+    mLayer->setSymbolHeightMapUnitScale( mSymbolHeightUnitWidget->getMapUnitScale() );
     emit changed();
   }
 }
 
-void QgsEllipseSymbolLayerV2Widget::on_mOffsetUnitComboBox_currentIndexChanged( int index )
+void QgsEllipseSymbolLayerV2Widget::on_mOffsetUnitWidget_changed()
 {
   if ( mLayer )
   {
-    mLayer->setOffsetUnit(( QgsSymbolV2::OutputUnit ) index );
+    QgsSymbolV2::OutputUnit unit = static_cast<QgsSymbolV2::OutputUnit>( mOffsetUnitWidget->getUnit() );
+    mLayer->setOffsetUnit( unit );
+    mLayer->setOffsetMapUnitScale( mOffsetUnitWidget->getMapUnitScale() );
     emit changed();
   }
 }
@@ -221,6 +245,10 @@ void QgsEllipseSymbolLayerV2Widget::blockComboSignals( bool block )
   mSymbolHeightUnitWidget->blockSignals( block );
   mHorizontalAnchorComboBox->blockSignals( block );
   mVerticalAnchorComboBox->blockSignals( block );
+  mSymbolWidthUnitWidget->blockSignals( block );
+  mOutlineWidthUnitWidget->blockSignals( block );
+  mSymbolHeightUnitWidget->blockSignals( block );
+  mOffsetUnitWidget->blockSignals( block );
 }
 
 void QgsEllipseSymbolLayerV2Widget::on_mHorizontalAnchorComboBox_currentIndexChanged( int index )

@@ -29,6 +29,7 @@
 #include "qgsvectorlayerproperties.h"
 #include "qgsvectordataprovider.h"
 #include "qgsfeatureiterator.h"
+#include "qgscolordialog.h"
 
 #include <QColorDialog>
 #include <QFontDialog>
@@ -52,10 +53,16 @@ QgsDiagramProperties::QgsDiagramProperties( QgsVectorLayer* layer, QWidget* pare
 
   mDiagramPropertiesTabWidget->setCurrentIndex( tabIdx );
 
-  mBackgroundColorButton->setColorDialogTitle( tr( "Background color" ) );
-  mBackgroundColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
-  mDiagramPenColorButton->setColorDialogTitle( tr( "Pen color" ) );
-  mDiagramPenColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  mBackgroundColorButton->setColorDialogTitle( tr( "Select background color" ) );
+  mBackgroundColorButton->setAllowAlpha( true );
+  mBackgroundColorButton->setContext( "symbology" );
+  mBackgroundColorButton->setShowNoColor( true );
+  mBackgroundColorButton->setNoColorString( tr( "Transparent background" ) );
+  mDiagramPenColorButton->setColorDialogTitle( tr( "Select pen color" ) );
+  mDiagramPenColorButton->setAllowAlpha( true );
+  mDiagramPenColorButton->setContext( "symbology" );
+  mDiagramPenColorButton->setShowNoColor( true );
+  mDiagramPenColorButton->setNoColorString( tr( "Transparent outline" ) );
 
   mValueLineEdit->setValidator( new QDoubleValidator( mValueLineEdit ) );
   mMinimumDiagramScaleLineEdit->setValidator( new QDoubleValidator( mMinimumDiagramScaleLineEdit ) );
@@ -494,7 +501,7 @@ void QgsDiagramProperties::on_mDiagramAttributesTreeWidget_itemDoubleClicked( QT
 {
   if ( column == 1 ) //change color
   {
-    QColor newColor = QColorDialog::getColor();
+    QColor newColor = QgsColorDialogV2::getColor( item->background( 1 ).color(), 0 );
     if ( newColor.isValid() )
     {
       item->setBackground( 1, QBrush( newColor ) );

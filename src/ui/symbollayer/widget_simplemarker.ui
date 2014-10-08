@@ -31,16 +31,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QgsColorButton" name="btnChangeColorFill">
+      <widget class="QgsColorButtonV2" name="btnChangeColorFill">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>16777215</height>
         </size>
        </property>
@@ -63,16 +63,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QgsColorButton" name="btnChangeColorBorder">
+      <widget class="QgsColorButtonV2" name="btnChangeColorBorder">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>16777215</height>
         </size>
        </property>
@@ -114,7 +114,7 @@
         </sizepolicy>
        </property>
        <property name="decimals">
-        <number>5</number>
+        <number>6</number>
        </property>
        <property name="maximum">
         <double>100000.000000000000000</double>
@@ -140,7 +140,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QgsPenStyleComboBox" name="mOutlineStyleComboBox" native="true"/>
+    <widget class="QgsPenStyleComboBox" name="mOutlineStyleComboBox"/>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="mOutlineWidthLabel">
@@ -161,6 +161,9 @@
        </property>
        <property name="singleStep">
         <double>0.200000000000000</double>
+       </property>
+       <property name="decimals">
+        <number>6</number>
        </property>
       </widget>
      </item>
@@ -210,7 +213,7 @@
         </sizepolicy>
        </property>
        <property name="decimals">
-        <number>5</number>
+        <number>6</number>
        </property>
        <property name="minimum">
         <double>-100.000000000000000</double>
@@ -229,7 +232,7 @@
         </sizepolicy>
        </property>
        <property name="decimals">
-        <number>5</number>
+        <number>6</number>
        </property>
        <property name="minimum">
         <double>-100.000000000000000</double>
@@ -353,9 +356,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QgsColorButton</class>
-   <extends>QPushButton</extends>
-   <header>qgscolorbutton.h</header>
+   <class>QgsColorButtonV2</class>
+   <extends>QToolButton</extends>
+   <header>qgscolorbuttonv2.h</header>
   </customwidget>
   <customwidget>
    <class>QgsUnitSelectionWidget</class>
@@ -365,14 +368,26 @@
   </customwidget>
   <customwidget>
    <class>QgsPenStyleComboBox</class>
-   <extends>QWidget</extends>
+   <extends>QComboBox</extends>
    <header>qgspenstylecombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>lstNames</tabstop>
+  <tabstop>btnChangeColorFill</tabstop>
+  <tabstop>btnChangeColorBorder</tabstop>
+  <tabstop>spinSize</tabstop>
+  <tabstop>mSizeUnitWidget</tabstop>
+  <tabstop>mOutlineStyleComboBox</tabstop>
+  <tabstop>mOutlineWidthSpinBox</tabstop>
+  <tabstop>mOutlineWidthUnitWidget</tabstop>
+  <tabstop>spinAngle</tabstop>
   <tabstop>spinOffsetX</tabstop>
   <tabstop>spinOffsetY</tabstop>
+  <tabstop>mOffsetUnitWidget</tabstop>
+  <tabstop>mHorizontalAnchorComboBox</tabstop>
+  <tabstop>mVerticalAnchorComboBox</tabstop>
+  <tabstop>mDataDefinedPropertiesButton</tabstop>
+  <tabstop>lstNames</tabstop>
  </tabstops>
  <resources/>
  <connections/>

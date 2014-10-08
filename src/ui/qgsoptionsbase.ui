@@ -133,6 +133,18 @@
          </item>
          <item>
           <property name="text">
+           <string>Colors</string>
+          </property>
+          <property name="toolTip">
+           <string>Colors</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../images/images.qrc">
+            <normaloff>:/images/themes/default/propertyicons/symbology.png</normaloff>:/images/themes/default/propertyicons/symbology.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>Canvas &amp; Legend</string>
           </property>
           <property name="toolTip">
@@ -272,7 +284,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>610</width>
-                <height>640</height>
+                <height>670</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_28">
@@ -400,6 +412,16 @@
                       <item>
                        <property name="text">
                         <string>32</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>48</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>64</string>
                        </property>
                       </item>
                      </widget>
@@ -602,25 +624,23 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_31">
                     <item>
+                     <widget class="QCheckBox" name="mNativeColorDialogsChkBx">
+                      <property name="text">
+                       <string>Use native color chooser dialogs</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QCheckBox" name="mLiveColorDialogsChkBx">
                       <property name="text">
                        <string>Use live-updating color chooser dialogs</string>
                       </property>
                      </widget>
                     </item>
-                    <item>
-                     <widget class="Line" name="line_5">
-                      <property name="minimumSize">
-                       <size>
-                        <width>12</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                     </widget>
-                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_32">
                     <item>
                      <widget class="QCheckBox" name="mCustomSideBarSide">
                       <property name="text">
@@ -1404,7 +1424,7 @@
                     <item>
                      <widget class="QSpinBox" name="spinBoxAttrTableRowCache">
                       <property name="minimum">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <property name="maximum">
                        <number>100000</number>
@@ -2240,6 +2260,102 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="mOptionsPageColors">
+          <layout class="QVBoxLayout" name="verticalLayout_38">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QScrollArea" name="scrollArea">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>239</width>
+                <height>258</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_46">
+               <item>
+                <widget class="QgsCollapsibleGroupBox" name="groupBox_7">
+                 <property name="title">
+                  <string>Standard colors</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="mButtonPasteColors">
+                    <property name="text">
+                     <string>Paste colors</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="mButtonExportColors">
+                    <property name="text">
+                     <string>Export</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="mButtonAddColor">
+                    <property name="text">
+                     <string>Add color</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="mButtonRemoveColor">
+                    <property name="text">
+                     <string>Remove color</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <spacer name="verticalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="mButtonCopyColors">
+                    <property name="text">
+                     <string>Copy colors</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="mButtonImportColors">
+                    <property name="text">
+                     <string>Import</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0" rowspan="8">
+                   <widget class="QgsColorSchemeList" name="mTreeCustomColors"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="mOptionsPageMapCanvas">
           <layout class="QVBoxLayout" name="verticalLayout_16">
            <property name="margin">
@@ -2258,8 +2374,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>486</width>
-                <height>330</height>
+                <width>526</width>
+                <height>327</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_25">
@@ -2270,7 +2386,7 @@
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
                   <item row="0" column="4">
-                   <widget class="QgsColorButton" name="pbnCanvasColor">
+                   <widget class="QgsColorButtonV2" name="pbnCanvasColor">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -2279,13 +2395,13 @@
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -2334,7 +2450,7 @@
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QgsColorButton" name="pbnSelectionColor">
+                   <widget class="QgsColorButtonV2" name="pbnSelectionColor">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -2343,13 +2459,13 @@
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -2587,8 +2703,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>664</width>
-                <height>628</height>
+                <width>684</width>
+                <height>625</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_30">
@@ -2658,7 +2774,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QgsColorButton" name="mIdentifyHighlightColorButton">
+                     <widget class="QgsColorButtonV2" name="mIdentifyHighlightColorButton">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                         <horstretch>0</horstretch>
@@ -2667,13 +2783,13 @@
                       </property>
                       <property name="minimumSize">
                        <size>
-                        <width>100</width>
+                        <width>120</width>
                         <height>0</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>100</width>
+                        <width>120</width>
                         <height>16777215</height>
                        </size>
                       </property>
@@ -2857,7 +2973,7 @@
                    </spacer>
                   </item>
                   <item row="2" column="1">
-                   <widget class="QgsColorButton" name="pbnMeasureColor">
+                   <widget class="QgsColorButtonV2" name="pbnMeasureColor">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -2866,13 +2982,13 @@
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -3083,8 +3199,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>626</width>
-                <height>549</height>
+                <width>504</width>
+                <height>307</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_39">
@@ -3124,25 +3240,40 @@
                  </property>
                  <layout class="QGridLayout" name="gridLayout_9">
                   <item row="0" column="0">
-                   <layout class="QHBoxLayout" name="horizontalLayout_32">
-                    <item>
-                     <widget class="QLabel" name="label_66">
-                      <property name="text">
-                       <string>Grid style</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="mGridStyleComboBox"/>
-                    </item>
-                    <item>
-                     <widget class="QgsColorButton" name="mGridColorButton">
-                      <property name="text">
-                       <string>Color...</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
+                   <widget class="QLabel" name="label_66">
+                    <property name="text">
+                     <string>Grid style</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QComboBox" name="mGridStyleComboBox"/>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>Grid color</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="4">
+                   <widget class="QgsColorButtonV2" name="mGridColorButton">
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>120</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </widget>
@@ -3387,7 +3518,7 @@
                    </spacer>
                   </item>
                   <item row="0" column="3">
-                   <widget class="QgsColorButton" name="mLineColorToolButton">
+                   <widget class="QgsColorButtonV2" name="mLineColorToolButton">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -3396,13 +3527,13 @@
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>100</width>
+                      <width>120</width>
                       <height>16777215</height>
                      </size>
                     </property>
@@ -4581,15 +4712,20 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
+   <class>QgsColorButtonV2</class>
+   <extends>QToolButton</extends>
+   <header>qgscolorbuttonv2.h</header>
+  </customwidget>
+  <customwidget>
    <class>QgsCollapsibleGroupBox</class>
    <extends>QGroupBox</extends>
    <header>qgscollapsiblegroupbox.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QgsColorButton</class>
-   <extends>QPushButton</extends>
-   <header>qgscolorbutton.h</header>
+   <class>QgsColorSchemeList</class>
+   <extends>QTreeView</extends>
+   <header>qgscolorschemelist.h</header>
   </customwidget>
   <customwidget>
    <class>QgsScaleComboBox</class>
@@ -4597,6 +4733,194 @@
    <header>qgsscalecombobox.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>mOptionsListWidget</tabstop>
+  <tabstop>mOptionsScrollArea_01</tabstop>
+  <tabstop>cmbStyle</tabstop>
+  <tabstop>cmbTheme</tabstop>
+  <tabstop>cmbIconSize</tabstop>
+  <tabstop>mFontFamilyRadioQt</tabstop>
+  <tabstop>mFontFamilyRadioCustom</tabstop>
+  <tabstop>mFontFamilyComboBox</tabstop>
+  <tabstop>spinFontSize</tabstop>
+  <tabstop>mMessageTimeoutSpnBx</tabstop>
+  <tabstop>cbxHideSplash</tabstop>
+  <tabstop>cbxShowTips</tabstop>
+  <tabstop>mBoldGroupBoxTitleChkBx</tabstop>
+  <tabstop>mCustomGroupBoxChkBx</tabstop>
+  <tabstop>mLiveColorDialogsChkBx</tabstop>
+  <tabstop>mProjectOnLaunchCmbBx</tabstop>
+  <tabstop>mProjectOnLaunchPushBtn</tabstop>
+  <tabstop>mProjectOnLaunchLineEdit</tabstop>
+  <tabstop>cbxProjectDefaultNew</tabstop>
+  <tabstop>pbnProjectDefaultSetCurrent</tabstop>
+  <tabstop>pbnProjectDefaultReset</tabstop>
+  <tabstop>leTemplateFolder</tabstop>
+  <tabstop>pbnTemplateFolderBrowse</tabstop>
+  <tabstop>pbnTemplateFolderReset</tabstop>
+  <tabstop>chbAskToSaveProjectChanges</tabstop>
+  <tabstop>mLayerDeleteConfirmationChkBx</tabstop>
+  <tabstop>chbWarnOldProjectVersion</tabstop>
+  <tabstop>cmbEnableMacros</tabstop>
+  <tabstop>mOptionsScrollArea_03</tabstop>
+  <tabstop>mBtnAddSVGPath</tabstop>
+  <tabstop>mBtnRemoveSVGPath</tabstop>
+  <tabstop>mListSVGPaths</tabstop>
+  <tabstop>mBtnAddPluginPath</tabstop>
+  <tabstop>mBtnRemovePluginPath</tabstop>
+  <tabstop>mListPluginPaths</tabstop>
+  <tabstop>mRestoreDefaultWindowStateBtn</tabstop>
+  <tabstop>mRemoveCustomVarBtn</tabstop>
+  <tabstop>mAddCustomVarBtn</tabstop>
+  <tabstop>mCurrentVariablesTable</tabstop>
+  <tabstop>mCurrentVariablesQGISChxBx</tabstop>
+  <tabstop>mCustomVariablesChkBx</tabstop>
+  <tabstop>mCustomVariablesTable</tabstop>
+  <tabstop>mOptionsScrollArea_11</tabstop>
+  <tabstop>cbxAttributeTableDocked</tabstop>
+  <tabstop>cbxCopyWKTGeomFromTable</tabstop>
+  <tabstop>cmbAttrTableBehaviour</tabstop>
+  <tabstop>spinBoxAttrTableRowCache</tabstop>
+  <tabstop>leNullValue</tabstop>
+  <tabstop>cmbScanItemsInBrowser</tabstop>
+  <tabstop>cmbScanZipInBrowser</tabstop>
+  <tabstop>cmbPromptRasterSublayers</tabstop>
+  <tabstop>cbxIgnoreShapeEncoding</tabstop>
+  <tabstop>cbxAddPostgisDC</tabstop>
+  <tabstop>cbxAddOracleDC</tabstop>
+  <tabstop>mOptionsScrollArea_04</tabstop>
+  <tabstop>chkAddedVisibility</tabstop>
+  <tabstop>chkUseRenderCaching</tabstop>
+  <tabstop>chkParallelRendering</tabstop>
+  <tabstop>chkMaxThreads</tabstop>
+  <tabstop>spinMaxThreads</tabstop>
+  <tabstop>spinMapUpdateInterval</tabstop>
+  <tabstop>mSimplifyDrawingGroupBox</tabstop>
+  <tabstop>mSimplifyDrawingSpinBox</tabstop>
+  <tabstop>mSimplifyDrawingAtProvider</tabstop>
+  <tabstop>chkAntiAliasing</tabstop>
+  <tabstop>spnRed</tabstop>
+  <tabstop>spnGreen</tabstop>
+  <tabstop>spnBlue</tabstop>
+  <tabstop>cboxContrastEnhancementAlgorithmSingleBand</tabstop>
+  <tabstop>cboxContrastEnhancementAlgorithmMultiBandSingleByte</tabstop>
+  <tabstop>cboxContrastEnhancementAlgorithmMultiBandMultiByte</tabstop>
+  <tabstop>cboxContrastEnhancementLimits</tabstop>
+  <tabstop>mRasterCumulativeCutLowerDoubleSpinBox</tabstop>
+  <tabstop>mRasterCumulativeCutUpperDoubleSpinBox</tabstop>
+  <tabstop>spnThreeBandStdDev</tabstop>
+  <tabstop>mLogCanvasRefreshChkBx</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>pbnSelectionColor</tabstop>
+  <tabstop>pbnCanvasColor</tabstop>
+  <tabstop>mOptionsScrollArea_06</tabstop>
+  <tabstop>mTreeCustomColors</tabstop>
+  <tabstop>mButtonAddColor</tabstop>
+  <tabstop>mButtonRemoveColor</tabstop>
+  <tabstop>mButtonCopyColors</tabstop>
+  <tabstop>mButtonPasteColors</tabstop>
+  <tabstop>mButtonImportColors</tabstop>
+  <tabstop>mButtonExportColors</tabstop>
+  <tabstop>mLegendLayersBoldChkBx</tabstop>
+  <tabstop>cbxLegendClassifiers</tabstop>
+  <tabstop>mLegendGroupsBoldChkBx</tabstop>
+  <tabstop>cbxCreateRasterLegendIcons</tabstop>
+  <tabstop>mLegendGraphicResolutionSpinBox</tabstop>
+  <tabstop>mOptionsScrollArea_05</tabstop>
+  <tabstop>spinBoxIdentifyValue</tabstop>
+  <tabstop>mIdentifyHighlightColorButton</tabstop>
+  <tabstop>mIdentifyHighlightBufferSpinBox</tabstop>
+  <tabstop>mIdentifyHighlightMinWidthSpinBox</tabstop>
+  <tabstop>radMeters</tabstop>
+  <tabstop>radFeet</tabstop>
+  <tabstop>radNautical</tabstop>
+  <tabstop>radDegrees</tabstop>
+  <tabstop>mDegreesRadioButton</tabstop>
+  <tabstop>mRadiansRadioButton</tabstop>
+  <tabstop>mDecimalPlacesSpinBox</tabstop>
+  <tabstop>mKeepBaseUnitCheckBox</tabstop>
+  <tabstop>mGonRadioButton</tabstop>
+  <tabstop>pbnMeasureColor</tabstop>
+  <tabstop>spinZoomFactor</tabstop>
+  <tabstop>cmbWheelAction</tabstop>
+  <tabstop>mListGlobalScales</tabstop>
+  <tabstop>pbnAddScale</tabstop>
+  <tabstop>pbnRemoveScale</tabstop>
+  <tabstop>pbnDefaultScaleValues</tabstop>
+  <tabstop>pbnImportScales</tabstop>
+  <tabstop>pbnExportScales</tabstop>
+  <tabstop>mOptionsScrollArea_12</tabstop>
+  <tabstop>mComposerFontComboBox</tabstop>
+  <tabstop>mGridStyleComboBox</tabstop>
+  <tabstop>mGridColorButton</tabstop>
+  <tabstop>mGridResolutionSpinBox</tabstop>
+  <tabstop>mOffsetXSpinBox</tabstop>
+  <tabstop>mOffsetYSpinBox</tabstop>
+  <tabstop>mSnapToleranceSpinBox</tabstop>
+  <tabstop>mOptionsScrollArea_07</tabstop>
+  <tabstop>mValidateGeometries</tabstop>
+  <tabstop>chkDisableAttributeValuesDlg</tabstop>
+  <tabstop>chkReuseLastValues</tabstop>
+  <tabstop>mLineWidthSpinBox</tabstop>
+  <tabstop>mLineColorToolButton</tabstop>
+  <tabstop>mDefaultSnapModeComboBox</tabstop>
+  <tabstop>mDefaultSnappingToleranceSpinBox</tabstop>
+  <tabstop>mSearchRadiusVertexEditSpinBox</tabstop>
+  <tabstop>mDefaultSnappingToleranceComboBox</tabstop>
+  <tabstop>mSearchRadiusVertexEditComboBox</tabstop>
+  <tabstop>cbxSnappingOptionsDocked</tabstop>
+  <tabstop>mMarkerStyleComboBox</tabstop>
+  <tabstop>mMarkerSizeSpinBox</tabstop>
+  <tabstop>mMarkersOnlyForSelectedCheckBox</tabstop>
+  <tabstop>mOffsetQuadSegSpinBox</tabstop>
+  <tabstop>mOffsetJoinStyleComboBox</tabstop>
+  <tabstop>mCurveOffsetMiterLimitComboBox</tabstop>
+  <tabstop>mOptionsScrollArea_02</tabstop>
+  <tabstop>cmbEditCreateOptions</tabstop>
+  <tabstop>pbnEditPyramidsOptions</tabstop>
+  <tabstop>pbnEditCreateOptions</tabstop>
+  <tabstop>lstGdalDrivers</tabstop>
+  <tabstop>mOptionsScrollArea_08</tabstop>
+  <tabstop>leLayerGlobalCrs</tabstop>
+  <tabstop>pbnSelectProjection</tabstop>
+  <tabstop>radUseProjectProjection</tabstop>
+  <tabstop>radPromptForProjection</tabstop>
+  <tabstop>radUseGlobalProjection</tabstop>
+  <tabstop>radOtfTransform</tabstop>
+  <tabstop>radOtfAuto</tabstop>
+  <tabstop>leProjectGlobalCrs</tabstop>
+  <tabstop>radOtfNone</tabstop>
+  <tabstop>pbnSelectOtfProjection</tabstop>
+  <tabstop>mAddDefaultTransformButton</tabstop>
+  <tabstop>mRemoveDefaultTransformButton</tabstop>
+  <tabstop>mDefaultDatumTransformTreeWidget</tabstop>
+  <tabstop>chkShowDatumTransformDialog</tabstop>
+  <tabstop>mOptionsScrollArea_09</tabstop>
+  <tabstop>grpLocale</tabstop>
+  <tabstop>cboLocale</tabstop>
+  <tabstop>mOptionsScrollArea_10</tabstop>
+  <tabstop>leWmsSearch</tabstop>
+  <tabstop>mNetworkTimeoutSpinBox</tabstop>
+  <tabstop>mDefaultTileExpirySpinBox</tabstop>
+  <tabstop>mDefaultTileMaxRetrySpinBox</tabstop>
+  <tabstop>leUserAgent</tabstop>
+  <tabstop>mCacheDirectory</tabstop>
+  <tabstop>mBrowseCacheDirectory</tabstop>
+  <tabstop>mCacheSize</tabstop>
+  <tabstop>mClearCache</tabstop>
+  <tabstop>grpProxy</tabstop>
+  <tabstop>leProxyHost</tabstop>
+  <tabstop>leProxyPort</tabstop>
+  <tabstop>leProxyUser</tabstop>
+  <tabstop>leProxyPassword</tabstop>
+  <tabstop>mProxyTypeComboBox</tabstop>
+  <tabstop>mRemoveUrlPushButton</tabstop>
+  <tabstop>mAddUrlPushButton</tabstop>
+  <tabstop>mExcludeUrlListWidget</tabstop>
+  <tabstop>capitaliseCheckBox</tabstop>
+  <tabstop>cmbLegendDoubleClickAction</tabstop>
+ </tabstops>
  <resources>
   <include location="../../images/images.qrc"/>
  </resources>

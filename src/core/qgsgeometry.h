@@ -24,11 +24,6 @@ email                : morb at ozemail dot com dot au
 
 #include <geos_c.h>
 
-#if defined(GEOS_VERSION_MAJOR) && (GEOS_VERSION_MAJOR<3)
-#define GEOSGeometry struct GEOSGeom_t
-#define GEOSCoordSequence struct GEOSCoordSeq_t
-#endif
-
 #include "qgspoint.h"
 #include "qgscoordinatetransform.h"
 #include "qgsfeature.h"
@@ -87,6 +82,12 @@ class CORE_EXPORT QgsGeometry
 
     //! Destructor
     ~QgsGeometry();
+
+    /** return GEOS context handle
+     * @note added in 2.6
+     * @note not available in Python
+     */
+    static GEOSContextHandle_t getGEOSHandler();
 
     /** static method that creates geometry from Wkt */
     static QgsGeometry* fromWkt( QString wkt );
@@ -406,17 +407,19 @@ class CORE_EXPORT QgsGeometry
     /** Returns a Geometry representing the points making up this Geometry that do not make up other. */
     QgsGeometry* symDifference( QgsGeometry* geometry );
 
-    /** Exports the geometry to mWkt
+    /** Exports the geometry to WKT
+     *  @note precision parameter added in 2.4
      *  @return true in case of success and false else
      */
-    QString exportToWkt() const;
+    QString exportToWkt( const int &precision = 17 ) const;
 
-    /** Exports the geometry to mGeoJSON
-     *  @return true in case of success and false else
+    /** Exports the geometry to GeoJSON
+     *  @return a QString representing the geometry as GeoJSON
      *  @note added in 1.8
      *  @note python binding added in 1.9
+     *  @note precision parameter added in 2.4
      */
-    QString exportToGeoJSON() const;
+    QString exportToGeoJSON( const int &precision = 17 ) const;
 
     /** try to convert the geometry to the requested type
      * @param destType the geometry type to be converted to
@@ -641,7 +644,7 @@ class CORE_EXPORT QgsGeometry
     /** return polygon from wkb */
     QgsPolygon asPolygon( QgsConstWkbPtr &wkbPtr, bool hasZValue ) const;
 
-    static bool geosRelOp( char( *op )( const GEOSGeometry*, const GEOSGeometry * ),
+    static bool geosRelOp( char( *op )( GEOSContextHandle_t handle, const GEOSGeometry*, const GEOSGeometry * ),
                            const QgsGeometry* a, const QgsGeometry* b );
 
     /**Returns < 0 if point(x/y) is left of the line x1,y1 -> x1,y2*/

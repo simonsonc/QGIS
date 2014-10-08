@@ -37,28 +37,29 @@
 class QPainter;
 class QImage;
 
+class QgsAbstractGeometrySimplifier;
 class QgsAttributeAction;
 class QgsCoordinateTransform;
+class QgsDiagramLayerSettings;
+class QgsDiagramRendererV2;
 class QgsEditorWidgetWrapper;
+class QgsExpressionFieldBuffer;
+class QgsFeatureRendererV2;
 class QgsFeatureRequest;
 class QgsGeometry;
+class QgsGeometryCache;
 class QgsGeometryVertexIndex;
 class QgsLabel;
 class QgsMapToPixel;
 class QgsRectangle;
+class QgsRectangle;
 class QgsRelation;
 class QgsRelationManager;
-class QgsVectorDataProvider;
 class QgsSingleSymbolRendererV2;
-class QgsRectangle;
-class QgsVectorLayerJoinBuffer;
-class QgsFeatureRendererV2;
-class QgsDiagramRendererV2;
-class QgsDiagramLayerSettings;
-class QgsGeometryCache;
-class QgsVectorLayerEditBuffer;
 class QgsSymbolV2;
-class QgsAbstractGeometrySimplifier;
+class QgsVectorDataProvider;
+class QgsVectorLayerEditBuffer;
+class QgsVectorLayerJoinBuffer;
 
 typedef QList<int> QgsAttributeList;
 typedef QSet<int> QgsAttributeIds;
@@ -182,6 +183,26 @@ struct CORE_EXPORT QgsVectorJoinInfo
   int targetFieldIndex;
   /**Join field index in the source layer. For backward compatibility with 1.x (x>=7)*/
   int joinFieldIndex;
+
+  bool operator==( const QgsVectorJoinInfo& other ) const
+  {
+    return targetFieldName == other.targetFieldName &&
+           joinLayerId == other.joinLayerId &&
+           joinFieldName == other.joinFieldName &&
+           joinFieldsSubset == other.joinFieldsSubset &&
+           memoryCache == other.memoryCache;
+  }
+
+  /** Set subset of fields to be used from joined layer. Takes ownership of the passed pointer. Null pointer tells to use all fields.
+    @note added in 2.6 */
+  void setJoinFieldNamesSubset( QStringList* fieldNamesSubset ) { joinFieldsSubset = QSharedPointer<QStringList>( fieldNamesSubset ); }
+  /** Get subset of fields to be used from joined layer. All fields will be used if null is returned.
+    @note added in 2.6 */
+  QStringList* joinFieldNamesSubset() const { return joinFieldsSubset.data(); }
+
+protected:
+  /**Subset of fields to use from joined layer. null = use all fields*/
+  QSharedPointer<QStringList> joinFieldsSubset;
 };
 
 /** \ingroup core
@@ -619,8 +640,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
 
     /** Joins another vector layer to this layer
       @param joinInfo join object containing join layer id, target and source field
-      @note added in 1.7 */
-    void addJoin( const QgsVectorJoinInfo& joinInfo );
+      @note added in 1.7
+      @note since 2.6 returns bool indicating whether the join can be added */
+    bool addJoin( const QgsVectorJoinInfo& joinInfo );
 
     /** Removes  a vector layer join
       @note added in 1.7 */
@@ -628,6 +650,25 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
 
     /** @note added in 1.7 */
     const QList< QgsVectorJoinInfo >& vectorJoins() const;
+
+    /**
+     * Add a new field which is calculated by the expression specified
+     *
+     * @param exp The expression which calculates the field
+     * @param fld The field to calculate
+     *
+     * @note added in 2.6
+     */
+    void addExpressionField( const QString& exp, const QgsField& fld );
+
+    /**
+     * Remove an expression field
+     *
+     * @param index The index of the field
+     *
+     * @note added in 2.6
+     */
+    void removeExpressionField( int index );
 
     /** Get the label object associated with this layer */
     QgsLabel *label();
@@ -690,8 +731,22 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
      * @return A list of { @link QgsFeature } 's
      *
      * @see    selectedFeaturesIds()
+     * @see    selectedFeaturesIterator() which is more memory friendly when handling large selections
      */
     QgsFeatureList selectedFeatures();
+
+    /**
+     * Get an iterator of the selected features
+     *
+     * @param request You may specify a request, e.g. to limit the set of requested attributes.
+     *                Any filter on the request will be discarded.
+     *
+     * @return Iterator over the selected features
+     *
+     * @see    selectedFeaturesIds()
+     * @see    selectedFeatures()
+     */
+    QgsFeatureIterator selectedFeaturesIterator( QgsFeatureRequest request = QgsFeatureRequest() );
 
     /**
      * Return reference to identifiers of selected features
@@ -1098,6 +1153,12 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
     void addAttributeAlias( int attIndex, QString aliasString );
 
     /**
+     * Removes an alias (a display name) for attributes to display in dialogs
+     * @note added in version 2.4
+     */
+    void remAttributeAlias( int attIndex );
+
+    /**
      * Adds a tab (for the attribute editor form) holding groups and fields
      * @note added in version 2.0
      */
@@ -1218,14 +1279,14 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
     /**
      * Get edit type
      *
-     * @deprecated Use @see{editorWidgetV2} instead
+     * @deprecated Use editorWidgetV2() instead
      */
     Q_DECL_DEPRECATED EditType editType( int idx );
 
     /**
      * Get edit type
      *
-     * @deprecated Use @see{setEditorWidgetV2} instead
+     * @deprecated Use setEditorWidgetV2() instead
      */
     Q_DECL_DEPRECATED void setEditType( int idx, EditType edit );
 
@@ -1238,23 +1299,54 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
     /**
      * Set the editor widget type for a field
      *
+     * QGIS ships the following widget types, additional types may be available depending
+     * on plugins.
+     *
+     * <ul>
+     * <li>CheckBox (QgsCheckboxWidgetWrapper)</li>
+     * <li>Classification (QgsClassificationWidgetWrapper)</li>
+     * <li>Color (QgsColorWidgetWrapper)</li>
+     * <li>DateTime (QgsDateTimeEditWrapper)</li>
+     * <li>Enumeration (QgsEnumerationWidgetWrapper)</li>
+     * <li>FileName (QgsFileNameWidgetWrapper)</li>
+     * <li>Hidden (QgsHiddenWidgetWrapper)</li>
+     * <li>Photo (QgsPhotoWidgetWrapper)</li>
+     * <li>Range (QgsRangeWidgetWrapper)</li>
+     * <li>RelationReference (QgsRelationReferenceWidgetWrapper)</li>
+     * <li>TextEdit (QgsTextEditWrapper)</li>
+     * <li>UniqueValues (QgsUniqueValuesWidgetWrapper)</li>
+     * <li>UuidGenerator (QgsUuidWidgetWrapper)</li>
+     * <li>ValueMap (QgsValueMapWidgetWrapper)</li>
+     * <li>ValueRelation (QgsValueRelationWidgetWrapper)</li>
+     * <li>WebView (QgsWebViewWidgetWrapper)</li>
+     * </ul>
+     *
      * @param attrIdx     Index of the field
      * @param widgetType  Type id of the editor widget to use
      */
     void setEditorWidgetV2( int attrIdx, const QString& widgetType );
 
     /**
-     * Set the editor widget config for a field
+     * Set the editor widget config for a field.
+     *
+     * Python: Will accept a map.
+     *
+     * Example:
+     * \code{.py}
+     *   layer.setEditorWidgetV2Config( 1, { 'Layer': 'otherlayerid_1234', 'Key': 'Keyfield', 'Value': 'ValueField' } )
+     * \endcode
      *
      * @param attrIdx     Index of the field
      * @param config      The config to set for this field
+     *
+     * @see setEditorWidgetV2() for a list of widgets and choose the widget to see the available options.
      */
     void setEditorWidgetV2Config( int attrIdx, const QgsEditorWidgetConfig& config );
 
     /**
      * Set string representing 'true' for a checkbox (added in 1.4)
      *
-     * @deprecated Use @see{setEditorWidgetV2Config} instead
+     * @deprecated Use setEditorWidgetV2Config() instead
      */
     Q_DECL_DEPRECATED void setCheckedState( int idx, QString checked, QString notChecked );
 
@@ -1286,14 +1378,14 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
 
     /**
      * Access value map
-     * @deprecated Use @see{editorWidgetV2Config} instead
+     * @deprecated Use editorWidgetV2Config() instead
      */
     Q_DECL_DEPRECATED QMap<QString, QVariant> valueMap( int idx );
 
     /**
      * Access range widget config data
      *
-     * @deprecated Use @see{editorWidgetV2Config} instead
+     * @deprecated Use editorWidgetV2Config() instead
      */
     Q_DECL_DEPRECATED RangeData range( int idx );
 
@@ -1317,7 +1409,7 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
      *
      * @note added in 1.9
      *
-     * @deprecated Use @see{setEditorWdigetV2Config} instead
+     * @deprecated Use setEditorWidgetV2Config() instead
      */
     Q_DECL_DEPRECATED QString dateFormat( int idx );
 
@@ -1326,7 +1418,7 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
      *
      * @note added in 1.9
      *
-     * @deprecated Use @see{setEditorWdigetV2Config} instead
+     * @deprecated Use setEditorWidgetV2Config() instead
      */
     Q_DECL_DEPRECATED QSize widgetSize( int idx );
 
@@ -1488,8 +1580,6 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
      */
     void removeSelection();
 
-    void triggerRepaint();
-
     /** Update the extents for the layer. This is necessary if features are
      *  added/deleted or the layer has been subsetted.
      */
@@ -1609,8 +1699,31 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
      */
     void editCommandDestroyed();
 
+    /**
+     * Signal emitted whenever the symbology (QML-file) for this layer is being read.
+     * If there is custom style information saved in the file, you can connect to this signal
+     * and update the layer style accordingly.
+     *
+     * @param element The XML layer style element.
+     *
+     * @param errorMessage Write error messages into this string.
+     */
+    void readCustomSymbology( const QDomElement& element, QString& errorMessage );
+
+    /**
+     * Signal emitted whenever the symbology (QML-file) for this layer is being written.
+     * If there is custom style information you want to save to the file, you can connect
+     * to this signal and update the element accordingly.
+     *
+     * @param element  The XML element where you can add additional style information to.
+     * @param doc      The XML document that you can use to create new XML nodes.
+     * @param errorMessage Write error messages into this string.
+     */
+    void writeCustomSymbology( QDomElement& element, QDomDocument& doc, QString& errorMessage ) const;
+
   private slots:
     void onRelationsLoaded();
+    void onJoinedFieldsChanged();
 
   protected:
     /** Set the extent */
@@ -1759,6 +1872,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer
 
     //stores information about joined layers
     QgsVectorLayerJoinBuffer* mJoinBuffer;
+
+    //! stores information about expression fields on this layer
+    QgsExpressionFieldBuffer* mExpressionFieldBuffer;
 
     //diagram rendering object. 0 if diagram drawing is disabled
     QgsDiagramRendererV2* mDiagramRenderer;

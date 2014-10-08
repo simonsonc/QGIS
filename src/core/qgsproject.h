@@ -276,7 +276,7 @@ class CORE_EXPORT QgsProject : public QObject
 
     /** prepare a filename to save it to the project file
       @note added in 1.3 */
-    QString writePath( QString filename ) const;
+    QString writePath( QString filename, QString relativeBasePath = QString::null ) const;
 
     /** turn filename read from the project file to an absolute path
       @note added in 1.3 */
@@ -360,9 +360,6 @@ class CORE_EXPORT QgsProject : public QObject
 
     //! @note not available in python bindings
     void loadEmbeddedNodes( QgsLayerTreeGroup* group );
-
-    //! @note not available in python bindings
-    void updateEmbeddedGroupsProjectPath( QgsLayerTreeGroup* group );
 
   signals:
     //! emitted when project is being read

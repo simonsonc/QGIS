@@ -27,12 +27,12 @@ __revision__ = '$Format:%H$'
 
 import os
 from PyQt4 import QtGui, QtCore
-from processing.parameters.ParameterMultipleInput import ParameterMultipleInput
+from processing.core.parameters import ParameterMultipleInput
 from processing.gui.MultipleInputDialog import MultipleInputDialog
 from processing.tools import dataobjects
-from processing.parameters.ParameterRaster import ParameterRaster
-from processing.parameters.ParameterVector import ParameterVector
-from processing.parameters.ParameterTable import ParameterTable
+from processing.core.parameters import ParameterRaster
+from processing.core.parameters import ParameterVector
+from processing.core.parameters import ParameterTable
 
 
 class BatchInputSelectionPanel(QtGui.QWidget):
@@ -62,11 +62,11 @@ class BatchInputSelectionPanel(QtGui.QWidget):
         popupmenu = QtGui.QMenu()
         if not (isinstance(self.param, ParameterMultipleInput)
                     and self.param.datatype == ParameterMultipleInput.TYPE_FILE):
-            selectLayerAction = QtGui.QAction('Select from open layers',
+            selectLayerAction = QtGui.QAction(self.tr('Select from open layers'),
                 self.pushButton)
             selectLayerAction.triggered.connect(self.showLayerSelectionDialog)
             popupmenu.addAction(selectLayerAction)
-        selectFileAction = QtGui.QAction('Select from filesystem',
+        selectFileAction = QtGui.QAction(self.tr('Select from filesystem'),
                 self.pushButton)
         selectFileAction.triggered.connect(self.showFileSelectionDialog)
         popupmenu.addAction(selectFileAction)
@@ -114,8 +114,8 @@ class BatchInputSelectionPanel(QtGui.QWidget):
         else:
             path = ''
 
-        ret = QtGui.QFileDialog.getOpenFileNames(self, 'Open file', path,
-                self.param.getFileFilter())
+        ret = QtGui.QFileDialog.getOpenFileNames(self, self.tr('Open file'), path,
+                self.tr('All files(*.*);;') + self.param.getFileFilter())
         if ret:
             files = list(ret)
             if len(files) == 1:

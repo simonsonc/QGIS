@@ -63,6 +63,8 @@
 #include "simplemutex.h"
 #include "util.h"
 
+#include <qgsgeometry.h> // for GEOS context
+
 namespace pal
 {
 
@@ -78,6 +80,11 @@ namespace pal
     va_list list;
     va_start( list, fmt );
     vfprintf( stdout, fmt, list );
+  }
+
+  GEOSContextHandle_t geosContext()
+  {
+    return QgsGeometry::getGEOSHandler();
   }
 
   Pal::Pal()
@@ -230,7 +237,7 @@ namespace pal
     FeatCallBackCtx *context = ( FeatCallBackCtx* ) ctx;
 
 #ifdef _EXPORT_MAP_
-    bool svged = false; // is the feature has been written into the svg map ?
+    bool svged = false; // is the feature has been written into the svg map?
     int dpi = context->layer->pal->getDpi();
 #endif
 
@@ -248,7 +255,7 @@ namespace pal
 
     // first do some checks whether to extract candidates or not
 
-    // feature has to be labeled ?
+    // feature has to be labeled?
     if ( !context->layer->toLabel )
       return true;
 
@@ -256,7 +263,7 @@ namespace pal
     if ( !context->layer->isScaleValid( context->scale ) )
       return true;
 
-    // is the feature well defined ? // TODO Check epsilon
+    // is the feature well defined?  TODO Check epsilon
     if ( ft_ptr->getLabelWidth() < 0.0000001 || ft_ptr->getLabelHeight() < 0.0000001 )
       return true;
 
@@ -337,17 +344,17 @@ namespace pal
 
 
   /**
-  * \Brief Problem Factory
+  * \brief Problem Factory
   * Select features from user's choice layers within
   * a specific bounding box
-  * param nbLayers # wanted layers
-  * param layersFactor layers importance
-  * param layersName layers in problem
-  * param lambda_min west bbox
-  * param phi_min south bbox
-  * param lambda_max east bbox
-  * param phi_max north bbox
-  * param scale the scale
+  * @param nbLayers # wanted layers
+  * @param layersFactor layers importance
+  * @param layersName layers in problem
+  * @param lambda_min west bbox
+  * @param phi_min south bbox
+  * @param lambda_max east bbox
+  * @param phi_max north bbox
+  * @param scale the scale
   */
   Problem* Pal::extract( int nbLayers, char **layersName, double *layersFactor, double lambda_min, double phi_min, double lambda_max, double phi_max, double scale, std::ofstream *svgmap )
   {
@@ -429,8 +436,8 @@ namespace pal
             if ( layer->getMergeConnectedLines() )
               layer->joinConnectedFeatures();
 
-            if ( layer->getRepeatDistance() > 0 )
-              layer->chopFeatures( layer->getRepeatDistance() );
+            layer->chopFeaturesAtRepeatDistance();
+
 
             context->layer = layer;
             context->priority = layersFactor[i];
@@ -729,7 +736,7 @@ namespace pal
     t.start();
 
     // First, extract the problem
-    // TODO which is the minimum scale ? (> 0, >= 0, >= 1, >1 )
+    // TODO which is the minimum scale? (> 0, >= 0, >= 1, >1 )
     if ( scale < 1 || ( prob = extract( nbLayers, layersName, layersFactor, bbox[0], bbox[1], bbox[2], bbox[3], scale,
 #ifdef _EXPORT_MAP_
                                         & svgmap

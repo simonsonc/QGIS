@@ -95,7 +95,7 @@ class CORE_EXPORT QgsLabelingEngineInterface
     virtual int addDiagramLayer( QgsVectorLayer* layer, const QgsDiagramLayerSettings* s )
     { Q_UNUSED( layer ); Q_UNUSED( s ); return 0; }
     //! called for every feature
-    virtual void registerFeature( const QString& layerID, QgsFeature& feat, const QgsRenderContext& context = QgsRenderContext() ) = 0;
+    virtual void registerFeature( const QString& layerID, QgsFeature& feat, const QgsRenderContext& context = QgsRenderContext(), QString dxfLayer = QString::null ) = 0;
     //! called for every diagram feature
     virtual void registerDiagramFeature( const QString& layerID, QgsFeature& feat, const QgsRenderContext& context = QgsRenderContext() )
     { Q_UNUSED( layerID ); Q_UNUSED( feat ); Q_UNUSED( context ); }
@@ -161,7 +161,18 @@ class CORE_EXPORT QgsMapRenderer : public QObject
       BlendSoftLight,
       BlendHardLight,
       BlendDifference,
-      BlendSubtract
+      BlendSubtract,
+      BlendSource,
+      BlendDestinationOver,
+      BlendClear,
+      BlendDestination,
+      BlendSourceIn,
+      BlendDestinationIn,
+      BlendSourceOut,
+      BlendDestinationOut,
+      BlendSourceAtop,
+      BlendDestinationAtop,
+      BlendXor,
     };
 
     //! constructor
@@ -313,6 +324,14 @@ class CORE_EXPORT QgsMapRenderer : public QObject
     //! @note added in 2.4
     const QgsMapSettings& mapSettings();
 
+    /** Convenience function to project an extent into the layer source
+     * CRS, but also split it into two extents if it crosses
+     * the +/- 180 degree line. Modifies the given extent to be in the
+     * source CRS coordinates, and if it was split, returns true, and
+     * also sets the contents of the r2 parameter
+     */
+    bool splitLayersExtent( QgsMapLayer* layer, QgsRectangle& extent, QgsRectangle& r2 );
+
   signals:
 
     //! @deprecated in 2.4 - not emitted anymore
@@ -359,14 +378,6 @@ class CORE_EXPORT QgsMapRenderer : public QObject
 
     //! adjust extent to fit the pixmap size
     void adjustExtentToSize();
-
-    /** Convenience function to project an extent into the layer source
-     * CRS, but also split it into two extents if it crosses
-     * the +/- 180 degree line. Modifies the given extent to be in the
-     * source CRS coordinates, and if it was split, returns true, and
-     * also sets the contents of the r2 parameter
-     */
-    bool splitLayersExtent( QgsMapLayer* layer, QgsRectangle& extent, QgsRectangle& r2 );
 
     //! indicates drawing in progress
     static bool mDrawing;
@@ -426,7 +437,6 @@ class CORE_EXPORT QgsMapRenderer : public QObject
     QgsMapSettings mMapSettings;
 
     QHash< QString, QgsLayerCoordinateTransform > mLayerCoordinateTransformInfo;
-
 };
 
 #endif

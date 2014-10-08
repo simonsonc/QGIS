@@ -294,6 +294,10 @@
         <file>themes/default/mIconClear.svg</file>
         <file>themes/default/mIconClose.png</file>
         <file>themes/default/mIconCollapse.png</file>
+        <file>themes/default/mIconColorBox.svg</file>
+        <file>themes/default/mIconColorPicker.svg</file>
+        <file>themes/default/mIconColorSwatches.svg</file>
+        <file>themes/default/mIconColorWheel.svg</file>
         <file>themes/default/mIconConnect.png</file>
         <file>themes/default/mIconCritical.png</file>
         <file>themes/default/mIconDataDefine.svg</file>
@@ -305,6 +309,7 @@
         <file>themes/default/mIconDbSchema.png</file>
         <file>themes/default/mIconDelete.png</file>
         <file>themes/default/mIconDeselected.svg</file>
+        <file>themes/default/mIconDropDownMenu.svg</file>
         <file>themes/default/mIconEditable.png</file>
         <file>themes/default/mIconEditableEdits.png</file>
         <file>themes/default/mIconExpand.png</file>
@@ -458,6 +463,10 @@
         <file>flags/te.png</file>
         <file>flags/tl.png</file>
         <file>themes/default/mActionZoomToArea.svg</file>
+        <file>themes/default/mActionMapIdentification.svg</file>
+        <file>themes/default/mActionHighlightFeature.svg</file>
+        <file>themes/default/mActionScaleHighlightFeature.svg</file>
+        <file>themes/default/mActionPanHighlightFeature.svg</file>
     </qresource>
     <qresource prefix="/images/tips">
         <file alias="symbol_levels.png">qgis_tips/symbol_levels.png</file>

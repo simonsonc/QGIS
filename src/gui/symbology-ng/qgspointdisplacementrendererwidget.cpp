@@ -49,11 +49,12 @@ QgsPointDisplacementRendererWidget::QgsPointDisplacementRendererWidget( QgsVecto
   }
   setupUi( this );
 
-  if ( renderer && renderer->type() == "pointDisplacement" )
+
+  if ( renderer )
   {
-    mRenderer = dynamic_cast<QgsPointDisplacementRenderer*>( renderer->clone() );
+    mRenderer = QgsPointDisplacementRenderer::convertFromRenderer( renderer );
   }
-  else
+  if ( !mRenderer )
   {
     mRenderer = new QgsPointDisplacementRenderer();
   }
@@ -92,6 +93,11 @@ QgsPointDisplacementRendererWidget::QgsPointDisplacementRendererWidget( QgsVecto
       mRendererComboBox->addItem( m->icon(), m->visibleName(), *it );
     }
   }
+
+  mCircleColorButton->setColorDialogTitle( tr( "Select color" ) );
+  mCircleColorButton->setContext( "symbology" );
+  mLabelColorButton->setContext( "symbology" );
+  mLabelColorButton->setColorDialogTitle( tr( "Select color" ) );
 
   mCircleWidthSpinBox->setValue( mRenderer->circleWidth() );
   mCircleColorButton->setColor( mRenderer->circleColor() );

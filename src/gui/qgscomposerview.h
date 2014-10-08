@@ -36,10 +36,9 @@ class QgsComposerPicture;
 class QgsComposerRuler;
 class QgsComposerScaleBar;
 class QgsComposerShape;
-class QgsComposerAttributeTable;
+class QgsComposerAttributeTableV2;
 
 /** \ingroup MapComposer
- * \ingroup gui
  * Widget to display the composer items. Manages the composer tools and the
  * mouse/key events.
  * Creates the composer items according to the current map tools and keeps track
@@ -65,7 +64,8 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
       AddRectangle,
       AddEllipse,
       AddTriangle,
-      AddTable, //add attribute table
+      AddTable, //add table
+      AddAttributeTable,
       MoveItemContent, //move content of item (e.g. content of map)
       Pan,
       Zoom
@@ -229,8 +229,10 @@ class GUI_EXPORT QgsComposerView: public QGraphicsView
 
     /**Zoom composition from a mouse wheel event*/
     void wheelZoom( QWheelEvent * event );
-    /**Redraws the rubber band*/
-    void updateRubberBand( QPointF & pos );
+    /**Redraws the rectangular rubber band*/
+    void updateRubberBandRect( QPointF & pos, const bool constrainSquare = false, const bool fromCenter = false );
+    /**Redraws the linear rubber band*/
+    void updateRubberBandLine( const QPointF & pos, const bool constrainAngles = false );
     /**Removes the rubber band and cleans up*/
     void removeRubberBand();
 

@@ -30,6 +30,7 @@
 #include "qgsfeature.h"
 #include "qgsgeometry.h"
 #include "qgslogger.h"
+#include "qgsmaplayerregistry.h"
 #include "qgsogcutils.h"
 #include "qgsvectorlayer.h"
 #include "qgssymbollayerv2utils.h"
@@ -310,6 +311,7 @@ static QgsExpression::Interval getInterval( const QVariant& value, QgsExpression
 
   return QgsExpression::Interval::invalidInterVal();
 }
+
 static QgsGeometry getGeometry( const QVariant& value, QgsExpression* parent )
 {
   if ( value.canConvert<QgsGeometry>() )
@@ -319,6 +321,14 @@ static QgsGeometry getGeometry( const QVariant& value, QgsExpression* parent )
   return QgsGeometry();
 }
 
+static QgsFeature getFeature( const QVariant& value, QgsExpression* parent )
+{
+  if ( value.canConvert<QgsFeature>() )
+    return value.value<QgsFeature>();
+
+  parent->setEvalErrorString( "Cannot convert to QgsFeature" );
+  return 0;
+}
 
 // this handles also NULL values
 static TVL getTVLValue( const QVariant& value, QgsExpression* parent )
@@ -786,6 +796,17 @@ static QVariant fcnFeatureId( const QVariantList& , const QgsFeature* f, QgsExpr
   return f ? QVariant(( int )f->id() ) : QVariant();
 }
 
+static QVariant fcnFeature( const QVariantList& , const QgsFeature* f, QgsExpression* )
+{
+  return f ? QVariant::fromValue( *f ) : QVariant();
+}
+static QVariant fcnAttribute( const QVariantList& values, const QgsFeature*, QgsExpression* parent )
+{
+  QgsFeature feat = getFeature( values.at( 0 ), parent );
+  QString attr = getStringValue( values.at( 1 ), parent );
+
+  return feat.attribute( attr );
+}
 static QVariant fcnConcat( const QVariantList& values, const QgsFeature* , QgsExpression *parent )
 {
   QString concat;
@@ -1485,6 +1506,52 @@ static QVariant fcnSpecialColumn( const QVariantList& values, const QgsFeature* 
   return QgsExpression::specialColumn( varName );
 }
 
+static QVariant fcnGetFeature( const QVariantList& values, const QgsFeature *, QgsExpression* parent )
+{
+  //arguments: 1. layer id / name, 2. key attribute, 3. eq value
+  QString layerString = getStringValue( values.at( 0 ), parent );
+  QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( QgsMapLayerRegistry::instance()->mapLayer( layerString ) ); //search by id first
+  if ( !vl )
+  {
+    QList<QgsMapLayer *> layersByName = QgsMapLayerRegistry::instance()->mapLayersByName( layerString );
+    if ( layersByName.size() > 0 )
+    {
+      vl = qobject_cast<QgsVectorLayer*>( layersByName.at( 0 ) );
+    }
+  }
+
+  //no layer found
+  if ( !vl )
+  {
+    return QVariant();
+  }
+
+  QString attribute = getStringValue( values.at( 1 ), parent );
+  int attributeId = vl->fieldNameIndex( attribute );
+  if ( attributeId == -1 )
+  {
+    return QVariant();
+  }
+
+  const QVariant& attVal = values.at( 2 );
+  QgsFeatureRequest req;
+  if ( !parent->needsGeometry() )
+  {
+    req.setFlags( QgsFeatureRequest::NoGeometry );
+  }
+  QgsFeatureIterator fIt = vl->getFeatures( req );
+
+  QgsFeature fet;
+  while ( fIt.nextFeature( fet ) )
+  {
+    if ( fet.attribute( attributeId ) == attVal )
+    {
+      return QVariant::fromValue( fet );
+    }
+  }
+  return QVariant();
+}
+
 bool QgsExpression::registerFunction( QgsExpression::Function* function )
 {
   int fnIdx = functionIndex( function->name() );
@@ -1660,8 +1727,16 @@ const QList<QgsExpression::Function*> &QgsExpression::Functions()
     << new StaticFunction( "geomToWKT", 1, fcnGeomToWKT, "Geometry" )
     << new StaticFunction( "$rownum", 0, fcnRowNumber, "Record" )
     << new StaticFunction( "$id", 0, fcnFeatureId, "Record" )
+    << new StaticFunction( "$currentfeature", 0, fcnFeature, "Record" )
     << new StaticFunction( "$scale", 0, fcnScale, "Record" )
     << new StaticFunction( "$uuid", 0, fcnUuid, "Record" )
+    << new StaticFunction( "getFeature", 3, fcnGetFeature, "Record" )
+
+    //return all attributes string for referencedColumns - this is caught by
+    // QgsFeatureRequest::setSubsetOfAttributes and causes all attributes to be fetched by the
+    // feature request
+    << new StaticFunction( "attribute", 2, fcnAttribute, "Record", QString(), false, QStringList( QgsFeatureRequest::AllAttributes ) )
+
     << new StaticFunction( "_specialcol_", 1, fcnSpecialColumn, "Special" )
     ;
   }
@@ -1669,6 +1744,7 @@ const QList<QgsExpression::Function*> &QgsExpression::Functions()
 }
 
 QMap<QString, QVariant> QgsExpression::gmSpecialColumns;
+QMap<QString, QString> QgsExpression::gmSpecialColumnGroups;
 
 void QgsExpression::setSpecialColumn( const QString& name, QVariant variant )
 {
@@ -1715,10 +1791,23 @@ bool QgsExpression::hasSpecialColumn( const QString& name )
     // This is really sub-optimal, we should get rid of the special columns and instead have contexts in which some values
     // are defined and some are not ($rownum makes sense only in field calculator, $scale only when rendering, $page only for composer etc.)
 
-    QStringList lst;
-    lst << "$page" << "$feature" << "$numpages" << "$numfeatures" << "$atlasfeatureid" << "$atlasgeometry" << "$map";
-    foreach ( QString c, lst )
-      setSpecialColumn( c, QVariant() );
+    //pairs of column name to group name
+    QList< QPair<QString, QString> > lst;
+    lst << qMakePair( QString( "$page" ), QString( "Composer" ) );
+    lst << qMakePair( QString( "$feature" ), QString( "Atlas" ) );
+    lst << qMakePair( QString( "$numpages" ), QString( "Composer" ) );
+    lst << qMakePair( QString( "$numfeatures" ), QString( "Atlas" ) );
+    lst << qMakePair( QString( "$atlasfeatureid" ), QString( "Atlas" ) );
+    lst << qMakePair( QString( "$atlasgeometry" ), QString( "Atlas" ) );
+    lst << qMakePair( QString( "$atlasfeature" ), QString( "Atlas" ) );
+    lst << qMakePair( QString( "$map" ), QString( "Composer" ) );
+
+    QList< QPair<QString, QString> >::const_iterator it = lst.constBegin();
+    for ( ; it != lst.constEnd(); ++it )
+    {
+      setSpecialColumn(( *it ).first, QVariant() );
+      gmSpecialColumnGroups[( *it ).first ] = ( *it ).second;
+    }
 
     initialized = true;
   }
@@ -1741,7 +1830,9 @@ QList<QgsExpression::Function*> QgsExpression::specialColumns()
   QList<Function*> defs;
   for ( QMap<QString, QVariant>::const_iterator it = gmSpecialColumns.begin(); it != gmSpecialColumns.end(); ++it )
   {
-    defs << new StaticFunction( it.key(), 0, 0, "Record" );
+    //check for special column group name
+    QString group = gmSpecialColumnGroups.value( it.key(), "Record" );
+    defs << new StaticFunction( it.key(), 0, 0, group );
   }
   return defs;
 }
@@ -1804,6 +1895,7 @@ QStringList QgsExpression::referencedColumns()
 {
   if ( !mRootNode )
     return QStringList();
+
   QStringList columns = mRootNode->referencedColumns();
 
   // filter out duplicates
@@ -2037,6 +2129,12 @@ QVariant QgsExpression::NodeBinaryOperator::eval( QgsExpression* parent, const Q
   switch ( mOp )
   {
     case boPlus:
+      if ( vL.type() == QVariant::String && vR.type() == QVariant::String )
+      {
+        QString sL = getStringValue( vL, parent ); ENSURE_NO_EVAL_ERROR;
+        QString sR = getStringValue( vR, parent ); ENSURE_NO_EVAL_ERROR;
+        return QVariant( sL + sR );
+      }
     case boMinus:
     case boMul:
     case boDiv:
@@ -2426,6 +2524,26 @@ QString QgsExpression::NodeFunction::dump() const
     return fd->name(); // special column
   else
     return QString( "%1(%2)" ).arg( fd->name() ).arg( mArgs ? mArgs->dump() : QString() ); // function
+}
+
+QStringList QgsExpression::NodeFunction::referencedColumns() const
+{
+  Function* fd = Functions()[mFnIndex];
+  QStringList functionColumns = fd->referencedColumns();
+
+  if ( !mArgs )
+  {
+    //no referenced columns in arguments, just return function's referenced columns
+    return functionColumns;
+  }
+
+  foreach ( Node* n, mArgs->list() )
+  {
+    functionColumns.append( n->referencedColumns() );
+  }
+
+  //remove duplicates and return
+  return functionColumns.toSet().toList();
 }
 
 //

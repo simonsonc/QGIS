@@ -69,9 +69,9 @@ void QgsWFSProjectParser::featureTypeList( QDomElement& parentElement, QDomDocum
   }
 
   QStringList wfsLayersId = mProjectParser.wfsLayers();
-  QStringList wfstUpdateLayersId = wfstUpdateLayers();
-  QStringList wfstInsertLayersId = wfstInsertLayers();
-  QStringList wfstDeleteLayersId = wfstDeleteLayers();
+  QSet<QString> wfstUpdateLayersId = wfstUpdateLayers();
+  QSet<QString> wfstInsertLayersId = wfstInsertLayers();
+  QSet<QString> wfstDeleteLayersId = wfstDeleteLayers();
 
   QMap<QString, QgsMapLayer *> layerMap;
 
@@ -199,10 +199,10 @@ void QgsWFSProjectParser::featureTypeList( QDomElement& parentElement, QDomDocum
   return;
 }
 
-QStringList QgsWFSProjectParser::wfstUpdateLayers() const
+QSet<QString> QgsWFSProjectParser::wfstUpdateLayers() const
 {
-  QStringList publiedIds = mProjectParser.wfsLayers();
-  QStringList wfsList;
+  QSet<QString> publishedIds = wfsLayerSet();
+  QSet<QString> wfsList;
   if ( !mProjectParser.xmlDocument() )
   {
     return wfsList;
@@ -227,16 +227,18 @@ QStringList QgsWFSProjectParser::wfstUpdateLayers() const
   for ( int i = 0; i < valueList.size(); ++i )
   {
     QString id = valueList.at( i ).toElement().text();
-    if ( publiedIds.contains( id ) )
-      wfsList << id;
+    if ( publishedIds.contains( id ) )
+    {
+      wfsList.insert( id );
+    }
   }
   return wfsList;
 }
 
-QStringList QgsWFSProjectParser::wfstInsertLayers() const
+QSet<QString> QgsWFSProjectParser::wfstInsertLayers() const
 {
-  QStringList updateIds = wfstUpdateLayers();
-  QStringList wfsList;
+  QSet<QString> publishedIds = wfsLayerSet();
+  QSet<QString> wfsList;
   if ( !mProjectParser.xmlDocument() )
   {
     return wfsList;
@@ -261,16 +263,18 @@ QStringList QgsWFSProjectParser::wfstInsertLayers() const
   for ( int i = 0; i < valueList.size(); ++i )
   {
     QString id = valueList.at( i ).toElement().text();
-    if ( updateIds.contains( id ) )
-      wfsList << id;
+    if ( publishedIds.contains( id ) )
+    {
+      wfsList.insert( id );
+    }
   }
   return wfsList;
 }
 
-QStringList QgsWFSProjectParser::wfstDeleteLayers() const
+QSet<QString> QgsWFSProjectParser::wfstDeleteLayers() const
 {
-  QStringList insertIds = wfstInsertLayers();
-  QStringList wfsList;
+  QSet<QString> publishedIds = wfsLayerSet();
+  QSet<QString> wfsList;
   if ( !mProjectParser.xmlDocument() )
   {
     return wfsList;
@@ -295,8 +299,10 @@ QStringList QgsWFSProjectParser::wfstDeleteLayers() const
   for ( int i = 0; i < valueList.size(); ++i )
   {
     QString id = valueList.at( i ).toElement().text();
-    if ( insertIds.contains( id ) )
-      wfsList << id;
+    if ( publishedIds.contains( id ) )
+    {
+      wfsList.insert( id );
+    }
   }
   return wfsList;
 }
@@ -455,6 +461,36 @@ void QgsWFSProjectParser::describeFeatureType( const QString& aTypeName, QDomEle
 QStringList QgsWFSProjectParser::wfsLayers() const
 {
   return mProjectParser.wfsLayers();
+}
+
+QSet<QString> QgsWFSProjectParser::wfsLayerSet() const
+{
+  return QSet<QString>::fromList( wfsLayers() );
+}
+
+int QgsWFSProjectParser::wfsLayerPrecision( const QString& aLayerId ) const
+{
+  QStringList wfsLayersId = mProjectParser.wfsLayers();
+  if ( !wfsLayersId.contains( aLayerId ) )
+  {
+    return -1;
+  }
+  int prec = 8;
+  QDomElement propertiesElem = mProjectParser.propertiesElem();
+  if ( !propertiesElem.isNull() )
+  {
+    QDomElement wfsPrecElem = propertiesElem.firstChildElement( "WFSLayersPrecision" );
+    if ( !wfsPrecElem.isNull() )
+    {
+      QDomElement wfsLayerPrecElem = wfsPrecElem.firstChildElement( aLayerId );
+      if ( !wfsLayerPrecElem.isNull() )
+      {
+        QString precStr = wfsLayerPrecElem.text();
+        prec = precStr.toInt();
+      }
+    }
+  }
+  return prec;
 }
 
 QList<QgsMapLayer*> QgsWFSProjectParser::mapLayerFromTypeName( const QString& aTypeName, bool useCache ) const

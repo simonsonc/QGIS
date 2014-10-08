@@ -19,6 +19,7 @@
 #include "qgscomposition.h"
 #include "qgssymbolv2.h"
 #include "qgssymbollayerv2utils.h"
+#include "qgscomposermodel.h"
 #include <QPainter>
 
 QgsComposerShape::QgsComposerShape( QgsComposition* composition ): QgsComposerItem( composition ),
@@ -112,6 +113,11 @@ void QgsComposerShape::paint( QPainter* painter, const QStyleOptionGraphicsItem*
   {
     return;
   }
+  if ( !shouldDrawItem() )
+  {
+    return;
+  }
+
   drawBackground( painter );
   drawFrame( painter );
 
@@ -391,6 +397,22 @@ bool QgsComposerShape::readXML( const QDomElement& itemElem, const QDomDocument&
   return true;
 }
 
+void QgsComposerShape::setShapeType( QgsComposerShape::Shape s )
+{
+  if ( s == mShape )
+  {
+    return;
+  }
+
+  mShape = s;
+
+  if ( mComposition && id().isEmpty() )
+  {
+    //notify the model that the display name has changed
+    mComposition->itemsModel()->updateItemDisplayName( this );
+  }
+}
+
 void QgsComposerShape::setCornerRadius( double radius )
 {
   mCornerRadius = radius;
@@ -422,4 +444,27 @@ void QgsComposerShape::setSceneRect( const QRectF& rectangle )
 
   updateBoundingRect();
   update();
+}
+
+QString QgsComposerShape::displayName() const
+{
+  if ( !id().isEmpty() )
+  {
+    return id();
+  }
+
+  switch ( mShape )
+  {
+    case Ellipse:
+      return tr( "<ellipse>" );
+      break;
+    case Rectangle:
+      return tr( "<rectangle>" );
+      break;
+    case Triangle:
+      return tr( "<triangle>" );
+      break;
+  }
+
+  return tr( "<shape>" );
 }

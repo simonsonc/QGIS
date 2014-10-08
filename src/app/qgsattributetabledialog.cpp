@@ -174,8 +174,6 @@ QgsAttributeTableDialog::QgsAttributeTableDialog( QgsVectorLayer *theLayer, QWid
   mSaveEditsButton->setEnabled( mToggleEditingButton->isEnabled() && mLayer->isEditable() );
   mOpenFieldCalculator->setEnabled(( canChangeAttributes || canAddAttributes ) && mLayer->isEditable() );
   mDeleteSelectedButton->setEnabled( canDeleteFeatures && mLayer->isEditable() );
-  mAddAttribute->setEnabled( canAddAttributes && mLayer->isEditable() );
-  mRemoveAttribute->setEnabled( canDeleteAttributes && mLayer->isEditable() );
   mAddFeature->setEnabled( canAddFeatures && mLayer->isEditable() && mLayer->geometryType() == QGis::NoGeometry );
   mAddFeature->setHidden( !canAddFeatures || mLayer->geometryType() != QGis::NoGeometry );
 
@@ -397,13 +395,6 @@ void QgsAttributeTableDialog::filterExpressionBuilder()
 
   if ( dlg.exec() == QDialog::Accepted )
   {
-    mFilterQuery->setText( dlg.expressionText() );
-    mFilterButton->setDefaultAction( mActionAdvancedFilter );
-    mFilterButton->setPopupMode( QToolButton::MenuButtonPopup );
-    mCbxCaseSensitive->setVisible( false );
-    mFilterQuery->setVisible( true );
-    mApplyFilterButton->setVisible( true );
-    mMainView->setFilterMode( QgsAttributeTableFilterModel::ShowFilteredList );
     setFilterExpression( dlg.expressionText() );
   }
 }
@@ -566,12 +557,9 @@ void QgsAttributeTableDialog::editingToggled()
   bool canChangeAttributes = mLayer->dataProvider()->capabilities() & QgsVectorDataProvider::ChangeAttributeValues;
   bool canDeleteFeatures = mLayer->dataProvider()->capabilities() & QgsVectorDataProvider::DeleteFeatures;
   bool canAddAttributes = mLayer->dataProvider()->capabilities() & QgsVectorDataProvider::AddAttributes;
-  bool canDeleteAttributes = mLayer->dataProvider()->capabilities() & QgsVectorDataProvider::DeleteAttributes;
   bool canAddFeatures = mLayer->dataProvider()->capabilities() & QgsVectorDataProvider::AddFeatures;
   mOpenFieldCalculator->setEnabled(( canChangeAttributes || canAddAttributes ) && mLayer->isEditable() );
   mDeleteSelectedButton->setEnabled( canDeleteFeatures && mLayer->isEditable() );
-  mAddAttribute->setEnabled( canAddAttributes && mLayer->isEditable() );
-  mRemoveAttribute->setEnabled( canDeleteAttributes && mLayer->isEditable() );
   mAddFeature->setEnabled( canAddFeatures && mLayer->isEditable() && mLayer->geometryType() == QGis::NoGeometry );
 
   mUpdateExpressionBox->setVisible( mLayer->isEditable() );
@@ -591,16 +579,24 @@ void QgsAttributeTableDialog::on_mAddAttribute_clicked()
   QgsAddAttrDialog dialog( mLayer, this );
   if ( dialog.exec() == QDialog::Accepted )
   {
-    mLayer->beginEditCommand( tr( "Attribute added" ) );
-    if ( mLayer->addAttribute( dialog.field() ) )
+    if ( dialog.mode() == QgsAddAttrDialog::VirtualField )
     {
-      mLayer->endEditCommand();
+      mLayer->addExpressionField( dialog.expression(), dialog.field() );
     }
     else
     {
-      QMessageBox::critical( 0, tr( "Attribute Error" ), tr( "The attribute could not be added to the layer" ) );
-      mLayer->destroyEditCommand();
+      mLayer->beginEditCommand( tr( "Attribute added" ) );
+      if ( mLayer->addAttribute( dialog.field() ) )
+      {
+        mLayer->endEditCommand();
+      }
+      else
+      {
+        mLayer->destroyEditCommand();
+        QMessageBox::critical( this, tr( "Failed to add field" ), tr( "Failed to add field '%1' of type '%2'. Is the field name unique?" ).arg( dialog.field().name() ).arg( dialog.field().typeName() ) );
+      }
     }
+
     // update model - a field has been added or updated
     masterModel->reload( masterModel->index( 0, 0 ), masterModel->index( masterModel->rowCount() - 1, masterModel->columnCount() - 1 ) );
     columnBoxInit();
@@ -698,6 +694,14 @@ void QgsAttributeTableDialog::filterQueryAccepted()
 
 void QgsAttributeTableDialog::setFilterExpression( QString filterString )
 {
+  mFilterQuery->setText( filterString );
+  mFilterButton->setDefaultAction( mActionAdvancedFilter );
+  mFilterButton->setPopupMode( QToolButton::MenuButtonPopup );
+  mCbxCaseSensitive->setVisible( false );
+  mFilterQuery->setVisible( true );
+  mApplyFilterButton->setVisible( true );
+  mMainView->setFilterMode( QgsAttributeTableFilterModel::ShowFilteredList );
+
   QgsFeatureIds filteredFeatures;
   QgsDistanceArea myDa;
 

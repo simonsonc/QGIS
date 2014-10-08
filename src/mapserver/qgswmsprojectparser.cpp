@@ -34,12 +34,14 @@
 #include "qgscomposerpicture.h"
 #include "qgscomposerscalebar.h"
 #include "qgscomposershape.h"
+#include "qgslayertreegroup.h"
 
 #include <QFileInfo>
 #include <QTextDocument>
 
-QgsWMSProjectParser::QgsWMSProjectParser( QDomDocument* xmlDoc, const QString& filePath ): QgsWMSConfigParser(),
-    mProjectParser( xmlDoc, filePath )
+QgsWMSProjectParser::QgsWMSProjectParser( QDomDocument* xmlDoc, const QString& filePath )
+    : QgsWMSConfigParser()
+    , mProjectParser( xmlDoc, filePath )
 {
   mLegendLayerFont.fromString( mProjectParser.firstComposerLegendElement().attribute( "layerFont" ) );
   mLegendItemFont.fromString( mProjectParser.firstComposerLegendElement().attribute( "itemFont" ) );
@@ -104,11 +106,11 @@ QList<QgsMapLayer*> QgsWMSProjectParser::mapLayerFromStyle( const QString& lName
   }
 
   //does lName refer to a leaf layer
-  const QHash< QString, QDomElement >& projectLayerElementsByName = mProjectParser.projectLayerElementsByName();
-  QHash< QString, QDomElement >::const_iterator layerElemIt = projectLayerElementsByName.find( lName );
-  if ( layerElemIt != projectLayerElementsByName.constEnd() )
+  const QHash< QString, QDomElement > &projectLayerElements = mProjectParser.useLayerIDs() ? mProjectParser.projectLayerElementsById() : mProjectParser.projectLayerElementsByName();
+  QHash< QString, QDomElement >::const_iterator layerElemIt = projectLayerElements.find( lName );
+  if ( layerElemIt != projectLayerElements.constEnd() )
   {
-    return ( QList<QgsMapLayer*>() << mProjectParser.createLayerFromElement( layerElemIt.value(), useCache ) );
+    return QList<QgsMapLayer*>() << mProjectParser.createLayerFromElement( layerElemIt.value(), useCache );
   }
 
   //group or project name
@@ -168,8 +170,7 @@ QList<QgsMapLayer*> QgsWMSProjectParser::mapLayerFromStyle( const QString& lName
         QHash< QString, QDomElement >::const_iterator pLayerNameIt = pLayerByName.find( lName );
         if ( pLayerNameIt != pLayerByName.constEnd() )
         {
-          pp.layerFromLegendLayer( pLayerNameIt.value(), layers, useCache );
-          break;
+          return ( QList<QgsMapLayer*>() << pp.createLayerFromElement( pLayerNameIt.value(), useCache ) );
         }
 
         const QList<QDomElement>& legendGroupElements = pp.legendGroupElements();
@@ -353,7 +354,22 @@ double QgsWMSProjectParser::imageQuality() const
   return imageQuality;
 }
 
-QgsComposition* QgsWMSProjectParser::initComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, QList< QgsComposerMap*>& mapList, QList< QgsComposerLabel* >& labelList, QList<const QgsComposerHtml *>& htmlList ) const
+int QgsWMSProjectParser::WMSPrecision() const
+{
+  int WMSPrecision = -1;
+  QDomElement propertiesElem = mProjectParser.propertiesElem();
+  if ( !propertiesElem.isNull() )
+  {
+    QDomElement WMSPrecisionElem = propertiesElem.firstChildElement( "WMSPrecision" );
+    if ( !WMSPrecisionElem.isNull() )
+    {
+      WMSPrecision = WMSPrecisionElem.text().toInt();
+    }
+  }
+  return WMSPrecision;
+}
+
+QgsComposition* QgsWMSProjectParser::initComposition( const QString& composerTemplate, QgsMapRenderer* mapRenderer, QList< QgsComposerMap* >& mapList, QList< QgsComposerLegend* >& legendList, QList< QgsComposerLabel* >& labelList, QList<const QgsComposerHtml *>& htmlList ) const
 {
   //Create composition from xml
   QDomElement composerElem = composerByName( composerTemplate );
@@ -379,6 +395,7 @@ QgsComposition* QgsWMSProjectParser::initComposition( const QString& composerTem
 
   labelList.clear();
   mapList.clear();
+  legendList.clear();
   htmlList.clear();
 
   QList<QgsComposerItem* > itemList;
@@ -396,6 +413,23 @@ QgsComposition* QgsWMSProjectParser::initComposition( const QString& composerTem
     if ( map )
     {
       mapList.push_back( map );
+      continue;
+    }
+    QgsComposerLegend* legend = dynamic_cast< QgsComposerLegend *>( *itemIt );
+    if ( legend )
+    {
+      /*
+      QgsLegendModelV2* model = legend->modelV2();
+      QgsLayerTreeGroup* root = model->rootGroup();
+      QStringList layerIds = root->findLayerIds();
+      throw QgsMapServiceException( "Error", "Composer legend layerIds "+layerIds.join(" ,") );
+      */
+      if ( legend->autoUpdateModel() )
+      {
+        QgsLegendModelV2* model = legend->modelV2();
+        model->setRootGroup( projectLayerTreeGroup() );
+      }
+      legendList.push_back( legend );
       continue;
     }
     QgsComposerPicture* pic = dynamic_cast< QgsComposerPicture *>( *itemIt );
@@ -686,7 +720,7 @@ void QgsWMSProjectParser::addDrawingOrder( QDomElement& parentElem, QDomDocument
     return;
   }
 
-  bool useDrawingOrder = ( legendElement.attribute( "updateDrawingOrder" ) == "false" );
+  bool useDrawingOrder = legendElement.attribute( "updateDrawingOrder" ) == "false";
   QMap<int, QString> orderedLayerNames;
 
   QDomNodeList legendChildren = legendElement.childNodes();
@@ -768,7 +802,7 @@ void QgsWMSProjectParser::addDrawingOrderEmbeddedGroup( QDomElement groupElem, b
   for ( int i = 0; i < layerNodeList.size(); ++i )
   {
     layerElem = layerNodeList.at( i ).toElement();
-    layerName = layerElem.attribute( "name" );
+    layerName = mProjectParser.useLayerIDs() ? layerElem.attribute( "id" ) : layerElem.attribute( "name" );
 
     int layerDrawingOrder = updateDrawingOrder ? -1 : layerElem.attribute( "drawingOrder", "-1" ).toInt();
     if ( layerDrawingOrder == -1 )
@@ -825,7 +859,10 @@ void QgsWMSProjectParser::addDrawingOrder( QDomElement elem, bool useDrawingOrde
   }
   else if ( elem.tagName() == "legendlayer" )
   {
-    QString layerName = elem.attribute( "name" );
+    QString layerName = mProjectParser.useLayerIDs()
+                        ? mProjectParser.layerIdFromLegendLayer( elem )
+                        : elem.attribute( "name" );
+
     if ( useDrawingOrder )
     {
       int drawingOrder = elem.attribute( "drawingOrder", "-1" ).toInt();
@@ -861,10 +898,11 @@ void QgsWMSProjectParser::addLayers( QDomDocument &doc,
     {
       layerElem.setAttribute( "queryable", "1" );
       QString name = currentChildElem.attribute( "name" );
-      if ( mRestrictedLayers.contains( name ) ) //unpublished group
+      if ( mProjectParser.restrictedLayers().contains( name ) ) //unpublished group
       {
         continue;
       }
+
       QDomElement nameElem = doc.createElement( "Name" );
       QDomText nameText = doc.createTextNode( name );
       nameElem.appendChild( nameText );
@@ -933,7 +971,7 @@ void QgsWMSProjectParser::addLayers( QDomDocument &doc,
         continue;
       }
 
-      if ( mRestrictedLayers.contains( currentLayer->name() ) ) //unpublished layer
+      if ( mProjectParser.restrictedLayers().contains( mProjectParser.useLayerIDs() ? currentLayer->id() : currentLayer->name() ) ) //unpublished layer
       {
         continue;
       }
@@ -950,7 +988,7 @@ void QgsWMSProjectParser::addLayers( QDomDocument &doc,
       QDomElement nameElem = doc.createElement( "Name" );
       //We use the layer name even though it might not be unique.
       //Because the id sometimes contains user/pw information and the name is more descriptive
-      QDomText nameText = doc.createTextNode( currentLayer->name() );
+      QDomText nameText = doc.createTextNode( mProjectParser.useLayerIDs() ? currentLayer->id() : currentLayer->name() );
       nameElem.appendChild( nameText );
       layerElem.appendChild( nameElem );
 
@@ -1075,7 +1113,7 @@ void QgsWMSProjectParser::addLayers( QDomDocument &doc,
           mapUrl.addQueryItem( "SERVICE", "WMS" );
           mapUrl.addQueryItem( "VERSION", version );
           mapUrl.addQueryItem( "REQUEST", "GetLegendGraphic" );
-          mapUrl.addQueryItem( "LAYER", currentLayer->name() );
+          mapUrl.addQueryItem( "LAYER", mProjectParser.useLayerIDs() ? currentLayer->id() : currentLayer->name() );
           mapUrl.addQueryItem( "FORMAT", "image/png" );
           mapUrl.addQueryItem( "STYLE", styleNameText.data() );
           if ( version == "1.3.0" )
@@ -1306,7 +1344,7 @@ void QgsWMSProjectParser::addOWSLayers( QDomDocument &doc,
         continue;
       }
 
-      if ( mRestrictedLayers.contains( currentLayer->name() ) ) //unpublished layer
+      if ( mProjectParser.restrictedLayers().contains( mProjectParser.useLayerIDs() ? currentLayer->id() : currentLayer->name() ) ) //unpublished layer
       {
         continue;
       }
@@ -1337,7 +1375,7 @@ void QgsWMSProjectParser::addOWSLayers( QDomDocument &doc,
       // OWSContext Layer opacity is set to 1
       layerElem.setAttribute( "opacity", 1 );
 
-      QString lyrname = currentLayer->name();
+      QString lyrname = mProjectParser.useLayerIDs() ? currentLayer->id() : currentLayer->name();
       layerElem.setAttribute( "name", lyrname );
 
       // define an id based on layer name
@@ -1594,7 +1632,6 @@ bool QgsWMSProjectParser::featureInfoWithWktGeometry() const
 
   return ( wktElem.text().compare( "true", Qt::CaseInsensitive ) == 0 );
 }
-
 
 QHash<QString, QString> QgsWMSProjectParser::featureInfoLayerAliasMap() const
 {
@@ -1893,6 +1930,27 @@ QDomElement QgsWMSProjectParser::composerByName( const QString& composerName ) c
   }
 
   return composerElem;
+}
+
+QgsLayerTreeGroup* QgsWMSProjectParser::projectLayerTreeGroup() const
+{
+  const QDomDocument* projectDoc = mProjectParser.xmlDocument();
+  if ( !projectDoc )
+  {
+    return 0;
+  }
+
+  QDomElement qgisElem = projectDoc->documentElement();
+  if ( qgisElem.isNull() )
+  {
+    return 0;
+  }
+  QDomElement layerTreeElem = qgisElem.firstChildElement( "layer-tree-group" );
+  if ( layerTreeElem.isNull() )
+  {
+    return 0;
+  }
+  return QgsLayerTreeGroup::readXML( layerTreeElem );
 }
 
 bool QgsWMSProjectParser::annotationPosition( const QDomElement& elem, double scaleFactor, double& xPos, double& yPos )

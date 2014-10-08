@@ -21,6 +21,7 @@
 #include "qgsmessagelog.h"
 #include "qgsproject.h"
 #include "qgsvectorlayer.h"
+#include "qgsmaplayerregistry.h"
 
 QgsEditorWidgetRegistry* QgsEditorWidgetRegistry::instance()
 {
@@ -32,6 +33,8 @@ QgsEditorWidgetRegistry::QgsEditorWidgetRegistry()
 {
   connect( QgsProject::instance(), SIGNAL( readMapLayer( QgsMapLayer*, const QDomElement& ) ), this, SLOT( readMapLayer( QgsMapLayer*, const QDomElement& ) ) );
   connect( QgsProject::instance(), SIGNAL( writeMapLayer( QgsMapLayer*, QDomElement&, QDomDocument& ) ), this, SLOT( writeMapLayer( QgsMapLayer*, QDomElement&, QDomDocument& ) ) );
+
+  connect( QgsMapLayerRegistry::instance(), SIGNAL( layerWasAdded( QgsMapLayer* ) ), this, SLOT( mapLayerAdded( QgsMapLayer* ) ) );
 }
 
 QgsEditorWidgetRegistry::~QgsEditorWidgetRegistry()
@@ -177,7 +180,7 @@ const QString QgsEditorWidgetRegistry::readLegacyConfig( QgsVectorLayer* vl, con
   Q_NOWARN_DEPRECATED_POP
 }
 
-void QgsEditorWidgetRegistry::writeMapLayer( QgsMapLayer* mapLayer, QDomElement& layerElem, QDomDocument& doc )
+void QgsEditorWidgetRegistry::writeMapLayer( QgsMapLayer* mapLayer, QDomElement& layerElem, QDomDocument& doc ) const
 {
   if ( mapLayer->type() != QgsMapLayer::VectorLayer )
   {
@@ -190,8 +193,11 @@ void QgsEditorWidgetRegistry::writeMapLayer( QgsMapLayer* mapLayer, QDomElement&
     return;
   }
 
+  QDomNode editTypesNode = doc.createElement( "edittypes" );
+
   for ( int idx = 0; idx < vectorLayer->pendingFields().count(); ++idx )
   {
+    const QgsField &field = vectorLayer->pendingFields()[ idx ];
     const QString& widgetType = vectorLayer->editorWidgetV2( idx );
     if ( !mWidgetFactories.contains( widgetType ) )
     {
@@ -199,33 +205,55 @@ void QgsEditorWidgetRegistry::writeMapLayer( QgsMapLayer* mapLayer, QDomElement&
       continue;
     }
 
-    QDomNodeList editTypeNodes = layerElem.namedItem( "edittypes" ).childNodes();
 
-    for ( int i = 0; i < editTypeNodes.size(); i++ )
+    QDomElement editTypeElement = doc.createElement( "edittype" );
+    editTypeElement.setAttribute( "name", field.name() );
+    editTypeElement.setAttribute( "widgetv2type", widgetType );
+
+    if ( mWidgetFactories.contains( widgetType ) )
     {
-      QDomElement editTypeElement = editTypeNodes.at( i ).toElement();
+      QDomElement ewv2CfgElem = doc.createElement( "widgetv2config" );
+      ewv2CfgElem.setAttribute( "fieldEditable", vectorLayer->fieldEditable( idx ) );
+      ewv2CfgElem.setAttribute( "labelOnTop", vectorLayer->labelOnTop( idx ) );
 
-      QString name = editTypeElement.attribute( "name" );
+      mWidgetFactories[widgetType]->writeConfig( vectorLayer->editorWidgetV2Config( idx ), ewv2CfgElem, doc, vectorLayer, idx );
 
-      if ( vectorLayer->fieldNameIndex( name ) != idx )
-        continue;
-
-      editTypeElement.setAttribute( "widgetv2type", widgetType );
-
-      if ( mWidgetFactories.contains( widgetType ) )
-      {
-        QDomElement ewv2CfgElem = doc.createElement( "widgetv2config" );
-        ewv2CfgElem.setAttribute( "fieldEditable", vectorLayer->fieldEditable( idx ) );
-        ewv2CfgElem.setAttribute( "labelOnTop", vectorLayer->labelOnTop( idx ) );
-
-        mWidgetFactories[widgetType]->writeConfig( vectorLayer->editorWidgetV2Config( idx ), ewv2CfgElem, doc, vectorLayer, idx );
-
-        editTypeElement.appendChild( ewv2CfgElem );
-      }
-      else
-      {
-        QgsMessageLog::logMessage( tr( "Unknown attribute editor widget '%1'" ).arg( widgetType ) );
-      }
+      editTypeElement.appendChild( ewv2CfgElem );
     }
+
+    editTypesNode.appendChild( editTypeElement );
   }
+
+  layerElem.appendChild( editTypesNode );
+}
+
+void QgsEditorWidgetRegistry::mapLayerAdded( QgsMapLayer* mapLayer )
+{
+  QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( mapLayer );
+
+  if ( vl )
+  {
+    connect( vl, SIGNAL( readCustomSymbology( const QDomElement&, QString& ) ), this, SLOT( readSymbology( const QDomElement&, QString& ) ) );
+    connect( vl, SIGNAL( writeCustomSymbology( QDomElement&, QDomDocument&, QString& ) ), this, SLOT( writeSymbology( QDomElement&, QDomDocument&, QString& ) ) );
+  }
+}
+
+void QgsEditorWidgetRegistry::readSymbology( const QDomElement& element, QString& errorMessage )
+{
+  Q_UNUSED( errorMessage )
+  QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( sender() );
+
+  Q_ASSERT( vl );
+
+  readMapLayer( vl, element );
+}
+
+void QgsEditorWidgetRegistry::writeSymbology( QDomElement& element, QDomDocument& doc, QString& errorMessage )
+{
+  Q_UNUSED( errorMessage )
+  QgsVectorLayer* vl = qobject_cast<QgsVectorLayer*>( sender() );
+
+  Q_ASSERT( vl );
+
+  writeMapLayer( vl, element, doc );
 }

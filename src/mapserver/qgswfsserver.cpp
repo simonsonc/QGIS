@@ -23,6 +23,7 @@
 #include "qgsmaplayerregistry.h"
 #include "qgsmaprenderer.h"
 #include "qgsmaptopixel.h"
+#include "qgsmessagelog.h"
 #include "qgspallabeling.h"
 #include "qgsproject.h"
 #include "qgsrasterlayer.h"
@@ -379,6 +380,7 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
   long maxFeat = 0;
   long maxFeatures = -1;
   long featureCounter = 0;
+  int layerPrec = 8;
 
   QDomDocument doc;
   QString errorMsg;
@@ -436,6 +438,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
 
         //excluded attributes for this layer
         const QSet<QString>& layerExcludedAttributes = layer->excludeAttributesWFS();
+
+        //get layer precision
+        layerPrec = mConfigParser->wfsLayerPrecision( layer->id() );
 
         //do a select with searchRect and go through all the features
         QgsVectorDataProvider* provider = layer->dataProvider();
@@ -526,9 +531,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
                                 ).nextFeature( feature );
 
               if ( featureCounter == 0 )
-                startGetFeature( request, format, layerCrs, &searchRect );
+                startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-              sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+              sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
 
               fid = "";
               ++featCounter;
@@ -563,9 +568,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
             while ( fit.nextFeature( feature ) && ( maxFeatures == -1 || featureCounter < maxFeat ) )
             {
               if ( featureCounter == 0 )
-                startGetFeature( request, format, layerCrs, &searchRect );
+                startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-              sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+              sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
               ++featCounter;
               ++featureCounter;
             }
@@ -589,9 +594,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
                 if ( res.toInt() != 0 )
                 {
                   if ( featureCounter == 0 )
-                    startGetFeature( request, format, layerCrs, &searchRect );
+                    startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-                  sendGetFeature( request, format, &feature, featureCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+                  sendGetFeature( request, format, &feature, featureCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
                   ++featureCounter;
                   ++featCounter;
                 }
@@ -604,9 +609,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
           while ( fit.nextFeature( feature ) && ( maxFeatures == -1 || featureCounter < maxFeat ) )
           {
             if ( featureCounter == 0 )
-              startGetFeature( request, format, layerCrs, &searchRect );
+              startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-            sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+            sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
             ++featCounter;
             ++featureCounter;
           }
@@ -621,7 +626,7 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
 
     QgsMapLayerRegistry::instance()->removeAllMapLayers();
     if ( featureCounter == 0 )
-      startGetFeature( request, format, layerCrs, &searchRect );
+      startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
     endGetFeature( request, format );
     return 0;
   }
@@ -775,6 +780,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
       //excluded attributes for this layer
       const QSet<QString>& layerExcludedAttributes = layer->excludeAttributesWFS();
 
+      //get layer precision
+      int layerPrec = mConfigParser->wfsLayerPrecision( layer->id() );
+
       //do a select with searchRect and go through all the features
       QgsVectorDataProvider* provider = layer->dataProvider();
       if ( !provider )
@@ -841,9 +849,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
                             ).nextFeature( feature );
 
           if ( featureCounter == 0 )
-            startGetFeature( request, format, layerCrs, &searchRect );
+            startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-          sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+          sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
           ++featCounter;
           ++featureCounter;
         }
@@ -887,9 +895,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
             if ( res.toInt() != 0 )
             {
               if ( featureCounter == 0 )
-                startGetFeature( request, format, layerCrs, &searchRect );
+                startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-              sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+              sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
               ++featCounter;
               ++featureCounter;
             }
@@ -924,9 +932,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
                               ).nextFeature( feature );
 
             if ( featureCounter == 0 )
-              startGetFeature( request, format, layerCrs, &searchRect );
+              startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-            sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+            sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
 
             fid = "";
             ++featCounter;
@@ -961,9 +969,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
           while ( fit.nextFeature( feature ) && ( maxFeatures == -1 || featureCounter < maxFeat ) )
           {
             if ( featureCounter == 0 )
-              startGetFeature( request, format, layerCrs, &searchRect );
+              startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-            sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+            sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
             ++featCounter;
             ++featureCounter;
           }
@@ -1006,9 +1014,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
               if ( res.toInt() != 0 )
               {
                 if ( featureCounter == 0 )
-                  startGetFeature( request, format, layerCrs, &searchRect );
+                  startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-                sendGetFeature( request, format, &feature, featureCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+                sendGetFeature( request, format, &feature, featureCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
                 ++featureCounter;
                 ++featCounter;
               }
@@ -1043,9 +1051,9 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
         {
           mErrors << QString( "The feature %2 of layer for the TypeName '%1'" ).arg( tnStr ).arg( featureCounter );
           if ( featureCounter == 0 )
-            startGetFeature( request, format, layerCrs, &searchRect );
+            startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
 
-          sendGetFeature( request, format, &feature, featCounter, layerCrs, attrIndexes, layerExcludedAttributes );
+          sendGetFeature( request, format, &feature, featCounter, layerPrec, layerCrs, attrIndexes, layerExcludedAttributes );
           ++featCounter;
           ++featureCounter;
         }
@@ -1061,20 +1069,20 @@ int QgsWFSServer::getFeature( QgsRequestHandler& request, const QString& format 
 
   QgsMapLayerRegistry::instance()->removeAllMapLayers();
   if ( featureCounter == 0 )
-    startGetFeature( request, format, layerCrs, &searchRect );
+    startGetFeature( request, format, layerPrec, layerCrs, &searchRect );
   endGetFeature( request, format );
 
   return 0;
 }
 
-void QgsWFSServer::startGetFeature( QgsRequestHandler& request, const QString& format, QgsCoordinateReferenceSystem& crs, QgsRectangle* rect )
+void QgsWFSServer::startGetFeature( QgsRequestHandler& request, const QString& format, int prec, QgsCoordinateReferenceSystem& crs, QgsRectangle* rect )
 {
   QByteArray result;
   QString fcString;
   if ( format == "GeoJSON" )
   {
     fcString = "{\"type\": \"FeatureCollection\",\n";
-    fcString += " \"bbox\": [ " + QString::number( rect->xMinimum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( rect->yMinimum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( rect->xMaximum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( rect->yMaximum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + "],\n";
+    fcString += " \"bbox\": [ " + qgsDoubleToString( rect->xMinimum(), prec ) + ", " + qgsDoubleToString( rect->yMinimum(), prec ) + ", " + qgsDoubleToString( rect->xMaximum(), prec ) + ", " + qgsDoubleToString( rect->yMaximum(), prec ) + "],\n";
     fcString += " \"features\": [\n";
     result = fcString.toUtf8();
     request.startGetFeatureResponse( &result, format );
@@ -1167,7 +1175,7 @@ void QgsWFSServer::startGetFeature( QgsRequestHandler& request, const QString& f
     QDomElement bbElem = doc.createElement( "gml:boundedBy" );
     if ( format == "GML3" )
     {
-      QDomElement envElem = QgsOgcUtils::rectangleToGMLEnvelope( rect, doc );
+      QDomElement envElem = QgsOgcUtils::rectangleToGMLEnvelope( rect, doc, prec );
       if ( !envElem.isNull() )
       {
         if ( crs.isValid() )
@@ -1180,7 +1188,7 @@ void QgsWFSServer::startGetFeature( QgsRequestHandler& request, const QString& f
     }
     else
     {
-      QDomElement boxElem = QgsOgcUtils::rectangleToGMLBox( rect, doc );
+      QDomElement boxElem = QgsOgcUtils::rectangleToGMLBox( rect, doc, prec );
       if ( !boxElem.isNull() )
       {
         if ( crs.isValid() )
@@ -1197,7 +1205,7 @@ void QgsWFSServer::startGetFeature( QgsRequestHandler& request, const QString& f
   fcString = "";
 }
 
-void QgsWFSServer::sendGetFeature( QgsRequestHandler& request, const QString& format, QgsFeature* feat, int featIdx, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
+void QgsWFSServer::sendGetFeature( QgsRequestHandler& request, const QString& format, QgsFeature* feat, int featIdx, int prec, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
 {
   if ( !feat->isValid() )
     return;
@@ -1210,7 +1218,7 @@ void QgsWFSServer::sendGetFeature( QgsRequestHandler& request, const QString& fo
       fcString += "  ";
     else
       fcString += " ,";
-    fcString += createFeatureGeoJSON( feat, crs, attrIndexes, excludedAttributes );
+    fcString += createFeatureGeoJSON( feat, prec, crs, attrIndexes, excludedAttributes );
     fcString += "\n";
 
     result = fcString.toUtf8();
@@ -1223,12 +1231,12 @@ void QgsWFSServer::sendGetFeature( QgsRequestHandler& request, const QString& fo
     QDomElement featureElement;
     if ( format == "GML3" )
     {
-      featureElement = createFeatureGML3( feat, gmlDoc, crs, attrIndexes, excludedAttributes );
+      featureElement = createFeatureGML3( feat, gmlDoc, prec, crs, attrIndexes, excludedAttributes );
       gmlDoc.appendChild( featureElement );
     }
     else
     {
-      featureElement = createFeatureGML2( feat, gmlDoc, crs, attrIndexes, excludedAttributes );
+      featureElement = createFeatureGML2( feat, gmlDoc, prec, crs, attrIndexes, excludedAttributes );
       gmlDoc.appendChild( featureElement );
     }
 
@@ -1375,6 +1383,15 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
         QDomNodeList upNodeList = typeNameElem.elementsByTagNameNS( WFS_NAMESPACE, "Update" );
         for ( int j = 0; j < upNodeList.count(); ++j )
         {
+          if ( !mConfigParser->wfstUpdateLayers().contains( layer->id() ) )
+          {
+            //no wfs permissions to do updates
+            QString errorMsg = "No permissions to do WFS updates on layer '" + layer->name() + "'";
+            QgsMessageLog::logMessage( errorMsg, "Server", QgsMessageLog::CRITICAL );
+            addTransactionResult( resp, respElem, "FAILED", "Update", errorMsg );
+            return resp;
+          }
+
           actionElem = upNodeList.at( j ).toElement();
 
           // Get the Feature Ids for this filter on the layer
@@ -1444,22 +1461,7 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
       // Commit the changes of the update elements
       if ( !layer->commitChanges() )
       {
-        QgsDebugMsg( QString( "update errors:\n  %1" ).arg( layer->commitErrors().join( "\n  " ) ) );
-        QDomElement trElem = doc.createElement( "TransactionResult" );
-        QDomElement stElem = doc.createElement( "Status" );
-        QDomElement successElem = doc.createElement( "PARTIAL" );
-        stElem.appendChild( successElem );
-        trElem.appendChild( stElem );
-        respElem.appendChild( trElem );
-
-        QDomElement locElem = doc.createElement( "Locator" );
-        locElem.appendChild( doc.createTextNode( "Update" ) );
-        trElem.appendChild( locElem );
-
-        QDomElement mesElem = doc.createElement( "Message" );
-        mesElem.appendChild( doc.createTextNode( layer->commitErrors().join( "\n  " ) ) );
-        trElem.appendChild( mesElem );
-
+        addTransactionResult( resp, respElem, "PARTIAL", "Update", layer->commitErrors().join( "\n  " ) );
         return resp;
       }
       // Start the delete transaction
@@ -1470,6 +1472,15 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
         QDomNodeList delNodeList = typeNameElem.elementsByTagNameNS( WFS_NAMESPACE, "Delete" );
         for ( int j = 0; j < delNodeList.count(); ++j )
         {
+          if ( !mConfigParser->wfstDeleteLayers().contains( layer->id() ) )
+          {
+            //no wfs permissions to do updates
+            QString errorMsg = "No permissions to do WFS deletes on layer '" + layer->name() + "'";
+            QgsMessageLog::logMessage( errorMsg, "Server", QgsMessageLog::CRITICAL );
+            addTransactionResult( resp, respElem, "FAILED", "Delete", errorMsg );
+            return resp;
+          }
+
           actionElem = delNodeList.at( j ).toElement();
           QDomElement filterElem = actionElem.firstChild().toElement();
           // Get Feature Ids for the Filter element
@@ -1481,22 +1492,7 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
       // Commit the changes of the delete elements
       if ( !layer->commitChanges() )
       {
-        QgsDebugMsg( QString( "delete errors:\n  %1" ).arg( layer->commitErrors().join( "\n  " ) ) );
-        QDomElement trElem = doc.createElement( "TransactionResult" );
-        QDomElement stElem = doc.createElement( "Status" );
-        QDomElement successElem = doc.createElement( "PARTIAL" );
-        stElem.appendChild( successElem );
-        trElem.appendChild( stElem );
-        respElem.appendChild( trElem );
-
-        QDomElement locElem = doc.createElement( "Locator" );
-        locElem.appendChild( doc.createTextNode( "Delete" ) );
-        trElem.appendChild( locElem );
-
-        QDomElement mesElem = doc.createElement( "Message" );
-        mesElem.appendChild( doc.createTextNode( layer->commitErrors().join( "\n  " ) ) );
-        trElem.appendChild( mesElem );
-
+        addTransactionResult( resp, respElem, "PARTIAL", "Delete", layer->commitErrors().join( "\n  " ) );
         return resp;
       }
 
@@ -1514,6 +1510,15 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
         QDomNodeList inNodeList = typeNameElem.elementsByTagNameNS( WFS_NAMESPACE, "Insert" );
         for ( int j = 0; j < inNodeList.count(); ++j )
         {
+          if ( !mConfigParser->wfstInsertLayers().contains( layer->id() ) )
+          {
+            //no wfs permissions to do updates
+            QString errorMsg = "No permissions to do WFS inserts on layer '" + layer->name() + "'";
+            QgsMessageLog::logMessage( errorMsg, "Server", QgsMessageLog::CRITICAL );
+            addTransactionResult( resp, respElem, "FAILED", "Insert", errorMsg );
+            return resp;
+          }
+
           actionElem = inNodeList.at( j ).toElement();
           // Loop through the feature element
           QDomNodeList featNodes = actionElem.childNodes();
@@ -1566,33 +1571,11 @@ QDomDocument QgsWFSServer::transaction( const QString& requestBody )
       // add the features
       if ( !provider->addFeatures( inFeatList ) )
       {
-        QDomElement trElem = doc.createElement( "TransactionResult" );
-        QDomElement stElem = doc.createElement( "Status" );
-        QDomElement successElem = doc.createElement( "PARTIAL" );
-        stElem.appendChild( successElem );
-        trElem.appendChild( stElem );
-        respElem.appendChild( trElem );
-
-        QDomElement locElem = doc.createElement( "Locator" );
-        locElem.appendChild( doc.createTextNode( "Insert" ) );
-        trElem.appendChild( locElem );
-
-        QDomElement mesElem = doc.createElement( "Message" );
-        QStringList mesErrors;
-        mesErrors << QString( "ERROR: %1 feature(s) not added." ).arg( inFeatList.size() );
+        addTransactionResult( resp, respElem, "Partial", "Insert", layer->commitErrors().join( "\n  " ) );
         if ( provider->hasErrors() )
         {
-          mesErrors << "\n  Provider errors:" << provider->errors();
           provider->clearErrors();
         }
-        else
-        {
-          mesErrors << "\n  Provider didn't report any errors:";
-        }
-        QgsDebugMsg( QString( "add errors:\n  %1" ).arg( mesErrors.join( "\n  " ) ) );
-        mesElem.appendChild( doc.createTextNode( mesErrors.join( "\n  " ) ) );
-        trElem.appendChild( mesElem );
-
         return resp;
       }
       // Get the Feature Ids of the inserted feature
@@ -1678,7 +1661,7 @@ QgsFeatureIds QgsWFSServer::getFeatureIdsFromFilter( QDomElement filterElem, Qgs
   return fids;
 }
 
-QString QgsWFSServer::createFeatureGeoJSON( QgsFeature* feat, QgsCoordinateReferenceSystem &, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
+QString QgsWFSServer::createFeatureGeoJSON( QgsFeature* feat, int prec, QgsCoordinateReferenceSystem &, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
 {
   QString fStr = "{\"type\": \"Feature\",\n";
 
@@ -1691,10 +1674,10 @@ QString QgsWFSServer::createFeatureGeoJSON( QgsFeature* feat, QgsCoordinateRefer
   {
     QgsRectangle box = geom->boundingBox();
 
-    fStr += " \"bbox\": [ " + QString::number( box.xMinimum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( box.yMinimum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( box.xMaximum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + ", " + QString::number( box.yMaximum(), 'f', 8 ).remove( QRegExp( "[0]{1,7}$" ) ) + "],\n";
+    fStr += " \"bbox\": [ " + qgsDoubleToString( box.xMinimum(), prec ) + ", " + qgsDoubleToString( box.yMinimum(), prec ) + ", " + qgsDoubleToString( box.xMaximum(), prec ) + ", " + qgsDoubleToString( box.yMaximum(), prec ) + "],\n";
 
     fStr += "  \"geometry\": ";
-    fStr += geom->exportToGeoJSON();
+    fStr += geom->exportToGeoJSON( prec );
     fStr += ",\n";
   }
 
@@ -1741,7 +1724,7 @@ QString QgsWFSServer::createFeatureGeoJSON( QgsFeature* feat, QgsCoordinateRefer
   return fStr;
 }
 
-QDomElement QgsWFSServer::createFeatureGML2( QgsFeature* feat, QDomDocument& doc, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
+QDomElement QgsWFSServer::createFeatureGML2( QgsFeature* feat, QDomDocument& doc, int prec, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
 {
   //gml:FeatureMember
   QDomElement featureElement = doc.createElement( "gml:featureMember"/*wfs:FeatureMember*/ );
@@ -1757,12 +1740,12 @@ QDomElement QgsWFSServer::createFeatureGML2( QgsFeature* feat, QDomDocument& doc
     QgsGeometry* geom = feat->geometry();
 
     QDomElement geomElem = doc.createElement( "qgs:geometry" );
-    QDomElement gmlElem = QgsOgcUtils::geometryToGML( geom, doc );
+    QDomElement gmlElem = QgsOgcUtils::geometryToGML( geom, doc, prec );
     if ( !gmlElem.isNull() )
     {
       QgsRectangle box = geom->boundingBox();
       QDomElement bbElem = doc.createElement( "gml:boundedBy" );
-      QDomElement boxElem = QgsOgcUtils::rectangleToGMLBox( &box, doc );
+      QDomElement boxElem = QgsOgcUtils::rectangleToGMLBox( &box, doc, prec );
 
       if ( crs.isValid() )
       {
@@ -1800,7 +1783,7 @@ QDomElement QgsWFSServer::createFeatureGML2( QgsFeature* feat, QDomDocument& doc
   return featureElement;
 }
 
-QDomElement QgsWFSServer::createFeatureGML3( QgsFeature* feat, QDomDocument& doc, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
+QDomElement QgsWFSServer::createFeatureGML3( QgsFeature* feat, QDomDocument& doc, int prec, QgsCoordinateReferenceSystem& crs, QgsAttributeList attrIndexes, QSet<QString> excludedAttributes ) /*const*/
 {
   //gml:FeatureMember
   QDomElement featureElement = doc.createElement( "gml:featureMember"/*wfs:FeatureMember*/ );
@@ -1816,12 +1799,12 @@ QDomElement QgsWFSServer::createFeatureGML3( QgsFeature* feat, QDomDocument& doc
     QgsGeometry* geom = feat->geometry();
 
     QDomElement geomElem = doc.createElement( "qgs:geometry" );
-    QDomElement gmlElem = QgsOgcUtils::geometryToGML( geom, doc, "GML3" );
+    QDomElement gmlElem = QgsOgcUtils::geometryToGML( geom, doc, "GML3", prec );
     if ( !gmlElem.isNull() )
     {
       QgsRectangle box = geom->boundingBox();
       QDomElement bbElem = doc.createElement( "gml:boundedBy" );
-      QDomElement boxElem = QgsOgcUtils::rectangleToGMLEnvelope( &box, doc );
+      QDomElement boxElem = QgsOgcUtils::rectangleToGMLEnvelope( &box, doc, prec );
 
       if ( crs.isValid() )
       {
@@ -1910,4 +1893,22 @@ QString QgsWFSServer::serviceUrl() const
     }
   }
   return mapUrl.toString();
+}
+
+void QgsWFSServer::addTransactionResult( QDomDocument& responseDoc, QDomElement& responseElem, const QString& status, const QString& locator, const QString& message )
+{
+  QDomElement trElem = responseDoc.createElement( "TransactionResult" );
+  QDomElement stElem = responseDoc.createElement( "Status" );
+  QDomElement successElem = responseDoc.createElement( status );
+  stElem.appendChild( successElem );
+  trElem.appendChild( stElem );
+  responseElem.appendChild( trElem );
+
+  QDomElement locElem = responseDoc.createElement( "Locator" );
+  locElem.appendChild( responseDoc.createTextNode( locator ) );
+  trElem.appendChild( locElem );
+
+  QDomElement mesElem = responseDoc.createElement( "Message" );
+  mesElem.appendChild( responseDoc.createTextNode( message ) );
+  trElem.appendChild( mesElem );
 }

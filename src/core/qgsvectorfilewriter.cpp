@@ -77,6 +77,13 @@ QgsVectorFileWriter::QgsVectorFileWriter(
   QStringList layOptions = layerOptions;
   QStringList dsOptions = datasourceOptions;
 
+  if ( theVectorFileName.isEmpty() )
+  {
+    mErrorMessage = QObject::tr( "Empty filename given" );
+    mError = ErrCreateDataSource;
+    return;
+  }
+
   QString ogrDriverName;
   if ( driverName == "MapInfo MIF" )
   {
@@ -764,7 +771,7 @@ QMap<QString, QgsVectorFileWriter::MetaData> QgsVectorFileWriter::initMetaData()
                          ) );
 
   datasetOptions.insert( "USE_EXTENSIONS", new BoolOption(
-                           QObject::tr( "If defined to YES, extension fields  will be written. "
+                           QObject::tr( "If defined to YES, extension fields will be written. "
                                         "If the field name not found in the base schema matches "
                                         "the foo_bar pattern, foo will be considered as the namespace "
                                         "of the element, and a <foo:bar> element will be written. "
@@ -2150,7 +2157,7 @@ QString QgsVectorFileWriter::fileFilterString()
   QMap< QString, QString>::const_iterator it = driverFormatMap.constBegin();
   for ( ; it != driverFormatMap.constEnd(); ++it )
   {
-    if ( filterString.isEmpty() )
+    if ( !filterString.isEmpty() )
       filterString += ";;";
 
     filterString += it.key();

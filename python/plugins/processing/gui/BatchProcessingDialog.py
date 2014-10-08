@@ -37,21 +37,20 @@ from processing.gui.CrsSelectionPanel import CrsSelectionPanel
 from processing.gui.ExtentSelectionPanel import ExtentSelectionPanel
 from processing.gui.FixedTablePanel import FixedTablePanel
 from processing.gui.BatchOutputSelectionPanel import BatchOutputSelectionPanel
-from processing.gui.UnthreadedAlgorithmExecutor import \
-        UnthreadedAlgorithmExecutor
-from processing.parameters.ParameterFile import ParameterFile
-from processing.parameters.ParameterRaster import ParameterRaster
-from processing.parameters.ParameterTable import ParameterTable
-from processing.parameters.ParameterVector import ParameterVector
-from processing.parameters.ParameterExtent import ParameterExtent
-from processing.parameters.ParameterCrs import ParameterCrs
-from processing.parameters.ParameterBoolean import ParameterBoolean
-from processing.parameters.ParameterSelection import ParameterSelection
-from processing.parameters.ParameterFixedTable import ParameterFixedTable
-from processing.parameters.ParameterMultipleInput import ParameterMultipleInput
-from processing.outputs.OutputNumber import OutputNumber
-from processing.outputs.OutputString import OutputString
-from processing.outputs.OutputHTML import OutputHTML
+from processing.gui.AlgorithmExecutor import runalg
+from processing.core.parameters import ParameterFile
+from processing.core.parameters import ParameterRaster
+from processing.core.parameters import ParameterTable
+from processing.core.parameters import ParameterVector
+from processing.core.parameters import ParameterExtent
+from processing.core.parameters import ParameterCrs
+from processing.core.parameters import ParameterBoolean
+from processing.core.parameters import ParameterSelection
+from processing.core.parameters import ParameterFixedTable
+from processing.core.parameters import ParameterMultipleInput
+from processing.core.outputs import OutputNumber
+from processing.core.outputs import OutputString
+from processing.core.outputs import OutputHTML
 from processing.tools.system import *
 
 
@@ -64,11 +63,11 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
         AlgorithmExecutionDialog.__init__(self, alg, self.table)
         self.setWindowModality(1)
         self.resize(800, 500)
-        self.setWindowTitle('Batch Processing - ' + self.alg.name)
+        self.setWindowTitle(self.tr('Batch Processing - %s') % self.alg.name)
         for param in self.alg.parameters:
             if param.isAdvanced:
                 self.advancedButton = QtGui.QPushButton()
-                self.advancedButton.setText('Show advanced parameters')
+                self.advancedButton.setText(self.tr('Show advanced parameters'))
                 self.advancedButton.setMaximumWidth(150)
                 self.buttonBox.addButton(self.advancedButton,
                         QtGui.QDialogButtonBox.ActionRole)
@@ -76,11 +75,11 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
                         self.showAdvancedParametersClicked)
                 break
         self.addRowButton = QtGui.QPushButton()
-        self.addRowButton.setText('Add row')
+        self.addRowButton.setText(self.tr('Add row'))
         self.buttonBox.addButton(self.addRowButton,
                                  QtGui.QDialogButtonBox.ActionRole)
         self.deleteRowButton = QtGui.QPushButton()
-        self.deleteRowButton.setText('Delete row')
+        self.deleteRowButton.setText(self.tr('Delete row'))
         self.buttonBox.addButton(self.addRowButton,
                                  QtGui.QDialogButtonBox.ActionRole)
         self.buttonBox.addButton(self.deleteRowButton,
@@ -152,7 +151,7 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
 
         if self.alg.getVisibleOutputsCount():
             self.table.setHorizontalHeaderItem(i,
-                QtGui.QTableWidgetItem('Load in QGIS'))
+                QtGui.QTableWidgetItem(self.tr('Load in QGIS')))
 
         for i in range(3):
             self.addRow()
@@ -169,9 +168,8 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
                     continue
                 widget = self.table.cellWidget(row, col)
                 if not self.setParameterValueFromWidget(param, widget, alg):
-                    self.progressLabel.setText('<b>Missing parameter value: '
-                            + param.description + ' (row ' + str(row + 1)
-                            + ')</b>')
+                    self.progressLabel.setText(
+                        self.tr('<b>Missing parameter value: %s (row %d)</b>') % (param.description, row + 1))
                     self.algs = None
                     return
                 col += 1
@@ -185,9 +183,7 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
                     col += 1
                 else:
                     self.progressLabel.setText(
-                            '<b>Wrong or missing parameter value: '
-                             + out.description + ' (row ' + str(row + 1)
-                             + ')</b>')
+                        self.tr('<b>Wrong or missing parameter value: %s (row %d)</b>') % (out.description, row + 1))
                     self.algs = None
                     return
             self.algs.append(alg)
@@ -207,13 +203,12 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
         except:
             pass
         for (i, alg) in enumerate(self.algs):
-            self.setBaseText('Processing algorithm ' + str(i + 1) + '/'
-                             + str(len(self.algs)) + '...')
-            self.setInfo('<b>Algorithm %s starting...</b>' % alg.name)
-            if UnthreadedAlgorithmExecutor.runalg(alg, self) and not self.canceled:
+            self.setBaseText(self.tr('Processing algorithm %d/%d...') %(i + 1, len(self.algs)))
+            self.setInfo(self.tr('<b>Algorithm %s starting...</b>' % alg.name))
+            if runalg(alg, self) and not self.canceled:
                 if self.load[i]:
                     handleAlgorithmResults(alg, self, False)
-                self.setInfo('Algorithm %s correctly executed...' % alg.name)
+                self.setInfo(self.tr('Algorithm %s correctly executed...') % alg.name)
             else:
                 QApplication.restoreOverrideCursor()
                 return
@@ -261,8 +256,8 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
         self.createSummaryTable()
         QApplication.restoreOverrideCursor()
         self.table.setEnabled(True)
-        QMessageBox.information(self, 'Batch processing',
-                                'Batch processing successfully completed!')
+        QMessageBox.information(self, self.tr('Batch processing'),
+            self.tr('Batch processing successfully completed!'))
 
     def setParameterValueFromWidget(self, param, widget, alg=None):
         if isinstance(param, (ParameterRaster, ParameterVector,
@@ -292,8 +287,8 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
             item = BatchInputSelectionPanel(param, row, col, self)
         elif isinstance(param, ParameterBoolean):
             item = QtGui.QComboBox()
-            item.addItem('Yes')
-            item.addItem('No')
+            item.addItem(self.tr('Yes'))
+            item.addItem(self.tr('No'))
             if param.default:
                 item.setCurrentIndex(0)
             else:
@@ -342,17 +337,17 @@ class BatchProcessingDialog(AlgorithmExecutionDialog):
 
         if self.alg.getVisibleOutputsCount():
             item = QtGui.QComboBox()
-            item.addItem('Yes')
-            item.addItem('No')
+            item.addItem(self.tr('Yes'))
+            item.addItem(self.tr('No'))
             item.setCurrentIndex(0)
             self.table.setCellWidget(self.table.rowCount() - 1, i, item)
 
     def showAdvancedParametersClicked(self):
         self.showAdvanced = not self.showAdvanced
         if self.showAdvanced:
-            self.advancedButton.setText('Hide advanced parameters')
+            self.advancedButton.setText(self.tr('Hide advanced parameters'))
         else:
-            self.advancedButton.setText('Show advanced parameters')
+            self.advancedButton.setText(self.tr('Show advanced parameters'))
         i = 0
         for param in self.alg.parameters:
             if param.isAdvanced:

@@ -34,6 +34,7 @@
 
 class QgsRenderContext;
 class QgsCoordinateReferenceSystem;
+class QgsMapLayerLegend;
 class QgsMapLayerRenderer;
 
 class QDomDocument;
@@ -216,14 +217,14 @@ class CORE_EXPORT QgsMapLayer : public QObject
 
        @returns true if successful
     */
-    bool writeLayerXML( QDomElement& layerElement, QDomDocument& document );
+    bool writeLayerXML( QDomElement& layerElement, QDomDocument& document, QString relativeBasePath = QString::null );
 
     /** Returns the given layer as a layer definition document
         Layer definitions store the data source as well as styling and custom properties.
 
         Layer definitions can be used to load a layer and styling all from a single file.
     */
-    static QDomDocument asLayerDefinition( QList<QgsMapLayer*> layers );
+    static QDomDocument asLayerDefinition( QList<QgsMapLayer*> layers, QString relativeBasePath = QString::null );
 
     /** Creates a new layer from a layer defininition document
     */
@@ -382,6 +383,18 @@ class CORE_EXPORT QgsMapLayer : public QObject
     /** @deprecated since 2.4 - does nothing */
     Q_DECL_DEPRECATED virtual void onCacheImageDelete() {}
 
+    /**
+     * Assign a legend controller to the map layer. The object will be responsible for providing legend items.
+     * @param legend Takes ownership of the object. Can be null pointer
+     * @note added in 2.6
+     */
+    void setLegend( QgsMapLayerLegend* legend );
+    /**
+     * Can be null.
+     * @note added in 2.6
+     */
+    QgsMapLayerLegend* legend() const;
+
   public slots:
 
     /** Event handler for when a coordinate transform fails due to bad vertex error */
@@ -400,8 +413,16 @@ class CORE_EXPORT QgsMapLayer : public QObject
     bool hasScaleBasedVisibility() const;
 
     /** Clear cached image
-     *  @deprecated in 2.4 - caches listen to repaintRequested() signal to invalidate the cached image */
+     *  @deprecated in 2.4 - use triggerRepaint() - caches automatically listen to repaintRequested() signal to invalidate the cached image */
     Q_DECL_DEPRECATED void clearCacheImage();
+
+    /**
+     * Will advice the map canvas (and any other interested party) that this layer requires to be repainted.
+     * Will emit a repaintRequested() signal.
+     *
+     * @note in 2.6 function moved from vector/raster subclasses to QgsMapLayer
+     */
+    void triggerRepaint();
 
     /** \brief Obtain Metadata for this layer */
     virtual QString metadata();
@@ -445,6 +466,12 @@ class CORE_EXPORT QgsMapLayer : public QObject
 
     /** Signal emitted when renderer is changed */
     void rendererChanged();
+
+    /**
+     * Signal emitted when legend of the layer has changed
+     * @note added in 2.6
+     */
+    void legendChanged();
 
   protected:
     /** Set the extent */
@@ -559,6 +586,9 @@ class CORE_EXPORT QgsMapLayer : public QObject
 
     //! Layer's persistent storage of additional properties (may be used by plugins)
     QgsObjectCustomProperties mCustomProperties;
+
+    //! Controller of legend items of this layer
+    QgsMapLayerLegend* mLegend;
 };
 
 #endif

@@ -21,7 +21,7 @@ use Locale::Country;
 
 my @lang;
 
-# script to generate a html list of the qgis application translatons
+# script to generate a html list of the qgis application translations
 # showing the percentage finished and the names of the translators
 
 # without argument it generates html which is used in the about-dialog of the application
@@ -36,15 +36,15 @@ my @lang;
 # translator names here as a hash where the key is the lang_country code used for the ts file name
 my $translators= {
 	af => '',
-	ar => '',
+	ar => 'Ichaouia Amine, Hosham Munier',
 	bg => 'Захари Савов, Jordan Tzvetkov',
 	bs => 'Almir Karabegovic',
-	ca => 'Xavier Roijals',
-	cs => 'Martin Landa, Peter Antolik, Martin Dzurov, Jan Helebrant',
+	ca => 'Albert F, Pau Reguant Ridó, Xavier Roijals',
+	cs => 'Jan Helebrant, Martin Landa, Peter Antolik, Martin Dzurov, Stanislav Horáček',
 	da => 'Jacob Overgaard Madsen, Bo Victor Thomsen',
 	de => 'Jürgen E. Fischer, Stephan Holl, Otto Dassau, Werner Macho',
 	es => 'Carlos Dávila, Javier César Aldariz, Gabriela Awad, Edwin Amado, Mayeul Kauffmann, Diana Galindo',
-	el => 'Evripidis Argyropoulos, Mike Pegnigiannis, Nikos Ves',
+	el => 'Theodoros Vakkas, Ioannis Tsimpiris, Evripidis Argyropoulos, Mike Pegnigiannis, Nikos Ves',
 	et => 'Veiko Viil',
 	eu => 'Asier Sarasua Garmendia, Irantzu Alvarez',
 	fa => 'Mola Pahnadayan, Masoud Pashotan , Masoud Erfanyan',
@@ -55,7 +55,7 @@ my $translators= {
 	hu => 'Zoltan Siki',
 	hr => 'Zoran Jankovic',
 	is => 'Ásta Kristín Óladóttir, Thordur Ivarsson',
-	id => 'Trias Aditya, Januar V. Simarmata, I Made Anombawa',
+	id => 'Emir Hartato, Muhammad Iqnaul Haq Siregar, Trias Aditya, Januar V. Simarmata, I Made Anombawa',
 	it => 'Roberto Angeletti, Michele Beneventi, Marco Braida, Stefano Campus, Luca Casagrande, Paolo Cavallini, Giuliano Curti, Luca Delucchi, Alessandro Fanna, Michele Ferretti, Matteo Ghetta, Anne Gishla, Maurizio Napolitano, Flavio Rigolon',
 	ja => 'BABA Yoshihiko, Yoichi Kayama, Minoru Akagi, Takayuki Nuimura, Takayuki Mizutani, Norihiro Yamate',
 	ka => 'Shota Murtskhvaladze, George Machitidze',
@@ -68,11 +68,11 @@ my $translators= {
 	mn => 'Bayarmaa Enkhtur',
 	mr => '',
 	nb => 'James Stott, Maléne Peterson',
-	nl => 'Richard Duivenvoorde, Raymond Nijssen, Carlo van Rijswijk, Diethard Jansen, Willem Hoffmans',
+	nl => 'Richard Duivenvoorde, Raymond Nijssen, Carlo van Rijswijk, Diethard Jansen, Willem Hoffmans, Dick Groskamp',
 	pl => 'Robert Szczepanek, Milena Nowotarska, Borys Jurgiel, Mateusz Łoskot, Tomasz Paul, Andrzej Świąder ',
-	pt_BR => 'Sidney Schaberle Goveia, Arthur Nanni, Marcelo Soares Souza',
+	pt_BR => 'Sidney Schaberle Goveia, Arthur Nanni, Marcelo Soares Souza, Narcélio de Sá Pereira Filho, Leônidas Descovi Filho, Felipe Sodré Barros ',
 	pt_PT => 'Giovanni Manghi, Joana Simões, Duarte Carreira, Alexandre Neto, Pedro Pereira, Pedro Palheiro, Nelson Silva, Ricardo Sena, Leandro Infantini, João Gaspar',
-	ro => 'Lonut Losifescu-Enescu, Bogdan Pacurar',
+	ro => 'Sorin Călinică, Lonut Losifescu-Enescu, Bogdan Pacurar',
 	ru => 'Alexander Bruy, Artem Popov',
 	sk => 'Lubos Balazovic, Jana Kormanikova, Ivan Mincik',
 	sl => 'Jože Detečnik, Dejan Gregor, Jaka Kranjc',
@@ -148,6 +148,7 @@ for my $i (<i18n/qgis_*.ts>) {
 
 	push @lang, {
 		code=>$langcode,
+		origcode=>$lc,
 		name=>$name, n=>$n,
 		translations=>$translations,
 		finished=>$finished,
@@ -161,7 +162,6 @@ foreach my $l (@lang) {
 	$l->{diff}       = $l->{n}-$maxn;
 	$l->{percentage} = ($l->{finished}+$l->{unfinished}/2)/$maxn*100;
 }
-
 
 if ( @ARGV && $ARGV[0] eq "site") {
 	print "<html><body>";
@@ -177,6 +177,7 @@ if ( @ARGV && $ARGV[0] eq "site") {
 	print "<table>";
 	print "<tr><td colspan=\"2\" style=\"width:250px;\">Language</td><td>Count</td><td>Finished</td><td>Unfinished</td><td>Untranslated</td><td>Percentage</td><td>Translators</td></tr>\n";
 	for my $l (sort { $b->{percentage} <=> $a->{percentage} } @lang) {
+		last if $l->{percentage} < 35;
 		printf "\n<tr>"
 			. '<td><img src="flags/%s.png"></td><td nowrap>%s</td>'
 			. '<td nowrap>%s</td><td>%d</td><td>%d</td><td>%d</td>'
@@ -200,6 +201,7 @@ if ( @ARGV && $ARGV[0] eq "site") {
 	print "<table>";
 	print "<tr><th colspan=\"2\" style=\"width:250px;\">Language</th><th>Finished %</th><th>Translators</th></tr>\n";
 	for my $l (sort { $b->{percentage} <=> $a->{percentage} } @lang) {
+		last if $l->{percentage} < 35;
 		printf "\n<tr>"
 			. '<td><img src="qrc:/images/flags/%s.png"></td><td>%s</td>'
 			. '<td><div title="finished:%d unfinished:%d untranslated:%d" class="bartodo"><div class="bardone" style="width:%dpx">%.1f</div></div></td>'
@@ -212,3 +214,25 @@ if ( @ARGV && $ARGV[0] eq "site") {
 	}
 	print "</table>\n";
 }
+
+my @ts;
+for my $l (sort { $a->{code} cmp $b->{code} } @lang) {
+	next if $l->{percentage} < 35;
+	push @ts, $l->{origcode};
+}
+
+rename "i18n/CMakeLists.txt", "i18n/CMakeLists.txt.temp" || die "cannot rename i18n/CMakeLists.txt: $!";
+
+open I, "i18n/CMakeLists.txt.temp";
+open O, ">i18n/CMakeLists.txt";
+while(<I>) {
+	if( /^SET\(TS_FILES / || /^FILE \(GLOB TS_FILES \*\.ts\)/ ) {
+		print O "SET(TS_FILES " . join( " ", map { "qgis_$_\.ts"; } @ts ) . ")\n";
+	} else {
+		print O;
+	}
+}
+close O;
+close I;
+
+unlink "i18n/CMakeLists.txt.temp";

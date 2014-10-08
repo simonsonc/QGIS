@@ -21,7 +21,16 @@
     <bool>true</bool>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="margin">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
      <number>0</number>
     </property>
     <item row="0" column="0">
@@ -35,6 +44,29 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>110</y>
+         <width>120</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>118</width>
+          <height>78</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -117,7 +149,7 @@
    <addaction name="mActionAddNewLegend"/>
    <addaction name="mActionAddNewScalebar"/>
    <addaction name="mActionAddArrow"/>
-   <addaction name="mActionAddTable"/>
+   <addaction name="mActionAddAttributeTable"/>
    <addaction name="mActionAddHtml"/>
   </widget>
   <widget class="QToolBar" name="mAtlasToolbar">
@@ -224,6 +256,9 @@
    <property name="toolTip">
     <string>Zoom</string>
    </property>
+   <property name="shortcut">
+    <string>Z</string>
+   </property>
   </action>
   <action name="mActionAddNewMap">
    <property name="icon">
@@ -271,6 +306,9 @@
    </property>
    <property name="toolTip">
     <string>Select/Move item</string>
+   </property>
+   <property name="shortcut">
+    <string>V</string>
    </property>
   </action>
   <action name="mActionExportAsImage">
@@ -326,8 +364,15 @@
    <property name="toolTip">
     <string>Refresh view</string>
    </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
   </action>
   <action name="mActionShowGrid">
+   <property name="icon">
+    <iconset resource="../../python/plugins/fTools/resources.qrc">
+     <normaloff>:/icons/default/vector_grid.png</normaloff>:/icons/default/vector_grid.png</iconset>
+   </property>
    <property name="text">
     <string>Show Grid</string>
    </property>
@@ -409,6 +454,9 @@
    <property name="toolTip">
     <string>Move item content</string>
    </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
   </action>
   <action name="mActionGroupItems">
    <property name="text">
@@ -478,10 +526,10 @@
   </action>
   <action name="mActionLoadFromTemplate">
    <property name="text">
-    <string>Load from Template</string>
+    <string>Add Items from Template</string>
    </property>
    <property name="toolTip">
-    <string>Load from template</string>
+    <string>Add items from template</string>
    </property>
   </action>
   <action name="mActionSaveAsTemplate">
@@ -568,6 +616,17 @@
    </property>
    <property name="text">
     <string>Add Table</string>
+   </property>
+   <property name="toolTip">
+    <string>Add table</string>
+   </property>
+  </action>
+  <action name="mActionAddAttributeTable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Add Attribute Table</string>
    </property>
    <property name="toolTip">
     <string>Add attribute table</string>
@@ -697,14 +756,6 @@
     <string>Duplicate composer</string>
    </property>
   </action>
-  <action name="mActionNewFromTemplate">
-   <property name="text">
-    <string>New from Template</string>
-   </property>
-   <property name="toolTip">
-    <string>New from template</string>
-   </property>
-  </action>
   <action name="mActionLockItems">
    <property name="icon">
     <iconset resource="../../images/images.qrc">
@@ -744,6 +795,10 @@
    </property>
   </action>
   <action name="mActionDeleteSelection">
+   <property name="icon">
+    <iconset resource="../../images/images.qrc">
+     <normaloff>:/images/themes/default/mActionDeleteSelected.svg</normaloff>:/images/themes/default/mActionDeleteSelected.svg</iconset>
+   </property>
    <property name="text">
     <string>&amp;Delete</string>
    </property>
@@ -755,6 +810,10 @@
    </property>
   </action>
   <action name="mActionDeselectAll">
+   <property name="icon">
+    <iconset resource="../../images/images.qrc">
+     <normaloff>:/images/themes/default/mActionDeselectAll.svg</normaloff>:/images/themes/default/mActionDeselectAll.svg</iconset>
+   </property>
    <property name="text">
     <string>De&amp;select All</string>
    </property>
@@ -777,6 +836,10 @@
    </property>
   </action>
   <action name="mActionInvertSelection">
+   <property name="icon">
+    <iconset resource="../../images/images.qrc">
+     <normaloff>:/images/themes/default/mActionInvertSelection.png</normaloff>:/images/themes/default/mActionInvertSelection.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Invert Selection</string>
    </property>
@@ -814,6 +877,9 @@
    <property name="text">
     <string>Pan Composer</string>
    </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
   </action>
   <action name="mActionOptions">
    <property name="icon">
@@ -846,6 +912,9 @@
    <property name="text">
     <string>First Feature</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+&lt;</string>
+   </property>
   </action>
   <action name="mActionAtlasPrev">
    <property name="icon">
@@ -854,6 +923,9 @@
    </property>
    <property name="text">
     <string>Previous Feature</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+,</string>
    </property>
   </action>
   <action name="mActionAtlasNext">
@@ -864,6 +936,9 @@
    <property name="text">
     <string>Next Feature</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+.</string>
+   </property>
   </action>
   <action name="mActionAtlasLast">
    <property name="icon">
@@ -873,6 +948,9 @@
    <property name="text">
     <string>Last Feature</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+&gt;</string>
+   </property>
   </action>
   <action name="mActionAtlasPreview">
    <property name="icon">
@@ -881,6 +959,9 @@
    </property>
    <property name="text">
     <string>Preview Atlas</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+/</string>
    </property>
   </action>
   <action name="mActionPrintAtlas">
@@ -934,6 +1015,7 @@
  </widget>
  <resources>
   <include location="../../images/images.qrc"/>
+  <include location="../../python/plugins/fTools/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -37,6 +37,7 @@
 #include <QIcon>
 #include <QPainter>
 #include <QSettings>
+#include <QRegExp>
 
 QString QgsSymbolLayerV2Utils::encodeColor( QColor color )
 {
@@ -521,7 +522,7 @@ QIcon QgsSymbolLayerV2Utils::symbolPreviewIcon( QgsSymbolV2* symbol, QSize size 
   return QIcon( symbolPreviewPixmap( symbol, size ) );
 }
 
-QPixmap QgsSymbolLayerV2Utils::symbolPreviewPixmap( QgsSymbolV2* symbol, QSize size )
+QPixmap QgsSymbolLayerV2Utils::symbolPreviewPixmap( QgsSymbolV2* symbol, QSize size, QgsRenderContext* customContext )
 {
   Q_ASSERT( symbol );
 
@@ -530,7 +531,9 @@ QPixmap QgsSymbolLayerV2Utils::symbolPreviewPixmap( QgsSymbolV2* symbol, QSize s
   QPainter painter;
   painter.begin( &pixmap );
   painter.setRenderHint( QPainter::Antialiasing );
-  symbol->drawPreviewIcon( &painter, size );
+  if ( customContext )
+    customContext->setPainter( &painter );
+  symbol->drawPreviewIcon( &painter, size, customContext );
   painter.end();
   return pixmap;
 }
@@ -2732,13 +2735,394 @@ QDomElement QgsSymbolLayerV2Utils::saveColorRamp( QString name, QgsVectorColorRa
   return rampEl;
 }
 
-QColor QgsSymbolLayerV2Utils::parseColor( QString colorStr )
+QString QgsSymbolLayerV2Utils::colorToName( const QColor &color )
 {
-  bool hasAlpha;
-  return parseColorWithAlpha( colorStr, hasAlpha );
+  if ( !color.isValid() )
+  {
+    return QString();
+  }
+
+  //TODO - utilise a color names database (such as X11) to return nicer names
+  //for now, just return hex codes
+  return color.name();
 }
 
-QColor QgsSymbolLayerV2Utils::parseColorWithAlpha( const QString colorStr, bool &containsAlpha )
+QList<QColor> QgsSymbolLayerV2Utils::parseColorList( const QString colorStr )
+{
+  QList<QColor> colors;
+
+  //try splitting string at commas, spaces or newlines
+  QStringList components = colorStr.simplified().split( QRegExp( "(,|\\s)" ) );
+  QStringList::iterator it = components.begin();
+  for ( ; it != components.end(); ++it )
+  {
+    QColor result = parseColor( *it, true );
+    if ( result.isValid() )
+    {
+      colors << result;
+    }
+  }
+  if ( colors.length() > 0 )
+  {
+    return colors;
+  }
+
+  //try splitting string at commas or newlines
+  components = colorStr.split( QRegExp( "(,|\n)" ) );
+  it = components.begin();
+  for ( ; it != components.end(); ++it )
+  {
+    QColor result = parseColor( *it, true );
+    if ( result.isValid() )
+    {
+      colors << result;
+    }
+  }
+  if ( colors.length() > 0 )
+  {
+    return colors;
+  }
+
+  //try splitting string at whitespace or newlines
+  components = colorStr.simplified().split( QString( " " ) );
+  it = components.begin();
+  for ( ; it != components.end(); ++it )
+  {
+    QColor result = parseColor( *it, true );
+    if ( result.isValid() )
+    {
+      colors << result;
+    }
+  }
+  if ( colors.length() > 0 )
+  {
+    return colors;
+  }
+
+  //try splitting string just at newlines
+  components = colorStr.split( QString( "\n" ) );
+  it = components.begin();
+  for ( ; it != components.end(); ++it )
+  {
+    QColor result = parseColor( *it, true );
+    if ( result.isValid() )
+    {
+      colors << result;
+    }
+  }
+
+  return colors;
+}
+
+QMimeData * QgsSymbolLayerV2Utils::colorToMimeData( const QColor color )
+{
+  //set both the mime color data (which includes alpha channel), and the text (which is the color's hex
+  //value, and can be used when pasting colors outside of QGIS).
+  QMimeData *mimeData = new QMimeData;
+  mimeData->setColorData( QVariant( color ) );
+  mimeData->setText( color.name() );
+  return mimeData;
+}
+
+QColor QgsSymbolLayerV2Utils::colorFromMimeData( const QMimeData * mimeData, bool& hasAlpha )
+{
+  //attempt to read color data directly from mime
+  QColor mimeColor = mimeData->colorData().value<QColor>();
+  if ( mimeColor.isValid() )
+  {
+    hasAlpha = true;
+    return mimeColor;
+  }
+
+  //attempt to intrepret a color from mime text data
+  hasAlpha = false;
+  QColor textColor = QgsSymbolLayerV2Utils::parseColorWithAlpha( mimeData->text(), hasAlpha );
+  if ( textColor.isValid() )
+  {
+    return textColor;
+  }
+
+  //could not get color from mime data
+  return QColor();
+}
+
+QgsNamedColorList QgsSymbolLayerV2Utils::colorListFromMimeData( const QMimeData *data )
+{
+  QgsNamedColorList mimeColors;
+
+  //prefer xml format
+  if ( data->hasFormat( "text/xml" ) )
+  {
+    //get XML doc
+    QByteArray encodedData = data->data( "text/xml" );
+    QDomDocument xmlDoc;
+    xmlDoc.setContent( encodedData );
+
+    QDomElement dragDataElem = xmlDoc.documentElement();
+    if ( dragDataElem.tagName() == "ColorSchemeModelDragData" )
+    {
+      QDomNodeList nodeList = dragDataElem.childNodes();
+      int nChildNodes = nodeList.size();
+      QDomElement currentElem;
+
+      for ( int i = 0; i < nChildNodes; ++i )
+      {
+        currentElem = nodeList.at( i ).toElement();
+        if ( currentElem.isNull() )
+        {
+          continue;
+        }
+
+        QPair< QColor, QString> namedColor;
+        namedColor.first =  QgsSymbolLayerV2Utils::decodeColor( currentElem.attribute( "color", "255,255,255,255" ) );
+        namedColor.second = currentElem.attribute( "label", "" );
+
+        mimeColors << namedColor;
+      }
+    }
+  }
+
+  if ( mimeColors.length() == 0 && data->hasFormat( "application/x-colorobject-list" ) )
+  {
+    //get XML doc
+    QByteArray encodedData = data->data( "application/x-colorobject-list" );
+    QDomDocument xmlDoc;
+    xmlDoc.setContent( encodedData );
+
+    QDomNodeList colorsNodes = xmlDoc.elementsByTagName( QString( "colors" ) );
+    if ( colorsNodes.length() > 0 )
+    {
+      QDomElement colorsElem = colorsNodes.at( 0 ).toElement();
+      QDomNodeList colorNodeList = colorsElem.childNodes();
+      int nChildNodes = colorNodeList.size();
+      QDomElement currentElem;
+
+      for ( int i = 0; i < nChildNodes; ++i )
+      {
+        //li element
+        currentElem = colorNodeList.at( i ).toElement();
+        if ( currentElem.isNull() )
+        {
+          continue;
+        }
+
+        QDomNodeList colorNodes = currentElem.elementsByTagName( QString( "color" ) );
+        QDomNodeList nameNodes = currentElem.elementsByTagName( QString( "name" ) );
+
+        if ( colorNodes.length() > 0 )
+        {
+          QDomElement colorElem = colorNodes.at( 0 ).toElement();
+
+          QStringList colorParts = colorElem.text().simplified().split( " " );
+          if ( colorParts.length() < 3 )
+          {
+            continue;
+          }
+
+          int red = colorParts.at( 0 ).toDouble() * 255;
+          int green = colorParts.at( 1 ).toDouble() * 255;
+          int blue = colorParts.at( 2 ).toDouble() * 255;
+          QPair< QColor, QString> namedColor;
+          namedColor.first = QColor( red, green, blue );
+          if ( nameNodes.length() > 0 )
+          {
+            QDomElement nameElem = nameNodes.at( 0 ).toElement();
+            namedColor.second = nameElem.text();
+          }
+          mimeColors << namedColor;
+        }
+      }
+    }
+  }
+
+  if ( mimeColors.length() == 0 && data->hasText() )
+  {
+    //attempt to read color data from mime text
+    QList< QColor > parsedColors = QgsSymbolLayerV2Utils::parseColorList( data->text() );
+    QList< QColor >::iterator it = parsedColors.begin();
+    for ( ; it != parsedColors.end(); ++it )
+    {
+      mimeColors << qMakePair( *it, QString() );
+    }
+  }
+
+  if ( mimeColors.length() == 0 && data->hasColor() )
+  {
+    //attempt to read color data directly from mime
+    QColor mimeColor = data->colorData().value<QColor>();
+    if ( mimeColor.isValid() )
+    {
+      mimeColors << qMakePair( mimeColor, QString() );
+    }
+  }
+
+  return mimeColors;
+}
+
+QMimeData* QgsSymbolLayerV2Utils::colorListToMimeData( const QgsNamedColorList colorList, const bool allFormats )
+{
+  //native format
+  QMimeData* mimeData = new QMimeData();
+  QDomDocument xmlDoc;
+  QDomElement xmlRootElement = xmlDoc.createElement( "ColorSchemeModelDragData" );
+  xmlDoc.appendChild( xmlRootElement );
+
+  QgsNamedColorList::const_iterator colorIt = colorList.constBegin();
+  for ( ; colorIt != colorList.constEnd(); ++colorIt )
+  {
+    QDomElement namedColor = xmlDoc.createElement( "NamedColor" );
+    namedColor.setAttribute( "color", QgsSymbolLayerV2Utils::encodeColor(( *colorIt ).first ) );
+    namedColor.setAttribute( "label", ( *colorIt ).second );
+    xmlRootElement.appendChild( namedColor );
+  }
+  mimeData->setData( "text/xml", xmlDoc.toByteArray() );
+
+  if ( !allFormats )
+  {
+    return mimeData;
+  }
+
+  //set mime text to list of hex values
+  colorIt = colorList.constBegin();
+  QStringList colorListString;
+  for ( ; colorIt != colorList.constEnd(); ++colorIt )
+  {
+    colorListString << ( *colorIt ).first.name();
+  }
+  mimeData->setText( colorListString.join( "\n" ) );
+
+  //set mime color data to first color
+  if ( colorList.length() > 0 )
+  {
+    mimeData->setColorData( QVariant( colorList.at( 0 ).first ) );
+  }
+
+  return mimeData;
+}
+
+bool QgsSymbolLayerV2Utils::saveColorsToGpl( QFile &file, const QString paletteName, QgsNamedColorList colors )
+{
+  if ( !file.open( QIODevice::ReadWrite ) )
+  {
+    return false;
+  }
+
+  QTextStream stream( &file );
+  stream << "GIMP Palette" << endl;
+  if ( paletteName.isEmpty() )
+  {
+    stream << "Name: QGIS Palette" << endl;
+  }
+  else
+  {
+    stream << "Name: " << paletteName << endl;
+  }
+  stream << "Columns: 4" << endl;
+  stream << "#" << endl;
+
+  for ( QgsNamedColorList::ConstIterator colorIt = colors.constBegin(); colorIt != colors.constEnd(); ++colorIt )
+  {
+    QColor color = ( *colorIt ).first;
+    if ( !color.isValid() )
+    {
+      continue;
+    }
+    stream << QString( "%1 %2 %3" ).arg( color.red(), 3 ).arg( color.green(), 3 ).arg( color.blue(), 3 );
+    stream << "\t" << (( *colorIt ).second.isEmpty() ? color.name() : ( *colorIt ).second ) << endl;
+  }
+  file.close();
+
+  return true;
+}
+
+QgsNamedColorList QgsSymbolLayerV2Utils::importColorsFromGpl( QFile &file, bool &ok, QString &name )
+{
+  QgsNamedColorList importedColors;
+
+  if ( !file.open( QIODevice::ReadOnly ) )
+  {
+    ok = false;
+    return importedColors;
+  }
+
+  QTextStream in( &file );
+
+  QString line = in.readLine();
+  if ( !line.startsWith( "GIMP Palette" ) )
+  {
+    ok = false;
+    return importedColors;
+  }
+
+  //find name line
+  while ( !in.atEnd() && !line.startsWith( "Name:" ) && !line.startsWith( "#" ) )
+  {
+    line = in.readLine();
+  }
+  if ( line.startsWith( "Name:" ) )
+  {
+    QRegExp nameRx( "Name:\\s*(\\S.*)$" );
+    if ( nameRx.indexIn( line ) != -1 )
+    {
+      name = nameRx.cap( 1 );
+    }
+  }
+
+  //ignore lines until after "#"
+  while ( !in.atEnd() && !line.startsWith( "#" ) )
+  {
+    line = in.readLine();
+  }
+  if ( in.atEnd() )
+  {
+    ok = false;
+    return importedColors;
+  }
+
+  //ready to start reading colors
+  QRegExp rx( "^\\s*(\\d+)\\s+(\\d+)\\s+(\\d+)(\\s.*)?$" );
+  while ( !in.atEnd() )
+  {
+    line = in.readLine();
+    if ( rx.indexIn( line ) == -1 )
+    {
+      continue;
+    }
+    int red = rx.cap( 1 ).toInt();
+    int green = rx.cap( 2 ).toInt();
+    int blue = rx.cap( 3 ).toInt();
+    QColor color = QColor( red, green, blue );
+    if ( !color.isValid() )
+    {
+      continue;
+    }
+
+    //try to read color name
+    QString label;
+    if ( rx.captureCount() > 3 )
+    {
+      label = rx.cap( 4 ).simplified();
+    }
+    else
+    {
+      label = colorToName( color );
+    }
+
+    importedColors << qMakePair( color, label );
+  }
+
+  file.close();
+  ok = true;
+  return importedColors;
+}
+
+QColor QgsSymbolLayerV2Utils::parseColor( QString colorStr , bool strictEval )
+{
+  bool hasAlpha;
+  return parseColorWithAlpha( colorStr, hasAlpha, strictEval );
+}
+
+QColor QgsSymbolLayerV2Utils::parseColorWithAlpha( const QString colorStr, bool &containsAlpha, bool strictEval )
 {
   QColor parsedColor;
 
@@ -2754,16 +3138,36 @@ QColor QgsSymbolLayerV2Utils::parseColorWithAlpha( const QString colorStr, bool 
     }
   }
 
-  //color in hex format, without #
-  QRegExp hexColorRx2( "^\\s*(?:[0-9a-fA-F]{3}){1,2}\\s*$" );
-  if ( hexColorRx2.indexIn( colorStr ) != -1 )
+  //color in hex format, with alpha
+  QRegExp hexColorAlphaRx( "^\\s*#?([0-9a-fA-F]{6})([0-9a-fA-F]{2})\\s*$" );
+  if ( hexColorAlphaRx.indexIn( colorStr ) != -1 )
   {
-    //add "#" and parse
-    parsedColor.setNamedColor( QString( "#" ) + colorStr );
-    if ( parsedColor.isValid() )
+    QString hexColor = hexColorAlphaRx.cap( 1 );
+    parsedColor.setNamedColor( QString( "#" ) + hexColor );
+    bool alphaOk;
+    int alphaHex = hexColorAlphaRx.cap( 2 ).toInt( &alphaOk, 16 );
+
+    if ( parsedColor.isValid() && alphaOk )
     {
-      containsAlpha = false;
+      parsedColor.setAlpha( alphaHex );
+      containsAlpha = true;
       return parsedColor;
+    }
+  }
+
+  if ( !strictEval )
+  {
+    //color in hex format, without #
+    QRegExp hexColorRx2( "^\\s*(?:[0-9a-fA-F]{3}){1,2}\\s*$" );
+    if ( hexColorRx2.indexIn( colorStr ) != -1 )
+    {
+      //add "#" and parse
+      parsedColor.setNamedColor( QString( "#" ) + colorStr );
+      if ( parsedColor.isValid() )
+      {
+        containsAlpha = false;
+        return parsedColor;
+      }
     }
   }
 

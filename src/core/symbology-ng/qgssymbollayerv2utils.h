@@ -33,6 +33,7 @@ class QgsVectorColorRampV2;
 
 typedef QMap<QString, QString> QgsStringMap;
 typedef QMap<QString, QgsSymbolV2* > QgsSymbolV2Map;
+typedef QList< QPair< QColor, QString > > QgsNamedColorList;
 
 class QDomDocument;
 class QDomElement;
@@ -107,7 +108,8 @@ class CORE_EXPORT QgsSymbolLayerV2Utils
 
     static void drawStippledBackround( QPainter* painter, QRect rect );
 
-    static QPixmap symbolPreviewPixmap( QgsSymbolV2* symbol, QSize size );
+    //! @note customContext parameter added in 2.6
+    static QPixmap symbolPreviewPixmap( QgsSymbolV2* symbol, QSize size, QgsRenderContext* customContext = 0 );
     static QPixmap colorRampPreviewPixmap( QgsVectorColorRampV2* ramp, QSize size );
 
     /**Returns the maximum estimated bleed for the symbol */
@@ -229,23 +231,99 @@ class CORE_EXPORT QgsSymbolLayerV2Utils
     static QDomElement saveColorRamp( QString name, QgsVectorColorRampV2* ramp, QDomDocument& doc );
 
     /**
+     * Returns a friendly display name for a color
+     * @param color source color
+     * @returns display name for color
+     * @note added in 2.5
+     */
+    static QString colorToName( const QColor& color );
+
+    /**
+     * Attempts to parse a string as a list of colors using a variety of common formats, including hex
+     * codes, rgb and rgba strings.
+     * @param colorStr string representing the color list
+     * @returns list of parsed colors
+     * @note added in 2.5
+     */
+    static QList< QColor > parseColorList( const QString colorStr );
+
+    /**
+     * Creates mime data from a color. Sets both the mime data's color data, and the
+     * mime data's text with the color's hex code.
+     * @param color color to encode as mime data
+     * @see colorFromMimeData
+     * @note added in 2.5
+     */
+    static QMimeData * colorToMimeData( const QColor color );
+
+    /**
+     * Attempts to parse mime data as a color
+     * @param data mime data to parse
+     * @param hasAlpha will be set to true if mime data was interpreted as a color containing
+     * an explicit alpha value
+     * @returns valid color if mimedata could be interpreted as a color, otherwise an
+     * invalid color
+     * @note added in 2.5
+     */
+    static QColor colorFromMimeData( const QMimeData *data, bool& hasAlpha );
+
+    /**
+     * Attempts to parse mime data as a list of named colors
+     * @param data mime data to parse
+     * @returns list of parsed colors
+     * @note added in 2.5
+     */
+    static QgsNamedColorList colorListFromMimeData( const QMimeData *data );
+
+    /**
+     * Creates mime data from a list of named colors
+     * @param colorList list of named colors
+     * @param allFormats set to true to include additional mime formats, include text/plain and application/x-color
+     * @returns mime data containing encoded colors
+     * @note added in 2.5
+     */
+    static QMimeData* colorListToMimeData( const QgsNamedColorList colorList, const bool allFormats = true );
+
+    /**
+     * Exports colors to a gpl GIMP palette file
+     * @param file destination file
+     * @param paletteName name of palette, which is stored in gpl file
+     * @param colors colors to export
+     * @returns true if export was successful
+     * @see importColorsFromGpl
+    */
+    static bool saveColorsToGpl( QFile &file, const QString paletteName, QgsNamedColorList colors );
+
+    /**
+     * Imports colors from a gpl GIMP palette file
+     * @param file source gpl file
+     * @param ok will be true if file was successfully read
+     * @param name will be set to palette name from gpl file, if present
+     * @returns list of imported colors
+     * @see saveColorsToGpl
+    */
+    static QgsNamedColorList importColorsFromGpl( QFile &file, bool &ok, QString& name );
+
+    /**
      * Attempts to parse a string as a color using a variety of common formats, including hex
      * codes, rgb and rgba strings.
      * @param colorStr string representing the color
+     * @param strictEval set to true for stricter color parsing rules
      * @returns parsed color
      * @note added in 2.3
      */
-    static QColor parseColor( QString colorStr );
+    static QColor parseColor( QString colorStr, bool strictEval = false );
 
     /**
      * Attempts to parse a string as a color using a variety of common formats, including hex
      * codes, rgb and rgba strings.
      * @param colorStr string representing the color
      * @param containsAlpha if colorStr contains an explicit alpha value then containsAlpha will be set to true
+     * @param strictEval set to true for stricter color parsing rules
      * @returns parsed color
      * @note added in 2.3
      */
-    static QColor parseColorWithAlpha( const QString colorStr, bool &containsAlpha );
+    static QColor parseColorWithAlpha( const QString colorStr, bool &containsAlpha, bool strictEval = false );
 
     /**Returns the line width scale factor depending on the unit and the paint device*/
     static double lineWidthScaleFactor( const QgsRenderContext& c, QgsSymbolV2::OutputUnit u, const QgsMapUnitScale& scale = QgsMapUnitScale() );
@@ -311,6 +389,7 @@ class CORE_EXPORT QgsSymbolLayerV2Utils
      * @note added in 2.2
      */
     static QString fieldOrExpressionFromExpression( QgsExpression* expression );
+
 };
 
 class QPolygonF;

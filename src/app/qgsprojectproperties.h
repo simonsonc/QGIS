@@ -143,9 +143,6 @@ class APP_EXPORT QgsProjectProperties : public QgsOptionsDialogBase, private Ui:
      * Slot to link WFS checkboxes
      */
     void cbxWFSPubliedStateChanged( int aIdx );
-    void cbxWFSUpdateStateChanged( int aIdx );
-    void cbxWFSInsertStateChanged( int aIdx );
-    void cbxWFSDeleteStateChanged( int aIdx );
 
     /*!
      * Slot to link WCS checkboxes
@@ -165,6 +162,10 @@ class APP_EXPORT QgsProjectProperties : public QgsOptionsDialogBase, private Ui:
 
     //! sets the right ellipsoid for measuring (from settings)
     void projectionSelectorInitialized();
+
+    void on_mButtonAddColor_clicked();
+    void on_mButtonImportColors_clicked();
+    void on_mButtonExportColors_clicked();
 
   signals:
     //! Signal used to inform listeners that the mouse display precision may have changed

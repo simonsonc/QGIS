@@ -1,6 +1,7 @@
 #ifndef QGSPALGEOMETRY_H
 #define QGSPALGEOMETRY_H
 
+#include "qgsgeometry.h"
 #include <pal/feature.h>
 #include <pal/palgeometry.h>
 
@@ -29,7 +30,7 @@ class QgsPalGeometry : public PalGeometry
     ~QgsPalGeometry()
     {
       if ( mG )
-        GEOSGeom_destroy( mG );
+        GEOSGeom_destroy_r( QgsGeometry::getGEOSHandler(), mG );
       delete mInfo;
       delete mFontMetrics;
     }
@@ -128,6 +129,9 @@ class QgsPalGeometry : public PalGeometry
       feature.setValid( true );
     }
 
+    void setDxfLayer( QString dxfLayer ) { mDxfLayer = dxfLayer; }
+    QString dxfLayer() const { return mDxfLayer; }
+
   protected:
     GEOSGeometry* mG;
     QString mText;
@@ -146,6 +150,8 @@ class QgsPalGeometry : public PalGeometry
 
     /**Stores attribute values for diagram rendering*/
     QgsAttributes mDiagramAttributes;
+
+    QString mDxfLayer;
 };
 
 #endif //QGSPALGEOMETRY_H

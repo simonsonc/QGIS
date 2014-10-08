@@ -33,6 +33,7 @@ QgsRendererV2Registry::QgsRendererV2Registry()
   addRenderer( new QgsRendererV2Metadata( "categorizedSymbol",
                                           QObject::tr( "Categorized" ),
                                           QgsCategorizedSymbolRendererV2::create ) );
+
   addRenderer( new QgsRendererV2Metadata( "graduatedSymbol",
                                           QObject::tr( "Graduated" ),
                                           QgsGraduatedSymbolRendererV2::create ) );

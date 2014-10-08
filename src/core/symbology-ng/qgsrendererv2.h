@@ -40,6 +40,9 @@ typedef QMap<QString, QgsSymbolV2* > QgsSymbolV2Map;
 typedef QList< QPair<QString, QPixmap> > QgsLegendSymbologyList;
 typedef QList< QPair<QString, QgsSymbolV2*> > QgsLegendSymbolList;
 
+#include "qgslegendsymbolitemv2.h"
+
+
 #define RENDERER_TAG_NAME   "renderer-v2"
 
 ////////
@@ -82,6 +85,14 @@ class CORE_EXPORT QgsFeatureRendererV2
      */
     virtual QgsSymbolV2* symbolForFeature( QgsFeature& feature ) = 0;
 
+    /**
+     * Return symbol for feature. The difference compared to symbolForFeature() is that it returns original
+     * symbol which can be used as an identifier for renderer's rule - the former may return a temporary replacement
+     * of a symbol for use in rendering.
+     * @note added in 2.6
+     */
+    virtual QgsSymbolV2* originalSymbolForFeature( QgsFeature& feature ) { return symbolForFeature( feature ); }
+
     virtual void startRender( QgsRenderContext& context, const QgsFields& fields ) = 0;
 
     //! @deprecated since 2.4 - not using QgsVectorLayer directly anymore
@@ -93,7 +104,7 @@ class CORE_EXPORT QgsFeatureRendererV2
 
     virtual ~QgsFeatureRendererV2() {}
 
-    virtual QgsFeatureRendererV2* clone() = 0;
+    virtual QgsFeatureRendererV2* clone() const = 0;
 
     virtual bool renderFeature( QgsFeature& feature, QgsRenderContext& context, int layer = -1, bool selected = false, bool drawVertexMarker = false );
 
@@ -156,16 +167,25 @@ class CORE_EXPORT QgsFeatureRendererV2
 
     //! items of symbology items in legend is checked
     //! @note added in 2.5
-    virtual bool legendSymbolItemChecked( int index );
+    virtual bool legendSymbolItemChecked( QString key );
 
     //! item in symbology was checked
     //! @note added in 2.5
-    virtual void checkLegendSymbolItem( int index, bool state = true );
+    virtual void checkLegendSymbolItem( QString key, bool state = true );
 
     //! return a list of item text / symbol
     //! @note: this method was added in version 1.5
     //! @note not available in python bindings
     virtual QgsLegendSymbolList legendSymbolItems( double scaleDenominator = -1, QString rule = "" );
+
+    //! Return a list of symbology items for the legend. Better choice than legendSymbolItems().
+    //! Default fallback implementation just uses legendSymbolItems() implementation
+    //! @note added in 2.6
+    virtual QgsLegendSymbolListV2 legendSymbolItemsV2() const;
+
+    //! If supported by the renderer, return classification attribute for the use in legend
+    //! @note added in 2.6
+    virtual QString legendClassificationAttribute() const { return QString(); }
 
     //! set type and size of editing vertex markers for subsequent rendering
     void setVertexMarkerAppearance( int type, int size );
@@ -188,6 +208,11 @@ class CORE_EXPORT QgsFeatureRendererV2
     //! to use symbolForFeature()
     //! @note added in 1.9
     virtual QgsSymbolV2List symbolsForFeature( QgsFeature& feat );
+
+    //! Equivalent of originalSymbolsForFeature() call
+    //! extended to support renderers that may use more symbols per feature - similar to symbolsForFeature()
+    //! @note added in 2.6
+    virtual QgsSymbolV2List originalSymbolsForFeature( QgsFeature& feat );
 
   protected:
     QgsFeatureRendererV2( QString type );

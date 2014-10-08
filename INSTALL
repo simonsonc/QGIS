@@ -1,10 +1,10 @@
 QGIS
 Building QGIS from source - step by step
-Wednesday June 18, 2014
+Friday July 25, 2014
 
 
-Last Updated: Wednesday June 18, 2014
-Last Change : Wednesday June 18, 2014
+Last Updated: Friday July 25, 2014
+Last Change : Friday July 25, 2014
 
 
   1. Introduction
@@ -105,6 +105,7 @@ Required build deps:
 - GDAL/OGR >= 1.4.x
 - Qwt >= 5.0 & (< 6.1 with internal QwtPolar)
 - expat >= 1.95
+- QScintilla2
 
 Optional dependencies:
 
@@ -167,13 +168,13 @@ Now update your local sources database:
   ===============================
 
   || Distribution | install command for packages |
-  | precise | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
-  | quantal | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal1-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
-  | raring | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libpython2.7-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
-  | saucy | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libpython2.7-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
-  | wheezy | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal1-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
-  | jessie | ``apt-get install bison cmake flex grass-dev libexpat1-dev libfcgi-dev libgdal1-dev libgeos-dev libgsl0-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev`` |
-  | sid | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | wheezy | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal1-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | jessie | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | precise | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | saucy | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libpython2.7-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python python-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | trusty | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | utopic | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt5-qt4-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
+  | sid | ``apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqscintilla2-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev lighttpd pkg-config poppler-utils pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev spawn-fcgi txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb`` |
 
 (extracted from the respective control files in debian/)
 
@@ -619,24 +620,27 @@ or the SVN repository.
     4.1.3. Setting up the Visual Studio project with CMake
     ======================================================
 
+/!\ Consider this section as example.  It tends to outdate, when OSGeo4W and
+SDKs move on.  ms-windows/osgeo4w/package-nightly.cmd is used for the
+nightly builds and constantly updated and hence might contain necessary
+updates that are not yet reflected here.
+
 To start a command prompt with an environment that both has the VC++ and the OSGeo4W
 variables create the following batch file (assuming the above packages were
 installed in the default locations):
 
   @echo off
-  path %SYSTEMROOT%\system32;%SYSTEMROOT%;%SYSTEMROOT%\System32\Wbem;%PROGRAMFILES%\CMake 2.8\bin;%PROGRAMFILES%\subversion\bin;%PROGRAMFILES%\GnuWin32\bin
-  set PYTHONPATH=
-  
   set VS90COMNTOOLS=%PROGRAMFILES%\Microsoft Visual Studio 9.0\Common7\Tools\
   call "%PROGRAMFILES%\Microsoft Visual Studio 9.0\VC\vcvarsall.bat" x86
   
-  set INCLUDE=%INCLUDE%;%PROGRAMFILES%\Microsoft Platform SDK for Windows Server 2003 R2\include
-  set LIB=%LIB%;%PROGRAMFILES%\Microsoft Platform SDK for Windows Server 2003 R2\lib
+  set INCLUDE=%INCLUDE%;%PROGRAMFILES%\Microsoft SDKs\Windows\v7.1\include
+  set LIB=%LIB%;%PROGRAMFILES%\Microsoft SDKs\Windows\v7.1\lib
   
   set OSGEO4W_ROOT=C:\OSGeo4W
   call "%OSGEO4W_ROOT%\bin\o4w_env.bat"
+  path %PATH%;%PROGRAMFILES%\CMake 2.8\bin;%PROGRAMFILES%\GnuWin32\bin
   
-  @set GRASS_PREFIX=c:/OSGeo4W/apps/grass/grass-6.4.0
+  @set GRASS_PREFIX=c:/OSGeo4W/apps/grass/grass-6.4.4
   @set INCLUDE=%INCLUDE%;%OSGEO4W_ROOT%\include
   @set LIB=%LIB%;%OSGEO4W_ROOT%\lib;%OSGEO4W_ROOT%\lib
   
@@ -1171,7 +1175,7 @@ from source and rather use frameworks wherever possible.
 some fiddling with the system. It is best to stick with a single, default,
 architecture build and follow these instructions for an initial build.
 Included are notes for building on Mac OS X 10.5 (Leopard), 10.6
-(Snow Leopard), 10.7 (Lion) and 10.8 (Mt. Lion).
+(Snow Leopard), 10.7 (Lion), 10.8 (Mt. Lion) and 10.9 (Mavericks)
 (These names will be used throughout the instructions.)
 Make sure to read each section completely before typing the first command you see.
 
@@ -1453,8 +1457,9 @@ your own risk.
     5.4.5. Additional dependencies: SIP
     ===================================
 
-Mt Lion note: SIP 4.15.7 appears to not work on Mt Lion.  Install 4.14.6.
-(or a later working version when available)
+Mt Lion note: SIP 4.15.7 appears to not work on Mt Lion. Install either
+prior version: 4.14.6.
+later version: 4.16.3+
 
 Retrieve the python bindings toolkit SIP from
 
@@ -1510,6 +1515,12 @@ for Mt. Lion:
   python2.7 configure.py -d /Library/Python/2.7/site-packages -b /usr/local/bin \
   -e /usr/local/include -v /usr/local/share/sip --arch=x86_64 -s MacOSX10.8.sdk
 
+for Mavericks:
+
+  python2.7 configure.py -d /Library/Python/2.7/site-packages -b /usr/local/bin \
+  -e /usr/local/include -v /usr/local/share/sip --arch=x86_64 -s MacOSX10.9.sdk
+
+
 continue...
 
 Then continue with compilation and installation:
@@ -1542,14 +1553,16 @@ Edit QScintilla-gpl-2.x.x/Qt4Qt5/qscintilla.pro in the following manner:
   target.path = $$[QT_INSTALL_LIBS]  -->  target.path = /usr/local/lib
   header.path = $$[QT_INSTALL_HEADERS]  -->  header.path = /usr/local/include
 
-Save the qscintilla.pro file and build the QScintilla2 C++ library (adjust the install_name_tool command for the version installed):
+Save the qscintilla.pro file and build the QScintilla2 C++ library:
 
   qmake -spec macx-g++ qscintilla.pro
   make -j [#cpus]
   sudo make install
+
+adjust the install_name_tool command for the version installed of QScintilla installed:
   
-  sudo install_name_tool -id /usr/local/lib/libqscintilla2.9.dylib \
-    /usr/local/lib/libqscintilla2.9.dylib
+  sudo install_name_tool -id /usr/local/lib/libqscintilla2.11.dylib \
+    /usr/local/lib/libqscintilla2.11.dylib
 
 This installs QScintilla2's dylib in /usr/local/lib/ and the header files in
 /usr/local/include/Qsci/, both of which should be automatically found when
@@ -1610,7 +1623,7 @@ For 64-bit Qt (Qt Cocoa), use this configure line:
   python2.6 configure.py -d /Library/Python/2.6/site-packages -b /usr/local/bin \
   -n /usr/local/Qt4.8/qsci -v /usr/local/share/sip/PyQt4 --use-arch x86_64
 
-Lion and Mt. Lion system Python
+Lion, Mt. Lion, and Mavericks system Python
 
 Similar to Snow Leopard, you should install outside the system Python path.
 But you don't need the use-arch option:
@@ -1633,7 +1646,7 @@ Then make again.
 This will create the Qsci.so module in /Library/Python/2.x/site-packages/PyQt4.
 Like PyQt, it needs help to not install in system locations.
 
-Snow Leopard: substitute '2.6' for Python version
+Snow Leopard: substitute ‘2.6’ for Python version
 
   cd <QScintilla2 source dir>
   cd Python

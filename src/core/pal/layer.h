@@ -60,7 +60,7 @@ namespace pal
    *
    * a layer is a bog of feature with some data which influence the labelling process
    *
-   *  \author Maxence Laurent <maxence _dot_ laurent _at_ heig-vd _dot_ ch>
+   *  \author Maxence Laurent (maxence _dot_ laurent _at_ heig-vd _dot_ ch)
    */
   class CORE_EXPORT Layer
   {
@@ -303,9 +303,10 @@ namespace pal
        * \brief register a feature in the layer
        *
        * @param geom_id unique identifier
+       * @param userGeom user's geometry that implements the PalGeometry interface
        * @param label_x label width
        * @param label_y label height
-       * @param userGeom user's geometry that implements the PalGeometry interface
+       * @param labelText label text
        * @param labelPosX x position of the label (in case of fixed label position)
        * @param labelPosY y position of the label (in case of fixed label position)
        * @param fixedPos true if a single fixed position for this label is needed
@@ -316,6 +317,7 @@ namespace pal
        * @param xOffset map unit (+/-) to x-offset the label
        * @param yOffset map unit (+/-) to y-offset the label
        * @param alwaysShow whether to skip priority and always show the label (causes overlapping)
+       * @param repeatDistance distance for repeating the label
        *
        * @throws PalException::FeatureExists
        *
@@ -325,7 +327,7 @@ namespace pal
                             const char* labelText = NULL, double labelPosX = 0.0, double labelPosY = 0.0,
                             bool fixedPos = false, double angle = 0.0, bool fixedAngle = false,
                             int xQuadOffset = 0, int yQuadOffset = 0, double xOffset = 0.0, double yOffset = 0.0,
-                            bool alwaysShow = false );
+                            bool alwaysShow = false, double repeatDistance = 0 );
 
       /** return pointer to feature or NULL if doesn't exist */
       Feature* getFeature( const char* geom_id );
@@ -333,7 +335,8 @@ namespace pal
       /** join connected features with the same label text */
       void joinConnectedFeatures();
 
-      void chopFeatures( double chopInterval );
+      /** chop layer features at the repeat distance **/
+      void chopFeaturesAtRepeatDistance();
 
   };
 

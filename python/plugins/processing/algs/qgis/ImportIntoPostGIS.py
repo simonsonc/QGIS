@@ -32,11 +32,11 @@ from qgis.core import *
 from processing.core.GeoAlgorithm import GeoAlgorithm
 from processing.core.GeoAlgorithmExecutionException import \
         GeoAlgorithmExecutionException
-from processing.parameters.ParameterBoolean import ParameterBoolean
-from processing.parameters.ParameterVector import ParameterVector
-from processing.parameters.ParameterString import ParameterString
-from processing.parameters.ParameterSelection import ParameterSelection
-from processing.parameters.ParameterTableField import ParameterTableField
+from processing.core.parameters import ParameterBoolean
+from processing.core.parameters import ParameterVector
+from processing.core.parameters import ParameterString
+from processing.core.parameters import ParameterSelection
+from processing.core.parameters import ParameterTableField
 from processing.tools import dataobjects
 from processing.algs.qgis import postgis_utils
 
@@ -74,7 +74,12 @@ class ImportIntoPostGIS(GeoAlgorithm):
             raise GeoAlgorithmExecutionException(
                     'Wrong database connection name: ' + connection)
 
-        table = self.getParameterValue(self.TABLENAME)
+        layerUri = self.getParameterValue(self.INPUT)
+        layer = dataobjects.getObjectFromUri(layerUri)
+
+        table = self.getParameterValue(self.TABLENAME).strip()
+        if table == '':
+            table = layer.name().lower()
         table.replace(' ', '')
         providerName = 'postgres'
 
@@ -105,8 +110,6 @@ class ImportIntoPostGIS(GeoAlgorithm):
         else:
             uri.setDataSource(schema, table, geomColumn, '')
 
-        layerUri = self.getParameterValue(self.INPUT)
-        layer = dataobjects.getObjectFromUri(layerUri)
         (ret, errMsg) = QgsVectorLayerImport.importLayer(
             layer,
             uri.uri(),
@@ -139,8 +142,8 @@ class ImportIntoPostGIS(GeoAlgorithm):
         self.addParameter(ParameterSelection(self.DATABASE, 'Database (connection name)',
                           self.DB_CONNECTIONS))
 
-        self.addParameter(ParameterString(self.SCHEMA, 'Schema (schema name)'))
-        self.addParameter(ParameterString(self.TABLENAME, 'Table to import to'
+        self.addParameter(ParameterString(self.SCHEMA, 'Schema (schema name)', 'public'))
+        self.addParameter(ParameterString(self.TABLENAME, 'Table to import to (leave blank to use layer name)'
                           ))
         self.addParameter(ParameterTableField(self.PRIMARY_KEY, 'Primary key field',
                           self.INPUT, optional=True))

@@ -17,6 +17,7 @@
 
 #include "qgslayertree.h"
 #include "qgslayertreemodel.h"
+#include "qgslayertreemodellegendnode.h"
 #include "qgslayertreeviewdefaultactions.h"
 #include "qgsmaplayer.h"
 
@@ -60,6 +61,8 @@ void QgsLayerTreeView::setModel( QAbstractItemModel* model )
   connect( layerTreeModel()->rootGroup(), SIGNAL( expandedChanged( QgsLayerTreeNode*, bool ) ), this, SLOT( onExpandedChanged( QgsLayerTreeNode*, bool ) ) );
 
   connect( selectionModel(), SIGNAL( currentChanged( QModelIndex, QModelIndex ) ), this, SLOT( onCurrentChanged() ) );
+
+  connect( layerTreeModel(), SIGNAL( modelReset() ), this, SLOT( onModelReset() ) );
 
   updateExpandedStateFromNode( layerTreeModel()->rootGroup() );
 }
@@ -155,13 +158,20 @@ void QgsLayerTreeView::updateExpandedStateToNode( QModelIndex index )
 void QgsLayerTreeView::onCurrentChanged()
 {
   QgsMapLayer* layerCurrent = layerForIndex( currentIndex() );
-  QModelIndex layerCurrentIndex = layerCurrent ? layerTreeModel()->node2index( layerTreeModel()->rootGroup()->findLayer( layerCurrent->id() ) ) : QModelIndex();
-  if ( mCurrentIndex == layerCurrentIndex )
+  QString layerCurrentID = layerCurrent ? layerCurrent->id() : QString();
+  if ( mCurrentLayerID == layerCurrentID )
     return;
 
-  layerTreeModel()->setCurrentIndex( layerCurrentIndex );
+  // update the current index in model (the item will be underlined)
+  QModelIndex nodeLayerIndex;
+  if ( layerCurrent )
+  {
+    QgsLayerTreeLayer* nodeLayer = layerTreeModel()->rootGroup()->findLayer( layerCurrentID );
+    nodeLayerIndex = layerTreeModel()->node2index( nodeLayer );
+  }
+  layerTreeModel()->setCurrentIndex( nodeLayerIndex );
 
-  mCurrentIndex = layerCurrentIndex;
+  mCurrentLayerID = layerCurrentID;
   emit currentLayerChanged( layerCurrent );
 }
 
@@ -170,6 +180,11 @@ void QgsLayerTreeView::onExpandedChanged( QgsLayerTreeNode* node, bool expanded 
   QModelIndex idx = layerTreeModel()->node2index( node );
   if ( isExpanded( idx ) != expanded )
     setExpanded( idx, expanded );
+}
+
+void QgsLayerTreeView::onModelReset()
+{
+  updateExpandedStateFromNode( layerTreeModel()->rootGroup() );
 }
 
 void QgsLayerTreeView::updateExpandedStateFromNode( QgsLayerTreeNode* node )
@@ -191,9 +206,10 @@ QgsMapLayer* QgsLayerTreeView::layerForIndex( const QModelIndex& index ) const
   }
   else
   {
-    // possibly a symbology node
-    if ( layerTreeModel()->isIndexSymbologyNode( index ) )
-      return layerTreeModel()->layerNodeForSymbologyNode( index )->layer();
+    // possibly a legend node
+    QgsLayerTreeModelLegendNode* legendNode = layerTreeModel()->index2legendNode( index );
+    if ( legendNode )
+      return legendNode->layerNode()->layer();
   }
 
   return 0;
@@ -213,9 +229,15 @@ QgsLayerTreeGroup* QgsLayerTreeView::currentGroupNode() const
   {
     QgsLayerTreeNode* parent = node->parent();
     if ( QgsLayerTree::isGroup( parent ) )
-      return QgsLayerTree::toGroup( node );
+      return QgsLayerTree::toGroup( parent );
   }
-  // TODO: also handle if symbology is selected?
+
+  if ( QgsLayerTreeModelLegendNode* legendNode = layerTreeModel()->index2legendNode( selectionModel()->currentIndex() ) )
+  {
+    QgsLayerTreeLayer* parent = legendNode->layerNode();
+    if ( QgsLayerTree::isGroup( parent->parent() ) )
+      return QgsLayerTree::toGroup( parent->parent() );
+  }
 
   return 0;
 }
@@ -252,5 +274,5 @@ void QgsLayerTreeView::refreshLayerSymbology( const QString& layerId )
 {
   QgsLayerTreeLayer* nodeLayer = layerTreeModel()->rootGroup()->findLayer( layerId );
   if ( nodeLayer )
-    layerTreeModel()->refreshLayerSymbology( nodeLayer );
+    layerTreeModel()->refreshLayerLegend( nodeLayer );
 }

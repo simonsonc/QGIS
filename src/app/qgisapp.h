@@ -394,6 +394,8 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     QMenu *layerMenu() { return mLayerMenu; }
     //! @note added in 2.0
     QMenu *newLayerMenu() { return mNewLayerMenu; }
+    //! @note added in 2.5
+    QMenu *addLayerMenu() { return mAddLayerMenu; }
     QMenu *settingsMenu() { return mSettingsMenu; }
     QMenu *pluginMenu() { return mPluginMenu; }
     QMenu *databaseMenu() { return mDatabaseMenu; }
@@ -434,6 +436,8 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
 
     //! returns pointer to map legend
     QgsLayerTreeView* layerTreeView();
+
+    QgsLayerTreeMapCanvasBridge* layerTreeCanvasBridge() { return mLayerTreeCanvasBridge; }
 
     //! returns pointer to plugin manager
     QgsPluginManager *pluginManager();
@@ -1227,6 +1231,10 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
      * @note added in 2.3 */
     void activateDeuteranopePreview();
 
+    void toggleFilterLegendByMap();
+    void updateFilterLegendByMap();
+    void setFilterLegendByMapEnabled( bool enabled );
+
     /** Make the user feel dizzy */
     void dizzy();
 
@@ -1613,6 +1621,9 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindow
     QWidget *mMacrosWarn;
 
     QgsVectorLayerTools* mVectorLayerTools;
+
+    QToolButton* mBtnFilterLegend;
+
 #ifdef HAVE_TOUCH
     bool gestureEvent( QGestureEvent *event );
     void tapAndHoldTriggered( QTapAndHoldGesture *gesture );

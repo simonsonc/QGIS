@@ -51,8 +51,8 @@ class ModelerAlgorithmProvider(AlgorithmProvider):
     def initializeSettings(self):
         AlgorithmProvider.initializeSettings(self)
         ProcessingConfig.addSetting(Setting(self.getDescription(),
-                                    ModelerUtils.MODELS_FOLDER, 'Models folder'
-                                    , ModelerUtils.modelsFolder()))
+            ModelerUtils.MODELS_FOLDER, self.tr('Models folder', 'ModelerAlgorithmProvider'),
+            ModelerUtils.modelsFolder()))
 
     def setAlgsList(self, algs):
         ModelerUtils.allAlgs = algs
@@ -61,7 +61,7 @@ class ModelerAlgorithmProvider(AlgorithmProvider):
         return ModelerUtils.modelsFolder()
 
     def getDescription(self):
-        return 'Models'
+        return self.tr('Models', 'ModelerAlgorithmProvider')
 
     def getName(self):
         return 'model'
@@ -81,11 +81,9 @@ class ModelerAlgorithmProvider(AlgorithmProvider):
                 if descriptionFile.endswith('model'):
                     try:
                         fullpath = os.path.join(path, descriptionFile)
-                        alg = ModelerAlgorithm.fromJsonFile(fullpath)
-                        if alg:
-                            alg.provider = self
-                            self.algs.append(alg)
+                        alg = ModelerAlgorithm.fromFile(fullpath)
+                        alg.provider = self
+                        self.algs.append(alg)
                     except WrongModelException, e:
                         ProcessingLog.addToLog(ProcessingLog.LOG_ERROR,
-	                            'Could not load model ' + descriptionFile + '\n'
-	                            + e.msg)
+                            self.tr('Could not load model %s\n%s', 'ModelerAlgorithmProvider') % (descriptionFile, e.msg))

@@ -36,6 +36,9 @@
 #include "qgsrasterpyramidsoptionswidget.h"
 #include "qgsdialog.h"
 #include "qgscomposer.h"
+#include "qgscolorschemeregistry.h"
+#include "qgssymbollayerv2utils.h"
+#include "qgscolordialog.h"
 
 #include <QInputDialog>
 #include <QFileDialog>
@@ -100,7 +103,9 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   }
 
   mIdentifyHighlightColorButton->setColorDialogTitle( tr( "Identify highlight color" ) );
-  mIdentifyHighlightColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  mIdentifyHighlightColorButton->setAllowAlpha( true );
+  mIdentifyHighlightColorButton->setContext( "gui" );
+  mIdentifyHighlightColorButton->setDefaultColor( QGis::DEFAULT_HIGHLIGHT_COLOR );
 
   QSettings settings;
 
@@ -308,6 +313,7 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
 
 
   spinBoxAttrTableRowCache->setValue( settings.value( "/qgis/attributeTableRowCache", 10000 ).toInt() );
+  spinBoxAttrTableRowCache->setSpecialValueText( tr( "All" ) );
 
   // set the prompt for raster sublayers
   // 0 = Always -> always ask (if there are existing sublayers)
@@ -539,6 +545,7 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   QString name = QApplication::style()->objectName();
   cmbStyle->setCurrentIndex( cmbStyle->findText( name, Qt::MatchFixedString ) );
 
+  mNativeColorDialogsChkBx->setChecked( settings.value( "/qgis/native_color_dialogs", false ).toBool() );
   mLiveColorDialogsChkBx->setChecked( settings.value( "/qgis/live_color_dialogs", false ).toBool() );
 
   //set the state of the checkboxes
@@ -615,20 +622,28 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   int myBlue = settings.value( "/qgis/default_selection_color_blue", 0 ).toInt();
   int myAlpha = settings.value( "/qgis/default_selection_color_alpha", 255 ).toInt();
   pbnSelectionColor->setColor( QColor( myRed, myGreen, myBlue, myAlpha ) );
-  pbnSelectionColor->setColorDialogTitle( tr( "Selection color" ) );
-  pbnSelectionColor->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  pbnSelectionColor->setColorDialogTitle( tr( "Set selection color" ) );
+  pbnSelectionColor->setAllowAlpha( true );
+  pbnSelectionColor->setContext( "gui" );
+  pbnSelectionColor->setDefaultColor( QColor( 255, 255, 0, 255 ) );
 
   //set the default color for canvas background
   myRed = settings.value( "/qgis/default_canvas_color_red", 255 ).toInt();
   myGreen = settings.value( "/qgis/default_canvas_color_green", 255 ).toInt();
   myBlue = settings.value( "/qgis/default_canvas_color_blue", 255 ).toInt();
   pbnCanvasColor->setColor( QColor( myRed, myGreen, myBlue ) );
+  pbnCanvasColor->setColorDialogTitle( tr( "Set canvas color" ) );
+  pbnCanvasColor->setContext( "gui" );
+  pbnCanvasColor->setDefaultColor( Qt::white );
 
   // set the default color for the measure tool
   myRed = settings.value( "/qgis/default_measure_color_red", 222 ).toInt();
   myGreen = settings.value( "/qgis/default_measure_color_green", 155 ).toInt();
   myBlue = settings.value( "/qgis/default_measure_color_blue", 67 ).toInt();
   pbnMeasureColor->setColor( QColor( myRed, myGreen, myBlue ) );
+  pbnMeasureColor->setColorDialogTitle( tr( "Set measuring tool color" ) );
+  pbnMeasureColor->setContext( "gui" );
+  pbnMeasureColor->setDefaultColor( QColor( 222, 155, 67 ) );
 
   capitaliseCheckBox->setChecked( settings.value( "/qgis/capitaliseLayerName", QVariant( false ) ).toBool() );
 
@@ -674,6 +689,21 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   }
 
   //
+  // Color palette
+  //
+  connect( mButtonCopyColors, SIGNAL( clicked() ), mTreeCustomColors, SLOT( copyColors() ) );
+  connect( mButtonRemoveColor, SIGNAL( clicked() ), mTreeCustomColors, SLOT( removeSelection() ) );
+  connect( mButtonPasteColors, SIGNAL( clicked() ), mTreeCustomColors, SLOT( pasteColors() ) );
+
+  //find custom color scheme from registry
+  QList<QgsCustomColorScheme *> customSchemes;
+  QgsColorSchemeRegistry::instance()->schemes( customSchemes );
+  if ( customSchemes.length() > 0 )
+  {
+    mTreeCustomColors->setScheme( customSchemes.at( 0 ) );
+  }
+
+  //
   // Composer settings
   //
 
@@ -701,7 +731,9 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   QColor gridColor = QColor( gridRed, gridGreen, gridBlue, gridAlpha );
   mGridColorButton->setColor( gridColor );
   mGridColorButton->setColorDialogTitle( tr( "Select grid color" ) );
-  mGridColorButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  mGridColorButton->setAllowAlpha( true );
+  mGridColorButton->setContext( "gui" );
+  mGridColorButton->setDefaultColor( QColor( 190, 190, 190, 100 ) );
 
   //default composer grid style
   QString gridStyleString;
@@ -725,7 +757,7 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
 
   //grid and guide defaults
   mGridResolutionSpinBox->setValue( settings.value( "/Composer/defaultSnapGridResolution", 10.0 ).toDouble() );
-  mSnapToleranceSpinBox->setValue( settings.value( "/Composer/defaultSnapTolerancePixels", 10 ).toInt() );
+  mSnapToleranceSpinBox->setValue( settings.value( "/Composer/defaultSnapTolerancePixels", 5 ).toInt() );
   mOffsetXSpinBox->setValue( settings.value( "/Composer/defaultSnapGridOffsetX", 0 ).toDouble() );
   mOffsetYSpinBox->setValue( settings.value( "/Composer/defaultSnapGridOffsetY", 0 ).toDouble() );
 
@@ -756,7 +788,9 @@ QgsOptions::QgsOptions( QWidget *parent, Qt::WindowFlags fl ) :
   myBlue = settings.value( "/qgis/digitizing/line_color_blue", 0 ).toInt();
   myAlpha = settings.value( "/qgis/digitizing/line_color_alpha", 200 ).toInt();
   mLineColorToolButton->setColor( QColor( myRed, myGreen, myBlue, myAlpha ) );
-  mLineColorToolButton->setColorDialogOptions( QColorDialog::ShowAlphaChannel );
+  mLineColorToolButton->setAllowAlpha( true );
+  mLineColorToolButton->setContext( "gui" );
+  mLineColorToolButton->setDefaultColor( QColor( 255, 0, 0, 200 ) );
 
   //default snap mode
   mDefaultSnapModeComboBox->insertItem( 0, tr( "To vertex" ), "to vertex" );
@@ -1123,6 +1157,7 @@ void QgsOptions::saveOptions()
 
   settings.setValue( "/qgis/messageTimeout", mMessageTimeoutSpnBx->value() );
 
+  settings.setValue( "/qgis/native_color_dialogs", mNativeColorDialogsChkBx->isChecked() );
   settings.setValue( "/qgis/live_color_dialogs", mLiveColorDialogsChkBx->isChecked() );
 
   // rasters settings
@@ -1279,6 +1314,14 @@ void QgsOptions::saveOptions()
     myPaths += mListGlobalScales->item( i )->text();
   }
   settings.setValue( "Map/scales", myPaths );
+
+  //
+  // Color palette
+  //
+  if ( mTreeCustomColors->isDirty() )
+  {
+    mTreeCustomColors->saveColorsToScheme();
+  }
 
   //
   // Composer settings
@@ -2039,4 +2082,75 @@ void QgsOptions::saveDefaultDatumTransformations()
   }
 
   s.endGroup();
+}
+
+
+void QgsOptions::on_mButtonAddColor_clicked()
+{
+  QColor newColor = QgsColorDialogV2::getColor( QColor(), this->parentWidget(), tr( "Select color" ), true );
+  if ( !newColor.isValid() )
+  {
+    return;
+  }
+  activateWindow();
+
+  mTreeCustomColors->addColor( newColor, QgsSymbolLayerV2Utils::colorToName( newColor ) );
+}
+
+void QgsOptions::on_mButtonImportColors_clicked()
+{
+  QSettings s;
+  QString lastDir = s.value( "/UI/lastGplPaletteDir", "" ).toString();
+  QString filePath = QFileDialog::getOpenFileName( this, tr( "Select palette file" ), lastDir, "GPL (*.gpl);;All files (*.*)" );
+  activateWindow();
+  if ( filePath.isEmpty() )
+  {
+    return;
+  }
+
+  //check if file exists
+  QFileInfo fileInfo( filePath );
+  if ( !fileInfo.exists() || !fileInfo.isReadable() )
+  {
+    QMessageBox::critical( 0, tr( "Invalid file" ), tr( "Error, file does not exist or is not readable" ) );
+    return;
+  }
+
+  s.setValue( "/UI/lastGplPaletteDir", fileInfo.absolutePath() );
+  QFile file( filePath );
+  bool importOk = mTreeCustomColors->importColorsFromGpl( file );
+  if ( !importOk )
+  {
+    QMessageBox::critical( 0, tr( "Invalid file" ), tr( "Error, no colors found in palette file" ) );
+    return;
+  }
+}
+
+void QgsOptions::on_mButtonExportColors_clicked()
+{
+  QSettings s;
+  QString lastDir = s.value( "/UI/lastGplPaletteDir", "" ).toString();
+  QString fileName = QFileDialog::getSaveFileName( this, tr( "Palette file" ), lastDir, "GPL (*.gpl)" );
+  activateWindow();
+  if ( fileName.isEmpty() )
+  {
+    return;
+  }
+
+  // ensure filename contains extension
+  if ( !fileName.toLower().endsWith( ".gpl" ) )
+  {
+    fileName += ".gpl";
+  }
+
+  QFileInfo fileInfo( fileName );
+  s.setValue( "/UI/lastGplPaletteDir", fileInfo.absolutePath() );
+
+  QFile file( fileName );
+  bool exportOk = mTreeCustomColors->exportColorsToGpl( file );
+  if ( !exportOk )
+  {
+    QMessageBox::critical( 0, tr( "Error exporting" ), tr( "Error writing palette file" ) );
+    return;
+  }
 }

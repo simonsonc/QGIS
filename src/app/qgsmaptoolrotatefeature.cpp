@@ -21,7 +21,6 @@
 #include "qgsvectordataprovider.h"
 #include "qgsvectorlayer.h"
 #include "qgstolerance.h"
-#include <QMessageBox>
 #include <QMouseEvent>
 #include <QSettings>
 #include <limits>
@@ -163,9 +162,12 @@ void QgsMapToolRotateFeature::canvasPressEvent( QMouseEvent * e )
     mRotatedFeatures = vlayer->selectedFeaturesIds();
 
     mRubberBand = createRubberBand( vlayer->geometryType() );
-    for ( int i = 0; i < vlayer->selectedFeatureCount(); i++ )
+
+    QgsFeature feat;
+    QgsFeatureIterator it = vlayer->selectedFeaturesIterator();
+    while ( it.nextFeature( feat ) )
     {
-      mRubberBand->addGeometry( vlayer->selectedFeatures()[i].geometry(), vlayer );
+      mRubberBand->addGeometry( feat.geometry(), vlayer );
     }
   }
 

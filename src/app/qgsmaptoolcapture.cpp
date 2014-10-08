@@ -28,7 +28,6 @@
 
 #include <QCursor>
 #include <QPixmap>
-#include <QMessageBox>
 #include <QMouseEvent>
 #include <QStatusBar>
 
@@ -148,18 +147,6 @@ int QgsMapToolCapture::nextPoint( const QPoint &p, QgsPoint &layerPoint, QgsPoin
   {
     QgsDebugMsg( "no vector layer" );
     return 1;
-  }
-
-  QgsPoint digitisedPoint;
-  try
-  {
-    digitisedPoint = toLayerCoordinates( vlayer, p );
-  }
-  catch ( QgsCsException &cse )
-  {
-    Q_UNUSED( cse );
-    QgsDebugMsg( "transformation to layer coordinate failed" );
-    return 2;
   }
 
   QList<QgsSnappingResult> snapResults;

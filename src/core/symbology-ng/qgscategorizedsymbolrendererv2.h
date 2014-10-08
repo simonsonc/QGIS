@@ -77,6 +77,8 @@ class CORE_EXPORT QgsCategorizedSymbolRendererV2 : public QgsFeatureRendererV2
 
     virtual QgsSymbolV2* symbolForFeature( QgsFeature& feature );
 
+    virtual QgsSymbolV2* originalSymbolForFeature( QgsFeature& feature );
+
     virtual void startRender( QgsRenderContext& context, const QgsFields& fields );
 
     virtual void stopRender( QgsRenderContext& context );
@@ -85,7 +87,7 @@ class CORE_EXPORT QgsCategorizedSymbolRendererV2 : public QgsFeatureRendererV2
 
     virtual QString dump() const;
 
-    virtual QgsFeatureRendererV2* clone();
+    virtual QgsFeatureRendererV2* clone() const;
 
     virtual void toSld( QDomDocument& doc, QDomElement &element ) const;
 
@@ -150,6 +152,10 @@ class CORE_EXPORT QgsCategorizedSymbolRendererV2 : public QgsFeatureRendererV2
     bool invertedColorRamp() { return mInvertedColorRamp; }
     void setInvertedColorRamp( bool inverted ) { mInvertedColorRamp = inverted; }
 
+    // Update the color ramp used and all symbols colors.
+    //! @note added in 2.5
+    void updateColorRamp( QgsVectorColorRampV2* ramp, bool inverted = false );
+
     //! @note added in 1.6
     void setRotationField( QString fieldOrExpression );
     //! @note added in 1.6
@@ -166,16 +172,25 @@ class CORE_EXPORT QgsCategorizedSymbolRendererV2 : public QgsFeatureRendererV2
     QgsSymbolV2::ScaleMethod scaleMethod() const { return mScaleMethod; }
 
     //! items of symbology items in legend should be checkable
-    // @note added in 2.5
+    //! @note added in 2.5
     virtual bool legendSymbolItemsCheckable() const;
 
     //! item in symbology was checked
     // @note added in 2.5
-    virtual bool legendSymbolItemChecked( int index );
+    virtual bool legendSymbolItemChecked( QString key );
 
     //! item in symbology was checked
     // @note added in 2.5
-    virtual void checkLegendSymbolItem( int index, bool state = true );
+    virtual void checkLegendSymbolItem( QString key, bool state = true );
+
+    //! If supported by the renderer, return classification attribute for the use in legend
+    //! @note added in 2.6
+    virtual QString legendClassificationAttribute() const { return classAttribute(); }
+
+    //! creates a QgsCategorizedSymbolRendererV2 from an existing renderer.
+    //! @note added in 2.5
+    //! @returns a new renderer if the conversion was possible, otherwise 0.
+    static QgsCategorizedSymbolRendererV2* convertFromRenderer( const QgsFeatureRendererV2 *renderer );
 
   protected:
     QString mAttrName;
@@ -196,7 +211,7 @@ class CORE_EXPORT QgsCategorizedSymbolRendererV2 : public QgsFeatureRendererV2
     bool mCounting;
 
     //! temporary symbols, used for data-defined rotation and scaling
-    QHash<QString, QgsSymbolV2*> mTempSymbols;
+    QHash<QgsSymbolV2*, QgsSymbolV2*> mTempSymbols;
 
     void rebuildHash();
 

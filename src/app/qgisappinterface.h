@@ -298,6 +298,8 @@ class APP_EXPORT QgisAppInterface : public QgisInterface
     virtual QMenu *layerMenu();
     //! @note added in 2.0
     virtual QMenu *newLayerMenu();
+    //! @note added in 2.5
+    virtual QMenu *addLayerMenu();
     virtual QMenu *settingsMenu();
     virtual QMenu *pluginMenu();
     virtual QMenu *rasterMenu();
@@ -434,13 +436,14 @@ class APP_EXPORT QgisAppInterface : public QgisInterface
 
     /**
      * Open feature form
-     * returns true when dialog was accepted
+     * returns true when dialog was accepted (if shown modal, true otherwise)
      * @param l vector layer
      * @param f feature to show/modify
-     * @param updateFeatureOnly only update the feature update (don't change any attributes of the layer)
+     * @param updateFeatureOnly only update the feature update (don't change any attributes of the layer) [UNUSED]
+     * @param showModal if true, will wait for the dialog to be executed (only shown otherwise)
      * @note added in 1.6
      */
-    virtual bool openFeatureForm( QgsVectorLayer *l, QgsFeature &f, bool updateFeatureOnly = false );
+    virtual bool openFeatureForm( QgsVectorLayer *l, QgsFeature &f, bool updateFeatureOnly = false , bool showModal = true );
 
     /**
      * Returns a feature form for a given feature
@@ -450,7 +453,7 @@ class APP_EXPORT QgisAppInterface : public QgisInterface
      *
      * @return A feature form
      */
-    virtual QDialog* getFeatureForm( QgsVectorLayer *layer, QgsFeature &feature );
+    virtual QgsAttributeDialog* getFeatureForm( QgsVectorLayer *layer, QgsFeature &feature );
 
     /**
      * Access the vector layer tools instance.

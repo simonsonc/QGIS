@@ -17,6 +17,7 @@
 #include "qgscomposerscalebar.h"
 #include "qgscomposermap.h"
 #include "qgscomposition.h"
+#include "qgscomposerutils.h"
 #include "qgsdistancearea.h"
 #include "qgsscalebarstyle.h"
 #include "qgsdoubleboxscalebarstyle.h"
@@ -63,12 +64,16 @@ void QgsComposerScaleBar::paint( QPainter* painter, const QStyleOptionGraphicsIt
   {
     return;
   }
+  if ( !shouldDrawItem() )
+  {
+    return;
+  }
 
   drawBackground( painter );
 
   //x-offset is half of first label width because labels are drawn centered
   QString firstLabel = firstLabelString();
-  double firstLabelWidth = textWidthMillimeters( mFont, firstLabel );
+  double firstLabelWidth = QgsComposerUtils::textWidthMM( mFont, firstLabel );
 
   mStyle->draw( painter, firstLabelWidth / 2 );
 
@@ -384,7 +389,19 @@ void QgsComposerScaleBar::adjustBoxSize()
   QRectF box = mStyle->calculateBoxSize();
 
   //update rect for data defined size and position
-  setSceneRect( evalItemRect( box ) );
+  QRectF newRect = evalItemRect( box );
+
+  //scale bars have a minimum size, respect that regardless of data defined settings
+  if ( newRect.width() < box.width() )
+  {
+    newRect.setWidth( box.width() );
+  }
+  if ( newRect.height() < box.height() )
+  {
+    newRect.setHeight( box.height() );
+  }
+
+  setSceneRect( newRect );
 }
 
 void QgsComposerScaleBar::update()

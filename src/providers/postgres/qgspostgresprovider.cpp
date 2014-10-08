@@ -704,7 +704,7 @@ bool QgsPostgresProvider::loadFields()
       {
         fieldType = QVariant::Double;
 
-        if ( formattedFieldType == "numeric" )
+        if ( formattedFieldType == "numeric" || formattedFieldType == "" )
         {
           fieldSize = -1;
           fieldPrec = -1;
@@ -1678,7 +1678,7 @@ bool QgsPostgresProvider::addFeatures( QgsFeatureList &flist )
         }
         else
         {
-          values += delim + quotedValue( v.toString() );
+          values += delim + quotedValue( v );
         }
       }
       else
@@ -2026,7 +2026,7 @@ bool QgsPostgresProvider::changeAttributeValues( const QgsChangedAttributesMap &
           }
           else
           {
-            sql += quotedValue( siter->toString() );
+            sql += quotedValue( *siter );
           }
         }
         catch ( PGFieldNotFound )

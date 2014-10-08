@@ -33,6 +33,8 @@ QgsComposerLabelWidget::QgsComposerLabelWidget( QgsComposerLabel* label ): QgsCo
   QgsComposerItemWidget* itemPropertiesWidget = new QgsComposerItemWidget( this, label );
   mainLayout->addWidget( itemPropertiesWidget );
 
+  mFontColorButton->setColorDialogTitle( tr( "Select font color" ) );
+  mFontColorButton->setContext( "composer" );
 
   if ( mComposerLabel )
   {
@@ -49,13 +51,13 @@ void QgsComposerLabelWidget::on_mHtmlCheckBox_stateChanged( int state )
     {
       mFontButton->setEnabled( false );
       mFontColorButton->setEnabled( false );
-      mAlignementGroup->setEnabled( false );
+      mAppearanceGroup->setEnabled( false );
     }
     else
     {
       mFontButton->setEnabled( true );
       mFontColorButton->setEnabled( true );
-      mAlignementGroup->setEnabled( true );
+      mAppearanceGroup->setEnabled( true );
     }
 
     mComposerLabel->beginCommand( tr( "Label text HTML state changed" ), QgsComposerMergeCommand::ComposerLabelSetText );
@@ -122,6 +124,7 @@ void QgsComposerLabelWidget::on_mFontColorButton_colorChanged( const QColor &new
 
   mComposerLabel->beginCommand( tr( "Label color changed" ) );
   mComposerLabel->setFontColor( newLabelColor );
+  mComposerLabel->update();
   mComposerLabel->endCommand();
 }
 

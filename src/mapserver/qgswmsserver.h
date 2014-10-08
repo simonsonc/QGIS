@@ -43,6 +43,7 @@ class QgsRectangle;
 class QgsRenderContext;
 class QgsVectorLayer;
 class QgsSymbol;
+class QgsSymbolV2;
 class QColor;
 class QFile;
 class QFont;
@@ -75,9 +76,14 @@ class QgsWMSServer: public QgsOWSServer
     /**Returns the map legend as an image (or a null pointer in case of error). The caller takes ownership
     of the image object*/
     QImage* getLegendGraphics();
+
+    typedef QSet<QgsSymbolV2*> SymbolV2Set;
+    typedef QMap<QgsVectorLayer*, SymbolV2Set> HitTest;
+
     /**Returns the map as an image (or a null pointer in case of error). The caller takes ownership
-    of the image object)*/
-    QImage* getMap();
+    of the image object). If an instance to existing hit test structure is passed, instead of rendering
+    it will fill the structure with symbols that would be used for rendering */
+    QImage* getMap( HitTest* hitTest = 0 );
     /**Returns an SLD file with the style of the requested layer. Exception is raised in case of troubles :-)*/
     QDomDocument getStyle();
     /**Returns an SLD file with the styles of the requested layers. Exception is raised in case of troubles :-)*/
@@ -155,27 +161,13 @@ class QgsWMSServer: public QgsOWSServer
        @param scaleDenominator Filter out layer if scale based visibility does not match (or use -1 if no scale restriction)*/
     QStringList layerSet( const QStringList& layersList, const QStringList& stylesList, const QgsCoordinateReferenceSystem& destCRS, double scaleDenominator = -1 ) const;
 
-    /**Draws graphics if painter != 0 and gives back y dimension, maximum symbol and text width of legend*/
-    double drawLegendGraphics( QPainter* p, double fontOversamplingFactor, QStandardItem* rootItem, double boxSpace, double layerSpace, double layerTitleSpace,
-                               double symbolSpace, double iconLabelSpace, double symbolWidth, double symbolHeight,
-                               const QFont& layerFont, const QFont& itemFont, const QColor& layerFontColor, const QColor& itemFontColor,
-                               double& maxTextWidth, double& maxSymbolWidth );
-
-    //helper functions for GetLegendGraphics
-    /**Draws layer item and subitems
-       @param p painter if the item should be drawn, if 0 the size parameters are calculated only
-       @param maxTextWidth Includes boxSpace (on the right side). If p==0: maximumTextWidth is calculated, if p: maxTextWidth parameter is used for rendering
-       @param maxSymbolWidth Includes boxSpace and iconLabelSpace. If p==0: maximum Symbol width is calculated, if p: maxSymbolWidth is input parameter
-      */
-    void drawLegendLayerItem( QgsComposerLayerItem* item, QPainter* p, double& maxTextWidth, double& maxSymbolWidth, double& currentY, const QFont& layerFont,
-                              const QColor& layerFontColor, const QFont& itemFont, const QColor&  itemFontColor, double boxSpace, double layerSpace,
-                              double layerTitleSpace, double symbolSpace, double iconLabelSpace, double symbolWidth, double symbolHeight, double fontOversamplingFactor ) const;
-    /**Draws a symbol. Optionally, maxHeight is adapted (e.g. for large point markers) */
-    void drawLegendSymbolV2( QgsComposerLegendItem* item, QPainter* p, double boxSpace, double currentY, double& symbolWidth, double& symbolHeight, double yDownShift ) const;
-    void drawRasterSymbol( QgsComposerLegendItem* item, QPainter* p, double boxSpace, double currentY, double symbolWidth, double symbolHeight, double yDownShift ) const;
+    /**Record which symbols would be used if the map was in the current configuration of mMapRenderer. This is useful for content-based legend*/
+    void runHitTest( QPainter* painter, HitTest& hitTest );
+    /**Record which symbols within one layer would be rendered with the given renderer context*/
+    void runHitTestLayer( QgsVectorLayer* vl, SymbolV2Set& usedSymbols, QgsRenderContext& context );
 
     /**Read legend parameter from the request or from the first print composer in the project*/
-    void legendParameters( double mmToPixelFactor, double fontOversamplingFactor, double& boxSpace, double& layerSpace, double& layerTitleSpace,
+    void legendParameters( double& boxSpace, double& layerSpace, double& layerTitleSpace,
                            double& symbolSpace, double& iconLabelSpace, double& symbolWidth, double& symbolHeight, QFont& layerFont, QFont& itemFont, QColor& layerFontColor, QColor& itemFontColor );
 
 #if 0
@@ -258,6 +250,9 @@ class QgsWMSServer: public QgsOWSServer
 
     /** Return the image quality to use for getMap request */
     int getImageQuality() const;
+
+    /** Return precision to use for GetFeatureInfo request */
+    int getWMSPrecision( int defaultValue ) const;
 };
 
 #endif

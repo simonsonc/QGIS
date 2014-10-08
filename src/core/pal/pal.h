@@ -38,11 +38,11 @@
 #include <QList>
 #include <iostream>
 #include <ctime>
+#include <geos_c.h>
 
 // TODO ${MAJOR} ${MINOR} etc instead of 0.2
 
 /**
- * \mainpage Pal Libray
  *
  * \section intro_sec Introduction
  *
@@ -52,6 +52,8 @@
 
 namespace pal
 {
+  /** Get GEOS context handle to be used in all GEOS library calls with reentrant API */
+  GEOSContextHandle_t geosContext();
 
   template <class Type> class LinkedList;
 
@@ -89,7 +91,7 @@ namespace pal
 
   /** The way to arrange labels against spatial entities
    *
-   * \image html arrangement.png "Arrangement modes" width=7cm
+   * image html arrangement.png "Arrangement modes" width=7cm
    * */
   enum _arrangement
   {
@@ -119,7 +121,7 @@ namespace pal
    *  A pal object will contains layers and global information such as which search method
    *  will be used, the map resolution (dpi) ....
    *
-   *  \author Maxence Laurent <maxence _dot_ laurent _at_ heig-vd _dot_ ch>
+   *  \author Maxence Laurent (maxence _dot_ laurent _at_ heig-vd _dot_ ch)
    */
   class CORE_EXPORT Pal
   {
@@ -192,7 +194,7 @@ namespace pal
        * @param lambda_max xMax bounding-box
        * @param phi_max yMax bounding-box
        * @param scale the scale (1:scale)
-       * @param svgmap stream to wrtie the svg map (need _EXPORT_MAP_ #defined to work)
+       * @param svgmap stream to wrtie the svg map (need _EXPORT_MAP_ defined to work)
        */
       Problem* extract( int nbLayers, char **layersName, double *layersFactor,
                         double lambda_min, double phi_min,

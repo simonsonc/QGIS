@@ -79,7 +79,7 @@
       <item row="4" column="2">
        <widget class="QPushButton" name="browseCRS">
         <property name="text">
-         <string>Browse</string>
+         <string>Change...</string>
         </property>
        </widget>
       </item>
@@ -150,7 +150,10 @@
          <property name="text">
           <string>Add saved file to map</string>
          </property>
-        </widget>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">

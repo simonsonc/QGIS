@@ -15,10 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "qgsapplication.h"
 #include "qgscomposerhtml.h"
 #include "qgscomposerframe.h"
 #include "qgscomposition.h"
 #include "qgscompositionchecker.h"
+#include "qgsfontutils.h"
 #include <QObject>
 #include <QtTest>
 
@@ -30,21 +32,32 @@ class TestQgsComposerHtml: public QObject
     void cleanupTestCase();// will be called after the last testfunction was executed.
     void init();// will be called before each testfunction is executed.
     void cleanup();// will be called after every testfunction.
-    void table(); //test if rendering of the composition with composr map is correct
+    void sourceMode(); //test if rendering manual HTML works
+    void userStylesheets(); //test if user stylesheets work
+    void evalExpressions(); //test if rendering with expressions works
+    void evalExpressionsOff(); //test if rendering with expressions disabled works
+    void table(); //test if rendering a HTML url works
     void tableMultiFrame(); //tests multiframe capabilities of composer html
-    void htmlMultiFrameSmarkBreak(); //tests smart page breaks in html multi frame
+    void htmlMultiFrameSmartBreak(); //tests smart page breaks in html multi frame
   private:
     QgsComposition* mComposition;
     QgsMapSettings mMapSettings;
     QString mReport;
+    QFont mTestFont;
 };
 
 void TestQgsComposerHtml::initTestCase()
 {
+  QgsApplication::init();
+  QgsApplication::initQgis();
+
   mComposition = new QgsComposition( mMapSettings );
   mComposition->setPaperSize( 297, 210 ); //A4 landscape
 
   mReport = "<h1>Composer HTML Tests</h1>\n";
+
+  QgsFontUtils::loadStandardTestFonts( QStringList() << "Oblique" );
+  mTestFont = QgsFontUtils::getStandardTestFont( "Oblique " );
 }
 
 void TestQgsComposerHtml::cleanupTestCase()
@@ -69,6 +82,81 @@ void TestQgsComposerHtml::init()
 void TestQgsComposerHtml::cleanup()
 {
 
+}
+
+void TestQgsComposerHtml::sourceMode()
+{
+  QgsComposerHtml* htmlItem = new QgsComposerHtml( mComposition, false );
+  QgsComposerFrame* htmlFrame = new QgsComposerFrame( mComposition, htmlItem, 0, 0, 100, 200 );
+  htmlFrame->setFrameEnabled( true );
+  htmlItem->addFrame( htmlFrame );
+  htmlItem->setContentMode( QgsComposerHtml::ManualHtml );
+  htmlItem->setHtml( QString( "<p style=\"font-family: %1\"><i>Test manual <b>html</b></i></p>" ).arg( mTestFont.family() ) );
+  htmlItem->loadHtml();
+
+  QgsCompositionChecker checker( "composerhtml_manual", mComposition );
+  bool result = checker.testComposition( mReport );
+  mComposition->removeMultiFrame( htmlItem );
+  delete htmlItem;
+  QVERIFY( result );
+}
+
+void TestQgsComposerHtml::userStylesheets()
+{
+  QgsComposerHtml* htmlItem = new QgsComposerHtml( mComposition, false );
+  QgsComposerFrame* htmlFrame = new QgsComposerFrame( mComposition, htmlItem, 0, 0, 100, 200 );
+  htmlFrame->setFrameEnabled( true );
+  htmlItem->addFrame( htmlFrame );
+  htmlItem->setContentMode( QgsComposerHtml::ManualHtml );
+  htmlItem->setHtml( QString( "<p style=\"font-family: %1\"><i>Test user stylesheets <b>html</b></i></p>" ).arg( mTestFont.family() ) );
+
+  //set user stylesheet
+  htmlItem->setUserStylesheet( QString( "b { color: red; } i { color: green; }" ) );
+  //setting user stylesheet enabled automatically loads html
+  htmlItem->setUserStylesheetEnabled( true );
+
+  QgsCompositionChecker checker( "composerhtml_userstylesheet", mComposition );
+  bool result = checker.testComposition( mReport );
+  mComposition->removeMultiFrame( htmlItem );
+  delete htmlItem;
+  QVERIFY( result );
+}
+
+void TestQgsComposerHtml::evalExpressions()
+{
+  QgsComposerHtml* htmlItem = new QgsComposerHtml( mComposition, false );
+  QgsComposerFrame* htmlFrame = new QgsComposerFrame( mComposition, htmlItem, 0, 0, 100, 200 );
+  htmlFrame->setFrameEnabled( true );
+  htmlItem->addFrame( htmlFrame );
+  htmlItem->setContentMode( QgsComposerHtml::ManualHtml );
+  htmlItem->setEvaluateExpressions( true );
+  htmlItem->setHtml( QString( "<p style=\"font-family: %1\">Test expressions = <i>[% 1 + 2 + 3%]</i></p>" ).arg( mTestFont.family() ) );
+
+  htmlItem->loadHtml();
+
+  QgsCompositionChecker checker( "composerhtml_expressions_enabled", mComposition );
+  bool result = checker.testComposition( mReport );
+  mComposition->removeMultiFrame( htmlItem );
+  delete htmlItem;
+  QVERIFY( result );
+}
+
+void TestQgsComposerHtml::evalExpressionsOff()
+{
+  QgsComposerHtml* htmlItem = new QgsComposerHtml( mComposition, false );
+  QgsComposerFrame* htmlFrame = new QgsComposerFrame( mComposition, htmlItem, 0, 0, 100, 200 );
+  htmlFrame->setFrameEnabled( true );
+  htmlItem->addFrame( htmlFrame );
+  htmlItem->setContentMode( QgsComposerHtml::ManualHtml );
+  htmlItem->setEvaluateExpressions( false );
+  htmlItem->setHtml( QString( "<p style=\"font-family: %1\">Test expressions = <i>[% 1 + 2 + 3%]</i></p>" ).arg( mTestFont.family() ) );
+  htmlItem->loadHtml();
+
+  QgsCompositionChecker checker( "composerhtml_expressions_disabled", mComposition );
+  bool result = checker.testComposition( mReport );
+  mComposition->removeMultiFrame( htmlItem );
+  delete htmlItem;
+  QVERIFY( result );
 }
 
 void TestQgsComposerHtml::table()
@@ -103,16 +191,13 @@ void TestQgsComposerHtml::tableMultiFrame()
   //page2
   QgsCompositionChecker checker2( "composerhtml_multiframe2", mComposition );
   result = checker2.testComposition( mReport, 1 ) && result;
-  //page 3
-  QgsCompositionChecker checker3( "composerhtml_multiframe3", mComposition );
-  result = checker3.testComposition( mReport, 2 ) && result;
 
   mComposition->removeMultiFrame( htmlItem );
   delete htmlItem;
   QVERIFY( result );
 }
 
-void TestQgsComposerHtml::htmlMultiFrameSmarkBreak()
+void TestQgsComposerHtml::htmlMultiFrameSmartBreak()
 {
   QgsComposerHtml* htmlItem = new QgsComposerHtml( mComposition, false );
   QgsComposerFrame* htmlFrame = new QgsComposerFrame( mComposition, htmlItem, 10, 10, 100, 50 );
@@ -129,9 +214,6 @@ void TestQgsComposerHtml::htmlMultiFrameSmarkBreak()
   //page2
   QgsCompositionChecker checker2( "composerhtml_smartbreaks2", mComposition );
   result = checker2.testComposition( mReport, 1 ) && result;
-  //page 3
-  QgsCompositionChecker checker3( "composerhtml_smartbreaks3", mComposition );
-  result = checker3.testComposition( mReport, 2 ) && result;
 
   mComposition->removeMultiFrame( htmlItem );
   delete htmlItem;

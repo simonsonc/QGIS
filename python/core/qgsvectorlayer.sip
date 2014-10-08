@@ -19,7 +19,7 @@ class QgsAttributeEditorElement : QObject
       AeTypeInvalid
     };
 
-    QgsAttributeEditorElement( AttributeEditorType type, QString name, QObject *parent = NULL );
+    QgsAttributeEditorElement( AttributeEditorType type, QString name, QObject *parent /TransferThis/ = NULL );
 
     virtual ~QgsAttributeEditorElement();
 
@@ -37,7 +37,7 @@ class QgsAttributeEditorContainer : QgsAttributeEditorElement
 %End
 
   public:
-    QgsAttributeEditorContainer( QString name, QObject *parent );
+    QgsAttributeEditorContainer( QString name, QObject *parent  /TransferThis/ );
 
     ~QgsAttributeEditorContainer();
 
@@ -54,7 +54,7 @@ class QgsAttributeEditorField : QgsAttributeEditorElement
 #include "qgsvectorlayer.h"
 %End
   public:
-    QgsAttributeEditorField( QString name , int idx, QObject *parent );
+    QgsAttributeEditorField( QString name , int idx, QObject *parent /TransferThis/ );
 
     ~QgsAttributeEditorField();
 
@@ -66,9 +66,9 @@ class QgsAttributeEditorField : QgsAttributeEditorElement
 class QgsAttributeEditorRelation : QgsAttributeEditorElement
 {
   public:
-    QgsAttributeEditorRelation( QString name, const QString &relationId, QObject *parent );
+    QgsAttributeEditorRelation( QString name, const QString &relationId, QObject *parent /TransferThis/ );
 
-    QgsAttributeEditorRelation( QString name, const QgsRelation& relation, QObject *parent );
+    QgsAttributeEditorRelation( QString name, const QgsRelation& relation, QObject *parent /TransferThis/);
 
     ~QgsAttributeEditorRelation();
 
@@ -103,6 +103,15 @@ struct QgsVectorJoinInfo
     @note not available in python bindings
     */
   // QHash< QString, QgsAttributeMap> cachedAttributes;
+
+  bool operator==( const QgsVectorJoinInfo& other ) const;
+
+  /** Set subset of fields to be used from joined layer. Takes ownership of the passed pointer. Null pointer tells to use all fields.
+    @note added in 2.6 */
+  void setJoinFieldNamesSubset( QStringList* fieldNamesSubset /Transfer/ );
+  /** Get subset of fields to be used from joined layer. All fields will be used if null is returned.
+    @note added in 2.6 */
+  QStringList* joinFieldNamesSubset() const;
 };
 
 
@@ -270,8 +279,9 @@ class QgsVectorLayer : QgsMapLayer
 
     /** Joins another vector layer to this layer
       @param joinInfo join object containing join layer id, target and source field
-      @note added in 1.7 */
-    void addJoin( const QgsVectorJoinInfo& joinInfo );
+      @note added in 1.7
+      @note since 2.6 returns bool indicating whether the join can be added */
+    bool addJoin( const QgsVectorJoinInfo& joinInfo );
 
     /** Removes  a vector layer join
       @note added in 1.7 */
@@ -279,6 +289,24 @@ class QgsVectorLayer : QgsMapLayer
 
     /** @note added in 1.7 */
     const QList< QgsVectorJoinInfo >& vectorJoins() const;
+
+    /**
+     * Add a new field which is calculated by the expression specified
+     *
+     * @param exp The expression which calculates the field
+     *
+     * @note added in 2.6
+     */
+    void addExpressionField( const QString& exp, const QgsField& fld );
+
+    /**
+     * Remove an expression field
+     *
+     * @param exp The expression which calculates the field
+     *
+     * @note added in 2.6
+     */
+    void removeExpressionField( int index );
 
     /** Get the label object associated with this layer */
     QgsLabel *label();
@@ -343,6 +371,18 @@ class QgsVectorLayer : QgsMapLayer
      * @see    selectedFeaturesIds()
      */
     QgsFeatureList selectedFeatures();
+
+    /**
+     * Get an iterator of the selected features
+     *
+     * @param request You may specify a request, e.g. to limit the set of requested attributes.
+     *                Any filter on the request will be discarded.
+     *
+     * @return Iterator over the selected features
+     *
+     * @see    selectedFeaturesIds()
+     */
+    QgsFeatureIterator selectedFeaturesIterator( QgsFeatureRequest request = QgsFeatureRequest() );
 
     /**
      * Return reference to identifiers of selected features
@@ -1138,8 +1178,6 @@ class QgsVectorLayer : QgsMapLayer
      * @see setSelectedFeatures(const QgsFeatureIds&)
      */
     void removeSelection();
-
-    void triggerRepaint();
 
     /** Update the extents for the layer. This is necessary if features are
      *  added/deleted or the layer has been subsetted.
