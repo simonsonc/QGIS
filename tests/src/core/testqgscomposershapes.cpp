@@ -145,4 +145,4 @@ void TestQgsComposerShapes::symbolV2()
 }
 
 QTEST_MAIN( TestQgsComposerShapes )
-#include "moc_testqgscomposershapes.cpp"
+#include "testqgscomposershapes.moc"

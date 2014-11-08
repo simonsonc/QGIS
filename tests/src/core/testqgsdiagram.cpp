@@ -173,4 +173,4 @@ class TestQgsDiagram: public QObject
 };
 
 QTEST_MAIN( TestQgsDiagram )
-#include "moc_testqgsdiagram.cpp"
+#include "testqgsdiagram.moc"

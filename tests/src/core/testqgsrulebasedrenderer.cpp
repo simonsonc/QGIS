@@ -145,5 +145,5 @@ class TestQgsRuleBasedRenderer: public QObject
 
 QTEST_MAIN( TestQgsRuleBasedRenderer )
 
-#include "moc_testqgsrulebasedrenderer.cpp"
+#include "testqgsrulebasedrenderer.moc"
 

@@ -91,7 +91,7 @@ void TestQgsWcsProvider::cleanupTestCase()
   }
 }
 
-void TestQgsWcsProvider::read( )
+void TestQgsWcsProvider::read()
 {
   bool ok = true;
   QStringList versions;
@@ -160,4 +160,4 @@ bool TestQgsWcsProvider::read( QString theIdentifier, QString theWcsUri, QString
 }
 
 QTEST_MAIN( TestQgsWcsProvider )
-#include "moc_testqgswcsprovider.cpp"
+#include "testqgswcsprovider.moc"

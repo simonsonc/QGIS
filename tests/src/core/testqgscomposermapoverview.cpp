@@ -201,4 +201,4 @@ void TestQgsComposerMapOverview::overviewMapCenter()
 }
 
 QTEST_MAIN( TestQgsComposerMapOverview )
-#include "moc_testqgscomposermapoverview.cpp"
+#include "testqgscomposermapoverview.moc"

@@ -295,6 +295,6 @@ void TestVectorLayerJoinBuffer::testJoinSubset()
 
 
 QTEST_MAIN( TestVectorLayerJoinBuffer )
-#include "moc_testqgsvectorlayerjoinbuffer.cpp"
+#include "testqgsvectorlayerjoinbuffer.moc"
 
 

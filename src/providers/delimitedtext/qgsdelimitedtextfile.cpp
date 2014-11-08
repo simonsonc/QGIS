@@ -43,7 +43,7 @@ QgsDelimitedTextFile::QgsDelimitedTextFile( QString url ) :
     mTrimFields( false ),
     mSkipLines( 0 ),
     mMaxFields( 0 ),
-    mMaxNameLength( 200 ),  // Don't want field names to be too unweildy!
+    mMaxNameLength( 200 ), // Don't want field names to be too unweildy!
     mLineNumber( -1 ),
     mRecordLineNumber( -1 ),
     mRecordNumber( -1 ),

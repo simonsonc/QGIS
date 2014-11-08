@@ -101,7 +101,6 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
 
     //! Load template into current or blank composer
     //! @param newComposer whether to create a new composer first
-    //! @note added in 1.9
     void loadTemplate( const bool newComposer );
 
   protected:
@@ -199,19 +198,16 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     void on_mActionAddHtml_triggered();
 
     //! Save parent project
-    //! @note added in 1.9
     void on_mActionSaveProject_triggered();
 
     //! Create new composer
-    //! @note added in 1.9
     void on_mActionNewComposer_triggered();
 
     //! Duplicate current composer
-    //! @note added in 1.9
     void on_mActionDuplicateComposer_triggered();
 
     //! Show composer manager
-    //! @note added in 1.9
+
     void on_mActionComposerManager_triggered();
 
     //! Save composer as template
@@ -321,6 +317,9 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     //!Enable or disable smart guides
     void on_mActionSmartGuides_triggered( bool checked );
 
+    //!Show/hide bounding boxes
+    void on_mActionShowBoxes_triggered( bool checked );
+
     //!Show/hide rulers
     void toggleRulers( bool checked );
 
@@ -359,6 +358,12 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
 
     //! Atlas settings
     void on_mActionAtlasSettings_triggered();
+
+    //! Toggle full screen mode
+    void on_mActionToggleFullScreen_triggered();
+
+    //! Toggle panels
+    void on_mActionHidePanels_triggered();
 
     //! Save window state
     void saveWindowState();
@@ -579,15 +584,12 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
     QMenu* mToolbarMenu;
 
     //! Print Composers menu as mirror of main app's
-    //! @note added in 1.9
     QMenu* mPrintComposersMenu;
 
     //! Window menu as mirror of main app's (on Mac)
-    //! @note added in 1.9
     QMenu* mWindowMenu;
 
     //! Help menu as mirror of main app's (on Mac)
-    //! @note added in 1.9
     QMenu* mHelpMenu;
 
     QgsMapLayerAction* mAtlasFeatureAction;
@@ -598,23 +600,18 @@ class QgsComposer: public QMainWindow, private Ui::QgsComposerBase
   private slots:
 
     //! Populate Print Composers menu from main app's
-    //! @note added in 1.9
     void populatePrintComposersMenu();
 
     //! Populate Window menu from main app's (on Mac)
-    //! @note added in 1.9
     void populateWindowMenu();
 
     //! Populate Help menu from main app's (on Mac)
-    //! @note added in 1.9
     void populateHelpMenu();
 
     //! Populate one menu from another menu (for Mac)
-    //! @note added in 1.9
     void populateWithOtherMenu( QMenu* thisMenu, QMenu* otherMenu );
 
     //! Create a duplicate of a menu (for Mac)
-    //! @note added in 1.9
     QMenu* mirrorOtherMenu( QMenu* otherMenu );
 
     //! Toggles the state of the atlas preview and navigation controls

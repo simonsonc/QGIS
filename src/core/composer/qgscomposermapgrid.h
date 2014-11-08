@@ -174,13 +174,24 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
       FrameAnnotationsOnly /*< no grid lines over the map, only draw frame and annotations */
     };
 
+    /** Display settings for grid annotations and frames
+     */
+    enum DisplayMode
+    {
+      ShowAll = 0, /*< show both latitude and longitude annotations/divisions */
+      LatitudeOnly, /*< show latitude/y annotations/divisions only */
+      LongitudeOnly, /*< show longitude/x annotations/divisions only */
+      HideAll /*< no annotations */
+    };
+
     /** Position for grid annotations
      */
     enum AnnotationPosition
     {
       InsideMapFrame = 0,
       OutsideMapFrame, /*< draw annotations outside the map frame */
-      Disabled /*< disable annotation */
+      Disabled /*< disable annotation
+                  * @deprecated in QGIS 2.7, use QgsComposerMapGrid::HideAll instead */
     };
 
     /** Direction of grid annotations
@@ -188,7 +199,8 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     enum AnnotationDirection
     {
       Horizontal = 0, /*< draw annotations horizontally */
-      Vertical, /*< draw annotations vertically */
+      Vertical, /*< draw annotations vertically, ascending */
+      VerticalDescending, /*< draw annotations vertically, descending */
       BoundaryDirection /*< annotations follow the boundary direction */
     };
 
@@ -544,6 +556,25 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     */
     int annotationPrecision() const { return mGridAnnotationPrecision; }
 
+    /**Sets what types of grid annotations should be drawn for a specified side of the map frame,
+     * or whether grid annotations should be disabled for the side.
+     * @param display display mode for annotations
+     * @param border side of map for annotations
+     * @see annotationDisplay
+     * @note added in QGIS 2.7
+    */
+    void setAnnotationDisplay( const DisplayMode display, const BorderSide border );
+
+    /**Gets the display mode for the grid annotations on a specified side of the map
+     * frame. This property also specifies whether annotations have been disabled
+     * from a side of the map frame.
+     * @param border side of map for annotations
+     * @returns display mode for grid annotations
+     * @see setAnnotationDisplay
+     * @note added in QGIS 2.7
+    */
+    DisplayMode annotationDisplay( const BorderSide border ) const;
+
     /**Sets the position for the grid annotations on a specified side of the map
      * frame.
      * @param position position to draw grid annotations
@@ -619,6 +650,22 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
      * @see setFrameStyle
     */
     FrameStyle frameStyle() const { return mGridFrameStyle; }
+
+    /**Sets what type of grid divisions should be used for frames on a specified side of the map.
+     * @param divisions grid divisions for frame
+     * @param border side of map for frame
+     * @see frameDivisions
+     * @note added in QGIS 2.7
+    */
+    void setFrameDivisions( const DisplayMode divisions, const BorderSide border );
+
+    /**Gets the type of grid divisions which are used for frames on a specified side of the map.
+     * @param border side of map for frame
+     * @returns grid divisions for frame
+     * @see setFrameDivisions
+     * @note added in QGIS 2.7
+    */
+    DisplayMode frameDivisions( const BorderSide border ) const;
 
     /**Sets flags for grid frame sides. Setting these flags controls which sides
      * of the map item the grid frame is drawn on.
@@ -763,13 +810,22 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     /**True if coordinate values should be drawn*/
     bool mShowGridAnnotation;
 
-    /**Annotation position for left map side (inside / outside / not shown)*/
+    /**Annotation display mode for left map side*/
+    DisplayMode mLeftGridAnnotationDisplay;
+    /**Annotation display mode for right map side*/
+    DisplayMode mRightGridAnnotationDisplay;
+    /**Annotation display mode for top map side*/
+    DisplayMode mTopGridAnnotationDisplay;
+    /**Annotation display mode for bottom map side*/
+    DisplayMode mBottomGridAnnotationDisplay;
+
+    /**Annotation position for left map side (inside / outside)*/
     AnnotationPosition mLeftGridAnnotationPosition;
-    /**Annotation position for right map side (inside / outside / not shown)*/
+    /**Annotation position for right map side (inside / outside)*/
     AnnotationPosition mRightGridAnnotationPosition;
-    /**Annotation position for top map side (inside / outside / not shown)*/
+    /**Annotation position for top map side (inside / outside)*/
     AnnotationPosition mTopGridAnnotationPosition;
-    /**Annotation position for bottom map side (inside / outside / not shown)*/
+    /**Annotation position for bottom map side (inside / outside)*/
     AnnotationPosition mBottomGridAnnotationPosition;
 
     /**Distance between map frame and annotation*/
@@ -793,6 +849,15 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     QColor mGridFrameFillColor2;
     double mCrossLength;
 
+    /**Divisions for frame on left map side*/
+    DisplayMode mLeftFrameDivisions;
+    /**Divisions for frame on right map side*/
+    DisplayMode mRightFrameDivisions;
+    /**Divisions for frame on top map side*/
+    DisplayMode mTopFrameDivisions;
+    /**Divisions for frame on bottom map side*/
+    DisplayMode mBottomFrameDivisions;
+
     QgsLineSymbolV2* mGridLineSymbol;
     QgsMarkerSymbolV2* mGridMarkerSymbol;
 
@@ -808,6 +873,14 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     QRectF mPrevPaintRect;
     QPolygonF mPrevMapPolygon;
 
+    class QgsMapAnnotation
+    {
+      public:
+        double coordinate;
+        QPointF itemPosition;
+        QgsComposerMapGrid::AnnotationCoordinate coordinateType;
+    };
+
     /**Draws the map grid*/
     void drawGridFrame( QPainter* p, const QList< QPair< double, QLineF > >& hLines, const QList< QPair< double, QLineF > >& vLines ) const;
 
@@ -817,13 +890,14 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
         @param vLines vertical coordinate lines in item coordinates*/
     void drawCoordinateAnnotations( QPainter* p, const QList< QPair< double, QLineF > >& hLines, const QList< QPair< double, QLineF > >& vLines ) const;
 
-    void drawCoordinateAnnotation( QPainter* p, const QPointF& pos, QString annotationString ) const;
+    void drawCoordinateAnnotation( QPainter* p, const QPointF& pos, QString annotationString, const AnnotationCoordinate coordinateType ) const;
 
     /**Draws a single annotation
-        @param p drawing painter
-        @param pos item coordinates where to draw
-        @param rotation text rotation
-        @param annotationText the text to draw*/
+     * @param p drawing painter
+     * @param pos item coordinates where to draw
+     * @param rotation text rotation
+     * @param annotationText the text to draw
+    */
     void drawAnnotation( QPainter* p, const QPointF& pos, int rotation, const QString& annotationText ) const;
 
     QString gridAnnotationString( double value, AnnotationCoordinate coord ) const;
@@ -844,23 +918,26 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
 
     void drawGridLine( const QPolygonF& line, QgsRenderContext &context ) const;
 
-    void sortGridLinesOnBorders( const QList< QPair< double, QLineF > >& hLines, const QList< QPair< double, QLineF > >& vLines,  QMap< double, double >& leftFrameEntries,
+    void sortGridLinesOnBorders( const QList< QPair< double, QLineF > >& hLines, const QList< QPair< double, QLineF > >& vLines, QMap< double, double >& leftFrameEntries,
                                  QMap< double, double >& rightFrameEntries, QMap< double, double >& topFrameEntries, QMap< double, double >& bottomFrameEntries ) const;
 
     void drawGridFrameBorder( QPainter* p, const QMap< double, double >& borderPos, BorderSide border ) const;
 
-    /**Returns the item border of a point (in item coordinates)*/
-    BorderSide borderForLineCoord( const QPointF& p ) const;
+    /**Returns the item border of a point (in item coordinates)
+     * @param p point
+     * @param coordinateType coordinate type
+    */
+    BorderSide borderForLineCoord( const QPointF& p, const AnnotationCoordinate coordinateType ) const;
 
     /**Get parameters for drawing grid in CRS different to map CRS*/
     int crsGridParams( QgsRectangle& crsRect, QgsCoordinateTransform& inverseTransform ) const;
 
-    static QPolygonF trimLineToMap( const QPolygonF& line, const QgsRectangle& rect );
+    static QList<QPolygonF> trimLinesToMap( const QPolygonF &line, const QgsRectangle &rect );
 
-    QPolygonF scalePolygon( const QPolygonF &polygon,  const double scale ) const;
+    QPolygonF scalePolygon( const QPolygonF &polygon, const double scale ) const;
 
     /**Draws grid if CRS is different to map CRS*/
-    void drawGridCRSTransform( QgsRenderContext &context , double dotsPerMM, QList< QPair< double, QLineF > > &horizontalLines,
+    void drawGridCRSTransform( QgsRenderContext &context, double dotsPerMM, QList< QPair< double, QLineF > > &horizontalLines,
                                QList< QPair< double, QLineF > > &verticalLines );
 
     void drawGridNoTransform( QgsRenderContext &context, double dotsPerMM, QList<QPair<double, QLineF> > &horizontalLines, QList<QPair<double, QLineF> > &verticalLines ) const;
@@ -878,6 +955,9 @@ class CORE_EXPORT QgsComposerMapGrid : public QgsComposerMapItem
     void drawGridFrameLineBorder( QPainter *p, BorderSide border ) const;
 
     void calculateCRSTransformLines();
+
+    bool shouldShowDivisionForSide( const AnnotationCoordinate &coordinate, const QgsComposerMapGrid::BorderSide& side ) const;
+    bool shouldShowDivisionForDisplayMode( const QgsComposerMapGrid::AnnotationCoordinate &coordinate, const QgsComposerMapGrid::DisplayMode &mode ) const;
 
     friend class TestQgsComposerMapGrid;
 };

@@ -98,7 +98,7 @@ void TestQgsRubberband::testAddSingleMultiGeometries()
 }
 
 QTEST_MAIN( TestQgsRubberband )
-#include "moc_testqgsrubberband.cpp"
+#include "testqgsrubberband.moc"
 
 
 

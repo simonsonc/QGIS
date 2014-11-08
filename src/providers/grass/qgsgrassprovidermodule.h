@@ -26,6 +26,11 @@ class QgsGrassLocationItem : public QgsDataCollectionItem
 
     static bool isLocation( QString path );
     QVector<QgsDataItem*> createChildren();
+
+    /* Add mark to path to distinguish that from directory path */
+    static QString markPath( QString path );
+    /* Remove location mark from path */
+    static QString clearPath( QString path );
 };
 
 class QgsGrassMapsetItem : public QgsDataCollectionItem
@@ -39,6 +44,18 @@ class QgsGrassMapsetItem : public QgsDataCollectionItem
 
     QString mLocation;
     QString mGisdbase;
+};
+
+class QgsGrassVectorLayerItem : public QgsLayerItem
+{
+  public:
+    QgsGrassVectorLayerItem( QgsDataItem* parent, QString mapName, QString layerName, QString path, QString uri, LayerType layerType, QString providerKey );
+    ~QgsGrassVectorLayerItem() {};
+
+    QString layerName() const;
+
+  private:
+    QString mMapName;
 };
 
 #endif // QGSGRASSPROVIDERMODULE_H

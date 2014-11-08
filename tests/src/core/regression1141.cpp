@@ -78,7 +78,7 @@ void Regression1141::initTestCase()
   QgsApplication::initQgis();
   QgsApplication::showSettings();
   // compute our test file name:
-  QString myTmpDir = QDir::tempPath() + QDir::separator() ;
+  QString myTmpDir = QDir::tempPath() + QDir::separator();
   mFileName = myTmpDir +  "ąęćń.shp";
 }
 
@@ -99,7 +99,7 @@ void Regression1141::diacriticalTest()
   QgsDebugMsg( QString( "CODESET:%1" ).arg( cs ? cs : "unset" ) );
   if ( !cs || strcmp( cs, "UTF-8" ) != 0 )
   {
-    QSKIP( "This test requires a UTF-8 locale" );
+    QSKIP( "This test requires a UTF-8 locale", SkipSingle );
     return;
   }
 #endif
@@ -160,4 +160,4 @@ void Regression1141::diacriticalTest()
 
 
 QTEST_MAIN( Regression1141 )
-#include "moc_regression1141.cpp"
+#include "regression1141.moc"

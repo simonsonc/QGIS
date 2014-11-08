@@ -41,7 +41,6 @@ QgsLayerTreeModel::QgsLayerTreeModel( QgsLayerTreeGroup* rootNode, QObject *pare
     , mLegendMapViewDpi( 0 )
     , mLegendMapViewScale( 0 )
 {
-  QgsDebugCall;
   connectToRootNode();
 
   mFontLayer.setBold( true );
@@ -111,7 +110,6 @@ int QgsLayerTreeModel::rowCount( const QModelIndex &parent ) const
 
 int QgsLayerTreeModel::columnCount( const QModelIndex &parent ) const
 {
-  QgsDebugCall;
   Q_UNUSED( parent );
   return 1;
 }
@@ -203,9 +201,9 @@ QVariant QgsLayerTreeModel::data( const QModelIndex &index, int role ) const
 
     if ( QgsLayerTree::isLayer( node ) )
     {
-      QgsLayerTreeLayer* nodeLayer = QgsLayerTree::toLayer( node );
+      QgsLayerTreeLayer *nodeLayer = QgsLayerTree::toLayer( node );
 
-      QgsMapLayer* layer = nodeLayer->layer();
+      QgsMapLayer *layer = nodeLayer->layer();
       if ( !layer )
         return QVariant();
 
@@ -218,39 +216,47 @@ QVariant QgsLayerTreeModel::data( const QModelIndex &index, int role ) const
           return QIcon( rlayer->previewAsPixmap( QSize( 32, 32 ) ) );
         }
       }
-      else if ( layer->type() == QgsMapLayer::VectorLayer )
-      {
-        QgsVectorLayer* vlayer = static_cast<QgsVectorLayer*>( layer );
-        if ( vlayer->isEditable() )
-        {
-          if ( vlayer->isModified() )
-            return QIcon( QgsApplication::getThemePixmap( "/mIconEditableEdits.png" ) );
-          else
-            return QIcon( QgsApplication::getThemePixmap( "/mIconEditable.png" ) );
-        }
-      }
 
-      // if there's just on legend entry that should be embedded in layer - do that!
-      if ( testFlag( ShowLegend ) && mLegendNodes[nodeLayer].count() == 1 && mLegendNodes[nodeLayer][0]->isEmbeddedInParent() )
-        return mLegendNodes[nodeLayer][0]->data( Qt::DecorationRole );
+      QgsVectorLayer *vlayer = dynamic_cast<QgsVectorLayer*>( layer );
 
       if ( layer->type() == QgsMapLayer::RasterLayer )
       {
         return QgsLayerItem::iconRaster();
       }
+
+      QIcon icon;
+
+      // if there's just on legend entry that should be embedded in layer - do that!
+      if ( testFlag( ShowLegend ) && mLegendNodes[nodeLayer].count() == 1 && mLegendNodes[nodeLayer][0]->isEmbeddedInParent() )
+      {
+        icon = QIcon( qvariant_cast<QPixmap>( mLegendNodes[nodeLayer][0]->data( Qt::DecorationRole ) ) );
+      }
       else if ( layer->type() == QgsMapLayer::VectorLayer )
       {
-        QgsVectorLayer* vlayer = static_cast<QgsVectorLayer*>( layer );
         if ( vlayer->geometryType() == QGis::Point )
-          return QgsLayerItem::iconPoint();
+          icon = QgsLayerItem::iconPoint();
         else if ( vlayer->geometryType() == QGis::Line )
-          return QgsLayerItem::iconLine();
+          icon = QgsLayerItem::iconLine();
         else if ( vlayer->geometryType() == QGis::Polygon )
-          return QgsLayerItem::iconPolygon();
+          icon = QgsLayerItem::iconPolygon();
         else if ( vlayer->geometryType() == QGis::NoGeometry )
-          return QgsLayerItem::iconTable();
+          icon = QgsLayerItem::iconTable();
+        else
+          icon = QgsLayerItem::iconDefault();
       }
-      return QgsLayerItem::iconDefault();
+
+      if ( vlayer && vlayer->isEditable() )
+      {
+        QPixmap pixmap( icon.pixmap( 16, 16 ) );
+
+        QPainter painter( &pixmap );
+        painter.drawPixmap( 0, 0, 16, 16, QgsApplication::getThemePixmap( vlayer->isModified() ? "/mIconEditableEdits.png" : "/mIconEditable.png" ) );
+        painter.end();
+
+        icon = QIcon( pixmap );
+      }
+
+      return icon;
     }
   }
   else if ( role == Qt::CheckStateRole )
@@ -339,9 +345,6 @@ Qt::ItemFlags QgsLayerTreeModel::flags( const QModelIndex& index ) const
 
 bool QgsLayerTreeModel::setData( const QModelIndex& index, const QVariant& value, int role )
 {
-  QgsDebugCall;
-  QgsDebugMsg( QString( "setData( r=%1 c=%2 value=%3 role=%4 )" ).arg( index.row() ).arg( index.column() ).arg( value.toString() ).arg( role ) );
-
   QgsLayerTreeModelLegendNode *sym = index2legendNode( index );
   if ( sym )
   {
@@ -435,7 +438,6 @@ static bool _isChildOfNodes( QgsLayerTreeNode* child, QList<QgsLayerTreeNode*> n
 
 QList<QgsLayerTreeNode*> QgsLayerTreeModel::indexes2nodes( const QModelIndexList& list, bool skipInternal ) const
 {
-  QgsDebugCall;
   QList<QgsLayerTreeNode*> nodes;
   foreach ( QModelIndex index, list )
   {
@@ -483,7 +485,6 @@ QgsLayerTreeGroup*QgsLayerTreeModel::rootGroup() const
 
 void QgsLayerTreeModel::setRootGroup( QgsLayerTreeGroup* newRootGroup )
 {
-  QgsDebugCall;
   beginResetModel();
 
   disconnectFromRootNode();
@@ -500,7 +501,6 @@ void QgsLayerTreeModel::setRootGroup( QgsLayerTreeGroup* newRootGroup )
 
 void QgsLayerTreeModel::refreshLayerLegend( QgsLayerTreeLayer* nodeLayer )
 {
-  QgsDebugCall;
   // update title
   QModelIndex idx = node2index( nodeLayer );
   emit dataChanged( idx, idx );
@@ -521,13 +521,11 @@ void QgsLayerTreeModel::refreshLayerLegend( QgsLayerTreeLayer* nodeLayer )
 
 QModelIndex QgsLayerTreeModel::currentIndex() const
 {
-  QgsDebugCall;
   return mCurrentIndex;
 }
 
 void QgsLayerTreeModel::setCurrentIndex( const QModelIndex& currentIndex )
 {
-  QgsDebugCall;
   QModelIndex oldIndex = mCurrentIndex;
   mCurrentIndex = currentIndex;
 
@@ -540,7 +538,6 @@ void QgsLayerTreeModel::setCurrentIndex( const QModelIndex& currentIndex )
 
 void QgsLayerTreeModel::setLayerTreeNodeFont( int nodeType, const QFont& font )
 {
-  QgsDebugCall;
   if ( nodeType == QgsLayerTreeNode::NodeGroup )
   {
     if ( mFontGroup != font )
@@ -566,7 +563,6 @@ void QgsLayerTreeModel::setLayerTreeNodeFont( int nodeType, const QFont& font )
 
 QFont QgsLayerTreeModel::layerTreeNodeFont( int nodeType ) const
 {
-  QgsDebugCall;
   if ( nodeType == QgsLayerTreeNode::NodeGroup )
     return mFontGroup;
   else if ( nodeType == QgsLayerTreeNode::NodeLayer )
@@ -580,7 +576,6 @@ QFont QgsLayerTreeModel::layerTreeNodeFont( int nodeType ) const
 
 void QgsLayerTreeModel::setLegendFilterByScale( double scaleDenominator )
 {
-  QgsDebugCall;
   mLegendFilterByScale = scaleDenominator;
 
   // this could be later done in more efficient way

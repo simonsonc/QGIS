@@ -58,11 +58,11 @@ void TestQgsApplication::checkGdalSkip()
 {
   GDALAllRegister();
   QgsApplication::skipGdalDriver( "GTiff" );
-  QVERIFY( QgsApplication::skippedGdalDrivers( ).contains( "GTiff" ) );
+  QVERIFY( QgsApplication::skippedGdalDrivers().contains( "GTiff" ) );
   QgsApplication::restoreGdalDriver( "GTiff" );
-  QVERIFY( !QgsApplication::skippedGdalDrivers( ).contains( "GTiff" ) );
+  QVERIFY( !QgsApplication::skippedGdalDrivers().contains( "GTiff" ) );
 }
 
 QTEST_MAIN( TestQgsApplication )
-#include "moc_testqgsapplication.cpp"
+#include "testqgsapplication.moc"
 

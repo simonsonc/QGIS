@@ -179,4 +179,4 @@ bool TestQgsInvertedPolygon::imageCheck( QString theTestType, const QgsRectangle
 }
 
 QTEST_MAIN( TestQgsInvertedPolygon )
-#include "moc_testqgsinvertedpolygonrenderer.cpp"
+#include "testqgsinvertedpolygonrenderer.moc"

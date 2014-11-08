@@ -99,4 +99,4 @@ void TestQgsMapLayer::setBlendMode()
 }
 
 QTEST_MAIN( TestQgsMapLayer )
-#include "moc_testqgsmaplayer.cpp"
+#include "testqgsmaplayer.moc"

@@ -382,4 +382,4 @@ void TestQgsComposerPicture::pictureRemoteUrl()
 }
 
 QTEST_MAIN( TestQgsComposerPicture )
-#include "moc_testqgscomposerpicture.cpp"
+#include "testqgscomposerpicture.moc"

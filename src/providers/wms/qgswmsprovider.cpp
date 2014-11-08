@@ -858,7 +858,7 @@ void QgsWmsProvider::readBlock( int bandNo, QgsRectangle  const & viewExtent, in
     return;
   }
 
-  QgsDebugMsg( QString( "image height = %1 bytesPerLine = %2" ).arg( image->height() ) . arg( image->bytesPerLine() ) ) ;
+  QgsDebugMsg( QString( "image height = %1 bytesPerLine = %2" ).arg( image->height() ) . arg( image->bytesPerLine() ) );
   size_t myExpectedSize = pixelWidth * pixelHeight * 4;
   size_t myImageSize = image->height() *  image->bytesPerLine();
   if ( myExpectedSize != myImageSize )   // should not happen
@@ -867,7 +867,7 @@ void QgsWmsProvider::readBlock( int bandNo, QgsRectangle  const & viewExtent, in
     return;
   }
 
-  uchar * ptr = image->bits() ;
+  uchar * ptr = image->bits();
   if ( ptr )
   {
     // If image is too large, ptr can be NULL
@@ -3093,7 +3093,7 @@ void QgsWmsProvider::getLegendGraphicReplyFinished()
     }
     else
     {
-      QImage myLocalImage = QImage::fromData( mGetLegendGraphicReply->readAll() ) ;
+      QImage myLocalImage = QImage::fromData( mGetLegendGraphicReply->readAll() );
       if ( myLocalImage.isNull() )
       {
         QgsMessageLog::logMessage( tr( "Returned legend image is flawed [URL: %1]" )

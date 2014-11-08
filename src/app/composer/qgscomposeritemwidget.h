@@ -73,14 +73,12 @@ class QgsComposerItemWidget: public QgsComposerItemBaseWidget, private Ui::QgsCo
     void showFrameGroup( bool showGroup );
 
   public slots:
-    void on_mFrameColorButton_clicked();
+
     /** Set the frame color
-     * @note added in 1.9
      */
     void on_mFrameColorButton_colorChanged( const QColor& newFrameColor );
     void on_mBackgroundColorButton_clicked();
     /** Set the background color
-     * @note added in 1.9
      */
     void on_mBackgroundColorButton_colorChanged( const QColor& newBackgroundColor );
 //    void on_mTransparencySlider_valueChanged( int value );

@@ -76,7 +76,7 @@ void Regression992::initTestCase()
                                       myRasterFileInfo.completeBaseName() );
   if ( ! mpRasterLayer->isValid() )
   {
-    QSKIP( "This test requires the JPEG2000 GDAL driver" );
+    QSKIP( "This test requires the JPEG2000 GDAL driver", SkipAll );
   }
   else
   {
@@ -123,4 +123,4 @@ void Regression992::regression992()
 }
 
 QTEST_MAIN( Regression992 )
-#include "moc_regression992.cpp"
+#include "regression992.moc"

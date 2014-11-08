@@ -222,4 +222,4 @@ void TestQgsComposerHtml::htmlMultiFrameSmartBreak()
 
 
 QTEST_MAIN( TestQgsComposerHtml )
-#include "moc_testqgscomposerhtml.cpp"
+#include "testqgscomposerhtml.moc"

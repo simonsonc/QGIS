@@ -91,4 +91,4 @@ void TestQgsMapCanvas::testMapRendererInteraction()
 
 
 QTEST_MAIN( TestQgsMapCanvas )
-#include "moc_testqgsmapcanvas.cpp"
+#include "testqgsmapcanvas.moc"

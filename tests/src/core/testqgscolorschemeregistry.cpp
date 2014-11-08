@@ -195,4 +195,4 @@ void TestQgsColorSchemeRegistry::matchingSchemes()
 }
 
 QTEST_MAIN( TestQgsColorSchemeRegistry )
-#include "moc_testqgscolorschemeregistry.cpp"
+#include "testqgscolorschemeregistry.moc"

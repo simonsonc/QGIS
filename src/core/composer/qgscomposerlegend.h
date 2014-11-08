@@ -44,7 +44,7 @@ class CORE_EXPORT QgsLegendModelV2 : public QgsLayerTreeModel
   public:
     QgsLegendModelV2( QgsLayerTreeGroup* rootNode, QObject *parent = 0 );
 
-    QVariant data( const QModelIndex& index,  int role ) const;
+    QVariant data( const QModelIndex& index, int role ) const;
 
     Qt::ItemFlags flags( const QModelIndex &index ) const;
 };
@@ -61,7 +61,7 @@ class CORE_EXPORT QgsComposerLegend : public QgsComposerItem
     QgsComposerLegend( QgsComposition* composition );
     ~QgsComposerLegend();
 
-    /** return correct graphics item type. Added in v1.7 */
+    /** return correct graphics item type. */
     virtual int type() const { return ComposerLegend; }
 
     /** \brief Reimplementation of QCanvasItem::paint*/

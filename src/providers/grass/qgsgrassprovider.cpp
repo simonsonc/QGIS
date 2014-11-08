@@ -781,7 +781,7 @@ int QgsGrassProvider::openMap( QString gisdbase, QString location, QString mapse
   QgsDebugMsg( QString( "Setting  gisdbase, location: %1, %2" ).arg( gisdbase ).arg( location ) );
 
   // Find the vector
-  const char *ms = G_find_vector2( mapName.toUtf8().data(), mapset.toUtf8().data() ) ;
+  const char *ms = G_find_vector2( mapName.toUtf8().data(), mapset.toUtf8().data() );
 
   if ( !ms )
   {
@@ -798,21 +798,26 @@ int QgsGrassProvider::openMap( QString gisdbase, QString location, QString mapse
   map.lastAttributesModified = di.lastModified();
 
   // Do we have topology and cidx (level2)
-  int level = 2;
+  int level = -1;
   G_TRY
   {
-    Vect_set_open_level( 2 );
-    Vect_open_old_head( map.map, mapName.toUtf8().data(), mapset.toUtf8().data() );
+    //Vect_set_open_level( 2 );
+    level = Vect_open_old_head( map.map, mapName.toUtf8().data(), mapset.toUtf8().data() );
     Vect_close( map.map );
   }
   G_CATCH( QgsGrass::Exception &e )
   {
     Q_UNUSED( e );
     QgsDebugMsg( QString( "Cannot open GRASS vector head on level2: %1" ).arg( e.what() ) );
-    level = 1;
+    level = -1;
   }
 
-  if ( level == 1 )
+  if ( level == -1 )
+  {
+    QgsDebugMsg( "Cannot open GRASS vector head" );
+    return -1;
+  }
+  else if ( level == 1 )
   {
     QMessageBox::StandardButton ret = QMessageBox::question( 0, "Warning",
                                       tr( "GRASS vector map %1 does not have topology. Build topology?" ).arg( mapName ),
@@ -1396,7 +1401,13 @@ bool QgsGrassProvider::lineNodes( int line, int *node1, int *node2 )
     return false;
   }
 
+#if GRASS_VERSION_MAJOR < 7
   Vect_get_line_nodes( mMap, line, node1, node2 );
+#else
+  /* points don't have topology in GRASS >= 7 */
+  *node1 = 0;
+  *node2 = 0;
+#endif
   return true;
 }
 
@@ -1510,28 +1521,28 @@ int QgsGrassProvider::lineAlive( int line )
 {
   QgsDebugMsgLevel( "entered.", 3 );
 
-  return ( Vect_line_alive( mMap, line ) ) ;
+  return ( Vect_line_alive( mMap, line ) );
 }
 
 int QgsGrassProvider::nodeAlive( int node )
 {
   QgsDebugMsgLevel( "QgsGrassProvider::nodeAlive", 3 );
 
-  return ( Vect_node_alive( mMap, node ) ) ;
+  return ( Vect_node_alive( mMap, node ) );
 }
 
 int QgsGrassProvider::numUpdatedLines( void )
 {
   QgsDebugMsg( QString( "numUpdatedLines = %1" ).arg( Vect_get_num_updated_lines( mMap ) ) );
 
-  return ( Vect_get_num_updated_lines( mMap ) ) ;
+  return ( Vect_get_num_updated_lines( mMap ) );
 }
 
 int QgsGrassProvider::numUpdatedNodes( void )
 {
   QgsDebugMsg( QString( "numUpdatedNodes = %1" ).arg( Vect_get_num_updated_nodes( mMap ) ) );
 
-  return ( Vect_get_num_updated_nodes( mMap ) ) ;
+  return ( Vect_get_num_updated_nodes( mMap ) );
 }
 
 int QgsGrassProvider::updatedLine( int idx )
@@ -1539,7 +1550,7 @@ int QgsGrassProvider::updatedLine( int idx )
   QgsDebugMsg( QString( "idx = %1" ).arg( idx ) );
   QgsDebugMsg( QString( "  updatedLine = %1" ).arg( Vect_get_updated_line( mMap, idx ) ) );
 
-  return ( Vect_get_updated_line( mMap, idx ) ) ;
+  return ( Vect_get_updated_line( mMap, idx ) );
 }
 
 int QgsGrassProvider::updatedNode( int idx )
@@ -1547,7 +1558,7 @@ int QgsGrassProvider::updatedNode( int idx )
   QgsDebugMsg( QString( "idx = %1" ).arg( idx ) );
   QgsDebugMsg( QString( "  updatedNode = %1" ).arg( Vect_get_updated_node( mMap, idx ) ) );
 
-  return ( Vect_get_updated_node( mMap, idx ) ) ;
+  return ( Vect_get_updated_node( mMap, idx ) );
 }
 
 // ------------------ Attributes -------------------------------------------------
@@ -2129,7 +2140,7 @@ QString QgsGrassProvider::primitiveTypeName( int type )
 
 // -------------------------------------------------------------------------------
 
-int QgsGrassProvider::cidxGetNumFields( )
+int QgsGrassProvider::cidxGetNumFields()
 {
   return ( Vect_cidx_get_num_fields( mMap ) );
 }

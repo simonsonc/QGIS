@@ -56,6 +56,7 @@ class QgsBrowserTreeView : public QTreeView
       setContextMenuPolicy( Qt::CustomContextMenu );
       setHeaderHidden( true );
       setDropIndicatorShown( true );
+
     }
 
     void dragEnterEvent( QDragEnterEvent* e )
@@ -128,7 +129,7 @@ class QgsBrowserTreeFilterProxyModel : public QSortFilterProxyModel
       updateFilter();
     }
 
-    void updateFilter( )
+    void updateFilter()
     {
       QgsDebugMsg( QString( "filter = %1 syntax = %2" ).arg( mFilter ).arg( mPatternSyntax ) );
       mREList.clear();
@@ -287,6 +288,7 @@ QgsBrowserDockWidget::QgsBrowserDockWidget( QString name, QWidget * parent ) :
 
   connect( mBrowserView, SIGNAL( customContextMenuRequested( const QPoint & ) ), this, SLOT( showContextMenu( const QPoint & ) ) );
   connect( mBrowserView, SIGNAL( doubleClicked( const QModelIndex& ) ), this, SLOT( addLayerAtIndex( const QModelIndex& ) ) );
+  connect( mBrowserView, SIGNAL( expanded( const QModelIndex& ) ), this, SLOT( itemExpanded( const QModelIndex& ) ) );
 }
 
 void QgsBrowserDockWidget::showEvent( QShowEvent * e )
@@ -306,6 +308,9 @@ void QgsBrowserDockWidget::showEvent( QShowEvent * e )
     mBrowserView->header()->setSectionResizeMode( 0, QHeaderView::ResizeToContents );
     mBrowserView->header()->setStretchLastSection( false );
 
+    QSettings settings;
+    QString lastPath =  settings.value( "/BrowserWidget/lastExpanded" ).toString();
+
     // expand root favourites item
     for ( int i = 0; i < mModel->rowCount(); i++ )
     {
@@ -313,6 +318,16 @@ void QgsBrowserDockWidget::showEvent( QShowEvent * e )
       QgsDataItem* item = mModel->dataItem( index );
       if ( item && item->type() == QgsDataItem::Favourites )
         mBrowserView->expand( index );
+    }
+
+    // expand last expanded path from previous session
+    QgsDebugMsg( "lastPath = " + lastPath );
+    if ( !lastPath.isEmpty() )
+    {
+      expandPath( lastPath );
+      // save again lastExpanded because QTreeView expands items from deepest and last expanded() signal
+      // is called from highest item and that is stored in settings
+      settings.setValue( "/BrowserWidget/lastExpanded", lastPath );
     }
   }
 
@@ -344,17 +359,17 @@ void QgsBrowserDockWidget::showContextMenu( const QPoint & pt )
       // only favourites can be removed
       menu->addAction( tr( "Remove favourite" ), this, SLOT( removeFavourite() ) );
     }
-    menu->addAction( tr( "Properties" ), this, SLOT( showProperties( ) ) );
-    QAction *action = menu->addAction( tr( "Fast scan this dir." ), this, SLOT( toggleFastScan( ) ) );
+    menu->addAction( tr( "Properties" ), this, SLOT( showProperties() ) );
+    QAction *action = menu->addAction( tr( "Fast scan this dir." ), this, SLOT( toggleFastScan() ) );
     action->setCheckable( true );
     action->setChecked( settings.value( "/qgis/scanItemsFastScanUris",
                                         QStringList() ).toStringList().contains( item->path() ) );
   }
   else if ( item->type() == QgsDataItem::Layer )
   {
-    menu->addAction( tr( "Add Layer" ), this, SLOT( addCurrentLayer( ) ) );
+    menu->addAction( tr( "Add Layer" ), this, SLOT( addCurrentLayer() ) );
     menu->addAction( tr( "Add Selected Layers" ), this, SLOT( addSelectedLayers() ) );
-    menu->addAction( tr( "Properties" ), this, SLOT( showProperties( ) ) );
+    menu->addAction( tr( "Properties" ), this, SLOT( showProperties() ) );
   }
   else if ( item->type() == QgsDataItem::Favourites )
   {
@@ -487,7 +502,7 @@ void QgsBrowserDockWidget::addLayerAtIndex( const QModelIndex& index )
   }
 }
 
-void QgsBrowserDockWidget::addCurrentLayer( )
+void QgsBrowserDockWidget::addCurrentLayer()
 {
   addLayerAtIndex( mBrowserView->currentIndex() );
 }
@@ -515,7 +530,7 @@ void QgsBrowserDockWidget::addSelectedLayers()
   QApplication::restoreOverrideCursor();
 }
 
-void QgsBrowserDockWidget::showProperties( )
+void QgsBrowserDockWidget::showProperties()
 {
   QModelIndex index = mProxyModel->mapToSource( mBrowserView->currentIndex() );
   QgsDataItem* item = mModel->dataItem( index );
@@ -621,7 +636,7 @@ void QgsBrowserDockWidget::showProperties( )
   }
 }
 
-void QgsBrowserDockWidget::toggleFastScan( )
+void QgsBrowserDockWidget::toggleFastScan()
 {
   QModelIndex index = mProxyModel->mapToSource( mBrowserView->currentIndex() );
   QgsDataItem* item = mModel->dataItem( index );
@@ -646,8 +661,6 @@ void QgsBrowserDockWidget::toggleFastScan( )
   }
 }
 
-
-
 void QgsBrowserDockWidget::showFilterWidget( bool visible )
 {
   mWidgetFilter->setVisible( visible );
@@ -658,7 +671,7 @@ void QgsBrowserDockWidget::showFilterWidget( bool visible )
   }
 }
 
-void QgsBrowserDockWidget::setFilter( )
+void QgsBrowserDockWidget::setFilter()
 {
   QString filter = mLeFilter->text();
   if ( mProxyModel )
@@ -677,4 +690,35 @@ void QgsBrowserDockWidget::setCaseSensitive( bool caseSensitive )
   if ( ! mProxyModel )
     return;
   mProxyModel->setCaseSensitive( caseSensitive );
+}
+
+void QgsBrowserDockWidget::itemExpanded( const QModelIndex& index )
+{
+  if ( !mModel || !mProxyModel )
+    return;
+  QSettings settings;
+  QModelIndex srcIndex = mProxyModel->mapToSource( index );
+  QgsDataItem *item = mModel->dataItem( srcIndex );
+  if ( !item )
+    return;
+
+  // TODO: save separately each type (FS, WMS)?
+  settings.setValue( "/BrowserWidget/lastExpanded", item->path() );
+  QgsDebugMsg( "last expanded: " + item->path() );
+}
+
+void QgsBrowserDockWidget::expandPath( QString path )
+{
+  QgsDebugMsg( "path = " + path );
+
+  if ( !mModel || !mProxyModel )
+    return;
+  QModelIndex srcIndex = mModel->findPath( path, Qt::MatchStartsWith );
+  QModelIndex index = mProxyModel->mapFromSource( srcIndex );
+  QgsDebugMsg( QString( "srcIndex.isValid() = %1 index.isValid() = %2" ).arg( srcIndex.isValid() ).arg( index.isValid() ) );
+  if ( index.isValid() )
+  {
+    mBrowserView->expand( index );
+    mBrowserView->scrollTo( index, QAbstractItemView::PositionAtTop );
+  }
 }

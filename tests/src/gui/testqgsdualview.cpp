@@ -94,7 +94,7 @@ void TestQgsDualView::testSelectAll()
 }
 
 QTEST_MAIN( TestQgsDualView )
-#include "moc_testqgsdualview.cpp"
+#include "testqgsdualview.moc"
 
 
 

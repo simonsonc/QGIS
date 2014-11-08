@@ -224,4 +224,4 @@ void TestQgsComposerRotation::oldMapRotationApi()
 #endif
 
 QTEST_MAIN( TestQgsComposerRotation )
-#include "moc_testqgscomposerrotation.cpp"
+#include "testqgscomposerrotation.moc"

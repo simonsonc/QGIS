@@ -57,7 +57,7 @@ void TestQgisAppClipboard::initTestCase()
   QgsApplication::init();
   QgsApplication::initQgis();
   mTestDataDir = QString( TEST_DATA_DIR ) + QDir::separator(); //defined in CmakeLists.txt
-  mQgisApp = new QgisApp( );
+  mQgisApp = new QgisApp();
 }
 
 //runs after all tests
@@ -100,4 +100,4 @@ void TestQgisAppClipboard::copyPaste()
 }
 
 QTEST_MAIN( TestQgisAppClipboard )
-#include "moc_testqgisappclipboard.cpp"
+#include "testqgisappclipboard.moc"

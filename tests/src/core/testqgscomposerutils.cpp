@@ -670,7 +670,7 @@ void TestQgsComposerUtils::drawTextRect()
 bool TestQgsComposerUtils::renderCheck( QString testName, QImage &image, int mismatchCount )
 {
   mReport += "<h2>" + testName + "</h2>\n";
-  QString myTmpDir = QDir::tempPath() + QDir::separator() ;
+  QString myTmpDir = QDir::tempPath() + QDir::separator();
   QString myFileName = myTmpDir + testName + ".png";
   image.save( myFileName, "PNG" );
   QgsRenderChecker myChecker;
@@ -682,4 +682,4 @@ bool TestQgsComposerUtils::renderCheck( QString testName, QImage &image, int mis
 }
 
 QTEST_MAIN( TestQgsComposerUtils )
-#include "moc_testqgscomposerutils.cpp"
+#include "testqgscomposerutils.moc"

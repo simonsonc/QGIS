@@ -233,5 +233,5 @@ void TestVectorLayerCache::onCommittedFeaturesAdded( QString layerId, QgsFeature
 }
 
 QTEST_MAIN( TestVectorLayerCache )
-#include "moc_testqgsvectorlayercache.cpp"
+#include "testqgsvectorlayercache.moc"
 

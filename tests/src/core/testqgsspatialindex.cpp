@@ -142,6 +142,6 @@ class TestQgsSpatialIndex : public QObject
 
 QTEST_MAIN( TestQgsSpatialIndex )
 
-#include "moc_testqgsspatialindex.cpp"
+#include "testqgsspatialindex.moc"
 
 

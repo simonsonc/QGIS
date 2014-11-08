@@ -533,7 +533,7 @@ class CORE_EXPORT QgsShapeburstFillSymbolLayerV2 : public QgsFillSymbolLayerV2
 
     //helper functions for data defined symbology
     void applyDataDefinedSymbology( QgsSymbolV2RenderContext& context, QColor& color, QColor& color2, int& blurRadius, bool& useWholeShape,
-                                    double& maxDistance , bool &ignoreRings );
+                                    double& maxDistance, bool &ignoreRings );
 
     /* distance transform of a 1d function using squared distance */
     void distanceTransform1d( double *f, int n, int *v, double *z, double *d );
@@ -658,8 +658,7 @@ class CORE_EXPORT QgsSVGFillSymbolLayer: public QgsImageFillSymbolLayer
     QString mSvgFilePath;
     /**SVG view box (to keep the aspect ratio */
     QRectF mSvgViewBox;
-    /** SVG pattern image
-     * @note added in 1.9 */
+    /** SVG pattern image */
     QImage* mSvgPattern;
 
     //param(fill), param(outline), param(outline-width) are going
@@ -679,7 +678,7 @@ class CORE_EXPORT QgsSVGFillSymbolLayer: public QgsImageFillSymbolLayer
 
     /**Applies the svg pattern to the brush*/
     void applyPattern( QBrush& brush, const QString& svgFilePath, double patternWidth, QgsSymbolV2::OutputUnit patternWidthUnit, const QColor& svgFillColor, const QColor& svgOutlineColor,
-                       double svgOutlineWidth, QgsSymbolV2::OutputUnit svgOutlineWidthUnit, const QgsSymbolV2RenderContext& context, const QgsMapUnitScale& patternWidthMapUnitScale , const QgsMapUnitScale &svgOutlineWidthMapUnitScale );
+                       double svgOutlineWidth, QgsSymbolV2::OutputUnit svgOutlineWidthUnit, const QgsSymbolV2RenderContext& context, const QgsMapUnitScale& patternWidthMapUnitScale, const QgsMapUnitScale &svgOutlineWidthMapUnitScale );
 };
 
 class CORE_EXPORT QgsLinePatternFillSymbolLayer: public QgsImageFillSymbolLayer

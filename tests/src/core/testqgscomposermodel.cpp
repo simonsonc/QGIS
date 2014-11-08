@@ -586,4 +586,4 @@ void TestQgsComposerModel::reorderToBottomWithRemoved()
 }
 
 QTEST_MAIN( TestQgsComposerModel )
-#include "moc_testqgscomposermodel.cpp"
+#include "testqgscomposermodel.moc"
